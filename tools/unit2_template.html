@@ -23,6 +23,7 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--focus);outline-offs
 .btn{background:var(--panel2);padding:14px 20px;min-height:56px;font-weight:600}
 .btn.primary{background:var(--accent);color:var(--accent-fg)}.btn.big{min-height:68px;font-size:22px;width:100%}
 .btn.ghost{background:transparent;border:2px solid var(--line)}.btn:disabled{opacity:.45;cursor:default}
+a.btn{display:inline-flex;align-items:center;text-decoration:none}
 .btn.quiet{background:none;color:var(--muted);text-decoration:underline;text-underline-offset:4px;min-height:48px;font-weight:500}
 .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.row>.btn{flex:1 1 150px}
 .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
@@ -130,7 +131,8 @@ function buildMission(lesson){
 /* ---------- views ---------- */
 const VIEWS = {
 home(){ const total = probs.length, done = probs.filter(p => save.solved[p.id]).length, m = save.mission, resume = m && m.i < m.ids.length;
-  const el = $(`<div class="stack"><header><div class="logo">${MARK}<span class="wm">MATHSEYE</span></div><h1 style="margin-top:14px">Unit 2 Study Guide</h1><p class="sub">Pick one thing. Small steps count.</p></header>
+  const inApp = location.pathname.indexOf("/study/") > -1;
+  const el = $(`<div class="stack">${inApp ? '<div class="top"><a class="btn quiet" href="../">← Back to MathFacts</a></div>' : ""}<header><div class="logo">${MARK}<span class="wm">MATHSEYE</span></div><h1 style="margin-top:14px">Unit 2 Study Guide</h1><p class="sub">Pick one thing. Small steps count.</p></header>
   <section class="card"><p class="eyebrow">Tonight's set</p><h2>${resume ? `Keep going: ${m.i} of ${m.ids.length} done` : "Ready for a quick mission?"}</h2><p class="lead muted">5 problems, about 10 minutes. You can stop anytime.</p><button class="btn primary big" id="go">${resume ? "Keep going" : "Start a mission"}</button></section>
   <div class="grid3"><button class="btn" id="pick">Pick a lesson</button><button class="btn" id="cheat">Cheat sheet</button><button class="btn" id="test">Practice test</button></div>
   <section class="card"><p class="eyebrow">Your progress</p><div class="bar" aria-hidden="true"><i style="width:${done/total*100}%"></i></div><p class="lead" style="margin:0">${done} of ${total} solved${save.day.d===today()&&save.day.n?` · ${save.day.n} today`:""}</p></section><div id="rs"></div></div>`);
