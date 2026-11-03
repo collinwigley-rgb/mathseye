@@ -11,6 +11,7 @@
 - [x] Basic grown-ups screen: unlock tricks early, stickiest cards (no PIN yet)
 
 ## Next up
-- [ ] Module 2 study guide (waiting on the PDF worksheets)
+- [x] Unit 2 reference sheets (2.1–2.8) and study guide in content/units/unit-2/
+- [ ] Unit 3: upload weekly PDFs, build sheets as they come
 - [ ] Phase 2: Beat the Calculator, Test Mode, spot-the-trick and estimate cards, PIN for grown-ups, more tricks
 - [ ] Move storage to IndexedDB and add JSON export for backup
