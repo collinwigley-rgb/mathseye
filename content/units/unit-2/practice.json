@@ -1679,7 +1679,8 @@
    "steps": [
     "(3/4) ÷ (1/2) = 3/4 × 2/1",
     "= 6/4 = 3/2",
-    "That is 1 1/2 buckets per minute."
+    "That is 1 1/2 buckets per minute.",
+    "Another way, same-size pieces: 3/4 ÷ 2/4 = 3 ÷ 2 = 1 1/2"
    ],
    "id": "U2-08",
    "why_focus": "Practice keep-change-flip to get to ONE when the amounts are fractions.",
@@ -1692,6 +1693,15 @@
     ]
    },
    "tol": 1e-09,
+   "sense": {
+    "q": "You divided by 1/2. Should the answer be bigger or smaller than 3/4?",
+    "options": [
+     "Bigger",
+     "Smaller"
+    ],
+    "correct": 0,
+    "why": "1/2 is less than 1, so you are counting how many small pieces fit, and that is more than 3/4."
+   },
    "variants": [
     {
      "kind": "num",
@@ -1706,11 +1716,21 @@
      "steps": [
       "(1) ÷ (1/6) = 1 × 6/1",
       "= 6",
-      "That is 6 pools per minute."
+      "That is 6 pools per minute.",
+      "Another way, same-size pieces: 6/6 ÷ 1/6 = 6 ÷ 1 = 6"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/6. Should the answer be bigger or smaller than 1?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/6 is less than 1, so you are counting how many small pieces fit, and that is more than 1."
+     },
      "ref": 1078
     },
     {
@@ -1726,11 +1746,21 @@
      "steps": [
       "(1) ÷ (3/4) = 1 × 4/3",
       "= 1 1/3",
-      "That is 1 1/3 tanks per minute."
+      "That is 1 1/3 tanks per minute.",
+      "Another way, same-size pieces: 4/4 ÷ 3/4 = 4 ÷ 3 = 1 1/3"
      ],
      "tol": 0.006,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 3/4. Should the answer be bigger or smaller than 1?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "3/4 is less than 1, so you are counting how many small pieces fit, and that is more than 1."
+     },
      "ref": 1079
     },
     {
@@ -1746,11 +1776,21 @@
      "steps": [
       "(3/4) ÷ (1/4) = 3/4 × 4/1",
       "= 3",
-      "That is 3 buckets per minute."
+      "That is 3 buckets per minute.",
+      "Another way, same-size pieces: 3/4 ÷ 1/4 = 3 ÷ 1 = 3"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/4. Should the answer be bigger or smaller than 3/4?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/4 is less than 1, so you are counting how many small pieces fit, and that is more than 3/4."
+     },
      "ref": 1080
     },
     {
@@ -1766,11 +1806,21 @@
      "steps": [
       "(3/8) ÷ (1/4) = 3/8 × 4/1",
       "= 1 1/2",
-      "That is 1 1/2 buckets per minute."
+      "That is 1 1/2 buckets per minute.",
+      "Another way, same-size pieces: 3/8 ÷ 2/8 = 3 ÷ 2 = 1 1/2"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/4. Should the answer be bigger or smaller than 3/8?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/4 is less than 1, so you are counting how many small pieces fit, and that is more than 3/8."
+     },
      "ref": 1081
     },
     {
@@ -1786,11 +1836,21 @@
      "steps": [
       "(1/2) ÷ (1/4) = 1/2 × 4/1",
       "= 2",
-      "That is 2 buckets per minute."
+      "That is 2 buckets per minute.",
+      "Another way, same-size pieces: 2/4 ÷ 1/4 = 2 ÷ 1 = 2"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/4. Should the answer be bigger or smaller than 1/2?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/4 is less than 1, so you are counting how many small pieces fit, and that is more than 1/2."
+     },
      "ref": 1082
     },
     {
@@ -1806,11 +1866,21 @@
      "steps": [
       "(1/4) ÷ (3/4) = 1/4 × 4/3",
       "= 1/3",
-      "That is 1/3 tanks per minute."
+      "That is 1/3 tanks per minute.",
+      "Another way, same-size pieces: 1/4 ÷ 3/4 = 1 ÷ 3 = 1/3"
      ],
      "tol": 0.006,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 3/4. Should the answer be bigger or smaller than 1/4?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "3/4 is less than 1, so you are counting how many small pieces fit, and that is more than 1/4."
+     },
      "ref": 1083
     },
     {
@@ -1826,11 +1896,21 @@
      "steps": [
       "(1/2) ÷ (1/3) = 1/2 × 3/1",
       "= 1 1/2",
-      "That is 1 1/2 pools per minute."
+      "That is 1 1/2 pools per minute.",
+      "Another way, same-size pieces: 3/6 ÷ 2/6 = 3 ÷ 2 = 1 1/2"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/3. Should the answer be bigger or smaller than 1/2?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/3 is less than 1, so you are counting how many small pieces fit, and that is more than 1/2."
+     },
      "ref": 1084
     },
     {
@@ -1846,11 +1926,21 @@
      "steps": [
       "(1) ÷ (1/4) = 1 × 4/1",
       "= 4",
-      "That is 4 tanks per minute."
+      "That is 4 tanks per minute.",
+      "Another way, same-size pieces: 4/4 ÷ 1/4 = 4 ÷ 1 = 4"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/4. Should the answer be bigger or smaller than 1?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/4 is less than 1, so you are counting how many small pieces fit, and that is more than 1."
+     },
      "ref": 1085
     },
     {
@@ -1866,11 +1956,21 @@
      "steps": [
       "(1/8) ÷ (1/4) = 1/8 × 4/1",
       "= 1/2",
-      "That is 1/2 buckets per minute."
+      "That is 1/2 buckets per minute.",
+      "Another way, same-size pieces: 1/8 ÷ 2/8 = 1 ÷ 2 = 1/2"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/4. Should the answer be bigger or smaller than 1/8?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/4 is less than 1, so you are counting how many small pieces fit, and that is more than 1/8."
+     },
      "ref": 1086
     },
     {
@@ -1886,11 +1986,21 @@
      "steps": [
       "(1/8) ÷ (1/4) = 1/8 × 4/1",
       "= 1/2",
-      "That is 1/2 pools per minute."
+      "That is 1/2 pools per minute.",
+      "Another way, same-size pieces: 1/8 ÷ 2/8 = 1 ÷ 2 = 1/2"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/4. Should the answer be bigger or smaller than 1/8?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/4 is less than 1, so you are counting how many small pieces fit, and that is more than 1/8."
+     },
      "ref": 1087
     }
    ],
@@ -1924,6 +2034,15 @@
     ]
    },
    "tol": 1e-09,
+   "sense": {
+    "q": "You divided by 1/12. Should the answer be bigger or smaller than 5/6?",
+    "options": [
+     "Bigger",
+     "Smaller"
+    ],
+    "correct": 0,
+    "why": "1/12 is less than 1, so you are counting how many small pieces fit, and that is more than 5/6."
+   },
    "variants": [
     {
      "kind": "num",
@@ -1938,11 +2057,21 @@
      "steps": [
       "(2 4/5) ÷ (1/10) = 2 4/5 × 10",
       "= 28",
-      "28 miles per hour."
+      "28 miles per hour.",
+      "Another way, same-size pieces: 28/10 ÷ 1/10 = 28 ÷ 1 = 28"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/10. Should the answer be bigger or smaller than 2 4/5?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/10 is less than 1, so you are counting how many small pieces fit, and that is more than 2 4/5."
+     },
      "ref": 1089
     },
     {
@@ -1958,11 +2087,21 @@
      "steps": [
       "(2 1/3) ÷ (1/6) = 2 1/3 × 6",
       "= 14",
-      "14 miles per hour."
+      "14 miles per hour.",
+      "Another way, same-size pieces: 14/6 ÷ 1/6 = 14 ÷ 1 = 14"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/6. Should the answer be bigger or smaller than 2 1/3?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/6 is less than 1, so you are counting how many small pieces fit, and that is more than 2 1/3."
+     },
      "ref": 1090
     },
     {
@@ -1978,11 +2117,21 @@
      "steps": [
       "(1 1/10) ÷ (1/10) = 1 1/10 × 10",
       "= 11",
-      "11 miles per hour."
+      "11 miles per hour.",
+      "Another way, same-size pieces: 11/10 ÷ 1/10 = 11 ÷ 1 = 11"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/10. Should the answer be bigger or smaller than 1 1/10?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/10 is less than 1, so you are counting how many small pieces fit, and that is more than 1 1/10."
+     },
      "ref": 1091
     },
     {
@@ -1998,11 +2147,21 @@
      "steps": [
       "(2 1/2) ÷ (1/10) = 2 1/2 × 10",
       "= 25",
-      "25 miles per hour."
+      "25 miles per hour.",
+      "Another way, same-size pieces: 25/10 ÷ 1/10 = 25 ÷ 1 = 25"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/10. Should the answer be bigger or smaller than 2 1/2?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/10 is less than 1, so you are counting how many small pieces fit, and that is more than 2 1/2."
+     },
      "ref": 1092
     },
     {
@@ -2018,11 +2177,21 @@
      "steps": [
       "(2 5/12) ÷ (1/12) = 2 5/12 × 12",
       "= 29",
-      "29 miles per hour."
+      "29 miles per hour.",
+      "Another way, same-size pieces: 29/12 ÷ 1/12 = 29 ÷ 1 = 29"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/12. Should the answer be bigger or smaller than 2 5/12?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/12 is less than 1, so you are counting how many small pieces fit, and that is more than 2 5/12."
+     },
      "ref": 1093
     },
     {
@@ -2038,11 +2207,21 @@
      "steps": [
       "(1 1/3) ÷ (1/12) = 1 1/3 × 12",
       "= 16",
-      "16 miles per hour."
+      "16 miles per hour.",
+      "Another way, same-size pieces: 16/12 ÷ 1/12 = 16 ÷ 1 = 16"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/12. Should the answer be bigger or smaller than 1 1/3?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/12 is less than 1, so you are counting how many small pieces fit, and that is more than 1 1/3."
+     },
      "ref": 1094
     },
     {
@@ -2058,11 +2237,21 @@
      "steps": [
       "(3) ÷ (1/10) = 3 × 10",
       "= 30",
-      "30 miles per hour."
+      "30 miles per hour.",
+      "Another way, same-size pieces: 30/10 ÷ 1/10 = 30 ÷ 1 = 30"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/10. Should the answer be bigger or smaller than 3?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/10 is less than 1, so you are counting how many small pieces fit, and that is more than 3."
+     },
      "ref": 1095
     },
     {
@@ -2078,11 +2267,21 @@
      "steps": [
       "(1 1/2) ÷ (1/10) = 1 1/2 × 10",
       "= 15",
-      "15 miles per hour."
+      "15 miles per hour.",
+      "Another way, same-size pieces: 15/10 ÷ 1/10 = 15 ÷ 1 = 15"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/10. Should the answer be bigger or smaller than 1 1/2?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/10 is less than 1, so you are counting how many small pieces fit, and that is more than 1 1/2."
+     },
      "ref": 1096
     },
     {
@@ -2098,11 +2297,21 @@
      "steps": [
       "(4) ÷ (1/6) = 4 × 6",
       "= 24",
-      "24 miles per hour."
+      "24 miles per hour.",
+      "Another way, same-size pieces: 24/6 ÷ 1/6 = 24 ÷ 1 = 24"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/6. Should the answer be bigger or smaller than 4?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/6 is less than 1, so you are counting how many small pieces fit, and that is more than 4."
+     },
      "ref": 1097
     },
     {
@@ -2118,11 +2327,21 @@
      "steps": [
       "(1 1/4) ÷ (1/12) = 1 1/4 × 12",
       "= 15",
-      "15 miles per hour."
+      "15 miles per hour.",
+      "Another way, same-size pieces: 15/12 ÷ 1/12 = 15 ÷ 1 = 15"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/12. Should the answer be bigger or smaller than 1 1/4?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/12 is less than 1, so you are counting how many small pieces fit, and that is more than 1 1/4."
+     },
      "ref": 1098
     }
    ],
@@ -2156,6 +2375,15 @@
     ]
    },
    "tol": 1e-09,
+   "sense": {
+    "q": "You divided by 2/3. Should the answer be bigger or smaller than 120?",
+    "options": [
+     "Bigger",
+     "Smaller"
+    ],
+    "correct": 0,
+    "why": "2/3 is less than 1, so you are counting how many small pieces fit, and that is more than 120."
+   },
    "variants": [
     {
      "kind": "num",
@@ -2169,11 +2397,21 @@
      ],
      "steps": [
       "30 ÷ 1/3 = 30 × 3/1 = 90 Calories per cup.",
-      "90 × 3 = 270"
+      "90 × 3 = 270",
+      "Another way, same-size pieces: 90/3 ÷ 1/3 = 90 ÷ 1 = 90"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/3. Should the answer be bigger or smaller than 30?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/3 is less than 1, so you are counting how many small pieces fit, and that is more than 30."
+     },
      "ref": 1100
     },
     {
@@ -2188,11 +2426,21 @@
      ],
      "steps": [
       "66 ÷ 2/3 = 66 × 3/2 = 99 Calories per cup.",
-      "99 × 4 = 396"
+      "99 × 4 = 396",
+      "Another way, same-size pieces: 198/3 ÷ 2/3 = 198 ÷ 2 = 99"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 2/3. Should the answer be bigger or smaller than 66?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "2/3 is less than 1, so you are counting how many small pieces fit, and that is more than 66."
+     },
      "ref": 1101
     },
     {
@@ -2207,11 +2455,21 @@
      ],
      "steps": [
       "45 ÷ 3/4 = 45 × 4/3 = 60 Calories per cup.",
-      "60 × 3 = 180"
+      "60 × 3 = 180",
+      "Another way, same-size pieces: 180/4 ÷ 3/4 = 180 ÷ 3 = 60"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 3/4. Should the answer be bigger or smaller than 45?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "3/4 is less than 1, so you are counting how many small pieces fit, and that is more than 45."
+     },
      "ref": 1102
     },
     {
@@ -2226,11 +2484,21 @@
      ],
      "steps": [
       "17 ÷ 1/4 = 17 × 4/1 = 68 Calories per cup.",
-      "68 × 4 = 272"
+      "68 × 4 = 272",
+      "Another way, same-size pieces: 68/4 ÷ 1/4 = 68 ÷ 1 = 68"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/4. Should the answer be bigger or smaller than 17?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/4 is less than 1, so you are counting how many small pieces fit, and that is more than 17."
+     },
      "ref": 1103
     },
     {
@@ -2245,11 +2513,21 @@
      ],
      "steps": [
       "48 ÷ 1/2 = 48 × 2/1 = 96 Calories per cup.",
-      "96 × 2 = 192"
+      "96 × 2 = 192",
+      "Another way, same-size pieces: 96/2 ÷ 1/2 = 96 ÷ 1 = 96"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/2. Should the answer be bigger or smaller than 48?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/2 is less than 1, so you are counting how many small pieces fit, and that is more than 48."
+     },
      "ref": 1104
     },
     {
@@ -2264,11 +2542,21 @@
      ],
      "steps": [
       "41 ÷ 1/2 = 41 × 2/1 = 82 Calories per cup.",
-      "82 × 4 = 328"
+      "82 × 4 = 328",
+      "Another way, same-size pieces: 82/2 ÷ 1/2 = 82 ÷ 1 = 82"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/2. Should the answer be bigger or smaller than 41?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/2 is less than 1, so you are counting how many small pieces fit, and that is more than 41."
+     },
      "ref": 1105
     },
     {
@@ -2283,11 +2571,21 @@
      ],
      "steps": [
       "46 ÷ 1/4 = 46 × 4/1 = 184 Calories per cup.",
-      "184 × 3 = 552"
+      "184 × 3 = 552",
+      "Another way, same-size pieces: 184/4 ÷ 1/4 = 184 ÷ 1 = 184"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/4. Should the answer be bigger or smaller than 46?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/4 is less than 1, so you are counting how many small pieces fit, and that is more than 46."
+     },
      "ref": 1106
     },
     {
@@ -2302,11 +2600,21 @@
      ],
      "steps": [
       "99 ÷ 3/4 = 99 × 4/3 = 132 Calories per cup.",
-      "132 × 2 = 264"
+      "132 × 2 = 264",
+      "Another way, same-size pieces: 396/4 ÷ 3/4 = 396 ÷ 3 = 132"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 3/4. Should the answer be bigger or smaller than 99?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "3/4 is less than 1, so you are counting how many small pieces fit, and that is more than 99."
+     },
      "ref": 1107
     },
     {
@@ -2321,11 +2629,21 @@
      ],
      "steps": [
       "30 ÷ 1/4 = 30 × 4/1 = 120 Calories per cup.",
-      "120 × 2 = 240"
+      "120 × 2 = 240",
+      "Another way, same-size pieces: 120/4 ÷ 1/4 = 120 ÷ 1 = 120"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/4. Should the answer be bigger or smaller than 30?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/4 is less than 1, so you are counting how many small pieces fit, and that is more than 30."
+     },
      "ref": 1108
     },
     {
@@ -2340,11 +2658,21 @@
      ],
      "steps": [
       "34 ÷ 1/3 = 34 × 3/1 = 102 Calories per cup.",
-      "102 × 3 = 306"
+      "102 × 3 = 306",
+      "Another way, same-size pieces: 102/3 ÷ 1/3 = 102 ÷ 1 = 102"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/3. Should the answer be bigger or smaller than 34?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/3 is less than 1, so you are counting how many small pieces fit, and that is more than 34."
+     },
      "ref": 1109
     }
    ],
@@ -2644,6 +2972,15 @@
     ]
    },
    "tol": 1e-09,
+   "sense": {
+    "q": "You divided by 3/8. Should the answer be bigger or smaller than 6?",
+    "options": [
+     "Bigger",
+     "Smaller"
+    ],
+    "correct": 0,
+    "why": "3/8 is less than 1, so you are counting how many small pieces fit, and that is more than 6."
+   },
    "variants": [
     {
      "kind": "num",
@@ -2657,11 +2994,21 @@
      ],
      "steps": [
       "6 ÷ 3/4 = 8 miles per inch.",
-      "8 × 2 3/4 = 22"
+      "8 × 2 3/4 = 22",
+      "Another way, same-size pieces: 24/4 ÷ 3/4 = 24 ÷ 3 = 8"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 3/4. Should the answer be bigger or smaller than 6?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "3/4 is less than 1, so you are counting how many small pieces fit, and that is more than 6."
+     },
      "ref": 1122
     },
     {
@@ -2676,11 +3023,21 @@
      ],
      "steps": [
       "5 ÷ 1/4 = 20 miles per inch.",
-      "20 × 2 1/2 = 50"
+      "20 × 2 1/2 = 50",
+      "Another way, same-size pieces: 20/4 ÷ 1/4 = 20 ÷ 1 = 20"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/4. Should the answer be bigger or smaller than 5?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/4 is less than 1, so you are counting how many small pieces fit, and that is more than 5."
+     },
      "ref": 1123
     },
     {
@@ -2695,11 +3052,21 @@
      ],
      "steps": [
       "8 ÷ 1/2 = 16 miles per inch.",
-      "16 × 1 3/4 = 28"
+      "16 × 1 3/4 = 28",
+      "Another way, same-size pieces: 16/2 ÷ 1/2 = 16 ÷ 1 = 16"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/2. Should the answer be bigger or smaller than 8?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/2 is less than 1, so you are counting how many small pieces fit, and that is more than 8."
+     },
      "ref": 1124
     },
     {
@@ -2714,11 +3081,21 @@
      ],
      "steps": [
       "15 ÷ 3/4 = 20 miles per inch.",
-      "20 × 2 1/2 = 50"
+      "20 × 2 1/2 = 50",
+      "Another way, same-size pieces: 60/4 ÷ 3/4 = 60 ÷ 3 = 20"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 3/4. Should the answer be bigger or smaller than 15?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "3/4 is less than 1, so you are counting how many small pieces fit, and that is more than 15."
+     },
      "ref": 1125
     },
     {
@@ -2733,11 +3110,21 @@
      ],
      "steps": [
       "4 ÷ 1/4 = 16 miles per inch.",
-      "16 × 1 1/2 = 24"
+      "16 × 1 1/2 = 24",
+      "Another way, same-size pieces: 16/4 ÷ 1/4 = 16 ÷ 1 = 16"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/4. Should the answer be bigger or smaller than 4?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/4 is less than 1, so you are counting how many small pieces fit, and that is more than 4."
+     },
      "ref": 1126
     },
     {
@@ -2752,11 +3139,21 @@
      ],
      "steps": [
       "5 ÷ 1/4 = 20 miles per inch.",
-      "20 × 1 3/4 = 35"
+      "20 × 1 3/4 = 35",
+      "Another way, same-size pieces: 20/4 ÷ 1/4 = 20 ÷ 1 = 20"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/4. Should the answer be bigger or smaller than 5?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/4 is less than 1, so you are counting how many small pieces fit, and that is more than 5."
+     },
      "ref": 1127
     },
     {
@@ -2771,11 +3168,21 @@
      ],
      "steps": [
       "4 ÷ 1/2 = 8 miles per inch.",
-      "8 × 2 3/4 = 22"
+      "8 × 2 3/4 = 22",
+      "Another way, same-size pieces: 8/2 ÷ 1/2 = 8 ÷ 1 = 8"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/2. Should the answer be bigger or smaller than 4?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/2 is less than 1, so you are counting how many small pieces fit, and that is more than 4."
+     },
      "ref": 1128
     },
     {
@@ -2790,11 +3197,21 @@
      ],
      "steps": [
       "12 ÷ 3/4 = 16 miles per inch.",
-      "16 × 1 1/2 = 24"
+      "16 × 1 1/2 = 24",
+      "Another way, same-size pieces: 48/4 ÷ 3/4 = 48 ÷ 3 = 16"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 3/4. Should the answer be bigger or smaller than 12?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "3/4 is less than 1, so you are counting how many small pieces fit, and that is more than 12."
+     },
      "ref": 1129
     },
     {
@@ -2809,11 +3226,21 @@
      ],
      "steps": [
       "3 ÷ 1/4 = 12 miles per inch.",
-      "12 × 2 1/2 = 30"
+      "12 × 2 1/2 = 30",
+      "Another way, same-size pieces: 12/4 ÷ 1/4 = 12 ÷ 1 = 12"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/4. Should the answer be bigger or smaller than 3?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/4 is less than 1, so you are counting how many small pieces fit, and that is more than 3."
+     },
      "ref": 1130
     },
     {
@@ -2828,11 +3255,21 @@
      ],
      "steps": [
       "3 ÷ 1/4 = 12 miles per inch.",
-      "12 × 2 3/4 = 33"
+      "12 × 2 3/4 = 33",
+      "Another way, same-size pieces: 12/4 ÷ 1/4 = 12 ÷ 1 = 12"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 1/4. Should the answer be bigger or smaller than 3?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 0,
+      "why": "1/4 is less than 1, so you are counting how many small pieces fit, and that is more than 3."
+     },
      "ref": 1131
     }
    ],
@@ -2864,6 +3301,15 @@
     ]
    },
    "tol": 0.006,
+   "sense": {
+    "q": "You divided by 5. Should the answer be bigger or smaller than 2/3?",
+    "options": [
+     "Bigger",
+     "Smaller"
+    ],
+    "correct": 1,
+    "why": "Dividing by a number bigger than 1 splits 2/3 into smaller parts."
+   },
    "variants": [
     {
      "kind": "num",
@@ -2877,11 +3323,21 @@
      ],
      "steps": [
       "(1/2) ÷ 6 = 1/2 × 1/6",
-      "= 1/12 hour."
+      "= 1/12 hour.",
+      "Another way, same-size pieces: 1/2 ÷ 12/2 = 1 ÷ 12 = 1/12"
      ],
      "tol": 0.006,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 6. Should the answer be bigger or smaller than 1/2?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 1,
+      "why": "Dividing by a number bigger than 1 splits 1/2 into smaller parts."
+     },
      "ref": 1133
     },
     {
@@ -2896,11 +3352,21 @@
      ],
      "steps": [
       "(3/5) ÷ 4 = 3/5 × 1/4",
-      "= 3/20 hour."
+      "= 3/20 hour.",
+      "Another way, same-size pieces: 3/5 ÷ 20/5 = 3 ÷ 20 = 3/20"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 4. Should the answer be bigger or smaller than 3/5?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 1,
+      "why": "Dividing by a number bigger than 1 splits 3/5 into smaller parts."
+     },
      "ref": 1134
     },
     {
@@ -2915,11 +3381,21 @@
      ],
      "steps": [
       "(3/5) ÷ 3 = 3/5 × 1/3",
-      "= 1/5 hour."
+      "= 1/5 hour.",
+      "Another way, same-size pieces: 3/5 ÷ 15/5 = 3 ÷ 15 = 1/5"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 3. Should the answer be bigger or smaller than 3/5?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 1,
+      "why": "Dividing by a number bigger than 1 splits 3/5 into smaller parts."
+     },
      "ref": 1135
     },
     {
@@ -2934,11 +3410,21 @@
      ],
      "steps": [
       "(5/6) ÷ 4 = 5/6 × 1/4",
-      "= 5/24 hour."
+      "= 5/24 hour.",
+      "Another way, same-size pieces: 5/6 ÷ 24/6 = 5 ÷ 24 = 5/24"
      ],
      "tol": 0.006,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 4. Should the answer be bigger or smaller than 5/6?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 1,
+      "why": "Dividing by a number bigger than 1 splits 5/6 into smaller parts."
+     },
      "ref": 1136
     },
     {
@@ -2953,11 +3439,21 @@
      ],
      "steps": [
       "(3/4) ÷ 6 = 3/4 × 1/6",
-      "= 1/8 hour."
+      "= 1/8 hour.",
+      "Another way, same-size pieces: 3/4 ÷ 24/4 = 3 ÷ 24 = 1/8"
      ],
      "tol": 1e-09,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 6. Should the answer be bigger or smaller than 3/4?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 1,
+      "why": "Dividing by a number bigger than 1 splits 3/4 into smaller parts."
+     },
      "ref": 1137
     },
     {
@@ -2972,11 +3468,21 @@
      ],
      "steps": [
       "(5/6) ÷ 5 = 5/6 × 1/5",
-      "= 1/6 hour."
+      "= 1/6 hour.",
+      "Another way, same-size pieces: 5/6 ÷ 30/6 = 5 ÷ 30 = 1/6"
      ],
      "tol": 0.006,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 5. Should the answer be bigger or smaller than 5/6?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 1,
+      "why": "Dividing by a number bigger than 1 splits 5/6 into smaller parts."
+     },
      "ref": 1138
     },
     {
@@ -2991,11 +3497,21 @@
      ],
      "steps": [
       "(5/6) ÷ 3 = 5/6 × 1/3",
-      "= 5/18 hour."
+      "= 5/18 hour.",
+      "Another way, same-size pieces: 5/6 ÷ 18/6 = 5 ÷ 18 = 5/18"
      ],
      "tol": 0.006,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 3. Should the answer be bigger or smaller than 5/6?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 1,
+      "why": "Dividing by a number bigger than 1 splits 5/6 into smaller parts."
+     },
      "ref": 1139
     },
     {
@@ -3010,11 +3526,21 @@
      ],
      "steps": [
       "(5/6) ÷ 6 = 5/6 × 1/6",
-      "= 5/36 hour."
+      "= 5/36 hour.",
+      "Another way, same-size pieces: 5/6 ÷ 36/6 = 5 ÷ 36 = 5/36"
      ],
      "tol": 0.006,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 6. Should the answer be bigger or smaller than 5/6?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 1,
+      "why": "Dividing by a number bigger than 1 splits 5/6 into smaller parts."
+     },
      "ref": 1140
     },
     {
@@ -3029,11 +3555,21 @@
      ],
      "steps": [
       "(2/3) ÷ 4 = 2/3 × 1/4",
-      "= 1/6 hour."
+      "= 1/6 hour.",
+      "Another way, same-size pieces: 2/3 ÷ 12/3 = 2 ÷ 12 = 1/6"
      ],
      "tol": 0.006,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 4. Should the answer be bigger or smaller than 2/3?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 1,
+      "why": "Dividing by a number bigger than 1 splits 2/3 into smaller parts."
+     },
      "ref": 1141
     },
     {
@@ -3048,11 +3584,21 @@
      ],
      "steps": [
       "(2/3) ÷ 6 = 2/3 × 1/6",
-      "= 1/9 hour."
+      "= 1/9 hour.",
+      "Another way, same-size pieces: 2/3 ÷ 18/3 = 2 ÷ 18 = 1/9"
      ],
      "tol": 0.006,
      "table": null,
      "graph": null,
+     "sense": {
+      "q": "You divided by 6. Should the answer be bigger or smaller than 2/3?",
+      "options": [
+       "Bigger",
+       "Smaller"
+      ],
+      "correct": 1,
+      "why": "Dividing by a number bigger than 1 splits 2/3 into smaller parts."
+     },
      "ref": 1142
     }
    ],

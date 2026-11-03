@@ -5,7 +5,7 @@
   "example": "14 × 1.5 = 14 + 7 = 21     18 × 2.5 = 36 + 9 = 45",
   "why": "1.5 is 1 and a half, so you take one copy of the number and half of another copy. Same for 2.5: two copies and a half.",
   "workbookSection": "Unit 2: Lessons 2.4 and 2.8 (y = kx and scale)",
-  "unlockOrder": 7,
+  "unlockOrder": 8,
   "templates": [
     {
       "id": "x15",

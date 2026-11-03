@@ -5,7 +5,7 @@
   "example": "156 ÷ 4 = 78 ÷ 2 = 39     240 ÷ 8 = 120 → 60 → 30",
   "why": "4 = 2 × 2 and 8 = 2 × 2 × 2, so dividing by 4 or 8 is dividing by 2 two or three times. Halving is the easiest division there is.",
   "workbookSection": "Unit 2: Lesson 2.1 (unit rates)",
-  "unlockOrder": 6,
+  "unlockOrder": 7,
   "templates": [
     {
       "id": "h4",

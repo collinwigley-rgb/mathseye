@@ -5,7 +5,7 @@
   "example": "12 ÷ 0.25 = 12 × 4 = 48     7 ÷ 0.5 = 14",
   "why": "Dividing by a small piece gives more pieces. Think of coins: how many quarters are in $1?",
   "workbookSection": "Unit 2: Lessons 2.1 and 2.4 (unit rates)",
-  "unlockOrder": 8,
+  "unlockOrder": 9,
   "templates": [
     {
       "id": "dd5",

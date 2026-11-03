@@ -24,7 +24,8 @@ Every problem shows a tiny `#number` in its bottom-right corner. When the owner 
 - **1001-4999**: study guide practice problems and their "new numbers" variants. Registry `content/units/unit-2/refs.json` is append-only: a number never changes meaning; retired problems stay on file.
 - **5001+**: real worksheet problems (private registry `mathseye-content/problems/refs.json`).
 - **MathFacts cards** show `#<template-id>-<seed>` (e.g. `#bench-dec-48213`): regenerate with `GENERATORS[template.generator](seeded(seed), template.params)`.
-- Answer entry accepts numbers, mixed numbers, decimals, and expressions like `(3/4)/(1/2)` (standard precedence).
+- Answer entry: only a plain number (3/2, 1 1/2, 1.5) earns credit. An expression like `(3/4)/(1/2)` is treated as "right setup" with no credit, so she must do the arithmetic. Missing parentheses get a tip.
+- Fraction-division problems carry a second method (same-size pieces) in their steps and a "Quick check" (bigger or smaller?) after solving.
 
 ## Before every push (minimize mistakes)
 `npm run check:all` (types, unit tests, color contrast + generated-file sync, independent re-solve of practice variants),

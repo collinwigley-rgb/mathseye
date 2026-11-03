@@ -3,7 +3,15 @@ import random
 from fractions import Fraction as F
 from unit2_problems import D, fmt, money
 
+import math
 GENS = {}
+def pieces_line(a, c):
+    """Second way to divide fractions: same-size pieces (common denominator). a / c with a, c as Fractions."""
+    a, c = F(a), F(c); L = math.lcm(a.denominator, c.denominator); x, y = a * L, c * L
+    return f"Another way, same-size pieces: {int(x)}/{L} ÷ {int(y)}/{L} = {int(x)} ÷ {int(y)} = {mix(a / c)}"
+def sense(div_text, start_text, bigger):
+    return dict(q=f"You divided by {div_text}. Should the answer be bigger or smaller than {start_text}?", options=["Bigger", "Smaller"], correct=0 if bigger else 1,
+                why=(f"{div_text} is less than 1, so you are counting how many small pieces fit, and that is more than {start_text}." if bigger else f"Dividing by a number bigger than 1 splits {start_text} into smaller parts."))
 def gen(pid):
     def deco(fn): GENS[pid] = fn; return fn
     return deco
@@ -92,19 +100,19 @@ def _(r):
     amt = "a whole" if a == 1 else f"{mix(a)} of a"
     return numv(f"{thing[1]} {amt} {thing[0]} in {c}/{d} minute. How many {thing[2]} per minute?", q,
       ["Per minute: what has to be 1?",f"Divide: ({mix(a)}) ÷ ({c}/{d}).",f"Keep, change, flip: {mix(a)} × {d}/{c}."],
-      [f"({mix(a)}) ÷ ({c}/{d}) = {mix(a)} × {d}/{c}", f"= {mix(q)}", f"That is {mix(q)} {thing[2]} per minute."], frac=True, unit=f"{thing[2]} per minute")
+      [f"({mix(a)}) ÷ ({c}/{d}) = {mix(a)} × {d}/{c}", f"= {mix(q)}", f"That is {mix(q)} {thing[2]} per minute.", pieces_line(a, F(c, d))], frac=True, unit=f"{thing[2]} per minute", sense=sense(f"{c}/{d}", mix(a), True))
 @gen("U2-09")
 def _(r):
     s = r.randint(4,30); d = r.choice([6,8,10,12]); dist = F(s, d)
     return numv(f"A cyclist rides {mix(dist)} {'miles' if dist > 1 else 'mile'} in 1/{d} hour. What is the speed in miles per hour?", s,
       ["Miles per hour: hours go on the bottom.",f"({mix(dist)}) ÷ (1/{d})","Flip the 1/%d and cancel." % d],
-      [f"({mix(dist)}) ÷ (1/{d}) = {mix(dist)} × {d}", f"= {s}", f"{s} miles per hour."], unit="mph")
+      [f"({mix(dist)}) ÷ (1/{d}) = {mix(dist)} × {d}", f"= {s}", f"{s} miles per hour.", pieces_line(dist, F(1, d))], unit="mph", sense=sense(f"1/{d}", mix(dist), True))
 @gen("U2-10")
 def _(r):
     a, b = r.choice([(1,2),(2,3),(3,4),(1,3),(1,4)]); t = r.randint(15,50); cal = a*t; per = b*t; n = r.randint(2,4); food = r.choice(["cereal","granola","oatmeal","trail mix"])
     return numv(f"There are {cal} Calories in {a}/{b} cup of {food}. How many Calories are in {n} cups?", per*n,
       ["Find Calories in 1 cup first.",f"{cal} ÷ {a}/{b} = {cal} × {b}/{a}.",f"Then multiply by {n} cups."],
-      [f"{cal} ÷ {a}/{b} = {cal} × {b}/{a} = {per} Calories per cup.", f"{per} × {n} = {per*n}"], unit="Calories")
+      [f"{cal} ÷ {a}/{b} = {cal} × {b}/{a} = {per} Calories per cup.", f"{per} × {n} = {per*n}", pieces_line(F(cal), F(a, b))], unit="Calories", sense=sense(f"{a}/{b}", f"{cal}", True))
 @gen("U2-11")
 def _(r):
     while True:
@@ -119,13 +127,13 @@ def _(r):
     P = r.choice([8,12,16,20,24]); a, b = r.choice([(1,2),(1,4),(3,4)]); x = r.choice([F(9,4),F(5,2),F(7,4),F(3,2),F(11,4)]); miles = P*F(a,b)
     return numv(f"On a map, {a}/{b} inch = {fmt(miles)} miles. How many real miles is {mix(x)} inches on the map?", P*x,
       ["Find miles for ONE inch first.",f"{fmt(miles)} ÷ {a}/{b} = {fmt(miles)} × {b}/{a}.",f"Then multiply by {mix(x)}."],
-      [f"{fmt(miles)} ÷ {a}/{b} = {P} miles per inch.", f"{P} × {mix(x)} = {fmt(P*x)}"], unit="miles")
+      [f"{fmt(miles)} ÷ {a}/{b} = {P} miles per inch.", f"{P} × {mix(x)} = {fmt(P*x)}", pieces_line(miles, F(a, b))], unit="miles", sense=sense(f"{a}/{b}", f"{fmt(miles)}", True))
 @gen("U2-13")
 def _(r):
     a, b = r.choice([(2,3),(3,4),(1,2),(5,6),(3,5)]); n = r.choice([3,4,5,6,8]); q = F(a,b)/n; thing = r.choice(["parts","cookies","cards","beads"])
     return numv(f"A machine makes {n} {thing} in {a}/{b} hour. How many hours does ONE take? (Fraction or decimal.)", q,
       [f"Hours per one: {thing} go on the bottom.",f"({a}/{b}) ÷ {n}",f"Dividing by {n} is multiplying by 1/{n}."],
-      [f"({a}/{b}) ÷ {n} = {a}/{b} × 1/{n}", f"= {mix(q)} hour."], show=f"{mix(q)} hour", frac=True)
+      [f"({a}/{b}) ÷ {n} = {a}/{b} × 1/{n}", f"= {mix(q)} hour.", pieces_line(F(a, b), F(n))], show=f"{mix(q)} hour", frac=True, sense=sense(f"{n}", f"{a}/{b}", False))
 # ================================================================ 2.3
 def table_problem(r, force=None):
     k = D(r.choice(["3.5","2.5","4","6","1.5","0.75","5.5","2.4","7"])); xs = [F(v) for v in r.choice([[2,4,6,8],[3,6,9,12],[5,10,15,20],[1,2,3,4],[4,8,12,16]])]

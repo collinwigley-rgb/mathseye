@@ -5,7 +5,7 @@
   "example": "240 ÷ 5 = 480 ÷ 10 = 48     300 ÷ 25 = 1200 ÷ 100 = 12",
   "why": "5 is half of 10, so dividing by 5 is the same as doubling and dividing by 10. The same idea works for 25 (a quarter of 100) and 50 (half of 100).",
   "workbookSection": "Unit 2: Lesson 2.1 (finding unit prices)",
-  "unlockOrder": 5,
+  "unlockOrder": 6,
   "templates": [
     {
       "id": "d5",

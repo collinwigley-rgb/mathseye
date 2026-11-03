@@ -5,7 +5,7 @@
   "example": "5.6 ÷ 10 = 0.56    0.3 × 100 = 30",
   "why": "Our number system is built on tens. Multiplying by 10 makes every digit worth ten times more, so each digit shifts one place left of the decimal point, which looks like the point moving right.",
   "workbookSection": "Decimals; Unit 2 money and rate problems",
-  "unlockOrder": 3,
+  "unlockOrder": 4,
   "templates": [
     {
       "id": "dec-mul",

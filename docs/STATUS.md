@@ -23,6 +23,7 @@
 - [x] Fun pass: member-name color chips (rounded squares), two-tone accents, glow + sparkle dust, star burst on wins (respects reduced motion)
 - [x] Reference numbers on every problem (#1001+ practice, #5001+ worksheet, #template-seed for MathFacts); answer entry accepts expressions and has ( ) keys
 - [x] Original charm icons on the member chips (moon, sun, cloud, leaf, heart, butterfly)
+- [x] Fraction division reinforcement: setup is not an answer, same-size-pieces second method, bigger/smaller quick check, flip-and-cancel unlocks 3rd in MathFacts
 - [ ] Assign the six seasonal palettes to members (owner to say which is whose)
 - [ ] Unit 3: upload weekly PDFs, build sheets as they come
 - [ ] Phase 2: Beat the Calculator, Test Mode, spot-the-trick and estimate cards, PIN for grown-ups, more tricks

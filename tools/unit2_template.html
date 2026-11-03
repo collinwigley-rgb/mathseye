@@ -112,7 +112,11 @@ function evalExpr(src){ let s = String(src).replace(/[−–]/g,"-").replace(/[�
 const answerVal = (v) => { const x = parseNum(v); return isNaN(x) ? evalExpr(v) : x; };
 const isExpr = (v) => isNaN(parseNum(v)) && !isNaN(evalExpr(v));
 function fmtVal(x){ if (Math.abs(x - Math.round(x)) < 1e-9) return String(Math.round(x)); for (let d = 2; d <= 12; d++) { const n = x * d; if (Math.abs(n - Math.round(n)) < 1e-9) { const w = Math.floor(Math.abs(n) / d), r = Math.abs(Math.round(n)) - w * d; return (x < 0 ? "-" : "") + (w ? w + " " : "") + r + "/" + d; } } return String(+x.toFixed(4)); }
-const isRight = (p, v) => p.kind === "choice" ? v === p.correct : Math.abs(answerVal(v) - p.answer) <= (p.tol || 1e-9);
+const isRight = (p, v) => p.kind === "choice" ? v === p.correct : Math.abs(parseNum(v) - p.answer) <= (p.tol || 1e-9);   // a plain number only
+const isSetup = (p, v) => p.kind !== "choice" && isExpr(v) && Math.abs(evalExpr(v) - p.answer) <= (p.tol || 1e-9);   // the problem written out: right idea, not an answer yet
+const SETUP_MSG = "That's the right setup. Now work it out and type just the number.";
+function senseCard(s){ const el = $(`<div class="say"><b>Quick check</b><p style="margin:6px 0 10px">${esc(s.q)}</p><div class="row">${s.options.map((o, i) => `<button class="btn" data-i="${i}">${esc(o)}</button>`).join("")}</div><p class="sres" style="margin:10px 0 0" aria-live="polite"></p></div>`);
+  el.querySelector(".row").onclick = e => { const b = e.target.closest("button"); if (!b) return; const ok = +b.dataset.i === s.correct; el.querySelector(".sres").textContent = (ok ? "Yes. " : "Not quite. ") + s.why; }; return el; }
 const exprNote = (p, v, right) => { if (p.kind === "choice" || !isExpr(v)) return ""; if (right) return `That works out to ${fmtVal(answerVal(v))}. `; return (!/[()]/.test(v) && (String(v).match(/\//g) || []).length >= 2) ? "Tip: put each fraction in parentheses, like (3/4)/(1/2). " : ""; };
 function graphSVG(g){ const W=380,H=270,L=46,B=38,T=14,R=18,pw=W-L-R,ph=H-T-B,X=v=>L+v/g.xmax*pw,Y=v=>T+ph-v/g.ymax*ph; let s=`<svg class="g" viewBox="0 0 ${W} ${H}" role="img" aria-label="A graph">`;
   for(let i=0;i<=g.xmax;i++) s+=`<line class="gr" x1="${X(i)}" y1="${T}" x2="${X(i)}" y2="${T+ph}"/><text x="${X(i)}" y="${T+ph+18}" text-anchor="middle">${i}</text>`;
@@ -184,7 +188,7 @@ mission(){ const m = save.mission; if (!m || m.i >= m.ids.length) return VIEWS.s
     nud.innerHTML = p.hints.slice(0, res.hints).map(h => `<li class="say">${esc(h)}</li>`).join(""); act.innerHTML = "";
     if (!solved) {
       if (p.kind === "choice") { const o = $(`<div class="opts">${p.options.map((t,i)=>`<button aria-pressed="${st.pick===i}" data-i="${i}">${esc(t)}</button>`).join("")}</div>`); o.onclick = e => { const b = e.target.closest("button"); if (b) { st.pick = +b.dataset.i; draw(); } }; inp.append(o); }
-      else { inp.append($(`<div class="answer" aria-live="polite">${st.input ? esc(st.input) : '<span class="ph">Tap the numbers below</span>'}</div>`), $(`<p class="tip">Type a number like 3/4 or 1 1/2. An expression like (3/4)/(1/2) works too.</p>`));
+      else { inp.append($(`<div class="answer" aria-live="polite">${st.input ? esc(st.input) : '<span class="ph">Tap the numbers below</span>'}</div>`), $(`<p class="tip">Type a number like 3/4 or 1 1/2. Use ( ) to write the setup first if it helps.</p>`));
         const keys = ["7","8","9","⌫","4","5","6","−","1","2","3","/","0",".","(",")","␣"]; const pad = $(`<div class="pad">${keys.map(k=>`<button data-k="${k}" class="${k==='␣'?'sp':''}" aria-label="${k==='⌫'?'Delete':k==='␣'?'Space':k==='−'?'Minus':k==='('?'Open bracket':k===')'?'Close bracket':k}">${k==="␣"?"space":k}</button>`).join("")}<button class="go" data-k="go">Check</button></div>`);
         pad.onclick = e => { const b = e.target.closest("button"); if (!b) return; const k = b.dataset.k; if (k === "go") return check(st.input); st.input = k==="⌫" ? st.input.slice(0,-1) : (st.input.length < 14 ? st.input + (k==="␣" ? " " : k) : st.input); draw(); }; inp.append(pad); }
       const row = $(`<div class="row"></div>`);
@@ -196,13 +200,14 @@ mission(){ const m = save.mission; if (!m || m.i >= m.ids.length) return VIEWS.s
       const row = $(`<div class="row"></div>`); const nx = $(`<button class="btn primary big">${m.i+1 < m.ids.length ? "Next problem" : "Finish mission"}</button>`); nx.onclick = () => { m.i++; S.cur = null; persist(); go("mission"); }; row.append(nx);
       const sb = $(`<button class="btn quiet">${st.steps?"Hide the steps":"See how it works"}</button>`); sb.onclick = () => { st.steps = !st.steps; draw(); }; row.append(sb); act.append(row);
       const nr = $(`<div class="row"></div>`); const nw = $(`<button class="btn ghost">Try a new one like this</button>`); nw.onclick = freshOne; nr.append(nw); act.append(nr);
-      const hb = $(`<div class="row"></div>`); const w = $(`<button class="btn ghost">Why am I learning this?</button>`); w.onclick = () => openSheet("why", p); const u = $(`<button class="btn ghost">What does this use?</button>`); u.onclick = () => openSheet("deps", p); hb.append(w, u); act.append(hb); }
+      const hb = $(`<div class="row"></div>`); const w = $(`<button class="btn ghost">Why am I learning this?</button>`); w.onclick = () => openSheet("why", p); const u = $(`<button class="btn ghost">What does this use?</button>`); u.onclick = () => openSheet("deps", p); hb.append(w, u); act.append(hb); if (p.sense) act.append(senseCard(p.sense)); }
     if (st.steps) act.append($(`<div class="say"><b>How it works</b><ol class="steps">${p.steps.map(s=>`<li>${esc(s)}</li>`).join("")}</ol><p style="margin:0"><b>Answer:</b> ${esc(p.show)}</p></div>`));
   };
   function helpMenu(p){ const bg = $(`<div class="sheetbg"><div class="sheet pop" role="dialog" aria-modal="true" aria-label="Help"><h2>Need something else?</h2><button class="btn" id="w">Why am I learning this?</button><button class="btn" id="u">What does this use?</button><button class="btn primary" id="c">Back to the problem</button></div></div>`);
     const root = document.getElementById("sheet"); root.innerHTML = ""; root.append(bg); const shut = () => { root.innerHTML = ""; }; bg.onclick = e => { if (e.target === bg) shut(); };
     bg.querySelector("#c").onclick = shut; bg.querySelector("#w").onclick = () => openSheet("why", p); bg.querySelector("#u").onclick = () => openSheet("deps", p); bg.querySelector("#c").focus(); }
   function check(v){ if (v === null || v === "" || v === undefined) { st.msg = p.kind==="choice" ? "Pick an answer first." : "Type an answer first."; st.win = false; return draw(); }
+    if (isSetup(p, v)) { st.win = false; st.msg = SETUP_MSG; st.input = ""; return draw(); }
     res.tries++; if (isRight(p, v)) { res.done = true; const clean = res.tries === 1 && res.hints === 0; if (st.v < 0) { save.solved[p.id] = true; if (clean) save.clean[p.id] = true; } bump(); persist(); st.win = true; st.msg = exprNote(p, v, true) + (clean ? "You did that on your own. " + WIN[(m.i*2)%WIN.length] : WIN[(m.i*2+1)%WIN.length]); S.cur = st; render(); burst(document.querySelector(".say.win")); return; }
     st.win = false; st.msg = exprNote(p, v, false) + "Not quite yet. Try again, or tap I'm stuck."; st.input = ""; st.shake = true; persist(); render(); }
   const solvedNow = res.done; if (solvedNow && !st.msg) { st.win = true; st.msg = "Got it!"; }

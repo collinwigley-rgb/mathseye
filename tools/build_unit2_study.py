@@ -3,7 +3,7 @@
 import json, pathlib, sys, re
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from unit2_problems import PROBS
-from unit2_variants import variants
+from unit2_variants import variants, sense, pieces_line
 from brand_themes import theme_css, brands_json, members_json, icons_json, SWATCH_CSS, FUN_CSS, BURST_JS
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SCR = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else pathlib.Path("/tmp")
@@ -94,11 +94,16 @@ def ref_for(pid, vi, obj):
     if (pid, h) not in _index:
         n = reg["next"]; reg["next"] += 1; reg["items"][str(n)] = {"id": pid, "v": vi, "h": h, "text": obj["text"][:90]}; _index[(pid, h)] = n
     return _index[(pid, h)]
+from fractions import Fraction as F
+BASE_SENSE = {"U2-08": ("1/2", "3/4", True), "U2-09": ("1/12", "5/6", True), "U2-10": ("2/3", "120", True), "U2-12": ("3/8", "6", True), "U2-13": ("5", "2/3", False)}
 out = []
 for p in PROBS:
     q = {k: v for k, v in p.items()}
     q["why_focus"] = FOCUS[p["sub"]]; q["deps"] = deps(p)
     if q["kind"] == "num": q["tol"] = 0.006 if nonterm(q["answer"]) else 1e-9
+    if p["id"] in BASE_SENSE:
+        q["sense"] = sense(*BASE_SENSE[p["id"]])
+        if p["id"] == "U2-08": q["steps"] = q["steps"] + [pieces_line(F(3, 4), F(1, 2))]
     vs = variants(p["id"])
     _sig = lambda o: (o["text"], str(o.get("table")), str(o.get("graph")), str(o.get("options")), o["show"])
     vs = [v for v in vs if _sig(v) != _sig(q)]   # "Try a new one" must never repeat the original
