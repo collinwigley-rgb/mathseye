@@ -27,7 +27,7 @@ export interface Db {
 }
 
 export const fresh = (): Db => ({
-  settings: { startedOn: Date.now(), introducedTricks: [], manuallyUnlocked: [] },
+  settings: { startedOn: Date.now(), introducedTricks: [], manuallyUnlocked: [], currentUnit: 2, factsMode: 'unit' },
   cards: {},
   attempts: [],
   sessions: [],
@@ -36,7 +36,7 @@ export const fresh = (): Db => ({
 export function load(): Db {
   try {
     const raw = localStorage.getItem(KEY);
-    if (raw) return { ...fresh(), ...JSON.parse(raw) };
+    if (raw) { const saved = JSON.parse(raw); return { ...fresh(), ...saved, settings: { ...fresh().settings, ...saved.settings } }; }
   } catch {
     /* private mode or corrupted: start fresh */
   }

@@ -35,5 +35,8 @@
         "{x} ÷ {p} = {ans}. The decimal slid {k} place{s} left."
       ]
     }
+  ],
+  "units": [
+    2
   ]
 }

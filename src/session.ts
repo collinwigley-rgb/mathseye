@@ -6,8 +6,16 @@ import { today } from './store';
 export const SESSION_MS = 20 * 60 * 1000;
 const UNLOCK_EVERY = 2 * DAY; // about three new tricks a week (parent can unlock sooner)
 
+/** Tricks for the current MathFacts mode: this unit's facts, or every fact. */
+export function tricksFor(db: Db): typeof TRICKS {
+  if ((db.settings.factsMode ?? 'unit') === 'general') return TRICKS;
+  const unit = db.settings.currentUnit ?? 2;
+  const list = TRICKS.filter((t) => t.units?.includes(unit));
+  return list.length ? list : TRICKS;
+}
+
 export function unlockedTricks(db: Db, now = Date.now()): string[] {
-  return TRICKS.filter(
+  return tricksFor(db).filter(
     (t, i) => db.settings.manuallyUnlocked.includes(t.id) || now >= db.settings.startedOn + i * UNLOCK_EVERY
   ).map((t) => t.id);
 }
@@ -24,7 +32,8 @@ const seed = () => Math.floor(Math.random() * 2 ** 31);
 export function buildQueue(db: Db, now = Date.now()): QueueItem[] {
   const q: QueueItem[] = [];
   const learned = db.settings.introducedTricks;
-  const learnedTemplates = Object.keys(TEMPLATES).filter((id) => learned.includes(TEMPLATES[id].trick.id));
+  const modeIds = new Set(tricksFor(db).map((t) => t.id));
+  const learnedTemplates = Object.keys(TEMPLATES).filter((id) => learned.includes(TEMPLATES[id].trick.id) && modeIds.has(TEMPLATES[id].trick.id));
 
   // 1. Warm-up: due review cards (about 3 min)
   const due = learnedTemplates

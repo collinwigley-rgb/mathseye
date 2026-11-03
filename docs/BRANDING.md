@@ -15,3 +15,6 @@ The band's logo or wordmark artwork, photos, song titles, lyrics, member names, 
 ## Where it lives
 `public/icon.svg` (+ PNGs), `src/Mark.tsx`, tokens in `src/styles.css` and `tools/unit2_template.html`.
 Keep calm: no flashing, sound off, animations respect reduced motion.
+
+## Color schemes
+The student can pick one of seven schemes (Classic plus six seasonal palettes). Full values, sources, and contrast results: `docs/COLOR-SCHEMES.md` (generated from `tools/brand_themes.py`).

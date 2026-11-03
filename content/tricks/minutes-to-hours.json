@@ -19,5 +19,8 @@
         "{m} minutes = {ans} hour"
       ]
     }
+  ],
+  "units": [
+    2
   ]
 }

@@ -11707,6 +11707,11 @@
    "plain": "Break the story into steps and answer everything asked.",
    "origin": "Grade 6"
   },
+  "integer-ops": {
+   "name": "Integer operations",
+   "plain": "Add, subtract, multiply, and divide positive and negative numbers.",
+   "origin": "Unit 1"
+  },
   "unit-rate": {
    "name": "Unit rates",
    "plain": "How much for exactly ONE.",

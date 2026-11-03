@@ -103,3 +103,36 @@ describe('every trick in content/tricks is well-formed', () => {
     }
   });
 });
+
+// ---------------------------------------------------------------- hub: MathFacts modes + color schemes
+import { tricksFor, unlockedTricks } from './session';
+import { fresh } from './store';
+import { BRANDS } from './brand';
+
+describe('MathFacts modes', () => {
+  it('unit mode shows only this unit\'s tricks; general shows all', () => {
+    const db = fresh();
+    expect(db.settings.factsMode).toBe('unit');
+    const unit = tricksFor(db);
+    expect(unit.length).toBeGreaterThan(0);
+    expect(unit.every((t) => t.units?.includes(2))).toBe(true);
+    db.settings.factsMode = 'general';
+    expect(tricksFor(db)).toHaveLength(TRICKS.length);
+    expect(TRICKS.length).toBeGreaterThan(unit.length);
+  });
+  it('the first unit trick is unlocked right away and later ones are not', () => {
+    const db = fresh(), first = tricksFor(db)[0].id;
+    expect(unlockedTricks(db, db.settings.startedOn)).toEqual([first]);
+  });
+  it('an old saved settings object without the new fields still works', () => {
+    const db = fresh(); delete db.settings.factsMode; delete db.settings.currentUnit;
+    expect(tricksFor(db).length).toBeGreaterThan(0);
+  });
+});
+
+describe('color schemes', () => {
+  it('have unique ids and valid hex colors', () => {
+    expect(new Set(BRANDS.map((b) => b.id)).size).toBe(BRANDS.length);
+    for (const b of BRANDS) { expect(b.bg).toMatch(/^#[0-9a-f]{6}$/i); expect(b.accent).toMatch(/^#[0-9a-f]{6}$/i); }
+  });
+});

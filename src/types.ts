@@ -17,6 +17,8 @@ export interface Trick {
   why: string;
   workbookSection: string;
   unlockOrder: number;
+  /** Units this trick is tuned for. Empty or missing = general facts only. */
+  units?: number[];
   templates: CardTemplate[];
 }
 
@@ -59,4 +61,6 @@ export interface Settings {
   startedOn: number;
   introducedTricks: string[];
   manuallyUnlocked: string[];
+  currentUnit?: number;
+  factsMode?: 'unit' | 'general';
 }

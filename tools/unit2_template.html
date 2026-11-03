@@ -64,14 +64,19 @@ svg.g{width:100%;max-width:400px;height:auto}.g .ax{stroke:var(--muted);stroke-w
 .res{display:flex;flex-direction:column;gap:10px}.res .it{background:var(--panel2);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:4px;font-size:17px}.ok{color:var(--good);font-weight:600}.rv{color:var(--accent);font-weight:600}
 .timer{font-family:var(--display);font-size:64px;text-align:center;font-variant-numeric:tabular-nums}
 @media (prefers-reduced-motion:no-preference){.pop{animation:pop .35s ease-out}@keyframes pop{from{transform:scale(.97)}}.shake{animation:shk .4s}@keyframes shk{20%,60%{transform:translateX(-7px)}40%,80%{transform:translateX(7px)}}.nudges li{animation:fadein .3s}@keyframes fadein{from{opacity:0;transform:translateY(5px)}}}
-.logo{display:flex;align-items:center;gap:12px;color:var(--accent)}.wm{font-family:var(--display);font-weight:800;letter-spacing:.2em;font-size:17px}
+a.logo{text-decoration:none}.logo{display:flex;align-items:center;gap:12px;color:var(--accent)}.wm{font-family:var(--display);font-weight:800;letter-spacing:.2em;font-size:17px}
 .dots i{border:0;border-radius:0;width:18px;height:18px;background:var(--line);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
 .dots i{background:var(--muted);opacity:.35}.dots i.on{background:var(--accent);opacity:1}.dots i.now{background:var(--accent);opacity:1;width:24px;height:24px}
 .say.win::before{content:"\2726 ";color:var(--good)}
+/*BRAND-THEMES*/
 </style>
 <div id="app"></div><div id="sheet"></div>
 <script>
 const DATA = __DATA__;
+const BRANDS = __BRANDS__;
+const getBrand = () => { try { const v = localStorage.getItem("mathseye.brand"); if (BRANDS.some(b => b.id === v)) return v; } catch(e) {} return "classic"; };
+const applyBrand = (id) => { document.documentElement.dataset.brand = id; };
+applyBrand(getBrand());
 const KEY = "mathseye.unit2.study.v2";
 let save = {solved:{}, clean:{}, mission:null, day:{d:"", n:0}};
 try { Object.assign(save, JSON.parse(localStorage.getItem(KEY) || "{}")); } catch(e) {}
@@ -132,10 +137,11 @@ function buildMission(lesson){
 const VIEWS = {
 home(){ const total = probs.length, done = probs.filter(p => save.solved[p.id]).length, m = save.mission, resume = m && m.i < m.ids.length;
   const inApp = location.pathname.indexOf("/study/") > -1;
-  const el = $(`<div class="stack">${inApp ? '<div class="top"><a class="btn quiet" href="../">← Home</a></div>' : ""}<header><div class="logo">${MARK}<span class="wm">MATHSEYE</span></div><h1 style="margin-top:14px">Unit 2 Study Guide</h1><p class="sub">Pick one thing. Small steps count.</p></header>
+  const el = $(`<div class="stack">${inApp ? '<div class="top"><a class="btn quiet" href="../">← Home</a></div>' : ""}<header>${inApp ? `<a class="logo" href="../" aria-label="Mathseye, back to home">${MARK}<span class="wm">MATHSEYE</span></a>` : `<div class="logo">${MARK}<span class="wm">MATHSEYE</span></div>`}<h1 style="margin-top:14px">Unit 2 Study Guide</h1><p class="sub">Pick one thing. Small steps count.</p></header>
   <section class="card"><p class="eyebrow">Tonight's set</p><h2>${resume ? `Keep going: ${m.i} of ${m.ids.length} done` : "Ready for a quick mission?"}</h2><p class="lead muted">5 problems, about 10 minutes. You can stop anytime.</p><button class="btn primary big" id="go">${resume ? "Keep going" : "Start a mission"}</button></section>
   <div class="grid3"><button class="btn" id="pick">Pick a lesson</button><button class="btn" id="cheat">Cheat sheet</button><button class="btn" id="test">Practice test</button></div>
-  <section class="card"><p class="eyebrow">Your progress</p><div class="bar" aria-hidden="true"><i style="width:${done/total*100}%"></i></div><p class="lead" style="margin:0">${done} of ${total} solved${save.day.d===today()&&save.day.n?` · ${save.day.n} today`:""}</p></section><div id="rs"></div></div>`);
+  <section class="card"><p class="eyebrow">Your progress</p><div class="bar" aria-hidden="true"><i style="width:${done/total*100}%"></i></div><p class="lead" style="margin:0">${done} of ${total} solved${save.day.d===today()&&save.day.n?` · ${save.day.n} today`:""}</p></section><section class="card"><p class="eyebrow">Your color</p><div class="swatches" id="sw"></div></section><div id="rs"></div></div>`);
+  const drawSw = () => { const box = el.querySelector("#sw"); box.innerHTML = ""; BRANDS.forEach(b => { const s = $(`<button class="sw" aria-pressed="${getBrand()===b.id}"><i style="background:linear-gradient(135deg,${b.bg} 0 45%,${b.accent} 45% 100%)"></i><span>${esc(b.label)}</span></button>`); s.onclick = () => { try { localStorage.setItem("mathseye.brand", b.id); } catch(e) {} applyBrand(b.id); drawSw(); }; box.append(s); }); }; drawSw();
   const rs = el.querySelector("#rs"), askReset = () => { rs.innerHTML = ""; const b = $(`<button class="btn quiet">Reset my progress</button>`); b.onclick = () => { rs.innerHTML = ""; const box = $(`<div class="card"><p class="lead" style="margin:0">Erase all your progress in this study guide? This can't be undone.</p><div class="row"><button class="btn primary" id="yes">Yes, reset</button><button class="btn" id="no">Keep my progress</button></div></div>`); box.querySelector("#yes").onclick = () => { save = {solved:{}, clean:{}, mission:null, day:{d:"", n:0}}; persist(); S.cur = null; S.test = null; go("home"); }; box.querySelector("#no").onclick = askReset; rs.append(box); box.querySelector("#no").focus(); }; rs.append(b); }; askReset();
   el.querySelector("#go").onclick = () => resume ? go("mission") : buildMission(null);
   el.querySelector("#pick").onclick = () => go("picker"); el.querySelector("#cheat").onclick = () => go("cheat", {open:null}); el.querySelector("#test").onclick = () => go("testIntro"); return el; },

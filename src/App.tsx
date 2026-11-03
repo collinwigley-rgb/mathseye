@@ -3,16 +3,17 @@ import { TEMPLATES, TRICKS } from './content';
 import { checkAnswer } from './answer';
 import { GENERATORS, fill, seeded, MINUS } from './generators';
 import { newCard, review } from './scheduler';
-import { buildQueue, confidence, SESSION_MS, streak, trickMastery, unlockedTricks } from './session';
+import { buildQueue, confidence, SESSION_MS, streak, trickMastery, tricksFor, unlockedTricks } from './session';
 import Mark from './Mark';
+import { BRANDS, getBrand, setBrand, type BrandId } from './brand';
 import { fresh, load, save, today, type Db, type QueueItem } from './store';
 import type { Problem } from './types';
 
-type Screen = 'home' | 'session' | 'summary' | 'grownups';
+type Screen = 'hub' | 'facts' | 'session' | 'summary' | 'grownups';
 
 export default function App() {
   const [db, setDb] = useState<Db>(load);
-  const [screen, setScreen] = useState<Screen>('home');
+  const [screen, setScreen] = useState<Screen>('hub');
   const update = (fn: (d: Db) => Db) => setDb((d) => { const n = fn(d); save(n); return n; });
 
   const startOrResume = () => {
@@ -29,20 +30,61 @@ export default function App() {
   };
 
   if (screen === 'session' && db.inProgress)
-    return <SessionView db={db} update={update} onPause={() => setScreen('home')} onDone={() => setScreen('summary')} />;
-  if (screen === 'summary') return <Summary db={db} onHome={() => setScreen('home')} />;
-  if (screen === 'grownups') return <Grownups db={db} update={update} onBack={() => setScreen('home')} />;
-  return <Home db={db} onStart={startOrResume} onGrownups={() => setScreen('grownups')} />;
+    return <SessionView db={db} update={update} onPause={() => setScreen('facts')} onDone={() => setScreen('summary')} />;
+  if (screen === 'summary') return <Summary db={db} onHome={() => setScreen('facts')} />;
+  if (screen === 'grownups') return <Grownups db={db} update={update} onBack={() => setScreen('hub')} />;
+  if (screen === 'facts') return <FactsHome db={db} update={update} onStart={startOrResume} onBack={() => setScreen('hub')} />;
+  return <Hub db={db} onFacts={() => setScreen('facts')} onGrownups={() => setScreen('grownups')} />;
 }
 
-function Home({ db, onStart, onGrownups }: { db: Db; onStart: () => void; onGrownups: () => void }) {
+function ColorPicker() {
+  const [cur, setCur] = useState<BrandId>(getBrand());
+  return (
+    <div className="swatches" role="group" aria-label="Color theme">
+      {BRANDS.map((b) => (
+        <button key={b.id} className="sw" aria-pressed={cur === b.id} onClick={() => { setBrand(b.id); setCur(b.id); }}>
+          <i style={{ background: `linear-gradient(135deg, ${b.bg} 0 45%, ${b.accent} 45% 100%)` }} />
+          <span>{b.label}</span>
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function Hub({ db, onFacts, onGrownups }: { db: Db; onFacts: () => void; onGrownups: () => void }) {
+  const unit = db.settings.currentUnit ?? 2;
+  return (
+    <main className="home">
+      <div className="logo"><Mark size={84} /><h1 className="brand">MATHSEYE<small>Unit {unit}</small></h1></div>
+      <nav className="tiles3" aria-label="Sections">
+        <button className="tile3" onClick={onFacts}><b>MathFacts</b><span>Quick mental-math practice</span></button>
+        <a className="tile3" href={`./study/unit-${unit}.html`}><b>Study Guide</b><span>Get ready for the test</span></a>
+        <a className="tile3" href={`./homework/unit-${unit}.html`}><b>Unit Homework</b><span>Help with this unit's worksheets</span></a>
+      </nav>
+      <section className="pick"><p className="eyebrow">Your color</p><ColorPicker /></section>
+      <button className="link" onClick={onGrownups}>Grown-ups</button>
+    </main>
+  );
+}
+
+function FactsHome({ db, update, onStart, onBack }: { db: Db; update: (fn: (d: Db) => Db) => void; onStart: () => void; onBack: () => void }) {
   const resumable = db.inProgress?.date === today();
   const doneTonight = db.sessions.some((s) => s.date === today() && s.endedAt);
   const conf = confidence(db);
-  const learned = TRICKS.filter((t) => db.settings.introducedTricks.includes(t.id));
+  const mode = db.settings.factsMode ?? 'unit';
+  const unit = db.settings.currentUnit ?? 2;
+  const ids = new Set(tricksFor(db).map((t) => t.id));
+  const learned = TRICKS.filter((t) => db.settings.introducedTricks.includes(t.id) && ids.has(t.id));
+  const setMode = (m: 'unit' | 'general') => update((d) => ({ ...d, settings: { ...d.settings, factsMode: m } }));
   return (
     <main className="home">
-      <div className="logo"><Mark size={84} /><h1 className="brand">MATHSEYE<small>Math Facts</small></h1></div>
+      <div className="top"><button className="link" onClick={onBack}>← Home</button></div>
+      <button className="logobtn" onClick={onBack} aria-label="Mathseye, back to home"><Mark size={56} /><span className="wm">MATHSEYE</span></button>
+      <h1 className="h1">MathFacts</h1>
+      <div className="seg" role="group" aria-label="Which facts">
+        <button aria-pressed={mode === 'unit'} onClick={() => setMode('unit')}>Unit {unit} facts</button>
+        <button aria-pressed={mode === 'general'} onClick={() => setMode('general')}>Any facts</button>
+      </div>
       <div className="stats">
         <div><b>{streak(db)}</b><span>night streak</span></div>
         <div><b>{conf === null ? '—' : Math.round(conf * 100) + '%'}</b><span>mental math confidence</span></div>
@@ -51,7 +93,6 @@ function Home({ db, onStart, onGrownups }: { db: Db; onStart: () => void; onGrow
       <button className="primary big" onClick={onStart}>
         {resumable ? 'Keep going' : doneTonight ? 'Bonus session' : "Start tonight's session"}
       </button>
-      <a className="ghostlink" href="./study/unit-2.html">Unit 2 Study Guide</a>
       {learned.length > 0 && (
         <section className="mastery">
           <h2>Your tricks</h2>
@@ -66,7 +107,6 @@ function Home({ db, onStart, onGrownups }: { db: Db; onStart: () => void; onGrow
           })}
         </section>
       )}
-      <button className="link" onClick={onGrownups}>Grown-ups</button>
     </main>
   );
 }
