@@ -267,12 +267,13 @@ function PracticeCard({ item, db, update, onNext }: {
 
   const next = () => {
     // After "Show me", follow right away with a similar card she solves alone.
-    const similar = clueLevel >= 4 ? { ...item, seed: Math.floor(Math.random() * 2 ** 31), stage: item.stage } : undefined;
+    const similar = clueLevel >= 4 ? { ...item, seed: Math.floor(Math.random() * 90000) + 10000, stage: item.stage } : undefined;
     onNext(similar);
   };
 
   return (
     <section className="practice">
+      <span className="ref" aria-label="Reference number">#{item.templateId}-{item.seed}</span>
       <div className="problem-area">
         {showName && <p className="eyebrow">{trick.name}</p>}
         <div className={`problem ${shake ? 'shake' : ''} ${solved ? 'solved' : ''}`}>{problem.prompt}</div>

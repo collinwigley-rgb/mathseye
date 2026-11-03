@@ -45,7 +45,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1001
     },
     {
      "kind": "num",
@@ -64,7 +65,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1002
     },
     {
      "kind": "num",
@@ -83,7 +85,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1003
     },
     {
      "kind": "num",
@@ -102,7 +105,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1004
     },
     {
      "kind": "num",
@@ -121,7 +125,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1005
     },
     {
      "kind": "num",
@@ -140,7 +145,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1006
     },
     {
      "kind": "num",
@@ -159,7 +165,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1007
     },
     {
      "kind": "num",
@@ -178,7 +185,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1008
     },
     {
      "kind": "num",
@@ -197,7 +205,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1009
     },
     {
      "kind": "num",
@@ -216,9 +225,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1010
     }
-   ]
+   ],
+   "ref": 1011
   },
   {
    "sub": "2.1",
@@ -272,7 +283,8 @@
       "The smaller price per ounce is the better deal."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1012
     },
     {
      "kind": "choice",
@@ -294,7 +306,8 @@
       "The smaller price per ounce is the better deal."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1013
     },
     {
      "kind": "choice",
@@ -316,7 +329,8 @@
       "The smaller price per ounce is the better deal."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1014
     },
     {
      "kind": "choice",
@@ -338,7 +352,8 @@
       "The smaller price per ounce is the better deal."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1015
     },
     {
      "kind": "choice",
@@ -360,7 +375,8 @@
       "The smaller price per ounce is the better deal."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1016
     },
     {
      "kind": "choice",
@@ -382,7 +398,8 @@
       "The smaller price per ounce is the better deal."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1017
     },
     {
      "kind": "choice",
@@ -404,7 +421,8 @@
       "The smaller price per ounce is the better deal."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1018
     },
     {
      "kind": "choice",
@@ -426,7 +444,8 @@
       "The smaller price per ounce is the better deal."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1019
     },
     {
      "kind": "choice",
@@ -448,7 +467,8 @@
       "The smaller price per ounce is the better deal."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1020
     },
     {
      "kind": "choice",
@@ -470,9 +490,11 @@
       "The smaller price per ounce is the better deal."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1021
     }
-   ]
+   ],
+   "ref": 1022
   },
   {
    "sub": "2.1",
@@ -517,7 +539,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1023
     },
     {
      "kind": "num",
@@ -535,7 +558,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1024
     },
     {
      "kind": "num",
@@ -553,7 +577,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1025
     },
     {
      "kind": "num",
@@ -571,7 +596,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1026
     },
     {
      "kind": "num",
@@ -589,7 +615,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1027
     },
     {
      "kind": "num",
@@ -607,7 +634,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1028
     },
     {
      "kind": "num",
@@ -625,7 +653,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1029
     },
     {
      "kind": "num",
@@ -643,7 +672,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1030
     },
     {
      "kind": "num",
@@ -661,7 +691,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1031
     },
     {
      "kind": "num",
@@ -679,9 +710,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1032
     }
-   ]
+   ],
+   "ref": 1033
   },
   {
    "sub": "2.1",
@@ -725,7 +758,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1034
     },
     {
      "kind": "num",
@@ -743,7 +777,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1035
     },
     {
      "kind": "num",
@@ -761,7 +796,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1036
     },
     {
      "kind": "num",
@@ -779,7 +815,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1037
     },
     {
      "kind": "num",
@@ -797,7 +834,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1038
     },
     {
      "kind": "num",
@@ -815,7 +853,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1039
     },
     {
      "kind": "num",
@@ -833,7 +872,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1040
     },
     {
      "kind": "num",
@@ -851,7 +891,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1041
     },
     {
      "kind": "num",
@@ -869,7 +910,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1042
     },
     {
      "kind": "num",
@@ -887,9 +929,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1043
     }
-   ]
+   ],
+   "ref": 1044
   },
   {
    "sub": "2.1",
@@ -937,7 +981,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1045
     },
     {
      "kind": "num",
@@ -956,7 +1001,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1046
     },
     {
      "kind": "num",
@@ -975,7 +1021,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1047
     },
     {
      "kind": "num",
@@ -994,7 +1041,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1048
     },
     {
      "kind": "num",
@@ -1013,7 +1061,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1049
     },
     {
      "kind": "num",
@@ -1032,7 +1081,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1050
     },
     {
      "kind": "num",
@@ -1051,7 +1101,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1051
     },
     {
      "kind": "num",
@@ -1070,7 +1121,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1052
     },
     {
      "kind": "num",
@@ -1089,7 +1141,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1053
     },
     {
      "kind": "num",
@@ -1108,9 +1161,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1054
     }
-   ]
+   ],
+   "ref": 1055
   },
   {
    "sub": "2.1",
@@ -1158,7 +1213,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1056
     },
     {
      "kind": "num",
@@ -1177,7 +1233,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1057
     },
     {
      "kind": "num",
@@ -1196,7 +1253,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1058
     },
     {
      "kind": "num",
@@ -1215,7 +1273,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1059
     },
     {
      "kind": "num",
@@ -1234,7 +1293,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1060
     },
     {
      "kind": "num",
@@ -1253,7 +1313,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1061
     },
     {
      "kind": "num",
@@ -1272,7 +1333,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1062
     },
     {
      "kind": "num",
@@ -1291,7 +1353,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1063
     },
     {
      "kind": "num",
@@ -1310,7 +1373,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1064
     },
     {
      "kind": "num",
@@ -1329,9 +1393,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1065
     }
-   ]
+   ],
+   "ref": 1066
   },
   {
    "sub": "2.1",
@@ -1385,7 +1451,8 @@
       "More words per minute is faster."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1067
     },
     {
      "kind": "choice",
@@ -1407,7 +1474,8 @@
       "More words per minute is faster."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1068
     },
     {
      "kind": "choice",
@@ -1429,7 +1497,8 @@
       "More words per minute is faster."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1069
     },
     {
      "kind": "choice",
@@ -1451,7 +1520,8 @@
       "More words per minute is faster."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1070
     },
     {
      "kind": "choice",
@@ -1473,7 +1543,8 @@
       "More words per minute is faster."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1071
     },
     {
      "kind": "choice",
@@ -1495,7 +1566,8 @@
       "More words per minute is faster."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1072
     },
     {
      "kind": "choice",
@@ -1517,7 +1589,8 @@
       "More words per minute is faster."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1073
     },
     {
      "kind": "choice",
@@ -1539,7 +1612,8 @@
       "More words per minute is faster."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1074
     },
     {
      "kind": "choice",
@@ -1561,7 +1635,8 @@
       "More words per minute is faster."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1075
     },
     {
      "kind": "choice",
@@ -1583,9 +1658,11 @@
       "More words per minute is faster."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1076
     }
-   ]
+   ],
+   "ref": 1077
   },
   {
    "sub": "2.2",
@@ -1633,7 +1710,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1078
     },
     {
      "kind": "num",
@@ -1652,7 +1730,8 @@
      ],
      "tol": 0.006,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1079
     },
     {
      "kind": "num",
@@ -1671,7 +1750,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1080
     },
     {
      "kind": "num",
@@ -1690,7 +1770,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1081
     },
     {
      "kind": "num",
@@ -1709,7 +1790,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1082
     },
     {
      "kind": "num",
@@ -1728,7 +1810,8 @@
      ],
      "tol": 0.006,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1083
     },
     {
      "kind": "num",
@@ -1747,7 +1830,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1084
     },
     {
      "kind": "num",
@@ -1766,7 +1850,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1085
     },
     {
      "kind": "num",
@@ -1785,7 +1870,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1086
     },
     {
      "kind": "num",
@@ -1804,9 +1890,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1087
     }
-   ]
+   ],
+   "ref": 1088
   },
   {
    "sub": "2.2",
@@ -1854,7 +1942,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1089
     },
     {
      "kind": "num",
@@ -1873,7 +1962,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1090
     },
     {
      "kind": "num",
@@ -1892,7 +1982,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1091
     },
     {
      "kind": "num",
@@ -1911,7 +2002,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1092
     },
     {
      "kind": "num",
@@ -1930,7 +2022,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1093
     },
     {
      "kind": "num",
@@ -1949,7 +2042,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1094
     },
     {
      "kind": "num",
@@ -1968,7 +2062,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1095
     },
     {
      "kind": "num",
@@ -1987,7 +2082,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1096
     },
     {
      "kind": "num",
@@ -2006,7 +2102,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1097
     },
     {
      "kind": "num",
@@ -2025,9 +2122,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1098
     }
-   ]
+   ],
+   "ref": 1099
   },
   {
    "sub": "2.2",
@@ -2074,7 +2173,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1100
     },
     {
      "kind": "num",
@@ -2092,7 +2192,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1101
     },
     {
      "kind": "num",
@@ -2110,7 +2211,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1102
     },
     {
      "kind": "num",
@@ -2128,7 +2230,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1103
     },
     {
      "kind": "num",
@@ -2146,7 +2249,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1104
     },
     {
      "kind": "num",
@@ -2164,7 +2268,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1105
     },
     {
      "kind": "num",
@@ -2182,7 +2287,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1106
     },
     {
      "kind": "num",
@@ -2200,7 +2306,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1107
     },
     {
      "kind": "num",
@@ -2218,7 +2325,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1108
     },
     {
      "kind": "num",
@@ -2236,9 +2344,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1109
     }
-   ]
+   ],
+   "ref": 1110
   },
   {
    "sub": "2.2",
@@ -2293,7 +2403,8 @@
       "Bigger speed wins."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1111
     },
     {
      "kind": "choice",
@@ -2315,7 +2426,8 @@
       "Bigger speed wins."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1112
     },
     {
      "kind": "choice",
@@ -2337,7 +2449,8 @@
       "Bigger speed wins."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1113
     },
     {
      "kind": "choice",
@@ -2359,7 +2472,8 @@
       "Bigger speed wins."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1114
     },
     {
      "kind": "choice",
@@ -2381,7 +2495,8 @@
       "Bigger speed wins."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1115
     },
     {
      "kind": "choice",
@@ -2403,7 +2518,8 @@
       "Bigger speed wins."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1116
     },
     {
      "kind": "choice",
@@ -2425,7 +2541,8 @@
       "Bigger speed wins."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1117
     },
     {
      "kind": "choice",
@@ -2447,7 +2564,8 @@
       "Bigger speed wins."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1118
     },
     {
      "kind": "choice",
@@ -2469,7 +2587,8 @@
       "Bigger speed wins."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1119
     },
     {
      "kind": "choice",
@@ -2491,9 +2610,11 @@
       "Bigger speed wins."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1120
     }
-   ]
+   ],
+   "ref": 1121
   },
   {
    "sub": "2.2",
@@ -2540,7 +2661,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1122
     },
     {
      "kind": "num",
@@ -2558,7 +2680,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1123
     },
     {
      "kind": "num",
@@ -2576,7 +2699,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1124
     },
     {
      "kind": "num",
@@ -2594,7 +2718,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1125
     },
     {
      "kind": "num",
@@ -2612,7 +2737,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1126
     },
     {
      "kind": "num",
@@ -2630,7 +2756,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1127
     },
     {
      "kind": "num",
@@ -2648,7 +2775,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1128
     },
     {
      "kind": "num",
@@ -2666,7 +2794,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1129
     },
     {
      "kind": "num",
@@ -2684,7 +2813,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1130
     },
     {
      "kind": "num",
@@ -2702,9 +2832,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1131
     }
-   ]
+   ],
+   "ref": 1132
   },
   {
    "sub": "2.2",
@@ -2749,7 +2881,8 @@
      ],
      "tol": 0.006,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1133
     },
     {
      "kind": "num",
@@ -2767,7 +2900,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1134
     },
     {
      "kind": "num",
@@ -2785,7 +2919,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1135
     },
     {
      "kind": "num",
@@ -2803,7 +2938,8 @@
      ],
      "tol": 0.006,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1136
     },
     {
      "kind": "num",
@@ -2821,7 +2957,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1137
     },
     {
      "kind": "num",
@@ -2839,7 +2976,8 @@
      ],
      "tol": 0.006,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1138
     },
     {
      "kind": "num",
@@ -2857,7 +2995,8 @@
      ],
      "tol": 0.006,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1139
     },
     {
      "kind": "num",
@@ -2875,7 +3014,8 @@
      ],
      "tol": 0.006,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1140
     },
     {
      "kind": "num",
@@ -2893,7 +3033,8 @@
      ],
      "tol": 0.006,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1141
     },
     {
      "kind": "num",
@@ -2911,9 +3052,11 @@
      ],
      "tol": 0.006,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1142
     }
-   ]
+   ],
+   "ref": 1143
   },
   {
    "sub": "2.3",
@@ -2991,7 +3134,8 @@
        "28 4/5"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1144
     },
     {
      "kind": "choice",
@@ -3025,7 +3169,8 @@
        "5 1/2"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1145
     },
     {
      "kind": "choice",
@@ -3059,7 +3204,8 @@
        "17 1/2"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1146
     },
     {
      "kind": "choice",
@@ -3093,7 +3239,8 @@
        "56"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1147
     },
     {
      "kind": "choice",
@@ -3127,7 +3274,8 @@
        "28"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1148
     },
     {
      "kind": "choice",
@@ -3161,7 +3309,8 @@
        "64"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1149
     },
     {
      "kind": "choice",
@@ -3195,7 +3344,8 @@
        "15"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1150
     },
     {
      "kind": "choice",
@@ -3229,7 +3379,8 @@
        "28"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1151
     },
     {
      "kind": "choice",
@@ -3263,7 +3414,8 @@
        "30"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1152
     },
     {
      "kind": "choice",
@@ -3297,9 +3449,11 @@
        "64"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1153
     }
-   ]
+   ],
+   "ref": 1154
   },
   {
    "sub": "2.3",
@@ -3377,7 +3531,8 @@
        "48"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1155
     },
     {
      "kind": "choice",
@@ -3411,7 +3566,8 @@
        "72"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1156
     },
     {
      "kind": "choice",
@@ -3445,7 +3601,8 @@
        "111"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1157
     },
     {
      "kind": "choice",
@@ -3479,7 +3636,8 @@
        "30 1/2"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1158
     },
     {
      "kind": "choice",
@@ -3513,7 +3671,8 @@
        "110"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1159
     },
     {
      "kind": "choice",
@@ -3547,7 +3706,8 @@
        "38 2/5"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1160
     },
     {
      "kind": "choice",
@@ -3581,7 +3741,8 @@
        "27 4/5"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1161
     },
     {
      "kind": "choice",
@@ -3615,7 +3776,8 @@
        "48"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1162
     },
     {
      "kind": "choice",
@@ -3649,7 +3811,8 @@
        "110"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1163
     },
     {
      "kind": "choice",
@@ -3683,9 +3846,11 @@
        "12"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1164
     }
-   ]
+   ],
+   "ref": 1165
   },
   {
    "sub": "2.3",
@@ -3754,7 +3919,8 @@
        "97 1/2"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1166
     },
     {
      "kind": "num",
@@ -3783,7 +3949,8 @@
        "15"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1167
     },
     {
      "kind": "num",
@@ -3812,7 +3979,8 @@
        "21 3/5"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1168
     },
     {
      "kind": "num",
@@ -3841,7 +4009,8 @@
        "15"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1169
     },
     {
      "kind": "num",
@@ -3870,7 +4039,8 @@
        "22 1/2"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1170
     },
     {
      "kind": "num",
@@ -3899,7 +4069,8 @@
        "14 2/5"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1171
     },
     {
      "kind": "num",
@@ -3928,7 +4099,8 @@
        "15"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1172
     },
     {
      "kind": "num",
@@ -3957,7 +4129,8 @@
        "48"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1173
     },
     {
      "kind": "num",
@@ -3986,7 +4159,8 @@
        "28 4/5"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1174
     },
     {
      "kind": "num",
@@ -4015,9 +4189,11 @@
        "40 1/2"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1175
     }
-   ]
+   ],
+   "ref": 1176
   },
   {
    "sub": "2.3",
@@ -4068,7 +4244,8 @@
       "So it IS proportional."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1177
     },
     {
      "kind": "choice",
@@ -4089,7 +4266,8 @@
       "There is a $5 starting fee, so it is NOT proportional."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1178
     },
     {
      "kind": "choice",
@@ -4110,7 +4288,8 @@
       "There is a $2 starting fee, so it is NOT proportional."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1179
     },
     {
      "kind": "choice",
@@ -4131,7 +4310,8 @@
       "There is a $4 starting fee, so it is NOT proportional."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1180
     },
     {
      "kind": "choice",
@@ -4152,7 +4332,8 @@
       "There is a $5 starting fee, so it is NOT proportional."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1181
     },
     {
      "kind": "choice",
@@ -4173,7 +4354,8 @@
       "There is a $2 starting fee, so it is NOT proportional."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1182
     },
     {
      "kind": "choice",
@@ -4194,7 +4376,8 @@
       "There is a $3 starting fee, so it is NOT proportional."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1183
     },
     {
      "kind": "choice",
@@ -4215,7 +4398,8 @@
       "There is a $3 starting fee, so it is NOT proportional."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1184
     },
     {
      "kind": "choice",
@@ -4236,7 +4420,8 @@
       "So it IS proportional."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1185
     },
     {
      "kind": "choice",
@@ -4257,9 +4442,11 @@
       "There is a $6 starting fee, so it is NOT proportional."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1186
     }
-   ]
+   ],
+   "ref": 1187
   },
   {
    "sub": "2.3",
@@ -4328,7 +4515,8 @@
        "36"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1188
     },
     {
      "kind": "num",
@@ -4357,7 +4545,8 @@
        "18"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1189
     },
     {
      "kind": "num",
@@ -4386,7 +4575,8 @@
        "30"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1190
     },
     {
      "kind": "num",
@@ -4415,7 +4605,8 @@
        "30"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1191
     },
     {
      "kind": "num",
@@ -4444,7 +4635,8 @@
        "12"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1192
     },
     {
      "kind": "num",
@@ -4473,7 +4665,8 @@
        "10"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1193
     },
     {
      "kind": "num",
@@ -4502,7 +4695,8 @@
        "30"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1194
     },
     {
      "kind": "num",
@@ -4531,7 +4725,8 @@
        "12"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1195
     },
     {
      "kind": "num",
@@ -4560,7 +4755,8 @@
        "6"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1196
     },
     {
      "kind": "num",
@@ -4589,9 +4785,11 @@
        "18"
       ]
      },
-     "graph": null
+     "graph": null,
+     "ref": 1197
     }
-   ]
+   ],
+   "ref": 1198
   },
   {
    "sub": "2.3",
@@ -4643,7 +4841,8 @@
       "The other: 4/1 = 4, 6/2 = 3, 8/3 ≈ 2.67. Not the same."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1199
     },
     {
      "kind": "choice",
@@ -4664,7 +4863,8 @@
       "The other: 3/1 = 3, 6/2 = 3, 9/3 ≈ 3.00. Not the same."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1200
     },
     {
      "kind": "choice",
@@ -4685,7 +4885,8 @@
       "The other: 5/1 = 5, 8/2 = 4, 11/3 ≈ 3.67. Not the same."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1201
     },
     {
      "kind": "choice",
@@ -4706,7 +4907,8 @@
       "The other: 4/1 = 4, 6/2 = 3, 8/3 ≈ 2.67. Not the same."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1202
     },
     {
      "kind": "choice",
@@ -4727,7 +4929,8 @@
       "The other: 2/1 = 2, 4/2 = 2, 6/3 ≈ 2.00. Not the same."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1203
     },
     {
      "kind": "choice",
@@ -4748,7 +4951,8 @@
       "The other: 5/1 = 5, 7/2 = 3.5, 9/3 ≈ 3.00. Not the same."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1204
     },
     {
      "kind": "choice",
@@ -4769,7 +4973,8 @@
       "The other: 5/1 = 5, 7/2 = 3.5, 9/3 ≈ 3.00. Not the same."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1205
     },
     {
      "kind": "choice",
@@ -4790,7 +4995,8 @@
       "The other: 4/1 = 4, 7/2 = 3.5, 10/3 ≈ 3.33. Not the same."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1206
     },
     {
      "kind": "choice",
@@ -4811,30 +5017,11 @@
       "The other: 2/1 = 2, 5/2 = 2.5, 8/3 ≈ 2.67. Not the same."
      ],
      "table": null,
-     "graph": null
-    },
-    {
-     "kind": "choice",
-     "text": "Which table is proportional?",
-     "options": [
-      "x: 1, 2, 3 and y: 3, 6, 9",
-      "x: 1, 2, 3 and y: 3, 5, 7"
-     ],
-     "correct": 0,
-     "show": "x: 1, 2, 3 and y: 3, 6, 9",
-     "hints": [
-      "Check y ÷ x for each table.",
-      "The proportional table gives the same number every time.",
-      "3, 6, 9 divided by 1, 2, 3."
-     ],
-     "steps": [
-      "Table with 3, 6, 9: 3/1 = 6/2 = 9/3 = 3. Always the same.",
-      "The other: 3/1 = 3, 5/2 = 2.5, 7/3 ≈ 2.33. Not the same."
-     ],
-     "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1207
     }
-   ]
+   ],
+   "ref": 1208
   },
   {
    "sub": "2.4",
@@ -4879,7 +5066,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1209
     },
     {
      "kind": "num",
@@ -4897,7 +5085,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1210
     },
     {
      "kind": "num",
@@ -4915,7 +5104,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1211
     },
     {
      "kind": "num",
@@ -4933,7 +5123,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1212
     },
     {
      "kind": "num",
@@ -4951,7 +5142,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1213
     },
     {
      "kind": "num",
@@ -4969,7 +5161,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1214
     },
     {
      "kind": "num",
@@ -4987,7 +5180,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1215
     },
     {
      "kind": "num",
@@ -5005,7 +5199,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1216
     },
     {
      "kind": "num",
@@ -5023,7 +5218,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1217
     },
     {
      "kind": "num",
@@ -5041,9 +5237,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1218
     }
-   ]
+   ],
+   "ref": 1219
   },
   {
    "sub": "2.4",
@@ -5089,7 +5287,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1220
     },
     {
      "kind": "num",
@@ -5107,7 +5306,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1221
     },
     {
      "kind": "num",
@@ -5125,7 +5325,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1222
     },
     {
      "kind": "num",
@@ -5143,7 +5344,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1223
     },
     {
      "kind": "num",
@@ -5161,7 +5363,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1224
     },
     {
      "kind": "num",
@@ -5179,7 +5382,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1225
     },
     {
      "kind": "num",
@@ -5197,7 +5401,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1226
     },
     {
      "kind": "num",
@@ -5215,7 +5420,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1227
     },
     {
      "kind": "num",
@@ -5233,7 +5439,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1228
     },
     {
      "kind": "num",
@@ -5251,9 +5458,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1229
     }
-   ]
+   ],
+   "ref": 1230
   },
   {
    "sub": "2.4",
@@ -5301,7 +5510,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1231
     },
     {
      "kind": "num",
@@ -5320,7 +5530,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1232
     },
     {
      "kind": "num",
@@ -5339,7 +5550,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1233
     },
     {
      "kind": "num",
@@ -5358,7 +5570,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1234
     },
     {
      "kind": "num",
@@ -5377,7 +5590,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1235
     },
     {
      "kind": "num",
@@ -5396,7 +5610,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1236
     },
     {
      "kind": "num",
@@ -5415,7 +5630,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1237
     },
     {
      "kind": "num",
@@ -5434,7 +5650,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1238
     },
     {
      "kind": "num",
@@ -5453,7 +5670,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1239
     },
     {
      "kind": "num",
@@ -5472,9 +5690,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1240
     }
-   ]
+   ],
+   "ref": 1241
   },
   {
    "sub": "2.4",
@@ -5520,7 +5740,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1242
     },
     {
      "kind": "num",
@@ -5538,7 +5759,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1243
     },
     {
      "kind": "num",
@@ -5556,7 +5778,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1244
     },
     {
      "kind": "num",
@@ -5574,7 +5797,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1245
     },
     {
      "kind": "num",
@@ -5592,7 +5816,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1246
     },
     {
      "kind": "num",
@@ -5610,7 +5835,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1247
     },
     {
      "kind": "num",
@@ -5628,7 +5854,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1248
     },
     {
      "kind": "num",
@@ -5646,7 +5873,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1249
     },
     {
      "kind": "num",
@@ -5664,7 +5892,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1250
     },
     {
      "kind": "num",
@@ -5682,9 +5911,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1251
     }
-   ]
+   ],
+   "ref": 1252
   },
   {
    "sub": "2.4",
@@ -5732,7 +5963,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1253
     },
     {
      "kind": "num",
@@ -5751,7 +5983,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1254
     },
     {
      "kind": "num",
@@ -5770,7 +6003,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1255
     },
     {
      "kind": "num",
@@ -5789,7 +6023,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1256
     },
     {
      "kind": "num",
@@ -5808,7 +6043,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1257
     },
     {
      "kind": "num",
@@ -5827,7 +6063,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1258
     },
     {
      "kind": "num",
@@ -5846,7 +6083,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1259
     },
     {
      "kind": "num",
@@ -5865,7 +6103,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1260
     },
     {
      "kind": "num",
@@ -5884,7 +6123,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1261
     },
     {
      "kind": "num",
@@ -5903,9 +6143,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1262
     }
-   ]
+   ],
+   "ref": 1263
   },
   {
    "sub": "2.4",
@@ -5962,7 +6204,8 @@
       "y = 3x is y = kx with k = 3."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1264
     },
     {
      "kind": "choice",
@@ -5986,7 +6229,8 @@
       "y = 6x is y = kx with k = 6."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1265
     },
     {
      "kind": "choice",
@@ -6010,7 +6254,8 @@
       "y = 0.4x is y = kx with k = 0.4."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1266
     },
     {
      "kind": "choice",
@@ -6034,7 +6279,8 @@
       "y = 0.4x is y = kx with k = 0.4."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1267
     },
     {
      "kind": "choice",
@@ -6058,7 +6304,8 @@
       "y = 0.5x is y = kx with k = 0.5."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1268
     },
     {
      "kind": "choice",
@@ -6082,7 +6329,8 @@
       "y = 3x is y = kx with k = 3."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1269
     },
     {
      "kind": "choice",
@@ -6106,7 +6354,8 @@
       "y = 6x is y = kx with k = 6."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1270
     },
     {
      "kind": "choice",
@@ -6130,7 +6379,8 @@
       "y = 0.4x is y = kx with k = 0.4."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1271
     },
     {
      "kind": "choice",
@@ -6154,7 +6404,8 @@
       "y = 0.5x is y = kx with k = 0.5."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1272
     },
     {
      "kind": "choice",
@@ -6178,9 +6429,11 @@
       "y = 0.4x is y = kx with k = 0.4."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1273
     }
-   ]
+   ],
+   "ref": 1274
   },
   {
    "sub": "2.4",
@@ -6226,7 +6479,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1275
     },
     {
      "kind": "num",
@@ -6244,7 +6498,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1276
     },
     {
      "kind": "num",
@@ -6262,7 +6517,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1277
     },
     {
      "kind": "num",
@@ -6280,7 +6536,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1278
     },
     {
      "kind": "num",
@@ -6298,7 +6555,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1279
     },
     {
      "kind": "num",
@@ -6316,7 +6574,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1280
     },
     {
      "kind": "num",
@@ -6334,7 +6593,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1281
     },
     {
      "kind": "num",
@@ -6352,7 +6612,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1282
     },
     {
      "kind": "num",
@@ -6370,7 +6631,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1283
     },
     {
      "kind": "num",
@@ -6388,9 +6650,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1284
     }
-   ]
+   ],
+   "ref": 1285
   },
   {
    "sub": "2.5",
@@ -6497,55 +6761,8 @@
         4
        ]
       ]
-     }
-    },
-    {
-     "kind": "choice",
-     "text": "Is this graph a proportional relationship?",
-     "options": [
-      "Yes",
-      "No"
-     ],
-     "correct": 0,
-     "show": "Yes",
-     "hints": [
-      "Two tests: is it straight? Does it go through (0, 0)?",
-      "Look at where the line starts.",
-      "It starts at the origin and it's straight."
-     ],
-     "steps": [
-      "The line is straight.",
-      "It passes through (0, 0).",
-      "Both tests pass, so it is proportional."
-     ],
-     "table": null,
-     "graph": {
-      "lines": [
-       {
-        "pts": [
-         [
-          0,
-          0
-         ],
-         [
-          4,
-          10
-         ]
-        ],
-        "label": ""
-       }
-      ],
-      "xmax": 5,
-      "ymax": 12,
-      "xl": "x",
-      "yl": "y",
-      "dots": [
-       [
-        4,
-        10
-       ]
-      ]
-     }
+     },
+     "ref": 1286
     },
     {
      "kind": "choice",
@@ -6593,7 +6810,8 @@
         12
        ]
       ]
-     }
+     },
+     "ref": 1288
     },
     {
      "kind": "choice",
@@ -6641,7 +6859,8 @@
         6
        ]
       ]
-     }
+     },
+     "ref": 1289
     },
     {
      "kind": "choice",
@@ -6689,9 +6908,11 @@
         8
        ]
       ]
-     }
+     },
+     "ref": 1290
     }
-   ]
+   ],
+   "ref": 1287
   },
   {
    "sub": "2.5",
@@ -6790,7 +7011,8 @@
         4
        ]
       ]
-     }
+     },
+     "ref": 1291
     },
     {
      "kind": "num",
@@ -6834,7 +7056,8 @@
         6.0
        ]
       ]
-     }
+     },
+     "ref": 1292
     },
     {
      "kind": "num",
@@ -6878,7 +7101,8 @@
         8
        ]
       ]
-     }
+     },
+     "ref": 1293
     },
     {
      "kind": "num",
@@ -6922,7 +7146,8 @@
         10.0
        ]
       ]
-     }
+     },
+     "ref": 1294
     },
     {
      "kind": "num",
@@ -6966,9 +7191,11 @@
         12
        ]
       ]
-     }
+     },
+     "ref": 1295
     }
-   ]
+   ],
+   "ref": 1296
   },
   {
    "sub": "2.5",
@@ -7044,57 +7271,6 @@
      "hints": [
       "Check both tests: straight? through (0, 0)?",
       "Where does the line cross the y-axis?",
-      "It starts at 3, not 0."
-     ],
-     "steps": [
-      "The line is straight, but it starts at (0, 3).",
-      "It does not pass through the origin, so it is NOT proportional."
-     ],
-     "table": null,
-     "graph": {
-      "lines": [
-       {
-        "pts": [
-         [
-          0,
-          3
-         ],
-         [
-          4,
-          11
-         ]
-        ],
-        "label": ""
-       }
-      ],
-      "xmax": 5,
-      "ymax": 12,
-      "xl": "x",
-      "yl": "y",
-      "dots": [
-       [
-        0,
-        3
-       ],
-       [
-        4,
-        11
-       ]
-      ]
-     }
-    },
-    {
-     "kind": "choice",
-     "text": "Is this graph a proportional relationship?",
-     "options": [
-      "Yes",
-      "No"
-     ],
-     "correct": 1,
-     "show": "No",
-     "hints": [
-      "Check both tests: straight? through (0, 0)?",
-      "Where does the line cross the y-axis?",
       "It starts at 2, not 0."
      ],
      "steps": [
@@ -7132,7 +7308,8 @@
         8
        ]
       ]
-     }
+     },
+     "ref": 1298
     },
     {
      "kind": "choice",
@@ -7183,7 +7360,8 @@
         10
        ]
       ]
-     }
+     },
+     "ref": 1299
     },
     {
      "kind": "choice",
@@ -7234,7 +7412,8 @@
         9
        ]
       ]
-     }
+     },
+     "ref": 1300
     },
     {
      "kind": "choice",
@@ -7285,7 +7464,8 @@
         10
        ]
       ]
-     }
+     },
+     "ref": 1301
     },
     {
      "kind": "choice",
@@ -7336,7 +7516,8 @@
         12
        ]
       ]
-     }
+     },
+     "ref": 1302
     },
     {
      "kind": "choice",
@@ -7387,7 +7568,8 @@
         7
        ]
       ]
-     }
+     },
+     "ref": 1303
     },
     {
      "kind": "choice",
@@ -7438,7 +7620,8 @@
         8
        ]
       ]
-     }
+     },
+     "ref": 1304
     },
     {
      "kind": "choice",
@@ -7489,9 +7672,11 @@
         9
        ]
       ]
-     }
+     },
+     "ref": 1305
     }
-   ]
+   ],
+   "ref": 1297
   },
   {
    "sub": "2.5",
@@ -7706,7 +7891,8 @@
       "xl": "x",
       "yl": "y",
       "dots": []
-     }
+     },
+     "ref": 1306
     },
     {
      "kind": "choice",
@@ -7808,109 +7994,8 @@
       "xl": "x",
       "yl": "y",
       "dots": []
-     }
-    },
-    {
-     "kind": "choice",
-     "text": "Is this graph a proportional relationship?",
-     "options": [
-      "Yes",
-      "No"
-     ],
-     "correct": 1,
-     "show": "No",
-     "hints": [
-      "Check both tests.",
-      "It does pass through (0, 0). Is it straight?",
-      "It bends upward."
-     ],
-     "steps": [
-      "It passes through (0, 0), but it is a curve, not a straight line.",
-      "Both tests must pass. So it is NOT proportional."
-     ],
-     "table": null,
-     "graph": {
-      "lines": [
-       {
-        "pts": [
-         [
-          0.0,
-          0.0
-         ],
-         [
-          0.25,
-          0.03125
-         ],
-         [
-          0.5,
-          0.125
-         ],
-         [
-          0.75,
-          0.28125
-         ],
-         [
-          1.0,
-          0.5
-         ],
-         [
-          1.25,
-          0.78125
-         ],
-         [
-          1.5,
-          1.125
-         ],
-         [
-          1.75,
-          1.53125
-         ],
-         [
-          2.0,
-          2.0
-         ],
-         [
-          2.25,
-          2.53125
-         ],
-         [
-          2.5,
-          3.125
-         ],
-         [
-          2.75,
-          3.78125
-         ],
-         [
-          3.0,
-          4.5
-         ],
-         [
-          3.25,
-          5.28125
-         ],
-         [
-          3.5,
-          6.125
-         ],
-         [
-          3.75,
-          7.03125
-         ],
-         [
-          4.0,
-          8.0
-         ]
-        ],
-        "label": ""
-       }
-      ],
-      "xmax": 5,
-      "ymax": 12,
-      "xl": "x",
-      "yl": "y",
-      "dots": []
-     }
+     },
+     "ref": 1307
     },
     {
      "kind": "choice",
@@ -8012,7 +8097,8 @@
       "xl": "x",
       "yl": "y",
       "dots": []
-     }
+     },
+     "ref": 1309
     },
     {
      "kind": "choice",
@@ -8114,7 +8200,8 @@
       "xl": "x",
       "yl": "y",
       "dots": []
-     }
+     },
+     "ref": 1310
     },
     {
      "kind": "choice",
@@ -8216,9 +8303,11 @@
       "xl": "x",
       "yl": "y",
       "dots": []
-     }
+     },
+     "ref": 1311
     }
-   ]
+   ],
+   "ref": 1308
   },
   {
    "sub": "2.5",
@@ -8264,7 +8353,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1312
     },
     {
      "kind": "num",
@@ -8282,7 +8372,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1313
     },
     {
      "kind": "num",
@@ -8300,7 +8391,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1314
     },
     {
      "kind": "num",
@@ -8318,7 +8410,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1315
     },
     {
      "kind": "num",
@@ -8336,7 +8429,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1316
     },
     {
      "kind": "num",
@@ -8354,7 +8448,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1317
     },
     {
      "kind": "num",
@@ -8372,7 +8467,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1318
     },
     {
      "kind": "num",
@@ -8390,7 +8486,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1319
     },
     {
      "kind": "num",
@@ -8408,7 +8505,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1320
     },
     {
      "kind": "num",
@@ -8426,9 +8524,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1321
     }
-   ]
+   ],
+   "ref": 1322
   },
   {
    "sub": "2.5",
@@ -8569,7 +8669,8 @@
         10.0
        ]
       ]
-     }
+     },
+     "ref": 1323
     },
     {
      "kind": "choice",
@@ -8634,7 +8735,8 @@
         6.0
        ]
       ]
-     }
+     },
+     "ref": 1324
     },
     {
      "kind": "choice",
@@ -8699,7 +8801,8 @@
         6.0
        ]
       ]
-     }
+     },
+     "ref": 1325
     },
     {
      "kind": "choice",
@@ -8764,7 +8867,8 @@
         4
        ]
       ]
-     }
+     },
+     "ref": 1326
     },
     {
      "kind": "choice",
@@ -8829,7 +8933,8 @@
         12
        ]
       ]
-     }
+     },
+     "ref": 1327
     },
     {
      "kind": "choice",
@@ -8894,7 +8999,8 @@
         8
        ]
       ]
-     }
+     },
+     "ref": 1328
     },
     {
      "kind": "choice",
@@ -8959,9 +9065,11 @@
         10.0
        ]
       ]
-     }
+     },
+     "ref": 1329
     }
-   ]
+   ],
+   "ref": 1330
   },
   {
    "sub": "2.6",
@@ -9008,7 +9116,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1331
     },
     {
      "kind": "num",
@@ -9027,7 +9136,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1332
     },
     {
      "kind": "num",
@@ -9046,7 +9156,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1333
     },
     {
      "kind": "num",
@@ -9065,7 +9176,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1334
     },
     {
      "kind": "num",
@@ -9084,7 +9196,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1335
     },
     {
      "kind": "num",
@@ -9103,7 +9216,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1336
     },
     {
      "kind": "num",
@@ -9122,7 +9236,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1337
     },
     {
      "kind": "num",
@@ -9141,7 +9256,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1338
     },
     {
      "kind": "num",
@@ -9160,7 +9276,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1339
     },
     {
      "kind": "num",
@@ -9179,9 +9296,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1340
     }
-   ]
+   ],
+   "ref": 1341
   },
   {
    "sub": "2.6",
@@ -9228,7 +9347,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1342
     },
     {
      "kind": "num",
@@ -9247,7 +9367,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1343
     },
     {
      "kind": "num",
@@ -9266,7 +9387,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1344
     },
     {
      "kind": "num",
@@ -9285,7 +9407,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1345
     },
     {
      "kind": "num",
@@ -9304,7 +9427,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1346
     },
     {
      "kind": "num",
@@ -9323,7 +9447,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1347
     },
     {
      "kind": "num",
@@ -9342,7 +9467,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1348
     },
     {
      "kind": "num",
@@ -9361,7 +9487,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1349
     },
     {
      "kind": "num",
@@ -9380,7 +9507,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1350
     },
     {
      "kind": "num",
@@ -9399,9 +9527,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1351
     }
-   ]
+   ],
+   "ref": 1352
   },
   {
    "sub": "2.6",
@@ -9449,7 +9579,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1353
     },
     {
      "kind": "num",
@@ -9468,7 +9599,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1354
     },
     {
      "kind": "num",
@@ -9487,7 +9619,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1355
     },
     {
      "kind": "num",
@@ -9506,7 +9639,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1356
     },
     {
      "kind": "num",
@@ -9525,7 +9659,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1357
     },
     {
      "kind": "num",
@@ -9544,7 +9679,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1358
     },
     {
      "kind": "num",
@@ -9563,7 +9699,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1359
     },
     {
      "kind": "num",
@@ -9582,7 +9719,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1360
     },
     {
      "kind": "num",
@@ -9601,7 +9739,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1361
     },
     {
      "kind": "num",
@@ -9620,9 +9759,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1362
     }
-   ]
+   ],
+   "ref": 1363
   },
   {
    "sub": "2.6",
@@ -9667,7 +9808,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1364
     },
     {
      "kind": "num",
@@ -9685,7 +9827,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1365
     },
     {
      "kind": "num",
@@ -9703,7 +9846,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1366
     },
     {
      "kind": "num",
@@ -9721,7 +9865,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1367
     },
     {
      "kind": "num",
@@ -9739,7 +9884,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1368
     },
     {
      "kind": "num",
@@ -9757,7 +9903,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1369
     },
     {
      "kind": "num",
@@ -9775,7 +9922,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1370
     },
     {
      "kind": "num",
@@ -9793,7 +9941,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1371
     },
     {
      "kind": "num",
@@ -9811,7 +9960,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1372
     },
     {
      "kind": "num",
@@ -9829,9 +9979,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1373
     }
-   ]
+   ],
+   "ref": 1374
   },
   {
    "sub": "2.6",
@@ -9879,7 +10031,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1375
     },
     {
      "kind": "num",
@@ -9898,7 +10051,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1376
     },
     {
      "kind": "num",
@@ -9917,7 +10071,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1377
     },
     {
      "kind": "num",
@@ -9936,7 +10091,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1378
     },
     {
      "kind": "num",
@@ -9955,7 +10111,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1379
     },
     {
      "kind": "num",
@@ -9974,7 +10131,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1380
     },
     {
      "kind": "num",
@@ -9993,7 +10151,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1381
     },
     {
      "kind": "num",
@@ -10012,7 +10171,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1382
     },
     {
      "kind": "num",
@@ -10031,7 +10191,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1383
     },
     {
      "kind": "num",
@@ -10050,9 +10211,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1384
     }
-   ]
+   ],
+   "ref": 1385
   },
   {
    "sub": "2.6",
@@ -10103,7 +10266,8 @@
       "There is a $6 starting fee, so it is NOT proportional."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1386
     },
     {
      "kind": "choice",
@@ -10124,7 +10288,8 @@
       "There is a $5 starting fee, so it is NOT proportional."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1387
     },
     {
      "kind": "choice",
@@ -10145,7 +10310,8 @@
       "No starting fee, so it IS proportional."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1388
     },
     {
      "kind": "choice",
@@ -10166,7 +10332,8 @@
       "No starting fee, so it IS proportional."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1389
     },
     {
      "kind": "choice",
@@ -10187,7 +10354,8 @@
       "There is a $4 starting fee, so it is NOT proportional."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1390
     },
     {
      "kind": "choice",
@@ -10208,7 +10376,8 @@
       "There is a $3 starting fee, so it is NOT proportional."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1391
     },
     {
      "kind": "choice",
@@ -10229,7 +10398,8 @@
       "There is a $3 starting fee, so it is NOT proportional."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1392
     },
     {
      "kind": "choice",
@@ -10250,7 +10420,8 @@
       "There is a $5 starting fee, so it is NOT proportional."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1393
     },
     {
      "kind": "choice",
@@ -10271,7 +10442,8 @@
       "There is a $3 starting fee, so it is NOT proportional."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1394
     },
     {
      "kind": "choice",
@@ -10292,9 +10464,11 @@
       "No starting fee, so it IS proportional."
      ],
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1395
     }
-   ]
+   ],
+   "ref": 1396
   },
   {
    "sub": "2.8",
@@ -10340,7 +10514,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1397
     },
     {
      "kind": "num",
@@ -10358,7 +10533,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1398
     },
     {
      "kind": "num",
@@ -10376,7 +10552,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1399
     },
     {
      "kind": "num",
@@ -10394,7 +10571,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1400
     },
     {
      "kind": "num",
@@ -10412,7 +10590,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1401
     },
     {
      "kind": "num",
@@ -10430,7 +10609,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1402
     },
     {
      "kind": "num",
@@ -10448,7 +10628,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1403
     },
     {
      "kind": "num",
@@ -10466,7 +10647,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1404
     },
     {
      "kind": "num",
@@ -10484,7 +10666,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1405
     },
     {
      "kind": "num",
@@ -10502,9 +10685,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1406
     }
-   ]
+   ],
+   "ref": 1407
   },
   {
    "sub": "2.8",
@@ -10550,7 +10735,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1408
     },
     {
      "kind": "num",
@@ -10568,7 +10754,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1409
     },
     {
      "kind": "num",
@@ -10586,7 +10773,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1410
     },
     {
      "kind": "num",
@@ -10604,7 +10792,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1411
     },
     {
      "kind": "num",
@@ -10622,7 +10811,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1412
     },
     {
      "kind": "num",
@@ -10640,7 +10830,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1413
     },
     {
      "kind": "num",
@@ -10658,7 +10849,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1414
     },
     {
      "kind": "num",
@@ -10676,7 +10868,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1415
     },
     {
      "kind": "num",
@@ -10694,7 +10887,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1416
     },
     {
      "kind": "num",
@@ -10712,9 +10906,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1417
     }
-   ]
+   ],
+   "ref": 1418
   },
   {
    "sub": "2.8",
@@ -10760,7 +10956,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1419
     },
     {
      "kind": "num",
@@ -10778,7 +10975,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1420
     },
     {
      "kind": "num",
@@ -10796,7 +10994,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1421
     },
     {
      "kind": "num",
@@ -10814,7 +11013,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1422
     },
     {
      "kind": "num",
@@ -10832,7 +11032,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1423
     },
     {
      "kind": "num",
@@ -10850,7 +11051,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1424
     },
     {
      "kind": "num",
@@ -10868,7 +11070,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1425
     },
     {
      "kind": "num",
@@ -10886,7 +11089,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1426
     },
     {
      "kind": "num",
@@ -10904,7 +11108,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1427
     },
     {
      "kind": "num",
@@ -10922,9 +11127,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1428
     }
-   ]
+   ],
+   "ref": 1429
   },
   {
    "sub": "2.8",
@@ -10970,7 +11177,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1430
     },
     {
      "kind": "num",
@@ -10988,7 +11196,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1431
     },
     {
      "kind": "num",
@@ -11006,7 +11215,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1432
     },
     {
      "kind": "num",
@@ -11024,7 +11234,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1433
     },
     {
      "kind": "num",
@@ -11042,7 +11253,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1434
     },
     {
      "kind": "num",
@@ -11060,7 +11272,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1435
     },
     {
      "kind": "num",
@@ -11078,7 +11291,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1436
     },
     {
      "kind": "num",
@@ -11096,7 +11310,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1437
     },
     {
      "kind": "num",
@@ -11114,7 +11329,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1438
     },
     {
      "kind": "num",
@@ -11132,9 +11348,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1439
     }
-   ]
+   ],
+   "ref": 1440
   },
   {
    "sub": "2.8",
@@ -11181,7 +11399,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1441
     },
     {
      "kind": "num",
@@ -11199,7 +11418,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1442
     },
     {
      "kind": "num",
@@ -11217,7 +11437,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1443
     },
     {
      "kind": "num",
@@ -11235,7 +11456,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1444
     },
     {
      "kind": "num",
@@ -11253,7 +11475,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1445
     },
     {
      "kind": "num",
@@ -11271,7 +11494,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1446
     },
     {
      "kind": "num",
@@ -11289,7 +11513,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1447
     },
     {
      "kind": "num",
@@ -11307,7 +11532,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1448
     },
     {
      "kind": "num",
@@ -11325,7 +11551,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1449
     },
     {
      "kind": "num",
@@ -11343,9 +11570,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1450
     }
-   ]
+   ],
+   "ref": 1451
   },
   {
    "sub": "2.8",
@@ -11390,7 +11619,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1452
     },
     {
      "kind": "num",
@@ -11407,24 +11637,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
-    },
-    {
-     "kind": "num",
-     "text": "Map scale: 1 in. = 25 miles. Two towns are 3 1/2 in. apart on the map. How many real miles apart are they?",
-     "answer": 87.5,
-     "show": "87.5 miles",
-     "hints": [
-      "Each inch stands for 25 miles.",
-      "3 1/2 = 3.5",
-      "25 × 3.5"
-     ],
-     "steps": [
-      "25 × 3.5 = 87.5 miles."
-     ],
-     "tol": 1e-09,
-     "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1453
     },
     {
      "kind": "num",
@@ -11441,7 +11655,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1455
     },
     {
      "kind": "num",
@@ -11458,7 +11673,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1456
     },
     {
      "kind": "num",
@@ -11475,7 +11691,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1457
     },
     {
      "kind": "num",
@@ -11492,7 +11709,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1458
     },
     {
      "kind": "num",
@@ -11509,7 +11727,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1459
     },
     {
      "kind": "num",
@@ -11526,7 +11745,8 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1460
     },
     {
      "kind": "num",
@@ -11543,9 +11763,11 @@
      ],
      "tol": 1e-09,
      "table": null,
-     "graph": null
+     "graph": null,
+     "ref": 1461
     }
-   ]
+   ],
+   "ref": 1454
   }
  ],
  "lessons": {

@@ -27,7 +27,7 @@ export function cardsForTrick(db: Db, trickId: string) {
 
 export const trickMastery = (db: Db, trickId: string) => masteryFraction(cardsForTrick(db, trickId));
 
-const seed = () => Math.floor(Math.random() * 2 ** 31);
+const seed = () => Math.floor(Math.random() * 90000) + 10000; // short on purpose: it shows as the card's reference number
 
 export function buildQueue(db: Db, now = Date.now()): QueueItem[] {
   const q: QueueItem[] = [];

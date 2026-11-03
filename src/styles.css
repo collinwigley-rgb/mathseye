@@ -142,3 +142,6 @@ button:active{transform:scale(.98)}
 .tile3:active { transform: scale(.985); }
 .answer { position: relative; }
 .picker { width: 100%; display: flex; flex-direction: column; gap: 14px; align-items: center; }
+
+.practice { position: relative; }
+.ref { position: absolute; right: 12px; bottom: 6px; font-size: 12px; letter-spacing: .05em; color: var(--muted); opacity: .7; user-select: text; -webkit-user-select: text; }

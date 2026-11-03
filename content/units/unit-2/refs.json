@@ -1,0 +1,2771 @@
+{
+ "next": 1462,
+ "items": {
+  "1001": {
+   "id": "U2-01",
+   "v": 0,
+   "h": "d979647c6b",
+   "text": "A 20-pack of granola bars costs $25.00. What is the cost of one granola bar (in dollars)?"
+  },
+  "1002": {
+   "id": "U2-01",
+   "v": 1,
+   "h": "38e600b5c6",
+   "text": "A 10-pack of stickers costs $12.50. What is the cost of one sticker (in dollars)?"
+  },
+  "1003": {
+   "id": "U2-01",
+   "v": 2,
+   "h": "dcf8ef47f4",
+   "text": "A 6-pack of pencils costs $1.50. What is the cost of one pencil (in dollars)?"
+  },
+  "1004": {
+   "id": "U2-01",
+   "v": 3,
+   "h": "9a03f59b95",
+   "text": "A 12-pack of pens costs $6.60. What is the cost of one pen (in dollars)?"
+  },
+  "1005": {
+   "id": "U2-01",
+   "v": 4,
+   "h": "fd5c4d4610",
+   "text": "A 6-pack of pencils costs $5.10. What is the cost of one pencil (in dollars)?"
+  },
+  "1006": {
+   "id": "U2-01",
+   "v": 5,
+   "h": "91fa2ed9fe",
+   "text": "A 15-pack of pencils costs $5.25. What is the cost of one pencil (in dollars)?"
+  },
+  "1007": {
+   "id": "U2-01",
+   "v": 6,
+   "h": "ee8ffdd0da",
+   "text": "A 15-pack of pencils costs $3.75. What is the cost of one pencil (in dollars)?"
+  },
+  "1008": {
+   "id": "U2-01",
+   "v": 7,
+   "h": "47bc6a09e0",
+   "text": "A 15-pack of pens costs $3.75. What is the cost of one pen (in dollars)?"
+  },
+  "1009": {
+   "id": "U2-01",
+   "v": 8,
+   "h": "f413c43351",
+   "text": "A 15-pack of juice boxes costs $11.25. What is the cost of one juice box (in dollars)?"
+  },
+  "1010": {
+   "id": "U2-01",
+   "v": 9,
+   "h": "e42df161d4",
+   "text": "A 20-pack of granola bars costs $13.00. What is the cost of one granola bar (in dollars)?"
+  },
+  "1011": {
+   "id": "U2-01",
+   "v": -1,
+   "h": "04f9378e38",
+   "text": "A 12-pack of juice boxes costs $4.68. What is the cost of one juice box (in dollars)?"
+  },
+  "1012": {
+   "id": "U2-02",
+   "v": 0,
+   "h": "5760fbd3d3",
+   "text": "Store brand: 16 oz for $3.84. Name brand: 12 oz for $2.76. Which costs less per ounce?"
+  },
+  "1013": {
+   "id": "U2-02",
+   "v": 1,
+   "h": "0fe1f7353a",
+   "text": "Pack A: 16 oz for $4.32. Pack B: 20 oz for $5.00. Which costs less per ounce?"
+  },
+  "1014": {
+   "id": "U2-02",
+   "v": 2,
+   "h": "a3a1a9764a",
+   "text": "Store brand: 36 oz for $7.56. Name brand: 12 oz for $2.64. Which costs less per ounce?"
+  },
+  "1015": {
+   "id": "U2-02",
+   "v": 3,
+   "h": "4d76eb4d78",
+   "text": "Pack A: 16 oz for $3.36. Pack B: 24 oz for $5.52. Which costs less per ounce?"
+  },
+  "1016": {
+   "id": "U2-02",
+   "v": 4,
+   "h": "c9b1bfc92a",
+   "text": "Brand X: 12 oz for $2.52. Brand Y: 18 oz for $3.96. Which costs less per ounce?"
+  },
+  "1017": {
+   "id": "U2-02",
+   "v": 5,
+   "h": "7548dd6e60",
+   "text": "Brand X: 36 oz for $10.80. Brand Y: 20 oz for $6.40. Which costs less per ounce?"
+  },
+  "1018": {
+   "id": "U2-02",
+   "v": 6,
+   "h": "b02ee89f32",
+   "text": "Pack A: 36 oz for $10.80. Pack B: 30 oz for $9.60. Which costs less per ounce?"
+  },
+  "1019": {
+   "id": "U2-02",
+   "v": 7,
+   "h": "0d9c215947",
+   "text": "Store brand: 16 oz for $4.32. Name brand: 36 oz for $9.36. Which costs less per ounce?"
+  },
+  "1020": {
+   "id": "U2-02",
+   "v": 8,
+   "h": "9a2776fd74",
+   "text": "Store brand: 12 oz for $3.24. Name brand: 36 oz for $10.44. Which costs less per ounce?"
+  },
+  "1021": {
+   "id": "U2-02",
+   "v": 9,
+   "h": "8a3e5da2c5",
+   "text": "Pack A: 12 oz for $3.96. Pack B: 18 oz for $6.12. Which costs less per ounce?"
+  },
+  "1022": {
+   "id": "U2-02",
+   "v": -1,
+   "h": "bc0e4e2d2a",
+   "text": "Brand X: 18 oz for $5.04. Brand Y: 30 oz for $8.10. Which costs less per ounce?"
+  },
+  "1023": {
+   "id": "U2-03",
+   "v": 0,
+   "h": "ea1f66c264",
+   "text": "A printer makes 100 cards in 4 minutes. At that rate, how many cards in 40 minutes?"
+  },
+  "1024": {
+   "id": "U2-03",
+   "v": 1,
+   "h": "a42c013b27",
+   "text": "A printer prints 45 pages in 3 minutes. At that rate, how many pages in 30 minutes?"
+  },
+  "1025": {
+   "id": "U2-03",
+   "v": 2,
+   "h": "0749ee3825",
+   "text": "A machine packs 150 boxes in 10 minutes. At that rate, how many boxes in 40 minutes?"
+  },
+  "1026": {
+   "id": "U2-03",
+   "v": 3,
+   "h": "86c61142de",
+   "text": "A machine packs 45 boxes in 3 minutes. At that rate, how many boxes in 20 minutes?"
+  },
+  "1027": {
+   "id": "U2-03",
+   "v": 4,
+   "h": "f003bff5b9",
+   "text": "A factory robot makes 75 cards in 5 minutes. At that rate, how many cards in 15 minutes?"
+  },
+  "1028": {
+   "id": "U2-03",
+   "v": 5,
+   "h": "e6ed275e7b",
+   "text": "A printer sews 128 patches in 8 minutes. At that rate, how many patches in 40 minutes?"
+  },
+  "1029": {
+   "id": "U2-03",
+   "v": 6,
+   "h": "e013f2a992",
+   "text": "A printer makes 80 cards in 5 minutes. At that rate, how many cards in 40 minutes?"
+  },
+  "1030": {
+   "id": "U2-03",
+   "v": 7,
+   "h": "f20942a7c0",
+   "text": "A machine packs 144 boxes in 8 minutes. At that rate, how many boxes in 30 minutes?"
+  },
+  "1031": {
+   "id": "U2-03",
+   "v": 8,
+   "h": "e5addd0ae6",
+   "text": "A machine sews 120 patches in 8 minutes. At that rate, how many patches in 30 minutes?"
+  },
+  "1032": {
+   "id": "U2-03",
+   "v": 9,
+   "h": "0ade681869",
+   "text": "A printer packs 90 boxes in 5 minutes. At that rate, how many boxes in 25 minutes?"
+  },
+  "1033": {
+   "id": "U2-03",
+   "v": -1,
+   "h": "8c9775ac32",
+   "text": "A printer prints 84 pages in 6 minutes. At that rate, how many pages in 25 minutes?"
+  },
+  "1034": {
+   "id": "U2-04",
+   "v": 0,
+   "h": "020eb3caec",
+   "text": "A group has 3 red beads for every 5 blue beads. There are 30 blue beads. How many red bead"
+  },
+  "1035": {
+   "id": "U2-04",
+   "v": 1,
+   "h": "f3e58cf973",
+   "text": "A group has 2 guitars for every 5 drums. There are 40 drums. How many guitars?"
+  },
+  "1036": {
+   "id": "U2-04",
+   "v": 2,
+   "h": "d23d5dc4ce",
+   "text": "A group has 3 cats for every 4 dogs. There are 32 dogs. How many cats?"
+  },
+  "1037": {
+   "id": "U2-04",
+   "v": 3,
+   "h": "deaf657538",
+   "text": "A group has 4 boys for every 5 girls. There are 20 girls. How many boys?"
+  },
+  "1038": {
+   "id": "U2-04",
+   "v": 4,
+   "h": "3f9916d9f3",
+   "text": "A group has 4 guitars for every 5 drums. There are 20 drums. How many guitars?"
+  },
+  "1039": {
+   "id": "U2-04",
+   "v": 5,
+   "h": "4a7f6f2377",
+   "text": "A group has 3 guitars for every 4 drums. There are 36 drums. How many guitars?"
+  },
+  "1040": {
+   "id": "U2-04",
+   "v": 6,
+   "h": "4ae598b7ed",
+   "text": "A group has 4 red beads for every 5 blue beads. There are 25 blue beads. How many red bead"
+  },
+  "1041": {
+   "id": "U2-04",
+   "v": 7,
+   "h": "da68d47e5a",
+   "text": "A group has 3 boys for every 4 girls. There are 20 girls. How many boys?"
+  },
+  "1042": {
+   "id": "U2-04",
+   "v": 8,
+   "h": "83fbb54d67",
+   "text": "A group has 5 red beads for every 6 blue beads. There are 18 blue beads. How many red bead"
+  },
+  "1043": {
+   "id": "U2-04",
+   "v": 9,
+   "h": "583000fc07",
+   "text": "A group has 5 cats for every 6 dogs. There are 42 dogs. How many cats?"
+  },
+  "1044": {
+   "id": "U2-04",
+   "v": -1,
+   "h": "54c4219590",
+   "text": "A class has 4 boys for every 5 girls. There are 35 girls. How many boys?"
+  },
+  "1045": {
+   "id": "U2-05",
+   "v": 0,
+   "h": "fbbe8bfca4",
+   "text": "A recipe uses 4 cups of flour for every 24 muffins. Flour costs $0.50 per cup. What does t"
+  },
+  "1046": {
+   "id": "U2-05",
+   "v": 1,
+   "h": "885786343d",
+   "text": "A recipe uses 3 cups of flour for every 12 muffins. Flour costs $0.40 per cup. What does t"
+  },
+  "1047": {
+   "id": "U2-05",
+   "v": 2,
+   "h": "481d90d4f8",
+   "text": "A recipe uses 4 cups of flour for every 24 muffins. Flour costs $0.25 per cup. What does t"
+  },
+  "1048": {
+   "id": "U2-05",
+   "v": 3,
+   "h": "55b2936aaa",
+   "text": "A recipe uses 2 cups of flour for every 12 muffins. Flour costs $0.80 per cup. What does t"
+  },
+  "1049": {
+   "id": "U2-05",
+   "v": 4,
+   "h": "2ee1003a6d",
+   "text": "A recipe uses 3 cups of flour for every 12 muffins. Flour costs $0.25 per cup. What does t"
+  },
+  "1050": {
+   "id": "U2-05",
+   "v": 5,
+   "h": "5cf02adf1c",
+   "text": "A recipe uses 2 cups of flour for every 12 muffins. Flour costs $0.80 per cup. What does t"
+  },
+  "1051": {
+   "id": "U2-05",
+   "v": 6,
+   "h": "ca3817660c",
+   "text": "A recipe uses 4 cups of flour for every 24 muffins. Flour costs $0.60 per cup. What does t"
+  },
+  "1052": {
+   "id": "U2-05",
+   "v": 7,
+   "h": "55f88f2620",
+   "text": "A recipe uses 3 cups of flour for every 24 muffins. Flour costs $0.40 per cup. What does t"
+  },
+  "1053": {
+   "id": "U2-05",
+   "v": 8,
+   "h": "3319459f43",
+   "text": "A recipe uses 3 cups of flour for every 24 muffins. Flour costs $0.80 per cup. What does t"
+  },
+  "1054": {
+   "id": "U2-05",
+   "v": 9,
+   "h": "5066850c26",
+   "text": "A recipe uses 2 cups of flour for every 12 muffins. Flour costs $0.25 per cup. What does t"
+  },
+  "1055": {
+   "id": "U2-05",
+   "v": -1,
+   "h": "584a327ede",
+   "text": "A recipe uses 3 cups of flour for every 12 muffins. Flour costs $0.40 per cup. What does t"
+  },
+  "1056": {
+   "id": "U2-06",
+   "v": 0,
+   "h": "8bfc456e28",
+   "text": "Pencils are sold 3 dozen for $27.00. What does one pencil cost (in dollars)?"
+  },
+  "1057": {
+   "id": "U2-06",
+   "v": 1,
+   "h": "d0c2e39d4c",
+   "text": "Stickers are sold 4 dozen for $60.00. What does one sticker cost (in dollars)?"
+  },
+  "1058": {
+   "id": "U2-06",
+   "v": 2,
+   "h": "1a311eb3e5",
+   "text": "Gloves are sold 2 dozen for $30.00. What does one pair of gloves cost (in dollars)?"
+  },
+  "1059": {
+   "id": "U2-06",
+   "v": 3,
+   "h": "3dba71df31",
+   "text": "Gloves are sold 4 dozen for $96.00. What does one pair of gloves cost (in dollars)?"
+  },
+  "1060": {
+   "id": "U2-06",
+   "v": 4,
+   "h": "1ef00787db",
+   "text": "Stickers are sold 4 dozen for $120.00. What does one sticker cost (in dollars)?"
+  },
+  "1061": {
+   "id": "U2-06",
+   "v": 5,
+   "h": "dde54d6e9c",
+   "text": "Gloves are sold 3 dozen for $90.00. What does one pair of gloves cost (in dollars)?"
+  },
+  "1062": {
+   "id": "U2-06",
+   "v": 6,
+   "h": "607712b776",
+   "text": "Gloves are sold 4 dozen for $120.00. What does one pair of gloves cost (in dollars)?"
+  },
+  "1063": {
+   "id": "U2-06",
+   "v": 7,
+   "h": "19f3312abf",
+   "text": "Gloves are sold 3 dozen for $54.00. What does one pair of gloves cost (in dollars)?"
+  },
+  "1064": {
+   "id": "U2-06",
+   "v": 8,
+   "h": "545fee097c",
+   "text": "Gloves are sold 3 dozen for $27.00. What does one pair of gloves cost (in dollars)?"
+  },
+  "1065": {
+   "id": "U2-06",
+   "v": 9,
+   "h": "c979d32ff3",
+   "text": "Stickers are sold 2 dozen for $12.00. What does one sticker cost (in dollars)?"
+  },
+  "1066": {
+   "id": "U2-06",
+   "v": -1,
+   "h": "62b78e98cc",
+   "text": "Gloves are sold 3 dozen for $54. What does one pair cost (in dollars)?"
+  },
+  "1067": {
+   "id": "U2-07",
+   "v": 0,
+   "h": "bfda21da39",
+   "text": "Ben types 156 words in 6 minutes. Leo types 288 words in 8 minutes. Who types faster?"
+  },
+  "1068": {
+   "id": "U2-07",
+   "v": 1,
+   "h": "dcc2f1956e",
+   "text": "Ava types 288 words in 6 minutes. Maya types 350 words in 10 minutes. Who types faster?"
+  },
+  "1069": {
+   "id": "U2-07",
+   "v": 2,
+   "h": "2739c26135",
+   "text": "Ben types 330 words in 10 minutes. Zoe types 376 words in 8 minutes. Who types faster?"
+  },
+  "1070": {
+   "id": "U2-07",
+   "v": 3,
+   "h": "4ef6b9b252",
+   "text": "Zoe types 195 words in 5 minutes. Leo types 162 words in 6 minutes. Who types faster?"
+  },
+  "1071": {
+   "id": "U2-07",
+   "v": 4,
+   "h": "8cc7f5ca31",
+   "text": "Sam types 112 words in 4 minutes. Ava types 304 words in 8 minutes. Who types faster?"
+  },
+  "1072": {
+   "id": "U2-07",
+   "v": 5,
+   "h": "74f7a9937b",
+   "text": "Maya types 132 words in 4 minutes. Ben types 180 words in 5 minutes. Who types faster?"
+  },
+  "1073": {
+   "id": "U2-07",
+   "v": 6,
+   "h": "89534b09be",
+   "text": "Ben types 144 words in 4 minutes. Zoe types 276 words in 6 minutes. Who types faster?"
+  },
+  "1074": {
+   "id": "U2-07",
+   "v": 7,
+   "h": "c5465da339",
+   "text": "Zoe types 280 words in 8 minutes. Ben types 180 words in 5 minutes. Who types faster?"
+  },
+  "1075": {
+   "id": "U2-07",
+   "v": 8,
+   "h": "1053f7e3ba",
+   "text": "Leo types 168 words in 4 minutes. Ben types 145 words in 5 minutes. Who types faster?"
+  },
+  "1076": {
+   "id": "U2-07",
+   "v": 9,
+   "h": "f29360998b",
+   "text": "Zoe types 282 words in 6 minutes. Ava types 108 words in 4 minutes. Who types faster?"
+  },
+  "1077": {
+   "id": "U2-07",
+   "v": -1,
+   "h": "4b878a02b8",
+   "text": "Ava types 195 words in 5 minutes. Ben types 224 words in 7 minutes. Who types faster?"
+  },
+  "1078": {
+   "id": "U2-08",
+   "v": 0,
+   "h": "80b53a13be",
+   "text": "A tap fills a whole pool in 1/6 minute. How many pools per minute?"
+  },
+  "1079": {
+   "id": "U2-08",
+   "v": 1,
+   "h": "6177366a88",
+   "text": "A pump fills a whole tank in 3/4 minute. How many tanks per minute?"
+  },
+  "1080": {
+   "id": "U2-08",
+   "v": 2,
+   "h": "f687782214",
+   "text": "A hose fills 3/4 of a bucket in 1/4 minute. How many buckets per minute?"
+  },
+  "1081": {
+   "id": "U2-08",
+   "v": 3,
+   "h": "b5a862f28f",
+   "text": "A hose fills 3/8 of a bucket in 1/4 minute. How many buckets per minute?"
+  },
+  "1082": {
+   "id": "U2-08",
+   "v": 4,
+   "h": "e42e88044c",
+   "text": "A hose fills 1/2 of a bucket in 1/4 minute. How many buckets per minute?"
+  },
+  "1083": {
+   "id": "U2-08",
+   "v": 5,
+   "h": "43217d56f5",
+   "text": "A pump fills 1/4 of a tank in 3/4 minute. How many tanks per minute?"
+  },
+  "1084": {
+   "id": "U2-08",
+   "v": 6,
+   "h": "4a52965e96",
+   "text": "A tap fills 1/2 of a pool in 1/3 minute. How many pools per minute?"
+  },
+  "1085": {
+   "id": "U2-08",
+   "v": 7,
+   "h": "5082fa56cb",
+   "text": "A pump fills a whole tank in 1/4 minute. How many tanks per minute?"
+  },
+  "1086": {
+   "id": "U2-08",
+   "v": 8,
+   "h": "b481267f56",
+   "text": "A hose fills 1/8 of a bucket in 1/4 minute. How many buckets per minute?"
+  },
+  "1087": {
+   "id": "U2-08",
+   "v": 9,
+   "h": "a93669e549",
+   "text": "A tap fills 1/8 of a pool in 1/4 minute. How many pools per minute?"
+  },
+  "1088": {
+   "id": "U2-08",
+   "v": -1,
+   "h": "8131b10f87",
+   "text": "A hose fills 3/4 of a bucket in 1/2 minute. How many buckets per minute?"
+  },
+  "1089": {
+   "id": "U2-09",
+   "v": 0,
+   "h": "b7926d35a4",
+   "text": "A cyclist rides 2 4/5 miles in 1/10 hour. What is the speed in miles per hour?"
+  },
+  "1090": {
+   "id": "U2-09",
+   "v": 1,
+   "h": "abeadc44d7",
+   "text": "A cyclist rides 2 1/3 miles in 1/6 hour. What is the speed in miles per hour?"
+  },
+  "1091": {
+   "id": "U2-09",
+   "v": 2,
+   "h": "cb86911f02",
+   "text": "A cyclist rides 1 1/10 miles in 1/10 hour. What is the speed in miles per hour?"
+  },
+  "1092": {
+   "id": "U2-09",
+   "v": 3,
+   "h": "db69e802de",
+   "text": "A cyclist rides 2 1/2 miles in 1/10 hour. What is the speed in miles per hour?"
+  },
+  "1093": {
+   "id": "U2-09",
+   "v": 4,
+   "h": "4aed8acbb1",
+   "text": "A cyclist rides 2 5/12 miles in 1/12 hour. What is the speed in miles per hour?"
+  },
+  "1094": {
+   "id": "U2-09",
+   "v": 5,
+   "h": "b01c7c81b1",
+   "text": "A cyclist rides 1 1/3 miles in 1/12 hour. What is the speed in miles per hour?"
+  },
+  "1095": {
+   "id": "U2-09",
+   "v": 6,
+   "h": "461b0041d3",
+   "text": "A cyclist rides 3 miles in 1/10 hour. What is the speed in miles per hour?"
+  },
+  "1096": {
+   "id": "U2-09",
+   "v": 7,
+   "h": "53023e3dad",
+   "text": "A cyclist rides 1 1/2 miles in 1/10 hour. What is the speed in miles per hour?"
+  },
+  "1097": {
+   "id": "U2-09",
+   "v": 8,
+   "h": "12164daef1",
+   "text": "A cyclist rides 4 miles in 1/6 hour. What is the speed in miles per hour?"
+  },
+  "1098": {
+   "id": "U2-09",
+   "v": 9,
+   "h": "1dedd2b654",
+   "text": "A cyclist rides 1 1/4 miles in 1/12 hour. What is the speed in miles per hour?"
+  },
+  "1099": {
+   "id": "U2-09",
+   "v": -1,
+   "h": "08141c6e38",
+   "text": "A cyclist rides 5/6 mile in 1/12 hour. What is the speed in miles per hour?"
+  },
+  "1100": {
+   "id": "U2-10",
+   "v": 0,
+   "h": "8584934895",
+   "text": "There are 30 Calories in 1/3 cup of granola. How many Calories are in 3 cups?"
+  },
+  "1101": {
+   "id": "U2-10",
+   "v": 1,
+   "h": "e309466efc",
+   "text": "There are 66 Calories in 2/3 cup of oatmeal. How many Calories are in 4 cups?"
+  },
+  "1102": {
+   "id": "U2-10",
+   "v": 2,
+   "h": "0c7411929c",
+   "text": "There are 45 Calories in 3/4 cup of oatmeal. How many Calories are in 3 cups?"
+  },
+  "1103": {
+   "id": "U2-10",
+   "v": 3,
+   "h": "5aeea2ed78",
+   "text": "There are 17 Calories in 1/4 cup of cereal. How many Calories are in 4 cups?"
+  },
+  "1104": {
+   "id": "U2-10",
+   "v": 4,
+   "h": "3df3a30a30",
+   "text": "There are 48 Calories in 1/2 cup of trail mix. How many Calories are in 2 cups?"
+  },
+  "1105": {
+   "id": "U2-10",
+   "v": 5,
+   "h": "b95f8e475d",
+   "text": "There are 41 Calories in 1/2 cup of granola. How many Calories are in 4 cups?"
+  },
+  "1106": {
+   "id": "U2-10",
+   "v": 6,
+   "h": "ae4345c446",
+   "text": "There are 46 Calories in 1/4 cup of oatmeal. How many Calories are in 3 cups?"
+  },
+  "1107": {
+   "id": "U2-10",
+   "v": 7,
+   "h": "d06ec6d0f7",
+   "text": "There are 99 Calories in 3/4 cup of cereal. How many Calories are in 2 cups?"
+  },
+  "1108": {
+   "id": "U2-10",
+   "v": 8,
+   "h": "86706f67af",
+   "text": "There are 30 Calories in 1/4 cup of granola. How many Calories are in 2 cups?"
+  },
+  "1109": {
+   "id": "U2-10",
+   "v": 9,
+   "h": "e3ee84a139",
+   "text": "There are 34 Calories in 1/3 cup of granola. How many Calories are in 3 cups?"
+  },
+  "1110": {
+   "id": "U2-10",
+   "v": -1,
+   "h": "bc361d5d4a",
+   "text": "There are 120 Calories in 2/3 cup of cereal. How many Calories are in 2 cups?"
+  },
+  "1111": {
+   "id": "U2-11",
+   "v": 0,
+   "h": "0ff576095c",
+   "text": "Jo goes 5 miles in 1/2 hour. Kim goes 1 1/6 miles in 1/6 hour. Who is faster?"
+  },
+  "1112": {
+   "id": "U2-11",
+   "v": 1,
+   "h": "d097f2cd25",
+   "text": "Kim goes 1 5/8 miles in 1/4 hour. Runner B goes 2 5/6 miles in 1/3 hour. Who is faster?"
+  },
+  "1113": {
+   "id": "U2-11",
+   "v": 2,
+   "h": "3b8c3b0d9c",
+   "text": "Max goes 1 2/3 miles in 1/6 hour. Ana goes 4 3/4 miles in 1/2 hour. Who is faster?"
+  },
+  "1114": {
+   "id": "U2-11",
+   "v": 3,
+   "h": "f67420185d",
+   "text": "Jo goes 3 miles in 1/3 hour. Ana goes 3 3/4 miles in 1/2 hour. Who is faster?"
+  },
+  "1115": {
+   "id": "U2-11",
+   "v": 4,
+   "h": "79d5f68e27",
+   "text": "Jo goes 3 miles in 1/2 hour. Kim goes 1 1/3 miles in 1/6 hour. Who is faster?"
+  },
+  "1116": {
+   "id": "U2-11",
+   "v": 5,
+   "h": "7eaea04736",
+   "text": "Runner B goes 2 1/2 miles in 1/4 hour. Kim goes 1 5/12 miles in 1/6 hour. Who is faster?"
+  },
+  "1117": {
+   "id": "U2-11",
+   "v": 6,
+   "h": "42a23b4871",
+   "text": "Runner B goes 1 1/3 miles in 1/6 hour. Jo goes 1 miles in 1/4 hour. Who is faster?"
+  },
+  "1118": {
+   "id": "U2-11",
+   "v": 7,
+   "h": "790f817931",
+   "text": "Max goes 1 1/4 miles in 1/4 hour. Runner B goes 2 2/3 miles in 1/3 hour. Who is faster?"
+  },
+  "1119": {
+   "id": "U2-11",
+   "v": 8,
+   "h": "1b878bb7ff",
+   "text": "Ana goes 3 1/2 miles in 1/2 hour. Jo goes 1 5/12 miles in 1/6 hour. Who is faster?"
+  },
+  "1120": {
+   "id": "U2-11",
+   "v": 9,
+   "h": "072305734c",
+   "text": "Max goes 1 1/2 miles in 1/4 hour. Runner B goes 4 3/4 miles in 1/2 hour. Who is faster?"
+  },
+  "1121": {
+   "id": "U2-11",
+   "v": -1,
+   "h": "64505dd220",
+   "text": "Runner A goes 1 1/2 miles in 1/4 hour. Runner B goes 2 1/4 miles in 1/3 hour. Who is faste"
+  },
+  "1122": {
+   "id": "U2-12",
+   "v": 0,
+   "h": "dbd4c6617a",
+   "text": "On a map, 3/4 inch = 6 miles. How many real miles is 2 3/4 inches on the map?"
+  },
+  "1123": {
+   "id": "U2-12",
+   "v": 1,
+   "h": "6c41c17b18",
+   "text": "On a map, 1/4 inch = 5 miles. How many real miles is 2 1/2 inches on the map?"
+  },
+  "1124": {
+   "id": "U2-12",
+   "v": 2,
+   "h": "0b57e11e05",
+   "text": "On a map, 1/2 inch = 8 miles. How many real miles is 1 3/4 inches on the map?"
+  },
+  "1125": {
+   "id": "U2-12",
+   "v": 3,
+   "h": "881cd9874f",
+   "text": "On a map, 3/4 inch = 15 miles. How many real miles is 2 1/2 inches on the map?"
+  },
+  "1126": {
+   "id": "U2-12",
+   "v": 4,
+   "h": "6bbd99557c",
+   "text": "On a map, 1/4 inch = 4 miles. How many real miles is 1 1/2 inches on the map?"
+  },
+  "1127": {
+   "id": "U2-12",
+   "v": 5,
+   "h": "048efdce69",
+   "text": "On a map, 1/4 inch = 5 miles. How many real miles is 1 3/4 inches on the map?"
+  },
+  "1128": {
+   "id": "U2-12",
+   "v": 6,
+   "h": "7c995e8999",
+   "text": "On a map, 1/2 inch = 4 miles. How many real miles is 2 3/4 inches on the map?"
+  },
+  "1129": {
+   "id": "U2-12",
+   "v": 7,
+   "h": "b13a5d6bc6",
+   "text": "On a map, 3/4 inch = 12 miles. How many real miles is 1 1/2 inches on the map?"
+  },
+  "1130": {
+   "id": "U2-12",
+   "v": 8,
+   "h": "544393ff71",
+   "text": "On a map, 1/4 inch = 3 miles. How many real miles is 2 1/2 inches on the map?"
+  },
+  "1131": {
+   "id": "U2-12",
+   "v": 9,
+   "h": "0230dacb77",
+   "text": "On a map, 1/4 inch = 3 miles. How many real miles is 2 3/4 inches on the map?"
+  },
+  "1132": {
+   "id": "U2-12",
+   "v": -1,
+   "h": "14b1619145",
+   "text": "On a map, 3/8 inch = 6 miles. How many real miles is 2 1/4 inches on the map?"
+  },
+  "1133": {
+   "id": "U2-13",
+   "v": 0,
+   "h": "1398eb881b",
+   "text": "A machine makes 6 parts in 1/2 hour. How many hours does ONE take? (Fraction or decimal.)"
+  },
+  "1134": {
+   "id": "U2-13",
+   "v": 1,
+   "h": "93900a3318",
+   "text": "A machine makes 4 cookies in 3/5 hour. How many hours does ONE take? (Fraction or decimal."
+  },
+  "1135": {
+   "id": "U2-13",
+   "v": 2,
+   "h": "bb6ce07beb",
+   "text": "A machine makes 3 cookies in 3/5 hour. How many hours does ONE take? (Fraction or decimal."
+  },
+  "1136": {
+   "id": "U2-13",
+   "v": 3,
+   "h": "aae4ae2fbd",
+   "text": "A machine makes 4 beads in 5/6 hour. How many hours does ONE take? (Fraction or decimal.)"
+  },
+  "1137": {
+   "id": "U2-13",
+   "v": 4,
+   "h": "354dc8a886",
+   "text": "A machine makes 6 parts in 3/4 hour. How many hours does ONE take? (Fraction or decimal.)"
+  },
+  "1138": {
+   "id": "U2-13",
+   "v": 5,
+   "h": "d0f6fe39a9",
+   "text": "A machine makes 5 parts in 5/6 hour. How many hours does ONE take? (Fraction or decimal.)"
+  },
+  "1139": {
+   "id": "U2-13",
+   "v": 6,
+   "h": "f756ad18c1",
+   "text": "A machine makes 3 cards in 5/6 hour. How many hours does ONE take? (Fraction or decimal.)"
+  },
+  "1140": {
+   "id": "U2-13",
+   "v": 7,
+   "h": "747f1301fb",
+   "text": "A machine makes 6 cookies in 5/6 hour. How many hours does ONE take? (Fraction or decimal."
+  },
+  "1141": {
+   "id": "U2-13",
+   "v": 8,
+   "h": "02dabb90d9",
+   "text": "A machine makes 4 parts in 2/3 hour. How many hours does ONE take? (Fraction or decimal.)"
+  },
+  "1142": {
+   "id": "U2-13",
+   "v": 9,
+   "h": "f126e3bfaf",
+   "text": "A machine makes 6 cards in 2/3 hour. How many hours does ONE take? (Fraction or decimal.)"
+  },
+  "1143": {
+   "id": "U2-13",
+   "v": -1,
+   "h": "671959d4b7",
+   "text": "A machine makes 5 parts in 2/3 hour. How many hours does ONE part take? (Fraction or decim"
+  },
+  "1144": {
+   "id": "U2-14",
+   "v": 0,
+   "h": "555f16c303",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1145": {
+   "id": "U2-14",
+   "v": 1,
+   "h": "465d9a2551",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1146": {
+   "id": "U2-14",
+   "v": 2,
+   "h": "1912a2c6a5",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1147": {
+   "id": "U2-14",
+   "v": 3,
+   "h": "37deb2f10f",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1148": {
+   "id": "U2-14",
+   "v": 4,
+   "h": "9d47156e63",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1149": {
+   "id": "U2-14",
+   "v": 5,
+   "h": "532fed4795",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1150": {
+   "id": "U2-14",
+   "v": 6,
+   "h": "4d03e2448e",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1151": {
+   "id": "U2-14",
+   "v": 7,
+   "h": "a53366af26",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1152": {
+   "id": "U2-14",
+   "v": 8,
+   "h": "9aad99b619",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1153": {
+   "id": "U2-14",
+   "v": 9,
+   "h": "d488dc2b28",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1154": {
+   "id": "U2-14",
+   "v": -1,
+   "h": "ce6a3fa8ee",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1155": {
+   "id": "U2-15",
+   "v": 0,
+   "h": "32409c615b",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1156": {
+   "id": "U2-15",
+   "v": 1,
+   "h": "d7401e6280",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1157": {
+   "id": "U2-15",
+   "v": 2,
+   "h": "c123bc42e4",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1158": {
+   "id": "U2-15",
+   "v": 3,
+   "h": "202862afa5",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1159": {
+   "id": "U2-15",
+   "v": 4,
+   "h": "9e0495c600",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1160": {
+   "id": "U2-15",
+   "v": 5,
+   "h": "56a86fd752",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1161": {
+   "id": "U2-15",
+   "v": 6,
+   "h": "0ad5f3207e",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1162": {
+   "id": "U2-15",
+   "v": 7,
+   "h": "3da866d36e",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1163": {
+   "id": "U2-15",
+   "v": 8,
+   "h": "4b8c26094b",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1164": {
+   "id": "U2-15",
+   "v": 9,
+   "h": "73de8839a6",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1165": {
+   "id": "U2-15",
+   "v": -1,
+   "h": "aaa55a07fe",
+   "text": "Is the relationship between x and y proportional?"
+  },
+  "1166": {
+   "id": "U2-16",
+   "v": 0,
+   "h": "9b0be3d16e",
+   "text": "This table is proportional. What is y when x = 9?"
+  },
+  "1167": {
+   "id": "U2-16",
+   "v": 1,
+   "h": "d39396a005",
+   "text": "This table is proportional. What is y when x = 12?"
+  },
+  "1168": {
+   "id": "U2-16",
+   "v": 2,
+   "h": "e18a0ec6af",
+   "text": "This table is proportional. What is y when x = 8?"
+  },
+  "1169": {
+   "id": "U2-16",
+   "v": 3,
+   "h": "180f2c4fa9",
+   "text": "This table is proportional. What is y when x = 8?"
+  },
+  "1170": {
+   "id": "U2-16",
+   "v": 4,
+   "h": "f967f6c6e5",
+   "text": "This table is proportional. What is y when x = 9?"
+  },
+  "1171": {
+   "id": "U2-16",
+   "v": 5,
+   "h": "098e98d327",
+   "text": "This table is proportional. What is y when x = 9?"
+  },
+  "1172": {
+   "id": "U2-16",
+   "v": 6,
+   "h": "fd1be1ffce",
+   "text": "This table is proportional. What is y when x = 9?"
+  },
+  "1173": {
+   "id": "U2-16",
+   "v": 7,
+   "h": "074f380b1a",
+   "text": "This table is proportional. What is y when x = 8?"
+  },
+  "1174": {
+   "id": "U2-16",
+   "v": 8,
+   "h": "3f1e5497e4",
+   "text": "This table is proportional. What is y when x = 9?"
+  },
+  "1175": {
+   "id": "U2-16",
+   "v": 9,
+   "h": "b481eb416e",
+   "text": "This table is proportional. What is y when x = 12?"
+  },
+  "1176": {
+   "id": "U2-16",
+   "v": -1,
+   "h": "ec4a69a38e",
+   "text": "This table is proportional. What is y when x = 8?"
+  },
+  "1177": {
+   "id": "U2-17",
+   "v": 0,
+   "h": "a594fbd3dd",
+   "text": "A trampoline park charges $2 per game and nothing else. The cost for 1, 2, 3 games is $2, "
+  },
+  "1178": {
+   "id": "U2-17",
+   "v": 1,
+   "h": "5672384b36",
+   "text": "A trampoline park charges $5 to get in plus $4 per game. The cost for 1, 2, 3 games is $9,"
+  },
+  "1179": {
+   "id": "U2-17",
+   "v": 2,
+   "h": "5c52ce3683",
+   "text": "A skate park charges $2 to get in plus $3 per game. The cost for 1, 2, 3 games is $5, $8, "
+  },
+  "1180": {
+   "id": "U2-17",
+   "v": 3,
+   "h": "a37cfbd57b",
+   "text": "A trampoline park charges $4 to get in plus $2 per game. The cost for 1, 2, 3 games is $6,"
+  },
+  "1181": {
+   "id": "U2-17",
+   "v": 4,
+   "h": "73cbf0f01a",
+   "text": "A trampoline park charges $5 to get in plus $5 per game. The cost for 1, 2, 3 games is $10"
+  },
+  "1182": {
+   "id": "U2-17",
+   "v": 5,
+   "h": "d5b3b89283",
+   "text": "A game center charges $2 to get in plus $4 per game. The cost for 1, 2, 3 games is $6, $10"
+  },
+  "1183": {
+   "id": "U2-17",
+   "v": 6,
+   "h": "6d3cd18477",
+   "text": "A game center charges $3 to get in plus $5 per game. The cost for 1, 2, 3 games is $8, $13"
+  },
+  "1184": {
+   "id": "U2-17",
+   "v": 7,
+   "h": "6337119b55",
+   "text": "A trampoline park charges $3 to get in plus $5 per game. The cost for 1, 2, 3 games is $8,"
+  },
+  "1185": {
+   "id": "U2-17",
+   "v": 8,
+   "h": "252cdd581f",
+   "text": "A skate park charges $5 per game and nothing else. The cost for 1, 2, 3 games is $5, $10, "
+  },
+  "1186": {
+   "id": "U2-17",
+   "v": 9,
+   "h": "eb3d0d82d5",
+   "text": "A game center charges $6 to get in plus $5 per game. The cost for 1, 2, 3 games is $11, $1"
+  },
+  "1187": {
+   "id": "U2-17",
+   "v": -1,
+   "h": "1069003af5",
+   "text": "A game center charges $4 to get in plus $3 per game. The cost for 1, 2, 3 games is $7, $10"
+  },
+  "1188": {
+   "id": "U2-18",
+   "v": 0,
+   "h": "2d51cde27c",
+   "text": "This table is proportional. What is y when x = 5?"
+  },
+  "1189": {
+   "id": "U2-18",
+   "v": 1,
+   "h": "bab5de118c",
+   "text": "This table is proportional. What is y when x = 8?"
+  },
+  "1190": {
+   "id": "U2-18",
+   "v": 2,
+   "h": "22a86ff9f4",
+   "text": "This table is proportional. What is y when x = 9?"
+  },
+  "1191": {
+   "id": "U2-18",
+   "v": 3,
+   "h": "3e6f45df52",
+   "text": "This table is proportional. What is y when x = 8?"
+  },
+  "1192": {
+   "id": "U2-18",
+   "v": 4,
+   "h": "7640b3dac8",
+   "text": "This table is proportional. What is y when x = 9?"
+  },
+  "1193": {
+   "id": "U2-18",
+   "v": 5,
+   "h": "bd091929bd",
+   "text": "This table is proportional. What is y when x = 8?"
+  },
+  "1194": {
+   "id": "U2-18",
+   "v": 6,
+   "h": "4b823ace9f",
+   "text": "This table is proportional. What is y when x = 7?"
+  },
+  "1195": {
+   "id": "U2-18",
+   "v": 7,
+   "h": "5dcbe15b13",
+   "text": "This table is proportional. What is y when x = 5?"
+  },
+  "1196": {
+   "id": "U2-18",
+   "v": 8,
+   "h": "cedc05adaf",
+   "text": "This table is proportional. What is y when x = 7?"
+  },
+  "1197": {
+   "id": "U2-18",
+   "v": 9,
+   "h": "8e20aa4bd3",
+   "text": "This table is proportional. What is y when x = 8?"
+  },
+  "1198": {
+   "id": "U2-18",
+   "v": -1,
+   "h": "6f706260b8",
+   "text": "This table is proportional. What is y when x = 5?"
+  },
+  "1199": {
+   "id": "U2-19",
+   "v": 0,
+   "h": "43d6843040",
+   "text": "Which table is proportional?"
+  },
+  "1200": {
+   "id": "U2-19",
+   "v": 1,
+   "h": "e6702ee35b",
+   "text": "Which table is proportional?"
+  },
+  "1201": {
+   "id": "U2-19",
+   "v": 2,
+   "h": "06c7ddaba9",
+   "text": "Which table is proportional?"
+  },
+  "1202": {
+   "id": "U2-19",
+   "v": 3,
+   "h": "1b87410ab6",
+   "text": "Which table is proportional?"
+  },
+  "1203": {
+   "id": "U2-19",
+   "v": 4,
+   "h": "3fd01c64f9",
+   "text": "Which table is proportional?"
+  },
+  "1204": {
+   "id": "U2-19",
+   "v": 5,
+   "h": "0bff66ce6f",
+   "text": "Which table is proportional?"
+  },
+  "1205": {
+   "id": "U2-19",
+   "v": 6,
+   "h": "37b292e205",
+   "text": "Which table is proportional?"
+  },
+  "1206": {
+   "id": "U2-19",
+   "v": 7,
+   "h": "9b4759b9cd",
+   "text": "Which table is proportional?"
+  },
+  "1207": {
+   "id": "U2-19",
+   "v": 8,
+   "h": "17aed19d31",
+   "text": "Which table is proportional?"
+  },
+  "1208": {
+   "id": "U2-19",
+   "v": 9,
+   "h": "ccd68acb84",
+   "text": "Which table is proportional?"
+  },
+  "1209": {
+   "id": "U2-20",
+   "v": 0,
+   "h": "c10a9dd75a",
+   "text": "A hiker walks 32 miles in 8 hours at a steady pace. What is the constant of proportionalit"
+  },
+  "1210": {
+   "id": "U2-20",
+   "v": 1,
+   "h": "612b9d0d04",
+   "text": "A cyclist rides 100 miles in 8 hours at a steady pace. What is the constant of proportiona"
+  },
+  "1211": {
+   "id": "U2-20",
+   "v": 2,
+   "h": "c02494ab4b",
+   "text": "A tap runs 32 gallons in 8 minutes at a steady pace. What is the constant of proportionali"
+  },
+  "1212": {
+   "id": "U2-20",
+   "v": 3,
+   "h": "15e35a66fa",
+   "text": "A tap runs 8 gallons in 2 minutes at a steady pace. What is the constant of proportionalit"
+  },
+  "1213": {
+   "id": "U2-20",
+   "v": 4,
+   "h": "e01b3fec9b",
+   "text": "A tap runs 15 gallons in 6 minutes at a steady pace. What is the constant of proportionali"
+  },
+  "1214": {
+   "id": "U2-20",
+   "v": 5,
+   "h": "66767fa7b7",
+   "text": "A hiker walks 7 miles in 2 hours at a steady pace. What is the constant of proportionality"
+  },
+  "1215": {
+   "id": "U2-20",
+   "v": 6,
+   "h": "740dfc3ff0",
+   "text": "A cyclist rides 75 miles in 6 hours at a steady pace. What is the constant of proportional"
+  },
+  "1216": {
+   "id": "U2-20",
+   "v": 7,
+   "h": "a54f617ff0",
+   "text": "A tap runs 9 gallons in 6 minutes at a steady pace. What is the constant of proportionalit"
+  },
+  "1217": {
+   "id": "U2-20",
+   "v": 8,
+   "h": "2eb78a4b33",
+   "text": "A hiker walks 28 miles in 8 hours at a steady pace. What is the constant of proportionalit"
+  },
+  "1218": {
+   "id": "U2-20",
+   "v": 9,
+   "h": "1f27c28e2e",
+   "text": "A cyclist rides 32 miles in 4 hours at a steady pace. What is the constant of proportional"
+  },
+  "1219": {
+   "id": "U2-20",
+   "v": -1,
+   "h": "e83616a0a6",
+   "text": "A hiker walks 14 miles in 4 hours at a steady pace. What is the constant of proportionalit"
+  },
+  "1220": {
+   "id": "U2-21",
+   "v": 0,
+   "h": "b73139b9c0",
+   "text": "y = 3.5x. What is y when x = 15?"
+  },
+  "1221": {
+   "id": "U2-21",
+   "v": 1,
+   "h": "37fc4df4ef",
+   "text": "y = 6.5x. What is y when x = 18?"
+  },
+  "1222": {
+   "id": "U2-21",
+   "v": 2,
+   "h": "e17e92b1c7",
+   "text": "y = 7.5x. What is y when x = 12?"
+  },
+  "1223": {
+   "id": "U2-21",
+   "v": 3,
+   "h": "af2c5faf2f",
+   "text": "y = 7.5x. What is y when x = 14?"
+  },
+  "1224": {
+   "id": "U2-21",
+   "v": 4,
+   "h": "158c3d9efc",
+   "text": "y = 2.5x. What is y when x = 16?"
+  },
+  "1225": {
+   "id": "U2-21",
+   "v": 5,
+   "h": "e0452924c5",
+   "text": "y = 4.5x. What is y when x = 15?"
+  },
+  "1226": {
+   "id": "U2-21",
+   "v": 6,
+   "h": "fbdf4da68f",
+   "text": "y = 8.5x. What is y when x = 14?"
+  },
+  "1227": {
+   "id": "U2-21",
+   "v": 7,
+   "h": "39573c61cc",
+   "text": "y = 8.5x. What is y when x = 15?"
+  },
+  "1228": {
+   "id": "U2-21",
+   "v": 8,
+   "h": "d98b6f6ce4",
+   "text": "y = 7.5x. What is y when x = 15?"
+  },
+  "1229": {
+   "id": "U2-21",
+   "v": 9,
+   "h": "4877508c83",
+   "text": "y = 3.5x. What is y when x = 16?"
+  },
+  "1230": {
+   "id": "U2-21",
+   "v": -1,
+   "h": "cd3e51d704",
+   "text": "y = 6.5x. What is y when x = 14?"
+  },
+  "1231": {
+   "id": "U2-22",
+   "v": 0,
+   "h": "8b396383bb",
+   "text": "y = 0.4x. What is x when y = 12?"
+  },
+  "1232": {
+   "id": "U2-22",
+   "v": 1,
+   "h": "7b929efc10",
+   "text": "y = 0.25x. What is x when y = 10?"
+  },
+  "1233": {
+   "id": "U2-22",
+   "v": 2,
+   "h": "b9cc619c7e",
+   "text": "y = 0.5x. What is x when y = 15?"
+  },
+  "1234": {
+   "id": "U2-22",
+   "v": 3,
+   "h": "35698a3e4f",
+   "text": "y = 0.2x. What is x when y = 4?"
+  },
+  "1235": {
+   "id": "U2-22",
+   "v": 4,
+   "h": "0c3629fb1c",
+   "text": "y = 0.5x. What is x when y = 25?"
+  },
+  "1236": {
+   "id": "U2-22",
+   "v": 5,
+   "h": "36fcf9c5bd",
+   "text": "y = 0.4x. What is x when y = 24?"
+  },
+  "1237": {
+   "id": "U2-22",
+   "v": 6,
+   "h": "f404cbb74a",
+   "text": "y = 1.5x. What is x when y = 90?"
+  },
+  "1238": {
+   "id": "U2-22",
+   "v": 7,
+   "h": "852ef7de73",
+   "text": "y = 1.5x. What is x when y = 67.5?"
+  },
+  "1239": {
+   "id": "U2-22",
+   "v": 8,
+   "h": "e3c8005ac1",
+   "text": "y = 0.2x. What is x when y = 10?"
+  },
+  "1240": {
+   "id": "U2-22",
+   "v": 9,
+   "h": "82d1d9524a",
+   "text": "y = 1.5x. What is x when y = 36?"
+  },
+  "1241": {
+   "id": "U2-22",
+   "v": -1,
+   "h": "38075ac126",
+   "text": "y = 0.4x. What is x when y = 18?"
+  },
+  "1242": {
+   "id": "U2-23",
+   "v": 0,
+   "h": "56649bc966",
+   "text": "For every 10 slices, the cost goes up $65.00. What is the cost of ONE (that's k)?"
+  },
+  "1243": {
+   "id": "U2-23",
+   "v": 1,
+   "h": "84053533e6",
+   "text": "For every 10 slices, the cost goes up $25.00. What is the cost of ONE (that's k)?"
+  },
+  "1244": {
+   "id": "U2-23",
+   "v": 2,
+   "h": "83f0de0212",
+   "text": "For every 6 bracelets, the cost goes up $48.00. What is the cost of ONE (that's k)?"
+  },
+  "1245": {
+   "id": "U2-23",
+   "v": 3,
+   "h": "a3ceeede17",
+   "text": "For every 10 notebooks, the cost goes up $45.00. What is the cost of ONE (that's k)?"
+  },
+  "1246": {
+   "id": "U2-23",
+   "v": 4,
+   "h": "54baec7832",
+   "text": "For every 8 bracelets, the cost goes up $20.00. What is the cost of ONE (that's k)?"
+  },
+  "1247": {
+   "id": "U2-23",
+   "v": 5,
+   "h": "43cbe2bd99",
+   "text": "For every 5 bracelets, the cost goes up $12.50. What is the cost of ONE (that's k)?"
+  },
+  "1248": {
+   "id": "U2-23",
+   "v": 6,
+   "h": "7b500c3315",
+   "text": "For every 6 bracelets, the cost goes up $43.50. What is the cost of ONE (that's k)?"
+  },
+  "1249": {
+   "id": "U2-23",
+   "v": 7,
+   "h": "bc87708e31",
+   "text": "For every 4 bracelets, the cost goes up $10.00. What is the cost of ONE (that's k)?"
+  },
+  "1250": {
+   "id": "U2-23",
+   "v": 8,
+   "h": "ccdb315068",
+   "text": "For every 5 notebooks, the cost goes up $32.50. What is the cost of ONE (that's k)?"
+  },
+  "1251": {
+   "id": "U2-23",
+   "v": 9,
+   "h": "82e301c29a",
+   "text": "For every 8 notebooks, the cost goes up $20.00. What is the cost of ONE (that's k)?"
+  },
+  "1252": {
+   "id": "U2-23",
+   "v": -1,
+   "h": "739ab144ee",
+   "text": "For every 5 tickets, the cost goes up $32.50. What is the cost of ONE ticket (that's k)?"
+  },
+  "1253": {
+   "id": "U2-24",
+   "v": 0,
+   "h": "570331209a",
+   "text": "Tickets cost $6.50 each. The equation is y = 6.5x. What do 8 cost (in dollars)?"
+  },
+  "1254": {
+   "id": "U2-24",
+   "v": 1,
+   "h": "31f14a04a9",
+   "text": "Tacos cost $6.50 each. The equation is y = 6.5x. What do 12 cost (in dollars)?"
+  },
+  "1255": {
+   "id": "U2-24",
+   "v": 2,
+   "h": "958691e3d0",
+   "text": "Tickets cost $7.50 each. The equation is y = 7.5x. What do 8 cost (in dollars)?"
+  },
+  "1256": {
+   "id": "U2-24",
+   "v": 3,
+   "h": "5fd4e5ae2d",
+   "text": "Tickets cost $7.50 each. The equation is y = 7.5x. What do 6 cost (in dollars)?"
+  },
+  "1257": {
+   "id": "U2-24",
+   "v": 4,
+   "h": "6112ead5ec",
+   "text": "Shirts cost $4.50 each. The equation is y = 4.5x. What do 12 cost (in dollars)?"
+  },
+  "1258": {
+   "id": "U2-24",
+   "v": 5,
+   "h": "fe0cb5144d",
+   "text": "Shirts cost $5.50 each. The equation is y = 5.5x. What do 8 cost (in dollars)?"
+  },
+  "1259": {
+   "id": "U2-24",
+   "v": 6,
+   "h": "7c2c3f5e43",
+   "text": "Books cost $7.50 each. The equation is y = 7.5x. What do 6 cost (in dollars)?"
+  },
+  "1260": {
+   "id": "U2-24",
+   "v": 7,
+   "h": "f511df5692",
+   "text": "Tacos cost $9.00 each. The equation is y = 9x. What do 6 cost (in dollars)?"
+  },
+  "1261": {
+   "id": "U2-24",
+   "v": 8,
+   "h": "784df5f706",
+   "text": "Books cost $4.50 each. The equation is y = 4.5x. What do 8 cost (in dollars)?"
+  },
+  "1262": {
+   "id": "U2-24",
+   "v": 9,
+   "h": "e51588a1a7",
+   "text": "Shirts cost $4.50 each. The equation is y = 4.5x. What do 6 cost (in dollars)?"
+  },
+  "1263": {
+   "id": "U2-24",
+   "v": -1,
+   "h": "3c9934ff6c",
+   "text": "Tickets cost $6.50 each. The equation is y = 6.5x. What do 12 tickets cost (in dollars)?"
+  },
+  "1264": {
+   "id": "U2-25",
+   "v": 0,
+   "h": "be4b6da13e",
+   "text": "Which equation shows a proportional relationship?"
+  },
+  "1265": {
+   "id": "U2-25",
+   "v": 1,
+   "h": "8f48c0946e",
+   "text": "Which equation shows a proportional relationship?"
+  },
+  "1266": {
+   "id": "U2-25",
+   "v": 2,
+   "h": "a2b6a990bf",
+   "text": "Which equation shows a proportional relationship?"
+  },
+  "1267": {
+   "id": "U2-25",
+   "v": 3,
+   "h": "68a8474f4f",
+   "text": "Which equation shows a proportional relationship?"
+  },
+  "1268": {
+   "id": "U2-25",
+   "v": 4,
+   "h": "4b6818945c",
+   "text": "Which equation shows a proportional relationship?"
+  },
+  "1269": {
+   "id": "U2-25",
+   "v": 5,
+   "h": "09c13833f6",
+   "text": "Which equation shows a proportional relationship?"
+  },
+  "1270": {
+   "id": "U2-25",
+   "v": 6,
+   "h": "66462164d0",
+   "text": "Which equation shows a proportional relationship?"
+  },
+  "1271": {
+   "id": "U2-25",
+   "v": 7,
+   "h": "bccae4b3ef",
+   "text": "Which equation shows a proportional relationship?"
+  },
+  "1272": {
+   "id": "U2-25",
+   "v": 8,
+   "h": "bd7b807d97",
+   "text": "Which equation shows a proportional relationship?"
+  },
+  "1273": {
+   "id": "U2-25",
+   "v": 9,
+   "h": "81b5d462b9",
+   "text": "Which equation shows a proportional relationship?"
+  },
+  "1274": {
+   "id": "U2-25",
+   "v": -1,
+   "h": "f2b21d9c58",
+   "text": "Which equation shows a proportional relationship?"
+  },
+  "1275": {
+   "id": "U2-26",
+   "v": 0,
+   "h": "6a2b49bf81",
+   "text": "A tub fills 18 gallons in 1.5 minutes at a steady rate. How many gallons in 8 minutes?"
+  },
+  "1276": {
+   "id": "U2-26",
+   "v": 1,
+   "h": "e707d72984",
+   "text": "A pool fills 22.5 gallons in 1.5 minutes at a steady rate. How many gallons in 8 minutes?"
+  },
+  "1277": {
+   "id": "U2-26",
+   "v": 2,
+   "h": "f546205513",
+   "text": "A tank fills 18 gallons in 1.5 minutes at a steady rate. How many gallons in 6 minutes?"
+  },
+  "1278": {
+   "id": "U2-26",
+   "v": 3,
+   "h": "ab11d6a33a",
+   "text": "A tub fills 108 gallons in 4.5 minutes at a steady rate. How many gallons in 12 minutes?"
+  },
+  "1279": {
+   "id": "U2-26",
+   "v": 4,
+   "h": "ca28c32585",
+   "text": "A pool fills 75 gallons in 2.5 minutes at a steady rate. How many gallons in 6 minutes?"
+  },
+  "1280": {
+   "id": "U2-26",
+   "v": 5,
+   "h": "7c01427f98",
+   "text": "A tank fills 60 gallons in 2.5 minutes at a steady rate. How many gallons in 12 minutes?"
+  },
+  "1281": {
+   "id": "U2-26",
+   "v": 6,
+   "h": "9e17086498",
+   "text": "A tub fills 75 gallons in 2.5 minutes at a steady rate. How many gallons in 6 minutes?"
+  },
+  "1282": {
+   "id": "U2-26",
+   "v": 7,
+   "h": "e327d98fa5",
+   "text": "A tub fills 70 gallons in 3.5 minutes at a steady rate. How many gallons in 10 minutes?"
+  },
+  "1283": {
+   "id": "U2-26",
+   "v": 8,
+   "h": "1f2429da90",
+   "text": "A tub fills 30 gallons in 1.5 minutes at a steady rate. How many gallons in 10 minutes?"
+  },
+  "1284": {
+   "id": "U2-26",
+   "v": 9,
+   "h": "a222c5b2ad",
+   "text": "A tank fills 52.5 gallons in 3.5 minutes at a steady rate. How many gallons in 6 minutes?"
+  },
+  "1285": {
+   "id": "U2-26",
+   "v": -1,
+   "h": "8e6e757d7b",
+   "text": "A pool fills 45 gallons in 1.5 minutes at a steady rate. How many gallons in 8 minutes?"
+  },
+  "1286": {
+   "id": "U2-27",
+   "v": 0,
+   "h": "7512766da4",
+   "text": "Is this graph a proportional relationship?"
+  },
+  "1287": {
+   "id": "U2-27",
+   "v": 1,
+   "h": "fb97ca72a5",
+   "text": "Is this graph a proportional relationship?"
+  },
+  "1288": {
+   "id": "U2-27",
+   "v": 2,
+   "h": "ec65738304",
+   "text": "Is this graph a proportional relationship?"
+  },
+  "1289": {
+   "id": "U2-27",
+   "v": 3,
+   "h": "bbca4934a3",
+   "text": "Is this graph a proportional relationship?"
+  },
+  "1290": {
+   "id": "U2-27",
+   "v": 4,
+   "h": "0354378981",
+   "text": "Is this graph a proportional relationship?"
+  },
+  "1291": {
+   "id": "U2-28",
+   "v": 0,
+   "h": "1c9bd50235",
+   "text": "Use the graph. What is the constant of proportionality k?"
+  },
+  "1292": {
+   "id": "U2-28",
+   "v": 1,
+   "h": "5a3d9a3d1e",
+   "text": "Use the graph. What is the constant of proportionality k?"
+  },
+  "1293": {
+   "id": "U2-28",
+   "v": 2,
+   "h": "3622166495",
+   "text": "Use the graph. What is the constant of proportionality k?"
+  },
+  "1294": {
+   "id": "U2-28",
+   "v": 3,
+   "h": "b0e7d54a2c",
+   "text": "Use the graph. What is the constant of proportionality k?"
+  },
+  "1295": {
+   "id": "U2-28",
+   "v": 4,
+   "h": "95944098f5",
+   "text": "Use the graph. What is the constant of proportionality k?"
+  },
+  "1296": {
+   "id": "U2-28",
+   "v": -1,
+   "h": "2843921c69",
+   "text": "Use the same graph. What is the constant of proportionality k?"
+  },
+  "1297": {
+   "id": "U2-29",
+   "v": 0,
+   "h": "5cb897ebb6",
+   "text": "Is this graph a proportional relationship?"
+  },
+  "1298": {
+   "id": "U2-29",
+   "v": 1,
+   "h": "293ceed057",
+   "text": "Is this graph a proportional relationship?"
+  },
+  "1299": {
+   "id": "U2-29",
+   "v": 2,
+   "h": "27247ed014",
+   "text": "Is this graph a proportional relationship?"
+  },
+  "1300": {
+   "id": "U2-29",
+   "v": 3,
+   "h": "353c204f11",
+   "text": "Is this graph a proportional relationship?"
+  },
+  "1301": {
+   "id": "U2-29",
+   "v": 4,
+   "h": "43aeb10234",
+   "text": "Is this graph a proportional relationship?"
+  },
+  "1302": {
+   "id": "U2-29",
+   "v": 5,
+   "h": "1d697a1066",
+   "text": "Is this graph a proportional relationship?"
+  },
+  "1303": {
+   "id": "U2-29",
+   "v": 6,
+   "h": "c398202dca",
+   "text": "Is this graph a proportional relationship?"
+  },
+  "1304": {
+   "id": "U2-29",
+   "v": 7,
+   "h": "36b027fce2",
+   "text": "Is this graph a proportional relationship?"
+  },
+  "1305": {
+   "id": "U2-29",
+   "v": 8,
+   "h": "a7ec3dd8a4",
+   "text": "Is this graph a proportional relationship?"
+  },
+  "1306": {
+   "id": "U2-30",
+   "v": 0,
+   "h": "b113d3e069",
+   "text": "Is this graph a proportional relationship?"
+  },
+  "1307": {
+   "id": "U2-30",
+   "v": 1,
+   "h": "6411bec6eb",
+   "text": "Is this graph a proportional relationship?"
+  },
+  "1308": {
+   "id": "U2-30",
+   "v": 2,
+   "h": "b0017ade00",
+   "text": "Is this graph a proportional relationship?"
+  },
+  "1309": {
+   "id": "U2-30",
+   "v": 3,
+   "h": "e0160c7ad1",
+   "text": "Is this graph a proportional relationship?"
+  },
+  "1310": {
+   "id": "U2-30",
+   "v": 4,
+   "h": "5fca4691e7",
+   "text": "Is this graph a proportional relationship?"
+  },
+  "1311": {
+   "id": "U2-30",
+   "v": 5,
+   "h": "a058db7537",
+   "text": "Is this graph a proportional relationship?"
+  },
+  "1312": {
+   "id": "U2-31",
+   "v": 0,
+   "h": "0c2e4d9c67",
+   "text": "A proportional graph is a straight line through (0, 0) and (8, 32). What is y when x = 1?"
+  },
+  "1313": {
+   "id": "U2-31",
+   "v": 1,
+   "h": "7b53e6e657",
+   "text": "A proportional graph is a straight line through (0, 0) and (6, 18). What is y when x = 1?"
+  },
+  "1314": {
+   "id": "U2-31",
+   "v": 2,
+   "h": "052a837096",
+   "text": "A proportional graph is a straight line through (0, 0) and (5, 20). What is y when x = 1?"
+  },
+  "1315": {
+   "id": "U2-31",
+   "v": 3,
+   "h": "ea3be3559e",
+   "text": "A proportional graph is a straight line through (0, 0) and (4, 36). What is y when x = 1?"
+  },
+  "1316": {
+   "id": "U2-31",
+   "v": 4,
+   "h": "c48415309a",
+   "text": "A proportional graph is a straight line through (0, 0) and (6, 24). What is y when x = 1?"
+  },
+  "1317": {
+   "id": "U2-31",
+   "v": 5,
+   "h": "40cc127193",
+   "text": "A proportional graph is a straight line through (0, 0) and (5, 45). What is y when x = 1?"
+  },
+  "1318": {
+   "id": "U2-31",
+   "v": 6,
+   "h": "967008b402",
+   "text": "A proportional graph is a straight line through (0, 0) and (6, 54). What is y when x = 1?"
+  },
+  "1319": {
+   "id": "U2-31",
+   "v": 7,
+   "h": "51dfd1b8a2",
+   "text": "A proportional graph is a straight line through (0, 0) and (8, 56). What is y when x = 1?"
+  },
+  "1320": {
+   "id": "U2-31",
+   "v": 8,
+   "h": "bb7fe4e0ad",
+   "text": "A proportional graph is a straight line through (0, 0) and (4, 16). What is y when x = 1?"
+  },
+  "1321": {
+   "id": "U2-31",
+   "v": 9,
+   "h": "bfe7e1d935",
+   "text": "A proportional graph is a straight line through (0, 0) and (8, 48). What is y when x = 1?"
+  },
+  "1322": {
+   "id": "U2-31",
+   "v": -1,
+   "h": "1df4fc93f5",
+   "text": "A proportional graph is a straight line through (0, 0) and (5, 35). What is y when x = 1?"
+  },
+  "1323": {
+   "id": "U2-32",
+   "v": 0,
+   "h": "a908ac24da",
+   "text": "Two proportional graphs, Line A and Line B, both start at (0, 0). Which line has the bigge"
+  },
+  "1324": {
+   "id": "U2-32",
+   "v": 1,
+   "h": "ff1cb1ca59",
+   "text": "Two proportional graphs, Line A and Line B, both start at (0, 0). Which line has the bigge"
+  },
+  "1325": {
+   "id": "U2-32",
+   "v": 2,
+   "h": "4510479a1a",
+   "text": "Two proportional graphs, Line A and Line B, both start at (0, 0). Which line has the bigge"
+  },
+  "1326": {
+   "id": "U2-32",
+   "v": 3,
+   "h": "66d0403a02",
+   "text": "Two proportional graphs, Line A and Line B, both start at (0, 0). Which line has the bigge"
+  },
+  "1327": {
+   "id": "U2-32",
+   "v": 4,
+   "h": "33130b5a5f",
+   "text": "Two proportional graphs, Line A and Line B, both start at (0, 0). Which line has the bigge"
+  },
+  "1328": {
+   "id": "U2-32",
+   "v": 5,
+   "h": "ee2dd91cb9",
+   "text": "Two proportional graphs, Line A and Line B, both start at (0, 0). Which line has the bigge"
+  },
+  "1329": {
+   "id": "U2-32",
+   "v": 6,
+   "h": "c138164885",
+   "text": "Two proportional graphs, Line A and Line B, both start at (0, 0). Which line has the bigge"
+  },
+  "1330": {
+   "id": "U2-32",
+   "v": -1,
+   "h": "06d3a61d3b",
+   "text": "Two proportional graphs, Line A and Line B, both start at (0, 0). Which line has the bigge"
+  },
+  "1331": {
+   "id": "U2-33",
+   "v": 0,
+   "h": "d67c9706ec",
+   "text": "Sam is 6 years old when Leo is 11. How old will Leo be when Sam is 10?"
+  },
+  "1332": {
+   "id": "U2-33",
+   "v": 1,
+   "h": "d1b8a989ee",
+   "text": "Mia is 4 years old when Nora is 9. How old will Nora be when Mia is 8?"
+  },
+  "1333": {
+   "id": "U2-33",
+   "v": 2,
+   "h": "b4c0e5aeb2",
+   "text": "Nora is 3 years old when Mia is 9. How old will Mia be when Nora is 9?"
+  },
+  "1334": {
+   "id": "U2-33",
+   "v": 3,
+   "h": "b12cf19405",
+   "text": "Nora is 6 years old when Ivy is 14. How old will Ivy be when Nora is 12?"
+  },
+  "1335": {
+   "id": "U2-33",
+   "v": 4,
+   "h": "55fcdd85c6",
+   "text": "Ivy is 8 years old when Mia is 13. How old will Mia be when Ivy is 13?"
+  },
+  "1336": {
+   "id": "U2-33",
+   "v": 5,
+   "h": "f9ff099ffc",
+   "text": "Nora is 8 years old when Eli is 16. How old will Eli be when Nora is 11?"
+  },
+  "1337": {
+   "id": "U2-33",
+   "v": 6,
+   "h": "db6cae6843",
+   "text": "Eli is 3 years old when Ivy is 8. How old will Ivy be when Eli is 8?"
+  },
+  "1338": {
+   "id": "U2-33",
+   "v": 7,
+   "h": "e2a88880a7",
+   "text": "Leo is 8 years old when Eli is 13. How old will Eli be when Leo is 12?"
+  },
+  "1339": {
+   "id": "U2-33",
+   "v": 8,
+   "h": "ff6ed60f6b",
+   "text": "Sam is 3 years old when Mia is 8. How old will Mia be when Sam is 9?"
+  },
+  "1340": {
+   "id": "U2-33",
+   "v": 9,
+   "h": "917f5e8bc8",
+   "text": "Nora is 7 years old when Ivy is 15. How old will Ivy be when Nora is 13?"
+  },
+  "1341": {
+   "id": "U2-33",
+   "v": -1,
+   "h": "6a5239885f",
+   "text": "Mia is 4 years old when her cousin is 10. How old will her cousin be when Mia is 9?"
+  },
+  "1342": {
+   "id": "U2-34",
+   "v": 0,
+   "h": "0f3ebd5d74",
+   "text": "4 people paint a fence in 9 hours. How many hours would 12 people take, working at the sam"
+  },
+  "1343": {
+   "id": "U2-34",
+   "v": 1,
+   "h": "6590208e31",
+   "text": "2 people stack chairs in 8 hours. How many hours would 4 people take, working at the same "
+  },
+  "1344": {
+   "id": "U2-34",
+   "v": 2,
+   "h": "1b4ca47aea",
+   "text": "5 people clean a gym in 12 hours. How many hours would 15 people take, working at the same"
+  },
+  "1345": {
+   "id": "U2-34",
+   "v": 3,
+   "h": "1d6634e37a",
+   "text": "3 people stack chairs in 6 hours. How many hours would 9 people take, working at the same "
+  },
+  "1346": {
+   "id": "U2-34",
+   "v": 4,
+   "h": "dd86269480",
+   "text": "4 people clean a gym in 6 hours. How many hours would 8 people take, working at the same r"
+  },
+  "1347": {
+   "id": "U2-34",
+   "v": 5,
+   "h": "ad48839c6c",
+   "text": "6 people weed a garden in 6 hours. How many hours would 12 people take, working at the sam"
+  },
+  "1348": {
+   "id": "U2-34",
+   "v": 6,
+   "h": "4ef03f8596",
+   "text": "5 people weed a garden in 8 hours. How many hours would 10 people take, working at the sam"
+  },
+  "1349": {
+   "id": "U2-34",
+   "v": 7,
+   "h": "e4fb8ce726",
+   "text": "2 people weed a garden in 6 hours. How many hours would 6 people take, working at the same"
+  },
+  "1350": {
+   "id": "U2-34",
+   "v": 8,
+   "h": "e65138a5a3",
+   "text": "3 people clean a gym in 6 hours. How many hours would 6 people take, working at the same r"
+  },
+  "1351": {
+   "id": "U2-34",
+   "v": 9,
+   "h": "57bef121b9",
+   "text": "6 people paint a fence in 4 hours. How many hours would 12 people take, working at the sam"
+  },
+  "1352": {
+   "id": "U2-34",
+   "v": -1,
+   "h": "f94c2e4003",
+   "text": "4 people paint a fence in 6 hours. How many hours would 8 people take, working at the same"
+  },
+  "1353": {
+   "id": "U2-35",
+   "v": 0,
+   "h": "97c40c5e1c",
+   "text": "A mix uses 3 cups of berries for every 5 cups of yogurt. You use 25 cups of yogurt. How ma"
+  },
+  "1354": {
+   "id": "U2-35",
+   "v": 1,
+   "h": "a4f1aa04f6",
+   "text": "A mix uses 3 scoops of blue paint for every 4 scoops of white paint. You use 32 scoops of "
+  },
+  "1355": {
+   "id": "U2-35",
+   "v": 2,
+   "h": "38d2f4a85d",
+   "text": "A mix uses 3 cups of juice for every 5 cups of water. You use 40 cups of water. How many c"
+  },
+  "1356": {
+   "id": "U2-35",
+   "v": 3,
+   "h": "fd063446f2",
+   "text": "A mix uses 4 scoops of blue paint for every 5 scoops of white paint. You use 35 scoops of "
+  },
+  "1357": {
+   "id": "U2-35",
+   "v": 4,
+   "h": "4d9347413a",
+   "text": "A mix uses 3 cups of juice for every 5 cups of water. You use 15 cups of water. How many c"
+  },
+  "1358": {
+   "id": "U2-35",
+   "v": 5,
+   "h": "1e10ff7665",
+   "text": "A mix uses 3 cups of juice for every 4 cups of water. You use 16 cups of water. How many c"
+  },
+  "1359": {
+   "id": "U2-35",
+   "v": 6,
+   "h": "41e5b50e35",
+   "text": "A mix uses 3 cups of juice for every 4 cups of water. You use 32 cups of water. How many c"
+  },
+  "1360": {
+   "id": "U2-35",
+   "v": 7,
+   "h": "6b9f82d31b",
+   "text": "A mix uses 3 cups of juice for every 5 cups of water. You use 25 cups of water. How many c"
+  },
+  "1361": {
+   "id": "U2-35",
+   "v": 8,
+   "h": "92cccd54b3",
+   "text": "A mix uses 2 cups of juice for every 5 cups of water. You use 30 cups of water. How many c"
+  },
+  "1362": {
+   "id": "U2-35",
+   "v": 9,
+   "h": "34d9e5ee71",
+   "text": "A mix uses 3 scoops of blue paint for every 4 scoops of white paint. You use 20 scoops of "
+  },
+  "1363": {
+   "id": "U2-35",
+   "v": -1,
+   "h": "3c4f60d8aa",
+   "text": "A smoothie uses 2 cups of berries for every 3 cups of yogurt. You use 15 cups of yogurt. H"
+  },
+  "1364": {
+   "id": "U2-36",
+   "v": 0,
+   "h": "70cd0394f4",
+   "text": "Trail mix should have 4 cups of nuts for every 7 cups of raisins. A bag has 21 cups of nut"
+  },
+  "1365": {
+   "id": "U2-36",
+   "v": 1,
+   "h": "3eeedbb3aa",
+   "text": "Trail mix should have 2 cups of nuts for every 5 cups of raisins. A bag has 8 cups of nuts"
+  },
+  "1366": {
+   "id": "U2-36",
+   "v": 2,
+   "h": "64e0e92ab6",
+   "text": "Trail mix should have 4 cups of nuts for every 7 cups of raisins. A bag has 15 cups of nut"
+  },
+  "1367": {
+   "id": "U2-36",
+   "v": 3,
+   "h": "79cffa1397",
+   "text": "Trail mix should have 3 cups of nuts for every 4 cups of raisins. A bag has 16 cups of nut"
+  },
+  "1368": {
+   "id": "U2-36",
+   "v": 4,
+   "h": "67ce8423b8",
+   "text": "Trail mix should have 5 cups of nuts for every 8 cups of raisins. A bag has 27 cups of nut"
+  },
+  "1369": {
+   "id": "U2-36",
+   "v": 5,
+   "h": "e6a6d372d7",
+   "text": "Trail mix should have 2 cups of nuts for every 5 cups of raisins. A bag has 4 cups of nuts"
+  },
+  "1370": {
+   "id": "U2-36",
+   "v": 6,
+   "h": "42a8444c2b",
+   "text": "Trail mix should have 4 cups of nuts for every 7 cups of raisins. A bag has 8 cups of nuts"
+  },
+  "1371": {
+   "id": "U2-36",
+   "v": 7,
+   "h": "3b17fbb764",
+   "text": "Trail mix should have 5 cups of nuts for every 8 cups of raisins. A bag has 22 cups of nut"
+  },
+  "1372": {
+   "id": "U2-36",
+   "v": 8,
+   "h": "441cce3cc6",
+   "text": "Trail mix should have 2 cups of nuts for every 5 cups of raisins. A bag has 6 cups of nuts"
+  },
+  "1373": {
+   "id": "U2-36",
+   "v": 9,
+   "h": "46e350ca1c",
+   "text": "Trail mix should have 3 cups of nuts for every 4 cups of raisins. A bag has 11 cups of nut"
+  },
+  "1374": {
+   "id": "U2-36",
+   "v": -1,
+   "h": "665a17b72a",
+   "text": "Trail mix should have 4 cups of nuts for every 7 cups of raisins. A bag has 12 cups of nut"
+  },
+  "1375": {
+   "id": "U2-37",
+   "v": 0,
+   "h": "ce3db2a76d",
+   "text": "45 inches of ribbon cost $6.75. How much do 2 yards cost (in dollars)? (1 yard = 36 inches"
+  },
+  "1376": {
+   "id": "U2-37",
+   "v": 1,
+   "h": "6e13e2cc56",
+   "text": "24 inches of ribbon cost $6.00. How much do 2 yards cost (in dollars)? (1 yard = 36 inches"
+  },
+  "1377": {
+   "id": "U2-37",
+   "v": 2,
+   "h": "33281554e8",
+   "text": "20 inches of ribbon cost $3.00. How much do 3 yards cost (in dollars)? (1 yard = 36 inches"
+  },
+  "1378": {
+   "id": "U2-37",
+   "v": 3,
+   "h": "68cb27c51c",
+   "text": "45 inches of ribbon cost $6.75. How much do 4 yards cost (in dollars)? (1 yard = 36 inches"
+  },
+  "1379": {
+   "id": "U2-37",
+   "v": 4,
+   "h": "13594ab033",
+   "text": "30 inches of rope cost $3.00. How much do 4 yards cost (in dollars)? (1 yard = 36 inches)"
+  },
+  "1380": {
+   "id": "U2-37",
+   "v": 5,
+   "h": "3df4b7a0ca",
+   "text": "20 inches of ribbon cost $6.00. How much do 4 yards cost (in dollars)? (1 yard = 36 inches"
+  },
+  "1381": {
+   "id": "U2-37",
+   "v": 6,
+   "h": "13f31adafc",
+   "text": "20 inches of fabric cost $6.00. How much do 4 yards cost (in dollars)? (1 yard = 36 inches"
+  },
+  "1382": {
+   "id": "U2-37",
+   "v": 7,
+   "h": "3d95533950",
+   "text": "20 inches of rope cost $4.00. How much do 2 yards cost (in dollars)? (1 yard = 36 inches)"
+  },
+  "1383": {
+   "id": "U2-37",
+   "v": 8,
+   "h": "54dd4dcaf6",
+   "text": "24 inches of ribbon cost $6.00. How much do 3 yards cost (in dollars)? (1 yard = 36 inches"
+  },
+  "1384": {
+   "id": "U2-37",
+   "v": 9,
+   "h": "08ee204342",
+   "text": "45 inches of ribbon cost $4.50. How much do 2 yards cost (in dollars)? (1 yard = 36 inches"
+  },
+  "1385": {
+   "id": "U2-37",
+   "v": -1,
+   "h": "ab3b5ece5f",
+   "text": "30 inches of ribbon cost $4.50. How much do 3 yards cost (in dollars)? (1 yard = 36 inches"
+  },
+  "1386": {
+   "id": "U2-38",
+   "v": 0,
+   "h": "6d50c250ac",
+   "text": "A scooter rental charges $6 plus $2 per hour. Is the cost proportional to the number of ho"
+  },
+  "1387": {
+   "id": "U2-38",
+   "v": 1,
+   "h": "c3d97dc761",
+   "text": "A scooter rental charges $5 plus $3 per hour. Is the cost proportional to the number of ho"
+  },
+  "1388": {
+   "id": "U2-38",
+   "v": 2,
+   "h": "5e9415b5b1",
+   "text": "A scooter rental costs $3 per hour and nothing else. Is the cost proportional to the numbe"
+  },
+  "1389": {
+   "id": "U2-38",
+   "v": 3,
+   "h": "66ba7c5f02",
+   "text": "A taxi costs $1 per mile and nothing else. Is the cost proportional to the number of miles"
+  },
+  "1390": {
+   "id": "U2-38",
+   "v": 4,
+   "h": "e17bbfa7df",
+   "text": "A kayak rental charges $4 plus $2 per hour. Is the cost proportional to the number of hour"
+  },
+  "1391": {
+   "id": "U2-38",
+   "v": 5,
+   "h": "018cd42dc0",
+   "text": "A kayak rental charges $3 plus $1 per hour. Is the cost proportional to the number of hour"
+  },
+  "1392": {
+   "id": "U2-38",
+   "v": 6,
+   "h": "799eb13a0d",
+   "text": "A taxi charges $3 plus $2 per mile. Is the cost proportional to the number of miles?"
+  },
+  "1393": {
+   "id": "U2-38",
+   "v": 7,
+   "h": "d05e215667",
+   "text": "A kayak rental charges $5 plus $3 per hour. Is the cost proportional to the number of hour"
+  },
+  "1394": {
+   "id": "U2-38",
+   "v": 8,
+   "h": "edbe263618",
+   "text": "A taxi charges $3 plus $3 per mile. Is the cost proportional to the number of miles?"
+  },
+  "1395": {
+   "id": "U2-38",
+   "v": 9,
+   "h": "7f941b0585",
+   "text": "A scooter rental costs $2 per hour and nothing else. Is the cost proportional to the numbe"
+  },
+  "1396": {
+   "id": "U2-38",
+   "v": -1,
+   "h": "108d0b131e",
+   "text": "A taxi charges $5 plus $2 per mile. Is the cost proportional to the number of miles?"
+  },
+  "1397": {
+   "id": "U2-39",
+   "v": 0,
+   "h": "19839e910a",
+   "text": "Scale: 1 in. = 8 ft. A room measures 8 in. on the drawing. How many feet long is the real "
+  },
+  "1398": {
+   "id": "U2-39",
+   "v": 1,
+   "h": "7ed8d26d2f",
+   "text": "Scale: 1 in. = 8 ft. A fence measures 8 in. on the drawing. How many feet long is the real"
+  },
+  "1399": {
+   "id": "U2-39",
+   "v": 2,
+   "h": "72a59721fe",
+   "text": "Scale: 1 in. = 4 ft. A fence measures 9.5 in. on the drawing. How many feet long is the re"
+  },
+  "1400": {
+   "id": "U2-39",
+   "v": 3,
+   "h": "70413b4d88",
+   "text": "Scale: 1 in. = 3 ft. A fence measures 4.5 in. on the drawing. How many feet long is the re"
+  },
+  "1401": {
+   "id": "U2-39",
+   "v": 4,
+   "h": "47fd038e81",
+   "text": "Scale: 1 in. = 4 ft. A wall measures 12 in. on the drawing. How many feet long is the real"
+  },
+  "1402": {
+   "id": "U2-39",
+   "v": 5,
+   "h": "990aee4820",
+   "text": "Scale: 1 in. = 2 ft. A bridge measures 8 in. on the drawing. How many feet long is the rea"
+  },
+  "1403": {
+   "id": "U2-39",
+   "v": 6,
+   "h": "cad1442077",
+   "text": "Scale: 1 in. = 6 ft. A wall measures 8 in. on the drawing. How many feet long is the real "
+  },
+  "1404": {
+   "id": "U2-39",
+   "v": 7,
+   "h": "3f1a0af3f1",
+   "text": "Scale: 1 in. = 5 ft. A fence measures 8 in. on the drawing. How many feet long is the real"
+  },
+  "1405": {
+   "id": "U2-39",
+   "v": 8,
+   "h": "1e34e10259",
+   "text": "Scale: 1 in. = 4 ft. A room measures 4.5 in. on the drawing. How many feet long is the rea"
+  },
+  "1406": {
+   "id": "U2-39",
+   "v": 9,
+   "h": "8a34cc929e",
+   "text": "Scale: 1 in. = 6 ft. A wall measures 9.5 in. on the drawing. How many feet long is the rea"
+  },
+  "1407": {
+   "id": "U2-39",
+   "v": -1,
+   "h": "27b7007e20",
+   "text": "Scale: 1 in. = 4 ft. A wall measures 7.5 in. on the drawing. How many feet long is the rea"
+  },
+  "1408": {
+   "id": "U2-40",
+   "v": 0,
+   "h": "b936175e8b",
+   "text": "Scale: 2 in. = 9 ft. A garden is 3 in. long on the drawing. How many feet long is the real"
+  },
+  "1409": {
+   "id": "U2-40",
+   "v": 1,
+   "h": "6e2d25518f",
+   "text": "Scale: 2 in. = 5 ft. A hallway is 7 in. long on the drawing. How many feet long is the rea"
+  },
+  "1410": {
+   "id": "U2-40",
+   "v": 2,
+   "h": "99d68e0c43",
+   "text": "Scale: 3 in. = 12 ft. A garden is 7 in. long on the drawing. How many feet long is the rea"
+  },
+  "1411": {
+   "id": "U2-40",
+   "v": 3,
+   "h": "c8d77309d5",
+   "text": "Scale: 2 in. = 7 ft. A stage is 7 in. long on the drawing. How many feet long is the real "
+  },
+  "1412": {
+   "id": "U2-40",
+   "v": 4,
+   "h": "6f87842273",
+   "text": "Scale: 2 in. = 5 ft. A garden is 7 in. long on the drawing. How many feet long is the real"
+  },
+  "1413": {
+   "id": "U2-40",
+   "v": 5,
+   "h": "a92ef3481c",
+   "text": "Scale: 4 in. = 10 ft. A stage is 3 in. long on the drawing. How many feet long is the real"
+  },
+  "1414": {
+   "id": "U2-40",
+   "v": 6,
+   "h": "37e00c4d22",
+   "text": "Scale: 2 in. = 5 ft. A stage is 6 in. long on the drawing. How many feet long is the real "
+  },
+  "1415": {
+   "id": "U2-40",
+   "v": 7,
+   "h": "dd968ecee0",
+   "text": "Scale: 2 in. = 9 ft. A hallway is 5 in. long on the drawing. How many feet long is the rea"
+  },
+  "1416": {
+   "id": "U2-40",
+   "v": 8,
+   "h": "3c88e65e15",
+   "text": "Scale: 2 in. = 9 ft. A garden is 5 in. long on the drawing. How many feet long is the real"
+  },
+  "1417": {
+   "id": "U2-40",
+   "v": 9,
+   "h": "6d27700d95",
+   "text": "Scale: 2 in. = 7 ft. A room is 6 in. long on the drawing. How many feet long is the real r"
+  },
+  "1418": {
+   "id": "U2-40",
+   "v": -1,
+   "h": "e2be881f6f",
+   "text": "Scale: 2 in. = 9 ft. A room is 5 in. long on the drawing. How many feet long is the real r"
+  },
+  "1419": {
+   "id": "U2-41",
+   "v": 0,
+   "h": "effd5730b6",
+   "text": "A drawing of a rectangle is 6 in. by 4 in. Scale: 1 in. = 8 ft. What is the REAL area in s"
+  },
+  "1420": {
+   "id": "U2-41",
+   "v": 1,
+   "h": "0f3239f328",
+   "text": "A drawing of a rectangle is 4 in. by 2 in. Scale: 1 in. = 8 ft. What is the REAL area in s"
+  },
+  "1421": {
+   "id": "U2-41",
+   "v": 2,
+   "h": "af84de19c3",
+   "text": "A drawing of a rectangle is 4 in. by 6 in. Scale: 1 in. = 4 ft. What is the REAL area in s"
+  },
+  "1422": {
+   "id": "U2-41",
+   "v": 3,
+   "h": "31d1f159a0",
+   "text": "A drawing of a rectangle is 3 in. by 4 in. Scale: 1 in. = 4 ft. What is the REAL area in s"
+  },
+  "1423": {
+   "id": "U2-41",
+   "v": 4,
+   "h": "3e6405d204",
+   "text": "A drawing of a rectangle is 5 in. by 6 in. Scale: 1 in. = 8 ft. What is the REAL area in s"
+  },
+  "1424": {
+   "id": "U2-41",
+   "v": 5,
+   "h": "38f849ca87",
+   "text": "A drawing of a rectangle is 5 in. by 3 in. Scale: 1 in. = 6 ft. What is the REAL area in s"
+  },
+  "1425": {
+   "id": "U2-41",
+   "v": 6,
+   "h": "024d84a87e",
+   "text": "A drawing of a rectangle is 4 in. by 5 in. Scale: 1 in. = 3 ft. What is the REAL area in s"
+  },
+  "1426": {
+   "id": "U2-41",
+   "v": 7,
+   "h": "03c2494dbb",
+   "text": "A drawing of a rectangle is 3 in. by 6 in. Scale: 1 in. = 4 ft. What is the REAL area in s"
+  },
+  "1427": {
+   "id": "U2-41",
+   "v": 8,
+   "h": "5323255ec6",
+   "text": "A drawing of a rectangle is 6 in. by 3 in. Scale: 1 in. = 8 ft. What is the REAL area in s"
+  },
+  "1428": {
+   "id": "U2-41",
+   "v": 9,
+   "h": "7c089d9a7e",
+   "text": "A drawing of a rectangle is 5 in. by 6 in. Scale: 1 in. = 3 ft. What is the REAL area in s"
+  },
+  "1429": {
+   "id": "U2-41",
+   "v": -1,
+   "h": "1b8affe453",
+   "text": "A drawing of a rectangle is 3 in. by 5 in. Scale: 1 in. = 6 ft. What is the REAL area in s"
+  },
+  "1430": {
+   "id": "U2-42",
+   "v": 0,
+   "h": "9bd3a3deca",
+   "text": "A real 54-ft tree is 12 in. long in a scale drawing. 1 in. = how many feet?"
+  },
+  "1431": {
+   "id": "U2-42",
+   "v": 1,
+   "h": "07692f65bb",
+   "text": "A real 30-ft tree is 12 in. long in a scale drawing. 1 in. = how many feet?"
+  },
+  "1432": {
+   "id": "U2-42",
+   "v": 2,
+   "h": "66b4a7a0fc",
+   "text": "A real 30-ft bridge is 12 in. long in a scale drawing. 1 in. = how many feet?"
+  },
+  "1433": {
+   "id": "U2-42",
+   "v": 3,
+   "h": "db78f934c7",
+   "text": "A real 48-ft bus is 8 in. long in a scale drawing. 1 in. = how many feet?"
+  },
+  "1434": {
+   "id": "U2-42",
+   "v": 4,
+   "h": "ec7cdb24b2",
+   "text": "A real 30-ft bus is 12 in. long in a scale drawing. 1 in. = how many feet?"
+  },
+  "1435": {
+   "id": "U2-42",
+   "v": 5,
+   "h": "537874136c",
+   "text": "A real 36-ft bus is 8 in. long in a scale drawing. 1 in. = how many feet?"
+  },
+  "1436": {
+   "id": "U2-42",
+   "v": 6,
+   "h": "c85145f64e",
+   "text": "A real 42-ft bus is 12 in. long in a scale drawing. 1 in. = how many feet?"
+  },
+  "1437": {
+   "id": "U2-42",
+   "v": 7,
+   "h": "65d2eec2b9",
+   "text": "A real 21-ft tree is 6 in. long in a scale drawing. 1 in. = how many feet?"
+  },
+  "1438": {
+   "id": "U2-42",
+   "v": 8,
+   "h": "ca5430c137",
+   "text": "A real 45-ft bus is 10 in. long in a scale drawing. 1 in. = how many feet?"
+  },
+  "1439": {
+   "id": "U2-42",
+   "v": 9,
+   "h": "cd03d0ac88",
+   "text": "A real 20-ft bridge is 8 in. long in a scale drawing. 1 in. = how many feet?"
+  },
+  "1440": {
+   "id": "U2-42",
+   "v": -1,
+   "h": "ea6c3caaad",
+   "text": "A real 36-ft boat is 8 in. long in a scale drawing. 1 in. = how many feet?"
+  },
+  "1441": {
+   "id": "U2-43",
+   "v": 0,
+   "h": "4285a14362",
+   "text": "A logo drawing is 4 in. long at a scale of 1 in. = 4 ft. You redraw it 10 in. long. What i"
+  },
+  "1442": {
+   "id": "U2-43",
+   "v": 1,
+   "h": "41ba5785ab",
+   "text": "A logo drawing is 8 in. long at a scale of 1 in. = 3 ft. You redraw it 16 in. long. What i"
+  },
+  "1443": {
+   "id": "U2-43",
+   "v": 2,
+   "h": "b708d17193",
+   "text": "A logo drawing is 6 in. long at a scale of 1 in. = 5 ft. You redraw it 20 in. long. What i"
+  },
+  "1444": {
+   "id": "U2-43",
+   "v": 3,
+   "h": "d9b7f50043",
+   "text": "A logo drawing is 5 in. long at a scale of 1 in. = 3 ft. You redraw it 12 in. long. What i"
+  },
+  "1445": {
+   "id": "U2-43",
+   "v": 4,
+   "h": "605cc2881e",
+   "text": "A logo drawing is 6 in. long at a scale of 1 in. = 5 ft. You redraw it 15 in. long. What i"
+  },
+  "1446": {
+   "id": "U2-43",
+   "v": 5,
+   "h": "7af335be1c",
+   "text": "A logo drawing is 8 in. long at a scale of 1 in. = 4 ft. You redraw it 16 in. long. What i"
+  },
+  "1447": {
+   "id": "U2-43",
+   "v": 6,
+   "h": "7fc307d697",
+   "text": "A logo drawing is 6 in. long at a scale of 1 in. = 4 ft. You redraw it 10 in. long. What i"
+  },
+  "1448": {
+   "id": "U2-43",
+   "v": 7,
+   "h": "47aa7b181e",
+   "text": "A logo drawing is 8 in. long at a scale of 1 in. = 4 ft. You redraw it 10 in. long. What i"
+  },
+  "1449": {
+   "id": "U2-43",
+   "v": 8,
+   "h": "c832192446",
+   "text": "A logo drawing is 4 in. long at a scale of 1 in. = 4 ft. You redraw it 20 in. long. What i"
+  },
+  "1450": {
+   "id": "U2-43",
+   "v": 9,
+   "h": "bd402d64da",
+   "text": "A logo drawing is 4 in. long at a scale of 1 in. = 6 ft. You redraw it 12 in. long. What i"
+  },
+  "1451": {
+   "id": "U2-43",
+   "v": -1,
+   "h": "da7202a117",
+   "text": "A logo drawing is 6 in. long at a scale of 1 in. = 5 ft. You redraw it 10 in. long. What i"
+  },
+  "1452": {
+   "id": "U2-44",
+   "v": 0,
+   "h": "8f6789a06f",
+   "text": "Map scale: 1 in. = 40 miles. Two towns are 5 1/2 in. apart on the map. How many real miles"
+  },
+  "1453": {
+   "id": "U2-44",
+   "v": 1,
+   "h": "860c3582cb",
+   "text": "Map scale: 1 in. = 25 miles. Two towns are 3 3/4 in. apart on the map. How many real miles"
+  },
+  "1454": {
+   "id": "U2-44",
+   "v": 2,
+   "h": "8aa668ab60",
+   "text": "Map scale: 1 in. = 25 miles. Two towns are 3 1/2 in. apart on the map. How many real miles"
+  },
+  "1455": {
+   "id": "U2-44",
+   "v": 3,
+   "h": "a5403dde62",
+   "text": "Map scale: 1 in. = 15 miles. Two towns are 3 1/2 in. apart on the map. How many real miles"
+  },
+  "1456": {
+   "id": "U2-44",
+   "v": 4,
+   "h": "8fb6572cb5",
+   "text": "Map scale: 1 in. = 20 miles. Two towns are 3 3/4 in. apart on the map. How many real miles"
+  },
+  "1457": {
+   "id": "U2-44",
+   "v": 5,
+   "h": "3ded07f7ac",
+   "text": "Map scale: 1 in. = 15 miles. Two towns are 3 3/4 in. apart on the map. How many real miles"
+  },
+  "1458": {
+   "id": "U2-44",
+   "v": 6,
+   "h": "89439b0b4b",
+   "text": "Map scale: 1 in. = 10 miles. Two towns are 6 1/2 in. apart on the map. How many real miles"
+  },
+  "1459": {
+   "id": "U2-44",
+   "v": 7,
+   "h": "a87a4f10a8",
+   "text": "Map scale: 1 in. = 20 miles. Two towns are 2 1/2 in. apart on the map. How many real miles"
+  },
+  "1460": {
+   "id": "U2-44",
+   "v": 8,
+   "h": "14c348de35",
+   "text": "Map scale: 1 in. = 10 miles. Two towns are 2 1/4 in. apart on the map. How many real miles"
+  },
+  "1461": {
+   "id": "U2-44",
+   "v": 9,
+   "h": "53279c1879",
+   "text": "Map scale: 1 in. = 10 miles. Two towns are 2 1/2 in. apart on the map. How many real miles"
+  }
+ }
+}

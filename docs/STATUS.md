@@ -21,6 +21,7 @@
 - [x] Unit Homework page: imports the on-device worksheet pack, guided nudges, Generate alternate (same lesson + kind)
 - [ ] Generate alternate is lesson-and-kind based. A true number-swapped version of each worksheet problem needs a generator per problem (~180).
 - [x] Fun pass: member-name color chips (rounded squares), two-tone accents, glow + sparkle dust, star burst on wins (respects reduced motion)
+- [x] Reference numbers on every problem (#1001+ practice, #5001+ worksheet, #template-seed for MathFacts); answer entry accepts expressions and has ( ) keys
 - [ ] Assign the six seasonal palettes to members (owner to say which is whose)
 - [ ] Unit 3: upload weekly PDFs, build sheets as they come
 - [ ] Phase 2: Beat the Calculator, Test Mode, spot-the-trick and estimate cards, PIN for grown-ups, more tricks

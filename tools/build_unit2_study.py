@@ -85,15 +85,32 @@ def nonterm(v):
     while d % 5 == 0: d //= 5
     return d != 1
 
+import hashlib
+REG = ROOT / "content/units/unit-2/refs.json"   # append-only: a problem keeps its number forever; retired problems stay on file
+reg = json.loads(REG.read_text()) if REG.exists() else {"next": 1001, "items": {}}
+_index = {(v["id"], v["h"]): int(k) for k, v in reg["items"].items()}
+def ref_for(pid, vi, obj):
+    h = hashlib.sha1(json.dumps([obj["text"], obj.get("answer"), obj.get("correct"), obj.get("options"), obj.get("table"), obj.get("graph")], sort_keys=True).encode()).hexdigest()[:10]
+    if (pid, h) not in _index:
+        n = reg["next"]; reg["next"] += 1; reg["items"][str(n)] = {"id": pid, "v": vi, "h": h, "text": obj["text"][:90]}; _index[(pid, h)] = n
+    return _index[(pid, h)]
 out = []
 for p in PROBS:
     q = {k: v for k, v in p.items()}
     q["why_focus"] = FOCUS[p["sub"]]; q["deps"] = deps(p)
     if q["kind"] == "num": q["tol"] = 0.006 if nonterm(q["answer"]) else 1e-9
     vs = variants(p["id"])
+    _sig = lambda o: (o["text"], str(o.get("table")), str(o.get("graph")), str(o.get("options")), o["show"])
+    vs = [v for v in vs if _sig(v) != _sig(q)]   # "Try a new one" must never repeat the original
     assert vs and all(v["kind"] == p["kind"] for v in vs), p["id"]
+    for i, v in enumerate(vs): v["ref"] = ref_for(p["id"], i, v)
     q["variants"] = vs
+    q["ref"] = ref_for(p["id"], -1, q)
     out.append(q)
+_all = [o['ref'] for o in out] + [v['ref'] for o in out for v in o['variants']]
+assert len(_all) == len(set(_all)), 'duplicate reference numbers'
+assert 1001 <= reg['next'] < 5000, 'public refs must stay below 5000 (private pack uses 5001+)'
+REG.write_text(json.dumps(reg, indent=1, ensure_ascii=False))
 DATA = dict(problems=out, lessons=LESSONS, concepts={k: dict(name=v[0], plain=v[1], origin=v[2]) for k, v in CONCEPTS.items()}, subs=SUBS)
 (ROOT / "content/units/unit-2").mkdir(parents=True, exist_ok=True)
 (ROOT / "content/units/unit-2/practice.json").write_text(json.dumps(DATA, indent=1, ensure_ascii=False))
