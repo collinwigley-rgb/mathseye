@@ -264,7 +264,7 @@ prob(){ const p = PACK.problems.find(x => x.id === S.id), el = $(`<div class="st
       const st = $(`<button class="btn ghost">${S.hints >= p.hints.length ? "No more nudges" : "I'm stuck"}</button>`); st.disabled = S.hints >= p.hints.length; st.onclick = () => { S.hints++; draw(); }; row.append(st);
       const hp = $(`<button class="btn ghost">Help</button>`); hp.onclick = () => helpMenu(p); row.append(hp); act.append(row); }
     else { act.append($(`<div class="say win"><b>Answer:</b> ${esc(p.answer || p.note || "See the steps")}</div>`));
-      act.append($(`<div class="say"><b>How it works</b><ol class="steps">${(p.steps || []).map(s => `<li>${esc(s)}</li>`).join("")}</ol></div>`));
+      act.append($(`<div class="say"><b>Why this is right</b><ol class="steps">${(p.steps || []).map(s => `<li>${esc(s)}</li>`).join("")}</ol></div>`));
       if (!done) { const q = $(`<div class="row"><button class="btn primary" id="y">Yes, I got it</button><button class="btn" id="n">Not quite</button></div>`); q.querySelector("#y").onclick = () => { hw.done[p.id] = true; persist(); S.msg = "Nailed it."; render(); }; q.querySelector("#n").onclick = () => { newAlt(p); go("alt"); }; act.append($(`<p class="lead" style="margin:0">Did you get it?</p>`)); act.append(q); }
       else act.append($(`<p class="done" style="margin:0">✓ ${esc(S.msg || "Marked done.")}</p>`));
       const hb = $(`<div class="row"></div>`); const w = $(`<button class="btn ghost">Why am I learning this?</button>`); w.onclick = () => openSheet("why", p); const u = $(`<button class="btn ghost">What does this use?</button>`); u.onclick = () => openSheet("deps", p); hb.append(w, u); act.append(hb); }
@@ -276,7 +276,7 @@ alt(){ const A = S.alt, p = A.p, orig = PACK.problems.find(x => x.id === S.id); 
   const inp = card.querySelector(".in"), say = card.querySelector(".say"), nud = card.querySelector(".nudges"), pic = card.querySelector(".pic"), act = card.querySelector(".act");
   const check = (v) => { if (v === null || v === "" || v === undefined) { A.msg = p.kind === "choice" ? "Pick an answer first." : "Type an answer first."; A.win = false; return draw(); }
     if (isSetup(p, v)) { A.win = false; A.msg = SETUP_MSG; A.input = ""; return draw(); }
-    A.tries++; if (isRight(p, v)) { A.solved = true; A.win = true; A.msg = exprNote(p, v, true) + (A.tries === 1 && A.hints === 0 ? "You did that on your own. " : "") + "Nailed it."; draw(); burst(card.querySelector(".say.win")); return; } else { A.win = false; A.msg = exprNote(p, v, false) + "Not quite yet. Try again, or tap I'm stuck."; A.input = ""; } draw(); };
+    A.tries++; if (isRight(p, v)) { A.solved = true; A.win = true; A.steps = true; A.msg = exprNote(p, v, true) + (A.tries === 1 && A.hints === 0 ? "You did that on your own. " : "") + "Nailed it."; draw(); burst(card.querySelector(".say.win")); return; } else { A.win = false; A.msg = exprNote(p, v, false) + "Not quite yet. Try again, or tap I'm stuck."; A.input = ""; } draw(); };
   const draw = () => { inp.innerHTML = ""; say.hidden = !A.msg; say.innerHTML = esc(A.msg) + (A.win ? `<p class="ans">Answer: ${esc(p.show)}</p>` : ""); say.className = "say" + (A.win ? " win pop" : ""); nud.innerHTML = p.hints.slice(0, A.hints).map(h => `<li class="say">${esc(h)}</li>`).join(""); pic.innerHTML = p.bars ? (A.steps || A.solved ? barModel(p.bars, true) : A.hints >= 2 ? barModel(p.bars, false) : "") : ""; act.innerHTML = "";
     if (!A.solved) {
       if (p.kind === "choice") { const o = $(`<div class="opts">${p.options.map((t, i) => `<button aria-pressed="${A.pick === i}" data-i="${i}">${esc(t)}</button>`).join("")}</div>`); o.onclick = e => { const b = e.target.closest("button"); if (b) { A.pick = +b.dataset.i; draw(); } }; inp.append(o); }
@@ -286,7 +286,7 @@ alt(){ const A = S.alt, p = A.p, orig = PACK.problems.find(x => x.id === S.id); 
       const st = $(`<button class="btn ghost">${A.hints >= 3 ? "Show me how" : "I'm stuck"}</button>`); st.onclick = () => { if (A.hints >= 3) A.steps = true; else A.hints++; draw(); }; row.append(st);
       const hp = $(`<button class="btn ghost">Help</button>`); hp.onclick = () => helpMenu(p); row.append(hp); act.append(row);
     } else { const row = $(`<div class="row"></div>`); const nx = $(`<button class="btn primary big">Another one</button>`); nx.onclick = () => { newAlt(orig); render(); window.scrollTo(0, 0); }; row.append(nx); const sb = $(`<button class="btn quiet">${A.steps ? "Hide the steps" : "See how it works"}</button>`); sb.onclick = () => { A.steps = !A.steps; draw(); }; row.append(sb); act.append(row); if (p.sense) act.append(senseCard(p.sense)); }
-    if (A.steps) act.append($(`<div class="say"><b>How it works</b><ol class="steps">${p.steps.map(s => `<li>${esc(s)}</li>`).join("")}</ol><p style="margin:0"><b>Answer:</b> ${esc(p.show)}</p></div>`));
+    if (A.steps) act.append($(`<div class="say"><b>Why this is right</b><ol class="steps">${p.steps.map(s => `<li>${esc(s)}</li>`).join("")}</ol><p style="margin:0"><b>Answer:</b> ${esc(p.show)}</p></div>`));
     const back = $(`<button class="btn quiet">Back to my homework problem</button>`); back.onclick = () => go("prob"); act.append(back); };
   draw(); el.append(card); return el; }
 };
