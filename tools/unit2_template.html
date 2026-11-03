@@ -1,0 +1,191 @@
+<title>Unit 2 Study Guide</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: one calm column. One main action per screen; help tools live in a sheet so the problem stays the focus. */
+:root{--bg:#16131f;--panel:#221e31;--panel2:#2d2845;--fg:#f1e9dc;--muted:#b9afc9;--accent:#f4b860;--accent-fg:#2a1d08;--good:#9fd3a8;--good-bg:#1f3a2c;--line:#403959;--focus:#f4b860;
+ --display:"Bricolage Grotesque","Avenir Next",system-ui,sans-serif;--body:"Figtree",system-ui,-apple-system,sans-serif;color-scheme:dark}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f4f2f8;--panel:#ffffff;--panel2:#ebe7f5;--fg:#241f35;--muted:#5d5473;--accent:#a3600a;--accent-fg:#ffffff;--good:#23683b;--good-bg:#dff1e4;--line:#d2cce2;--focus:#a3600a;color-scheme:light}}
+:root[data-theme="light"]{--bg:#f4f2f8;--panel:#ffffff;--panel2:#ebe7f5;--fg:#241f35;--muted:#5d5473;--accent:#a3600a;--accent-fg:#ffffff;--good:#23683b;--good-bg:#dff1e4;--line:#d2cce2;--focus:#a3600a;color-scheme:light}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--fg);font:19px/1.55 var(--body);padding-block:18px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));user-select:none;-webkit-user-select:none}
+#app{max-width:640px;margin:0 auto;min-width:0}
+.stack{display:flex;flex-direction:column;gap:18px;min-width:0}
+h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0;text-wrap:balance}
+h1{font-size:clamp(30px,7vw,42px);letter-spacing:-.5px}h2{font-size:clamp(24px,5.4vw,30px)}h1:focus,h2:focus{outline:none}
+.sub{color:var(--muted);margin:6px 0 0}
+button{font:inherit;color:inherit;border:0;cursor:pointer;touch-action:manipulation;border-radius:16px}
+button:focus-visible,a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.card{background:var(--panel);border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.12em;font-size:14px;font-weight:600;margin:0}
+.lead{margin:0;font-size:20px}.muted{color:var(--muted)}
+.btn{background:var(--panel2);padding:14px 20px;min-height:56px;font-weight:600}
+.btn.primary{background:var(--accent);color:var(--accent-fg)}.btn.big{min-height:68px;font-size:22px;width:100%}
+.btn.ghost{background:transparent;border:2px solid var(--line)}.btn:disabled{opacity:.45;cursor:default}
+.btn.quiet{background:none;color:var(--muted);text-decoration:underline;text-underline-offset:4px;min-height:48px;font-weight:500}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.row>.btn{flex:1 1 150px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px}
+.dots{display:flex;gap:8px;align-items:center}.dots i{width:14px;height:14px;border-radius:50%;background:var(--panel2);border:2px solid var(--line)}
+.dots i.on{background:var(--accent);border-color:var(--accent)}.dots i.now{border-color:var(--accent);background:transparent}
+.bar{height:10px;background:var(--panel2);border-radius:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--accent);border-radius:8px;transition:width .4s}
+.tile{background:var(--panel);padding:18px;text-align:left;display:flex;flex-direction:column;gap:8px;min-height:104px;width:100%}
+.tile b{font-family:var(--display);font-size:20px}.tile small{color:var(--muted);font-size:15px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.acc{background:var(--panel);width:100%;text-align:left;padding:18px 20px;min-height:64px;display:flex;justify-content:space-between;align-items:center;font-weight:600}
+.accb{background:var(--panel);border-radius:0 0 20px 20px;margin-top:-10px;padding:22px 20px 20px;display:flex;flex-direction:column;gap:12px}
+.hook{margin:0;padding:12px 16px;background:var(--panel2);border-radius:14px;font-weight:600;font-size:20px}
+.problem{font-size:clamp(23px,5.4vw,30px);font-weight:500;margin:0;line-height:1.35}
+table.t{border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:22px}table.t th,table.t td{border:1px solid var(--line);padding:10px 18px;text-align:center}table.t th{background:var(--panel2);font-family:var(--display)}
+.tw{overflow-x:auto}
+.answer{font-size:34px;min-height:64px;padding:8px 16px;background:var(--panel2);border-radius:16px;font-variant-numeric:tabular-nums;color:var(--accent);display:flex;align-items:center}
+.answer .ph{color:var(--muted);font-size:19px}.tip{margin:0 0 6px;color:var(--muted);font-size:16px}
+.in:empty,.vis:empty,.nudges:empty,.act:empty{display:none}
+.ans{margin:6px 0 0;font-weight:600}
+.pad{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.pad button{background:var(--panel2);min-height:66px;font-size:26px;font-variant-numeric:tabular-nums}
+.pad .go{grid-column:span 4;min-height:72px;background:var(--accent);color:var(--accent-fg);font-weight:700;font-size:22px}
+.opts{display:flex;flex-direction:column;gap:12px}.opts button{background:var(--panel2);padding:18px 20px;text-align:left;font-size:21px;min-height:66px;border:3px solid transparent}
+.opts button[aria-pressed=true]{border-color:var(--accent)}
+.say{margin:0;padding:14px 18px;border-radius:18px;background:var(--panel2);border-left:5px solid var(--accent)}
+.say.win{background:var(--good-bg);border-left-color:var(--good);font-weight:600}
+.nudges{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
+.steps{margin:0;padding-left:26px;display:flex;flex-direction:column;gap:8px}
+.sheetbg{position:fixed;inset:0;background:rgba(10,8,18,.6);display:flex;align-items:flex-end;justify-content:center;z-index:20;padding-top:env(safe-area-inset-top,0px)}
+.sheet{background:var(--panel);width:100%;max-width:640px;max-height:82vh;overflow:auto;border-radius:28px 28px 0 0;padding:24px max(20px,env(safe-area-inset-left,0px)) calc(28px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:14px}
+.lvl{display:inline-block;padding:6px 14px;border-radius:99px;background:var(--accent);color:var(--accent-fg);font-weight:600;font-size:16px}
+.cl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}.cl li{display:flex;gap:10px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap}.cl small{color:var(--muted);display:block;font-size:16px}
+.tag{font-size:14px;padding:3px 10px;border-radius:99px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+dl{margin:0}dt{font-family:var(--display);font-weight:700;color:var(--accent);font-size:15px;text-transform:uppercase;letter-spacing:.08em}dd{margin:0 0 10px}
+svg.g{width:100%;max-width:400px;height:auto}.g .ax{stroke:var(--muted);stroke-width:1.5}.g .gr{stroke:var(--line);stroke-width:1}.g text{fill:var(--muted);font:12px var(--body)}
+.g .ln{stroke:var(--accent);stroke-width:3.5;fill:none}.g .ln2{stroke:var(--good);stroke-width:3.5;fill:none}.g .dot{fill:var(--accent)}.g .lb{fill:var(--fg);font-weight:600}
+.big-n{font-family:var(--display);font-size:56px;line-height:1;color:var(--accent)}
+.res{display:flex;flex-direction:column;gap:10px}.res .it{background:var(--panel2);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:4px;font-size:17px}.ok{color:var(--good);font-weight:600}.rv{color:var(--accent);font-weight:600}
+.timer{font-family:var(--display);font-size:64px;text-align:center;font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:no-preference){.pop{animation:pop .35s ease-out}@keyframes pop{from{transform:scale(.97)}}.shake{animation:shk .4s}@keyframes shk{20%,60%{transform:translateX(-7px)}40%,80%{transform:translateX(7px)}}.nudges li{animation:fadein .3s}@keyframes fadein{from{opacity:0;transform:translateY(5px)}}}
+</style>
+<div id="app"></div><div id="sheet"></div>
+<script>
+const DATA = __DATA__;
+const KEY = "mathseye.unit2.study.v2";
+let save = {solved:{}, clean:{}, mission:null, day:{d:"", n:0}};
+try { Object.assign(save, JSON.parse(localStorage.getItem(KEY) || "{}")); } catch(e) {}
+const persist = () => { try { localStorage.setItem(KEY, JSON.stringify(save)); } catch(e) {} };
+const today = () => new Date().toISOString().slice(0,10);
+const bump = () => { if (save.day.d !== today()) save.day = {d:today(), n:0}; save.day.n++; };
+const $ = (h) => { const t = document.createElement("template"); t.innerHTML = h.trim(); return t.content.firstChild; };
+const esc = (s) => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const LV = {foundation:"Base skill", builds:"Builds on one earlier lesson", mixed:"Mixes several lessons"};
+const LVTXT = {foundation:"This one mostly uses this lesson's skill plus things you learned in earlier grades.", builds:"This one uses this lesson's skill together with one earlier lesson from this unit.", mixed:"This one combines several lessons. If you get stuck, try the earlier lessons first."};
+const WIN = ["Got it!","Nice one.","Yes, that's it.","Solid.","That's right."];
+const S = {view:"home", lesson:null, cur:null, open:null, test:null, sheet:null, timer:null};
+const probs = DATA.problems, byId = Object.fromEntries(probs.map(p => [p.id, p]));
+const subDone = (s) => probs.filter(p => p.sub===s && save.solved[p.id]).length, subAll = (s) => probs.filter(p => p.sub===s).length;
+function parseNum(s){ s = String(s).trim().replace(/[−–]/g,"-").replace(/[$,]/g,"").replace(/\s+/g," ");
+  let m = s.match(/^(-?)(\d+) (\d+)\/(\d+)$/); if (m) return (m[1]?-1:1)*(+m[2] + m[3]/m[4]);
+  m = s.match(/^(-?\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/); if (m) return m[1]/m[2];
+  if (/^-?(\d+\.?\d*|\.\d+)$/.test(s)) return parseFloat(s); return NaN; }
+const isRight = (p, v) => p.kind === "choice" ? v === p.correct : Math.abs(parseNum(v) - p.answer) <= (p.tol || 1e-9);
+function graphSVG(g){ const W=380,H=270,L=46,B=38,T=14,R=18,pw=W-L-R,ph=H-T-B,X=v=>L+v/g.xmax*pw,Y=v=>T+ph-v/g.ymax*ph; let s=`<svg class="g" viewBox="0 0 ${W} ${H}" role="img" aria-label="A graph">`;
+  for(let i=0;i<=g.xmax;i++) s+=`<line class="gr" x1="${X(i)}" y1="${T}" x2="${X(i)}" y2="${T+ph}"/><text x="${X(i)}" y="${T+ph+18}" text-anchor="middle">${i}</text>`;
+  const ys = g.ymax>10?2:1; for(let i=0;i<=g.ymax;i+=ys) s+=`<line class="gr" x1="${L}" y1="${Y(i)}" x2="${L+pw}" y2="${Y(i)}"/><text x="${L-8}" y="${Y(i)+4}" text-anchor="end">${i}</text>`;
+  s+=`<line class="ax" x1="${L}" y1="${T+ph}" x2="${L+pw}" y2="${T+ph}"/><line class="ax" x1="${L}" y1="${T}" x2="${L}" y2="${T+ph}"/>`;
+  g.lines.forEach((ln,i)=>{ s+=`<polyline class="${i?'ln2':'ln'}" points="${ln.pts.map(p=>X(p[0])+','+Y(p[1])).join(' ')}"/>`; if(ln.label){const e=ln.pts[ln.pts.length-1]; s+=`<text class="lb" x="${X(e[0])+6}" y="${Y(e[1])+4}">${ln.label}</text>`;}});
+  (g.dots||[]).forEach(d=>{ s+=`<circle class="dot" cx="${X(d[0])}" cy="${Y(d[1])}" r="5"/><text class="lb" x="${X(d[0])-8}" y="${Y(d[1])-10}" text-anchor="end">(${d[0]}, ${d[1]})</text>`;});
+  return s+`<text x="${L+pw/2}" y="${H-4}" text-anchor="middle">${g.xl}</text><text x="12" y="${T+ph/2}" transform="rotate(-90 12 ${T+ph/2})" text-anchor="middle">${g.yl}</text></svg>`; }
+const tableHTML = (t) => `<div class="tw"><table class="t"><tr><th>x</th>${t.x.map(v=>`<td>${esc(v)}</td>`).join("")}</tr><tr><th>y</th>${t.y.map(v=>`<td>${esc(v)}</td>`).join("")}</tr></table></div>`;
+const visual = (p) => p.graph ? graphSVG(p.graph) : p.table ? tableHTML(p.table) : "";
+
+/* ---------- help sheet (Why / What does this use?) ---------- */
+function openSheet(kind, p){ S.sheet = {kind, p, more:false}; drawSheet(); }
+function closeSheet(){ S.sheet = null; drawSheet(); }
+function drawSheet(){ const root = document.getElementById("sheet"); root.innerHTML = ""; if (!S.sheet) return;
+  const {kind, p, more} = S.sheet, w = DATA.lessons[p.sub].why; let body = "";
+  if (kind === "why") body = `<h2>Why am I learning this?</h2><p class="lead">${esc(p.why_focus)}</p><dl><dt>Why you need it</dt><dd>${esc(w.why_you_need_it)}</dd><dt>Where you'll see it</dt><dd>${esc(w.real_life)}</dd>${more?`<dt>The goal</dt><dd>${esc(w.goal)}</dd><dt>How it helps later</dt><dd>${esc(w.supports_future)}</dd><dt>Building block</dt><dd>${esc(w.building_block)}</dd>`:""}</dl>${more?"":'<button class="btn quiet" id="more">Tell me more</button>'}`;
+  else { const d = p.deps; body = `<h2>What does this use?</h2><div><span class="lvl">${LV[d.level]}</span></div><p class="lead">${LVTXT[d.level]}</p><ul class="cl">${d.concepts.map(c=>{const k=DATA.concepts[c];return `<li><span><b>${esc(k.name)}</b><small>${esc(k.plain)}</small></span><span class="tag">${esc(k.origin)}</span></li>`}).join("")}</ul>`; }
+  const bg = $(`<div class="sheetbg"><div class="sheet pop" role="dialog" aria-modal="true" aria-label="Help">${body}<button class="btn primary" id="close">Back to the problem</button></div></div>`);
+  bg.onclick = e => { if (e.target === bg) closeSheet(); }; bg.querySelector("#close").onclick = closeSheet;
+  const m = bg.querySelector("#more"); if (m) m.onclick = () => { S.sheet.more = true; drawSheet(); };
+  root.append(bg); bg.querySelector("#close").focus(); }
+document.addEventListener("keydown", e => { if (e.key === "Escape" && S.sheet) closeSheet(); });
+
+/* ---------- navigation ---------- */
+function go(view, extra){ clearInterval(S.timer); Object.assign(S, extra||{}, {view}); render(); window.scrollTo(0,0); }
+function render(){ const app = document.getElementById("app"); app.innerHTML = ""; app.append(VIEWS[S.view]()); const h = app.querySelector("h1,h2"); if (h) { h.tabIndex = -1; h.focus({preventScroll:true}); } }
+const backBar = (label, fn) => { const t = $(`<div class="top"><button class="btn quiet">← ${label}</button></div>`); t.querySelector("button").onclick = fn; return t; };
+
+/* ---------- missions ---------- */
+function buildMission(lesson){
+  let ps = probs.filter(p => !lesson || p.sub === lesson); let un = ps.filter(p => !save.solved[p.id]); let ids = [];
+  if (lesson) { ids = un.slice(0,5).map(p => p.id); ps.filter(p => save.solved[p.id]).forEach(p => { if (ids.length < 5) ids.push(p.id); }); }
+  else { const groups = DATA.subs.map(s => un.filter(p => p.sub === s)); let i = 0; while (ids.length < 5 && groups.some(g => g.length)) { const g = groups[i % groups.length]; if (g.length) ids.push(g.shift().id); i++; }
+         if (ids.length < 5) probs.filter(p => !ids.includes(p.id)).slice(0, 5 - ids.length).forEach(p => ids.push(p.id)); }
+  save.mission = {ids, i:0, res:{}, lesson: lesson || null}; persist(); S.cur = null; go("mission"); }
+
+/* ---------- views ---------- */
+const VIEWS = {
+home(){ const total = probs.length, done = probs.filter(p => save.solved[p.id]).length, m = save.mission, resume = m && m.i < m.ids.length;
+  const el = $(`<div class="stack"><header><h1>Unit 2 Study Guide</h1><p class="sub">Pick one thing. Small steps count.</p></header>
+  <section class="card"><p class="eyebrow">Today</p><h2>${resume ? `Keep going: ${m.i} of ${m.ids.length} done` : "Ready for a quick mission?"}</h2><p class="lead muted">5 problems, about 10 minutes. You can stop anytime.</p><button class="btn primary big" id="go">${resume ? "Keep going" : "Start a mission"}</button></section>
+  <div class="grid3"><button class="btn" id="pick">Pick a lesson</button><button class="btn" id="cheat">Cheat sheet</button><button class="btn" id="test">Practice test</button></div>
+  <section class="card"><p class="eyebrow">Your progress</p><div class="bar" aria-hidden="true"><i style="width:${done/total*100}%"></i></div><p class="lead" style="margin:0">${done} of ${total} solved${save.day.d===today()&&save.day.n?` · ${save.day.n} today`:""}</p></section></div>`);
+  el.querySelector("#go").onclick = () => resume ? go("mission") : buildMission(null);
+  el.querySelector("#pick").onclick = () => go("picker"); el.querySelector("#cheat").onclick = () => go("cheat", {open:null}); el.querySelector("#test").onclick = () => go("testIntro"); return el; },
+picker(){ const el = $(`<div class="stack"></div>`); el.append(backBar("Home", () => go("home")), $(`<header><h1>Pick a lesson</h1><p class="sub">Each one is a 5-problem mission.</p></header>`));
+  const t = $(`<div class="tiles"></div>`); DATA.subs.forEach(s => { const L = DATA.lessons[s], d = subDone(s), n = subAll(s), b = $(`<button class="tile"><small>Lesson ${s}</small><b>${esc(L.title)}</b><span class="bar" aria-hidden="true"><i style="width:${d/n*100}%"></i></span><small>${d} of ${n} solved</small></button>`); b.onclick = () => buildMission(s); t.append(b); }); el.append(t); return el; },
+cheat(){ const el = $(`<div class="stack"></div>`); el.append(backBar("Home", () => go("home")), $(`<header><h1>Cheat sheet</h1><p class="sub">Proportional means y is always the same number times x. That number is k, the unit rate.</p></header>`));
+  DATA.subs.forEach(s => { const L = DATA.lessons[s], open = S.open === s, wrap = $(`<div></div>`), b = $(`<button class="acc" aria-expanded="${open}"><span>${s} · ${esc(L.title)}</span><span aria-hidden="true">${open?"−":"+"}</span></button>`); b.onclick = () => { S.open = open ? null : s; render(); }; wrap.append(b);
+    if (open) { const c = $(`<div class="accb"><p class="lead">${esc(L.move)}</p><p class="hook">${esc(L.hook)}</p><p class="muted" style="margin:0"><b>Watch out:</b> ${esc(L.trap)}</p><button class="btn primary">Try 5 problems</button></div>`); c.querySelector("button").onclick = () => buildMission(s); wrap.append(c); } el.append(wrap); }); return el; },
+mission(){ const m = save.mission; if (!m || m.i >= m.ids.length) return VIEWS.summary();
+  const p = byId[m.ids[m.i]], res = m.res[p.id] = m.res[p.id] || {hints:0, tries:0, done:false};
+  if (!S.cur || S.cur.id !== p.id) S.cur = {id:p.id, input:"", pick:null, msg:"", win:false, steps:false, shake:false};
+  const st = S.cur, solved = res.done; const el = $(`<div class="stack"></div>`);
+  const top = $(`<div class="top"><button class="btn quiet" id="exit">✕ Stop for now</button><div class="dots" aria-label="Problem ${m.i+1} of ${m.ids.length}">${m.ids.map((id,k)=>`<i class="${m.res[id]&&m.res[id].done?'on':k===m.i?'now':''}"></i>`).join("")}</div></div>`); top.querySelector("#exit").onclick = () => go("home"); el.append(top);
+  const card = $(`<section class="card ${st.shake?'shake':''}"><p class="eyebrow">Lesson ${p.sub}</p><p class="problem">${esc(p.text)}</p><div class="vis">${visual(p)}</div><div class="in"></div><div class="say" ${st.msg?"":"hidden"} aria-live="polite"></div><ul class="nudges"></ul><div class="act"></div></section>`);
+  st.shake = false; const inp = card.querySelector(".in"), say = card.querySelector(".say"), nud = card.querySelector(".nudges"), act = card.querySelector(".act");
+  const draw = () => {
+    inp.innerHTML = ""; say.hidden = !st.msg; say.innerHTML = esc(st.msg) + (st.win ? `<p class="ans">Answer: ${esc(p.show)}</p>` : ""); say.className = "say" + (st.win ? " win pop" : "");
+    nud.innerHTML = p.hints.slice(0, res.hints).map(h => `<li class="say">${esc(h)}</li>`).join(""); act.innerHTML = "";
+    if (!solved) {
+      if (p.kind === "choice") { const o = $(`<div class="opts">${p.options.map((t,i)=>`<button aria-pressed="${st.pick===i}" data-i="${i}">${esc(t)}</button>`).join("")}</div>`); o.onclick = e => { const b = e.target.closest("button"); if (b) { st.pick = +b.dataset.i; draw(); } }; inp.append(o); }
+      else { inp.append($(`<div class="answer" aria-live="polite">${st.input ? esc(st.input) : '<span class="ph">Tap the numbers below</span>'}</div>`), $(`<p class="tip">Fractions: type 3/4, or 1 1/2 with the space key.</p>`));
+        const keys = ["7","8","9","⌫","4","5","6","−","1","2","3","/","0",".","␣"]; const pad = $(`<div class="pad">${keys.map(k=>`<button data-k="${k}" aria-label="${k==='⌫'?'Delete':k==='␣'?'Space':k==='−'?'Minus':k}">${k==="␣"?"space":k}</button>`).join("")}<button class="go" data-k="go">Check</button></div>`);
+        pad.onclick = e => { const b = e.target.closest("button"); if (!b) return; const k = b.dataset.k; if (k === "go") return check(st.input); st.input = k==="⌫" ? st.input.slice(0,-1) : (st.input.length < 14 ? st.input + (k==="␣" ? " " : k) : st.input); draw(); }; inp.append(pad); }
+      const row = $(`<div class="row"></div>`);
+      if (p.kind === "choice") { const c = $(`<button class="btn primary big">Check</button>`); c.onclick = () => check(st.pick); row.append(c); }
+      const stuck = $(`<button class="btn ghost">${res.hints >= 3 ? "Show me how" : "I'm stuck"}</button>`); stuck.onclick = () => { if (res.hints >= 3) { st.steps = true; } else res.hints++; persist(); draw(); }; row.append(stuck);
+      const help = $(`<button class="btn ghost">Help</button>`); help.onclick = () => helpMenu(p); row.append(help); act.append(row);
+    } else {
+      const row = $(`<div class="row"></div>`); const nx = $(`<button class="btn primary big">${m.i+1 < m.ids.length ? "Next problem" : "Finish mission"}</button>`); nx.onclick = () => { m.i++; S.cur = null; persist(); go("mission"); }; row.append(nx);
+      const sb = $(`<button class="btn quiet">${st.steps?"Hide the steps":"See how it works"}</button>`); sb.onclick = () => { st.steps = !st.steps; draw(); }; row.append(sb); act.append(row);
+      const hb = $(`<div class="row"></div>`); const w = $(`<button class="btn ghost">Why am I learning this?</button>`); w.onclick = () => openSheet("why", p); const u = $(`<button class="btn ghost">What does this use?</button>`); u.onclick = () => openSheet("deps", p); hb.append(w, u); act.append(hb); }
+    if (st.steps) act.append($(`<div class="say"><b>How it works</b><ol class="steps">${p.steps.map(s=>`<li>${esc(s)}</li>`).join("")}</ol><p style="margin:0"><b>Answer:</b> ${esc(p.show)}</p></div>`));
+  };
+  function helpMenu(p){ const bg = $(`<div class="sheetbg"><div class="sheet pop" role="dialog" aria-modal="true" aria-label="Help"><h2>Need something else?</h2><button class="btn" id="w">Why am I learning this?</button><button class="btn" id="u">What does this use?</button><button class="btn primary" id="c">Back to the problem</button></div></div>`);
+    const root = document.getElementById("sheet"); root.innerHTML = ""; root.append(bg); const shut = () => { root.innerHTML = ""; }; bg.onclick = e => { if (e.target === bg) shut(); };
+    bg.querySelector("#c").onclick = shut; bg.querySelector("#w").onclick = () => openSheet("why", p); bg.querySelector("#u").onclick = () => openSheet("deps", p); bg.querySelector("#c").focus(); }
+  function check(v){ if (v === null || v === "" || v === undefined) { st.msg = p.kind==="choice" ? "Pick an answer first." : "Type an answer first."; st.win = false; return draw(); }
+    res.tries++; if (isRight(p, v)) { res.done = true; save.solved[p.id] = true; const clean = res.tries === 1 && res.hints === 0; if (clean) save.clean[p.id] = true; bump(); persist(); st.win = true; st.msg = clean ? "You did that on your own. " + WIN[(m.i*2)%WIN.length] : WIN[(m.i*2+1)%WIN.length]; S.cur = st; render(); return; }
+    st.win = false; st.msg = "Not quite yet. Try again, or tap I'm stuck."; st.input = ""; st.shake = true; persist(); render(); }
+  const solvedNow = res.done; if (solvedNow && !st.msg) { st.win = true; st.msg = "Got it!"; }
+  draw(); el.append(card); return el; },
+summary(){ const m = save.mission, n = m ? m.ids.length : 0, ok = m ? m.ids.filter(id => m.res[id] && m.res[id].done).length : 0, clean = m ? m.ids.filter(id => save.clean[id] && m.res[id] && m.res[id].tries === 1 && m.res[id].hints === 0).length : 0;
+  const el = $(`<div class="stack"><header><h1>Mission done!</h1></header><section class="card"><div class="big-n">${ok}</div><p class="lead">problem${ok===1?"":"s"} solved${clean?`, ${clean} with no help`:""}. That's real progress.</p></section>
+  <button class="btn primary big" id="again">Another mission</button><div class="row"><button class="btn" id="brk">Take a 2-minute break</button><button class="btn" id="home">I'm done for now</button></div></div>`);
+  save.mission = null; persist(); el.querySelector("#again").onclick = () => buildMission(null); el.querySelector("#brk").onclick = () => go("brk"); el.querySelector("#home").onclick = () => go("home"); return el; },
+brk(){ let left = 120; const el = $(`<div class="stack"><header><h1>Quick break</h1><p class="sub">Your brain works better after one. Pick any.</p></header><section class="card"><ul class="steps"><li>Stand up and stretch your arms up high.</li><li>Drink some water.</li><li>Look out a window for 20 seconds.</li></ul><div class="timer" id="tm" aria-live="off">2:00</div><button class="btn primary big" id="start">Start a 2-minute timer</button></section><button class="btn" id="home">Back to home</button></div>`);
+  el.querySelector("#home").onclick = () => go("home"); el.querySelector("#start").onclick = e => { e.target.disabled = true; clearInterval(S.timer); S.timer = setInterval(() => { left--; const tm = document.getElementById("tm"); if (tm) tm.textContent = Math.floor(left/60) + ":" + String(left%60).padStart(2,"0"); if (left <= 0) { clearInterval(S.timer); if (tm) tm.textContent = "Ready when you are."; } }, 1000); }; return el; },
+testIntro(){ const el = $(`<div class="stack"></div>`); el.append(backBar("Home", () => go("home")), $(`<section class="card"><p class="eyebrow">Practice test</p><h2>14 questions, no hints</h2><p class="lead muted">Two from each lesson, mixed up like the real test. At the end you see which lessons to look at again. You can stop anytime.</p><button class="btn primary big" id="st">Start the test</button></section>`)); el.querySelector("#st").onclick = () => { const picks = []; DATA.subs.forEach(s => picks.push(...probs.filter(p => p.sub === s).sort(() => Math.random()-.5).slice(0,2))); S.test = {list:picks.sort(() => Math.random()-.5), i:0, ans:[], input:"", pick:null, all:false}; go("testQ"); }; return el; },
+testQ(){ const T = S.test, p = T.list[T.i]; const el = $(`<div class="stack"></div>`);
+  const top = $(`<div class="top"><button class="btn quiet" id="exit">✕ Stop</button><span class="muted">Question ${T.i+1} of ${T.list.length}</span></div>`); top.querySelector("#exit").onclick = () => go("home"); el.append(top, $(`<div class="bar" aria-hidden="true"><i style="width:${T.i/T.list.length*100}%"></i></div>`));
+  const c = $(`<section class="card"><p class="problem">${esc(p.text)}</p><div class="vis">${visual(p)}</div><div class="in"></div><button class="btn primary big nx">${T.i+1<T.list.length?"Next":"Finish"}</button></section>`), inp = c.querySelector(".in");
+  const draw = () => { inp.innerHTML = ""; if (p.kind === "choice") { const o = $(`<div class="opts">${p.options.map((t,i)=>`<button aria-pressed="${T.pick===i}" data-i="${i}">${esc(t)}</button>`).join("")}</div>`); o.onclick = e => { const b = e.target.closest("button"); if (b) { T.pick = +b.dataset.i; draw(); } }; inp.append(o); }
+    else { inp.append($(`<div class="answer">${T.input ? esc(T.input) : '<span class="ph">Tap the numbers below</span>'}</div>`)); const keys = ["7","8","9","⌫","4","5","6","−","1","2","3","/","0",".","␣"]; const pad = $(`<div class="pad">${keys.map(k=>`<button data-k="${k}">${k==="␣"?"space":k}</button>`).join("")}</div>`); pad.onclick = e => { const b = e.target.closest("button"); if (!b) return; const k = b.dataset.k; T.input = k==="⌫" ? T.input.slice(0,-1) : (T.input.length < 14 ? T.input + (k==="␣" ? " " : k) : T.input); draw(); }; inp.append(pad); } };
+  draw(); c.querySelector(".nx").onclick = () => { T.ans[T.i] = p.kind==="choice" ? T.pick : T.input; T.input = ""; T.pick = null; if (T.i+1 < T.list.length) { T.i++; go("testQ"); } else go("testDone"); }; el.append(c); return el; },
+testDone(){ const T = S.test, right = T.list.filter((p,i) => isRight(p, T.ans[i])).length, rev = [...new Set(T.list.filter((p,i) => !isRight(p, T.ans[i])).map(p => p.sub))].sort();
+  const el = $(`<div class="stack"><header><h1>Test finished</h1></header><section class="card"><div class="big-n">${right}<span class="muted" style="font-size:28px"> of ${T.list.length}</span></div><p class="lead">${rev.length ? "Look at these lessons again:" : "Every lesson looks solid. Nice work."}</p><div class="row">${rev.map(s=>`<button class="btn" data-s="${s}">${s} · ${esc(DATA.lessons[s].title)}</button>`).join("")}</div></section><button class="btn primary big" id="again">Try a new test</button><button class="btn" id="see">${T.all?"Hide my answers":"See my answers"}</button><button class="btn quiet" id="home">Home</button></div>`);
+  el.querySelectorAll("[data-s]").forEach(b => b.onclick = () => buildMission(b.dataset.s)); el.querySelector("#again").onclick = () => go("testIntro"); el.querySelector("#home").onclick = () => go("home"); el.querySelector("#see").onclick = () => { T.all = !T.all; render(); };
+  if (T.all) { const res = $(`<div class="res"></div>`); T.list.forEach((p,i) => { const ok = isRight(p, T.ans[i]), mine = p.kind==="choice" ? (T.ans[i]==null ? "(no answer)" : p.options[T.ans[i]]) : (T.ans[i] || "(no answer)"); res.append($(`<div class="it"><span>${esc(p.text)}</span><span>Your answer: ${esc(mine)}</span>${ok?'<span class="ok">Got it ✓</span>':`<span class="rv">Look at lesson ${p.sub}. Answer: ${esc(p.show)}</span>`}</div>`)); }); el.insertBefore(res, el.querySelector("#home")); } return el; }
+};
+render();
+</script>
