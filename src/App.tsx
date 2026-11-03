@@ -4,6 +4,7 @@ import { checkAnswer } from './answer';
 import { GENERATORS, fill, seeded, MINUS } from './generators';
 import { newCard, review } from './scheduler';
 import { buildQueue, confidence, SESSION_MS, streak, trickMastery, unlockedTricks } from './session';
+import Mark from './Mark';
 import { fresh, load, save, today, type Db, type QueueItem } from './store';
 import type { Problem } from './types';
 
@@ -41,7 +42,7 @@ function Home({ db, onStart, onGrownups }: { db: Db; onStart: () => void; onGrow
   const learned = TRICKS.filter((t) => db.settings.introducedTricks.includes(t.id));
   return (
     <main className="home">
-      <h1 className="brand">Math<span>s</span>eye <small>Math Facts</small></h1>
+      <div className="logo"><Mark size={84} /><h1 className="brand">MATHSEYE<small>Math Facts</small></h1></div>
       <div className="stats">
         <div><b>{streak(db)}</b><span>night streak</span></div>
         <div><b>{conf === null ? '—' : Math.round(conf * 100) + '%'}</b><span>mental math confidence</span></div>

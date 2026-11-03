@@ -3,13 +3,13 @@
 <title>Unit 2 Study Guide</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Figtree:wght@400;500;600&display=swap">
 <style>
 /* Layout: one calm column. One main action per screen; help tools live in a sheet so the problem stays the focus. */
-:root{--bg:#16131f;--panel:#221e31;--panel2:#2d2845;--fg:#f1e9dc;--muted:#b9afc9;--accent:#f4b860;--accent-fg:#2a1d08;--good:#9fd3a8;--good-bg:#1f3a2c;--line:#403959;--focus:#f4b860;
- --display:"Bricolage Grotesque","Avenir Next",system-ui,sans-serif;--body:"Figtree",system-ui,-apple-system,sans-serif;color-scheme:dark}
-@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f4f2f8;--panel:#ffffff;--panel2:#ebe7f5;--fg:#241f35;--muted:#5d5473;--accent:#a3600a;--accent-fg:#ffffff;--good:#23683b;--good-bg:#dff1e4;--line:#d2cce2;--focus:#a3600a;color-scheme:light}}
-:root[data-theme="light"]{--bg:#f4f2f8;--panel:#ffffff;--panel2:#ebe7f5;--fg:#241f35;--muted:#5d5473;--accent:#a3600a;--accent-fg:#ffffff;--good:#23683b;--good-bg:#dff1e4;--line:#d2cce2;--focus:#a3600a;color-scheme:light}
+:root{--bg:#14111f;--panel:#1e1a2e;--panel2:#2a2540;--fg:#f1ecd8;--muted:#b4aac4;--accent:#f3eba0;--accent-fg:#1a1626;--good:#9fd3a8;--good-bg:#1f3a2c;--line:#40395a;--focus:#f3eba0;
+ --display:"Fraunces",Georgia,"Times New Roman",serif;--body:"Figtree",system-ui,-apple-system,sans-serif;color-scheme:dark}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f8f5dc;--panel:#fffef6;--panel2:#efe9c4;--fg:#1b1730;--muted:#5b5570;--accent:#2c2358;--accent-fg:#f6f1b5;--good:#23683b;--good-bg:#e3f1d6;--line:#ddd6a8;--focus:#2c2358;color-scheme:light}}
+:root[data-theme="light"]{--bg:#f8f5dc;--panel:#fffef6;--panel2:#efe9c4;--fg:#1b1730;--muted:#5b5570;--accent:#2c2358;--accent-fg:#f6f1b5;--good:#23683b;--good-bg:#e3f1d6;--line:#ddd6a8;--focus:#2c2358;color-scheme:light}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{background:var(--bg);color:var(--fg);font:19px/1.55 var(--body);padding-block:18px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));user-select:none;-webkit-user-select:none}
 #app{max-width:640px;margin:0 auto;min-width:0}
@@ -65,6 +65,10 @@ svg.g{width:100%;max-width:400px;height:auto}.g .ax{stroke:var(--muted);stroke-w
 .res{display:flex;flex-direction:column;gap:10px}.res .it{background:var(--panel2);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:4px;font-size:17px}.ok{color:var(--good);font-weight:600}.rv{color:var(--accent);font-weight:600}
 .timer{font-family:var(--display);font-size:64px;text-align:center;font-variant-numeric:tabular-nums}
 @media (prefers-reduced-motion:no-preference){.pop{animation:pop .35s ease-out}@keyframes pop{from{transform:scale(.97)}}.shake{animation:shk .4s}@keyframes shk{20%,60%{transform:translateX(-7px)}40%,80%{transform:translateX(7px)}}.nudges li{animation:fadein .3s}@keyframes fadein{from{opacity:0;transform:translateY(5px)}}}
+.logo{display:flex;align-items:center;gap:12px;color:var(--accent)}.wm{font-family:var(--display);font-weight:800;letter-spacing:.2em;font-size:17px}
+.dots i{border:0;border-radius:0;width:18px;height:18px;background:var(--line);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+.dots i{background:var(--muted);opacity:.35}.dots i.on{background:var(--accent);opacity:1}.dots i.now{background:var(--accent);opacity:1;width:24px;height:24px}
+.say.win::before{content:"\2726 ";color:var(--good)}
 </style>
 <div id="app"></div><div id="sheet"></div>
 <script>
@@ -79,7 +83,8 @@ const $ = (h) => { const t = document.createElement("template"); t.innerHTML = h
 const esc = (s) => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const LV = {foundation:"Base skill", builds:"Builds on one earlier lesson", mixed:"Mixes several lessons"};
 const LVTXT = {foundation:"This one mostly uses this lesson's skill plus things you learned in earlier grades.", builds:"This one uses this lesson's skill together with one earlier lesson from this unit.", mixed:"This one combines several lessons. If you get stuck, try the earlier lessons first."};
-const WIN = ["Got it!","Nice one.","Yes, that's it.","Solid.","That's right."];
+const WIN = ["Nailed it.","Clean take.","On beat.","That's the one.","Stage-ready."];
+const MARK = `<svg width="52" height="42" viewBox="0 0 120 96" role="img" aria-label="Mathseye" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 54 C26 16 94 16 114 54 C94 92 26 92 6 54Z" stroke-width="7"/><g stroke-width="6"><path d="M60 30 V78 M36 54 H84"/><path d="M43 37 L77 71 M77 37 L43 71"/></g><path d="M104 8 Q106 22 118 24 Q106 26 104 40 Q102 26 90 24 Q102 22 104 8Z" fill="currentColor" stroke="none"/></svg>`;
 const S = {view:"home", lesson:null, cur:null, open:null, test:null, sheet:null, timer:null};
 const probs = DATA.problems, byId = Object.fromEntries(probs.map(p => [p.id, p]));
 const subDone = (s) => probs.filter(p => p.sub===s && save.solved[p.id]).length, subAll = (s) => probs.filter(p => p.sub===s).length;
@@ -127,8 +132,8 @@ function buildMission(lesson){
 /* ---------- views ---------- */
 const VIEWS = {
 home(){ const total = probs.length, done = probs.filter(p => save.solved[p.id]).length, m = save.mission, resume = m && m.i < m.ids.length;
-  const el = $(`<div class="stack"><header><h1>Unit 2 Study Guide</h1><p class="sub">Pick one thing. Small steps count.</p></header>
-  <section class="card"><p class="eyebrow">Today</p><h2>${resume ? `Keep going: ${m.i} of ${m.ids.length} done` : "Ready for a quick mission?"}</h2><p class="lead muted">5 problems, about 10 minutes. You can stop anytime.</p><button class="btn primary big" id="go">${resume ? "Keep going" : "Start a mission"}</button></section>
+  const el = $(`<div class="stack"><header><div class="logo">${MARK}<span class="wm">MATHSEYE</span></div><h1 style="margin-top:14px">Unit 2 Study Guide</h1><p class="sub">Pick one thing. Small steps count.</p></header>
+  <section class="card"><p class="eyebrow">Tonight's set</p><h2>${resume ? `Keep going: ${m.i} of ${m.ids.length} done` : "Ready for a quick mission?"}</h2><p class="lead muted">5 problems, about 10 minutes. You can stop anytime.</p><button class="btn primary big" id="go">${resume ? "Keep going" : "Start a mission"}</button></section>
   <div class="grid3"><button class="btn" id="pick">Pick a lesson</button><button class="btn" id="cheat">Cheat sheet</button><button class="btn" id="test">Practice test</button></div>
   <section class="card"><p class="eyebrow">Your progress</p><div class="bar" aria-hidden="true"><i style="width:${done/total*100}%"></i></div><p class="lead" style="margin:0">${done} of ${total} solved${save.day.d===today()&&save.day.n?` · ${save.day.n} today`:""}</p></section><div id="rs"></div></div>`);
   const rs = el.querySelector("#rs"), askReset = () => { rs.innerHTML = ""; const b = $(`<button class="btn quiet">Reset my progress</button>`); b.onclick = () => { rs.innerHTML = ""; const box = $(`<div class="card"><p class="lead" style="margin:0">Erase all your progress in this study guide? This can't be undone.</p><div class="row"><button class="btn primary" id="yes">Yes, reset</button><button class="btn" id="no">Keep my progress</button></div></div>`); box.querySelector("#yes").onclick = () => { save = {solved:{}, clean:{}, mission:null, day:{d:"", n:0}}; persist(); S.cur = null; S.test = null; go("home"); }; box.querySelector("#no").onclick = askReset; rs.append(box); box.querySelector("#no").focus(); }; rs.append(b); }; askReset();
@@ -176,12 +181,12 @@ mission(){ const m = save.mission; if (!m || m.i >= m.ids.length) return VIEWS.s
   const solvedNow = res.done; if (solvedNow && !st.msg) { st.win = true; st.msg = "Got it!"; }
   draw(); el.append(card); return el; },
 summary(){ const m = save.mission, n = m ? m.ids.length : 0, ok = m ? m.ids.filter(id => m.res[id] && m.res[id].done).length : 0, clean = m ? m.ids.filter(id => save.clean[id] && m.res[id] && m.res[id].tries === 1 && m.res[id].hints === 0).length : 0;
-  const el = $(`<div class="stack"><header><h1>Mission done!</h1></header><section class="card"><div class="big-n">${ok}</div><p class="lead">problem${ok===1?"":"s"} solved${clean?`, ${clean} with no help`:""}. That's real progress.</p></section>
-  <button class="btn primary big" id="again">Another mission</button><div class="row"><button class="btn" id="brk">Take a 2-minute break</button><button class="btn" id="home">I'm done for now</button></div></div>`);
+  const el = $(`<div class="stack"><header><h1>That's a wrap!</h1></header><section class="card"><div class="big-n">${ok}</div><p class="lead">problem${ok===1?"":"s"} solved${clean?`, ${clean} with no help`:""}. That's real progress.</p></section>
+  <button class="btn primary big" id="again">Encore: another mission</button><div class="row"><button class="btn" id="brk">Take a 2-minute break</button><button class="btn" id="home">I'm done for now</button></div></div>`);
   save.mission = null; persist(); el.querySelector("#again").onclick = () => buildMission(null); el.querySelector("#brk").onclick = () => go("brk"); el.querySelector("#home").onclick = () => go("home"); return el; },
-brk(){ let left = 120; const el = $(`<div class="stack"><header><h1>Quick break</h1><p class="sub">Your brain works better after one. Pick any.</p></header><section class="card"><ul class="steps"><li>Stand up and stretch your arms up high.</li><li>Drink some water.</li><li>Look out a window for 20 seconds.</li></ul><div class="timer" id="tm" aria-live="off">2:00</div><button class="btn primary big" id="start">Start a 2-minute timer</button></section><button class="btn" id="home">Back to home</button></div>`);
+brk(){ let left = 120; const el = $(`<div class="stack"><header><h1>Intermission</h1><p class="sub">Your brain works better after a break. Pick any.</p></header><section class="card"><ul class="steps"><li>Stand up and stretch your arms up high.</li><li>Drink some water.</li><li>Look out a window for 20 seconds.</li></ul><div class="timer" id="tm" aria-live="off">2:00</div><button class="btn primary big" id="start">Start a 2-minute timer</button></section><button class="btn" id="home">Back to home</button></div>`);
   el.querySelector("#home").onclick = () => go("home"); el.querySelector("#start").onclick = e => { e.target.disabled = true; clearInterval(S.timer); S.timer = setInterval(() => { left--; const tm = document.getElementById("tm"); if (tm) tm.textContent = Math.floor(left/60) + ":" + String(left%60).padStart(2,"0"); if (left <= 0) { clearInterval(S.timer); if (tm) tm.textContent = "Ready when you are."; } }, 1000); }; return el; },
-testIntro(){ const el = $(`<div class="stack"></div>`); el.append(backBar("Home", () => go("home")), $(`<section class="card"><p class="eyebrow">Practice test</p><h2>14 questions, no hints</h2><p class="lead muted">Two from each lesson, mixed up like the real test. At the end you see which lessons to look at again. You can stop anytime.</p><button class="btn primary big" id="st">Start the test</button></section>`)); el.querySelector("#st").onclick = () => { const picks = []; DATA.subs.forEach(s => picks.push(...probs.filter(p => p.sub === s).sort(() => Math.random()-.5).slice(0,2))); S.test = {list:picks.map(p => p.variants && Math.random() < .6 ? Object.assign({}, p, p.variants[Math.floor(Math.random()*p.variants.length)]) : p).sort(() => Math.random()-.5), i:0, ans:[], input:"", pick:null, all:false}; go("testQ"); }; return el; },
+testIntro(){ const el = $(`<div class="stack"></div>`); el.append(backBar("Home", () => go("home")), $(`<section class="card"><p class="eyebrow">Dress rehearsal</p><h2>Practice test: 14 questions, no hints</h2><p class="lead muted">Two from each lesson, mixed up like the real test. At the end you see which lessons to look at again. You can stop anytime.</p><button class="btn primary big" id="st">Start the test</button></section>`)); el.querySelector("#st").onclick = () => { const picks = []; DATA.subs.forEach(s => picks.push(...probs.filter(p => p.sub === s).sort(() => Math.random()-.5).slice(0,2))); S.test = {list:picks.map(p => p.variants && Math.random() < .6 ? Object.assign({}, p, p.variants[Math.floor(Math.random()*p.variants.length)]) : p).sort(() => Math.random()-.5), i:0, ans:[], input:"", pick:null, all:false}; go("testQ"); }; return el; },
 testQ(){ const T = S.test, p = T.list[T.i]; const el = $(`<div class="stack"></div>`);
   const top = $(`<div class="top"><button class="btn quiet" id="exit">✕ Stop</button><span class="muted">Question ${T.i+1} of ${T.list.length}</span></div>`); top.querySelector("#exit").onclick = () => go("home"); el.append(top, $(`<div class="bar" aria-hidden="true"><i style="width:${T.i/T.list.length*100}%"></i></div>`));
   const c = $(`<section class="card"><p class="problem">${esc(p.text)}</p><div class="vis">${visual(p)}</div><div class="in"></div><button class="btn primary big nx">${T.i+1<T.list.length?"Next":"Finish"}</button></section>`), inp = c.querySelector(".in");
