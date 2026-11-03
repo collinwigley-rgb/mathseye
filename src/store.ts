@@ -16,7 +16,7 @@ export type QueueItem =
   | { kind: 'trick'; trickId: string; stage: Stage }
   | { kind: 'card'; templateId: string; type: 'use' | 'mixed'; stage: Stage; seed: number };
 
-export type Stage = 'warmup' | 'new' | 'mixed' | 'finish';
+export type Stage = 'warmup' | 'new' | 'drill' | 'mixed' | 'finish';
 
 export interface Db {
   settings: Settings;

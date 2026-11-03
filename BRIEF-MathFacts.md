@@ -24,7 +24,7 @@ Build an iPad flash-card app that teaches 7th grade pre-algebra math facts throu
 
 ## Content: trick library
 
-Content is organized as **tricks**, each with its own deck of practice cards. New tricks unlock about two per week, in an order that follows her workbook. The parent can reorder or unlock tricks manually. Store all content as data files (JSON), not hard-coded, so new tricks can be added without code changes.
+Content is organized as **tricks**, each with its own deck of practice cards. **Update (owner decision):** the weekly unlock schedule was dropped. Every trick is open from the start and she chooses what to practice. Store all content as data files (JSON), not hard-coded, so new tricks can be added without code changes.
 
 | Trick | Example | Pre-algebra tie-in |
 | --- | --- | --- |

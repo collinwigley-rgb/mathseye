@@ -3,7 +3,7 @@ import { TEMPLATES, TRICKS } from './content';
 import { checkAnswer } from './answer';
 import { GENERATORS, fill, seeded, MINUS } from './generators';
 import { newCard, review } from './scheduler';
-import { buildQueue, confidence, SESSION_MS, streak, trickMastery, tricksFor, unlockedTricks } from './session';
+import { buildQueue, confidence, SESSION_MS, streak, trickMastery, tricksFor, type Focus } from './session';
 import Mark from './Mark';
 import { BRANDS, ICONS, MEMBERS, getBrand, setBrand, type BrandId } from './brand';
 import { fresh, load, save, today, type Db, type QueueItem } from './store';
@@ -16,13 +16,14 @@ export default function App() {
   const [screen, setScreen] = useState<Screen>('hub');
   const update = (fn: (d: Db) => Db) => setDb((d) => { const n = fn(d); save(n); return n; });
 
-  const startOrResume = () => {
+  // With no focus: pick up today's unfinished session. With a focus: start a fresh one.
+  const startOrResume = (focus?: Focus) => {
     update((d) => {
-      if (d.inProgress && d.inProgress.date === today()) return d;
+      if (!focus && d.inProgress && d.inProgress.date === today()) return d;
       const id = String(Date.now());
       return {
         ...d,
-        inProgress: { date: today(), queue: buildQueue(d), index: 0, startedAt: Date.now(), sessionId: id },
+        inProgress: { date: today(), queue: buildQueue(d, Date.now(), focus), index: 0, startedAt: Date.now(), sessionId: id },
         sessions: [...d.sessions, { id, date: today(), startedAt: Date.now(), cardsSeen: 0 }],
       };
     });
@@ -93,14 +94,15 @@ function Hub({ db, onFacts, onGrownups }: { db: Db; onFacts: () => void; onGrown
   );
 }
 
-function FactsHome({ db, update, onStart, onBack }: { db: Db; update: (fn: (d: Db) => Db) => void; onStart: () => void; onBack: () => void }) {
+function FactsHome({ db, update, onStart, onBack }: { db: Db; update: (fn: (d: Db) => Db) => void; onStart: (focus?: Focus) => void; onBack: () => void }) {
   const resumable = db.inProgress?.date === today();
-  const doneTonight = db.sessions.some((s) => s.date === today() && s.endedAt);
   const conf = confidence(db);
   const mode = db.settings.factsMode ?? 'unit';
   const unit = db.settings.currentUnit ?? 2;
-  const ids = new Set(tricksFor(db).map((t) => t.id));
-  const learned = TRICKS.filter((t) => db.settings.introducedTricks.includes(t.id) && ids.has(t.id));
+  const list = tricksFor(db);
+  const isLearned = (id: string) => db.settings.introducedTricks.includes(id);
+  const learnedCount = list.filter((t) => isLearned(t.id)).length;
+  const hasNew = list.some((t) => !isLearned(t.id));
   const setMode = (m: 'unit' | 'general') => update((d) => ({ ...d, settings: { ...d.settings, factsMode: m } }));
   return (
     <main className="home">
@@ -112,27 +114,25 @@ function FactsHome({ db, update, onStart, onBack }: { db: Db; update: (fn: (d: D
         <button aria-pressed={mode === 'general'} onClick={() => setMode('general')}>Any facts</button>
       </div>
       <div className="stats">
-        <div><b>{streak(db)}</b><span>night streak</span></div>
+        <div><b>{streak(db)}</b><span>day streak</span></div>
         <div><b>{conf === null ? '—' : Math.round(conf * 100) + '%'}</b><span>mental math confidence</span></div>
-        <div><b>{learned.length}</b><span>tricks learned</span></div>
+        <div><b>{learnedCount}/{list.length}</b><span>facts learned</span></div>
       </div>
-      <button className="primary big" onClick={onStart}>
-        {resumable ? 'Keep going' : doneTonight ? 'Bonus session' : "Start tonight's session"}
-      </button>
-      {learned.length > 0 && (
-        <section className="mastery">
-          <h2>Your tricks</h2>
-          {learned.map((t) => {
-            const m = trickMastery(db, t.id);
-            return (
-              <div key={t.id} className="mrow">
-                <span>{t.name}</span>
-                <div className="bar"><i style={{ width: `${Math.max(4, m * 100)}%` }} /></div>
-              </div>
-            );
-          })}
-        </section>
-      )}
+      <div className="row2">
+        {resumable && <button className="primary big" onClick={() => onStart()}>Keep going</button>}
+        {!resumable && learnedCount > 0 && <button className="primary big" onClick={() => onStart({ kind: 'mix' })}>Practice mix</button>}
+        {hasNew && <button className={resumable || learnedCount > 0 ? 'ghostbig' : 'primary big'} onClick={() => onStart({ kind: 'new' })}>Learn new facts</button>}
+      </div>
+      <section className="facts">
+        <h2>All the facts</h2>
+        <p className="muted">Everything is open. Tap one to practice it, as often as you like.</p>
+        {list.map((t) => (
+          <button key={t.id} className="factrow" onClick={() => onStart({ kind: 'trick', trickId: t.id })}>
+            <span><b>{t.name}</b><small>{t.rule}</small></span>
+            <span className="fstat">{isLearned(t.id) ? `${Math.round(trickMastery(db, t.id) * 100)}%` : 'New'}</span>
+          </button>
+        ))}
+      </section>
     </main>
   );
 }
@@ -178,7 +178,7 @@ function SessionView({ db, update, onPause, onDone }: {
       return { ...d, inProgress: { ...d.inProgress!, queue: q, index: s.index + 1 } };
     });
 
-  const stages = ['warmup', 'new', 'mixed', 'finish'].filter((st) => s.queue.some((q) => q.stage === st));
+  const stages = ['warmup', 'new', 'drill', 'mixed', 'finish'].filter((st) => s.queue.some((q) => q.stage === st));
   return (
     <main className="session">
       <header>
@@ -206,7 +206,7 @@ function SessionView({ db, update, onPause, onDone }: {
   );
 }
 
-const STAGE_LABEL = { warmup: 'Warm-up', new: 'New trick', mixed: 'Mixed practice', finish: 'Finish on a win' };
+const STAGE_LABEL = { warmup: 'Warm-up', new: 'New fact', drill: 'Practice', mixed: 'Mixed practice', finish: 'Finish on a win' };
 
 function TrickCard({ trickId, onGo }: { trickId: string; onGo: () => void }) {
   const t = TRICKS.find((x) => x.id === trickId)!;
@@ -355,20 +355,16 @@ function Summary({ db, onHome }: { db: Db; onHome: () => void }) {
 
 function Grownups({ db, update, onBack }: { db: Db; update: (fn: (d: Db) => Db) => void; onBack: () => void }) {
   const [confirmReset, setConfirmReset] = useState(false);
-  const unlocked = unlockedTricks(db);
   const sticky = Object.values(db.cards).sort((a, b) => b.box1Returns - a.box1Returns).filter((c) => c.box1Returns > 0).slice(0, 5);
   return (
     <main className="grownups">
       <button className="link" onClick={onBack}>← Back</button>
       <h2>Grown-ups</h2>
-      <p className="muted">New tricks unlock about two per week. Unlock one early here.</p>
+      <p className="muted">Every fact is open from the start. Here is how each one is going.</p>
       {TRICKS.map((t) => (
         <div key={t.id} className="mrow">
           <span>{t.name} <small className="muted">· {t.workbookSection}</small></span>
           <span className="muted">{Math.round(trickMastery(db, t.id) * 100)}% mastered</span>
-          {unlocked.includes(t.id) ? <span className="muted">unlocked</span> : (
-            <button className="ghost" onClick={() => update((d) => ({ ...d, settings: { ...d.settings, manuallyUnlocked: [...d.settings.manuallyUnlocked, t.id] } }))}>Unlock</button>
-          )}
         </div>
       ))}
       <h3>Stickiest cards</h3>

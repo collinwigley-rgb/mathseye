@@ -28,7 +28,7 @@ export const GENERATORS: Record<string, Gen> = {
     const x = fmtScaled(m, places);
     const ans = op === 'mul' ? fmtScaled(m, places - k) : fmtScaled(m, places + k);
     return {
-      prompt: `${x} ${op === 'mul' ? '×' : '÷'} ${p.toLocaleString('en-US')}`,
+      prompt: phrase(rng, `${x} ${op === 'mul' ? '×' : '÷'} ${p.toLocaleString('en-US')}`),
       answer: ans,
       vars: { x, p: p.toLocaleString('en-US'), k, s: k === 1 ? '' : 's', ans },
     };
@@ -61,7 +61,7 @@ export const GENERATORS: Record<string, Gen> = {
     if (op === 'mul') {
       const a = sa * absA, b = sb * absB, ans = a * b;
       return {
-        prompt: `(${signed(a)}) × (${signed(b)})`,
+        prompt: phrase(rng, `(${signed(a)}) × (${signed(b)})`),
         answer: String(ans),
         vars: { absA, absB, absAns: absA * absB, signWord: same ? 'Same' : 'Different', posneg: same ? 'positive' : 'negative', ans: signed(ans) },
       };
@@ -69,7 +69,7 @@ export const GENERATORS: Record<string, Gen> = {
     const prod = absA * absB;
     const a = sa * prod, b = sb * absB, ans = a / b;
     return {
-      prompt: `${signed(a)} ÷ (${signed(b)})`,
+      prompt: phrase(rng, `${signed(a)} ÷ (${signed(b)})`),
       answer: String(ans),
       vars: { absA: prod, absB, absAns: absA, signWord: same ? 'Same' : 'Different', posneg: same ? 'positive' : 'negative', ans: signed(ans) },
     };
@@ -83,7 +83,7 @@ export const GENERATORS: Record<string, Gen> = {
     const b = up ? r - d : r + d;
     const ans = a * b;
     return {
-      prompt: `${a} × ${b}`,
+      prompt: phrase(rng, rng() < 0.3 ? `${b} × ${a}` : `${a} × ${b}`),
       answer: String(ans),
       vars: { a, b, r, d, ar: a * r, ad: a * d, op: up ? '−' : '+', ans },
     };
@@ -99,11 +99,11 @@ export const GENERATORS: Record<string, Gen> = {
   fitCount(rng, { kind }) {
     if (kind === 'whole') {
       const d = pick(rng, [2, 3, 4, 5, 6, 8, 10]), w = int(rng, 2, 9);
-      return { prompt: `${w} ÷ 1/${d}`, answer: String(w * d), vars: { x: String(w), d, ans: w * d } };
+      return { prompt: phrase(rng, `${w} ÷ 1/${d}`), answer: String(w * d), vars: { x: String(w), d, ans: w * d } };
     }
     const b = pick(rng, [2, 3, 4, 5]), d = b * pick(rng, [2, 3, 4]), a = int(rng, 1, b - 1);
     const ans = a * (d / b);
-    return { prompt: `(${a}/${b}) ÷ (1/${d})`, answer: String(ans), vars: { x: `${a}/${b}`, d, ans } };
+    return { prompt: phrase(rng, `(${a}/${b}) ÷ (1/${d})`), answer: String(ans), vars: { x: `${a}/${b}`, d, ans } };
   },
 
   minToHour(rng) {
@@ -112,26 +112,26 @@ export const GENERATORS: Record<string, Gen> = {
   },
 
   div5(rng, { d }) {
-    const div = Number(d), q = div === 5 ? int(rng, 12, 80) : div === 25 ? int(rng, 4, 24) : int(rng, 3, 20), N = div * q;
+    const div = Number(d), q = div === 5 ? int(rng, 12, 120) : div === 25 ? int(rng, 4, 24) : int(rng, 3, 20), N = div * q;
     const mult = div === 25 ? 4 : 2, shift = div === 5 ? 10 : 100;
-    return { prompt: `${N} ÷ ${div}`, answer: String(q), vars: { N, d: div, mult, shift, mid: N * mult, ans: q } };
+    return { prompt: divPrompt(rng, N, div), answer: String(q), vars: { N, d: div, mult, shift, mid: N * mult, ans: q } };
   },
 
   halveDiv(rng, { d }) {
     const div = Number(d), q = int(rng, 8, 60), N = div * q;
-    return { prompt: `${N} ÷ ${div}`, answer: String(q), vars: { N, d: div, times: div === 4 ? 'twice' : 'three times', h1: N / 2, ans: q } };
+    return { prompt: divPrompt(rng, N, div), answer: String(q), vars: { N, d: div, times: div === 4 ? 'twice' : 'three times', h1: N / 2, ans: q } };
   },
 
   mulHalf(rng, { m }) {
     const x = 2 * int(rng, 2, 24), half = x / 2;
     const ans = m === '1.5' ? x + half : m === '2.5' ? 2 * x + half : half;
-    return { prompt: `${x} × ${m}`, answer: String(ans), vars: { x, m: String(m), half, dbl: 2 * x, ans } };
+    return { prompt: phrase(rng, rng() < 0.3 ? `${m} × ${x}` : `${x} × ${m}`), answer: String(ans), vars: { x, m: String(m), half, dbl: 2 * x, ans } };
   },
 
   divDec(rng, { d }) {
     const k = d === '0.5' ? 2 : d === '0.25' ? 4 : 10, coin = d === '0.5' ? 'half dollars' : d === '0.25' ? 'quarters' : 'dimes';
     const N = d === '0.5' ? int(rng, 3, 40) : d === '0.25' ? int(rng, 2, 20) : int(rng, 3, 60);
-    return { prompt: `${N} ÷ ${d}`, answer: String(N * k), vars: { N, d: String(d), k, coin, ans: N * k } };
+    return { prompt: phrase(rng, `${N} ÷ ${d}`), answer: String(N * k), vars: { N, d: String(d), k, coin, ans: N * k } };
   },
 
   flipFrac(rng) {
@@ -142,17 +142,30 @@ export const GENERATORS: Record<string, Gen> = {
       let a = qn * c, b = qd * d; const g = gcd(a, b); a /= g; b /= g;
       if (a > 20 || b > 20) continue;
       const ans = qd === 1 ? String(qn) : `${qn}/${qd}`;
-      return { prompt: `(${a}/${b}) ÷ (${c}/${d})`, answer: ans, vars: { a, b, c, d, ans } };
+      return { prompt: phrase(rng, `(${a}/${b}) ÷ (${c}/${d})`), answer: ans, vars: { a, b, c, d, ans } };
     }
     return { prompt: '(3/4) ÷ (1/2)', answer: '3/2', vars: { a: 3, b: 4, c: 1, d: 2, ans: '3/2' } };
   },
 
   divFactors(rng, { d }) {
     const div = Number(d), [f1, f2] = div === 6 ? [2, 3] : div === 12 ? [3, 4] : [3, 5], q = int(rng, 6, 30), N = div * q;
-    return { prompt: `${N} ÷ ${div}`, answer: String(q), vars: { N, d: div, f1, f2, mid: N / f1, ans: q } };
+    return { prompt: divPrompt(rng, N, div), answer: String(q), vars: { N, d: div, f1, f2, mid: N / f1, ans: q } };
   },
 
 };
+
+/** Same math, different wording, so cards don't all look alike. The core expression stays intact. */
+function phrase(rng: Rng, core: string): string {
+  const r = rng();
+  if (r < 0.4) return core;
+  if (r < 0.6) return `What is ${core}?`;
+  if (r < 0.8) return `${core} = ?`;
+  return `Solve: ${core}`;
+}
+/** Division prompts also appear as a missing factor: ? × 5 = 240 (same answer, algebra-flavored). */
+function divPrompt(rng: Rng, N: number, d: number | string): string {
+  return rng() < 0.25 ? `? × ${d} = ${N}` : phrase(rng, `${N} ÷ ${d}`);
+}
 
 export function fill(template: string, vars: Record<string, string | number>): string {
   return template.replace(/\{(\w+)\}/g, (_, k) => (k in vars ? String(vars[k]) : `{${k}}`));

@@ -155,12 +155,16 @@ function render(){ const app = document.getElementById("app"); app.innerHTML = "
 const backBar = (label, fn) => { const t = $(`<div class="top"><button class="btn quiet">← ${label}</button></div>`); t.querySelector("button").onclick = fn; return t; };
 
 /* ---------- missions ---------- */
+const shuf = (xs) => { const a = xs.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 function buildMission(lesson){
-  let ps = probs.filter(p => !lesson || p.sub === lesson); let un = ps.filter(p => !save.solved[p.id]); let ids = [];
-  if (lesson) { ids = un.slice(0,5).map(p => p.id); ps.filter(p => save.solved[p.id]).forEach(p => { if (ids.length < 5) ids.push(p.id); }); }
-  else { const groups = DATA.subs.map(s => un.filter(p => p.sub === s)); let i = 0; while (ids.length < 5 && groups.some(g => g.length)) { const g = groups[i % groups.length]; if (g.length) ids.push(g.shift().id); i++; }
-         if (ids.length < 5) probs.filter(p => !ids.includes(p.id)).slice(0, 5 - ids.length).forEach(p => ids.push(p.id)); }
-  save.mission = {ids, i:0, res:{}, lesson: lesson || null}; persist(); S.cur = null; go("mission"); }
+  const ps = probs.filter(p => !lesson || p.sub === lesson), un = shuf(ps.filter(p => !save.solved[p.id])), solved = shuf(ps.filter(p => save.solved[p.id]));
+  let fresh = [];
+  if (lesson) fresh = un.slice(0, solved.length ? 4 : 5).map(p => p.id);
+  else { const groups = shuf(DATA.subs).map(s => un.filter(p => p.sub === s)), want = solved.length ? 4 : 5; let i = 0; while (fresh.length < want && groups.some(g => g.length)) { const g = groups[i % groups.length]; if (g.length) fresh.push(g.shift().id); i++; } }
+  // Spaced review: problems she already solved come back with NEW numbers, so nothing gets stale
+  const rev = solved.slice(0, 5 - fresh.length).map(p => p.id);
+  const ids = shuf([...fresh, ...rev]);
+  save.mission = {ids, rev, i:0, res:{}, lesson: lesson || null}; persist(); S.cur = null; go("mission"); }
 
 /* ---------- views ---------- */
 const VIEWS = {
@@ -185,7 +189,8 @@ cheat(){ const el = $(`<div class="stack"></div>`); el.append(backBar("Home", ()
     if (open) { const c = $(`<div class="accb"><p class="lead">${esc(L.move)}</p><p class="hook">${esc(L.hook)}</p><p class="muted" style="margin:0"><b>Watch out:</b> ${esc(L.trap)}</p><button class="btn primary">Try 5 problems</button></div>`); c.querySelector("button").onclick = () => buildMission(s); wrap.append(c); } el.append(wrap); }); return el; },
 mission(){ const m = save.mission; if (!m || m.i >= m.ids.length) return VIEWS.summary();
   const base = byId[m.ids[m.i]], baseRes = m.res[base.id] = m.res[base.id] || {hints:0, tries:0, done:false};
-  if (!S.cur || S.cur.id !== base.id) S.cur = {id:base.id, input:"", pick:null, msg:"", win:false, steps:false, shake:false, v:-1, vn:-1, vres:null};
+  if (!S.cur || S.cur.id !== base.id) { S.cur = {id:base.id, input:"", pick:null, msg:"", win:false, steps:false, shake:false, v:-1, vn:-1, vres:null};
+    if ((m.rev || []).includes(base.id) && base.variants.length) { const n = base.variants.length; S.cur.vn = Math.floor(Math.random() * n); S.cur.v = S.cur.vn % n; S.cur.vn++; S.cur.vres = {hints:0, tries:0, done:false}; } }
   const st = S.cur, p = st.v >= 0 ? Object.assign({}, base, base.variants[st.v]) : base, res = st.v >= 0 ? st.vres : baseRes, solved = res.done; const el = $(`<div class="stack"></div>`);
   const freshOne = () => { const n = base.variants.length; if (st.vn < 0) st.vn = Math.floor(Math.random() * n); st.v = st.vn % n; st.vn++; st.vres = {hints:0, tries:0, done:false}; Object.assign(st, {input:"", pick:null, msg:"", win:false, steps:false}); render(); };
   const top = $(`<div class="top"><button class="btn quiet" id="exit">✕ Stop for now</button><div class="dots" aria-label="Problem ${m.i+1} of ${m.ids.length}">${m.ids.map((id,k)=>`<i class="${m.res[id]&&m.res[id].done?'on':k===m.i?'now':''}"></i>`).join("")}</div></div>`); top.querySelector("#exit").onclick = () => go("home"); el.append(top);
@@ -216,7 +221,7 @@ mission(){ const m = save.mission; if (!m || m.i >= m.ids.length) return VIEWS.s
     bg.querySelector("#c").onclick = shut; bg.querySelector("#w").onclick = () => openSheet("why", p); bg.querySelector("#u").onclick = () => openSheet("deps", p); bg.querySelector("#c").focus(); }
   function check(v){ if (v === null || v === "" || v === undefined) { st.msg = p.kind==="choice" ? "Pick an answer first." : "Type an answer first."; st.win = false; return draw(); }
     if (isSetup(p, v)) { st.win = false; st.msg = SETUP_MSG; st.input = ""; return draw(); }
-    res.tries++; if (isRight(p, v)) { res.done = true; const clean = res.tries === 1 && res.hints === 0; if (st.v < 0) { save.solved[p.id] = true; if (clean) save.clean[p.id] = true; } bump(); persist(); st.win = true; st.msg = exprNote(p, v, true) + (clean ? "You did that on your own. " + WIN[(m.i*2)%WIN.length] : WIN[(m.i*2+1)%WIN.length]); S.cur = st; render(); burst(document.querySelector(".say.win")); return; }
+    res.tries++; if (isRight(p, v)) { res.done = true; const clean = res.tries === 1 && res.hints === 0; if (st.v < 0) { save.solved[p.id] = true; if (clean) save.clean[p.id] = true; } else if ((m.rev || []).includes(base.id)) baseRes.done = true; bump(); persist(); st.win = true; st.msg = exprNote(p, v, true) + (clean ? "You did that on your own. " + WIN[(m.i*2)%WIN.length] : WIN[(m.i*2+1)%WIN.length]); S.cur = st; render(); burst(document.querySelector(".say.win")); return; }
     st.win = false; st.msg = exprNote(p, v, false) + "Not quite yet. Try again, or tap I'm stuck."; st.input = ""; st.shake = true; persist(); render(); }
   const solvedNow = res.done; if (solvedNow && !st.msg) { st.win = true; st.msg = "Got it!"; }
   draw(); el.append(card); return el; },

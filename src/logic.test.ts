@@ -4,6 +4,13 @@ import { GENERATORS, fmtScaled, seeded } from './generators';
 import { review, newCard, INTERVALS } from './scheduler';
 import tricks from '../content/tricks/move-the-decimal.json';
 
+/** Strip the wording wrappers phrase()/divPrompt() add, leaving the plain expression. */
+const core = (p: string) => {
+  const m = p.match(/^\? × (\S+) = (\d+)$/);
+  if (m) return `${m[2]} ÷ ${m[1]}`;
+  return p.replace(/^Solve: /, '').replace(/^What is /, '').replace(/ = \?$/, '').replace(/\?$/, '');
+};
+
 describe('answer checking', () => {
   it('accepts equivalent forms', () => {
     expect(checkAnswer('.5', '0.5', 'number')).toBe(true);
@@ -25,16 +32,16 @@ describe('generators', () => {
     const rng = seeded(42);
     for (let i = 0; i < 500; i++) {
       const s = GENERATORS.signs(rng, { op: i % 2 ? 'mul' : 'div' });
-      const expr = s.prompt.replace(/−/g, '-').replace('×', '*').replace('÷', '/');
+      const expr = core(s.prompt).replace(/−/g, '-').replace('×', '*').replace('÷', '/');
       expect(Number(s.answer)).toBeCloseTo(eval(expr));
       const b = GENERATORS.breakApart(rng, {});
-      expect(Number(b.answer)).toBe(eval(b.prompt.replace('×', '*')));
+      expect(Number(b.answer)).toBe(eval(core(b.prompt).replace('×', '*')));
       const d = GENERATORS.digitSum(rng, { d: 3 });
       const n = Number(d.vars.n);
       expect(d.answer).toBe(n % 3 === 0 ? 'yes' : 'no');
       expect(n).toBeGreaterThanOrEqual(100);
       const m = GENERATORS.decimalShift(rng, { op: i % 2 ? 'mul' : 'div' });
-      const [x, op, p] = m.prompt.replace(/,/g, '').split(' ');
+      const [x, op, p] = core(m.prompt).replace(/,/g, '').split(' ');
       expect(Number(m.answer)).toBeCloseTo(op === '×' ? Number(x) * Number(p) : Number(x) / Number(p), 9);
     }
   });
@@ -66,26 +73,26 @@ describe('unit 2 generators compute the right answers', () => {
   const num = (s: string) => parseNumber(s) as number;
   it('benchmark', () => {
     for (let i = 0; i < 200; i++) {
-      const a = GENERATORS.benchmark(rng, { dir: 'toDec' }), [, n, d] = a.prompt.match(/^(\d+)\/(\d+) as/)!;
+      const a = GENERATORS.benchmark(rng, { dir: 'toDec' }), [, n, d] = core(a.prompt).match(/^(\d+)\/(\d+) as/)!;
       expect(num(a.answer)).toBeCloseTo(Number(n) / Number(d), 9);
-      const b = GENERATORS.benchmark(rng, { dir: 'toFrac' }), [, dec] = b.prompt.match(/^([\d.]+) as/)!;
+      const b = GENERATORS.benchmark(rng, { dir: 'toFrac' }), [, dec] = core(b.prompt).match(/^([\d.]+) as/)!;
       expect(num(b.answer)).toBeCloseTo(Number(dec), 9);
     }
   });
   it('fitCount, minToHour, div5, halveDiv, divFactors, divDec, mulHalf', () => {
     for (let i = 0; i < 200; i++) {
-      let m = GENERATORS.fitCount(rng, { kind: 'whole' }); let r = m.prompt.match(/^(\d+) ÷ 1\/(\d+)$/)!; expect(num(m.answer)).toBe(Number(r[1]) * Number(r[2]));
-      m = GENERATORS.fitCount(rng, { kind: 'frac' }); r = m.prompt.match(/^\((\d+)\/(\d+)\) ÷ \(1\/(\d+)\)$/)!; expect(num(m.answer)).toBeCloseTo(Number(r[1]) / Number(r[2]) * Number(r[3]), 9); expect(Number.isInteger(num(m.answer))).toBe(true);
-      m = GENERATORS.minToHour(rng, {}); r = m.prompt.match(/^(\d+) minutes/)!; expect(num(m.answer)).toBeCloseTo(Number(r[1]) / 60, 9);
+      let m = GENERATORS.fitCount(rng, { kind: 'whole' }); let r = core(m.prompt).match(/^(\d+) ÷ 1\/(\d+)$/)!; expect(num(m.answer)).toBe(Number(r[1]) * Number(r[2]));
+      m = GENERATORS.fitCount(rng, { kind: 'frac' }); r = core(m.prompt).match(/^\((\d+)\/(\d+)\) ÷ \(1\/(\d+)\)$/)!; expect(num(m.answer)).toBeCloseTo(Number(r[1]) / Number(r[2]) * Number(r[3]), 9); expect(Number.isInteger(num(m.answer))).toBe(true);
+      m = GENERATORS.minToHour(rng, {}); r = core(m.prompt).match(/^(\d+) minutes/)!; expect(num(m.answer)).toBeCloseTo(Number(r[1]) / 60, 9);
       for (const [g, d] of [['div5', 5], ['div5', 25], ['div5', 50], ['halveDiv', 4], ['halveDiv', 8], ['divFactors', 6], ['divFactors', 12], ['divFactors', 15]] as [string, number][]) {
-        m = GENERATORS[g](rng, { d }); r = m.prompt.match(/^(\d+) ÷ (\d+)$/)!; expect(num(m.answer)).toBe(Number(r[1]) / Number(r[2])); expect(Number(r[2])).toBe(d);
+        m = GENERATORS[g](rng, { d }); r = core(m.prompt).match(/^(\d+) ÷ (\d+)$/)!; expect(num(m.answer)).toBe(Number(r[1]) / Number(r[2])); expect(Number(r[2])).toBe(d);
       }
-      for (const d of ['0.5', '0.25', '0.1']) { m = GENERATORS.divDec(rng, { d }); r = m.prompt.match(/^(\d+) ÷ ([\d.]+)$/)!; expect(num(m.answer)).toBeCloseTo(Number(r[1]) / Number(r[2]), 9); }
-      for (const mm of ['1.5', '2.5', '0.5']) { m = GENERATORS.mulHalf(rng, { m: mm }); r = m.prompt.match(/^(\d+) × ([\d.]+)$/)!; expect(num(m.answer)).toBeCloseTo(Number(r[1]) * Number(r[2]), 9); }
+      for (const d of ['0.5', '0.25', '0.1']) { m = GENERATORS.divDec(rng, { d }); r = core(m.prompt).match(/^(\d+) ÷ ([\d.]+)$/)!; expect(num(m.answer)).toBeCloseTo(Number(r[1]) / Number(r[2]), 9); }
+      for (const mm of ['1.5', '2.5', '0.5']) { m = GENERATORS.mulHalf(rng, { m: mm }); r = core(m.prompt).match(/^([\d.]+) × ([\d.]+)$/)!; expect(num(m.answer)).toBeCloseTo(Number(r[1]) * Number(r[2]), 9); }
     }
   });
   it('flipFrac', () => {
-    for (let i = 0; i < 300; i++) { const m = GENERATORS.flipFrac(rng, {}), r = m.prompt.match(/^\((\d+)\/(\d+)\) ÷ \((\d+)\/(\d+)\)$/)!; expect(num(m.answer)).toBeCloseTo((Number(r[1]) / Number(r[2])) / (Number(r[3]) / Number(r[4])), 9); }
+    for (let i = 0; i < 300; i++) { const m = GENERATORS.flipFrac(rng, {}), r = core(m.prompt).match(/^\((\d+)\/(\d+)\) ÷ \((\d+)\/(\d+)\)$/)!; expect(num(m.answer)).toBeCloseTo((Number(r[1]) / Number(r[2])) / (Number(r[3]) / Number(r[4])), 9); }
   });
 });
 
@@ -105,7 +112,7 @@ describe('every trick in content/tricks is well-formed', () => {
 });
 
 // ---------------------------------------------------------------- hub: MathFacts modes + color schemes
-import { tricksFor, unlockedTricks } from './session';
+import { buildQueue, tricksFor, unlockedTricks } from './session';
 import { fresh } from './store';
 import { BRANDS, ICONS } from './brand';
 
@@ -120,9 +127,9 @@ describe('MathFacts modes', () => {
     expect(tricksFor(db)).toHaveLength(TRICKS.length);
     expect(TRICKS.length).toBeGreaterThan(unit.length);
   });
-  it('the first unit trick is unlocked right away and later ones are not', () => {
-    const db = fresh(), first = tricksFor(db)[0].id;
-    expect(unlockedTricks(db, db.settings.startedOn)).toEqual([first]);
+  it('every fact is open from the start (no unlock schedule)', () => {
+    const db = fresh();
+    expect(unlockedTricks(db)).toEqual(tricksFor(db).map((t) => t.id));
   });
   it('an old saved settings object without the new fields still works', () => {
     const db = fresh(); delete db.settings.factsMode; delete db.settings.currentUnit;
@@ -135,5 +142,47 @@ describe('color schemes', () => {
   it('have unique ids and valid hex colors', () => {
     expect(new Set(BRANDS.map((b) => b.id)).size).toBe(BRANDS.length);
     for (const b of BRANDS) { expect(b.bg).toMatch(/^#[0-9a-f]{6}$/i); expect(b.accent).toMatch(/^#[0-9a-f]{6}$/i); }
+  });
+});
+
+describe('self-paced sessions', () => {
+  const learnedDb = (n: number) => { const db = fresh(); db.settings.introducedTricks = tricksFor(db).slice(0, n).map((t) => t.id); return db; };
+  const cards = (q: ReturnType<typeof buildQueue>) => q.filter((x) => x.kind === 'card') as Extract<(typeof q)[number], { kind: 'card' }>[];
+
+  it('with nothing learned, a mix falls back to teaching new facts', () => {
+    const q = buildQueue(fresh(), Date.now(), { kind: 'mix' });
+    expect(q[0].kind).toBe('trick');
+    expect(q.filter((x) => x.kind === 'trick').length).toBe(2);        // a couple of facts, not one per night
+    expect(q[q.length - 1]).toMatchObject({ kind: 'card', stage: 'finish' });
+  });
+  it('"new" teaches up to two unlearned facts and picks them at random', () => {
+    const seen = new Set<string>();
+    for (let i = 0; i < 40; i++) {
+      const q = buildQueue(learnedDb(1), Date.now(), { kind: 'new' });
+      const ids = q.filter((x) => x.kind === 'trick').map((x) => (x as { trickId: string }).trickId);
+      expect(ids.length).toBe(2); expect(ids).not.toContain(tricksFor(learnedDb(1))[0].id);
+      ids.forEach((id) => seen.add(id));
+    }
+    expect(seen.size).toBeGreaterThan(2);   // not always the same two
+  });
+  it('choosing one fact drills it without a teaching card when already learned', () => {
+    const db = learnedDb(3), id = db.settings.introducedTricks[1], tpl = new Set(TRICKS.find((t) => t.id === id)!.templates.map((t) => t.id));
+    const q = buildQueue(db, Date.now(), { kind: 'trick', trickId: id });
+    expect(q.some((x) => x.kind === 'trick')).toBe(false);
+    expect(cards(q).filter((c) => tpl.has(c.templateId)).length).toBeGreaterThanOrEqual(7);
+  });
+  it('a review mix varies in length and rarely repeats a card kind back to back', () => {
+    const lengths = new Set<number>(); let adjacent = 0, builds = 40;
+    for (let i = 0; i < builds; i++) {
+      const q = cards(buildQueue(learnedDb(6), Date.now(), { kind: 'mix' })); lengths.add(q.length);
+      for (let k = 1; k < q.length; k++) if (q[k].templateId === q[k - 1].templateId) adjacent++;
+    }
+    expect(lengths.size).toBeGreaterThan(2);
+    expect(adjacent / builds).toBeLessThan(1);
+  });
+  it('wording varies but the math stays the same', () => {
+    const seen = new Set<string>();
+    for (let i = 1; i <= 200; i++) { const r = GENERATORS.div5(seeded(i), { d: 5 }); seen.add(r.prompt.replace(/\d+/g, '#')); const m = core(r.prompt).match(/^(\d+) ÷ 5$/)!; expect(Number(m[1]) / 5).toBe(Number(r.answer)); }
+    expect(seen.size).toBeGreaterThanOrEqual(4);
   });
 });

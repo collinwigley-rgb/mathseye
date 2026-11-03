@@ -146,3 +146,16 @@ button:active{transform:scale(.98)}
 
 .practice { position: relative; }
 .ref { position: absolute; right: 12px; bottom: 6px; font-size: 12px; letter-spacing: .05em; color: var(--muted); opacity: .7; user-select: text; -webkit-user-select: text; }
+
+/* ---- Self-paced MathFacts ---- */
+.row2 { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; width: 100%; max-width: 560px; }
+.row2 > * { flex: 1 1 230px; }
+.ghostbig { background: var(--panel2); color: var(--text); border-radius: 18px; padding: 20px 28px; font-weight: 700; font-size: 22px; min-height: 68px; }
+.facts { width: 100%; max-width: 560px; display: flex; flex-direction: column; gap: 10px; text-align: left; }
+.facts h2 { font-family: var(--display); margin: 8px 0 0; }
+.facts p { margin: 0 0 4px; }
+.factrow { background: var(--panel); display: flex; justify-content: space-between; gap: 14px; align-items: center; text-align: left; padding: 16px 18px; border-radius: 18px; min-height: 68px; color: var(--text); border: 2px solid transparent; }
+.factrow:active, .factrow:focus-visible { border-color: var(--amber); outline: none; }
+.factrow b { font-size: 19px; }
+.factrow small { display: block; color: var(--muted); font-size: 15px; margin-top: 2px; }
+.fstat { color: var(--amber); font-weight: 700; white-space: nowrap; }

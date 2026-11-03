@@ -4,7 +4,6 @@ import type { Db, QueueItem } from './store';
 import { today } from './store';
 
 export const SESSION_MS = 20 * 60 * 1000;
-const UNLOCK_EVERY = 2 * DAY; // about three new tricks a week (parent can unlock sooner)
 
 /** Tricks for the current MathFacts mode: this unit's facts, or every fact. */
 export function tricksFor(db: Db): typeof TRICKS {
@@ -14,10 +13,9 @@ export function tricksFor(db: Db): typeof TRICKS {
   return list.length ? list : TRICKS;
 }
 
-export function unlockedTricks(db: Db, now = Date.now()): string[] {
-  return tricksFor(db).filter(
-    (t, i) => db.settings.manuallyUnlocked.includes(t.id) || now >= db.settings.startedOn + i * UNLOCK_EVERY
-  ).map((t) => t.id);
+/** Every fact is open from the start: she chooses what to practice and how much. */
+export function unlockedTricks(db: Db): string[] {
+  return tricksFor(db).map((t) => t.id);
 }
 
 export function cardsForTrick(db: Db, trickId: string) {
@@ -29,51 +27,66 @@ export const trickMastery = (db: Db, trickId: string) => masteryFraction(cardsFo
 
 const seed = () => Math.floor(Math.random() * 90000) + 10000; // short on purpose: it shows as the card's reference number
 
-export function buildQueue(db: Db, now = Date.now()): QueueItem[] {
-  const q: QueueItem[] = [];
+/** What a session is about: a review mix, a couple of new facts, or one chosen fact. */
+export type Focus = { kind: 'mix' } | { kind: 'new' } | { kind: 'trick'; trickId: string };
+
+const ri = (lo: number, hi: number) => lo + Math.floor(Math.random() * (hi - lo + 1));
+const shuffle = <T,>(xs: T[]): T[] => { const a = xs.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+type CardItem = Extract<QueueItem, { kind: 'card' }>;
+/** Random order, but avoid the same kind of card twice in a row whenever there is a choice. */
+function spread(items: CardItem[]): CardItem[] {
+  const left = shuffle(items), out: CardItem[] = [];
+  while (left.length) {
+    const prev = out[out.length - 1]?.templateId;
+    const k = left.findIndex((c) => c.templateId !== prev);
+    out.push(left.splice(k === -1 ? 0 : k, 1)[0]);
+  }
+  return out;
+}
+
+export function buildQueue(db: Db, now = Date.now(), focus: Focus = { kind: 'mix' }): QueueItem[] {
+  const list = tricksFor(db);
   const learned = db.settings.introducedTricks;
-  const modeIds = new Set(tricksFor(db).map((t) => t.id));
+  const modeIds = new Set(list.map((t) => t.id));
   const learnedTemplates = Object.keys(TEMPLATES).filter((id) => learned.includes(TEMPLATES[id].trick.id) && modeIds.has(TEMPLATES[id].trick.id));
+  const card = (templateId: string, type: 'use' | 'mixed', stage: CardItem['stage']): CardItem => ({ kind: 'card', templateId, type, stage, seed: seed() });
 
-  // 1. Warm-up: due review cards (about 3 min)
-  const due = learnedTemplates
-    .map((id) => db.cards[id])
-    .filter((c) => c && isDue(c, now))
-    .sort((a, b) => a.box - b.box)
-    .slice(0, 6);
-  for (const c of due) q.push({ kind: 'card', templateId: c.templateId, type: 'use', stage: 'warmup', seed: seed() });
+  // Which facts to teach or drill: random new ones (not a fixed order), or the one she chose
+  const unlearned = shuffle(list.filter((t) => !learned.includes(t.id)).map((t) => t.id));
+  let kind = focus.kind;
+  if (kind === 'mix' && learnedTemplates.length === 0) kind = 'new';   // nothing to review yet
+  if (kind === 'new' && unlearned.length === 0) kind = 'mix';          // everything already learned
+  const picks = kind === 'trick' ? [(focus as { trickId: string }).trickId] : kind === 'new' ? unlearned.slice(0, 2) : [];
 
-  // 2. New trick (about 5 min)
-  const next = unlockedTricks(db, now).find((id) => !learned.includes(id));
-  if (next) {
-    const trick = TRICKS.find((t) => t.id === next)!;
-    q.push({ kind: 'trick', trickId: next, stage: 'new' });
-    for (let i = 0; i < 6; i++)
-      q.push({ kind: 'card', templateId: trick.templates[i % trick.templates.length].id, type: 'use', stage: 'new', seed: seed() });
+  const head: QueueItem[] = [];      // fixed opening: due reviews, then each fact's teaching card and first two examples
+  const rest: CardItem[] = [];       // everything else gets shuffled together
+  if (kind === 'mix') {
+    const due = learnedTemplates.map((id) => db.cards[id]).filter((c) => c && isDue(c, now)).sort((a, b) => a.box - b.box).slice(0, ri(4, 6));
+    for (const c of shuffle(due)) head.push(card(c.templateId, 'use', 'warmup'));
   }
-
-  // 3. Mixed practice (about 7 min), weighted toward lower boxes
-  const pool = [...learnedTemplates, ...(next ? TRICKS.find((t) => t.id === next)!.templates.map((t) => t.id) : [])];
-  const mixedCount = next ? 8 : 14;
-  const weights = pool.map((id) => 6 - (db.cards[id]?.box ?? 1));
-  const total = weights.reduce((a, b) => a + b, 0);
-  let prev = '';
-  for (let i = 0; i < mixedCount && pool.length; i++) {
-    let id = prev;
-    for (let tries = 0; tries < 5 && (id === prev || !id); tries++) {
-      let r = Math.random() * total;
-      id = pool[pool.length - 1];
-      for (let j = 0; j < pool.length; j++) if ((r -= weights[j]) < 0) { id = pool[j]; break; }
-      if (pool.length === 1) break;
+  for (const id of picks) {
+    const trick = TRICKS.find((t) => t.id === id)!;
+    const isNew = !learned.includes(id);
+    if (isNew) head.push({ kind: 'trick', trickId: id, stage: 'new' });
+    const n = kind === 'trick' ? ri(7, 9) : ri(4, 5);
+    for (let i = 0; i < n; i++) {
+      const c = card(trick.templates[i % trick.templates.length].id, 'use', isNew ? 'new' : 'drill');
+      if (i < 2) head.push(c); else rest.push({ ...c, stage: 'mixed' });
     }
-    prev = id;
-    q.push({ kind: 'card', templateId: id, type: 'mixed', stage: 'mixed', seed: seed() });
   }
+  const pickTemplates = picks.flatMap((id) => TRICKS.find((t) => t.id === id)!.templates.map((t) => t.id));
+  const pool = [...new Set([...learnedTemplates, ...pickTemplates])];
+  const weights = pool.map((id) => Math.max(1, 6 - (db.cards[id]?.box ?? 1)));
+  const total = weights.reduce((a, b) => a + b, 0);
+  const pickOne = () => { let r = Math.random() * total; for (let j = 0; j < pool.length; j++) if ((r -= weights[j]) < 0) return pool[j]; return pool[pool.length - 1]; };
+  const mixedCount = kind === 'mix' ? ri(10, 16) : ri(5, 8);
+  for (let i = 0; pool.length && i < mixedCount; i++) rest.push(card(pickOne(), 'mixed', 'mixed'));
 
-  // 5. Finish on a win: the easiest (highest-box) card
+  const out: QueueItem[] = [...head, ...spread(rest)];
+  // Finish on a win: the easiest (highest-box) card
   const easiest = pool.slice().sort((a, b) => (db.cards[b]?.box ?? 1) - (db.cards[a]?.box ?? 1))[0];
-  if (easiest) q.push({ kind: 'card', templateId: easiest, type: 'use', stage: 'finish', seed: seed() });
-  return q;
+  if (easiest) out.push(card(easiest, 'use', 'finish'));
+  return out;
 }
 
 /** Nightly streak that forgives one missed night per rolling week. */
