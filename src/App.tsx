@@ -50,6 +50,7 @@ function Home({ db, onStart, onGrownups }: { db: Db; onStart: () => void; onGrow
       <button className="primary big" onClick={onStart}>
         {resumable ? 'Keep going' : doneTonight ? 'Bonus session' : "Start tonight's session"}
       </button>
+      <a className="ghostlink" href="./study/unit-2.html">Unit 2 Study Guide</a>
       {learned.length > 0 && (
         <section className="mastery">
           <h2>Your tricks</h2>

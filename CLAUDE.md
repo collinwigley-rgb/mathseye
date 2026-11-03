@@ -16,7 +16,7 @@ The name is a play on the band Katseye. Don't use the band's name, logo, or imag
   and has 4 clue strings with `{var}` placeholders filled from the generator's `vars`.
 - Leitner scheduler: `src/scheduler.ts`. Session flow: `src/session.ts`. UI: `src/App.tsx`.
 - Unit reference sheets: `content/units/` (see its README). Build help, practice, and study guides from these, never the PDFs.
-- `npm test` runs Vitest; `npm run build` typechecks and builds. Push to `main` deploys to GitHub Pages (`netlify.toml` is a backup option).
+- `npm test` runs Vitest; `npm run build` typechecks and builds. Push to `main` auto-deploys on Netlify (`netlify.toml`). There is no GitHub Pages workflow: the free plan cannot use Pages for this repo.
 
 ## Tone rules (from the brief)
 Calm bedtime design: dark warm theme, no red X's, no lost lives, no scores that go down,

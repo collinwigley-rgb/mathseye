@@ -1,0 +1,1766 @@
+{
+ "problems": [
+  {
+   "sub": "2.1",
+   "type": "A",
+   "kind": "num",
+   "text": "A 12-pack of juice boxes costs $4.68. What is the cost of one juice box (in dollars)?",
+   "answer": 0.39,
+   "show": "0.39 dollars",
+   "hints": [
+    "You want the cost for ONE box. What do you divide by?",
+    "Get to ONE: divide the total cost by the number of boxes.",
+    "4.68 ÷ 12 = ?"
+   ],
+   "steps": [
+    "'Per box' means divide by the 12 boxes.",
+    "4.68 ÷ 12 = 0.39",
+    "One juice box costs $0.39."
+   ],
+   "id": "U2-01",
+   "why_focus": "Practice getting to ONE, the move every other problem in this unit uses.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "unit-rate",
+     "div-decimals"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.1",
+   "type": "B",
+   "kind": "choice",
+   "text": "Brand X: 18 oz for $5.04. Brand Y: 30 oz for $8.10. Which costs less per ounce?",
+   "options": [
+    "Brand X",
+    "Brand Y"
+   ],
+   "correct": 1,
+   "show": "Brand Y",
+   "hints": [
+    "Compare the cost of ONE ounce for each brand.",
+    "Divide each price by its ounces.",
+    "5.04 ÷ 18 and 8.10 ÷ 30. Which is smaller?"
+   ],
+   "steps": [
+    "Brand X: 5.04 ÷ 18 = 0.28 per ounce.",
+    "Brand Y: 8.10 ÷ 30 = 0.27 per ounce.",
+    "The smaller price per ounce is the better deal."
+   ],
+   "id": "U2-02",
+   "why_focus": "Practice getting to ONE, the move every other problem in this unit uses.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "unit-rate",
+     "compare-rates",
+     "div-decimals"
+    ]
+   }
+  },
+  {
+   "sub": "2.1",
+   "type": "C",
+   "kind": "num",
+   "text": "A printer prints 84 pages in 6 minutes. At that rate, how many pages in 25 minutes?",
+   "answer": 350.0,
+   "show": "350 pages",
+   "hints": [
+    "First, how many pages in ONE minute?",
+    "84 ÷ 6 gives pages per minute.",
+    "Then multiply by 25 minutes."
+   ],
+   "steps": [
+    "84 ÷ 6 = 14 pages per minute.",
+    "14 × 25 = 350"
+   ],
+   "id": "U2-03",
+   "why_focus": "Practice getting to ONE, the move every other problem in this unit uses.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "unit-rate",
+     "mul-decimals"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.1",
+   "type": "D",
+   "kind": "num",
+   "text": "A class has 4 boys for every 5 girls. There are 35 girls. How many boys?",
+   "answer": 28.0,
+   "show": "28 boys",
+   "hints": [
+    "Make a ratio table: boys on one row, girls on the other.",
+    "How do you get from 5 girls to 35 girls?",
+    "Do the same to the 4 boys."
+   ],
+   "steps": [
+    "5 × 7 = 35, so multiply the boys by 7 too.",
+    "4 × 7 = 28"
+   ],
+   "id": "U2-04",
+   "why_focus": "Practice getting to ONE, the move every other problem in this unit uses.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "equiv-ratios"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.1",
+   "type": "E",
+   "kind": "num",
+   "text": "A recipe uses 3 cups of flour for every 12 muffins. Flour costs $0.40 per cup. What does the flour cost for 60 muffins (in dollars)?",
+   "answer": 6.0,
+   "show": "6 dollars",
+   "hints": [
+    "Two steps: cups of flour first, then cost.",
+    "60 muffins is 5 times as many as 12 muffins.",
+    "Cups × $0.40."
+   ],
+   "steps": [
+    "60 ÷ 12 = 5, so 3 × 5 = 15 cups of flour.",
+    "15 × 0.40 = 6",
+    "The flour costs $6.00."
+   ],
+   "id": "U2-05",
+   "why_focus": "Practice getting to ONE, the move every other problem in this unit uses.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "unit-rate",
+     "multi-step",
+     "mul-decimals"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.1",
+   "type": "F",
+   "kind": "num",
+   "text": "Gloves are sold 3 dozen for $54. What does one pair cost (in dollars)?",
+   "answer": 1.5,
+   "show": "1.5 dollars",
+   "hints": [
+    "How many single pairs are in 3 dozen?",
+    "1 dozen is 12, so 3 dozen is 36.",
+    "54 ÷ 36"
+   ],
+   "steps": [
+    "3 dozen = 3 × 12 = 36 pairs.",
+    "54 ÷ 36 = 1.5",
+    "One pair costs $1.50."
+   ],
+   "id": "U2-06",
+   "why_focus": "Practice getting to ONE, the move every other problem in this unit uses.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "unit-rate",
+     "unit-conversion",
+     "div-decimals"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.1",
+   "type": "B",
+   "kind": "choice",
+   "text": "Ava types 195 words in 5 minutes. Ben types 224 words in 7 minutes. Who types faster?",
+   "options": [
+    "Ava",
+    "Ben"
+   ],
+   "correct": 0,
+   "show": "Ava",
+   "hints": [
+    "Faster means more words in ONE minute.",
+    "Divide words by minutes for each person.",
+    "195 ÷ 5 and 224 ÷ 7."
+   ],
+   "steps": [
+    "Ava: 195 ÷ 5 = 39 words per minute.",
+    "Ben: 224 ÷ 7 = 32 words per minute.",
+    "More words per minute is faster."
+   ],
+   "id": "U2-07",
+   "why_focus": "Practice getting to ONE, the move every other problem in this unit uses.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "unit-rate",
+     "compare-rates",
+     "div-decimals"
+    ]
+   }
+  },
+  {
+   "sub": "2.2",
+   "type": "A",
+   "kind": "num",
+   "text": "A hose fills 3/4 of a bucket in 1/2 minute. How many buckets per minute?",
+   "answer": 1.5,
+   "show": "1 1/2 buckets per minute",
+   "hints": [
+    "Per minute: what has to be 1?",
+    "Divide: (3/4) ÷ (1/2).",
+    "Keep, change, flip: 3/4 × 2/1."
+   ],
+   "steps": [
+    "(3/4) ÷ (1/2) = 3/4 × 2/1",
+    "= 6/4 = 3/2",
+    "That is 1 1/2 buckets per minute."
+   ],
+   "id": "U2-08",
+   "why_focus": "Practice keep-change-flip to get to ONE when the amounts are fractions.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "fraction-unit-rate",
+     "div-fractions",
+     "unit-rate"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.2",
+   "type": "A",
+   "kind": "num",
+   "text": "A cyclist rides 5/6 mile in 1/12 hour. What is the speed in miles per hour?",
+   "answer": 10.0,
+   "show": "10 mph",
+   "hints": [
+    "Miles per hour: hours go on the bottom.",
+    "(5/6) ÷ (1/12)",
+    "Flip the 1/12 and cancel."
+   ],
+   "steps": [
+    "(5/6) ÷ (1/12) = 5/6 × 12/1",
+    "Cancel 6 and 12: 5 × 2 = 10",
+    "10 miles per hour."
+   ],
+   "id": "U2-09",
+   "why_focus": "Practice keep-change-flip to get to ONE when the amounts are fractions.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "fraction-unit-rate",
+     "div-fractions",
+     "unit-rate"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.2",
+   "type": "B",
+   "kind": "num",
+   "text": "There are 120 Calories in 2/3 cup of cereal. How many Calories are in 2 cups?",
+   "answer": 360.0,
+   "show": "360 Calories",
+   "hints": [
+    "Find Calories in 1 cup first.",
+    "120 ÷ (2/3) = 120 × 3/2.",
+    "Then multiply by 2 cups."
+   ],
+   "steps": [
+    "120 ÷ 2/3 = 120 × 3/2 = 180 Calories per cup.",
+    "180 × 2 = 360"
+   ],
+   "id": "U2-10",
+   "why_focus": "Practice keep-change-flip to get to ONE when the amounts are fractions.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "fraction-unit-rate",
+     "div-fractions",
+     "unit-rate",
+     "mul-fractions"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.2",
+   "type": "C",
+   "kind": "choice",
+   "text": "Runner A goes 1 1/2 miles in 1/4 hour. Runner B goes 2 1/4 miles in 1/3 hour. Who is faster?",
+   "options": [
+    "Runner A",
+    "Runner B"
+   ],
+   "correct": 1,
+   "show": "Runner B",
+   "hints": [
+    "Find miles per ONE hour for each runner.",
+    "Turn mixed numbers into fractions: 3/2 and 9/4.",
+    "(3/2) ÷ (1/4) and (9/4) ÷ (1/3)."
+   ],
+   "steps": [
+    "A: (3/2) ÷ (1/4) = 3/2 × 4 = 6 mph.",
+    "B: (9/4) ÷ (1/3) = 9/4 × 3 = 27/4 = 6.75 mph.",
+    "Bigger speed wins."
+   ],
+   "id": "U2-11",
+   "why_focus": "Practice keep-change-flip to get to ONE when the amounts are fractions.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "fraction-unit-rate",
+     "div-fractions",
+     "compare-rates",
+     "mixed-numbers"
+    ]
+   }
+  },
+  {
+   "sub": "2.2",
+   "type": "D",
+   "kind": "num",
+   "text": "On a map, 3/8 inch = 6 miles. How many real miles is 2 1/4 inches on the map?",
+   "answer": 36.0,
+   "show": "36 miles",
+   "hints": [
+    "Find miles for ONE inch first.",
+    "6 ÷ 3/8 = 6 × 8/3.",
+    "Then multiply by 2 1/4 (that's 9/4)."
+   ],
+   "steps": [
+    "6 ÷ 3/8 = 6 × 8/3 = 16 miles per inch.",
+    "16 × 9/4 = 36"
+   ],
+   "id": "U2-12",
+   "why_focus": "Practice keep-change-flip to get to ONE when the amounts are fractions.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "fraction-unit-rate",
+     "div-fractions",
+     "unit-rate",
+     "mixed-numbers"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.2",
+   "type": "E",
+   "kind": "num",
+   "text": "A machine makes 5 parts in 2/3 hour. How many hours does ONE part take? (Fraction or decimal.)",
+   "answer": 0.13333333333333333,
+   "show": "2/15 hour",
+   "hints": [
+    "Hours per part: parts go on the bottom.",
+    "(2/3) ÷ 5",
+    "Dividing by 5 is multiplying by 1/5."
+   ],
+   "steps": [
+    "(2/3) ÷ 5 = 2/3 × 1/5",
+    "= 2/15 of an hour (about 0.13 hour, or 8 minutes)."
+   ],
+   "id": "U2-13",
+   "why_focus": "Practice keep-change-flip to get to ONE when the amounts are fractions.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "fraction-unit-rate",
+     "div-fractions"
+    ]
+   },
+   "tol": 0.006
+  },
+  {
+   "sub": "2.3",
+   "type": "A",
+   "kind": "choice",
+   "text": "Is the relationship between x and y proportional?",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "correct": 0,
+   "show": "Yes",
+   "hints": [
+    "Divide y ÷ x in EVERY column.",
+    "7 ÷ 2, 14 ÷ 4, 21 ÷ 6, 28 ÷ 8.",
+    "Are they all the same?"
+   ],
+   "steps": [
+    "7/2 = 3.5, 14/4 = 3.5, 21/6 = 3.5, 28/8 = 3.5.",
+    "Every row gives 3.5, so it is proportional (k = 3.5)."
+   ],
+   "table": {
+    "x": [
+     "2",
+     "4",
+     "6",
+     "8"
+    ],
+    "y": [
+     "7",
+     "14",
+     "21",
+     "28"
+    ]
+   },
+   "id": "U2-14",
+   "why_focus": "Practice testing EVERY row so a broken pattern can't fool you.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "proportional-test",
+     "unit-rate"
+    ]
+   }
+  },
+  {
+   "sub": "2.3",
+   "type": "A",
+   "kind": "choice",
+   "text": "Is the relationship between x and y proportional?",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "correct": 1,
+   "show": "No",
+   "hints": [
+    "Divide y ÷ x in EVERY column, including the last.",
+    "5 ÷ 3, 10 ÷ 6, 15 ÷ 9, 21 ÷ 12.",
+    "Do they all match?"
+   ],
+   "steps": [
+    "5/3 ≈ 1.67, 10/6 ≈ 1.67, 15/9 ≈ 1.67, but 21/12 = 1.75.",
+    "The last column breaks the pattern, so it is NOT proportional."
+   ],
+   "table": {
+    "x": [
+     "3",
+     "6",
+     "9",
+     "12"
+    ],
+    "y": [
+     "5",
+     "10",
+     "15",
+     "21"
+    ]
+   },
+   "id": "U2-15",
+   "why_focus": "Practice testing EVERY row so a broken pattern can't fool you.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "proportional-test",
+     "unit-rate"
+    ]
+   }
+  },
+  {
+   "sub": "2.3",
+   "type": "C",
+   "kind": "num",
+   "text": "This table is proportional. What is y when x = 8?",
+   "answer": 19.2,
+   "show": "19.2",
+   "hints": [
+    "First find y ÷ x.",
+    "12 ÷ 5 = 2.4",
+    "Multiply 8 by that."
+   ],
+   "steps": [
+    "12 ÷ 5 = 2.4, and 24/10 = 2.4, 36/15 = 2.4, so k = 2.4.",
+    "y = 2.4 × 8 = 19.2"
+   ],
+   "table": {
+    "x": [
+     "5",
+     "10",
+     "15"
+    ],
+    "y": [
+     "12",
+     "24",
+     "36"
+    ]
+   },
+   "id": "U2-16",
+   "why_focus": "Practice testing EVERY row so a broken pattern can't fool you.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "proportional-test",
+     "unit-rate",
+     "mul-decimals"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.3",
+   "type": "A",
+   "kind": "choice",
+   "text": "A game center charges $4 to get in plus $3 per game. The cost for 1, 2, 3 games is $7, $10, $13. Is the cost proportional to the number of games?",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "correct": 1,
+   "show": "No",
+   "hints": [
+    "Divide cost ÷ games for each.",
+    "What would 0 games cost?",
+    "7 ÷ 1, 10 ÷ 2, 13 ÷ 3"
+   ],
+   "steps": [
+    "7/1 = 7, 10/2 = 5, 13/3 ≈ 4.33. The ratios are not equal.",
+    "Also, 0 games still costs $4. A starting fee means NOT proportional."
+   ],
+   "id": "U2-17",
+   "why_focus": "Practice testing EVERY row so a broken pattern can't fool you.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "proportional-test",
+     "unit-rate"
+    ]
+   }
+  },
+  {
+   "sub": "2.3",
+   "type": "C",
+   "kind": "num",
+   "text": "This table is proportional. What is y when x = 5?",
+   "answer": 10.0,
+   "show": "10",
+   "hints": [
+    "Find y ÷ x using a column.",
+    "1 ÷ (1/2) = 2",
+    "Multiply 5 by that."
+   ],
+   "steps": [
+    "(1) ÷ (1/2) = 2; 4 ÷ 2 = 2; 6 ÷ 3 = 2, so k = 2.",
+    "y = 2 × 5 = 10"
+   ],
+   "table": {
+    "x": [
+     "1/2",
+     "2",
+     "3"
+    ],
+    "y": [
+     "1",
+     "4",
+     "6"
+    ]
+   },
+   "id": "U2-18",
+   "why_focus": "Practice testing EVERY row so a broken pattern can't fool you.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "proportional-test",
+     "unit-rate",
+     "mul-decimals"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.3",
+   "type": "F",
+   "kind": "choice",
+   "text": "Which table is proportional?",
+   "options": [
+    "x: 1, 2, 3 and y: 3, 6, 9",
+    "x: 1, 2, 3 and y: 3, 5, 7"
+   ],
+   "correct": 0,
+   "show": "x: 1, 2, 3 and y: 3, 6, 9",
+   "hints": [
+    "Check y ÷ x for each table.",
+    "First table: 3, 3, 3. Second table?",
+    "The second one has 3, 2.5, 2.33."
+   ],
+   "steps": [
+    "First table: 3/1 = 6/2 = 9/3 = 3, always the same.",
+    "Second table: 3/1 = 3, 5/2 = 2.5, 7/3 ≈ 2.33. Not the same."
+   ],
+   "id": "U2-19",
+   "why_focus": "Practice testing EVERY row so a broken pattern can't fool you.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "proportional-test",
+     "unit-rate",
+     "reading-tables"
+    ]
+   }
+  },
+  {
+   "sub": "2.4",
+   "type": "A",
+   "kind": "num",
+   "text": "A hiker walks 14 miles in 4 hours at a steady pace. What is the constant of proportionality k (miles per hour)?",
+   "answer": 3.5,
+   "show": "3.5 mph",
+   "hints": [
+    "k is y over x. What is y here, and what is x?",
+    "y = miles, x = hours.",
+    "14 ÷ 4"
+   ],
+   "steps": [
+    "k = y ÷ x = 14 ÷ 4",
+    "k = 3.5 miles per hour."
+   ],
+   "id": "U2-20",
+   "why_focus": "Practice finding k and using y = kx to find any amount.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "k-const",
+     "unit-rate"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.4",
+   "type": "C",
+   "kind": "num",
+   "text": "y = 6.5x. What is y when x = 14?",
+   "answer": 91.0,
+   "show": "91",
+   "hints": [
+    "Replace x with 14.",
+    "y = 6.5 × 14",
+    "Break apart: 6.5 × 10 + 6.5 × 4."
+   ],
+   "steps": [
+    "y = 6.5(14)",
+    "6.5 × 14 = 65 + 26 = 91"
+   ],
+   "id": "U2-21",
+   "why_focus": "Practice finding k and using y = kx to find any amount.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "y-eq-kx",
+     "k-const",
+     "solve-1step"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.4",
+   "type": "C",
+   "kind": "num",
+   "text": "y = 0.4x. What is x when y = 18?",
+   "answer": 45.0,
+   "show": "45",
+   "hints": [
+    "You know y. What undoes 'times 0.4'?",
+    "Divide both sides by 0.4.",
+    "18 ÷ 0.4 = 180 ÷ 4"
+   ],
+   "steps": [
+    "18 = 0.4x",
+    "x = 18 ÷ 0.4 = 180 ÷ 4",
+    "x = 45"
+   ],
+   "id": "U2-22",
+   "why_focus": "Practice finding k and using y = kx to find any amount.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "y-eq-kx",
+     "k-const",
+     "solve-1step"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.4",
+   "type": "B",
+   "kind": "num",
+   "text": "For every 5 tickets, the cost goes up $32.50. What is the cost of ONE ticket (that's k)?",
+   "answer": 6.5,
+   "show": "6.5 dollars",
+   "hints": [
+    "Is $32.50 the price of one ticket?",
+    "Get to ONE: divide by 5.",
+    "32.50 ÷ 5"
+   ],
+   "steps": [
+    "k = y ÷ x = 32.50 ÷ 5",
+    "k = 6.5, so one ticket is $6.50."
+   ],
+   "id": "U2-23",
+   "why_focus": "Practice finding k and using y = kx to find any amount.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "y-eq-kx",
+     "k-const",
+     "unit-rate"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.4",
+   "type": "B",
+   "kind": "num",
+   "text": "Tickets cost $6.50 each. The equation is y = 6.5x. What do 12 tickets cost (in dollars)?",
+   "answer": 78.0,
+   "show": "78 dollars",
+   "hints": [
+    "Use y = kx with x = 12.",
+    "6.5 × 12",
+    "6.5 × 10 + 6.5 × 2"
+   ],
+   "steps": [
+    "y = 6.5(12)",
+    "65 + 13 = 78",
+    "12 tickets cost $78.00."
+   ],
+   "id": "U2-24",
+   "why_focus": "Practice finding k and using y = kx to find any amount.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "y-eq-kx",
+     "k-const",
+     "unit-rate"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.4",
+   "type": "D",
+   "kind": "choice",
+   "text": "Which equation shows a proportional relationship?",
+   "options": [
+    "y = 4x + 1",
+    "y = x + 4",
+    "y = 0.4x",
+    "y = 4/x"
+   ],
+   "correct": 2,
+   "show": "y = 0.4x",
+   "hints": [
+    "A proportional equation is exactly y = (number) × x.",
+    "Look for a plus or minus.",
+    "Which one has nothing added?"
+   ],
+   "steps": [
+    "y = 4x + 1 and y = x + 4 add a number, so no.",
+    "y = 4/x has x on the bottom, so no.",
+    "y = 0.4x is y = kx with k = 0.4."
+   ],
+   "id": "U2-25",
+   "why_focus": "Practice finding k and using y = kx to find any amount.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "y-eq-kx",
+     "proportional-test"
+    ]
+   }
+  },
+  {
+   "sub": "2.4",
+   "type": "E",
+   "kind": "num",
+   "text": "A pool fills 45 gallons in 1.5 minutes at a steady rate. How many gallons in 8 minutes?",
+   "answer": 240.0,
+   "show": "240 gallons",
+   "hints": [
+    "Find gallons per ONE minute first.",
+    "45 ÷ 1.5 = 30",
+    "Then multiply by 8."
+   ],
+   "steps": [
+    "k = 45 ÷ 1.5 = 30 gallons per minute",
+    "y = 30 × 8 = 240"
+   ],
+   "id": "U2-26",
+   "why_focus": "Practice finding k and using y = kx to find any amount.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "y-eq-kx",
+     "k-const",
+     "unit-rate"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.5",
+   "type": "A",
+   "kind": "choice",
+   "text": "Is this graph a proportional relationship?",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "correct": 0,
+   "show": "Yes",
+   "hints": [
+    "Two tests: is it straight? Does it go through (0, 0)?",
+    "Look at where the line starts.",
+    "It starts at the origin and it's straight."
+   ],
+   "steps": [
+    "The line is straight.",
+    "It passes through (0, 0).",
+    "Both tests pass, so it is proportional."
+   ],
+   "graph": {
+    "lines": [
+     {
+      "pts": [
+       [
+        0,
+        0
+       ],
+       [
+        4,
+        10
+       ]
+      ],
+      "label": ""
+     }
+    ],
+    "xmax": 5,
+    "ymax": 12,
+    "xl": "x",
+    "yl": "y",
+    "dots": [
+     [
+      4,
+      10
+     ]
+    ]
+   },
+   "id": "U2-27",
+   "why_focus": "Practice the two graph tests: straight, and through (0, 0).",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "proportional-graph",
+     "proportional-test",
+     "coordinate-plane"
+    ]
+   }
+  },
+  {
+   "sub": "2.5",
+   "type": "B",
+   "kind": "num",
+   "text": "Use the same graph. What is the constant of proportionality k?",
+   "answer": 2.5,
+   "show": "2.5",
+   "hints": [
+    "k = y ÷ x for any point except (0, 0).",
+    "The point (4, 10) is on the line.",
+    "10 ÷ 4"
+   ],
+   "steps": [
+    "k = y ÷ x = 10 ÷ 4",
+    "k = 2.5, so the point (1, 2.5) is also on the line."
+   ],
+   "graph": {
+    "lines": [
+     {
+      "pts": [
+       [
+        0,
+        0
+       ],
+       [
+        4,
+        10
+       ]
+      ],
+      "label": ""
+     }
+    ],
+    "xmax": 5,
+    "ymax": 12,
+    "xl": "x",
+    "yl": "y",
+    "dots": [
+     [
+      4,
+      10
+     ]
+    ]
+   },
+   "id": "U2-28",
+   "why_focus": "Practice the two graph tests: straight, and through (0, 0).",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "proportional-graph",
+     "k-const",
+     "coordinate-plane"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.5",
+   "type": "A",
+   "kind": "choice",
+   "text": "Is this graph a proportional relationship?",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "correct": 1,
+   "show": "No",
+   "hints": [
+    "Check both tests: straight? through (0, 0)?",
+    "Where does the line cross the y-axis?",
+    "It starts at 3, not 0."
+   ],
+   "steps": [
+    "The line is straight, but it starts at (0, 3).",
+    "It does not pass through the origin, so it is NOT proportional."
+   ],
+   "graph": {
+    "lines": [
+     {
+      "pts": [
+       [
+        0,
+        3
+       ],
+       [
+        4,
+        11
+       ]
+      ],
+      "label": ""
+     }
+    ],
+    "xmax": 5,
+    "ymax": 12,
+    "xl": "x",
+    "yl": "y",
+    "dots": [
+     [
+      0,
+      3
+     ],
+     [
+      4,
+      11
+     ]
+    ]
+   },
+   "id": "U2-29",
+   "why_focus": "Practice the two graph tests: straight, and through (0, 0).",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "proportional-graph",
+     "proportional-test",
+     "coordinate-plane"
+    ]
+   }
+  },
+  {
+   "sub": "2.5",
+   "type": "A",
+   "kind": "choice",
+   "text": "Is this graph a proportional relationship?",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "correct": 1,
+   "show": "No",
+   "hints": [
+    "Check both tests.",
+    "It does pass through (0, 0). Is it straight?",
+    "It bends upward."
+   ],
+   "steps": [
+    "It passes through (0, 0), but it is a curve, not a straight line.",
+    "Both tests must pass. So it is NOT proportional."
+   ],
+   "graph": {
+    "lines": [
+     {
+      "pts": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.25,
+        0.03125
+       ],
+       [
+        0.5,
+        0.125
+       ],
+       [
+        0.75,
+        0.28125
+       ],
+       [
+        1.0,
+        0.5
+       ],
+       [
+        1.25,
+        0.78125
+       ],
+       [
+        1.5,
+        1.125
+       ],
+       [
+        1.75,
+        1.53125
+       ],
+       [
+        2.0,
+        2.0
+       ],
+       [
+        2.25,
+        2.53125
+       ],
+       [
+        2.5,
+        3.125
+       ],
+       [
+        2.75,
+        3.78125
+       ],
+       [
+        3.0,
+        4.5
+       ],
+       [
+        3.25,
+        5.28125
+       ],
+       [
+        3.5,
+        6.125
+       ],
+       [
+        3.75,
+        7.03125
+       ],
+       [
+        4.0,
+        8.0
+       ]
+      ],
+      "label": ""
+     }
+    ],
+    "xmax": 5,
+    "ymax": 12,
+    "xl": "x",
+    "yl": "y",
+    "dots": []
+   },
+   "id": "U2-30",
+   "why_focus": "Practice the two graph tests: straight, and through (0, 0).",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "proportional-graph",
+     "proportional-test",
+     "coordinate-plane"
+    ]
+   }
+  },
+  {
+   "sub": "2.5",
+   "type": "C",
+   "kind": "num",
+   "text": "A proportional graph is a straight line through (0, 0) and (5, 35). What is y when x = 1?",
+   "answer": 7.0,
+   "show": "7",
+   "hints": [
+    "The point (1, k) shows the constant of proportionality.",
+    "k = y ÷ x using (5, 35).",
+    "35 ÷ 5"
+   ],
+   "steps": [
+    "k = 35 ÷ 5 = 7",
+    "So the point is (1, 7), and y = 7 when x = 1."
+   ],
+   "id": "U2-31",
+   "why_focus": "Practice the two graph tests: straight, and through (0, 0).",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "proportional-graph",
+     "k-const",
+     "coordinate-plane"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.5",
+   "type": "E",
+   "kind": "choice",
+   "text": "Two proportional graphs, Line A and Line B, both start at (0, 0). Which line has the bigger constant of proportionality k?",
+   "options": [
+    "Line A",
+    "Line B"
+   ],
+   "correct": 1,
+   "show": "Line B",
+   "hints": [
+    "Find k for each: y ÷ x at the end point.",
+    "A ends at (4, 6) and B ends at (4, 10).",
+    "6 ÷ 4 and 10 ÷ 4."
+   ],
+   "steps": [
+    "A: k = 6 ÷ 4 = 1.5.",
+    "B: k = 10 ÷ 4 = 2.5.",
+    "The steeper line has the bigger k."
+   ],
+   "graph": {
+    "lines": [
+     {
+      "pts": [
+       [
+        0,
+        0
+       ],
+       [
+        4,
+        6
+       ]
+      ],
+      "label": "A"
+     },
+     {
+      "pts": [
+       [
+        0,
+        0
+       ],
+       [
+        4,
+        10
+       ]
+      ],
+      "label": "B"
+     }
+    ],
+    "xmax": 5,
+    "ymax": 12,
+    "xl": "x",
+    "yl": "y",
+    "dots": [
+     [
+      4,
+      6
+     ],
+     [
+      4,
+      10
+     ]
+    ]
+   },
+   "id": "U2-32",
+   "why_focus": "Practice the two graph tests: straight, and through (0, 0).",
+   "deps": {
+    "level": "mixed",
+    "concepts": [
+     "proportional-graph",
+     "k-const",
+     "compare-rates"
+    ]
+   }
+  },
+  {
+   "sub": "2.6",
+   "type": "A",
+   "kind": "num",
+   "text": "Mia is 4 years old when her cousin is 10. How old will her cousin be when Mia is 9?",
+   "answer": 15.0,
+   "show": "15 years old",
+   "hints": [
+    "Times or plus? Will they ever be the same age gap apart?",
+    "Their ages keep a constant DIFFERENCE.",
+    "The cousin is always 6 years older."
+   ],
+   "steps": [
+    "Mia's age + 6 = cousin's age (a plus, not a times).",
+    "9 + 6 = 15",
+    "This is NOT a proportional problem."
+   ],
+   "id": "U2-33",
+   "why_focus": "Practice deciding times or plus BEFORE you calculate.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "times-or-plus",
+     "proportional-test"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.6",
+   "type": "A",
+   "kind": "num",
+   "text": "4 people paint a fence in 6 hours. How many hours would 8 people take, working at the same rate?",
+   "answer": 3.0,
+   "show": "3 hours",
+   "hints": [
+    "More people: more time, or less time?",
+    "Total work stays the same: 4 × 6 = 24 person-hours.",
+    "24 ÷ 8"
+   ],
+   "steps": [
+    "More helpers means LESS time, so this is not a simple ratio.",
+    "4 × 6 = 24 person-hours of work.",
+    "24 ÷ 8 = 3 hours."
+   ],
+   "id": "U2-34",
+   "why_focus": "Practice deciding times or plus BEFORE you calculate.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "times-or-plus",
+     "proportional-test"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.6",
+   "type": "B",
+   "kind": "num",
+   "text": "A smoothie uses 2 cups of berries for every 3 cups of yogurt. You use 15 cups of yogurt. How many cups of berries?",
+   "answer": 10.0,
+   "show": "10 cups",
+   "hints": [
+    "Times or plus? Doubling the recipe doubles both.",
+    "How many groups of 3 cups of yogurt are in 15?",
+    "15 ÷ 3 = 5 groups."
+   ],
+   "steps": [
+    "15 ÷ 3 = 5 batches.",
+    "5 × 2 = 10 cups of berries.",
+    "Check: 10 : 15 simplifies to 2 : 3."
+   ],
+   "id": "U2-35",
+   "why_focus": "Practice deciding times or plus BEFORE you calculate.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "times-or-plus",
+     "equiv-ratios",
+     "unit-rate"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.6",
+   "type": "D",
+   "kind": "num",
+   "text": "Trail mix should have 4 cups of nuts for every 7 cups of raisins. A bag has 12 cups of nuts and 28 cups of raisins. How many MORE cups of nuts does it need?",
+   "answer": 4.0,
+   "show": "4 cups",
+   "hints": [
+    "Match the ratio to the bigger amount of raisins.",
+    "28 ÷ 7 = 4 groups of raisins.",
+    "4 groups need 4 × 4 nuts."
+   ],
+   "steps": [
+    "28 ÷ 7 = 4 groups, so the mix needs 4 × 4 = 16 cups of nuts.",
+    "It has 12, so it needs 16 − 12 = 4 more."
+   ],
+   "id": "U2-36",
+   "why_focus": "Practice deciding times or plus BEFORE you calculate.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "equiv-ratios",
+     "times-or-plus"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.6",
+   "type": "E",
+   "kind": "num",
+   "text": "30 inches of ribbon cost $4.50. How much do 3 yards cost (in dollars)? (1 yard = 36 inches)",
+   "answer": 16.2,
+   "show": "16.2 dollars",
+   "hints": [
+    "Make the units match first.",
+    "3 yards = 3 × 36 inches.",
+    "Cost per inch: 4.50 ÷ 30."
+   ],
+   "steps": [
+    "3 yards = 108 inches.",
+    "$4.50 ÷ 30 = $0.15 per inch.",
+    "0.15 × 108 = 16.2"
+   ],
+   "id": "U2-37",
+   "why_focus": "Practice deciding times or plus BEFORE you calculate.",
+   "deps": {
+    "level": "mixed",
+    "concepts": [
+     "y-eq-kx",
+     "unit-conversion",
+     "unit-rate"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.6",
+   "type": "A",
+   "kind": "choice",
+   "text": "A taxi charges $5 plus $2 per mile. Is the cost proportional to the number of miles?",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "correct": 1,
+   "show": "No",
+   "hints": [
+    "What does a 0-mile ride cost?",
+    "Is there a starting fee?",
+    "Check cost ÷ miles for 1 and 2 miles."
+   ],
+   "steps": [
+    "1 mile: $7, 2 miles: $9. 7 ÷ 1 ≠ 9 ÷ 2.",
+    "There is a $5 starting fee, so it is NOT proportional."
+   ],
+   "id": "U2-38",
+   "why_focus": "Practice deciding times or plus BEFORE you calculate.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "times-or-plus",
+     "proportional-test"
+    ]
+   }
+  },
+  {
+   "sub": "2.8",
+   "type": "A",
+   "kind": "num",
+   "text": "Scale: 1 in. = 4 ft. A wall measures 7.5 in. on the drawing. How many feet long is the real wall?",
+   "answer": 30.0,
+   "show": "30 ft",
+   "hints": [
+    "Does the real wall come out bigger or smaller than the drawing?",
+    "Each inch stands for 4 feet.",
+    "7.5 × 4"
+   ],
+   "steps": [
+    "actual = scale × drawing",
+    "4 × 7.5 = 30"
+   ],
+   "id": "U2-39",
+   "why_focus": "Practice using the scale, and converting each side before finding area.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "scale-factor",
+     "k-const",
+     "mul-decimals"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.8",
+   "type": "B",
+   "kind": "num",
+   "text": "Scale: 2 in. = 9 ft. A room is 5 in. long on the drawing. How many feet long is the real room?",
+   "answer": 22.5,
+   "show": "22.5 ft",
+   "hints": [
+    "First make the scale 'ONE inch = ? ft'.",
+    "9 ÷ 2 = 4.5 ft per inch.",
+    "Then multiply by 5."
+   ],
+   "steps": [
+    "1 in. = 9 ÷ 2 = 4.5 ft.",
+    "4.5 × 5 = 22.5"
+   ],
+   "id": "U2-40",
+   "why_focus": "Practice using the scale, and converting each side before finding area.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "scale-factor",
+     "unit-rate",
+     "div-decimals"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.8",
+   "type": "C",
+   "kind": "num",
+   "text": "A drawing of a rectangle is 3 in. by 5 in. Scale: 1 in. = 6 ft. What is the REAL area in square feet?",
+   "answer": 540.0,
+   "show": "540 sq ft",
+   "hints": [
+    "Do not multiply the drawing's area by 6.",
+    "Find the real length and the real width first.",
+    "Then multiply them."
+   ],
+   "steps": [
+    "Real width: 3 × 6 = 18 ft. Real length: 5 × 6 = 30 ft.",
+    "Area = 18 × 30 = 540 square feet."
+   ],
+   "id": "U2-41",
+   "why_focus": "Practice using the scale, and converting each side before finding area.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "scale-factor",
+     "area-rect",
+     "mul-decimals"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.8",
+   "type": "B",
+   "kind": "num",
+   "text": "A real 36-ft boat is 8 in. long in a scale drawing. 1 in. = how many feet?",
+   "answer": 4.5,
+   "show": "4.5 ft per inch",
+   "hints": [
+    "Scale means real size ÷ drawing size.",
+    "You want feet for ONE inch.",
+    "36 ÷ 8"
+   ],
+   "steps": [
+    "36 ft ÷ 8 in. = 4.5 ft per inch",
+    "Scale: 1 in. = 4.5 ft."
+   ],
+   "id": "U2-42",
+   "why_focus": "Practice using the scale, and converting each side before finding area.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "scale-factor",
+     "unit-rate",
+     "div-decimals"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.8",
+   "type": "D",
+   "kind": "num",
+   "text": "A logo drawing is 6 in. long at a scale of 1 in. = 5 ft. You redraw it 10 in. long. What is the new scale (feet per inch)?",
+   "answer": 3.0,
+   "show": "3 ft per inch",
+   "hints": [
+    "Find the REAL length first.",
+    "6 × 5 = 30 ft.",
+    "Real length ÷ new drawing length."
+   ],
+   "steps": [
+    "Real length: 6 × 5 = 30 ft.",
+    "New scale: 30 ft ÷ 10 in. = 3 ft per inch."
+   ],
+   "id": "U2-43",
+   "why_focus": "Practice using the scale, and converting each side before finding area.",
+   "deps": {
+    "level": "mixed",
+    "concepts": [
+     "new-scale",
+     "scale-factor",
+     "k-const",
+     "unit-rate"
+    ]
+   },
+   "tol": 1e-09
+  },
+  {
+   "sub": "2.8",
+   "type": "A",
+   "kind": "num",
+   "text": "Map scale: 1 in. = 25 miles. Two towns are 3 1/2 in. apart on the map. How many real miles apart are they?",
+   "answer": 87.5,
+   "show": "87.5 miles",
+   "hints": [
+    "Each inch stands for 25 miles.",
+    "3 1/2 = 3.5",
+    "25 × 3.5"
+   ],
+   "steps": [
+    "25 × 3.5 = 75 + 12.5",
+    "= 87.5 miles."
+   ],
+   "id": "U2-44",
+   "why_focus": "Practice using the scale, and converting each side before finding area.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "scale-factor",
+     "k-const",
+     "mul-decimals"
+    ]
+   },
+   "tol": 1e-09
+  }
+ ],
+ "lessons": {
+  "2.1": {
+   "title": "Unit rates",
+   "move": "Divide to get to ONE, then multiply to scale up.",
+   "hook": "Per means divide. Get to 1.",
+   "trap": "Comparing totals instead of unit rates. Making 9 of 25 shots is worse than 8 of 20.",
+   "why": {
+    "goal": "Compare deals and speeds fairly by turning any rate into 'how much for ONE.'",
+    "supports_future": "Every skill after this starts with a unit rate: equations, graphs, scale drawings, and later percent and slope.",
+    "why_you_need_it": "Totals can fool you. 9 of 25 shots sounds better than 8 of 20, but per shot it's worse.",
+    "real_life": "Grocery unit prices, miles per hour, steps per mile, pay per hour, phone plans.",
+    "building_block": "Foundation. The first block of the unit; the rest is built from it."
+   }
+  },
+  "2.2": {
+   "title": "Unit rates with fractions",
+   "move": "Keep, change, flip, then cancel before you multiply.",
+   "hook": "Flip the bottom.",
+   "trap": "Flipping the wrong fraction. Only the divisor (the 'per' amount) flips.",
+   "why": {
+    "goal": "Do the same 'get to ONE' move when the amounts are fractions.",
+    "supports_future": "Recipes, maps, and scale drawings use fraction rates. Lessons 2.4 and 2.8 depend on this.",
+    "why_you_need_it": "Real measurements aren't always whole numbers: 3/4 cup, 1/6 hour, 2 1/2 miles.",
+    "real_life": "Recipes, speed over a short time, fabric per item, map scales, medicine doses.",
+    "building_block": "Builds on 2.1 plus fraction division from 6th grade."
+   }
+  },
+  "2.3": {
+   "title": "Is it proportional?",
+   "move": "Divide y ÷ x in EVERY row. All the same means proportional.",
+   "hook": "Every row, same number, or no.",
+   "trap": "Checking only two rows. One row that breaks the pattern makes it NOT proportional.",
+   "why": {
+    "goal": "Decide for sure whether two quantities are proportional.",
+    "supports_future": "You can only use y = kx, a straight line through zero, or a scale factor when a relationship is truly proportional.",
+    "why_you_need_it": "Lots of things look steady but aren't: a setup fee, or ages. Checking every row keeps you from using the wrong tool.",
+    "real_life": "Is this a steady price per item, or is there a delivery fee? Phone plans, ride shares, memberships.",
+    "building_block": "Gatekeeper skill: it decides whether the rest of the unit's tools apply."
+   }
+  },
+  "2.4": {
+   "title": "y = kx",
+   "move": "k = y ÷ x. Then write y = kx and use it.",
+   "hook": "k is y over x.",
+   "trap": "Using a group price as k. '3 lemons for $1.80' means k = 0.60, not 1.80.",
+   "why": {
+    "goal": "Write any proportional relationship as y = kx and use k to find anything.",
+    "supports_future": "y = kx is your first linear equation. Slope, graphing lines, and Algebra start here.",
+    "why_you_need_it": "An equation is a shortcut: once you know k, any amount takes one step.",
+    "real_life": "Pay = hourly rate × hours. Cost = price × quantity. Distance = speed × time.",
+    "building_block": "Turns the unit rate (2.1) into an equation, and sets up graphs (2.5) and slope later."
+   }
+  },
+  "2.5": {
+   "title": "Graphs",
+   "move": "Proportional = a straight line AND it goes through (0, 0). The point (1, k) shows k.",
+   "hook": "Straight and through zero.",
+   "trap": "Calling any straight line proportional. A line that starts at $3 is not.",
+   "why": {
+    "goal": "Recognize and read proportional relationships on a graph.",
+    "supports_future": "Graphs of lines, slope, and comparing rates visually in 8th grade and science.",
+    "why_you_need_it": "A picture shows at a glance whether something is proportional and which rate is bigger (steeper).",
+    "real_life": "Charts of cost vs. amount, speed graphs, exchange rates, fitness apps.",
+    "building_block": "Connects the table (2.3) and the equation (2.4) to a picture."
+   }
+  },
+  "2.6": {
+   "title": "Times or plus?",
+   "move": "Decide first: does doubling one double the other? If not, don't use a ratio.",
+   "hook": "Times? Ratio. Plus? Just add.",
+   "trap": "Using ratios on ages or on 'more helpers means less time' problems.",
+   "why": {
+    "goal": "Decide whether a problem is proportional before using ratios, then pick the right tool.",
+    "supports_future": "Choosing the right model is the heart of word-problem solving in Algebra and science.",
+    "why_you_need_it": "Not every steady problem is a ratio: ages add, and more helpers means less time.",
+    "real_life": "Scaling a recipe, splitting work, planning for a crowd, checking a bill.",
+    "building_block": "Mixes 2.1 to 2.5 into one skill: decide first, then solve."
+   }
+  },
+  "2.8": {
+   "title": "Scale drawings",
+   "move": "Make the scale '1 inch = ? ft', then multiply. For area, convert each side first.",
+   "hook": "One inch first, then multiply.",
+   "trap": "Multiplying the drawing's area by the scale. Convert length and width first.",
+   "why": {
+    "goal": "Use a scale to move between a drawing or map and the real thing, including areas.",
+    "supports_future": "Similar figures and geometry in 7th and 8th grade; blueprints and maps in real life.",
+    "why_you_need_it": "Scale is a constant of proportionality: actual = k × drawing. Areas grow by k × k.",
+    "real_life": "Maps, blueprints, floor plans, model kits, enlarging a photo or poster.",
+    "building_block": "Applies y = kx (2.4) in geometry, combining unit rates, fractions, and area."
+   }
+  }
+ },
+ "concepts": {
+  "div-decimals": {
+   "name": "Dividing decimals",
+   "plain": "Divide a money or measurement amount by a whole number.",
+   "origin": "Grade 6"
+  },
+  "mul-decimals": {
+   "name": "Multiplying decimals",
+   "plain": "Multiply a rate like $0.15 by a quantity.",
+   "origin": "Grade 6"
+  },
+  "div-fractions": {
+   "name": "Dividing fractions",
+   "plain": "Keep, change, flip, then cancel.",
+   "origin": "Grade 6"
+  },
+  "mul-fractions": {
+   "name": "Multiplying fractions",
+   "plain": "Multiply across and cancel first.",
+   "origin": "Grades 5-6"
+  },
+  "mixed-numbers": {
+   "name": "Mixed numbers",
+   "plain": "Turn 1 1/2 into 3/2 before you multiply or divide.",
+   "origin": "Grades 5-6"
+  },
+  "equiv-ratios": {
+   "name": "Equivalent ratios and ratio tables",
+   "plain": "Do the same multiply or divide to both rows.",
+   "origin": "Grade 6"
+  },
+  "unit-conversion": {
+   "name": "Converting units",
+   "plain": "Dozens, yards to inches, minutes to hours.",
+   "origin": "Grades 5-6"
+  },
+  "reading-tables": {
+   "name": "Reading tables",
+   "plain": "Pull pairs of numbers out of a table.",
+   "origin": "Grades 4-6"
+  },
+  "coordinate-plane": {
+   "name": "Plotting and reading points",
+   "plain": "(x, y): across, then up.",
+   "origin": "Grades 5-6"
+  },
+  "area-rect": {
+   "name": "Area of a rectangle",
+   "plain": "Length × width.",
+   "origin": "Grades 3-6"
+  },
+  "solve-1step": {
+   "name": "Solving one-step equations",
+   "plain": "Undo multiply with divide to find x.",
+   "origin": "Grade 6"
+  },
+  "compare-order": {
+   "name": "Comparing numbers",
+   "plain": "Decide which decimal or fraction is larger.",
+   "origin": "Grades 5-6"
+  },
+  "multi-step": {
+   "name": "Multi-step word problems",
+   "plain": "Break the story into steps and answer everything asked.",
+   "origin": "Grade 6"
+  },
+  "unit-rate": {
+   "name": "Unit rates",
+   "plain": "How much for exactly ONE.",
+   "origin": "Lesson 2.1"
+  },
+  "compare-rates": {
+   "name": "Comparing rates",
+   "plain": "Same units, then decide if bigger or smaller wins.",
+   "origin": "Lesson 2.1"
+  },
+  "fraction-unit-rate": {
+   "name": "Unit rates with fractions",
+   "plain": "Get to ONE when amounts are fractions.",
+   "origin": "Lesson 2.2"
+  },
+  "proportional-test": {
+   "name": "Testing for proportional",
+   "plain": "Same y ÷ x in every row, and 0 gives 0.",
+   "origin": "Lesson 2.3"
+  },
+  "k-const": {
+   "name": "Constant of proportionality",
+   "plain": "k = y ÷ x, the unit rate.",
+   "origin": "Lesson 2.4"
+  },
+  "y-eq-kx": {
+   "name": "The equation y = kx",
+   "plain": "Write and use the proportional equation.",
+   "origin": "Lesson 2.4"
+  },
+  "proportional-graph": {
+   "name": "Proportional graphs",
+   "plain": "Straight line through (0, 0); the point (1, k).",
+   "origin": "Lesson 2.5"
+  },
+  "times-or-plus": {
+   "name": "Times or plus?",
+   "plain": "Decide if it's proportional before using ratios.",
+   "origin": "Lesson 2.6"
+  },
+  "scale-factor": {
+   "name": "Scale and scale factor",
+   "plain": "Actual = k × drawing; area uses real sides.",
+   "origin": "Lesson 2.8"
+  },
+  "new-scale": {
+   "name": "Changing the scale",
+   "plain": "Find the real size first, then the new scale.",
+   "origin": "Lesson 2.8"
+  }
+ },
+ "subs": [
+  "2.1",
+  "2.2",
+  "2.3",
+  "2.4",
+  "2.5",
+  "2.6",
+  "2.8"
+ ]
+}
