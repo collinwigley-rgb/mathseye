@@ -3,6 +3,7 @@
 import json, pathlib, sys, re
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from unit2_problems import PROBS
+from unit2_variants import variants
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SCR = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else pathlib.Path("/tmp")
 
@@ -87,6 +88,9 @@ for p in PROBS:
     q = {k: v for k, v in p.items()}
     q["why_focus"] = FOCUS[p["sub"]]; q["deps"] = deps(p)
     if q["kind"] == "num": q["tol"] = 0.006 if nonterm(q["answer"]) else 1e-9
+    vs = variants(p["id"])
+    assert vs and all(v["kind"] == p["kind"] for v in vs), p["id"]
+    q["variants"] = vs
     out.append(q)
 DATA = dict(problems=out, lessons=LESSONS, concepts={k: dict(name=v[0], plain=v[1], origin=v[2]) for k, v in CONCEPTS.items()}, subs=SUBS)
 (ROOT / "content/units/unit-2").mkdir(parents=True, exist_ok=True)
