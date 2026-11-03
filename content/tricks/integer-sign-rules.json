@@ -5,12 +5,14 @@
   "example": "(−6)(−4) = 24    (−6)(4) = −24",
   "why": "Multiplying by −1 flips a number to the other side of zero. Two flips put you back where you started, so two negatives make a positive.",
   "workbookSection": "Integer operations",
-  "unlockOrder": 3,
+  "unlockOrder": 12,
   "templates": [
     {
       "id": "sign-mul",
       "generator": "signs",
-      "params": { "op": "mul" },
+      "params": {
+        "op": "mul"
+      },
       "answerFormat": "number",
       "clues": [
         "Are the signs the same or different?",
@@ -22,7 +24,9 @@
     {
       "id": "sign-div",
       "generator": "signs",
-      "params": { "op": "div" },
+      "params": {
+        "op": "div"
+      },
       "answerFormat": "number",
       "clues": [
         "Are the signs the same or different?",

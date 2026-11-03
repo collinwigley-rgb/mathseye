@@ -1,0 +1,23 @@
+{
+  "id": "minutes-to-hours",
+  "name": "Minutes as part of an hour",
+  "rule": "Put the minutes over 60 and simplify. 15 minutes = 15/60 = 1/4 hour.",
+  "example": "30 min = 1/2 h     20 min = 1/3 h     6 min = 1/10 h",
+  "why": "An hour has 60 minutes, so any number of minutes is that many sixtieths of an hour. Simplify to get the friendly fraction.",
+  "workbookSection": "Unit 2: Lessons 2.2 and 2.6 (rates in miles per hour)",
+  "unlockOrder": 4,
+  "templates": [
+    {
+      "id": "min-hr",
+      "generator": "minToHour",
+      "params": {},
+      "answerFormat": "number",
+      "clues": [
+        "How many {m}-minute chunks make 60 minutes?",
+        "{m} out of 60 minutes is {m}/60.",
+        "Simplify {m}/60. What number goes into both?",
+        "{m} minutes = {ans} hour"
+      ]
+    }
+  ]
+}

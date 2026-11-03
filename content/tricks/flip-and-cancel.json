@@ -1,0 +1,23 @@
+{
+  "id": "flip-and-cancel",
+  "name": "Flip and cancel",
+  "rule": "Fraction ÷ fraction: keep the first, change ÷ to ×, flip the second. Cancel matching numbers before you multiply.",
+  "example": "(3/4) ÷ (1/2) = 3/4 × 2/1 = 3/2     (2/3) ÷ (1/6) = 2/3 × 6 = 4",
+  "why": "Dividing by 1/2 asks how many halves fit, which is times 2. Flipping the second fraction turns every division into a times.",
+  "workbookSection": "Unit 2: Lesson 2.2 (unit rates with fractions)",
+  "unlockOrder": 9,
+  "templates": [
+    {
+      "id": "flip",
+      "generator": "flipFrac",
+      "params": {},
+      "answerFormat": "number",
+      "clues": [
+        "Which fraction gets flipped? Only the one after the ÷.",
+        "Keep, change, flip: ({a}/{b}) × ({d}/{c}).",
+        "Look for numbers to cancel across the top and bottom, then multiply.",
+        "({a}/{b}) ÷ ({c}/{d}) = {ans}"
+      ]
+    }
+  ]
+}

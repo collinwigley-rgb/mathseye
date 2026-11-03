@@ -2,10 +2,10 @@
   "id": "break-it-apart",
   "name": "Break it apart",
   "rule": "Round one number to a friendly one, multiply, then fix the difference.",
-  "example": "7 × 48 = 7 × 50 − 7 × 2 = 350 − 14 = 336",
+  "example": "7 × 48 = 7 × 50 − 7 × 2 = 336",
   "why": "This is the distributive property: 7 × 48 is 7 groups of (50 − 2), which is 7 groups of 50 minus 7 groups of 2.",
-  "workbookSection": "Distributive property",
-  "unlockOrder": 4,
+  "workbookSection": "Distributive property; Unit 2: Lesson 2.4 (6.5 × 14)",
+  "unlockOrder": 10,
   "templates": [
     {
       "id": "break-apart",

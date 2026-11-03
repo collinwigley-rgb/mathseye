@@ -3,14 +3,16 @@
   "name": "Move the decimal",
   "rule": "Times 10, 100, 1000: slide the decimal right one place per zero. Divide: slide it left.",
   "example": "5.6 ÷ 10 = 0.56    0.3 × 100 = 30",
-  "why": "Our number system is built on tens. Multiplying by 10 makes every digit worth ten times more, so each digit shifts one place to the left of the decimal point, which looks like the point moving right.",
-  "workbookSection": "Decimals",
-  "unlockOrder": 1,
+  "why": "Our number system is built on tens. Multiplying by 10 makes every digit worth ten times more, so each digit shifts one place left of the decimal point, which looks like the point moving right.",
+  "workbookSection": "Decimals; Unit 2 money and rate problems",
+  "unlockOrder": 3,
   "templates": [
     {
       "id": "dec-mul",
       "generator": "decimalShift",
-      "params": { "op": "mul" },
+      "params": {
+        "op": "mul"
+      },
       "answerFormat": "number",
       "clues": [
         "How many zeros does {p} have?",
@@ -22,7 +24,9 @@
     {
       "id": "dec-div",
       "generator": "decimalShift",
-      "params": { "op": "div" },
+      "params": {
+        "op": "div"
+      },
       "answerFormat": "number",
       "clues": [
         "How many zeros does {p} have?",

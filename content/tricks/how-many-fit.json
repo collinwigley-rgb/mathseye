@@ -1,0 +1,39 @@
+{
+  "id": "how-many-fit",
+  "name": "How many fit?",
+  "rule": "Dividing by a unit fraction asks 'how many pieces fit?' Dividing by 1/4 means times 4. Dividing by 1/8 means times 8.",
+  "example": "6 ÷ 1/4 = 6 × 4 = 24     (3/4) ÷ (1/8) = 3/4 × 8 = 6",
+  "why": "There are 4 quarters in 1, so there are 6 × 4 quarters in 6. Dividing by a small piece gives you MORE pieces.",
+  "workbookSection": "Unit 2: Lesson 2.2 (unit rates with fractions)",
+  "unlockOrder": 2,
+  "templates": [
+    {
+      "id": "fit-whole",
+      "generator": "fitCount",
+      "params": {
+        "kind": "whole"
+      },
+      "answerFormat": "number",
+      "clues": [
+        "How many pieces of size 1/{d} fit in 1 whole?",
+        "There are {d} of them in each whole, so you are multiplying by {d}.",
+        "{x} × {d} = ?",
+        "{x} ÷ 1/{d} = {ans}"
+      ]
+    },
+    {
+      "id": "fit-frac",
+      "generator": "fitCount",
+      "params": {
+        "kind": "frac"
+      },
+      "answerFormat": "number",
+      "clues": [
+        "How many 1/{d}s fit in 1 whole?",
+        "Dividing by 1/{d} is the same as times {d}.",
+        "{x} × {d} = ?",
+        "{x} ÷ 1/{d} = {ans}"
+      ]
+    }
+  ]
+}

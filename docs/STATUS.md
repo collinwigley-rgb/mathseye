@@ -13,7 +13,7 @@
 ## Next up
 - [x] Unit 2 reference sheets (2.1–2.8) and study guide in content/units/unit-2/
 - [x] Unit 2 interactive study guide at public/study/unit-2.html (v2: missions, focus mode, help sheet; see docs/UX-AUDIT.md)
-- [ ] MathFacts tricks tuned to Unit 2 (unit rate, fraction division, decimals, y = kx facts)
+- [x] MathFacts: 9 Unit 2 tricks added (13 total), reordered by usefulness; unlock every 2 days (parent can unlock sooner)
 - [ ] Unit 3: upload weekly PDFs, build sheets as they come
 - [ ] Phase 2: Beat the Calculator, Test Mode, spot-the-trick and estimate cards, PIN for grown-ups, more tricks
 - [ ] Move storage to IndexedDB and add JSON export for backup

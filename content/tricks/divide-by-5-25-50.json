@@ -1,0 +1,53 @@
+{
+  "id": "divide-by-5-25-50",
+  "name": "Dividing by 5, 25, and 50",
+  "rule": "÷5: double it, then ÷10. ÷25: times 4, then ÷100. ÷50: double it, then ÷100.",
+  "example": "240 ÷ 5 = 480 ÷ 10 = 48     300 ÷ 25 = 1200 ÷ 100 = 12",
+  "why": "5 is half of 10, so dividing by 5 is the same as doubling and dividing by 10. The same idea works for 25 (a quarter of 100) and 50 (half of 100).",
+  "workbookSection": "Unit 2: Lesson 2.1 (finding unit prices)",
+  "unlockOrder": 5,
+  "templates": [
+    {
+      "id": "d5",
+      "generator": "div5",
+      "params": {
+        "d": 5
+      },
+      "answerFormat": "number",
+      "clues": [
+        "Is 5 a friendly partner of 10?",
+        "Try it: double the number, then divide by 10.",
+        "{N} × {mult} = {mid}. Now ÷ {shift}.",
+        "{N} ÷ {d} = {ans}"
+      ]
+    },
+    {
+      "id": "d25",
+      "generator": "div5",
+      "params": {
+        "d": 25
+      },
+      "answerFormat": "number",
+      "clues": [
+        "Is 25 a friendly partner of 100?",
+        "Try it: times 4, then divide by 100.",
+        "{N} × {mult} = {mid}. Now ÷ {shift}.",
+        "{N} ÷ {d} = {ans}"
+      ]
+    },
+    {
+      "id": "d50",
+      "generator": "div5",
+      "params": {
+        "d": 50
+      },
+      "answerFormat": "number",
+      "clues": [
+        "Is 50 a friendly partner of 100?",
+        "Try it: double the number, then divide by 100.",
+        "{N} × {mult} = {mid}. Now ÷ {shift}.",
+        "{N} ÷ {d} = {ans}"
+      ]
+    }
+  ]
+}

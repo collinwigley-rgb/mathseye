@@ -5,12 +5,14 @@
   "example": "156 → 1 + 5 + 6 = 12, and 12 is divisible by 3, so 156 is too.",
   "why": "Every 10 is one more than a 9, every 100 is one more than 99. So a number is a pile of 9s plus its digit sum. The 9s always split evenly by 3 and 9, so only the digit sum decides.",
   "workbookSection": "Factors and fractions",
-  "unlockOrder": 2,
+  "unlockOrder": 13,
   "templates": [
     {
       "id": "div-3",
       "generator": "digitSum",
-      "params": { "d": 3 },
+      "params": {
+        "d": 3
+      },
       "answerFormat": "yesno",
       "clues": [
         "What do the digits of {n} add up to?",
@@ -22,7 +24,9 @@
     {
       "id": "div-9",
       "generator": "digitSum",
-      "params": { "d": 9 },
+      "params": {
+        "d": 9
+      },
       "answerFormat": "yesno",
       "clues": [
         "What do the digits of {n} add up to?",

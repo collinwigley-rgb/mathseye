@@ -1,0 +1,39 @@
+{
+  "id": "halve-halve",
+  "name": "Halve, then halve again",
+  "rule": "÷4: cut it in half twice. ÷8: cut it in half three times.",
+  "example": "156 ÷ 4 = 78 ÷ 2 = 39     240 ÷ 8 = 120 → 60 → 30",
+  "why": "4 = 2 × 2 and 8 = 2 × 2 × 2, so dividing by 4 or 8 is dividing by 2 two or three times. Halving is the easiest division there is.",
+  "workbookSection": "Unit 2: Lesson 2.1 (unit rates)",
+  "unlockOrder": 6,
+  "templates": [
+    {
+      "id": "h4",
+      "generator": "halveDiv",
+      "params": {
+        "d": 4
+      },
+      "answerFormat": "number",
+      "clues": [
+        "Can you cut {N} in half?",
+        "÷{d} means halve it {times}.",
+        "{N} ÷ 2 = {h1}. Now halve again.",
+        "{N} ÷ {d} = {ans}"
+      ]
+    },
+    {
+      "id": "h8",
+      "generator": "halveDiv",
+      "params": {
+        "d": 8
+      },
+      "answerFormat": "number",
+      "clues": [
+        "Can you cut {N} in half?",
+        "÷{d} means halve it {times}.",
+        "{N} ÷ 2 = {h1}. Keep halving.",
+        "{N} ÷ {d} = {ans}"
+      ]
+    }
+  ]
+}

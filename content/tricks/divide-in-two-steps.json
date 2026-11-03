@@ -1,0 +1,53 @@
+{
+  "id": "divide-in-two-steps",
+  "name": "Divide in two easy steps",
+  "rule": "Split the divisor into two small numbers: ÷6 = ÷2 then ÷3. ÷12 = ÷3 then ÷4. ÷15 = ÷3 then ÷5.",
+  "example": "168 ÷ 12 = 168 ÷ 3 = 56, then 56 ÷ 4 = 14",
+  "why": "12 is 3 × 4, so dividing by 12 is dividing by 3 and then by 4. Two small divisions are easier than one big one.",
+  "workbookSection": "Unit 2: Lesson 2.1 (prices per dozen)",
+  "unlockOrder": 11,
+  "templates": [
+    {
+      "id": "df6",
+      "generator": "divFactors",
+      "params": {
+        "d": 6
+      },
+      "answerFormat": "number",
+      "clues": [
+        "Can you split {d} into two smaller numbers that multiply to {d}?",
+        "{d} = {f1} × {f2}. Divide by {f1}, then by {f2}.",
+        "{N} ÷ {f1} = {mid}. Now ÷ {f2}.",
+        "{N} ÷ {d} = {ans}"
+      ]
+    },
+    {
+      "id": "df12",
+      "generator": "divFactors",
+      "params": {
+        "d": 12
+      },
+      "answerFormat": "number",
+      "clues": [
+        "Can you split {d} into two smaller numbers that multiply to {d}?",
+        "{d} = {f1} × {f2}. Divide by {f1}, then by {f2}.",
+        "{N} ÷ {f1} = {mid}. Now ÷ {f2}.",
+        "{N} ÷ {d} = {ans}"
+      ]
+    },
+    {
+      "id": "df15",
+      "generator": "divFactors",
+      "params": {
+        "d": 15
+      },
+      "answerFormat": "number",
+      "clues": [
+        "Can you split {d} into two smaller numbers that multiply to {d}?",
+        "{d} = {f1} × {f2}. Divide by {f1}, then by {f2}.",
+        "{N} ÷ {f1} = {mid}. Now ÷ {f2}.",
+        "{N} ÷ {d} = {ans}"
+      ]
+    }
+  ]
+}

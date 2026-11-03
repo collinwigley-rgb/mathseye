@@ -4,7 +4,7 @@ import type { Db, QueueItem } from './store';
 import { today } from './store';
 
 export const SESSION_MS = 20 * 60 * 1000;
-const UNLOCK_EVERY = 3.5 * DAY; // about two new tricks a week
+const UNLOCK_EVERY = 2 * DAY; // about three new tricks a week (parent can unlock sooner)
 
 export function unlockedTricks(db: Db, now = Date.now()): string[] {
   return TRICKS.filter(

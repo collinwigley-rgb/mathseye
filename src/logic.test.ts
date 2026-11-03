@@ -56,3 +56,50 @@ describe('leitner', () => {
     expect(c.box1Returns).toBe(1);
   });
 });
+
+// ---------------------------------------------------------------- Unit 2 facts
+import { TRICKS, TEMPLATES } from './content';
+import { fill } from './generators';
+
+describe('unit 2 generators compute the right answers', () => {
+  const rng = seeded(7);
+  const num = (s: string) => parseNumber(s) as number;
+  it('benchmark', () => {
+    for (let i = 0; i < 200; i++) {
+      const a = GENERATORS.benchmark(rng, { dir: 'toDec' }), [, n, d] = a.prompt.match(/^(\d+)\/(\d+) as/)!;
+      expect(num(a.answer)).toBeCloseTo(Number(n) / Number(d), 9);
+      const b = GENERATORS.benchmark(rng, { dir: 'toFrac' }), [, dec] = b.prompt.match(/^([\d.]+) as/)!;
+      expect(num(b.answer)).toBeCloseTo(Number(dec), 9);
+    }
+  });
+  it('fitCount, minToHour, div5, halveDiv, divFactors, divDec, mulHalf', () => {
+    for (let i = 0; i < 200; i++) {
+      let m = GENERATORS.fitCount(rng, { kind: 'whole' }); let r = m.prompt.match(/^(\d+) ÷ 1\/(\d+)$/)!; expect(num(m.answer)).toBe(Number(r[1]) * Number(r[2]));
+      m = GENERATORS.fitCount(rng, { kind: 'frac' }); r = m.prompt.match(/^\((\d+)\/(\d+)\) ÷ \(1\/(\d+)\)$/)!; expect(num(m.answer)).toBeCloseTo(Number(r[1]) / Number(r[2]) * Number(r[3]), 9); expect(Number.isInteger(num(m.answer))).toBe(true);
+      m = GENERATORS.minToHour(rng, {}); r = m.prompt.match(/^(\d+) minutes/)!; expect(num(m.answer)).toBeCloseTo(Number(r[1]) / 60, 9);
+      for (const [g, d] of [['div5', 5], ['div5', 25], ['div5', 50], ['halveDiv', 4], ['halveDiv', 8], ['divFactors', 6], ['divFactors', 12], ['divFactors', 15]] as [string, number][]) {
+        m = GENERATORS[g](rng, { d }); r = m.prompt.match(/^(\d+) ÷ (\d+)$/)!; expect(num(m.answer)).toBe(Number(r[1]) / Number(r[2])); expect(Number(r[2])).toBe(d);
+      }
+      for (const d of ['0.5', '0.25', '0.1']) { m = GENERATORS.divDec(rng, { d }); r = m.prompt.match(/^(\d+) ÷ ([\d.]+)$/)!; expect(num(m.answer)).toBeCloseTo(Number(r[1]) / Number(r[2]), 9); }
+      for (const mm of ['1.5', '2.5', '0.5']) { m = GENERATORS.mulHalf(rng, { m: mm }); r = m.prompt.match(/^(\d+) × ([\d.]+)$/)!; expect(num(m.answer)).toBeCloseTo(Number(r[1]) * Number(r[2]), 9); }
+    }
+  });
+  it('flipFrac', () => {
+    for (let i = 0; i < 300; i++) { const m = GENERATORS.flipFrac(rng, {}), r = m.prompt.match(/^\((\d+)\/(\d+)\) ÷ \((\d+)\/(\d+)\)$/)!; expect(num(m.answer)).toBeCloseTo((Number(r[1]) / Number(r[2])) / (Number(r[3]) / Number(r[4])), 9); }
+  });
+});
+
+describe('every trick in content/tricks is well-formed', () => {
+  it('has 4 clues per template, known generators, unique unlock order, and no unfilled {placeholders}', () => {
+    const orders = TRICKS.map(t => t.unlockOrder); expect(new Set(orders).size).toBe(orders.length);
+    for (const id of Object.keys(TEMPLATES)) {
+      const { template } = TEMPLATES[id]; expect(template.clues).toHaveLength(4); expect(GENERATORS[template.generator]).toBeTruthy();
+      const rng = seeded(id.length);
+      for (let i = 0; i < 60; i++) {
+        const p = GENERATORS[template.generator](rng, template.params);
+        for (const c of template.clues) expect(fill(c, p.vars), `${id}: ${c}`).not.toMatch(/\{\w+\}/);
+        expect(checkAnswer(p.answer, p.answer, template.answerFormat)).toBe(true);
+      }
+    }
+  });
+});

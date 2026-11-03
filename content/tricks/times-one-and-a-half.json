@@ -1,0 +1,53 @@
+{
+  "id": "times-one-and-a-half",
+  "name": "Times 1.5, 2.5, and 0.5",
+  "rule": "× 0.5 is half. × 1.5 is the number plus half of it. × 2.5 is double plus half.",
+  "example": "14 × 1.5 = 14 + 7 = 21     18 × 2.5 = 36 + 9 = 45",
+  "why": "1.5 is 1 and a half, so you take one copy of the number and half of another copy. Same for 2.5: two copies and a half.",
+  "workbookSection": "Unit 2: Lessons 2.4 and 2.8 (y = kx and scale)",
+  "unlockOrder": 7,
+  "templates": [
+    {
+      "id": "x15",
+      "generator": "mulHalf",
+      "params": {
+        "m": "1.5"
+      },
+      "answerFormat": "number",
+      "clues": [
+        "What is half of {x}?",
+        "× 1.5 is the number plus half of it.",
+        "{x} + {half} = ?",
+        "{x} × 1.5 = {ans}"
+      ]
+    },
+    {
+      "id": "x25",
+      "generator": "mulHalf",
+      "params": {
+        "m": "2.5"
+      },
+      "answerFormat": "number",
+      "clues": [
+        "What is double {x}, and what is half of {x}?",
+        "× 2.5 is double plus half.",
+        "{x} × 2 = {dbl}. Now add {half}.",
+        "{x} × 2.5 = {ans}"
+      ]
+    },
+    {
+      "id": "x05",
+      "generator": "mulHalf",
+      "params": {
+        "m": "0.5"
+      },
+      "answerFormat": "number",
+      "clues": [
+        "× 0.5 means what fraction of the number?",
+        "It means half.",
+        "Half of {x} is?",
+        "{x} × 0.5 = {ans}"
+      ]
+    }
+  ]
+}

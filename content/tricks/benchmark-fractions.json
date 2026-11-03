@@ -1,0 +1,39 @@
+{
+  "id": "benchmark-fractions",
+  "name": "Fraction and decimal pairs",
+  "rule": "Learn the friendly pairs: 1/2 = 0.5, 1/4 = 0.25, 1/5 = 0.2, 1/8 = 0.125, 1/10 = 0.1. Then count them up: 3/4 is three quarters.",
+  "example": "3/4 = 3 × 0.25 = 0.75     0.4 = 2/5",
+  "why": "Money is the shortcut: a quarter is 1/4 of a dollar, so 3 quarters is 75¢ = 0.75. Fractions and decimals are two names for the same amount.",
+  "workbookSection": "Unit 2: Lessons 2.1 to 2.4 (unit rates and k)",
+  "unlockOrder": 1,
+  "templates": [
+    {
+      "id": "bench-dec",
+      "generator": "benchmark",
+      "params": {
+        "dir": "toDec"
+      },
+      "answerFormat": "number",
+      "clues": [
+        "Think of a friendly piece: 1/{d} of 1. What is it as a decimal?",
+        "1/{d} = {unit}. Count how many pieces you have.",
+        "{n} × {unit} = ?",
+        "{n}/{d} = {ans}"
+      ]
+    },
+    {
+      "id": "bench-frac",
+      "generator": "benchmark",
+      "params": {
+        "dir": "toFrac"
+      },
+      "answerFormat": "number",
+      "clues": [
+        "Which friendly fraction (halves, fourths, fifths, eighths, tenths) is close to {dec}?",
+        "Try {d}ths: 1/{d} = {unit}.",
+        "{dec} is {n} of those {d}ths. Write it as a fraction.",
+        "{dec} = {ans}"
+      ]
+    }
+  ]
+}

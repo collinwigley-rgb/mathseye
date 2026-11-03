@@ -4,6 +4,8 @@ export type Rng = () => number;
 const int = (rng: Rng, lo: number, hi: number) => lo + Math.floor(rng() * (hi - lo + 1));
 const pick = <T,>(rng: Rng, xs: T[]) => xs[Math.floor(rng() * xs.length)];
 export const MINUS = '−';
+const gcd = (a: number, b: number): number => (b ? gcd(b, a % b) : Math.abs(a));
+const BENCH: [number, number][] = [[1, 2], [1, 4], [3, 4], [1, 5], [2, 5], [3, 5], [4, 5], [1, 8], [3, 8], [5, 8], [7, 8], [1, 10], [3, 10], [7, 10]];
 const signed = (n: number) => (n < 0 ? MINUS + Math.abs(n) : String(n));
 
 /** Format integer mantissa m as m × 10^(-places), with no float error. */
@@ -86,6 +88,70 @@ export const GENERATORS: Record<string, Gen> = {
       vars: { a, b, r, d, ar: a * r, ad: a * d, op: up ? '−' : '+', ans },
     };
   },
+  // ---------------------------------------------------------------- Unit 2 facts
+  benchmark(rng, { dir }) {
+    const [n, d] = pick(rng, BENCH);
+    const dec = String(n / d), unit = String(1 / d);
+    if (dir === 'toDec') return { prompt: `${n}/${d} as a decimal`, answer: dec, vars: { n, d, unit, dec, ans: dec } };
+    return { prompt: `${dec} as a fraction`, answer: `${n}/${d}`, vars: { n, d, unit, dec, ans: `${n}/${d}` } };
+  },
+
+  fitCount(rng, { kind }) {
+    if (kind === 'whole') {
+      const d = pick(rng, [2, 3, 4, 5, 6, 8, 10]), w = int(rng, 2, 9);
+      return { prompt: `${w} ÷ 1/${d}`, answer: String(w * d), vars: { x: String(w), d, ans: w * d } };
+    }
+    const b = pick(rng, [2, 3, 4, 5]), d = b * pick(rng, [2, 3, 4]), a = int(rng, 1, b - 1);
+    const ans = a * (d / b);
+    return { prompt: `(${a}/${b}) ÷ (1/${d})`, answer: String(ans), vars: { x: `${a}/${b}`, d, ans } };
+  },
+
+  minToHour(rng) {
+    const [m, f] = pick(rng, [[6, '1/10'], [10, '1/6'], [12, '1/5'], [15, '1/4'], [20, '1/3'], [30, '1/2'], [40, '2/3'], [45, '3/4'], [5, '1/12']] as [number, string][]);
+    return { prompt: `${m} minutes as a fraction of an hour`, answer: f, vars: { m, k: 60 / m, ans: f } };
+  },
+
+  div5(rng, { d }) {
+    const div = Number(d), q = div === 5 ? int(rng, 12, 80) : div === 25 ? int(rng, 4, 24) : int(rng, 3, 20), N = div * q;
+    const mult = div === 25 ? 4 : 2, shift = div === 5 ? 10 : 100;
+    return { prompt: `${N} ÷ ${div}`, answer: String(q), vars: { N, d: div, mult, shift, mid: N * mult, ans: q } };
+  },
+
+  halveDiv(rng, { d }) {
+    const div = Number(d), q = int(rng, 8, 60), N = div * q;
+    return { prompt: `${N} ÷ ${div}`, answer: String(q), vars: { N, d: div, times: div === 4 ? 'twice' : 'three times', h1: N / 2, ans: q } };
+  },
+
+  mulHalf(rng, { m }) {
+    const x = 2 * int(rng, 2, 24), half = x / 2;
+    const ans = m === '1.5' ? x + half : m === '2.5' ? 2 * x + half : half;
+    return { prompt: `${x} × ${m}`, answer: String(ans), vars: { x, m: String(m), half, dbl: 2 * x, ans } };
+  },
+
+  divDec(rng, { d }) {
+    const k = d === '0.5' ? 2 : d === '0.25' ? 4 : 10, coin = d === '0.5' ? 'half dollars' : d === '0.25' ? 'quarters' : 'dimes';
+    const N = d === '0.5' ? int(rng, 3, 40) : d === '0.25' ? int(rng, 2, 20) : int(rng, 3, 60);
+    return { prompt: `${N} ÷ ${d}`, answer: String(N * k), vars: { N, d: String(d), k, coin, ans: N * k } };
+  },
+
+  flipFrac(rng) {
+    const DIV: [number, number][] = [[1, 2], [1, 3], [2, 3], [1, 4], [3, 4], [1, 5], [2, 5], [3, 5], [5, 6], [1, 6]];
+    const Q: [number, number][] = [[2, 1], [3, 1], [4, 1], [1, 2], [3, 2], [5, 2], [6, 1], [1, 3], [4, 3], [5, 1]];
+    for (let t = 0; t < 40; t++) {
+      const [c, d] = pick(rng, DIV), [qn, qd] = pick(rng, Q);
+      let a = qn * c, b = qd * d; const g = gcd(a, b); a /= g; b /= g;
+      if (a > 20 || b > 20) continue;
+      const ans = qd === 1 ? String(qn) : `${qn}/${qd}`;
+      return { prompt: `(${a}/${b}) ÷ (${c}/${d})`, answer: ans, vars: { a, b, c, d, ans } };
+    }
+    return { prompt: '(3/4) ÷ (1/2)', answer: '3/2', vars: { a: 3, b: 4, c: 1, d: 2, ans: '3/2' } };
+  },
+
+  divFactors(rng, { d }) {
+    const div = Number(d), [f1, f2] = div === 6 ? [2, 3] : div === 12 ? [3, 4] : [3, 5], q = int(rng, 6, 30), N = div * q;
+    return { prompt: `${N} ÷ ${div}`, answer: String(q), vars: { N, d: div, f1, f2, mid: N / f1, ans: q } };
+  },
+
 };
 
 export function fill(template: string, vars: Record<string, string | number>): string {
