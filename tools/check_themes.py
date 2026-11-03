@@ -49,7 +49,7 @@ def doc():
         for t, rows in table_rows():
             id_, label, member, d, l = _row(t)[0], _row(t)[1], _row(t)[2], _row(t)[3], _row(t)[4]
             if member != grp: continue
-            L += [f"### {label} (`{id_}`)", "", "| Mode | Background | Panel | Panel 2 | Line | Accent | Accent 2 | Text on accent |", "| --- | --- | --- | --- | --- | --- | --- | --- |",
+            L += [f"### {label} (`{id_}`), icon: {B.icon_of(id_)}", "", "| Mode | Background | Panel | Panel 2 | Line | Accent | Accent 2 | Text on accent |", "| --- | --- | --- | --- | --- | --- | --- | --- |",
                   f"| Dark | `{d[0]}` | `{d[1]}` | `{d[2]}` | `{d[3]}` | `{d[4]}` | `{d[5]}` | `{FG_ON_ACCENT_DARK}` |", f"| Light | `{l[0]}` | `{l[1]}` | `{l[2]}` | `{l[3]}` | `{l[4]}` | `{B.accent2_light(d[5], l[5])}` (derived) | `{l[5]}` |", "",
                   "| Mode | Pair | Contrast | Needs | Result |", "| --- | --- | --- | --- | --- |"]
             for mode, name, fg, bg, need in rows:

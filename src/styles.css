@@ -100,7 +100,8 @@ main { min-height: 100%; padding: max(24px, env(safe-area-inset-top)) 24px 24px;
 :root[data-brand="light-autumn"] { --bg: #170d21; --panel: #231433; --panel2: #321d49; --amber: #e6c072; --amber2: #e49ac4; --amber-dim: #e6c07299; --glow: rgba(230,192,114,0.16); --dust: rgba(230,192,114,0.1); }
 .swatches{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 .sw{display:flex;flex-direction:column;align-items:center;gap:6px;background:none;border:0;color:var(--muted);font-size:14px;min-width:84px;padding:4px;cursor:pointer;font-family:inherit}
-.sw i{width:56px;height:56px;border-radius:16px;border:3px solid transparent;box-shadow:0 0 0 2px var(--line, #3a3354)}
+.sw i{width:56px;height:56px;border-radius:16px;border:3px solid transparent;box-shadow:0 0 0 2px var(--line, #3a3354);display:grid;place-items:center;color:#1a1626}
+.sw i svg{width:30px;height:30px}.mood svg{width:18px;height:18px;vertical-align:-3px;margin-right:4px;color:var(--amber, var(--accent))}
 .sw[aria-pressed=true] i{border-color:var(--bg);box-shadow:0 0 0 3px var(--text, var(--fg))}
 .sw[aria-pressed=true]{color:var(--text, var(--fg))}
 .grp{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;width:100%}

@@ -27,7 +27,7 @@ Palettes are inspired by six seasonal color-analysis boards the owner shared, pl
 
 ## Sophia
 
-### Purple (`purple`)
+### Purple (`purple`), icon: moon
 
 | Mode | Background | Panel | Panel 2 | Line | Accent | Accent 2 | Text on accent |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -57,7 +57,7 @@ Palettes are inspired by six seasonal color-analysis boards the owner shared, pl
 
 ## Manon
 
-### Pastel Yellow (`pastel-yellow`)
+### Pastel Yellow (`pastel-yellow`), icon: sun
 
 | Mode | Background | Panel | Panel 2 | Line | Accent | Accent 2 | Text on accent |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -87,7 +87,7 @@ Palettes are inspired by six seasonal color-analysis boards the owner shared, pl
 
 ## Daniela
 
-### Sky Blue (`sky-blue`)
+### Sky Blue (`sky-blue`), icon: cloud
 
 | Mode | Background | Panel | Panel 2 | Line | Accent | Accent 2 | Text on accent |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -117,7 +117,7 @@ Palettes are inspired by six seasonal color-analysis boards the owner shared, pl
 
 ## Lara
 
-### Pastel Green (`pastel-green`)
+### Pastel Green (`pastel-green`), icon: leaf
 
 | Mode | Background | Panel | Panel 2 | Line | Accent | Accent 2 | Text on accent |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -147,7 +147,7 @@ Palettes are inspired by six seasonal color-analysis boards the owner shared, pl
 
 ## Megan
 
-### Peach (`peach`)
+### Peach (`peach`), icon: heart
 
 | Mode | Background | Panel | Panel 2 | Line | Accent | Accent 2 | Text on accent |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -177,7 +177,7 @@ Palettes are inspired by six seasonal color-analysis boards the owner shared, pl
 
 ## Yoonchae
 
-### Pink (`pink`)
+### Pink (`pink`), icon: butterfly
 
 | Mode | Background | Panel | Panel 2 | Line | Accent | Accent 2 | Text on accent |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -207,7 +207,7 @@ Palettes are inspired by six seasonal color-analysis boards the owner shared, pl
 
 ## More palettes (not assigned to a member yet)
 
-### Original (`classic`)
+### Original (`classic`), icon: sparkle
 
 | Mode | Background | Panel | Panel 2 | Line | Accent | Accent 2 | Text on accent |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -235,7 +235,7 @@ Palettes are inspired by six seasonal color-analysis boards the owner shared, pl
 | light | button text on accent | 12.2:1 | 4.5:1 | pass |
 | light | button text on accent 2 | 5.3:1 | 4.5:1 | pass |
 
-### Dark Winter (`dark-winter`)
+### Dark Winter (`dark-winter`), icon: sparkle
 
 | Mode | Background | Panel | Panel 2 | Line | Accent | Accent 2 | Text on accent |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -263,7 +263,7 @@ Palettes are inspired by six seasonal color-analysis boards the owner shared, pl
 | light | button text on accent | 8.9:1 | 4.5:1 | pass |
 | light | button text on accent 2 | 5.4:1 | 4.5:1 | pass |
 
-### Light Summer (`light-summer`)
+### Light Summer (`light-summer`), icon: sparkle
 
 | Mode | Background | Panel | Panel 2 | Line | Accent | Accent 2 | Text on accent |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -291,7 +291,7 @@ Palettes are inspired by six seasonal color-analysis boards the owner shared, pl
 | light | button text on accent | 6.6:1 | 4.5:1 | pass |
 | light | button text on accent 2 | 5.3:1 | 4.5:1 | pass |
 
-### Dark Summer (`dark-summer`)
+### Dark Summer (`dark-summer`), icon: sparkle
 
 | Mode | Background | Panel | Panel 2 | Line | Accent | Accent 2 | Text on accent |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -319,7 +319,7 @@ Palettes are inspired by six seasonal color-analysis boards the owner shared, pl
 | light | button text on accent | 6.3:1 | 4.5:1 | pass |
 | light | button text on accent 2 | 5.5:1 | 4.5:1 | pass |
 
-### Light Spring (`light-spring`)
+### Light Spring (`light-spring`), icon: sparkle
 
 | Mode | Background | Panel | Panel 2 | Line | Accent | Accent 2 | Text on accent |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -347,7 +347,7 @@ Palettes are inspired by six seasonal color-analysis boards the owner shared, pl
 | light | button text on accent | 5.8:1 | 4.5:1 | pass |
 | light | button text on accent 2 | 5.4:1 | 4.5:1 | pass |
 
-### Dark Spring (`dark-spring`)
+### Dark Spring (`dark-spring`), icon: sparkle
 
 | Mode | Background | Panel | Panel 2 | Line | Accent | Accent 2 | Text on accent |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -375,7 +375,7 @@ Palettes are inspired by six seasonal color-analysis boards the owner shared, pl
 | light | button text on accent | 6.3:1 | 4.5:1 | pass |
 | light | button text on accent 2 | 5.2:1 | 4.5:1 | pass |
 
-### Light Autumn (`light-autumn`)
+### Light Autumn (`light-autumn`), icon: sparkle
 
 | Mode | Background | Panel | Panel 2 | Line | Accent | Accent 2 | Text on accent |
 | --- | --- | --- | --- | --- | --- | --- | --- |

@@ -107,7 +107,7 @@ describe('every trick in content/tricks is well-formed', () => {
 // ---------------------------------------------------------------- hub: MathFacts modes + color schemes
 import { tricksFor, unlockedTricks } from './session';
 import { fresh } from './store';
-import { BRANDS } from './brand';
+import { BRANDS, ICONS } from './brand';
 
 describe('MathFacts modes', () => {
   it('unit mode shows only this unit\'s tricks; general shows all', () => {
@@ -131,6 +131,7 @@ describe('MathFacts modes', () => {
 });
 
 describe('color schemes', () => {
+  it('every scheme has a drawn icon', () => { for (const b of BRANDS) expect(ICONS[b.icon], b.id).toBeTruthy(); });
   it('have unique ids and valid hex colors', () => {
     expect(new Set(BRANDS.map((b) => b.id)).size).toBe(BRANDS.length);
     for (const b of BRANDS) { expect(b.bg).toMatch(/^#[0-9a-f]{6}$/i); expect(b.accent).toMatch(/^#[0-9a-f]{6}$/i); }

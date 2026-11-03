@@ -21,3 +21,6 @@ The student can pick one of seven schemes (Classic plus six seasonal palettes). 
 
 ## Member color schemes
 The picker uses members' first names with a rounded-square swatch of their signature color (colors from the owner's written list). Each scheme has a second color for gradients, star dots, and the celebration burst. Six seasonal palettes sit under "More palettes" until the owner says which member each belongs to. No photos or faces anywhere: they are copyrighted and the site is public.
+
+## Charm icons
+Each member chip carries a small original icon drawn for this project (moon, sun, cloud, leaf, heart, butterfly) on its primary-color square. Unassigned palettes use a sparkle. Icons live in `ICONS` in `tools/brand_themes.py` (24x24 shapes); change one there and regenerate. No photos or faces.

@@ -5,7 +5,7 @@ import { GENERATORS, fill, seeded, MINUS } from './generators';
 import { newCard, review } from './scheduler';
 import { buildQueue, confidence, SESSION_MS, streak, trickMastery, tricksFor, unlockedTricks } from './session';
 import Mark from './Mark';
-import { BRANDS, MEMBERS, getBrand, setBrand, type BrandId } from './brand';
+import { BRANDS, ICONS, MEMBERS, getBrand, setBrand, type BrandId } from './brand';
 import { fresh, load, save, today, type Db, type QueueItem } from './store';
 import type { Problem } from './types';
 
@@ -39,6 +39,10 @@ export default function App() {
 
 type Brand = (typeof BRANDS)[number];
 
+function Charm({ name }: { name: string }) {
+  return <svg viewBox="0 0 24 24" aria-hidden="true" dangerouslySetInnerHTML={{ __html: ICONS[name] ?? ICONS.sparkle }} />;
+}
+
 function Burst() {
   const bits = useMemo(() => Array.from({ length: 12 }, (_, i) => { const a = (i / 12) * Math.PI * 2 + (i % 3) * 0.15, d = 56 + (i % 4) * 14; return { dx: Math.cos(a) * d, dy: Math.sin(a) * d, alt: i % 2 === 1 }; }), []);
   return (
@@ -52,7 +56,7 @@ function ColorPicker({ cur, onPick }: { cur: BrandId; onPick: (id: BrandId) => v
   const label = (b: Brand) => (b.member ? (BRANDS.filter((x) => x.member === b.member).length > 1 ? `${b.member} · ${b.label}` : b.member) : b.label);
   const chip = (b: Brand) => (
     <button key={b.id} className="sw" aria-pressed={cur === b.id} onClick={() => onPick(b.id)}>
-      <i style={{ background: b.accent }} />
+      <i style={{ background: b.accent, '--chip': b.accent } as CSSProperties}><Charm name={b.icon} /></i>
       <span>{label(b)}</span>
     </button>
   );
@@ -77,7 +81,7 @@ function Hub({ db, onFacts, onGrownups }: { db: Db; onFacts: () => void; onGrown
   return (
     <main className="home">
       <div className="logo"><Mark size={84} /><h1 className="brand">MATHSEYE<small>Unit {unit}</small></h1></div>
-      <p className="mood">{mood} ✦</p>
+      <p className="mood"><span style={{ '--chip': brand.bg } as CSSProperties}><Charm name={brand.icon} /></span>{mood}</p>
       <nav className="tiles3" aria-label="Sections">
         <button className="tile3" onClick={onFacts}><b>MathFacts</b><span>Quick mental-math practice</span></button>
         <a className="tile3" href={`./study/unit-${unit}.html`}><b>Study Guide</b><span>Get ready for the test</span></a>
