@@ -145,7 +145,7 @@ button:active{transform:scale(.98)}
 .picker { width: 100%; display: flex; flex-direction: column; gap: 14px; align-items: center; }
 
 .practice { position: relative; }
-.ref { position: absolute; right: 12px; bottom: 6px; font-size: 12px; letter-spacing: .05em; color: var(--muted); opacity: .7; user-select: text; -webkit-user-select: text; }
+.ref { position: absolute; right: 14px; bottom: 14px; font-size: 15px; font-weight: 600; letter-spacing: .04em; color: var(--text, #f3ead7); background: rgba(255,255,255,.10); border: 1px solid rgba(255,255,255,.22); border-radius: 999px; padding: 3px 11px; opacity: 1; user-select: text; -webkit-user-select: text; z-index: 5; }
 
 /* ---- Self-paced MathFacts ---- */
 .row2 { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; width: 100%; max-width: 560px; }
