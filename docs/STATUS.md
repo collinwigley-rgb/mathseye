@@ -15,6 +15,7 @@
 - [x] Unit 2 interactive study guide at public/study/unit-2.html (v2: missions, focus mode, help sheet; see docs/UX-AUDIT.md)
 - [x] MathFacts: 9 Unit 2 tricks added (13 total), reordered by usefulness; unlock every 2 days (parent can unlock sooner)
 - [x] Study guide: "Try a new one" on every problem (422 variants, tools/unit2_variants.py; independent re-solve test: tools/test_unit2_variants.py)
+- [x] Reset progress: study guide (bottom of home) and MathFacts (Grown-ups), both ask to confirm
 - [ ] Unit 3: upload weekly PDFs, build sheets as they come
 - [ ] Phase 2: Beat the Calculator, Test Mode, spot-the-trick and estimate cards, PIN for grown-ups, more tricks
 - [ ] Move storage to IndexedDB and add JSON export for backup

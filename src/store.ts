@@ -26,7 +26,7 @@ export interface Db {
   inProgress?: SavedSession;
 }
 
-const fresh = (): Db => ({
+export const fresh = (): Db => ({
   settings: { startedOn: Date.now(), introducedTricks: [], manuallyUnlocked: [] },
   cards: {},
   attempts: [],

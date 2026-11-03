@@ -71,3 +71,6 @@ main { min-height: 100%; padding: max(24px, env(safe-area-inset-top)) 24px 24px;
 .grownups { max-width: 720px; }
 
 .ghostlink { background: var(--panel2); color: var(--text); text-decoration: none; padding: 14px 24px; border-radius: 16px; font-weight: 600; font-size: 18px; }
+
+.resetbox { display: flex; flex-direction: column; gap: 12px; max-width: 420px; background: var(--panel); padding: 18px; border-radius: 18px; }
+.resetbox p { margin: 0; }

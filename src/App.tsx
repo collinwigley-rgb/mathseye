@@ -4,7 +4,7 @@ import { checkAnswer } from './answer';
 import { GENERATORS, fill, seeded, MINUS } from './generators';
 import { newCard, review } from './scheduler';
 import { buildQueue, confidence, SESSION_MS, streak, trickMastery, unlockedTricks } from './session';
-import { load, save, today, type Db, type QueueItem } from './store';
+import { fresh, load, save, today, type Db, type QueueItem } from './store';
 import type { Problem } from './types';
 
 type Screen = 'home' | 'session' | 'summary' | 'grownups';
@@ -285,6 +285,7 @@ function Summary({ db, onHome }: { db: Db; onHome: () => void }) {
 }
 
 function Grownups({ db, update, onBack }: { db: Db; update: (fn: (d: Db) => Db) => void; onBack: () => void }) {
+  const [confirmReset, setConfirmReset] = useState(false);
   const unlocked = unlockedTricks(db);
   const sticky = Object.values(db.cards).sort((a, b) => b.box1Returns - a.box1Returns).filter((c) => c.box1Returns > 0).slice(0, 5);
   return (
@@ -304,6 +305,16 @@ function Grownups({ db, update, onBack }: { db: Db; update: (fn: (d: Db) => Db) 
       <h3>Stickiest cards</h3>
       {sticky.length ? sticky.map((c) => <p key={c.templateId}>{TEMPLATES[c.templateId].trick.name} ({c.templateId}): {c.box1Returns} returns</p>) : <p className="muted">None yet.</p>}
       <p className="muted">{db.sessions.filter((s) => s.endedAt).length} sessions completed.</p>
+      <h3>Reset progress</h3>
+      {!confirmReset ? (
+        <button className="ghost" onClick={() => setConfirmReset(true)}>Reset all progress</button>
+      ) : (
+        <div className="resetbox">
+          <p>Erase all tricks learned, streaks, and history on this device? This can't be undone.</p>
+          <button className="primary" onClick={() => { update(() => fresh()); setConfirmReset(false); onBack(); }}>Yes, reset everything</button>
+          <button className="ghost" onClick={() => setConfirmReset(false)}>Keep my progress</button>
+        </div>
+      )}
     </main>
   );
 }
