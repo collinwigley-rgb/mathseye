@@ -15,6 +15,7 @@ The name is a play on the band Katseye. Don't use the band's name, logo, or imag
 - Trick content lives in `content/tricks/*.json`. Each template names a generator in `src/generators.ts`
   and has 4 clue strings with `{var}` placeholders filled from the generator's `vars`.
 - Leitner scheduler: `src/scheduler.ts`. Session flow: `src/session.ts`. UI: `src/App.tsx`.
+- Unit reference sheets: `content/units/` (see its README). Build help, practice, and study guides from these, never the PDFs.
 - `npm test` runs Vitest; `npm run build` typechecks and builds. Push to `main` deploys to GitHub Pages (`netlify.toml` is a backup option).
 
 ## Tone rules (from the brief)
