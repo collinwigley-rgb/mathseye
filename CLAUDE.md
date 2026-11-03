@@ -2,7 +2,7 @@
 
 Math apps for a 7th grade pre-algebra student. iPad-first PWAs, also work in any browser.
 The name is a play on a band she loves. Branding is *inspired by* that band's look, with the owner's approval (see `docs/BRANDING.md`).
-Never copy the band's logo, wordmark artwork, photos, song titles, or lyrics, and don't put the band's name in the UI.
+Never copy the band's logo, wordmark artwork, photos or faces, song titles, or lyrics, and don't put the band's name in the UI. Member first names are used only as color-scheme labels (owner's request); no likenesses.
 
 ## Start of every session
 1. Read `docs/STATUS.md` (what's done, what's next).

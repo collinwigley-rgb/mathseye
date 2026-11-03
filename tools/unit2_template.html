@@ -74,6 +74,8 @@ a.logo{text-decoration:none}.logo{display:flex;align-items:center;gap:12px;color
 <script>
 const DATA = __DATA__;
 const BRANDS = __BRANDS__;
+const MEMBERS = __MEMBERS__;
+__BURST__
 const getBrand = () => { try { const v = localStorage.getItem("mathseye.brand"); if (BRANDS.some(b => b.id === v)) return v; } catch(e) {} return "classic"; };
 const applyBrand = (id) => { document.documentElement.dataset.brand = id; };
 applyBrand(getBrand());
@@ -88,7 +90,7 @@ const esc = (s) => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">
 const LV = {foundation:"Base skill", builds:"Builds on one earlier lesson", mixed:"Mixes several lessons"};
 const LVTXT = {foundation:"This one mostly uses this lesson's skill plus things you learned in earlier grades.", builds:"This one uses this lesson's skill together with one earlier lesson from this unit.", mixed:"This one combines several lessons. If you get stuck, try the earlier lessons first."};
 const WIN = ["Nailed it.","Clean take.","On beat.","That's the one.","Stage-ready."];
-const MARK = `<svg width="52" height="42" viewBox="0 0 120 96" role="img" aria-label="Mathseye" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 54 C26 16 94 16 114 54 C94 92 26 92 6 54Z" stroke-width="7"/><g stroke-width="6"><path d="M60 30 V78 M36 54 H84"/><path d="M43 37 L77 71 M77 37 L43 71"/></g><path d="M104 8 Q106 22 118 24 Q106 26 104 40 Q102 26 90 24 Q102 22 104 8Z" fill="currentColor" stroke="none"/></svg>`;
+const MARK = `<svg width="52" height="42" viewBox="0 0 120 96" role="img" aria-label="Mathseye" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 54 C26 16 94 16 114 54 C94 92 26 92 6 54Z" stroke-width="7"/><g stroke-width="6"><path d="M60 30 V78 M36 54 H84"/><path d="M43 37 L77 71 M77 37 L43 71"/></g><path d="M104 8 Q106 22 118 24 Q106 26 104 40 Q102 26 90 24 Q102 22 104 8Z" fill="var(--accent2,currentColor)" stroke="none"/></svg>`;
 const S = {view:"home", lesson:null, cur:null, open:null, test:null, sheet:null, timer:null};
 const probs = DATA.problems, byId = Object.fromEntries(probs.map(p => [p.id, p]));
 const subDone = (s) => probs.filter(p => p.sub===s && save.solved[p.id]).length, subAll = (s) => probs.filter(p => p.sub===s).length;
@@ -141,7 +143,11 @@ home(){ const total = probs.length, done = probs.filter(p => save.solved[p.id]).
   <section class="card"><p class="eyebrow">Tonight's set</p><h2>${resume ? `Keep going: ${m.i} of ${m.ids.length} done` : "Ready for a quick mission?"}</h2><p class="lead muted">5 problems, about 10 minutes. You can stop anytime.</p><button class="btn primary big" id="go">${resume ? "Keep going" : "Start a mission"}</button></section>
   <div class="grid3"><button class="btn" id="pick">Pick a lesson</button><button class="btn" id="cheat">Cheat sheet</button><button class="btn" id="test">Practice test</button></div>
   <section class="card"><p class="eyebrow">Your progress</p><div class="bar" aria-hidden="true"><i style="width:${done/total*100}%"></i></div><p class="lead" style="margin:0">${done} of ${total} solved${save.day.d===today()&&save.day.n?` · ${save.day.n} today`:""}</p></section><section class="card"><p class="eyebrow">Your color</p><div class="swatches" id="sw"></div></section><div id="rs"></div></div>`);
-  const drawSw = () => { const box = el.querySelector("#sw"); box.innerHTML = ""; BRANDS.forEach(b => { const s = $(`<button class="sw" aria-pressed="${getBrand()===b.id}"><i style="background:linear-gradient(135deg,${b.bg} 0 45%,${b.accent} 45% 100%)"></i><span>${esc(b.label)}</span></button>`); s.onclick = () => { try { localStorage.setItem("mathseye.brand", b.id); } catch(e) {} applyBrand(b.id); drawSw(); }; box.append(s); }); }; drawSw();
+  const drawSw = () => { const box = el.querySelector("#sw"); box.innerHTML = ""; const cur = getBrand();
+    const label = (b) => b.member ? (BRANDS.filter(x => x.member === b.member).length > 1 ? b.member + " · " + b.label : b.member) : b.label;
+    const chip = (b) => { const s = $(`<button class="sw" aria-pressed="${cur===b.id}"><i style="background:${b.accent}"></i><span>${esc(label(b))}</span></button>`); s.onclick = () => { try { localStorage.setItem("mathseye.brand", b.id); } catch(e) {} applyBrand(b.id); drawSw(); }; return s; };
+    const mem = $(`<div class="swatches six"></div>`); MEMBERS.forEach(m => BRANDS.filter(b => b.member === m).forEach(b => mem.append(chip(b)))); box.append(mem);
+    const other = BRANDS.filter(b => !b.member); if (other.length) { const d = $(`<details class="more"${other.some(b => b.id === cur) ? " open" : ""}><summary>More palettes</summary><div class="swatches"></div></details>`); other.forEach(b => d.querySelector(".swatches").append(chip(b))); box.append(d); } }; drawSw();
   const rs = el.querySelector("#rs"), askReset = () => { rs.innerHTML = ""; const b = $(`<button class="btn quiet">Reset my progress</button>`); b.onclick = () => { rs.innerHTML = ""; const box = $(`<div class="card"><p class="lead" style="margin:0">Erase all your progress in this study guide? This can't be undone.</p><div class="row"><button class="btn primary" id="yes">Yes, reset</button><button class="btn" id="no">Keep my progress</button></div></div>`); box.querySelector("#yes").onclick = () => { save = {solved:{}, clean:{}, mission:null, day:{d:"", n:0}}; persist(); S.cur = null; S.test = null; go("home"); }; box.querySelector("#no").onclick = askReset; rs.append(box); box.querySelector("#no").focus(); }; rs.append(b); }; askReset();
   el.querySelector("#go").onclick = () => resume ? go("mission") : buildMission(null);
   el.querySelector("#pick").onclick = () => go("picker"); el.querySelector("#cheat").onclick = () => go("cheat", {open:null}); el.querySelector("#test").onclick = () => go("testIntro"); return el; },
@@ -182,7 +188,7 @@ mission(){ const m = save.mission; if (!m || m.i >= m.ids.length) return VIEWS.s
     const root = document.getElementById("sheet"); root.innerHTML = ""; root.append(bg); const shut = () => { root.innerHTML = ""; }; bg.onclick = e => { if (e.target === bg) shut(); };
     bg.querySelector("#c").onclick = shut; bg.querySelector("#w").onclick = () => openSheet("why", p); bg.querySelector("#u").onclick = () => openSheet("deps", p); bg.querySelector("#c").focus(); }
   function check(v){ if (v === null || v === "" || v === undefined) { st.msg = p.kind==="choice" ? "Pick an answer first." : "Type an answer first."; st.win = false; return draw(); }
-    res.tries++; if (isRight(p, v)) { res.done = true; const clean = res.tries === 1 && res.hints === 0; if (st.v < 0) { save.solved[p.id] = true; if (clean) save.clean[p.id] = true; } bump(); persist(); st.win = true; st.msg = clean ? "You did that on your own. " + WIN[(m.i*2)%WIN.length] : WIN[(m.i*2+1)%WIN.length]; S.cur = st; render(); return; }
+    res.tries++; if (isRight(p, v)) { res.done = true; const clean = res.tries === 1 && res.hints === 0; if (st.v < 0) { save.solved[p.id] = true; if (clean) save.clean[p.id] = true; } bump(); persist(); st.win = true; st.msg = clean ? "You did that on your own. " + WIN[(m.i*2)%WIN.length] : WIN[(m.i*2+1)%WIN.length]; S.cur = st; render(); burst(document.querySelector(".say.win")); return; }
     st.win = false; st.msg = "Not quite yet. Try again, or tap I'm stuck."; st.input = ""; st.shake = true; persist(); render(); }
   const solvedNow = res.done; if (solvedNow && !st.msg) { st.win = true; st.msg = "Got it!"; }
   draw(); el.append(card); return el; },

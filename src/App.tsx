@@ -1,11 +1,11 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { TEMPLATES, TRICKS } from './content';
 import { checkAnswer } from './answer';
 import { GENERATORS, fill, seeded, MINUS } from './generators';
 import { newCard, review } from './scheduler';
 import { buildQueue, confidence, SESSION_MS, streak, trickMastery, tricksFor, unlockedTricks } from './session';
 import Mark from './Mark';
-import { BRANDS, getBrand, setBrand, type BrandId } from './brand';
+import { BRANDS, MEMBERS, getBrand, setBrand, type BrandId } from './brand';
 import { fresh, load, save, today, type Db, type QueueItem } from './store';
 import type { Problem } from './types';
 
@@ -37,31 +37,53 @@ export default function App() {
   return <Hub db={db} onFacts={() => setScreen('facts')} onGrownups={() => setScreen('grownups')} />;
 }
 
-function ColorPicker() {
-  const [cur, setCur] = useState<BrandId>(getBrand());
+type Brand = (typeof BRANDS)[number];
+
+function Burst() {
+  const bits = useMemo(() => Array.from({ length: 12 }, (_, i) => { const a = (i / 12) * Math.PI * 2 + (i % 3) * 0.15, d = 56 + (i % 4) * 14; return { dx: Math.cos(a) * d, dy: Math.sin(a) * d, alt: i % 2 === 1 }; }), []);
   return (
-    <div className="swatches" role="group" aria-label="Color theme">
-      {BRANDS.map((b) => (
-        <button key={b.id} className="sw" aria-pressed={cur === b.id} onClick={() => { setBrand(b.id); setCur(b.id); }}>
-          <i style={{ background: `linear-gradient(135deg, ${b.bg} 0 45%, ${b.accent} 45% 100%)` }} />
-          <span>{b.label}</span>
-        </button>
-      ))}
+    <span className="burst" aria-hidden="true">
+      {bits.map((b, i) => <i key={i} style={{ background: b.alt ? 'var(--amber)' : 'var(--amber2)', '--dx': `${b.dx}px`, '--dy': `${b.dy}px` } as CSSProperties} />)}
+    </span>
+  );
+}
+
+function ColorPicker({ cur, onPick }: { cur: BrandId; onPick: (id: BrandId) => void }) {
+  const label = (b: Brand) => (b.member ? (BRANDS.filter((x) => x.member === b.member).length > 1 ? `${b.member} · ${b.label}` : b.member) : b.label);
+  const chip = (b: Brand) => (
+    <button key={b.id} className="sw" aria-pressed={cur === b.id} onClick={() => onPick(b.id)}>
+      <i style={{ background: b.accent }} />
+      <span>{label(b)}</span>
+    </button>
+  );
+  const members = MEMBERS.flatMap((m) => BRANDS.filter((b) => b.member === m));
+  const other = BRANDS.filter((b) => !b.member);
+  return (
+    <div className="picker" role="group" aria-label="Color scheme">
+      <div className="swatches six">{members.map(chip)}</div>
+      <details className="more" open={other.some((b) => b.id === cur)}>
+        <summary>More palettes</summary>
+        <div className="swatches">{other.map(chip)}</div>
+      </details>
     </div>
   );
 }
 
 function Hub({ db, onFacts, onGrownups }: { db: Db; onFacts: () => void; onGrownups: () => void }) {
   const unit = db.settings.currentUnit ?? 2;
+  const [cur, setCur] = useState<BrandId>(getBrand());
+  const brand = BRANDS.find((b) => b.id === cur)!;
+  const mood = brand.member ? `${brand.label} · ${brand.member}'s color` : `${brand.label} palette`;
   return (
     <main className="home">
       <div className="logo"><Mark size={84} /><h1 className="brand">MATHSEYE<small>Unit {unit}</small></h1></div>
+      <p className="mood">{mood} ✦</p>
       <nav className="tiles3" aria-label="Sections">
         <button className="tile3" onClick={onFacts}><b>MathFacts</b><span>Quick mental-math practice</span></button>
         <a className="tile3" href={`./study/unit-${unit}.html`}><b>Study Guide</b><span>Get ready for the test</span></a>
         <a className="tile3" href={`./homework/unit-${unit}.html`}><b>Unit Homework</b><span>Help with this unit's worksheets</span></a>
       </nav>
-      <section className="pick"><p className="eyebrow">Your color</p><ColorPicker /></section>
+      <section className="pick"><p className="eyebrow">Pick your color</p><ColorPicker cur={cur} onPick={(id) => { setBrand(id); setCur(id); }} /></section>
       <button className="link" onClick={onGrownups}>Grown-ups</button>
     </main>
   );
@@ -255,6 +277,7 @@ function PracticeCard({ item, db, update, onNext }: {
         {showName && <p className="eyebrow">{trick.name}</p>}
         <div className={`problem ${shake ? 'shake' : ''} ${solved ? 'solved' : ''}`}>{problem.prompt}</div>
         <div className="answer">
+          {solved && <Burst />}
           {solved ? <span className="right">{template.answerFormat === 'yesno' ? problem.answer : input} ✓</span> : input || <span className="placeholder">?</span>}
         </div>
         <div className="feedback">

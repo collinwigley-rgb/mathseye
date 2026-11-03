@@ -12,6 +12,7 @@
 <script>
 const DATA = __DATA__;
 const BRANDS = __BRANDS__;
+__BURST__
 const getBrand = () => { try { const v = localStorage.getItem("mathseye.brand"); if (BRANDS.some(b => b.id === v)) return v; } catch(e) {} return "classic"; };
 const applyBrand = (id) => { document.documentElement.dataset.brand = id; };
 applyBrand(getBrand());
@@ -91,7 +92,7 @@ alt(){ const A = S.alt, p = A.p, orig = PACK.problems.find(x => x.id === S.id); 
   const card = $(`<section class="card"><p class="eyebrow">Practice like ${esc(orig.label)} · new numbers</p><p class="problem">${esc(p.text)}</p><div class="vis">${visual(p)}</div><div class="in"></div><div class="say" ${A.msg ? "" : "hidden"} aria-live="polite"></div><ul class="nudges"></ul><div class="act"></div></section>`);
   const inp = card.querySelector(".in"), say = card.querySelector(".say"), nud = card.querySelector(".nudges"), act = card.querySelector(".act");
   const check = (v) => { if (v === null || v === "" || v === undefined) { A.msg = p.kind === "choice" ? "Pick an answer first." : "Type an answer first."; A.win = false; return draw(); }
-    A.tries++; if (isRight(p, v)) { A.solved = true; A.win = true; A.msg = (A.tries === 1 && A.hints === 0 ? "You did that on your own. " : "") + "Nailed it."; } else { A.win = false; A.msg = "Not quite yet. Try again, or tap I'm stuck."; A.input = ""; } draw(); };
+    A.tries++; if (isRight(p, v)) { A.solved = true; A.win = true; A.msg = (A.tries === 1 && A.hints === 0 ? "You did that on your own. " : "") + "Nailed it."; draw(); burst(card.querySelector(".say.win")); return; } else { A.win = false; A.msg = "Not quite yet. Try again, or tap I'm stuck."; A.input = ""; } draw(); };
   const draw = () => { inp.innerHTML = ""; say.hidden = !A.msg; say.innerHTML = esc(A.msg) + (A.win ? `<p class="ans">Answer: ${esc(p.show)}</p>` : ""); say.className = "say" + (A.win ? " win pop" : ""); nud.innerHTML = p.hints.slice(0, A.hints).map(h => `<li class="say">${esc(h)}</li>`).join(""); act.innerHTML = "";
     if (!A.solved) {
       if (p.kind === "choice") { const o = $(`<div class="opts">${p.options.map((t, i) => `<button aria-pressed="${A.pick === i}" data-i="${i}">${esc(t)}</button>`).join("")}</div>`); o.onclick = e => { const b = e.target.closest("button"); if (b) { A.pick = +b.dataset.i; draw(); } }; inp.append(o); }

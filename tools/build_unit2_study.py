@@ -4,7 +4,7 @@ import json, pathlib, sys, re
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from unit2_problems import PROBS
 from unit2_variants import variants
-from brand_themes import theme_css, brands_json, SWATCH_CSS
+from brand_themes import theme_css, brands_json, members_json, SWATCH_CSS, FUN_CSS, BURST_JS
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SCR = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else pathlib.Path("/tmp")
 
@@ -99,7 +99,7 @@ DATA = dict(problems=out, lessons=LESSONS, concepts={k: dict(name=v[0], plain=v[
 (ROOT / "content/units/unit-2/practice.json").write_text(json.dumps(DATA, indent=1, ensure_ascii=False))
 
 HTML = (pathlib.Path(__file__).parent / "unit2_template.html").read_text()
-frag = HTML.replace("/*BRAND-THEMES*/", theme_css() + "\n" + SWATCH_CSS).replace("__BRANDS__", brands_json()).replace("__DATA__", json.dumps(DATA, ensure_ascii=False))
+frag = HTML.replace("/*BRAND-THEMES*/", theme_css() + "\n" + SWATCH_CSS + "\n" + FUN_CSS).replace("__BURST__", BURST_JS).replace("__MEMBERS__", members_json()).replace("__BRANDS__", brands_json()).replace("__DATA__", json.dumps(DATA, ensure_ascii=False))
 (ROOT / "public/study").mkdir(parents=True, exist_ok=True)
 (ROOT / "public/study/unit-2.html").write_text('<!doctype html>\n<html lang="en"><head><meta charset="utf-8"></head><body>\n' + frag + '\n</body></html>\n')
 (SCR / "unit2_artifact.html").write_text(frag)
@@ -110,7 +110,7 @@ helpers = HTML[HTML.index("function parseNum(s){") : HTML.index("const visual = 
 helpers += HTML[HTML.index("const visual = ") : HTML.index("\n", HTML.index("const visual = "))]
 mark = re.search(r"const MARK = `(.*?)`;", HTML, re.S).group(1)
 HW = (pathlib.Path(__file__).parent / "homework_template.html").read_text()
-HW = HW.replace("/*STUDY_STYLE*/", st).replace("/*BRAND-THEMES*/", theme_css() + "\n" + SWATCH_CSS).replace("/*HELPERS*/", helpers).replace("__MARK__", mark).replace("__BRANDS__", brands_json()).replace("__DATA__", json.dumps(DATA, ensure_ascii=False))
+HW = HW.replace("/*STUDY_STYLE*/", st).replace("/*BRAND-THEMES*/", theme_css() + "\n" + SWATCH_CSS + "\n" + FUN_CSS).replace("__BURST__", BURST_JS).replace("/*HELPERS*/", helpers).replace("__MARK__", mark).replace("__BRANDS__", brands_json()).replace("__DATA__", json.dumps(DATA, ensure_ascii=False))
 (ROOT / "public/homework").mkdir(parents=True, exist_ok=True)
 (ROOT / "public/homework/unit-2.html").write_text('<!doctype html>\n<html lang="en"><head><meta charset="utf-8"></head><body>\n' + HW + '\n</body></html>\n')
 print("homework page bytes:", len(HW))
