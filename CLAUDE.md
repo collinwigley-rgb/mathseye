@@ -25,7 +25,7 @@ Every problem shows a tiny `#number` in its bottom-right corner. When the owner 
 - **5001+**: real worksheet problems (private registry `mathseye-content/problems/refs.json`).
 - **MathFacts cards** show `#<template-id>-<seed>` (e.g. `#bench-dec-48213`): regenerate with `GENERATORS[template.generator](seeded(seed), template.params)`.
 - Answer entry: only a plain number (3/2, 1 1/2, 1.5) earns credit. An expression like `(3/4)/(1/2)` is treated as "right setup" with no credit, so she must do the arithmetic. Missing parentheses get a tip.
-- Fraction-division problems carry a second method (same-size pieces) in their steps and a "Quick check" (bigger or smaller?) after solving.
+- Fraction-division problems carry a second method (same-size pieces) in their steps and a "Quick check" (bigger or smaller?) after solving. Where the division result IS the answer they also get a bar-model picture (`barModel` in the study template; shown plain after the 2nd nudge, with groups once solved). Picture data is checked against the answer in `tools/test_unit2_variants.py`.
 
 ## Before every push (minimize mistakes)
 `npm run check:all` (types, unit tests, color contrast + generated-file sync, independent re-solve of practice variants),

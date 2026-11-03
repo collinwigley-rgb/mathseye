@@ -54,5 +54,14 @@ for pid, fn in SOLVE.items():
         checked += 1
         if abs(float(want) - v["answer"]) > 1e-6:
             bad += 1; print("MISMATCH", pid, v["text"], "text-solved:", float(want), "stored:", v["answer"])
+barsn = 0
+for pid in GENS:
+    for v in variants(pid, 10):
+        m = v.get("bars")
+        if m:
+            barsn += 1
+            if abs(m["pieces"] / m["chunk"] - v["answer"]) > 1e-6:
+                bad += 1; print("BAR MISMATCH", pid, v["text"], m["pieces"], "/", m["chunk"], "vs", v["answer"])
+print(f"checked {barsn} bar pictures against their answers")
 print(f"re-solved {checked} variants from their text across {sum(1 for f in SOLVE.values() if f)} generators; mismatches: {bad}")
 sys.exit(1 if bad else 0)

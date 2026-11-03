@@ -24,6 +24,9 @@
 - [x] Reference numbers on every problem (#1001+ practice, #5001+ worksheet, #template-seed for MathFacts); answer entry accepts expressions and has ( ) keys
 - [x] Original charm icons on the member chips (moon, sun, cloud, leaf, heart, butterfly)
 - [x] Fraction division reinforcement: setup is not an answer, same-size-pieces second method, bigger/smaller quick check, flip-and-cancel unlocks 3rd in MathFacts
+- [x] Bar-model pictures for fraction division (study guide + homework alternates)
+- [ ] Bar pictures in MathFacts "how many fit?" cards (React app)
+- [ ] Spaced review: bring solved fraction-division problems back days later
 - [ ] Assign the six seasonal palettes to members (owner to say which is whose)
 - [ ] Unit 3: upload weekly PDFs, build sheets as they come
 - [ ] Phase 2: Beat the Calculator, Test Mode, spot-the-trick and estimate cards, PIN for grown-ups, more tricks
