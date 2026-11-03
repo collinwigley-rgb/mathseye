@@ -1,3 +1,4 @@
+import { Fx } from './Fx';
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { TEMPLATES, TRICKS } from './content';
 import { checkAnswer } from './answer';
@@ -128,7 +129,7 @@ function FactsHome({ db, update, onStart, onBack }: { db: Db; update: (fn: (d: D
         <p className="muted">Everything is open. Tap one to practice it, as often as you like.</p>
         {list.map((t) => (
           <button key={t.id} className="factrow" onClick={() => onStart({ kind: 'trick', trickId: t.id })}>
-            <span><b>{t.name}</b><small>{t.rule}</small></span>
+            <span><b>{t.name}</b><small><Fx text={t.rule} /></small></span>
             <span className="fstat">{isLearned(t.id) ? `${Math.round(trickMastery(db, t.id) * 100)}%` : 'New'}</span>
           </button>
         ))}
@@ -215,8 +216,8 @@ function TrickCard({ trickId, onGo }: { trickId: string; onGo: () => void }) {
     <section className="trickcard">
       <p className="eyebrow">New trick</p>
       <h2>{t.name}</h2>
-      <p className="rule">{t.rule}</p>
-      <p className="example">{t.example}</p>
+      <p className="rule"><Fx text={t.rule} /></p>
+      <p className="example"><Fx text={t.example} /></p>
       {why ? <p className="why">{t.why}</p> : <button className="ghost" onClick={() => setWhy(true)}>Show me why</button>}
       <button className="primary" onClick={onGo}>Let's try it</button>
     </section>
@@ -280,7 +281,7 @@ function PracticeCard({ item, db, update, onNext }: {
       <span className="ref" aria-label="Reference number">#{item.templateId}-{item.seed}</span>
       <div className="problem-area">
         {showName && <p className="eyebrow">{trick.name}</p>}
-        <div className={`problem ${shake ? 'shake' : ''} ${solved ? 'solved' : ''}`}>{problem.prompt}</div>
+        <div className={`problem ${shake ? 'shake' : ''} ${solved ? 'solved' : ''}`}><Fx text={problem.prompt} /></div>
         <div className="answer">
           {solved && <Burst />}
           {solved ? <span className="right">{template.answerFormat === 'yesno' ? problem.answer : input} ✓</span> : input || <span className="placeholder">?</span>}
@@ -288,7 +289,7 @@ function PracticeCard({ item, db, update, onNext }: {
         <div className="feedback">
           {solved ? (tries === 1 && clueLevel === 0 ? 'Nice, in your head.' : 'You got it.') : tries > 0 ? 'Try again, or tap the lightbulb.' : ''}
         </div>
-        <ol className="clues">{clues.slice(0, clueLevel).map((c, i) => <li key={i}>{c}</li>)}</ol>
+        <ol className="clues">{clues.slice(0, clueLevel).map((c, i) => <li key={i}><Fx text={c} /></li>)}</ol>
       </div>
       <div className="padwrap">
         {solved ? (

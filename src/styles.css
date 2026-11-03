@@ -159,3 +159,7 @@ button:active{transform:scale(.98)}
 .factrow b { font-size: 19px; }
 .factrow small { display: block; color: var(--muted); font-size: 15px; margin-top: 2px; }
 .fstat { color: var(--amber); font-weight: 700; white-space: nowrap; }
+
+/* Stacked fractions (same rules are injected by public/fractions.js on the static pages) */
+.frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;line-height:1.05;margin:0 .12em;font-size:.92em}
+.frac>span{padding:0 .15em}.frac>span:first-child{border-bottom:.09em solid currentColor}

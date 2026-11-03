@@ -29,6 +29,7 @@
 - [x] Spaced review: study missions bring a solved problem back with new numbers
 - [x] MathFacts self-paced: no nightly unlock drip (owner decision); Keep going / Practice mix / Learn new facts / tap any fact
 - [x] More randomization: shuffled, variable-length sessions, varied wording (incl. missing-factor form), random new-fact picks; study missions pick random lessons/problems
+- [x] Fractions shown stacked (numerator over denominator): src/Fx.tsx in the app, public/fractions.js on the static pages
 - [ ] Optional more variety: spot-the-trick and estimate card types
 - [ ] Assign the six seasonal palettes to members (owner to say which is whose)
 - [ ] Unit 3: upload weekly PDFs, build sheets as they come
