@@ -122,8 +122,30 @@ def facts_text(pid, t):
     return []
 import json as _json
 TRICKS = {t["id"]: t for t in (_json.load(open(f)) for f in sorted((ROOT / "content" / "tricks").glob("*.json")))}
+def _way(n, d):
+    """How to divide d by n in your head, written with the numbers shown. Never the answer itself."""
+    n = int(n)
+    two = {6: (2, 3), 12: (3, 4), 15: (3, 5)}
+    if n in two: return f"{n} is {two[n][0]} \u00d7 {two[n][1]}. Divide {d} by {two[n][0]}, then divide that answer by {two[n][1]}."
+    if n == 4: return f"Cut {d} in half, then cut that in half again."
+    if n == 8: return f"Cut {d} in half, then in half again, then in half once more."
+    if n == 5: return f"Double {d}, then divide by 10."
+    if n == 25: return f"Multiply {d} by 4, then divide by 100."
+    if n == 50: return f"Double {d}, then divide by 100."
+    if n in (10, 100, 1000): return f"Slide the decimal point in {d} left {len(str(n)) - 1} place{'s' if n > 10 else ''}."
+    return ""
 def shortcut_text(pid, t):
     """A mental-math way in, written from the numbers shown. It never computes the final answer."""
+    if pid == "U2-01":
+        m = _re.search(r"(\d+)-pack .*?costs \$([\d.]+)", t); return _way(m.group(1), "$" + m.group(2).rstrip(".")) if m else ""
+    if pid == "U2-03":
+        m = _re.search(r"(\d+) [a-z ]+? in (\d+) minutes", t); return _way(m.group(2), m.group(1)) if m else ""
+    if pid == "U2-07":
+        return " ".join(f"For {n}: " + w for n, d, k in _re.findall(r"(\w+) types (\d+) words in (\d+) minutes", t) if (w := _way(k, d)))
+    if pid == "U2-20":
+        m = _re.search(r"(\d+) [a-z]+ in (\d+) (?:hours|minutes)", t); return _way(m.group(2), m.group(1)) if m else ""
+    if pid == "U2-23":
+        m = _re.search(r"[Ff]or every (\d+) .*?goes up \$([\d.]+)", t); return _way(m.group(1), "$" + m.group(2).rstrip(".")) if m else ""
     if pid == "U2-10":
         m = _re.search(r"(\d+) Calories in (\d+)/(\d+) cup", t)
         if not m: return ""

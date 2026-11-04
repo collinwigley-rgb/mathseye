@@ -97,7 +97,7 @@
    "facts": [
     "divide-in-two-steps"
    ],
-   "shortcut": "",
+   "shortcut": "12 is 3 × 4. Divide $4.68 by 3, then divide that answer by 4.",
    "tol": 1e-09,
    "variants": [
     {
@@ -144,7 +144,7 @@
      "facts": [
       "move-the-decimal"
      ],
-     "shortcut": ""
+     "shortcut": "Slide the decimal point in $12.50 left 1 place."
     },
     {
      "kind": "num",
@@ -168,7 +168,7 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": ""
+     "shortcut": "6 is 2 × 3. Divide $1.50 by 2, then divide that answer by 3."
     },
     {
      "kind": "num",
@@ -192,7 +192,7 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": ""
+     "shortcut": "12 is 3 × 4. Divide $6.60 by 3, then divide that answer by 4."
     },
     {
      "kind": "num",
@@ -216,7 +216,7 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": ""
+     "shortcut": "6 is 2 × 3. Divide $5.10 by 2, then divide that answer by 3."
     },
     {
      "kind": "num",
@@ -240,7 +240,7 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": ""
+     "shortcut": "15 is 3 × 5. Divide $5.25 by 3, then divide that answer by 5."
     },
     {
      "kind": "num",
@@ -264,7 +264,7 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": ""
+     "shortcut": "15 is 3 × 5. Divide $3.75 by 3, then divide that answer by 5."
     },
     {
      "kind": "num",
@@ -288,7 +288,7 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": ""
+     "shortcut": "15 is 3 × 5. Divide $3.75 by 3, then divide that answer by 5."
     },
     {
      "kind": "num",
@@ -312,7 +312,7 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": ""
+     "shortcut": "15 is 3 × 5. Divide $11.25 by 3, then divide that answer by 5."
     },
     {
      "kind": "num",
@@ -657,7 +657,7 @@
     "divide-in-two-steps",
     "divide-by-5-25-50"
    ],
-   "shortcut": "",
+   "shortcut": "6 is 2 × 3. Divide 84 by 2, then divide that answer by 3.",
    "tol": 1e-09,
    "variants": [
     {
@@ -681,7 +681,7 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": ""
+     "shortcut": "Cut 100 in half, then cut that in half again."
     },
     {
      "kind": "num",
@@ -725,7 +725,7 @@
      "facts": [
       "move-the-decimal"
      ],
-     "shortcut": ""
+     "shortcut": "Slide the decimal point in 150 left 1 place."
     },
     {
      "kind": "num",
@@ -770,7 +770,7 @@
       "divide-by-5-25-50",
       "divide-in-two-steps"
      ],
-     "shortcut": ""
+     "shortcut": "Double 75, then divide by 10."
     },
     {
      "kind": "num",
@@ -793,7 +793,7 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": ""
+     "shortcut": "Cut 128 in half, then in half again, then in half once more."
     },
     {
      "kind": "num",
@@ -816,7 +816,7 @@
      "facts": [
       "divide-by-5-25-50"
      ],
-     "shortcut": ""
+     "shortcut": "Double 80, then divide by 10."
     },
     {
      "kind": "num",
@@ -839,7 +839,7 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": ""
+     "shortcut": "Cut 144 in half, then in half again, then in half once more."
     },
     {
      "kind": "num",
@@ -862,7 +862,7 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": ""
+     "shortcut": "Cut 120 in half, then in half again, then in half once more."
     },
     {
      "kind": "num",
@@ -885,7 +885,7 @@
      "facts": [
       "divide-by-5-25-50"
      ],
-     "shortcut": ""
+     "shortcut": "Double 90, then divide by 10."
     }
    ],
    "ref": 1033
@@ -1677,7 +1677,7 @@
    "facts": [
     "divide-by-5-25-50"
    ],
-   "shortcut": "",
+   "shortcut": "For Ava: Double 195, then divide by 10.",
    "variants": [
     {
      "kind": "choice",
@@ -1705,7 +1705,7 @@
       "divide-in-two-steps",
       "halve-halve"
      ],
-     "shortcut": ""
+     "shortcut": "For Ben: 6 is 2 × 3. Divide 156 by 2, then divide that answer by 3. For Leo: Cut 288 in half, then in half again, then in half once more."
     },
     {
      "kind": "choice",
@@ -1733,7 +1733,7 @@
       "divide-in-two-steps",
       "move-the-decimal"
      ],
-     "shortcut": ""
+     "shortcut": "For Ava: 6 is 2 × 3. Divide 288 by 2, then divide that answer by 3. For Maya: Slide the decimal point in 350 left 1 place."
     },
     {
      "kind": "choice",
@@ -1761,7 +1761,7 @@
       "move-the-decimal",
       "halve-halve"
      ],
-     "shortcut": ""
+     "shortcut": "For Ben: Slide the decimal point in 330 left 1 place. For Zoe: Cut 376 in half, then in half again, then in half once more."
     },
     {
      "kind": "choice",
@@ -1789,7 +1789,7 @@
       "divide-by-5-25-50",
       "divide-in-two-steps"
      ],
-     "shortcut": ""
+     "shortcut": "For Zoe: Double 195, then divide by 10. For Leo: 6 is 2 × 3. Divide 162 by 2, then divide that answer by 3."
     },
     {
      "kind": "choice",
@@ -1816,7 +1816,7 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": ""
+     "shortcut": "For Sam: Cut 112 in half, then cut that in half again. For Ava: Cut 304 in half, then in half again, then in half once more."
     },
     {
      "kind": "choice",
@@ -1844,7 +1844,7 @@
       "halve-halve",
       "divide-by-5-25-50"
      ],
-     "shortcut": ""
+     "shortcut": "For Maya: Cut 132 in half, then cut that in half again. For Ben: Double 180, then divide by 10."
     },
     {
      "kind": "choice",
@@ -1872,7 +1872,7 @@
       "halve-halve",
       "divide-in-two-steps"
      ],
-     "shortcut": ""
+     "shortcut": "For Ben: Cut 144 in half, then cut that in half again. For Zoe: 6 is 2 × 3. Divide 276 by 2, then divide that answer by 3."
     },
     {
      "kind": "choice",
@@ -1900,7 +1900,7 @@
       "halve-halve",
       "divide-by-5-25-50"
      ],
-     "shortcut": ""
+     "shortcut": "For Zoe: Cut 280 in half, then in half again, then in half once more. For Ben: Double 180, then divide by 10."
     },
     {
      "kind": "choice",
@@ -1928,7 +1928,7 @@
       "halve-halve",
       "divide-by-5-25-50"
      ],
-     "shortcut": ""
+     "shortcut": "For Leo: Cut 168 in half, then cut that in half again. For Ben: Double 145, then divide by 10."
     },
     {
      "kind": "choice",
@@ -1956,7 +1956,7 @@
       "divide-in-two-steps",
       "halve-halve"
      ],
-     "shortcut": ""
+     "shortcut": "For Zoe: 6 is 2 × 3. Divide 282 by 2, then divide that answer by 3. For Ava: Cut 108 in half, then cut that in half again."
     }
    ],
    "ref": 1077
@@ -6521,7 +6521,7 @@
    "facts": [
     "halve-halve"
    ],
-   "shortcut": "",
+   "shortcut": "Cut 14 in half, then cut that in half again.",
    "tol": 1e-09,
    "variants": [
     {
@@ -6545,7 +6545,7 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": ""
+     "shortcut": "Cut 32 in half, then in half again, then in half once more."
     },
     {
      "kind": "num",
@@ -6568,7 +6568,7 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": ""
+     "shortcut": "Cut 100 in half, then in half again, then in half once more."
     },
     {
      "kind": "num",
@@ -6591,7 +6591,7 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": ""
+     "shortcut": "Cut 32 in half, then in half again, then in half once more."
     },
     {
      "kind": "num",
@@ -6635,7 +6635,7 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": ""
+     "shortcut": "6 is 2 × 3. Divide 15 by 2, then divide that answer by 3."
     },
     {
      "kind": "num",
@@ -6679,7 +6679,7 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": ""
+     "shortcut": "6 is 2 × 3. Divide 75 by 2, then divide that answer by 3."
     },
     {
      "kind": "num",
@@ -6702,7 +6702,7 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": ""
+     "shortcut": "6 is 2 × 3. Divide 9 by 2, then divide that answer by 3."
     },
     {
      "kind": "num",
@@ -6725,7 +6725,7 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": ""
+     "shortcut": "Cut 28 in half, then in half again, then in half once more."
     },
     {
      "kind": "num",
@@ -6748,7 +6748,7 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": ""
+     "shortcut": "Cut 32 in half, then cut that in half again."
     }
    ],
    "ref": 1219
@@ -7309,7 +7309,7 @@
    "facts": [
     "divide-by-5-25-50"
    ],
-   "shortcut": "",
+   "shortcut": "Double $32.50, then divide by 10.",
    "tol": 1e-09,
    "variants": [
     {
@@ -7333,7 +7333,7 @@
      "facts": [
       "move-the-decimal"
      ],
-     "shortcut": ""
+     "shortcut": "Slide the decimal point in $65.00 left 1 place."
     },
     {
      "kind": "num",
@@ -7356,7 +7356,7 @@
      "facts": [
       "move-the-decimal"
      ],
-     "shortcut": ""
+     "shortcut": "Slide the decimal point in $25.00 left 1 place."
     },
     {
      "kind": "num",
@@ -7379,7 +7379,7 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": ""
+     "shortcut": "6 is 2 × 3. Divide $48.00 by 2, then divide that answer by 3."
     },
     {
      "kind": "num",
@@ -7402,7 +7402,7 @@
      "facts": [
       "move-the-decimal"
      ],
-     "shortcut": ""
+     "shortcut": "Slide the decimal point in $45.00 left 1 place."
     },
     {
      "kind": "num",
@@ -7425,7 +7425,7 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": ""
+     "shortcut": "Cut $20.00 in half, then in half again, then in half once more."
     },
     {
      "kind": "num",
@@ -7448,7 +7448,7 @@
      "facts": [
       "divide-by-5-25-50"
      ],
-     "shortcut": ""
+     "shortcut": "Double $12.50, then divide by 10."
     },
     {
      "kind": "num",
@@ -7471,7 +7471,7 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": ""
+     "shortcut": "6 is 2 × 3. Divide $43.50 by 2, then divide that answer by 3."
     },
     {
      "kind": "num",
@@ -7494,7 +7494,7 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": ""
+     "shortcut": "Cut $10.00 in half, then cut that in half again."
     },
     {
      "kind": "num",
@@ -7517,7 +7517,7 @@
      "facts": [
       "divide-by-5-25-50"
      ],
-     "shortcut": ""
+     "shortcut": "Double $32.50, then divide by 10."
     },
     {
      "kind": "num",
@@ -7540,7 +7540,7 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": ""
+     "shortcut": "Cut $20.00 in half, then in half again, then in half once more."
     }
    ],
    "ref": 1252
