@@ -75,6 +75,7 @@ a.logo{text-decoration:none}.logo{display:flex;align-items:center;gap:12px;color
 </style>
 <div id="app"></div><div id="sheet"></div>
 <script src="../profile.js"></script>
+<script src="../dev.js"></script>
 <script src="../build.js"></script>
 <script src="../feedback.js"></script>
 <script src="../sync.js"></script>
@@ -144,6 +145,8 @@ const tableHTML = (t) => `<div class="tw"><table class="t"><tr><th>x</th>${t.x.m
 const visual = (p) => p.graph ? graphSVG(p.graph) : p.table ? tableHTML(p.table) : "";
 
 /* ---------- help sheet (Why / What does this use?) ---------- */
+const devRight = p => p.kind === "choice" ? p.correct : String(Math.round(p.answer * 1e6) / 1e6);
+const devWrong = p => p.kind === "choice" ? (p.options.findIndex((_, i) => i !== p.correct)) : String(Math.round((p.answer + 1) * 1e6) / 1e6);
 const fromSpec = x => { const p = byId[x.id]; return x.v >= 0 && p.variants && p.variants[x.v] ? Object.assign({}, p, p.variants[x.v]) : p; };
 function lessonSheet(sub){ S.sheet = {kind:"lesson", p:{sub}, more:false}; drawSheet(); }
 function openSheet(kind, p){ S.sheet = {kind, p, more:false}; drawSheet(); }
@@ -166,7 +169,7 @@ document.addEventListener("keydown", e => { if (e.key === "Escape" && S.sheet) c
 
 /* ---------- navigation ---------- */
 function go(view, extra){ clearInterval(S.timer); Object.assign(S, extra||{}, {view}); render(); window.scrollTo(0,0); }
-function render(){ const app = document.getElementById("app"); app.innerHTML = ""; app.append(VIEWS[S.view]()); const h = app.querySelector("h1,h2"); if (h) { h.tabIndex = -1; h.focus({preventScroll:true}); } }
+function render(){ window.mathseyeDev && mathseyeDev.set([]); const app = document.getElementById("app"); app.innerHTML = ""; app.append(VIEWS[S.view]()); const h = app.querySelector("h1,h2"); if (h) { h.tabIndex = -1; h.focus({preventScroll:true}); } }
 const backBar = (label, fn) => { const t = $(`<div class="top"><button class="btn quiet">← ${label}</button></div>`); t.querySelector("button").onclick = fn; return t; };
 
 /* ---------- missions ---------- */
@@ -297,6 +300,7 @@ mission(){ const m = save.mission;
   function helpMenu(p){ const bg = $(`<div class="sheetbg"><div class="sheet pop" role="dialog" aria-modal="true" aria-label="Help"><h2>Need something else?</h2><button class="btn" id="w">Why am I learning this?</button><button class="btn" id="u">What does this use?</button>${(p.facts || []).length || (p.shortcut || []).length ? '<button class="btn" id="f">Math facts and shortcuts</button>' : ""}<button class="btn primary" id="c">Back to the problem</button></div></div>`);
     const root = document.getElementById("sheet"); root.innerHTML = ""; root.append(bg); const shut = () => { root.innerHTML = ""; }; bg.onclick = e => { if (e.target === bg) shut(); };
     bg.querySelector("#c").onclick = shut; bg.querySelector("#w").onclick = () => openSheet("why", p); bg.querySelector("#u").onclick = () => openSheet("deps", p); if (bg.querySelector("#f")) bg.querySelector("#f").onclick = () => openSheet("facts", p); bg.querySelector("#c").focus(); }
+  if (window.mathseyeDev && !solved) mathseyeDev.set([{label:"Answer RIGHT", fn:() => check(devRight(p))}, {label:"Answer WRONG", fn:() => check(devWrong(p))}]);
   function check(v){ if (v === null || v === "" || v === undefined) { st.msg = p.kind==="choice" ? "Pick an answer first." : "Type an answer first."; st.win = false; return draw(); }
     if (isSetup(p, v)) { st.win = false; st.msg = SETUP_MSG; st.input = ""; return draw(); }
     res.tries++; if (isRight(p, v)) { res.done = true; recordStat(p, res, st); const clean = res.tries === 1 && res.hints === 0; if (clean && !st.flagged) { const w = save.work && save.work[base.id]; if (w) { w.c = (w.c || 0) + 1; if (w.c >= 3) delete save.work[base.id]; persist(); } } else flagWork(base.id, st); if (st.v < 0) { save.solved[p.id] = true; if (clean) save.clean[p.id] = true; } else if ((m.rev || []).includes(base.id)) baseRes.done = true; bump(); persist(); st.win = true; st.msg = exprNote(p, v, true) + (clean ? "You did that on your own. " + WIN[(m.i*2)%WIN.length] : WIN[(m.i*2+1)%WIN.length]); S.cur = st; render(); burst(document.querySelector(".say.win")); return; }
@@ -330,6 +334,8 @@ testQ(){ const T = S.test, p = T.list[T.i]; const el = $(`<div class="stack"></d
   const keep = () => { save.testRun = {spec:T.spec, i:T.i, ans:T.ans, t0:T.t0}; persist(); };
   const move = d => { T.input = ""; T.pick = null; T.i += d; keep(); go(T.i < T.list.length ? "testQ" : "testDone"); };
   const take = () => { T.ans[T.i] = answered() ? (p.kind === "choice" ? T.pick : T.input) : null; };
+  const fillAll = wrongCount => { const n = T.list.length, bad = new Set(); while (bad.size < Math.min(wrongCount, n)) bad.add(Math.floor(Math.random() * n)); T.list.forEach((q, i) => { T.ans[i] = bad.has(i) ? devWrong(q) : devRight(q); }); T.input = ""; T.pick = null; T.i = n; save.testRun = {spec:T.spec, i:n, ans:T.ans, t0:T.t0}; persist(); go("testDone"); };
+  if (window.mathseyeDev) mathseyeDev.set([{label:"Fill RIGHT answer", fn:() => { if (p.kind === "choice") T.pick = devRight(p); else T.input = devRight(p); draw(); }}, {label:"Fill WRONG answer", fn:() => { if (p.kind === "choice") T.pick = devWrong(p); else T.input = devWrong(p); draw(); }}, {label:"Finish test: all right", fn:() => fillAll(0)}, {label:"Finish test: 6 wrong", fn:() => fillAll(6)}, {label:"Finish test: all wrong", fn:() => fillAll(99)}]);
   draw(); nx.onclick = () => { if (!answered()) return; take(); move(1); }; c.querySelector("#sk").onclick = () => { T.ans[T.i] = null; move(1); }; c.querySelector("#pv").onclick = () => { take(); move(-1); }; el.append(c); return el; },
 testDone(){ const T = S.test; if (!T.saved) { const items = T.list.map((p, i) => ({id:p.id, v:T.spec[i].v, ref:p.ref, sub:p.sub, mine:T.ans[i] == null ? null : T.ans[i], ok:T.ans[i] != null && isRight(p, T.ans[i])}));
     T.rv = {t:Date.now(), right:items.filter(x => x.ok).length, items}; T.saved = true; save.tests = [T.rv, ...(save.tests || [])].slice(0, 8); save.testRun = null; persist(); }

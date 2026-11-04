@@ -186,6 +186,7 @@ body.learning #app{max-width:1180px;margin:0 auto;height:calc(100dvh - 34px);pad
 </style>
 <div id="app"></div><div id="sheet"></div>
 <script src="../profile.js"></script>
+<script src="../dev.js"></script>
 <script src="../build.js"></script>
 <script src="../feedback.js"></script>
 <script src="../sync.js"></script>
@@ -326,7 +327,7 @@ function wayView(c, way, viz, body){ const C = c.calc || {per:1, len:1, from:"in
     draw(); } }
 /* ---------- navigation ---------- */
 function go(view, extra){ Object.assign(S, extra || {}, {view}); render(); window.scrollTo(0, 0); }
-function render(){ const app = document.getElementById("app"); app.innerHTML = ""; document.body.classList.toggle("learning", S.view === "learn"); app.append(VIEWS[S.view]()); const h = app.querySelector("h1,h2"); if (h) { h.tabIndex = -1; h.focus({preventScroll:true}); } }
+function render(){ window.mathseyeDev && mathseyeDev.set([]); const app = document.getElementById("app"); app.innerHTML = ""; document.body.classList.toggle("learning", S.view === "learn"); app.append(VIEWS[S.view]()); const h = app.querySelector("h1,h2"); if (h) { h.tabIndex = -1; h.focus({preventScroll:true}); } }
 const backBar = (label, fn) => { const t = $(`<div class="top"><button class="btn quiet">← ${label}</button></div>`); t.querySelector("button").onclick = fn; return t; };
 const logo = () => `<a class="logo" href="../" aria-label="Mathseye, back to home">${MARK}<span class="wm">MATHSEYE</span></a>`;
 
@@ -351,7 +352,7 @@ function gridView(p, host, revealed){ const G = p.grid; if (!S.pk || S.pk.id !==
   draw(); }
 const gridMatch = p => S.pk && S.pk.id === p.id && S.pk.a.join(";") === p.grid.path.map(q => q.join(",")).join(";");
 const resOf = id => (hw.res && hw.res[id]) ? hw.res[id].r : (hw.done[id] ? "got" : null);
-const setRes = (id, r) => { hw.res = hw.res || {}; if (r === null) delete hw.res[id]; else hw.res[id] = {r, t: Date.now()}; if (r === "got") hw.done[id] = true; persist(); };
+const setRes = (id, r) => { hw.res = hw.res || {}; if (r === null) { delete hw.res[id]; delete hw.done[id]; } else hw.res[id] = {r, t: Date.now()}; if (r === "got") hw.done[id] = true; persist(); };
 /* peek at the lesson in a popup, without leaving the problem or the test */
 function peekCards(p){ const L = PACK.lessons && PACK.lessons[p.sub], ids = (L && L.peeks && L.peeks[p.id]) || []; return ids.map(c => { const sub = c.includes(":") ? c.split(":")[0] : p.sub, cid = c.split(":").pop(), LL = PACK.lessons[sub]; const card = LL && LL.cards.find(x => x.id === cid); return card ? {sub, card} : null; }).filter(Boolean); }
 function peekSheet(p, i){ const list = peekCards(p); if (!list.length) return; i = i || 0; const {sub, card:c} = list[i], root = document.getElementById("sheet"); root.innerHTML = "";
@@ -405,7 +406,8 @@ learn(){ const L = PACK.lessons[S.sub], c = L.cards[S.card], n = L.cards.length,
       if (S.card > 0) { const bk = $(`<button class="btn ghost">← Back</button>`); bk.onclick = () => go("learn", {card:S.card - 1, ...LRESET}); row.append(bk); }
       const m = $(`<button class="btn primary big">Show the next step</button>`); m.onclick = () => go("learn", {step:S.step + 1}); row.append(m); act.append(row); } else nav(true); }
   else if (c.k === "choice") { body.innerHTML = c.options.map((o, i) => `<button class="opt ${S.pick === i ? (o.ok ? "good" : "try") : ""}" data-i="${i}">${esc(o.t)}</button>`).join("") + (S.pick != null ? `<p class="say ${c.options[S.pick].ok ? "win" : ""}" role="status">${esc(c.options[S.pick].say)}</p>` : "");
-    body.querySelectorAll(".opt").forEach(b => b.onclick = () => go("learn", {pick:+b.dataset.i})); nav(S.pick != null); }
+    body.querySelectorAll(".opt").forEach(b => b.onclick = () => go("learn", {pick:+b.dataset.i})); nav(S.pick != null);
+    if (window.mathseyeDev) mathseyeDev.set([{label:"Pick RIGHT option", fn:() => go("learn", {pick:c.options.findIndex(o => o.ok)})}, {label:"Pick WRONG option", fn:() => go("learn", {pick:c.options.findIndex(o => !o.ok)})}]); }
   else if (c.k === "key") { body.innerHTML = `<ul class="pts">${c.points.map(t => `<li>${esc(t)}</li>`).join("")}</ul>`; nav(true); }
   else if (c.k === "words") { body.innerHTML = c.terms.map((t, i) => `<button class="opt term ${S.flip === i ? "open" : ""}" data-i="${i}"><b>${esc(t.t)}</b>${S.flip === i ? `<span>${esc(t.d)}</span>` : ""}</button>`).join(""); body.querySelectorAll(".term").forEach(b => b.onclick = () => go("learn", {flip:S.flip === +b.dataset.i ? null : +b.dataset.i})); nav(true); }
   const foot = card.querySelector(".lfoot"); foot.append($(`<span class="ref" aria-label="Reference number">#${c.ref || ""}</span>`));
@@ -413,6 +415,7 @@ learn(){ const L = PACK.lessons[S.sub], c = L.cards[S.card], n = L.cards.length,
   if (c.pg) { const z = pageBtn(S.sub, c.pg); const host = card.querySelector(".lpics") || card.querySelector(".lhead"); host.classList.add("zhost"); host.append(z); }
   el.append(card); return el; },
 results(){ const sub = S.sub, ps = orderedIn(sub), el = $(`<div class="stack"></div>`);
+  if (window.mathseyeDev) mathseyeDev.set([{label:"Mark all RIGHT", fn:() => { ps.forEach(p => setRes(p.id, "got")); render(); }}, {label:"Mark 6 WRONG, rest right", fn:() => { const bad = new Set(); while (bad.size < Math.min(6, ps.length)) bad.add(Math.floor(Math.random() * ps.length)); ps.forEach((p, i) => setRes(p.id, bad.has(i) ? "miss" : "got")); render(); }}, {label:"Clear all results", fn:() => { ps.forEach(p => setRes(p.id, null)); render(); }}]);
   const grp = k => ps.filter(p => (resOf(p.id) || "none") === k), got = grp("got"), miss = grp("miss"), none = grp("none");
   el.append(backBar(esc(subTitle(sub)), () => go("lesson")), $(`<header><h1>${esc(subTitle(sub))}: my results</h1><p class="sub">Saved on this device and synced to your name.</p></header>`));
   el.append($(`<section class="card"><p class="big">${got.length} of ${ps.length} got it</p><span class="bar" aria-hidden="true"><i style="width:${got.length / ps.length * 100}%"></i></span><p class="sub">${miss.length} to review · ${none.length} not tried yet</p></section>`));
@@ -432,6 +435,7 @@ prob(){ const p = PACK.problems.find(x => x.id === S.id), el = $(`<div class="st
   const card = $(`<section class="card"><p class="eyebrow pe">${esc(subTitle(p.sub))} · ${esc(p.label)}</p><p class="problem">${blanks(p.text)}</p>${p.bank ? `<p class="bank"><b>Word bank</b>${p.bank.map(w => `<span>${esc(w)}</span>`).join("")}</p>` : ""}${p.then ? `<p class="then">${esc(p.then)}</p>` : ""}${p.rows ? rowTable(p.rows) : ""}${p.parts ? partsHTML(p.parts) : ""}${p.img && p.img.length ? `<p class="pics">${p.img.map(i => `<img src="/api/img?f=${encodeURIComponent(i.f)}" alt="Picture from the worksheet, page ${i.pg}" loading="lazy">`).join("")}</p>` : p.figure ? `<p class="fig">Look at the picture on your worksheet. ${esc(p.figure)}</p>` : ""}<div class="vis">${p.table && Array.isArray(p.table.x) ? tableHTML(p.table) : ""}</div>${p.grid ? '<div class="gwrap"></div>' : ""}<p class="say">${p.grid ? "Tap the boxes in order to shade your path, or work it out on your worksheet. " : "Work it out on your worksheet first. "}Tap I'm stuck any time for a nudge.</p><ul class="nudges"></ul><div class="act"></div><span class="ref" aria-label="Reference number">#${p.ref || ""}</span></section>`);
   const nud = card.querySelector(".nudges"), act = card.querySelector(".act");
   if (p.pg) { const host = card.querySelector(".pics") || card.querySelector(".pe"); host.classList.add("zhost"); host.append(pageBtn(p.sub, p.pg)); }
+  if (window.mathseyeDev) mathseyeDev.set([{label:"Mark RIGHT (got it)", fn:() => { S.shown = true; setRes(p.id, "got"); S.msg = "Nailed it."; render(); }}, {label:"Mark WRONG (not quite)", fn:() => { S.shown = true; setRes(p.id, "miss"); render(); }}, {label:"Show the answer", fn:() => { S.shown = true; render(); }}]);
   const draw = () => { if (p.grid) gridView(p, card.querySelector(".gwrap"), !!S.shown); nud.innerHTML = p.hints.slice(0, S.hints).map(h => `<li class="say">${esc(h)}</li>`).join(""); act.innerHTML = "";
     if (!S.shown) { const row = $(`<div class="row"></div>`); const fin = $(`<button class="btn primary big">I finished: check my work</button>`); fin.onclick = () => { S.shown = true; draw(); }; act.append(fin);
       const st = $(`<button class="btn ghost">${S.hints >= p.hints.length ? "No more nudges" : "I'm stuck"}</button>`); st.disabled = S.hints >= p.hints.length; st.onclick = () => { S.hints++; draw(); }; row.append(st);
