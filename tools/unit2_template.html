@@ -230,8 +230,8 @@ home(){ const total = probs.length, done = probs.filter(p => save.solved[p.id]).
     su.append($(`<div><p class="eyebrow">Tonight's set</p><p class="lead setsum">${esc(what)}</p></div>`), $(`<button class="btn primary big" id="go" ${none ? "disabled" : ""}>Start</button>`));
     su.querySelector("#go").onclick = () => buildMission(null);
     if (none) su.append($(`<p class="lead muted">${pl.focus === "new" ? "You've seen every problem here. Try a mix." : "Nothing to work on right now. Nice."}</p>`));
-    const tg = $(`<button class="btn quiet" id="chg" aria-expanded="${!!S.opts}">${S.opts ? "Hide options" : "Change what I practice"}</button>`); tg.onclick = () => { S.opts = !S.opts; render(); }; su.append(tg);
-    if (S.opts) {
+    const tg = $(`<button class="btn quiet" id="chg" aria-expanded="${S.opts !== false}">${S.opts !== false ? "Hide options" : "Change what I practice"}</button>`); tg.onclick = () => { S.opts = S.opts === false; render(); }; su.append(tg);
+    if (S.opts !== false) {
       const opt = $(`<div class="opts2"></div>`); su.append(opt);
       const group = (title, html, wire) => { const g = $(`<div class="og"><h3>${title}</h3>${html}</div>`); wire && wire(g); opt.append(g); return g; };
       group("How long?", seg("How long", [{k:"timed", t:"Set a time", on: pl.mode === "timed"}, {k:"endless", t:"Keep going", on: pl.mode === "endless"}]) + (pl.mode === "timed" ? seg("Minutes", [10,15,20,30].map(n => ({k:n, t:n + " min", on: pl.minutes === n}))) : ""), g => { const rows = g.querySelectorAll(".sizes"); rows[0].querySelectorAll("button").forEach(b => b.onclick = () => setPlan({mode:b.dataset.k})); if (rows[1]) rows[1].querySelectorAll("button").forEach(b => b.onclick = () => setPlan({minutes:+b.dataset.k})); });
