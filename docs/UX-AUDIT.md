@@ -30,3 +30,10 @@ Results: 0 console errors, 0 targets under 44px, 0 horizontal scroll, 3 non-keyp
 - Does 5 problems feel like the right size, or 3?
 - Is "I'm stuck" the right wording?
 - Does she want sound or a streak? (Left out on purpose.)
+
+## Pass 2 (cold review at iPad portrait/landscape and phone)
+Fixed: practice-card header (the "New fact" stage label looked like a button; now only "n of N" in timed sessions and a clear "I'm done"),
+Check spans the whole keypad and keys scale with screen height so Check stays on screen on a phone, reference pill no longer covers Check,
+MathFacts stats stay one row on a phone, fact rows are two lines (the "Helps with" line moved to the trick card),
+bigger toggle buttons on iPad, study guide home leads with a one-line summary and Start (options fold under "Change what I practice").
+Still open: the color picker is long on the hub (13 swatches); iPad portrait practice card has empty space between problem and keypad.

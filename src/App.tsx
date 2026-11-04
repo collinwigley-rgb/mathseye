@@ -157,7 +157,7 @@ function Setup({ db, pre, onStart, onBack }: { db: Db; pre: string[]; onStart: (
           <div className="facts">
             {list.map((t) => (
               <button key={t.id} className="factrow" aria-pressed={chosen.includes(t.id)} onClick={() => toggle(t.id)}>
-                <span><b>{t.name}</b><small><Fx text={t.rule} /></small><HelpsWith id={t.id} /></span>
+                <span><b>{t.name}</b><small><Fx text={t.rule} /></small></span>
                 <span className="fstat">{chosen.includes(t.id) ? '✓' : ''}</span>
               </button>
             ))}
@@ -268,7 +268,7 @@ function FactsHome({ db, update, onStart, onSetup, onWho, onBack }: { db: Db; up
         <p className="muted">Everything is open. Tap one to practice just that fact.</p>
         {list.map((t) => (
           <button key={t.id} className="factrow" onClick={() => onSetup([t.id])}>
-            <span><b>{t.name}</b><small><Fx text={t.rule} /></small><HelpsWith id={t.id} /></span>
+            <span><b>{t.name}</b><small><Fx text={t.rule} /></small></span>
             <span className="fstat">{isLearned(t.id) ? `${Math.round(trickMastery(db, t.id) * 100)}%` : 'New'}</span>
           </button>
         ))}
@@ -338,8 +338,8 @@ function SessionView({ db, update, onPause, onDone }: {
             <i key={st} className={st === item.stage ? 'on' : stages.indexOf(st) < stages.indexOf(item.stage) ? 'done' : ''} />
           ))}
         </div>
-        <span className="stagename">{plan?.length.mode === 'timed' ? `${Math.min(s.index + 1, s.queue.length)} of ${s.queue.length}` : STAGE_LABEL[item.stage]}</span>
-        {plan?.length.mode !== 'timed' && <button className="link" onClick={finish}>I'm done</button>}
+        {plan?.length.mode === 'timed' && <span className="stagename">{Math.min(s.index + 1, s.queue.length)} of {s.queue.length}</span>}
+        {plan?.length.mode !== 'timed' && <button className="link done" onClick={finish}>I'm done</button>}
       </header>
       {item.kind === 'trick' ? (
         <TrickCard
