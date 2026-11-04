@@ -19,7 +19,7 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;touch-action:manipulat
 button:focus-visible,a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
 .card{background:var(--panel);border-radius:22px;padding:16px 18px;display:flex;flex-direction:column;gap:8px;min-width:0}
 .eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.12em;font-size:14px;font-weight:600;margin:0}
-.lead{margin:0;font-size:20px}.muted{color:var(--muted)}
+.lead{margin:0;font-size:20px}.sc{margin:0;font-size:24px;line-height:1.5}.sc b{color:var(--accent);font-weight:700}.sc+.sc{margin-top:10px}.fl small{font-size:19px;color:inherit;line-height:1.45}.fl b{font-size:20px}.sheet h3{margin:6px 0 0;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.muted{color:var(--muted)}
 .btn{background:var(--panel2);padding:14px 20px;min-height:56px;font-weight:600}
 .btn.primary{background:var(--accent);color:var(--accent-fg)}.btn.big{min-height:68px;font-size:22px;width:100%}
 .btn.ghost{background:transparent;border:2px solid var(--line)}.btn:disabled{opacity:.45;cursor:default}
@@ -143,10 +143,12 @@ const visual = (p) => p.graph ? graphSVG(p.graph) : p.table ? tableHTML(p.table)
 /* ---------- help sheet (Why / What does this use?) ---------- */
 function openSheet(kind, p){ S.sheet = {kind, p, more:false}; drawSheet(); }
 function closeSheet(){ S.sheet = null; drawSheet(); }
+/* a shortcut as big, separate lines with the numbers picked out */
+const scSteps = txt => txt.split(/(?<=\.)\s+(?=[A-Z$\d])/).map(x => `<p class="sc">${esc(x).replace(/(\$?\d[\d,]*(?:\.\d+)?(?:\/\d+)?)/g, "<b>$1</b>")}</p>`).join("");
 function drawSheet(){ const root = document.getElementById("sheet"); root.innerHTML = ""; if (!S.sheet) return;
   const {kind, p, more} = S.sheet, w = DATA.lessons[p.sub].why; let body = "";
   if (kind === "why") body = `<h2>Why am I learning this?</h2><p class="lead">${esc(p.why_focus)}</p><dl><dt>Why you need it</dt><dd>${esc(w.why_you_need_it)}</dd><dt>Where you'll see it</dt><dd>${esc(w.real_life)}</dd>${more?`<dt>The goal</dt><dd>${esc(w.goal)}</dd><dt>How it helps later</dt><dd>${esc(w.supports_future)}</dd><dt>Building block</dt><dd>${esc(w.building_block)}</dd>`:""}</dl>${more?"":'<button class="btn quiet" id="more">Tell me more</button>'}`;
-  else if (kind === "facts") body = `<h2>Math facts that could help</h2><p class="lead">Try these in your head before reaching for a calculator.</p>${p.shortcut ? `<h3>Mental shortcut</h3><p class="lead">${esc(p.shortcut)}</p>` : ""}${(p.facts || []).length ? "<h3>Math facts</h3>" : ""}<ul class="cl">${(p.facts || []).map(id => { const t = DATA.tricks[id]; return `<li><span><b>${esc(t.name)}</b>${p.shortcut ? "" : `<small>${esc(t.rule)}</small>`}</span>${location.pathname.indexOf("/study/") > -1 ? `<a class="btn quiet" href="../?fact=${id}&back=study">Practice it</a>` : ""}</li>`; }).join("")}</ul>`;
+  else if (kind === "facts") body = `<h2>Math facts that could help</h2><p class="lead">Try these in your head before reaching for a calculator.</p>${p.shortcut ? `<h3>Try this in your head</h3>${scSteps(p.shortcut)}` : ""}${(p.facts || []).length ? "<h3>Math facts</h3>" : ""}<ul class="cl fl">${(p.facts || []).map(id => { const t = DATA.tricks[id]; return `<li><span><b>${esc(t.name)}</b>${p.shortcut ? "" : `<small>${esc(t.rule)}</small>`}</span>${location.pathname.indexOf("/study/") > -1 ? `<a class="btn quiet" href="../?fact=${id}&back=study">Practice it</a>` : ""}</li>`; }).join("")}</ul>`;
   else { const d = p.deps; body = `<h2>What does this use?</h2><div><span class="lvl">${LV[d.level]}</span></div><p class="lead">${LVTXT[d.level]}${d.earlier && d.earlier.length ? " Earlier " + (d.earlier.length > 1 ? "lessons" : "lesson") + ": " + d.earlier.map(e => "\u201c" + esc(e.title) + "\u201d (Lesson " + e.sub + ")").join(", ") + "." : ""}</p><ul class="cl">${d.concepts.map(c=>{const k=DATA.concepts[c];return `<li><span><b>${esc(k.name)}</b><small>${esc(k.plain)}</small></span><span class="tag">${esc(k.origin)}</span></li>`}).join("")}</ul>`; }
   const bg = $(`<div class="sheetbg"><div class="sheet pop" role="dialog" aria-modal="true" aria-label="Help">${body}<button class="btn primary" id="close">Back to the problem</button></div></div>`);
   bg.onclick = e => { if (e.target === bg) closeSheet(); }; bg.querySelector("#close").onclick = closeSheet;
