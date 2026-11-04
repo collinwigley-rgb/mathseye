@@ -40,7 +40,10 @@
   }
   function mergeHw(L, R) {
     if (!L) return R; if (!R) return L;
-    var out = Object.assign({}, R, L); out.done = union(L.done, R.done); return out;
+    var out = Object.assign({}, R, L); out.done = union(L.done, R.done);
+    var res = {}, a = (L && L.res) || {}, b = (R && R.res) || {};   // per-problem result {r:'got'|'miss', t}: the newer one wins
+    Object.keys(a).concat(Object.keys(b)).forEach(function (k) { var x = a[k], y = b[k]; res[k] = !x ? y : !y ? x : ((y.t || 0) > (x.t || 0) ? y : x); });
+    if (Object.keys(res).length) out.res = res; return out;
   }
   var MERGE = { facts: mergeFacts, study: mergeStudy, hw: mergeHw };
 

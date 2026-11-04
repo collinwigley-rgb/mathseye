@@ -46,3 +46,6 @@
 ## Worksheet pictures (done)
 Crops live in the private repo (`images/unit-2`), linked to problems by `tools/link_figures.py` (geometry + text check, gated by `test_figure_links.py`). `publish_images.py N` uploads them to KV (`img:<file>`, served at `/api/img?f=`); `build_pack.py` attaches `img` per problem and `learn` (example/explore/concept pictures per lesson). Homework shows the pictures; the service worker keeps them for offline.
 Pilot shipped: 2.8 "Learn it first" (cards from `pack.lessons`, content in private `learn/unit-2/2.8.json`; problems labeled "Page 117 · #9", each links back to its card). Next: same for other lessons, recrop feature, Additional Practice crops, Unit 3 import.
+
+## Results and lesson popups (homework)
+Each answer is saved as a result per problem (`hw.res[id] = {r:'got'|'miss', t}`; newest wins when synced; `done` stays a union). "My results" on a lesson shows got / to review / not tried, with the full answer and explanation for misses, a "Look at the lesson" popup (no leaving the test; pack `lessons[sub].peeks`) and quick ✓/↻ marks to record a result by hand. Problems with no practice variants hide "Generate alternate"; "Next problem" shows once the answer is revealed.
