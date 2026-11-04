@@ -127,7 +127,7 @@ button:active{transform:scale(.98)}
 .tile3 b { font-family: var(--display); font-size: 28px; color: var(--amber); }
 .tile3 span { color: var(--muted); font-size: 18px; }
 .pick { width: 100%; max-width: 560px; display: flex; flex-direction: column; gap: 12px; align-items: center; }
-.top { width: 100%; max-width: 560px; display: flex; justify-content: flex-start; }
+.top { width: 100%; max-width: 560px; display: flex; justify-content: space-between; }
 .seg { display: flex; gap: 8px; background: var(--panel); padding: 6px; border-radius: 18px; }
 .seg button { background: none; color: var(--muted); padding: 12px 20px; border-radius: 14px; font-weight: 600; min-height: 48px; }
 .seg button[aria-pressed=true] { background: var(--amber); color: #1a1626; }

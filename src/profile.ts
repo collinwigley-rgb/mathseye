@@ -2,7 +2,7 @@
 // Everything stays on this device. The first player created adopts any progress saved before profiles existed.
 export interface Profile { id: string; name: string; ns: string }
 
-const LIST = 'mathseye.profiles', ACTIVE = 'mathseye.profile', ASKED = 'mathseye.who.asked';
+const LIST = 'mathseye.profiles', ACTIVE = 'mathseye.profile';
 
 const read = <T,>(k: string, d: T): T => { try { const v = localStorage.getItem(k); return v ? (JSON.parse(v) as T) : d; } catch { return d; } };
 const write = (k: string, v: unknown) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* storage unavailable */ } };
@@ -13,9 +13,9 @@ export const activeProfile = (): Profile | null => profiles().find((p) => p.id =
 /** Key suffix for the active player ('' when nobody is chosen, which is the pre-profile storage). */
 export const activeNs = (): string => activeProfile()?.ns ?? '';
 
-export function setActive(id: string) { try { localStorage.setItem(ACTIVE, id); sessionStorage.setItem(ASKED, '1'); } catch { /* ignore */ } }
-/** True once per app launch (tab session): she is asked "who's using?" before anything else. */
-export const needsWho = (): boolean => { try { return sessionStorage.getItem(ASKED) !== '1'; } catch { return false; } };
+export function setActive(id: string) { try { localStorage.setItem(ACTIVE, id); } catch { /* ignore */ } }
+/** Ask who is using only when nobody has been chosen on this device yet; otherwise stick with the last player. */
+export const needsWho = (): boolean => !activeProfile();
 
 export function addProfile(name: string): Profile {
   const list = profiles();
@@ -31,5 +31,5 @@ export function removeProfile(id: string) {
   if (!p) return;
   try { for (const k of BASE_KEYS) localStorage.removeItem(k + p.ns); } catch { /* ignore */ }
   write(LIST, profiles().filter((x) => x.id !== id));
-  if (activeId() === id) { try { localStorage.removeItem(ACTIVE); sessionStorage.removeItem(ASKED); } catch { /* ignore */ } }
+  if (activeId() === id) { try { localStorage.removeItem(ACTIVE); } catch { /* ignore */ } }
 }

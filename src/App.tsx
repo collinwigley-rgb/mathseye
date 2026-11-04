@@ -43,7 +43,7 @@ export default function App() {
   if (screen === 'summary') return <Summary db={db} onHome={() => setScreen('facts')} />;
   if (screen === 'grownups') return <Grownups db={db} update={update} onBack={() => setScreen('hub')} onRemoved={() => { bump((n) => n + 1); if (!activeProfile()) setScreen('who'); }} />;
   if (screen === 'setup') return <Setup db={db} pre={pre} onStart={startOrResume} onBack={() => setScreen('facts')} />;
-  if (screen === 'facts') return <FactsHome db={db} update={update} onStart={startOrResume} onSetup={(ids) => { setPre(ids ?? []); setScreen('setup'); }} onBack={() => setScreen('hub')} />;
+  if (screen === 'facts') return <FactsHome db={db} update={update} onStart={startOrResume} onSetup={(ids) => { setPre(ids ?? []); setScreen('setup'); }} onWho={() => setScreen('who')} onBack={() => setScreen('hub')} />;
   return <Hub db={db} onFacts={() => setScreen('facts')} onGrownups={() => setScreen('grownups')} onWho={() => setScreen('who')} />;
 }
 
@@ -179,7 +179,7 @@ function Hub({ db, onFacts, onGrownups, onWho }: { db: Db; onFacts: () => void; 
   );
 }
 
-function FactsHome({ db, update, onStart, onSetup, onBack }: { db: Db; update: (fn: (d: Db) => Db) => void; onStart: (plan?: SessionPlan) => void; onSetup: (ids?: string[]) => void; onBack: () => void }) {
+function FactsHome({ db, update, onStart, onSetup, onWho, onBack }: { db: Db; update: (fn: (d: Db) => Db) => void; onStart: (plan?: SessionPlan) => void; onSetup: (ids?: string[]) => void; onWho: () => void; onBack: () => void }) {
   const resumable = db.inProgress?.date === today();
   const conf = confidence(db);
   const mode = db.settings.factsMode ?? 'unit';
@@ -190,7 +190,7 @@ function FactsHome({ db, update, onStart, onSetup, onBack }: { db: Db; update: (
   const setMode = (m: 'unit' | 'general') => update((d) => ({ ...d, settings: { ...d.settings, factsMode: m } }));
   return (
     <main className="home">
-      <div className="top"><button className="link" onClick={onBack}>← Home</button></div>
+      <div className="top"><button className="link" onClick={onBack}>← Home</button>{activeProfile() && <button className="link" onClick={onWho}>{activeProfile()!.name} · Switch</button>}</div>
       <button className="logobtn" onClick={onBack} aria-label="Mathseye, back to home"><Mark size={56} /><span className="wm">MATHSEYE</span></button>
       <h1 className="h1">MathFacts</h1>
       <div className="seg" role="group" aria-label="Which facts">
