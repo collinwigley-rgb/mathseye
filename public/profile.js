@@ -26,7 +26,9 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
   try {
     var f = document.createElement('p');
-    f.textContent = 'Build ' + (window.mathseyeBuild || 'dev');
+    var d = new Date(window.mathseyeBuildAt || ''), label = window.mathseyeBuild || 'dev';
+    if (!isNaN(d.getTime())) label += ' \u00b7 ' + d.toLocaleDateString('en-US', {month: 'short', day: 'numeric'}) + ' ' + d.toLocaleTimeString('en-GB', {hour: '2-digit', minute: '2-digit', hour12: false});
+    f.textContent = 'Build ' + label;
     f.style.cssText = 'text-align:center;font:13px system-ui,sans-serif;opacity:.6;margin:20px 0 14px;user-select:text;-webkit-user-select:text';
     document.body.appendChild(f);
   } catch (e) {}

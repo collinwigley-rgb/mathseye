@@ -64,6 +64,15 @@ function BackPill() {
   return <a className="backpill" href="./study/unit-2.html" onClick={() => { try { sessionStorage.removeItem('mathseye.back'); } catch { /* ignore */ } setBack(false); }}>← Back to my problem</a>;
 }
 
+/** "#48 · 99193d0 · Nov 4 15:55": the build, with its time in 24h on this device's clock. */
+function buildLabel(): string {
+  const d = new Date(__BUILD_AT__);
+  if (isNaN(d.getTime())) return __BUILD__;
+  const day = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  const time = d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false });
+  return `${__BUILD__} · ${day} ${time}`;
+}
+
 function PlayerMenu({ onChoose }: { onChoose: (id: string) => void }) {
   const [open, setOpen] = useState(false);
   const [adding, setAdding] = useState(false);
@@ -88,7 +97,7 @@ function PlayerMenu({ onChoose }: { onChoose: (id: string) => void }) {
               <button className="primary" type="submit" disabled={!name.trim()}>Add</button>
             </form>
           ) : <button className="pitem" onClick={() => setAdding(true)}><i>+</i><span>Add someone</span></button>}
-          <p className="build" aria-label="Build number">Build {__BUILD__}</p>
+          <p className="build" aria-label="Build number">Build {buildLabel()}</p>
         </div>
       )}
     </div>
