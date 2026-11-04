@@ -1,6 +1,6 @@
 /* "Flag a problem": a tiny sheet that captures the problem and what she types, saved on this device.
-   Shared by the app and the static pages. Notes are listed (with Copy / Share) in Grown-ups.
-   Stored under mathseye.feedback.v1; nothing leaves the device. */
+   Shared by the app and the static pages. Notes are posted to the Worker (worker/index.js) and listed in Grown-ups.
+   A copy stays on the device under mathseye.feedback.v1 until it has been sent. */
 (function () {
   var KEY = 'mathseye.feedback.v1';
   var css = '.fbbtn{position:absolute;top:10px;right:12px;z-index:3;background:none;border:0;padding:10px 10px;color:var(--muted,#8a8498);font:600 14px system-ui,sans-serif;cursor:pointer;text-decoration:underline;text-underline-offset:3px}' +
@@ -17,6 +17,26 @@
   function save(l) { try { localStorage.setItem(KEY, JSON.stringify(l)); } catch (e) {} }
   function who() { try { var id = localStorage.getItem('mathseye.profile'), l = JSON.parse(localStorage.getItem('mathseye.profiles') || '[]'); for (var i = 0; i < l.length; i++) if (l[i].id === id) return l[i].name; } catch (e) {} return ''; }
   function stamp() { var d = new Date(window.mathseyeBuildAt || ''); return (window.mathseyeBuild || 'dev') + (isNaN(d.getTime()) ? '' : ' ' + d.toISOString().slice(0, 16).replace('T', ' ') + 'Z'); }
+  /* Notes go to the server (the Worker stores them for the grown-ups). If it is offline or not reachable,
+     the note stays on the device marked unsent and is retried later. */
+  var API = '/api/feedback';
+  function configured() { return location.protocol.indexOf('http') === 0; }
+  function sendOne(f) {
+    return fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(f) })
+      .then(function (r) { return r.json(); }).then(function (j) { return !!(j && j.ok); }).catch(function () { return false; });
+  }
+  var flushing = false;
+  function flush() {
+    if (!configured() || flushing) return Promise.resolve(0);
+    var todo = list().filter(function (f) { return !f.sent; });
+    if (!todo.length) return Promise.resolve(0);
+    flushing = true;
+    return todo.reduce(function (p, f) { return p.then(function (n) { return sendOne(f).then(function (ok) { if (ok) { var l = list(); l.forEach(function (x) { if (x.id === f.id) x.sent = true; }); save(l); return n + 1; } return n; }); }); }, Promise.resolve(0))
+      .then(function (n) { flushing = false; return n; }, function () { flushing = false; return 0; });
+  }
+  function unsent() { return list().filter(function (f) { return !f.sent; }).length; }
+  window.addEventListener('online', function () { flush(); });
+  setTimeout(flush, 1500);
   var TAGS = ['The answer looks wrong', 'Hard to read', "I don't get it", 'Something broke', 'Good idea'];
   function open(ctx) {
     inject(); ctx = ctx || {};
@@ -36,8 +56,10 @@
       var note = bg.querySelector('#fb-note').value.trim();
       var l = list(); l.push({ id: Date.now().toString(36), at: new Date().toISOString(), build: stamp(), player: who(), ref: ctx.ref || '', text: ctx.text || '', where: ctx.where || '', extra: ctx.extra || {}, tags: picked, note: note });
       save(l);
-      bg.querySelector('.fbsheet').innerHTML = '<h2>Thanks, noted.</h2><p>Your note is saved for a grown-up to read.</p>';
-      setTimeout(close, 1400);
+      var sheet = bg.querySelector('.fbsheet');
+      sheet.innerHTML = '<h2>Thanks, noted.</h2><p>' + 'Sending it to a grown-up\u2026' + '</p>';
+      flush().then(function () { var p = sheet.querySelector('p'); if (p) p.textContent = unsent() ? 'Saved. It will be sent when you are back online.' : 'Sent to a grown-up.'; });
+      setTimeout(close, 1800);
     };
     document.body.appendChild(bg); bg.querySelector('#fb-note').focus();
   }
@@ -48,5 +70,5 @@
         f.text ? 'Problem: ' + f.text : '', (f.tags && f.tags.length ? 'Tags: ' + f.tags.join('; ') : ''), f.note ? 'Note: ' + f.note : '', ex ? 'State: ' + ex : ''].filter(Boolean).join('\n');
     }).join('\n\n');
   }
-  window.mathseyeFeedback = { open: open, list: list, text: asText, clear: function () { save([]); }, button: function (ctxFn) { inject(); var b = document.createElement('button'); b.className = 'fbbtn'; b.type = 'button'; b.textContent = '⚑ Flag a problem'; b.onclick = function () { open(ctxFn()); }; return b; } };
+  window.mathseyeFeedback = { open: open, flush: flush, unsent: unsent, configured: configured, list: list, text: asText, clear: function () { save([]); }, button: function (ctxFn) { inject(); var b = document.createElement('button'); b.className = 'fbbtn'; b.type = 'button'; b.textContent = '⚑ Flag a problem'; b.onclick = function () { open(ctxFn()); }; return b; } };
 })();

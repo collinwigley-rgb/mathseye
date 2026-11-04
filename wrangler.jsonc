@@ -1,6 +1,10 @@
 {
-  // Cloudflare: publish the built site (dist) as static assets. Build command: npm run build
+  // Cloudflare: the Worker (worker/index.js) answers /api/* and serves the built site (dist) for everything else.
+  // Build command: npm run build   Deploy command: npx wrangler deploy
   "name": "mathseye",
+  "main": "worker/index.js",
   "compatibility_date": "2026-11-01",
-  "assets": { "directory": "./dist" }
+  "assets": { "directory": "./dist", "binding": "ASSETS", "run_worker_first": ["/api/*"] },
+  // Notes storage. No id: wrangler creates this KV namespace on the first deploy.
+  "kv_namespaces": [{ "binding": "NOTES" }]
 }

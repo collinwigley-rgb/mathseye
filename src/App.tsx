@@ -516,25 +516,51 @@ function Summary({ db, onHome }: { db: Db; onHome: () => void }) {
   );
 }
 
+type Note = { key: string; id: string; at: string; ref: string; text: string; note: string; tags: string[]; player: string; where: string; build: string };
+
+/** Notes players flagged. They live on the server; this lists them for a grown-up (newest first). */
 function FeedbackList() {
-  const [items, setItems] = useState(() => (window.mathseyeFeedback?.list() ?? []) as { id: string; at: string; ref: string; text: string; note: string; tags: string[]; player: string; where: string }[]);
+  const fb = window.mathseyeFeedback;
+  const [notes, setNotes] = useState<Note[] | null>(null);
+  const [state, setState] = useState<'loading' | 'ok' | 'needkey' | 'offline'>('loading');
+  const [key, setKey] = useState(() => { try { return localStorage.getItem('mathseye.adminkey') ?? ''; } catch { return ''; } });
   const [msg, setMsg] = useState('');
-  if (!items.length) return <p className="muted">No notes yet. Players can tap "Flag a problem" on any problem.</p>;
-  const text = () => window.mathseyeFeedback?.text() ?? '';
-  const copy = async () => { try { await navigator.clipboard.writeText(text()); setMsg('Copied.'); } catch { setMsg('Could not copy. Use Share instead.'); } };
-  const share = async () => { try { await navigator.share({ title: 'Mathseye notes', text: text() }); } catch { /* cancelled */ } };
+  const load = async (k = key) => {
+    setState('loading');
+    try {
+      const r = await fetch('/api/feedback', { headers: k ? { 'X-Admin-Key': k } : {}, cache: 'no-store' });
+      if (r.status === 401) { setState('needkey'); return; }
+      const j = await r.json();
+      if (!j.ok) throw new Error('bad');
+      setNotes(j.notes as Note[]); setState('ok');
+      try { if (k) localStorage.setItem('mathseye.adminkey', k); } catch { /* ignore */ }
+    } catch { setState('offline'); }
+  };
+  useEffect(() => { void fb?.flush().then(() => load()); }, []);
+  const remove = async (n: Note) => { await fetch(`/api/feedback?k=${encodeURIComponent(n.key)}`, { method: 'DELETE', headers: key ? { 'X-Admin-Key': key } : {} }); setNotes((l) => (l ?? []).filter((x) => x.key !== n.key)); };
+  const text = () => (notes ?? []).map((n) => `${n.ref || '(no ref)'} · ${n.where} · ${n.player} · ${n.at.slice(0, 16).replace('T', ' ')}Z · build ${n.build}\nProblem: ${n.text}\n${n.tags.length ? 'Tags: ' + n.tags.join('; ') + '\n' : ''}Note: ${n.note}`).join('\n\n');
+  const copy = async () => { try { await navigator.clipboard.writeText(text()); setMsg('Copied.'); } catch { setMsg('Could not copy.'); } };
+  const unsent = fb?.unsent() ?? 0;
+  if (state === 'loading') return <p className="muted">Loading notes…</p>;
+  if (state === 'needkey') return (
+    <form onSubmit={(e) => { e.preventDefault(); void load(key); }}>
+      <p className="muted">Enter the grown-up key to read the notes.</p>
+      <input value={key} onChange={(e) => setKey(e.target.value)} aria-label="Grown-up key" type="password" autoComplete="off" />
+      <button className="ghost" type="submit">Show notes</button>
+    </form>
+  );
+  if (state === 'offline') return <p className="muted">Could not reach the server right now. {unsent > 0 ? `${unsent} note${unsent === 1 ? '' : 's'} waiting on this device.` : ''} <button className="link" onClick={() => void load()}>Try again</button></p>;
   return (
     <div>
-      {[...items].reverse().map((f) => (
-        <div key={f.id} className="mrow note">
-          <span><b>{f.ref || f.where}</b> <small className="muted">{f.player} · {f.at.slice(0, 16).replace('T', ' ')}</small><br />{f.tags.length > 0 && <small className="muted">{f.tags.join(' · ')}<br /></small>}{f.note || <i className="muted">(no note)</i>}</span>
+      {unsent > 0 && <p className="muted">{unsent} note{unsent === 1 ? '' : 's'} on this device not sent yet. <button className="link" onClick={async () => { await fb?.flush(); void load(); }}>Send now</button></p>}
+      {!notes?.length && <p className="muted">No notes yet. Players can tap "Flag a problem" on any problem.</p>}
+      {(notes ?? []).map((n) => (
+        <div key={n.key} className="mrow note">
+          <span><b>{n.ref || n.where}</b> <small className="muted">{n.player} · {n.at.slice(0, 16).replace('T', ' ')}</small><br />{n.tags.length > 0 && <small className="muted">{n.tags.join(' · ')}<br /></small>}{n.note || <i className="muted">(no note)</i>}</span>
+          <button className="ghost" onClick={() => void remove(n)}>Done</button>
         </div>
       ))}
-      <div className="row2">
-        <button className="ghost" onClick={copy}>Copy all</button>
-        {'share' in navigator && <button className="ghost" onClick={share}>Share</button>}
-        <button className="ghost" onClick={() => { window.mathseyeFeedback?.clear(); setItems([]); }}>Clear</button>
-      </div>
+      {!!notes?.length && <div className="row2"><button className="ghost" onClick={copy}>Copy all</button></div>}
       {msg && <p className="muted">{msg}</p>}
     </div>
   );
