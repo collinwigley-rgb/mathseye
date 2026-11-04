@@ -49,3 +49,6 @@ Pilot shipped: 2.8 "Learn it first" (cards from `pack.lessons`, content in priva
 
 ## Results and lesson popups (homework)
 Each answer is saved as a result per problem (`hw.res[id] = {r:'got'|'miss', t}`; newest wins when synced; `done` stays a union). "My results" on a lesson shows got / to review / not tried, with the full answer and explanation for misses, a "Look at the lesson" popup (no leaving the test; pack `lessons[sub].peeks`) and quick ✓/↻ marks to record a result by hand. Problems with no practice variants hide "Generate alternate"; "Next problem" shows once the answer is revealed.
+
+## Practice test (study guide)
+Next is disabled until she answers (a quiet "Skip this one" and "← Previous" are always there). A test in progress is saved (`save.testRun`, resumes after a reload). Finished tests are saved and synced (`save.tests`, newest 8, merged from both devices). Results show every miss with her answer, the answer, "How it works" and a lesson popup (`lessonSheet`), and "Past tests" on the intro reopens any of them.

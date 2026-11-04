@@ -36,6 +36,9 @@
     for (k in base) out[k] = base[k];
     out.solved = union(L.solved, R.solved); out.clean = union(L.clean, R.clean); out.seen = union(L.seen, R.seen);
     out.mission = L.mission;                  // the set she is in the middle of belongs to this device
+    out.testRun = L.testRun;                  // so does a practice test in progress
+    var seen = {}, all = ((L.tests || []).concat(R.tests || [])).filter(function (t) { if (!t || seen[t.t]) return false; seen[t.t] = 1; return true; });
+    all.sort(function (a, b) { return b.t - a.t; }); out.tests = all.slice(0, 8);   // finished practice tests: kept from both sides, newest 8
     return out;
   }
   function mergeHw(L, R) {

@@ -243,6 +243,11 @@ describe('self-paced sessions', () => {
       expect(S.mergeHw(null, { done: { b: 1 } })).toEqual({ done: { b: 1 } });
       expect(S.mergeFacts(null, facts({}))).toBeTruthy();
     });
+    it('finished practice tests are kept from both devices, newest first, max 8', () => {
+      const t = (n: number) => ({ t: n, right: 1, items: [] });
+      const m = S.mergeStudy({ solved: {}, tests: [t(3), t(1)], testRun: { i: 2 } }, { solved: {}, tests: [t(2), t(3)] }, true);
+      expect(m.tests.map((x: any) => x.t)).toEqual([3, 2, 1]); expect(m.testRun.i).toBe(2);
+    });
     it('homework results: the newer result for a problem wins, others are kept', () => {
       const m = S.mergeHw({ done: { a: 1 }, res: { a: { r: 'got', t: 5 }, b: { r: 'miss', t: 1 } } }, { done: {}, res: { b: { r: 'got', t: 9 }, c: { r: 'miss', t: 2 } } });
       expect(m.res.a.r).toBe('got'); expect(m.res.b.r).toBe('got'); expect(m.res.c.r).toBe('miss');
