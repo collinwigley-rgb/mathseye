@@ -15,7 +15,7 @@ type Screen = 'who' | 'hub' | 'facts' | 'setup' | 'session' | 'summary' | 'grown
 
 export default function App() {
   const [db, setDb] = useState<Db>(load);
-  const [screen, setScreen] = useState<Screen>(needsWho() ? 'who' : 'hub');
+  const [screen, setScreen] = useState<Screen>(needsWho() || /[?&]who=1/.test(location.search) ? 'who' : 'hub');
   const [pre, setPre] = useState<string[]>([]);
   const [, bump] = useState(0);
   const update = (fn: (d: Db) => Db) => setDb((d) => { const n = fn(d); save(n); return n; });
@@ -38,13 +38,46 @@ export default function App() {
   const choose = (id: string) => { setActive(id); setDb(load()); setScreen('hub'); };
 
   if (screen === 'who') return <Who onChoose={choose} />;
-  if (screen === 'session' && db.inProgress)
-    return <SessionView db={db} update={update} onPause={() => setScreen('facts')} onDone={() => setScreen('summary')} />;
-  if (screen === 'summary') return <Summary db={db} onHome={() => setScreen('facts')} />;
-  if (screen === 'grownups') return <Grownups db={db} update={update} onBack={() => setScreen('hub')} onRemoved={() => { bump((n) => n + 1); if (!activeProfile()) setScreen('who'); }} />;
-  if (screen === 'setup') return <Setup db={db} pre={pre} onStart={startOrResume} onBack={() => setScreen('facts')} />;
-  if (screen === 'facts') return <FactsHome db={db} update={update} onStart={startOrResume} onSetup={(ids) => { setPre(ids ?? []); setScreen('setup'); }} onWho={() => setScreen('who')} onBack={() => setScreen('hub')} />;
-  return <Hub db={db} onFacts={() => setScreen('facts')} onGrownups={() => setScreen('grownups')} onWho={() => setScreen('who')} />;
+  let view: JSX.Element;
+  if (screen === 'session' && db.inProgress) view =
+    <SessionView db={db} update={update} onPause={() => setScreen('facts')} onDone={() => setScreen('summary')} />;
+  else if (screen === 'summary') view = <Summary db={db} onHome={() => setScreen('facts')} />;
+  else if (screen === 'grownups') view = <Grownups db={db} update={update} onBack={() => setScreen('hub')} onRemoved={() => { bump((n) => n + 1); if (!activeProfile()) setScreen('who'); }} />;
+  else if (screen === 'setup') view = <Setup db={db} pre={pre} onStart={startOrResume} onBack={() => setScreen('facts')} />;
+  else if (screen === 'facts') view = <FactsHome db={db} update={update} onStart={startOrResume} onSetup={(ids) => { setPre(ids ?? []); setScreen('setup'); }} onWho={() => setScreen('who')} onBack={() => setScreen('hub')} />;
+  else view = <Hub db={db} onFacts={() => setScreen('facts')} onGrownups={() => setScreen('grownups')} onWho={() => setScreen('who')} />;
+
+  return <>{view}<PlayerMenu onChoose={choose} /></>;
+}
+
+function PlayerMenu({ onChoose }: { onChoose: (id: string) => void }) {
+  const [open, setOpen] = useState(false);
+  const [adding, setAdding] = useState(false);
+  const [name, setName] = useState('');
+  const me = activeProfile();
+  if (!me) return null;
+  const add = () => { if (!name.trim()) return; const p = addProfile(name); setName(''); setAdding(false); setOpen(false); onChoose(p.id); };
+  return (
+    <div className="pmenu">
+      <button className="pchip" aria-haspopup="true" aria-expanded={open} onClick={() => setOpen(!open)}><i>{me.name.charAt(0).toUpperCase()}</i>{me.name} ▾</button>
+      {open && (
+        <div className="ppop" role="menu">
+          <p className="eyebrow">Who's playing?</p>
+          {profiles().map((p) => (
+            <button key={p.id} role="menuitem" className="pitem" aria-current={p.id === me.id} onClick={() => { setOpen(false); onChoose(p.id); }}>
+              <i>{p.name.charAt(0).toUpperCase()}</i><span>{p.name}</span>{p.id === me.id && <b>✓</b>}
+            </button>
+          ))}
+          {adding ? (
+            <form onSubmit={(e) => { e.preventDefault(); add(); }}>
+              <input value={name} maxLength={20} autoFocus autoComplete="off" placeholder="Name" aria-label="New player's name" onChange={(e) => setName(e.target.value)} />
+              <button className="primary" type="submit" disabled={!name.trim()}>Add</button>
+            </form>
+          ) : <button className="pitem" onClick={() => setAdding(true)}><i>+</i><span>Add someone</span></button>}
+        </div>
+      )}
+    </div>
+  );
 }
 
 function Who({ onChoose }: { onChoose: (id: string) => void }) {
@@ -165,7 +198,6 @@ function Hub({ db, onFacts, onGrownups, onWho }: { db: Db; onFacts: () => void; 
   const mood = brand.member ? `${brand.label} · ${brand.member}'s color` : `${brand.label} palette`;
   return (
     <main className="home">
-      {activeProfile() && <button className="link whoami" onClick={onWho}>Playing as <b>{activeProfile()!.name}</b> · Switch</button>}
       <div className="logo"><Mark size={84} /><h1 className="brand">MATHSEYE<small>Unit {unit}</small></h1></div>
       <p className="mood"><span style={{ '--chip': brand.bg } as CSSProperties}><Charm name={brand.icon} /></span>{mood}</p>
       <nav className="tiles3" aria-label="Sections">
@@ -190,7 +222,7 @@ function FactsHome({ db, update, onStart, onSetup, onWho, onBack }: { db: Db; up
   const setMode = (m: 'unit' | 'general') => update((d) => ({ ...d, settings: { ...d.settings, factsMode: m } }));
   return (
     <main className="home">
-      <div className="top"><button className="link" onClick={onBack}>← Home</button>{activeProfile() && <button className="link" onClick={onWho}>{activeProfile()!.name} · Switch</button>}</div>
+      <div className="top"><button className="link" onClick={onBack}>← Home</button></div>
       <button className="logobtn" onClick={onBack} aria-label="Mathseye, back to home"><Mark size={56} /><span className="wm">MATHSEYE</span></button>
       <h1 className="h1">MathFacts</h1>
       <div className="seg" role="group" aria-label="Which facts">

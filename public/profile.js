@@ -7,3 +7,17 @@
   } catch (e) {}
   window.mathseyeNs = ns;
 })();
+
+/* Top-right "who is playing" label on the static pages; tapping it opens the player picker on the home screen. */
+document.addEventListener('DOMContentLoaded', function () {
+  try {
+    var id = localStorage.getItem('mathseye.profile'), list = JSON.parse(localStorage.getItem('mathseye.profiles') || '[]'), me = null;
+    for (var i = 0; i < list.length; i++) if (list[i].id === id) me = list[i];
+    if (!me) return;
+    var a = document.createElement('a'); a.href = '../?who=1'; a.className = 'nofrac';
+    a.setAttribute('aria-label', 'Playing as ' + me.name + '. Tap to switch or add a player.');
+    a.textContent = me.name + ' ▾';
+    a.style.cssText = 'position:fixed;top:10px;right:12px;z-index:50;padding:6px 14px;border-radius:999px;font:600 15px system-ui,sans-serif;text-decoration:none;background:var(--panel2,#2a2540);color:var(--fg,var(--text,#f1ecd8));border:1px solid rgba(128,128,128,.4)';
+    document.body.appendChild(a);
+  } catch (e) {}
+});
