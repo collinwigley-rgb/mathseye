@@ -37,7 +37,7 @@
   function unsent() { return list().filter(function (f) { return !f.sent; }).length; }
   window.addEventListener('online', function () { flush(); });
   setTimeout(flush, 1500);
-  var TAGS = ['The answer looks wrong', 'Hard to read', "I don't get it", 'Something broke', 'Good idea'];
+  var TAGS = ['The answer looks wrong', 'Hard to read', 'Fix image', "I don't get it", 'Something broke', 'Good idea'];   // "Fix image": the picture is cut off, missing or wrong
   function open(ctx) {
     inject(); ctx = ctx || {};
     var bg = document.createElement('div'); bg.className = 'fbbg';
@@ -54,7 +54,7 @@
     bg.querySelector('.no').onclick = close;
     bg.querySelector('.go').onclick = function () {
       var note = bg.querySelector('#fb-note').value.trim();
-      var l = list(); l.push({ id: Date.now().toString(36), at: new Date().toISOString(), build: stamp(), player: who(), ref: ctx.ref || '', text: ctx.text || '', where: ctx.where || '', extra: ctx.extra || {}, tags: picked, note: note });
+      var l = list(); l.push({ id: Date.now().toString(36), at: new Date().toISOString(), build: stamp(), player: who(), ref: ctx.ref || '', text: ctx.text || '', where: ctx.where || '', extra: ctx.extra || {}, image: ctx.image || '', tags: picked, note: note });
       save(l);
       var sheet = bg.querySelector('.fbsheet');
       sheet.innerHTML = '<h2>Thanks, noted.</h2><p>' + 'Sending it to a grown-up\u2026' + '</p>';
@@ -67,7 +67,7 @@
     return (l || list()).map(function (f) {
       var x = f.extra || [], ex = Object.keys(f.extra || {}).map(function (k) { return k + '=' + f.extra[k]; }).join(', ');
       return [(f.ref || '(no ref)') + ' · ' + (f.where || '') + (f.player ? ' · ' + f.player : '') + ' · ' + f.at.slice(0, 16).replace('T', ' ') + 'Z · build ' + f.build,
-        f.text ? 'Problem: ' + f.text : '', (f.tags && f.tags.length ? 'Tags: ' + f.tags.join('; ') : ''), f.note ? 'Note: ' + f.note : '', ex ? 'State: ' + ex : ''].filter(Boolean).join('\n');
+        f.text ? 'Problem: ' + f.text : '', (f.tags && f.tags.length ? 'Tags: ' + f.tags.join('; ') : ''), f.note ? 'Note: ' + f.note : '', ex ? 'State: ' + ex : '', f.image ? 'Picture: ' + f.image : ''].filter(Boolean).join('\n');
     }).join('\n\n');
   }
   window.mathseyeFeedback = { open: open, flush: flush, unsent: unsent, configured: configured, list: list, text: asText, clear: function () { save([]); }, button: function (ctxFn) { inject(); var b = document.createElement('button'); b.className = 'fbbtn'; b.type = 'button'; b.textContent = '⚑ Flag a problem'; b.onclick = function () { open(ctxFn()); }; return b; } };

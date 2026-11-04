@@ -546,7 +546,7 @@ function Summary({ db, onHome }: { db: Db; onHome: () => void }) {
   );
 }
 
-type Note = { key: string; id: string; at: string; ref: string; text: string; note: string; tags: string[]; player: string; where: string; build: string };
+type Note = { key: string; id: string; at: string; ref: string; text: string; note: string; tags: string[]; player: string; where: string; build: string; image?: string };
 
 /** Notes players flagged. They live on the server; this lists them for a grown-up (newest first). */
 function FeedbackList() {
@@ -568,7 +568,7 @@ function FeedbackList() {
   };
   useEffect(() => { void fb?.flush().then(() => load()); }, []);
   const remove = async (n: Note) => { await fetch(`/api/feedback?k=${encodeURIComponent(n.key)}`, { method: 'DELETE', headers: key ? { 'X-Admin-Key': key } : {} }); setNotes((l) => (l ?? []).filter((x) => x.key !== n.key)); };
-  const text = () => (notes ?? []).map((n) => `${n.ref || '(no ref)'} · ${n.where} · ${n.player} · ${n.at.slice(0, 16).replace('T', ' ')}Z · build ${n.build}\nProblem: ${n.text}\n${n.tags.length ? 'Tags: ' + n.tags.join('; ') + '\n' : ''}Note: ${n.note}`).join('\n\n');
+  const text = () => (notes ?? []).map((n) => `${n.ref || '(no ref)'} · ${n.where} · ${n.player} · ${n.at.slice(0, 16).replace('T', ' ')}Z · build ${n.build}\nProblem: ${n.text}\n${n.tags.length ? 'Tags: ' + n.tags.join('; ') + '\n' : ''}${n.image ? 'Picture: ' + n.image + '\n' : ''}Note: ${n.note}`).join('\n\n');
   const copy = async () => { try { await navigator.clipboard.writeText(text()); setMsg('Copied.'); } catch { setMsg('Could not copy.'); } };
   const unsent = fb?.unsent() ?? 0;
   if (state === 'loading') return <p className="muted">Loading notes…</p>;
@@ -586,7 +586,7 @@ function FeedbackList() {
       {!notes?.length && <p className="muted">No notes yet. Players can tap "Flag a problem" on any problem.</p>}
       {(notes ?? []).map((n) => (
         <div key={n.key} className="mrow note">
-          <span><b>{n.ref || n.where}</b> <small className="muted">{n.player} · {n.at.slice(0, 16).replace('T', ' ')}</small><br />{n.tags.length > 0 && <small className="muted">{n.tags.join(' · ')}<br /></small>}{n.note || <i className="muted">(no note)</i>}</span>
+          <span><b>{n.ref || n.where}</b> <small className="muted">{n.player} · {n.at.slice(0, 16).replace('T', ' ')}</small><br />{n.tags.length > 0 && <small className="muted">{n.tags.join(' · ')}<br /></small>}{n.image && <small className="muted">Picture: {n.image}<br /></small>}{n.note || <i className="muted">(no note)</i>}</span>
           <button className="ghost" onClick={() => void remove(n)}>Done</button>
         </div>
       ))}

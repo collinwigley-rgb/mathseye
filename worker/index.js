@@ -22,7 +22,7 @@ export default {
       const id = clip(b.id, 24).replace(/[^a-z0-9]/gi, '') || Math.random().toString(36).slice(2, 10);
       const note = {
         id, at, clientAt: clip(b.at, 40), build: clip(b.build, 80), player: clip(b.player, 40), ref: clip(b.ref, 60),
-        text: clip(b.text, 1500), where: clip(b.where, 200), note: clip(b.note, 2000),
+        text: clip(b.text, 1500), image: clip(b.image, 120), where: clip(b.where, 200), note: clip(b.note, 2000),
         tags: Array.isArray(b.tags) ? b.tags.slice(0, 8).map((t) => clip(t, 60)) : [],
         extra: b.extra && typeof b.extra === 'object' ? JSON.parse(clip(JSON.stringify(b.extra), 600) || '{}') : {},
       };
