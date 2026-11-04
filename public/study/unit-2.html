@@ -255,16 +255,24 @@ function lessonStatus(sub){ const wc = workCount(sub); if (wc >= 2) return {key:
 /* A problem she gets wrong or asks for help on goes on a "come back to this" list until she solves it 3 times in a row with no wrong answers and no help */
 function flagWork(id, st){ if (st && st.flagged) return; if (st) st.flagged = true; save.work = save.work || {}; const w = save.work[id] = save.work[id] || {n:0, t:0, c:0}; w.n++; w.t = Date.now(); w.c = 0; persist(); }
 const workCount = sub => Object.keys(save.work || {}).filter(id => byId[id] && (!sub || byId[id].sub === sub)).length;
+/* "new" = never opened before; "work" = on the come-back list (wrong or asked for help, needs 3 clean solves in a row) */
+const inLessons = (p, lessons) => !lessons.length || lessons.includes(p.sub);
+const isUnseen = p => !save.solved[p.id] && !(save.work || {})[p.id] && !(save.seen || {})[p.id];
+const unseenCount = lessons => probs.filter(p => inLessons(p, lessons) && isUnseen(p)).length;
+const workIn = lessons => probs.filter(p => inLessons(p, lessons) && (save.work || {})[p.id]).length;
 const res0done = m => !!(m.res[m.ids[m.i]] && m.res[m.ids[m.i]].done);
-const plan = () => Object.assign({mode:"timed", minutes:15, lessons:[]}, save.plan || {});
+const plan = () => Object.assign({mode:"timed", minutes:15, lessons:[], focus:"mix"}, save.plan || {});
 const setPlan = ch => { save.plan = Object.assign(plan(), ch); persist(); render(); };
 /* about 2 minutes a problem: 10 min = 5 problems */
 const sizeFor = pl => pl.mode === "endless" ? 5 : Math.max(3, Math.round(pl.minutes / 2));
 /* Take problems one lesson at a time, in turn, so a longer set touches every lesson picked (or all of 2.1 to 2.8) */
-function pickBatch(size, lessons, exclude){
+function pickBatch(size, lessons, exclude, focus){
+  focus = focus || "mix";
   const ps = probs.filter(p => (!lessons.length || lessons.includes(p.sub)) && !exclude.includes(p.id));
   // Problems she got wrong or needed help on come back first (new numbers if she has already solved them)
   const W = save.work || {}, workAll = ps.filter(p => W[p.id]).sort((a, b) => (W[b.id].n - W[a.id].n) || (W[a.id].t - W[b.id].t));
+  if (focus === "work") { const pick = workAll.slice(0, size); return {ids: shuf(pick.map(p => p.id)), rev: pick.filter(p => save.solved[p.id]).map(p => p.id), work: pick.map(p => p.id)}; }
+  if (focus === "new") { const un0 = shuf(ps.filter(isUnseen)), spread0 = []; const groups = shuf(lessons.length ? lessons : DATA.subs).sort((x, y) => lessonStatus(y).need - lessonStatus(x).need).map(s => un0.filter(p => p.sub === s)); let i = 0; while (spread0.length < size && groups.some(g => g.length)) { const g = groups[i % groups.length]; if (g.length) spread0.push(g.shift().id); i++; } return {ids: shuf(spread0), rev: [], work: []}; }
   const workPick = workAll.slice(0, Math.min(workAll.length, Math.max(2, Math.round(size * 0.4)))), workIds = workPick.map(p => p.id);
   const rest = ps.filter(p => !workIds.includes(p.id));
   const un = shuf(rest.filter(p => !save.solved[p.id])), solved = shuf(rest.filter(p => save.solved[p.id]));
@@ -275,8 +283,9 @@ function pickBatch(size, lessons, exclude){
   return {ids: shuf([...workFresh, ...workRev, ...fresh, ...rev]), rev: [...workRev, ...rev], work: workIds};
 }
 function buildMission(only){
-  const pl = plan(), lessons = only ? [only] : pl.lessons, b = pickBatch(sizeFor(pl), lessons, []);
-  save.mission = {ids:b.ids, rev:b.rev, work:b.work, i:0, res:{}, lesson: only || null, lessons, endless: !only && pl.mode === "endless"}; persist(); S.cur = null; go("mission"); }
+  const pl = plan(), lessons = only ? [only] : pl.lessons, focus = only ? "mix" : pl.focus, b = pickBatch(sizeFor(pl), lessons, [], focus);
+  if (!b.ids.length) return;
+  save.mission = {ids:b.ids, rev:b.rev, work:b.work, focus, i:0, res:{}, lesson: only || null, lessons, endless: !only && pl.mode === "endless"}; persist(); S.cur = null; go("mission"); }
 
 /* ---------- views ---------- */
 const VIEWS = {
@@ -299,7 +308,12 @@ home(){ const total = probs.length, done = probs.filter(p => save.solved[p.id]).
     su.querySelectorAll(".sizes:last-of-type button").forEach(b => b.onclick = () => setPlan({lessons: b.dataset.k === "all" ? [] : (pl.lessons.length ? pl.lessons : [DATA.subs[0]])}));
     if (pl.lessons.length) { const lst = $(`<div class="lpick">${DATA.subs.map(sb => `<button data-s="${sb}" aria-pressed="${pl.lessons.includes(sb)}"><b>Unit 2 · Lesson ${sb}</b><span>${esc(DATA.lessons[sb].title)}</span><i>${pl.lessons.includes(sb) ? "\u2713" : ""}</i><em class="badge ${lessonStatus(sb).key}">${lessonStatus(sb).label}</em><small>${esc(lessonStatus(sb).why)}</small></button>`).join("")}</div>`);
       lst.querySelectorAll("button").forEach(b => b.onclick = () => { const on = pl.lessons.includes(b.dataset.s), next = on ? pl.lessons.filter(x => x !== b.dataset.s) : [...pl.lessons, b.dataset.s]; setPlan({lessons: next.length ? DATA.subs.filter(x => next.includes(x)) : [b.dataset.s]}); }); su.append(lst); }
-    su.append($(`<button class="btn primary big" id="go">Start</button>`)); su.querySelector("#go").onclick = () => buildMission(null);
+    const nu = unseenCount(pl.lessons), nw = workIn(pl.lessons);
+    su.append($(`<h2>Which problems?</h2>`), $(seg("Which problems", [{k:"mix", t:"A mix", on: pl.focus === "mix"}, {k:"new", t:`New ones (${nu})`, on: pl.focus === "new"}, {k:"work", t:`Need work (${nw})`, on: pl.focus === "work"}])));
+    su.querySelectorAll(".sizes:last-of-type button").forEach(b => b.onclick = () => setPlan({focus:b.dataset.k}));
+    const none = pl.focus === "new" ? nu === 0 : pl.focus === "work" ? nw === 0 : false;
+    su.append($(`<p class="lead muted">${pl.focus === "new" ? (nu ? "Problems you haven't seen yet." : "You've seen every problem here. Try a mix.") : pl.focus === "work" ? (nw ? "Problems you missed or needed help on. Get each one right 3 times in a row, with no help, and it's done." : "Nothing to work on right now. Nice.") : "New problems, problems to come back to, and a few to review."}</p>`));
+    su.append($(`<button class="btn primary big" id="go" ${none ? "disabled" : ""}>Start</button>`)); su.querySelector("#go").onclick = () => buildMission(null);
   }
   const drawSw = () => { const box = el.querySelector("#sw"); box.innerHTML = ""; const cur = getBrand();
     const label = (b) => b.member ? (BRANDS.filter(x => x.member === b.member).length > 1 ? b.member + " · " + b.label : b.member) : b.label;
@@ -314,11 +328,12 @@ cheat(){ const el = $(`<div class="stack"></div>`); el.append(backBar("Home", ()
   DATA.subs.forEach(s => { const L = DATA.lessons[s], open = S.open === s, wrap = $(`<div></div>`), b = $(`<button class="acc" aria-expanded="${open}"><span>${s} · ${esc(L.title)}</span><span aria-hidden="true">${open?"−":"+"}</span></button>`); b.onclick = () => { S.open = open ? null : s; render(); }; wrap.append(b);
     if (open) { const c = $(`<div class="accb"><p class="lead">${esc(L.move)}</p><p class="hook">${esc(L.hook)}</p><p class="muted" style="margin:0"><b>Watch out:</b> ${esc(L.trap)}</p><button class="btn primary">Try ${save.size || 10} problems</button></div>`); c.querySelector("button").onclick = () => buildMission(s); wrap.append(c); } el.append(wrap); }); return el; },
 mission(){ const m = save.mission;
-  if (m && m.endless && m.i >= m.ids.length) { const b = pickBatch(5, m.lessons || [], m.ids); if (b.ids.length) { m.ids.push(...b.ids); m.rev.push(...b.rev); m.work = [...(m.work || []), ...b.work]; persist(); } }
+  if (m && m.endless && m.i >= m.ids.length) { const b = pickBatch(5, m.lessons || [], m.ids, m.focus); if (b.ids.length) { m.ids.push(...b.ids); m.rev.push(...b.rev); m.work = [...(m.work || []), ...b.work]; persist(); } }
   if (!m || m.i >= m.ids.length) return VIEWS.summary();
   const base = byId[m.ids[m.i]], baseRes = m.res[base.id] = m.res[base.id] || {hints:0, tries:0, done:false};
   if (!S.cur || S.cur.id !== base.id) { S.cur = {t0:Date.now(), id:base.id, input:"", pick:null, msg:"", win:false, steps:false, shake:false, v:-1, vn:-1, vres:null};
     if ((m.rev || []).includes(base.id) && base.variants.length) { const n = base.variants.length; S.cur.vn = Math.floor(Math.random() * n); S.cur.v = S.cur.vn % n; S.cur.vn++; S.cur.vres = {hints:0, tries:0, done:false}; } }
+  if (!(save.seen || {})[base.id] && !(S.cur && S.cur.v >= 0)) { save.seen = save.seen || {}; save.seen[base.id] = true; persist(); }
   const st = S.cur, p = st.v >= 0 ? Object.assign({}, base, base.variants[st.v]) : base, res = st.v >= 0 ? st.vres : baseRes, solved = res.done; const el = $(`<div class="stack"></div>`);
   const freshOne = () => { const n = base.variants.length; if (st.vn < 0) st.vn = Math.floor(Math.random() * n); st.v = st.vn % n; st.vn++; st.vres = {hints:0, tries:0, done:false}; Object.assign(st, {input:"", pick:null, msg:"", win:false, steps:false, flagged:false, t0:Date.now()}); render(); };
   const top = $(`<div class="top"><button class="btn quiet" id="exit">✕ Stop for now</button>${m.endless ? `<span class="muted">${m.i} done</span><button class="btn quiet" id="fin">I'm done</button>` : `<div class="dots" aria-label="Problem ${m.i+1} of ${m.ids.length}">${m.ids.map((id,k)=>`<i class="${m.res[id]&&m.res[id].done?'on':k===m.i?'now':''}"></i>`).join("")}</div>`}</div>`); top.querySelector("#exit").onclick = () => go("home"); const fin = top.querySelector("#fin"); if (fin) fin.onclick = () => { m.ids = m.ids.slice(0, m.i + (res0done(m) ? 1 : 0)); m.endless = false; persist(); go("summary"); }; el.append(top);
