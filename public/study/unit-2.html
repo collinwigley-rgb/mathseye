@@ -39,7 +39,7 @@ a.btn{display:inline-flex;align-items:center;text-decoration:none}
 .acc{background:var(--panel);width:100%;text-align:left;padding:18px 20px;min-height:64px;display:flex;justify-content:space-between;align-items:center;font-weight:600}
 .accb{background:var(--panel);border-radius:0 0 20px 20px;margin-top:-10px;padding:22px 20px 20px;display:flex;flex-direction:column;gap:12px}
 .hook{margin:0;padding:12px 16px;background:var(--panel2);border-radius:14px;font-weight:600;font-size:20px}
-.problem{font-size:clamp(20px,4.4vw,26px);font-weight:500;margin:0;line-height:1.3}.fx button{background:none;border:0;padding:2px 0;color:var(--accent);font-size:15px;font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer;text-align:left}
+.problem{font-size:clamp(20px,4.4vw,26px);font-weight:500;margin:0;line-height:1.3}.lpick{display:flex;flex-direction:column;gap:8px}.lpick button{display:flex;gap:10px;align-items:baseline;text-align:left;padding:12px 14px;border-radius:14px;border:1px solid var(--line,rgba(128,128,128,.4));background:var(--panel2);color:inherit;font:inherit;cursor:pointer}.lpick button span{flex:1;color:var(--muted)}.lpick button[aria-pressed=true]{background:var(--accent);color:var(--accent-fg);border-color:transparent}.lpick button[aria-pressed=true] span{color:inherit}.sizes{display:flex;gap:8px;flex-wrap:wrap}.sizes button{padding:10px 16px;border-radius:14px;border:1px solid var(--line,rgba(128,128,128,.4));background:var(--panel2);color:inherit;font:inherit;font-weight:600;cursor:pointer}.sizes button[aria-pressed=true]{background:var(--accent);color:var(--accent-fg);border-color:transparent}.fx button{background:none;border:0;padding:2px 0;color:var(--accent);font-size:15px;font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer;text-align:left}
 table.t{border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:22px}table.t th,table.t td{border:1px solid var(--line);padding:10px 18px;text-align:center}table.t th{background:var(--panel2);font-family:var(--display)}
 .tw{overflow-x:auto}
 .answer{font-size:30px;min-height:50px;padding:4px 14px;background:var(--panel2);border-radius:16px;font-variant-numeric:tabular-nums;color:var(--accent);display:flex;align-items:center}
@@ -239,45 +239,70 @@ const backBar = (label, fn) => { const t = $(`<div class="top"><button class="bt
 
 /* ---------- missions ---------- */
 const shuf = (xs) => { const a = xs.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
-function buildMission(lesson){
-  const ps = probs.filter(p => !lesson || p.sub === lesson), un = shuf(ps.filter(p => !save.solved[p.id])), solved = shuf(ps.filter(p => save.solved[p.id]));
-  let fresh = [];
-  if (lesson) fresh = un.slice(0, solved.length ? 4 : 5).map(p => p.id);
-  else { const groups = shuf(DATA.subs).map(s => un.filter(p => p.sub === s)), want = solved.length ? 4 : 5; let i = 0; while (fresh.length < want && groups.some(g => g.length)) { const g = groups[i % groups.length]; if (g.length) fresh.push(g.shift().id); i++; } }
+const res0done = m => !!(m.res[m.ids[m.i]] && m.res[m.ids[m.i]].done);
+const plan = () => Object.assign({mode:"timed", minutes:15, lessons:[]}, save.plan || {});
+const setPlan = ch => { save.plan = Object.assign(plan(), ch); persist(); render(); };
+/* about 2 minutes a problem: 10 min = 5 problems */
+const sizeFor = pl => pl.mode === "endless" ? 5 : Math.max(3, Math.round(pl.minutes / 2));
+/* Take problems one lesson at a time, in turn, so a longer set touches every lesson picked (or all of 2.1 to 2.8) */
+function pickBatch(size, lessons, exclude){
+  const ps = probs.filter(p => (!lessons.length || lessons.includes(p.sub)) && !exclude.includes(p.id));
+  const un = shuf(ps.filter(p => !save.solved[p.id])), solved = shuf(ps.filter(p => save.solved[p.id]));
+  const spread = (list, want) => { const groups = shuf(lessons.length ? lessons : DATA.subs).map(s => list.filter(p => p.sub === s)), out = []; let i = 0; while (out.length < want && groups.some(g => g.length)) { const g = groups[i % groups.length]; if (g.length) out.push(g.shift().id); i++; } return out; };
   // Spaced review: problems she already solved come back with NEW numbers, so nothing gets stale
-  const rev = solved.slice(0, 5 - fresh.length).map(p => p.id);
-  const ids = shuf([...fresh, ...rev]);
-  save.mission = {ids, rev, i:0, res:{}, lesson: lesson || null}; persist(); S.cur = null; go("mission"); }
+  const revWant = solved.length ? Math.max(1, Math.round(size * 0.2)) : 0;
+  const fresh = spread(un, size - revWant), rev = spread(solved, size - fresh.length);
+  return {ids: shuf([...fresh, ...rev]), rev};
+}
+function buildMission(only){
+  const pl = plan(), lessons = only ? [only] : pl.lessons, b = pickBatch(sizeFor(pl), lessons, []);
+  save.mission = {ids:b.ids, rev:b.rev, i:0, res:{}, lesson: only || null, lessons, endless: !only && pl.mode === "endless"}; persist(); S.cur = null; go("mission"); }
 
 /* ---------- views ---------- */
 const VIEWS = {
 home(){ const total = probs.length, done = probs.filter(p => save.solved[p.id]).length, m = save.mission, resume = m && m.i < m.ids.length;
   const inApp = location.pathname.indexOf("/study/") > -1;
   const el = $(`<div class="stack"><header>${inApp ? `<a class="logo" href="../" aria-label="Mathseye, back to home">${MARK}<span class="wm">MATHSEYE</span></a>` : `<div class="logo">${MARK}<span class="wm">MATHSEYE</span></div>`}<h1 style="margin-top:14px">Unit 2 Study Guide</h1><p class="sub">Pick one thing. Small steps count.</p></header>
-  <section class="card"><p class="eyebrow">Tonight's set</p><h2>${resume ? `Keep going: ${m.i} of ${m.ids.length} done` : "Ready for a quick mission?"}</h2><p class="lead muted">5 problems, about 10 minutes. You can stop anytime.</p><button class="btn primary big" id="go">${resume ? "Keep going" : "Start a mission"}</button></section>
+  <section class="card" id="setup"></section>
   <div class="grid3"><button class="btn" id="pick">Pick a lesson</button><button class="btn" id="cheat">Cheat sheet</button><button class="btn" id="test">Practice test</button></div>
   <section class="card"><p class="eyebrow">Your progress</p><div class="bar" aria-hidden="true"><i style="width:${done/total*100}%"></i></div><p class="lead" style="margin:0">${done} of ${total} solved${save.day.d===today()&&save.day.n?` · ${save.day.n} today`:""}</p></section><section class="card"><p class="eyebrow">Your color</p><div class="swatches" id="sw"></div></section><div id="rs"></div></div>`);
+  const su = el.querySelector("#setup"), pl = plan();
+  if (resume) { su.append($(`<div><p class="eyebrow">Tonight's set</p><h2>Keep going: ${m.i} of ${m.ids.length}${m.endless ? "+" : ""} done</h2></div>`), $(`<button class="btn primary big" id="go">Keep going</button>`), $(`<button class="btn quiet" id="fresh">Start a different set</button>`)); su.querySelector("#go").onclick = () => go("mission"); su.querySelector("#fresh").onclick = () => { save.mission = null; persist(); render(); }; }
+  else {
+    const seg = (label, opts) => `<div class="sizes" role="group" aria-label="${label}">${opts.map(o => `<button data-k="${o.k}" aria-pressed="${o.on}">${o.t}</button>`).join("")}</div>`;
+    su.append($(`<div><p class="eyebrow">Set up your practice</p><h2>How long?</h2></div>`),
+      $(seg("How long", [{k:"timed", t:"Set a time", on: pl.mode === "timed"}, {k:"endless", t:"Keep going", on: pl.mode === "endless"}])));
+    su.querySelectorAll(".sizes:last-of-type button").forEach(b => b.onclick = () => setPlan({mode:b.dataset.k}));
+    if (pl.mode === "timed") { su.append($(seg("Minutes", [10,15,20,30].map(n => ({k:n, t:n + " min", on: pl.minutes === n}))))); su.querySelectorAll(".sizes:last-of-type button").forEach(b => b.onclick = () => setPlan({minutes:+b.dataset.k})); su.append($(`<p class="lead muted">About ${sizeFor(pl)} problems.</p>`)); }
+    else su.append($(`<p class="lead muted">Problems keep coming until you tap I'm done.</p>`));
+    su.append($(`<h2>Which lessons?</h2>`), $(seg("Which lessons", [{k:"all", t:"Everything in Unit 2", on: !pl.lessons.length}, {k:"pick", t:"I'll pick", on: !!pl.lessons.length}])));
+    su.querySelectorAll(".sizes:last-of-type button").forEach(b => b.onclick = () => setPlan({lessons: b.dataset.k === "all" ? [] : (pl.lessons.length ? pl.lessons : [DATA.subs[0]])}));
+    if (pl.lessons.length) { const lst = $(`<div class="lpick">${DATA.subs.map(sb => `<button data-s="${sb}" aria-pressed="${pl.lessons.includes(sb)}"><b>Unit 2 · Lesson ${sb}</b><span>${esc(DATA.lessons[sb].title)}</span><i>${pl.lessons.includes(sb) ? "\u2713" : ""}</i></button>`).join("")}</div>`);
+      lst.querySelectorAll("button").forEach(b => b.onclick = () => { const on = pl.lessons.includes(b.dataset.s), next = on ? pl.lessons.filter(x => x !== b.dataset.s) : [...pl.lessons, b.dataset.s]; setPlan({lessons: next.length ? DATA.subs.filter(x => next.includes(x)) : [b.dataset.s]}); }); su.append(lst); }
+    su.append($(`<button class="btn primary big" id="go">Start</button>`)); su.querySelector("#go").onclick = () => buildMission(null);
+  }
   const drawSw = () => { const box = el.querySelector("#sw"); box.innerHTML = ""; const cur = getBrand();
     const label = (b) => b.member ? (BRANDS.filter(x => x.member === b.member).length > 1 ? b.member + " · " + b.label : b.member) : b.label;
     const chip = (b) => { const s = $(`<button class="sw" aria-pressed="${cur===b.id}"><i style="background:${b.accent};--chip:${b.accent}"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[b.icon] || ICONS.sparkle}</svg></i><span>${esc(label(b))}</span></button>`); s.onclick = () => { try { localStorage.setItem("mathseye.brand", b.id); } catch(e) {} applyBrand(b.id); drawSw(); }; return s; };
     const mem = $(`<div class="swatches six"></div>`); MEMBERS.forEach(m => BRANDS.filter(b => b.member === m).forEach(b => mem.append(chip(b)))); box.append(mem);
     const other = BRANDS.filter(b => !b.member); if (other.length) { const d = $(`<details class="more"${other.some(b => b.id === cur) ? " open" : ""}><summary>More palettes</summary><div class="swatches"></div></details>`); other.forEach(b => d.querySelector(".swatches").append(chip(b))); box.append(d); } }; drawSw();
   const rs = el.querySelector("#rs"), askReset = () => { rs.innerHTML = ""; const b = $(`<button class="btn quiet">Reset my progress</button>`); b.onclick = () => { rs.innerHTML = ""; const box = $(`<div class="card"><p class="lead" style="margin:0">Erase all your progress in this study guide? This can't be undone.</p><div class="row"><button class="btn primary" id="yes">Yes, reset</button><button class="btn" id="no">Keep my progress</button></div></div>`); box.querySelector("#yes").onclick = () => { save = {solved:{}, clean:{}, mission:null, day:{d:"", n:0}}; persist(); S.cur = null; S.test = null; go("home"); }; box.querySelector("#no").onclick = askReset; rs.append(box); box.querySelector("#no").focus(); }; rs.append(b); }; askReset();
-  el.querySelector("#go").onclick = () => resume ? go("mission") : buildMission(null);
-  el.querySelector("#pick").onclick = () => go("picker"); el.querySelector("#cheat").onclick = () => go("cheat", {open:null}); el.querySelector("#test").onclick = () => go("testIntro"); return el; },
-picker(){ const el = $(`<div class="stack"></div>`); el.append(backBar("Home", () => go("home")), $(`<header><h1>Pick a lesson</h1><p class="sub">Each one is a 5-problem mission.</p></header>`));
+    el.querySelector("#pick").onclick = () => go("picker"); el.querySelector("#cheat").onclick = () => go("cheat", {open:null}); el.querySelector("#test").onclick = () => go("testIntro"); return el; },
+picker(){ const el = $(`<div class="stack"></div>`); el.append(backBar("Home", () => go("home")), $(`<header><h1>Pick a lesson</h1><p class="sub">Practice just one lesson.</p></header>`));
   const t = $(`<div class="tiles"></div>`); DATA.subs.forEach(s => { const L = DATA.lessons[s], d = subDone(s), n = subAll(s), b = $(`<button class="tile"><small>Lesson ${s}</small><b>${esc(L.title)}</b><span class="bar" aria-hidden="true"><i style="width:${d/n*100}%"></i></span><small>${d} of ${n} solved</small></button>`); b.onclick = () => buildMission(s); t.append(b); }); el.append(t); return el; },
 cheat(){ const el = $(`<div class="stack"></div>`); el.append(backBar("Home", () => go("home")), $(`<header><h1>Cheat sheet</h1><p class="sub">Proportional means y is always the same number times x. That number is k, the unit rate.</p></header>`));
   DATA.subs.forEach(s => { const L = DATA.lessons[s], open = S.open === s, wrap = $(`<div></div>`), b = $(`<button class="acc" aria-expanded="${open}"><span>${s} · ${esc(L.title)}</span><span aria-hidden="true">${open?"−":"+"}</span></button>`); b.onclick = () => { S.open = open ? null : s; render(); }; wrap.append(b);
-    if (open) { const c = $(`<div class="accb"><p class="lead">${esc(L.move)}</p><p class="hook">${esc(L.hook)}</p><p class="muted" style="margin:0"><b>Watch out:</b> ${esc(L.trap)}</p><button class="btn primary">Try 5 problems</button></div>`); c.querySelector("button").onclick = () => buildMission(s); wrap.append(c); } el.append(wrap); }); return el; },
-mission(){ const m = save.mission; if (!m || m.i >= m.ids.length) return VIEWS.summary();
+    if (open) { const c = $(`<div class="accb"><p class="lead">${esc(L.move)}</p><p class="hook">${esc(L.hook)}</p><p class="muted" style="margin:0"><b>Watch out:</b> ${esc(L.trap)}</p><button class="btn primary">Try ${save.size || 10} problems</button></div>`); c.querySelector("button").onclick = () => buildMission(s); wrap.append(c); } el.append(wrap); }); return el; },
+mission(){ const m = save.mission;
+  if (m && m.endless && m.i >= m.ids.length) { const b = pickBatch(5, m.lessons || [], m.ids); if (b.ids.length) { m.ids.push(...b.ids); m.rev.push(...b.rev); persist(); } }
+  if (!m || m.i >= m.ids.length) return VIEWS.summary();
   const base = byId[m.ids[m.i]], baseRes = m.res[base.id] = m.res[base.id] || {hints:0, tries:0, done:false};
   if (!S.cur || S.cur.id !== base.id) { S.cur = {id:base.id, input:"", pick:null, msg:"", win:false, steps:false, shake:false, v:-1, vn:-1, vres:null};
     if ((m.rev || []).includes(base.id) && base.variants.length) { const n = base.variants.length; S.cur.vn = Math.floor(Math.random() * n); S.cur.v = S.cur.vn % n; S.cur.vn++; S.cur.vres = {hints:0, tries:0, done:false}; } }
   const st = S.cur, p = st.v >= 0 ? Object.assign({}, base, base.variants[st.v]) : base, res = st.v >= 0 ? st.vres : baseRes, solved = res.done; const el = $(`<div class="stack"></div>`);
   const freshOne = () => { const n = base.variants.length; if (st.vn < 0) st.vn = Math.floor(Math.random() * n); st.v = st.vn % n; st.vn++; st.vres = {hints:0, tries:0, done:false}; Object.assign(st, {input:"", pick:null, msg:"", win:false, steps:false}); render(); };
-  const top = $(`<div class="top"><button class="btn quiet" id="exit">✕ Stop for now</button><div class="dots" aria-label="Problem ${m.i+1} of ${m.ids.length}">${m.ids.map((id,k)=>`<i class="${m.res[id]&&m.res[id].done?'on':k===m.i?'now':''}"></i>`).join("")}</div></div>`); top.querySelector("#exit").onclick = () => go("home"); el.append(top);
-  const card = $(`<section class="card ${st.shake?'shake':''}"><p class="eyebrow">Lesson ${p.sub}${st.v >= 0 ? " · new numbers" : ""}</p><p class="problem">${esc(p.text)}</p><div class="fx"></div><div class="vis">${visual(p)}</div><div class="in"></div><div class="say" ${st.msg?"":"hidden"} aria-live="polite"></div><ul class="nudges"></ul><div class="pic"></div><div class="act"></div><span class="ref" aria-label="Reference number">#${p.ref}</span></section>`);
+  const top = $(`<div class="top"><button class="btn quiet" id="exit">✕ Stop for now</button>${m.endless ? `<span class="muted">${m.i} done</span><button class="btn quiet" id="fin">I'm done</button>` : `<div class="dots" aria-label="Problem ${m.i+1} of ${m.ids.length}">${m.ids.map((id,k)=>`<i class="${m.res[id]&&m.res[id].done?'on':k===m.i?'now':''}"></i>`).join("")}</div>`}</div>`); top.querySelector("#exit").onclick = () => go("home"); const fin = top.querySelector("#fin"); if (fin) fin.onclick = () => { m.ids = m.ids.slice(0, m.i + (res0done(m) ? 1 : 0)); m.endless = false; persist(); go("summary"); }; el.append(top);
+  const card = $(`<section class="card ${st.shake?'shake':''}"><p class="eyebrow">Unit 2 · Lesson ${p.sub} · ${esc(DATA.lessons[p.sub].title)}${st.v >= 0 ? " · new numbers" : ""}</p><p class="problem">${esc(p.text)}</p><div class="fx"></div><div class="vis">${visual(p)}</div><div class="in"></div><div class="say" ${st.msg?"":"hidden"} aria-live="polite"></div><ul class="nudges"></ul><div class="pic"></div><div class="act"></div><span class="ref" aria-label="Reference number">#${p.ref}</span></section>`);
   st.shake = false; const inp = card.querySelector(".in"), say = card.querySelector(".say"), nud = card.querySelector(".nudges"), pic = card.querySelector(".pic"), act = card.querySelector(".act"), fx = card.querySelector(".fx");
   const draw = () => {
     fx.innerHTML = ""; if (!res.done && ((p.facts || []).length || p.shortcut)) { const b = $(`<button>Math facts that could help ›</button>`); b.onclick = () => openSheet("facts", p); fx.append(b); }
@@ -294,7 +319,7 @@ mission(){ const m = save.mission; if (!m || m.i >= m.ids.length) return VIEWS.s
       const help = $(`<button class="btn ghost">Help</button>`); help.onclick = () => helpMenu(p); row.append(help); act.append(row);
       const sw = $(`<button class="btn quiet">Different numbers</button>`); sw.onclick = freshOne; act.append(sw);
     } else {
-      const row = $(`<div class="row"></div>`); const nx = $(`<button class="btn primary big">${m.i+1 < m.ids.length ? "Next problem" : "Finish mission"}</button>`); nx.onclick = () => { m.i++; S.cur = null; persist(); go("mission"); }; row.append(nx);
+      const row = $(`<div class="row"></div>`); const nx = $(`<button class="btn primary big">${m.endless || m.i+1 < m.ids.length ? "Next problem" : "Finish mission"}</button>`); nx.onclick = () => { m.i++; S.cur = null; persist(); go("mission"); }; row.append(nx);
       const sb = $(`<button class="btn quiet">${st.steps?"Hide the steps":"See how it works"}</button>`); sb.onclick = () => { st.steps = !st.steps; draw(); }; row.append(sb); act.append(row);
       const nr = $(`<div class="row"></div>`); const nw = $(`<button class="btn ghost">Try a new one like this</button>`); nw.onclick = freshOne; nr.append(nw); act.append(nr);
       const hb = $(`<div class="row"></div>`); const w = $(`<button class="btn ghost">Why am I learning this?</button>`); w.onclick = () => openSheet("why", p); const u = $(`<button class="btn ghost">What does this use?</button>`); u.onclick = () => openSheet("deps", p); hb.append(w, u); if ((p.facts || []).length || p.shortcut) { const f = $(`<button class="btn ghost">Math facts and shortcuts</button>`); f.onclick = () => openSheet("facts", p); hb.append(f); } act.append(hb); if (p.sense) act.append(senseCard(p.sense)); }
