@@ -1,5 +1,5 @@
 // Offline-first: cache everything we fetch from our own origin.
-const CACHE = 'mathseye-v2';
+const CACHE = 'mathseye-v3';
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(['./', './index.html', './manifest.webmanifest', './icon.svg', './study/unit-2.html'])));
   self.skipWaiting();
