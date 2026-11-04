@@ -1,0 +1,8 @@
+/sw.js
+  Cache-Control: no-cache
+/index.html
+  Cache-Control: no-cache
+/study/*
+  Cache-Control: no-cache
+/homework/*
+  Cache-Control: no-cache
