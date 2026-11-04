@@ -222,7 +222,6 @@ function FactsHome({ db, update, onStart, onSetup, onWho, onBack }: { db: Db; up
   const setMode = (m: 'unit' | 'general') => update((d) => ({ ...d, settings: { ...d.settings, factsMode: m } }));
   return (
     <main className="home">
-      <div className="top"><button className="link" onClick={onBack}>← Home</button></div>
       <button className="logobtn" onClick={onBack} aria-label="Mathseye, back to home"><Mark size={56} /><span className="wm">MATHSEYE</span></button>
       <h1 className="h1">MathFacts</h1>
       <div className="seg" role="group" aria-label="Which facts">

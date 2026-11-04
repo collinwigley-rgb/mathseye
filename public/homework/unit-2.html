@@ -237,7 +237,6 @@ document.addEventListener("keydown", e => { if (e.key === "Escape") document.get
 function go(view, extra){ Object.assign(S, extra || {}, {view}); render(); window.scrollTo(0, 0); }
 function render(){ const app = document.getElementById("app"); app.innerHTML = ""; app.append(VIEWS[S.view]()); const h = app.querySelector("h1,h2"); if (h) { h.tabIndex = -1; h.focus({preventScroll:true}); } }
 const backBar = (label, fn) => { const t = $(`<div class="top"><button class="btn quiet">← ${label}</button></div>`); t.querySelector("button").onclick = fn; return t; };
-const appHome = () => `<div class="top"><a class="btn quiet" href="../">← Home</a></div>`;
 const logo = () => `<a class="logo" href="../" aria-label="Mathseye, back to home">${MARK}<span class="wm">MATHSEYE</span></a>`;
 
 /* ---------- alternates: same lesson, same kind of problem, new numbers ---------- */
@@ -247,7 +246,7 @@ function newAlt(p){ const bySub = DATA.problems.filter(x => x.sub === p.sub), sa
   S.alt = {p:pick, input:"", pick:null, hints:0, tries:0, solved:false, steps:false, msg:"", win:false}; }
 
 const VIEWS = {
-home(){ const el = $(`<div class="stack">${appHome()}<header>${logo()}<h1 style="margin-top:14px">Unit 2 Homework</h1><p class="sub">You work each problem on your worksheet. I give nudges, never just the answer.</p></header></div>`);
+home(){ const el = $(`<div class="stack"><header>${logo()}<h1 style="margin-top:14px">Unit 2 Homework</h1><p class="sub">You work each problem on your worksheet. I give nudges, never just the answer.</p></header></div>`);
   const file = $(`<input type="file" accept=".json,application/json" id="f" hidden>`); el.append(file);
   const pick = () => file.click(); file.onchange = () => { if (file.files[0]) importFile(file.files[0], err => { S.err = err; render(); }); };
   if (!PACK) { const c = $(`<section class="card"><p class="eyebrow">One-time setup</p><h2>Add the homework pack</h2><p class="lead muted">This unit's worksheet problems are stored on this device only. A grown-up adds the pack file once. Nothing is posted online.</p>${S.err ? `<p class="errmsg" role="alert">${esc(S.err)}</p>` : ""}<button class="btn primary big" id="pk">Choose the pack file</button></section>`); c.querySelector("#pk").onclick = pick; el.append(c); return el; }
