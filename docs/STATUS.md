@@ -33,6 +33,7 @@
 - [x] Players: who's-using screen, separate progress per player (MathFacts, study guide, homework marks)
 - [x] MathFacts setup: Keep going or timed (5-30 min), Surprise me or I'll pick; smarter selection favors new/weak facts
 - [x] Netlify: build skipped for docs-only pushes (credits); batch pushes
+- [ ] Cloud sync (decided, not built; needs the Cloudflare project first): progress is saved on a small Cloudflare Worker keyed by the lowercased name she types, no PIN, no encryption (owner decision: low stakes). The player dropdown lists every name stored on the server. Store only the typed name and progress, nothing from the private worksheets. Device keeps the last player, works offline, merges by newest result per item.
 - [ ] Optional more variety: spot-the-trick and estimate card types
 - [ ] Assign the six seasonal palettes to members (owner to say which is whose)
 - [ ] Unit 3: upload weekly PDFs, build sheets as they come
