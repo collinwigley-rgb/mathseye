@@ -208,3 +208,5 @@ body { padding-top: 52px; }
   .mins button { font-size: 19px; padding: 14px 22px; }
 }
 .practice { padding-bottom: 44px; }
+
+.ppop .build { margin: 6px 4px 0; padding-top: 8px; border-top: 1px solid rgba(255,255,255,.15); font-size: 13px; color: var(--muted); text-align: center; user-select: text; -webkit-user-select: text; }

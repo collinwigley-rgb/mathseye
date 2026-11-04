@@ -21,3 +21,13 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.appendChild(a);
   } catch (e) {}
 });
+
+/* Small build stamp at the foot of the static pages (from /build.js), so "which version is live?" has an answer. */
+document.addEventListener('DOMContentLoaded', function () {
+  try {
+    var f = document.createElement('p');
+    f.textContent = 'Build ' + (window.mathseyeBuild || 'dev');
+    f.style.cssText = 'text-align:center;font:13px system-ui,sans-serif;opacity:.6;margin:20px 0 14px;user-select:text;-webkit-user-select:text';
+    document.body.appendChild(f);
+  } catch (e) {}
+});

@@ -88,6 +88,7 @@ function PlayerMenu({ onChoose }: { onChoose: (id: string) => void }) {
               <button className="primary" type="submit" disabled={!name.trim()}>Add</button>
             </form>
           ) : <button className="pitem" onClick={() => setAdding(true)}><i>+</i><span>Add someone</span></button>}
+          <p className="build" aria-label="Build number">Build {__BUILD__}</p>
         </div>
       )}
     </div>
