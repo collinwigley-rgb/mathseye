@@ -63,4 +63,5 @@ export interface Settings {
   manuallyUnlocked: string[];
   currentUnit?: number;
   factsMode?: 'unit' | 'general';
+  lastPlan?: import('./session').SessionPlan;
 }

@@ -4,39 +4,122 @@ import { TEMPLATES, TRICKS } from './content';
 import { checkAnswer } from './answer';
 import { GENERATORS, fill, seeded, MINUS } from './generators';
 import { newCard, review } from './scheduler';
-import { buildQueue, confidence, SESSION_MS, streak, trickMastery, tricksFor, type Focus } from './session';
+import { buildQueue, confidence, streak, trickMastery, tricksFor, type Focus, type Length, type SessionPlan } from './session';
+import { activeProfile, addProfile, needsWho, profiles, removeProfile, setActive, type Profile } from './profile';
 import Mark from './Mark';
 import { BRANDS, ICONS, MEMBERS, getBrand, setBrand, type BrandId } from './brand';
 import { fresh, load, save, today, type Db, type QueueItem } from './store';
 import type { Problem } from './types';
 
-type Screen = 'hub' | 'facts' | 'session' | 'summary' | 'grownups';
+type Screen = 'who' | 'hub' | 'facts' | 'setup' | 'session' | 'summary' | 'grownups';
 
 export default function App() {
   const [db, setDb] = useState<Db>(load);
-  const [screen, setScreen] = useState<Screen>('hub');
+  const [screen, setScreen] = useState<Screen>(needsWho() ? 'who' : 'hub');
+  const [pre, setPre] = useState<string[]>([]);
+  const [, bump] = useState(0);
   const update = (fn: (d: Db) => Db) => setDb((d) => { const n = fn(d); save(n); return n; });
 
-  // With no focus: pick up today's unfinished session. With a focus: start a fresh one.
-  const startOrResume = (focus?: Focus) => {
+  // With no plan: pick up today's unfinished session. With a plan: start a fresh one.
+  const startOrResume = (plan?: SessionPlan) => {
     update((d) => {
-      if (!focus && d.inProgress && d.inProgress.date === today()) return d;
+      if (!plan && d.inProgress && d.inProgress.date === today()) return d;
+      const p = plan ?? { focus: { kind: 'mix' } as Focus, length: { mode: 'continuous' } as Length };
       const id = String(Date.now());
       return {
         ...d,
-        inProgress: { date: today(), queue: buildQueue(d, Date.now(), focus), index: 0, startedAt: Date.now(), sessionId: id },
+        settings: { ...d.settings, lastPlan: plan ?? d.settings.lastPlan },
+        inProgress: { date: today(), queue: buildQueue(d, Date.now(), p.focus, p.length), index: 0, startedAt: Date.now(), sessionId: id, plan: p },
         sessions: [...d.sessions, { id, date: today(), startedAt: Date.now(), cardsSeen: 0 }],
       };
     });
     setScreen('session');
   };
+  const choose = (id: string) => { setActive(id); setDb(load()); setScreen('hub'); };
 
+  if (screen === 'who') return <Who onChoose={choose} />;
   if (screen === 'session' && db.inProgress)
     return <SessionView db={db} update={update} onPause={() => setScreen('facts')} onDone={() => setScreen('summary')} />;
   if (screen === 'summary') return <Summary db={db} onHome={() => setScreen('facts')} />;
-  if (screen === 'grownups') return <Grownups db={db} update={update} onBack={() => setScreen('hub')} />;
-  if (screen === 'facts') return <FactsHome db={db} update={update} onStart={startOrResume} onBack={() => setScreen('hub')} />;
-  return <Hub db={db} onFacts={() => setScreen('facts')} onGrownups={() => setScreen('grownups')} />;
+  if (screen === 'grownups') return <Grownups db={db} update={update} onBack={() => setScreen('hub')} onRemoved={() => { bump((n) => n + 1); if (!activeProfile()) setScreen('who'); }} />;
+  if (screen === 'setup') return <Setup db={db} pre={pre} onStart={startOrResume} onBack={() => setScreen('facts')} />;
+  if (screen === 'facts') return <FactsHome db={db} update={update} onStart={startOrResume} onSetup={(ids) => { setPre(ids ?? []); setScreen('setup'); }} onBack={() => setScreen('hub')} />;
+  return <Hub db={db} onFacts={() => setScreen('facts')} onGrownups={() => setScreen('grownups')} onWho={() => setScreen('who')} />;
+}
+
+function Who({ onChoose }: { onChoose: (id: string) => void }) {
+  const [list, setList] = useState<Profile[]>(profiles());
+  const [adding, setAdding] = useState(list.length === 0);
+  const [name, setName] = useState('');
+  const add = () => { if (!name.trim()) return; const p = addProfile(name); setList(profiles()); onChoose(p.id); };
+  return (
+    <main className="home who">
+      <div className="logo"><Mark size={72} /><h1 className="brand">MATHSEYE</h1></div>
+      <h1 className="h1">Who's using Mathseye?</h1>
+      <p className="muted">Everyone gets their own progress, saved on this device.</p>
+      <div className="whogrid">
+        {list.map((p) => <button key={p.id} className="whotile" onClick={() => onChoose(p.id)}><i>{p.name.charAt(0).toUpperCase()}</i><span>{p.name}</span></button>)}
+        {!adding && <button className="whotile add" onClick={() => setAdding(true)}><i>+</i><span>Add someone</span></button>}
+      </div>
+      {adding && (
+        <form className="whoadd" onSubmit={(e) => { e.preventDefault(); add(); }}>
+          <label htmlFor="who-name" className="eyebrow">Your name</label>
+          <input id="who-name" value={name} maxLength={20} autoFocus autoComplete="off" onChange={(e) => setName(e.target.value)} placeholder="Type a name" />
+          <button className="primary big" type="submit" disabled={!name.trim()}>That's me</button>
+        </form>
+      )}
+    </main>
+  );
+}
+
+const MINUTES = [5, 10, 15, 20, 30];
+function Setup({ db, pre, onStart, onBack }: { db: Db; pre: string[]; onStart: (plan: SessionPlan) => void; onBack: () => void }) {
+  const last = db.settings.lastPlan;
+  const [timed, setTimed] = useState(last?.length.mode === 'timed');
+  const [minutes, setMinutes] = useState(last?.length.mode === 'timed' ? last.length.minutes : 15);
+  const [pick, setPick] = useState(pre.length > 0);
+  const [chosen, setChosen] = useState<string[]>(pre);
+  const list = tricksFor(db);
+  const toggle = (id: string) => setChosen((c) => (c.includes(id) ? c.filter((x) => x !== id) : [...c, id]));
+  const go = () => onStart({
+    length: timed ? { mode: 'timed', minutes } : { mode: 'continuous' },
+    focus: pick ? { kind: 'picked', trickIds: chosen } : { kind: 'random' },
+  });
+  return (
+    <main className="home setup">
+      <div className="top"><button className="link" onClick={onBack}>← Back</button></div>
+      <h1 className="h1">Set up your practice</h1>
+      <section>
+        <p className="eyebrow">How long?</p>
+        <div className="seg" role="group" aria-label="How long">
+          <button aria-pressed={!timed} onClick={() => setTimed(false)}>Keep going</button>
+          <button aria-pressed={timed} onClick={() => setTimed(true)}>Set a time</button>
+        </div>
+        {timed
+          ? <div className="mins" role="group" aria-label="Minutes">{MINUTES.map((m) => <button key={m} aria-pressed={minutes === m} onClick={() => setMinutes(m)}>{m} min</button>)}</div>
+          : <p className="muted">Practice until you say you're done.</p>}
+        {timed && <p className="muted">We'll line up about {minutes} minutes of practice.</p>}
+      </section>
+      <section>
+        <p className="eyebrow">Which facts?</p>
+        <div className="seg" role="group" aria-label="Which facts">
+          <button aria-pressed={!pick} onClick={() => setPick(false)}>Surprise me</button>
+          <button aria-pressed={pick} onClick={() => setPick(true)}>I'll pick</button>
+        </div>
+        {pick && (
+          <div className="facts">
+            {list.map((t) => (
+              <button key={t.id} className="factrow" aria-pressed={chosen.includes(t.id)} onClick={() => toggle(t.id)}>
+                <span><b>{t.name}</b><small><Fx text={t.rule} /></small></span>
+                <span className="fstat">{chosen.includes(t.id) ? '✓' : ''}</span>
+              </button>
+            ))}
+          </div>
+        )}
+      </section>
+      <button className="primary big" disabled={pick && chosen.length === 0} onClick={go}>{pick && chosen.length === 0 ? 'Pick at least one fact' : 'Start'}</button>
+    </main>
+  );
 }
 
 type Brand = (typeof BRANDS)[number];
@@ -75,13 +158,14 @@ function ColorPicker({ cur, onPick }: { cur: BrandId; onPick: (id: BrandId) => v
   );
 }
 
-function Hub({ db, onFacts, onGrownups }: { db: Db; onFacts: () => void; onGrownups: () => void }) {
+function Hub({ db, onFacts, onGrownups, onWho }: { db: Db; onFacts: () => void; onGrownups: () => void; onWho: () => void }) {
   const unit = db.settings.currentUnit ?? 2;
   const [cur, setCur] = useState<BrandId>(getBrand());
   const brand = BRANDS.find((b) => b.id === cur)!;
   const mood = brand.member ? `${brand.label} · ${brand.member}'s color` : `${brand.label} palette`;
   return (
     <main className="home">
+      {activeProfile() && <button className="link whoami" onClick={onWho}>Playing as <b>{activeProfile()!.name}</b> · Switch</button>}
       <div className="logo"><Mark size={84} /><h1 className="brand">MATHSEYE<small>Unit {unit}</small></h1></div>
       <p className="mood"><span style={{ '--chip': brand.bg } as CSSProperties}><Charm name={brand.icon} /></span>{mood}</p>
       <nav className="tiles3" aria-label="Sections">
@@ -95,7 +179,7 @@ function Hub({ db, onFacts, onGrownups }: { db: Db; onFacts: () => void; onGrown
   );
 }
 
-function FactsHome({ db, update, onStart, onBack }: { db: Db; update: (fn: (d: Db) => Db) => void; onStart: (focus?: Focus) => void; onBack: () => void }) {
+function FactsHome({ db, update, onStart, onSetup, onBack }: { db: Db; update: (fn: (d: Db) => Db) => void; onStart: (plan?: SessionPlan) => void; onSetup: (ids?: string[]) => void; onBack: () => void }) {
   const resumable = db.inProgress?.date === today();
   const conf = confidence(db);
   const mode = db.settings.factsMode ?? 'unit';
@@ -103,7 +187,6 @@ function FactsHome({ db, update, onStart, onBack }: { db: Db; update: (fn: (d: D
   const list = tricksFor(db);
   const isLearned = (id: string) => db.settings.introducedTricks.includes(id);
   const learnedCount = list.filter((t) => isLearned(t.id)).length;
-  const hasNew = list.some((t) => !isLearned(t.id));
   const setMode = (m: 'unit' | 'general') => update((d) => ({ ...d, settings: { ...d.settings, factsMode: m } }));
   return (
     <main className="home">
@@ -121,14 +204,13 @@ function FactsHome({ db, update, onStart, onBack }: { db: Db; update: (fn: (d: D
       </div>
       <div className="row2">
         {resumable && <button className="primary big" onClick={() => onStart()}>Keep going</button>}
-        {!resumable && learnedCount > 0 && <button className="primary big" onClick={() => onStart({ kind: 'mix' })}>Practice mix</button>}
-        {hasNew && <button className={resumable || learnedCount > 0 ? 'ghostbig' : 'primary big'} onClick={() => onStart({ kind: 'new' })}>Learn new facts</button>}
+        <button className={resumable ? 'ghostbig' : 'primary big'} onClick={() => onSetup()}>Start practice</button>
       </div>
       <section className="facts">
         <h2>All the facts</h2>
-        <p className="muted">Everything is open. Tap one to practice it, as often as you like.</p>
+        <p className="muted">Everything is open. Tap one to practice just that fact.</p>
         {list.map((t) => (
-          <button key={t.id} className="factrow" onClick={() => onStart({ kind: 'trick', trickId: t.id })}>
+          <button key={t.id} className="factrow" onClick={() => onSetup([t.id])}>
             <span><b>{t.name}</b><small><Fx text={t.rule} /></small></span>
             <span className="fstat">{isLearned(t.id) ? `${Math.round(trickMastery(db, t.id) * 100)}%` : 'New'}</span>
           </button>
@@ -150,7 +232,9 @@ function SessionView({ db, update, onPause, onDone }: {
   const item = s.queue[s.index];
   const [now, setNow] = useState(Date.now());
   useEffect(() => { const t = setInterval(() => setNow(Date.now()), 1000); return () => clearInterval(t); }, []);
-  const overTime = now - s.startedAt > SESSION_MS;
+  const plan = s.plan;
+  const limit = plan?.length.mode === 'timed' ? plan.length.minutes * 60000 * 1.3 : Infinity;
+  const overTime = now - s.startedAt > limit;
 
   const finish = () => {
     update((d) => ({
@@ -161,7 +245,7 @@ function SessionView({ db, update, onPause, onDone }: {
     onDone();
   };
 
-  // Hard stop at 20 minutes: jump to the finishing card.
+  // Timed sessions wrap up a little after the time she asked for: jump to the finishing card.
   useEffect(() => {
     if (overTime && item && item.stage !== 'finish') {
       const fin = s.queue.findIndex((q) => q.stage === 'finish');
@@ -169,7 +253,15 @@ function SessionView({ db, update, onPause, onDone }: {
     }
   }, [overTime, item]);
 
-  useEffect(() => { if (!item) finish(); }, [item]);
+  // Keep going: when a round ends, line up another one (favoring what she needs most).
+  useEffect(() => {
+    if (!item && plan?.length.mode === 'continuous') {
+      update((d) => {
+        const more = buildQueue(d, Date.now(), plan.focus, plan.length);
+        return more.length ? { ...d, inProgress: { ...d.inProgress!, queue: [...d.inProgress!.queue, ...more] } } : d;
+      });
+    } else if (!item) finish();
+  }, [item]);
   if (!item) return null;
 
   const advance = (insertSimilar?: QueueItem) =>
@@ -189,7 +281,8 @@ function SessionView({ db, update, onPause, onDone }: {
             <i key={st} className={st === item.stage ? 'on' : stages.indexOf(st) < stages.indexOf(item.stage) ? 'done' : ''} />
           ))}
         </div>
-        <span className="stagename">{STAGE_LABEL[item.stage]}</span>
+        <span className="stagename">{plan?.length.mode === 'timed' ? `${Math.min(s.index + 1, s.queue.length)} of ${s.queue.length}` : STAGE_LABEL[item.stage]}</span>
+        {plan?.length.mode !== 'timed' && <button className="link" onClick={finish}>I'm done</button>}
       </header>
       {item.kind === 'trick' ? (
         <TrickCard
@@ -354,8 +447,9 @@ function Summary({ db, onHome }: { db: Db; onHome: () => void }) {
   );
 }
 
-function Grownups({ db, update, onBack }: { db: Db; update: (fn: (d: Db) => Db) => void; onBack: () => void }) {
+function Grownups({ db, update, onBack, onRemoved }: { db: Db; update: (fn: (d: Db) => Db) => void; onBack: () => void; onRemoved: () => void }) {
   const [confirmReset, setConfirmReset] = useState(false);
+  const [removing, setRemoving] = useState<string | null>(null);
   const sticky = Object.values(db.cards).sort((a, b) => b.box1Returns - a.box1Returns).filter((c) => c.box1Returns > 0).slice(0, 5);
   return (
     <main className="grownups">
@@ -371,12 +465,21 @@ function Grownups({ db, update, onBack }: { db: Db; update: (fn: (d: Db) => Db) 
       <h3>Stickiest cards</h3>
       {sticky.length ? sticky.map((c) => <p key={c.templateId}>{TEMPLATES[c.templateId].trick.name} ({c.templateId}): {c.box1Returns} returns</p>) : <p className="muted">None yet.</p>}
       <p className="muted">{db.sessions.filter((s) => s.endedAt).length} sessions completed.</p>
+      <h3>Players on this device</h3>
+      {profiles().map((p) => (
+        <div key={p.id} className="mrow">
+          <span>{p.name}{activeProfile()?.id === p.id ? ' (playing now)' : ''}</span>
+          {removing === p.id
+            ? <span><button className="primary" onClick={() => { removeProfile(p.id); setRemoving(null); onRemoved(); }}>Yes, erase {p.name}'s progress</button> <button className="ghost" onClick={() => setRemoving(null)}>Keep</button></span>
+            : <button className="ghost" onClick={() => setRemoving(p.id)}>Remove</button>}
+        </div>
+      ))}
       <h3>Reset progress</h3>
       {!confirmReset ? (
         <button className="ghost" onClick={() => setConfirmReset(true)}>Reset all progress</button>
       ) : (
         <div className="resetbox">
-          <p>Erase all tricks learned, streaks, and history on this device? This can't be undone.</p>
+          <p>Erase all tricks learned, streaks, and history for the player who is playing now? This can't be undone.</p>
           <button className="primary" onClick={() => { update(() => fresh()); setConfirmReset(false); onBack(); }}>Yes, reset everything</button>
           <button className="ghost" onClick={() => setConfirmReset(false)}>Keep my progress</button>
         </div>

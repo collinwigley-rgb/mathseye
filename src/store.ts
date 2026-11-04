@@ -2,7 +2,9 @@ import type { Attempt, CardState, Session, Settings } from './types';
 
 // v1 keeps everything on-device in localStorage (small data, no backend).
 // Phase 2 can move this to IndexedDB without changing callers.
-const KEY = 'mathseye.mathfacts.v1';
+import { activeNs } from './profile';
+import type { SessionPlan } from './session';
+const key = () => 'mathseye.mathfacts.v1' + activeNs();   // one saved db per player
 
 export interface SavedSession {
   date: string;
@@ -10,6 +12,7 @@ export interface SavedSession {
   index: number;
   startedAt: number;
   sessionId: string;
+  plan?: SessionPlan;
 }
 
 export type QueueItem =
@@ -35,7 +38,7 @@ export const fresh = (): Db => ({
 
 export function load(): Db {
   try {
-    const raw = localStorage.getItem(KEY);
+    const raw = localStorage.getItem(key());
     if (raw) { const saved = JSON.parse(raw); return { ...fresh(), ...saved, settings: { ...fresh().settings, ...saved.settings } }; }
   } catch {
     /* private mode or corrupted: start fresh */
@@ -45,7 +48,7 @@ export function load(): Db {
 
 export function save(db: Db) {
   try {
-    localStorage.setItem(KEY, JSON.stringify(db));
+    localStorage.setItem(key(), JSON.stringify(db));
   } catch {
     /* storage unavailable: progress lives in memory this session */
   }

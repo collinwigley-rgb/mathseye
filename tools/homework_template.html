@@ -9,6 +9,7 @@
 .errmsg{color:var(--accent);margin:0}
 </style>
 <div id="app"></div><div id="sheet"></div>
+<script src="../profile.js"></script>
 <script src="../fractions.js"></script>
 <script src="../keypad.js"></script>
 <script>
@@ -25,7 +26,7 @@ const LV = {foundation:"Base skill", builds:"Builds on one earlier lesson", mixe
 const LVTXT = {foundation:"This one mostly uses this lesson's skill plus things you learned in earlier grades.", builds:"This one uses this lesson's skill together with one earlier lesson from this unit.", mixed:"This one combines several lessons. If you get stuck, try the earlier lessons first."};
 /*HELPERS*/
 const MARK = `__MARK__`;
-const PKEY = "mathseye.pack.unit2", HKEY = "mathseye.hw.unit2.v1";
+const PKEY = "mathseye.pack.unit2", HKEY = "mathseye.hw.unit2.v1" + (window.mathseyeNs || "");
 let PACK = null; try { PACK = JSON.parse(localStorage.getItem(PKEY) || "null"); } catch(e) {}
 let hw = {done:{}}; try { Object.assign(hw, JSON.parse(localStorage.getItem(HKEY) || "{}")); } catch(e) {}
 const persist = () => { try { localStorage.setItem(HKEY, JSON.stringify(hw)); } catch(e) {} };

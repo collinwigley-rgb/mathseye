@@ -30,6 +30,9 @@
 - [x] MathFacts self-paced: no nightly unlock drip (owner decision); Keep going / Practice mix / Learn new facts / tap any fact
 - [x] More randomization: shuffled, variable-length sessions, varied wording (incl. missing-factor form), random new-fact picks; study missions pick random lessons/problems
 - [x] Fractions shown stacked (numerator over denominator): src/Fx.tsx in the app, public/fractions.js on the static pages
+- [x] Players: who's-using screen, separate progress per player (MathFacts, study guide, homework marks)
+- [x] MathFacts setup: Keep going or timed (5-30 min), Surprise me or I'll pick; smarter selection favors new/weak facts
+- [x] Netlify: build skipped for docs-only pushes (credits); batch pushes
 - [ ] Optional more variety: spot-the-trick and estimate card types
 - [ ] Assign the six seasonal palettes to members (owner to say which is whose)
 - [ ] Unit 3: upload weekly PDFs, build sheets as they come

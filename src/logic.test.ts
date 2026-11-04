@@ -185,4 +185,25 @@ describe('self-paced sessions', () => {
     for (let i = 1; i <= 200; i++) { const r = GENERATORS.div5(seeded(i), { d: 5 }); seen.add(r.prompt.replace(/\d+/g, '#')); const m = core(r.prompt).match(/^(\d+) ÷ 5$/)!; expect(Number(m[1]) / 5).toBe(Number(r.answer)); }
     expect(seen.size).toBeGreaterThanOrEqual(4);
   });
+
+  describe('session length and picking', () => {
+    const n = (q: ReturnType<typeof buildQueue>) => q.filter((x) => x.kind === 'card').length;
+    it('timed sessions get longer with more minutes', () => {
+      const avg = (m: number) => Array.from({ length: 20 }, () => n(buildQueue(learnedDb(4), Date.now(), { kind: 'random' }, { mode: 'timed', minutes: m }))).reduce((a, b) => a + b, 0) / 20;
+      expect(avg(5)).toBeLessThan(avg(15));
+      expect(avg(15)).toBeLessThan(avg(30));
+      expect(avg(15)).toBeGreaterThan(20);   // about fifteen minutes of cards
+    });
+    it('picked facts use only the facts she picked', () => {
+      const db = learnedDb(4), ids = db.settings.introducedTricks.slice(0, 2);
+      const allowed = new Set(ids.flatMap((id) => TRICKS.find((t) => t.id === id)!.templates.map((t) => t.id)));
+      const q = buildQueue(db, Date.now(), { kind: 'picked', trickIds: ids }, { mode: 'timed', minutes: 10 });
+      for (const c of q.filter((x) => x.kind === 'card') as { templateId: string }[]) expect(allowed.has(c.templateId)).toBe(true);
+    });
+    it('surprise me favors facts she has not learned yet over mastered ones', () => {
+      const db = learnedDb(3); let fresh = 0;
+      for (let i = 0; i < 60; i++) if (buildQueue(db, Date.now(), { kind: 'random' }).some((x) => x.kind === 'trick')) fresh++;
+      expect(fresh).toBeGreaterThan(45);
+    });
+  });
 });

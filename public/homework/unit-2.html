@@ -152,6 +152,7 @@ button:active{transform:scale(.98)}
 .errmsg{color:var(--accent);margin:0}
 </style>
 <div id="app"></div><div id="sheet"></div>
+<script src="../profile.js"></script>
 <script src="../fractions.js"></script>
 <script src="../keypad.js"></script>
 <script>
@@ -206,7 +207,7 @@ function graphSVG(g){ const W=380,H=270,L=46,B=38,T=14,R=18,pw=W-L-R,ph=H-T-B,X=
 const tableHTML = (t) => `<div class="tw"><table class="t"><tr><th>x</th>${t.x.map(v=>`<td>${esc(v)}</td>`).join("")}</tr><tr><th>y</th>${t.y.map(v=>`<td>${esc(v)}</td>`).join("")}</tr></table></div>`;
 const visual = (p) => p.graph ? graphSVG(p.graph) : p.table ? tableHTML(p.table) : "";
 const MARK = `<svg width="52" height="42" viewBox="0 0 120 96" role="img" aria-label="Mathseye" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 54 C26 16 94 16 114 54 C94 92 26 92 6 54Z" stroke-width="7"/><g stroke-width="6"><path d="M60 30 V78 M36 54 H84"/><path d="M43 37 L77 71 M77 37 L43 71"/></g><path d="M104 8 Q106 22 118 24 Q106 26 104 40 Q102 26 90 24 Q102 22 104 8Z" fill="var(--accent2,currentColor)" stroke="none"/></svg>`;
-const PKEY = "mathseye.pack.unit2", HKEY = "mathseye.hw.unit2.v1";
+const PKEY = "mathseye.pack.unit2", HKEY = "mathseye.hw.unit2.v1" + (window.mathseyeNs || "");
 let PACK = null; try { PACK = JSON.parse(localStorage.getItem(PKEY) || "null"); } catch(e) {}
 let hw = {done:{}}; try { Object.assign(hw, JSON.parse(localStorage.getItem(HKEY) || "{}")); } catch(e) {}
 const persist = () => { try { localStorage.setItem(HKEY, JSON.stringify(hw)); } catch(e) {} };

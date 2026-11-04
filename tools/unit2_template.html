@@ -74,6 +74,7 @@ a.logo{text-decoration:none}.logo{display:flex;align-items:center;gap:12px;color
 /*BRAND-THEMES*/
 </style>
 <div id="app"></div><div id="sheet"></div>
+<script src="../profile.js"></script>
 <script src="../fractions.js"></script>
 <script src="../keypad.js"></script>
 <script>
@@ -86,7 +87,7 @@ __BURST__
 const getBrand = () => { try { const v = localStorage.getItem("mathseye.brand"); if (BRANDS.some(b => b.id === v)) return v; } catch(e) {} return "classic"; };
 const applyBrand = (id) => { document.documentElement.dataset.brand = id; };
 applyBrand(getBrand());
-const KEY = "mathseye.unit2.study.v2";
+const KEY = "mathseye.unit2.study.v2" + (window.mathseyeNs || "");
 let save = {solved:{}, clean:{}, mission:null, day:{d:"", n:0}};
 try { Object.assign(save, JSON.parse(localStorage.getItem(KEY) || "{}")); } catch(e) {}
 const persist = () => { try { localStorage.setItem(KEY, JSON.stringify(save)); } catch(e) {} };
