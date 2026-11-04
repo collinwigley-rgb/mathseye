@@ -11,13 +11,13 @@
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{background:var(--bg);color:var(--fg);font:19px/1.55 var(--body);padding-block:18px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));user-select:none;-webkit-user-select:none}
 #app{max-width:640px;margin:0 auto;min-width:0}
-.stack{display:flex;flex-direction:column;gap:18px;min-width:0}
+.stack{display:flex;flex-direction:column;gap:12px;min-width:0}
 h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0;text-wrap:balance}
 h1{font-size:clamp(30px,7vw,42px);letter-spacing:-.5px}h2{font-size:clamp(24px,5.4vw,30px)}h1:focus,h2:focus{outline:none}
 .sub{color:var(--muted);margin:6px 0 0}
 button{font:inherit;color:inherit;border:0;cursor:pointer;touch-action:manipulation;border-radius:16px}
 button:focus-visible,a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
-.card{background:var(--panel);border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.card{background:var(--panel);border-radius:22px;padding:16px 18px;display:flex;flex-direction:column;gap:8px;min-width:0}
 .eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.12em;font-size:14px;font-weight:600;margin:0}
 .lead{margin:0;font-size:20px}.muted{color:var(--muted)}
 .btn{background:var(--panel2);padding:14px 20px;min-height:56px;font-weight:600}
@@ -37,18 +37,18 @@ a.btn{display:inline-flex;align-items:center;text-decoration:none}
 .acc{background:var(--panel);width:100%;text-align:left;padding:18px 20px;min-height:64px;display:flex;justify-content:space-between;align-items:center;font-weight:600}
 .accb{background:var(--panel);border-radius:0 0 20px 20px;margin-top:-10px;padding:22px 20px 20px;display:flex;flex-direction:column;gap:12px}
 .hook{margin:0;padding:12px 16px;background:var(--panel2);border-radius:14px;font-weight:600;font-size:20px}
-.problem{font-size:clamp(23px,5.4vw,30px);font-weight:500;margin:0;line-height:1.35}
+.problem{font-size:clamp(20px,4.4vw,26px);font-weight:500;margin:0;line-height:1.3}.fx button{background:none;border:0;padding:2px 0;color:var(--accent);font-size:15px;font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer;text-align:left}
 table.t{border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:22px}table.t th,table.t td{border:1px solid var(--line);padding:10px 18px;text-align:center}table.t th{background:var(--panel2);font-family:var(--display)}
 .tw{overflow-x:auto}
-.answer{font-size:34px;min-height:64px;padding:8px 16px;background:var(--panel2);border-radius:16px;font-variant-numeric:tabular-nums;color:var(--accent);display:flex;align-items:center}
-.answer .ph{color:var(--muted);font-size:19px}.tip{margin:0 0 6px;color:var(--muted);font-size:16px}
+.answer{font-size:30px;min-height:50px;padding:4px 14px;background:var(--panel2);border-radius:16px;font-variant-numeric:tabular-nums;color:var(--accent);display:flex;align-items:center}
+.answer .ph{color:var(--muted);font-size:16px}.tip{margin:0;color:var(--muted);font-size:13px}
 .in:empty,.vis:empty,.nudges:empty,.act:empty{display:none}
 .ans{margin:6px 0 0;font-weight:600}
-.pad{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.pad button{background:var(--panel2);min-height:66px;font-size:26px;font-variant-numeric:tabular-nums}
-.pad .sp{grid-column:span 4;min-height:56px;font-size:20px}
+.pad{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.pad button{background:var(--panel2);min-height:52px;font-size:24px;font-variant-numeric:tabular-nums}
+.pad .sp{font-size:15px}
 .ref{position:absolute;right:14px;bottom:8px;font-size:12px;letter-spacing:.05em;color:var(--muted);opacity:.7;user-select:text;-webkit-user-select:text;font-variant-numeric:tabular-nums}.card{position:relative}
 .pic:empty{display:none}.bm{width:100%;max-width:380px;height:auto}.bm text{fill:var(--fg);font:500 14px var(--body)}.bm .bmt.big{font-weight:700;font-size:16px}.bm .bf{fill:var(--accent);stroke:var(--bg);stroke-width:1.5}.bm .be{fill:var(--panel2);stroke:var(--line);stroke-width:1.5}.bm .bg{fill:none;stroke:var(--accent2,var(--accent));stroke-width:2.5}
-.pad .go{grid-column:span 4;min-height:72px;background:var(--accent);color:var(--accent-fg);font-weight:700;font-size:22px}
+.pad .go{grid-column:span 4;min-height:58px;background:var(--accent);color:var(--accent-fg);font-weight:700;font-size:22px}
 .opts{display:flex;flex-direction:column;gap:12px}.opts button{background:var(--panel2);padding:18px 20px;text-align:left;font-size:21px;min-height:66px;border:3px solid transparent}
 .opts button[aria-pressed=true]{border-color:var(--accent)}
 .say{margin:0;padding:14px 18px;border-radius:18px;background:var(--panel2);border-left:5px solid var(--accent)}
@@ -146,7 +146,7 @@ function closeSheet(){ S.sheet = null; drawSheet(); }
 function drawSheet(){ const root = document.getElementById("sheet"); root.innerHTML = ""; if (!S.sheet) return;
   const {kind, p, more} = S.sheet, w = DATA.lessons[p.sub].why; let body = "";
   if (kind === "why") body = `<h2>Why am I learning this?</h2><p class="lead">${esc(p.why_focus)}</p><dl><dt>Why you need it</dt><dd>${esc(w.why_you_need_it)}</dd><dt>Where you'll see it</dt><dd>${esc(w.real_life)}</dd>${more?`<dt>The goal</dt><dd>${esc(w.goal)}</dd><dt>How it helps later</dt><dd>${esc(w.supports_future)}</dd><dt>Building block</dt><dd>${esc(w.building_block)}</dd>`:""}</dl>${more?"":'<button class="btn quiet" id="more">Tell me more</button>'}`;
-  else if (kind === "facts") body = `<h2>Useful math facts</h2><p class="lead">Quick mental-math tricks that can help with this problem. You can practice them any time in MathFacts.</p><ul class="cl">${(p.facts || []).map(id => { const t = DATA.tricks[id]; return `<li><span><b>${esc(t.name)}</b><small>${esc(t.rule)}</small>${t.example.split(/\s{3,}/).map(x => `<small>${esc(x)}</small>`).join("")}</span>${location.pathname.indexOf("/study/") > -1 ? `<a class="btn quiet" href="../?fact=${id}">Practice it</a>` : ""}</li>`; }).join("")}</ul>`;
+  else if (kind === "facts") body = `<h2>Math facts that could help</h2><p class="lead">Try these in your head before reaching for a calculator.</p><ul class="cl">${(p.facts || []).map(id => { const t = DATA.tricks[id]; return `<li><span><b>${esc(t.name)}</b><small>${esc(t.rule)}</small></span>${location.pathname.indexOf("/study/") > -1 ? `<a class="btn quiet" href="../?fact=${id}">Practice it</a>` : ""}</li>`; }).join("")}</ul>`;
   else { const d = p.deps; body = `<h2>What does this use?</h2><div><span class="lvl">${LV[d.level]}</span></div><p class="lead">${LVTXT[d.level]}${d.earlier && d.earlier.length ? " Earlier " + (d.earlier.length > 1 ? "lessons" : "lesson") + ": " + d.earlier.map(e => "\u201c" + esc(e.title) + "\u201d (Lesson " + e.sub + ")").join(", ") + "." : ""}</p><ul class="cl">${d.concepts.map(c=>{const k=DATA.concepts[c];return `<li><span><b>${esc(k.name)}</b><small>${esc(k.plain)}</small></span><span class="tag">${esc(k.origin)}</span></li>`}).join("")}</ul>`; }
   const bg = $(`<div class="sheetbg"><div class="sheet pop" role="dialog" aria-modal="true" aria-label="Help">${body}<button class="btn primary" id="close">Back to the problem</button></div></div>`);
   bg.onclick = e => { if (e.target === bg) closeSheet(); }; bg.querySelector("#close").onclick = closeSheet;
@@ -199,14 +199,15 @@ mission(){ const m = save.mission; if (!m || m.i >= m.ids.length) return VIEWS.s
   const st = S.cur, p = st.v >= 0 ? Object.assign({}, base, base.variants[st.v]) : base, res = st.v >= 0 ? st.vres : baseRes, solved = res.done; const el = $(`<div class="stack"></div>`);
   const freshOne = () => { const n = base.variants.length; if (st.vn < 0) st.vn = Math.floor(Math.random() * n); st.v = st.vn % n; st.vn++; st.vres = {hints:0, tries:0, done:false}; Object.assign(st, {input:"", pick:null, msg:"", win:false, steps:false}); render(); };
   const top = $(`<div class="top"><button class="btn quiet" id="exit">✕ Stop for now</button><div class="dots" aria-label="Problem ${m.i+1} of ${m.ids.length}">${m.ids.map((id,k)=>`<i class="${m.res[id]&&m.res[id].done?'on':k===m.i?'now':''}"></i>`).join("")}</div></div>`); top.querySelector("#exit").onclick = () => go("home"); el.append(top);
-  const card = $(`<section class="card ${st.shake?'shake':''}"><p class="eyebrow">Lesson ${p.sub}${st.v >= 0 ? " · new numbers" : ""}</p><p class="problem">${esc(p.text)}</p><div class="vis">${visual(p)}</div><div class="in"></div><div class="say" ${st.msg?"":"hidden"} aria-live="polite"></div><ul class="nudges"></ul><div class="pic"></div><div class="act"></div><span class="ref" aria-label="Reference number">#${p.ref}</span></section>`);
-  st.shake = false; const inp = card.querySelector(".in"), say = card.querySelector(".say"), nud = card.querySelector(".nudges"), pic = card.querySelector(".pic"), act = card.querySelector(".act");
+  const card = $(`<section class="card ${st.shake?'shake':''}"><p class="eyebrow">Lesson ${p.sub}${st.v >= 0 ? " · new numbers" : ""}</p><p class="problem">${esc(p.text)}</p><div class="fx"></div><div class="vis">${visual(p)}</div><div class="in"></div><div class="say" ${st.msg?"":"hidden"} aria-live="polite"></div><ul class="nudges"></ul><div class="pic"></div><div class="act"></div><span class="ref" aria-label="Reference number">#${p.ref}</span></section>`);
+  st.shake = false; const inp = card.querySelector(".in"), say = card.querySelector(".say"), nud = card.querySelector(".nudges"), pic = card.querySelector(".pic"), act = card.querySelector(".act"), fx = card.querySelector(".fx");
   const draw = () => {
+    fx.innerHTML = ""; if (!res.done && (p.facts || []).length) { const b = $(`<button>Math facts that could help ›</button>`); b.onclick = () => openSheet("facts", p); fx.append(b); }
     inp.innerHTML = ""; say.hidden = !st.msg; say.innerHTML = esc(st.msg) + (st.win ? `<p class="ans">Answer: ${esc(p.show)}</p>${shortWhy(p) ? `<p class="ans why">Why: ${esc(shortWhy(p))}</p>` : ""}` : ""); say.className = "say" + (st.win ? " win pop" : "");
     nud.innerHTML = p.hints.slice(0, res.hints).map(h => `<li class="say">${esc(h)}</li>`).join(""); pic.innerHTML = p.bars ? (st.steps || res.done ? barModel(p.bars, true) : res.hints >= 2 ? barModel(p.bars, false) : "") : ""; act.innerHTML = "";
     if (!solved) {
       if (p.kind === "choice") { const o = $(`<div class="opts">${p.options.map((t,i)=>`<button aria-pressed="${st.pick===i}" data-i="${i}">${esc(t)}</button>`).join("")}</div>`); o.onclick = e => { const b = e.target.closest("button"); if (b) { st.pick = +b.dataset.i; draw(); } }; inp.append(o); }
-      else { inp.append($(`<div class="answer" aria-live="polite">${st.input ? esc(st.input) : '<span class="ph">Tap the numbers below</span>'}</div>`), $(`<p class="tip">Type a number like 3/4 or 1 1/2. Use ( ) to write the setup first if it helps.</p>`));
+      else { inp.append($(`<div class="answer" aria-live="polite">${st.input ? esc(st.input) : '<span class="ph">Tap the numbers below</span>'}</div>`), $(`<p class="tip">Answer with a number like 3/4 or 1 1/2. Use ( ) to write the setup first.</p>`));
         const keys = ["7","8","9","⌫","4","5","6","−","1","2","3","/","0",".","(",")","×","÷","+","␣"]; const pad = $(`<div class="pad">${keys.map(k=>`<button data-k="${k}" class="${k==='␣'?'sp':''}" aria-label="${k==='⌫'?'Delete':k==='␣'?'Space':k==='−'?'Minus':k==='('?'Open bracket':k===')'?'Close bracket':k}">${k==="␣"?"space":k}</button>`).join("")}<button class="go" data-k="go">Check</button></div>`);
         pad.onclick = e => { const b = e.target.closest("button"); if (!b) return; const k = b.dataset.k; if (k === "go") return check(st.input); st.input = k==="⌫" ? st.input.slice(0,-1) : (st.input.length < 14 ? st.input + (k==="␣" ? " " : k) : st.input); draw(); }; inp.append(pad); }
       const row = $(`<div class="row"></div>`);
