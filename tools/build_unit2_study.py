@@ -96,25 +96,34 @@ def ref_for(pid, vi, obj):
     return _index[(pid, h)]
 from fractions import Fraction as F
 BASE_SENSE = {"U2-08": ("1/2", "3/4", True), "U2-09": ("1/12", "5/6", True), "U2-10": ("2/3", "120", True), "U2-12": ("3/8", "6", True), "U2-13": ("5", "2/3", False)}
-# MathFacts tricks that help with each kind of step (ids from content/tricks/*.json), shown as "Useful math facts"
-FACTS_BY_CONCEPT = {
- "div-fractions": ["flip-and-cancel", "how-many-fit"], "fraction-unit-rate": ["flip-and-cancel", "how-many-fit", "benchmark-fractions"],
- "mul-fractions": ["flip-and-cancel"], "mixed-numbers": ["benchmark-fractions"],
- "div-decimals": ["move-the-decimal", "divide-by-decimals"], "mul-decimals": ["move-the-decimal", "times-one-and-a-half", "break-it-apart"],
- "unit-rate": ["divide-in-two-steps", "halve-halve", "divide-by-5-25-50"], "unit-conversion": ["minutes-to-hours"],
- "integer-ops": ["integer-sign-rules"], "scale-factor": ["times-one-and-a-half", "break-it-apart"], "k-const": ["divide-in-two-steps"],
-}
+# MathFacts tricks that genuinely apply to a problem's own arithmetic (ids from content/tricks/*.json).
+# Decided from the numbers actually shown, so each "new numbers" version gets its own list, and a problem with
+# no clearly fitting fact shows none.
+import re as _re
+def _div_fact(n):
+    n = int(n)
+    return ("divide-by-5-25-50" if n in (5, 25, 50) else "halve-halve" if n in (4, 8) else
+            "divide-in-two-steps" if n in (6, 12, 15) else "move-the-decimal" if n in (10, 100, 1000) else None)
+def _divs(text, pat): return [f for f in dict.fromkeys(_div_fact(m) for m in _re.findall(pat, text)) if f]
+def facts_text(pid, t):
+    if pid == "U2-01": return _divs(t, r"(\d+)-pack")
+    if pid in ("U2-03", "U2-07"): return _divs(t, r"in (\d+) minutes")[:2]
+    if pid == "U2-20": return _divs(t, r"in (\d+) (?:hours|minutes)")
+    if pid == "U2-23": return _divs(t, r"[Ff]or every (\d+)")
+    if pid in ("U2-08", "U2-09", "U2-10", "U2-11", "U2-12", "U2-13"):
+        f = ["flip-and-cancel"]
+        if pid in ("U2-08", "U2-09") and _re.search(r" in 1/\d+ (?:minute|hour)", t): f.append("how-many-fit")
+        return f
+    if pid in ("U2-21", "U2-24"):
+        m = _re.search(r"(\d+\.\d+)x", t)
+        if not m: return []
+        return ["times-one-and-a-half" if m.group(1) in ("1.5", "2.5", "0.5") else "break-it-apart"]
+    if pid == "U2-44": return ["break-it-apart"] if _re.search(r"\d 1/2 in\.", t) else []
+    return []
 import json as _json
 TRICKS = {t["id"]: t for t in (_json.load(open(f)) for f in sorted((ROOT / "content" / "tricks").glob("*.json")))}
 def facts_for(p):
-    text = " ".join([p["text"]] + [v.get("text", "") for v in p.get("variants", [])]).lower()
-    ids = []
-    for c in BASE.get((p["sub"], p["type"]), []):
-        for t in FACTS_BY_CONCEPT.get(c, []):
-            if t == "minutes-to-hours" and "minute" not in text: continue
-            if t == "integer-sign-rules" and "-" not in text and "\u2212" not in text: continue
-            if t not in ids: ids.append(t)
-    return ids[:3]
+    return facts_text(p["id"], p["text"])
 out = []
 for p in PROBS:
     q = {k: v for k, v in p.items()}
@@ -129,6 +138,7 @@ for p in PROBS:
     assert vs and all(v["kind"] == p["kind"] for v in vs), p["id"]
     for i, v in enumerate(vs): v["ref"] = ref_for(p["id"], i, v)
     q["variants"] = vs
+    for _v in vs: _v["facts"] = facts_text(p["id"], _v.get("text", ""))
     q["ref"] = ref_for(p["id"], -1, q)
     out.append(q)
 _all = [o['ref'] for o in out] + [v['ref'] for o in out for v in o['variants']]
@@ -137,7 +147,7 @@ assert 1001 <= reg['next'] < 5000, 'public refs must stay below 5000 (private pa
 REG.write_text(json.dumps(reg, indent=1, ensure_ascii=False))
 links = {}
 for _p in out:
-    for _t in _p.get("facts", []):
+    for _t in dict.fromkeys(_p.get("facts", []) + [f for _v in _p.get("variants", []) for f in _v.get("facts", [])]):
         _e = dict(sub=_p["sub"], title=LESSONS[_p["sub"]]["title"])
         if _e not in links.setdefault(_t, []): links[_t].append(_e)
 for _t in links: links[_t].sort(key=lambda e: e["sub"])

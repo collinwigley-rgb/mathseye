@@ -5,42 +5,18 @@
    "title": "Unit rates"
   },
   {
-   "sub": "2.3",
-   "title": "Is it proportional?"
-  },
-  {
    "sub": "2.4",
    "title": "y = kx"
-  },
-  {
-   "sub": "2.5",
-   "title": "Graphs"
-  },
-  {
-   "sub": "2.6",
-   "title": "Times or plus?"
-  },
-  {
-   "sub": "2.8",
-   "title": "Scale drawings"
   }
  ],
- "halve-halve": [
+ "move-the-decimal": [
   {
    "sub": "2.1",
    "title": "Unit rates"
   },
   {
-   "sub": "2.3",
-   "title": "Is it proportional?"
-  },
-  {
    "sub": "2.4",
    "title": "y = kx"
-  },
-  {
-   "sub": "2.6",
-   "title": "Times or plus?"
   }
  ],
  "divide-by-5-25-50": [
@@ -49,16 +25,18 @@
    "title": "Unit rates"
   },
   {
-   "sub": "2.3",
-   "title": "Is it proportional?"
+   "sub": "2.4",
+   "title": "y = kx"
+  }
+ ],
+ "halve-halve": [
+  {
+   "sub": "2.1",
+   "title": "Unit rates"
   },
   {
    "sub": "2.4",
    "title": "y = kx"
-  },
-  {
-   "sub": "2.6",
-   "title": "Times or plus?"
   }
  ],
  "flip-and-cancel": [
@@ -73,28 +51,20 @@
    "title": "Unit rates with fractions"
   }
  ],
- "benchmark-fractions": [
+ "break-it-apart": [
   {
-   "sub": "2.2",
-   "title": "Unit rates with fractions"
+   "sub": "2.4",
+   "title": "y = kx"
+  },
+  {
+   "sub": "2.8",
+   "title": "Scale drawings"
   }
  ],
  "times-one-and-a-half": [
   {
-   "sub": "2.8",
-   "title": "Scale drawings"
-  }
- ],
- "break-it-apart": [
-  {
-   "sub": "2.8",
-   "title": "Scale drawings"
-  }
- ],
- "move-the-decimal": [
-  {
-   "sub": "2.8",
-   "title": "Scale drawings"
+   "sub": "2.4",
+   "title": "y = kx"
   }
  ]
 }
