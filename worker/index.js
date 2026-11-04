@@ -11,6 +11,7 @@ export default {
   async fetch(req, env) {
     const url = new URL(req.url);
     if (url.pathname === '/api/pack') return pack(req, env, url);
+    if (url.pathname === '/api/img') return img(req, env, url);
     if (url.pathname === '/api/players' || url.pathname === '/api/player') return players(req, env, url);
     if (url.pathname !== '/api/feedback') return env.ASSETS.fetch(req);
     if (!env.NOTES) return json({ ok: false, error: 'storage not set up' }, 503);
@@ -88,4 +89,16 @@ async function pack(req, env, url) {
   const v = await env.NOTES.get(`pack:unit-${unit}`);
   if (!v) return json({ ok: false, error: 'no pack for that unit yet' }, 404);
   return new Response(v, { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } });
+}
+
+// ---- worksheet pictures (cropped from the printed pages; NEVER in the repo). KV key `img:<file>`, uploaded by
+// mathseye-content/tools/publish_images.py. The file name is the only thing taken from the request, and only a safe shape is allowed. ----
+async function img(req, env, url) {
+  if (req.method !== 'GET') return json({ ok: false, error: 'method not allowed' }, 405);
+  if (!env.NOTES) return json({ ok: false, error: 'storage not set up' }, 503);
+  const f = String(url.searchParams.get('f') || '');
+  if (!/^[0-9A-Za-z._-]{3,60}\.png$/.test(f) || f.includes('..')) return json({ ok: false, error: 'bad name' }, 400);
+  const v = await env.NOTES.get(`img:${f}`, 'arrayBuffer');
+  if (!v) return json({ ok: false, error: 'no such picture' }, 404);
+  return new Response(v, { headers: { 'Content-Type': 'image/png', 'Cache-Control': 'public, max-age=3600' } });
 }

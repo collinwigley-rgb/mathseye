@@ -5,6 +5,7 @@
 /*STUDY_STYLE*/
 .snip{color:var(--muted);font-size:16px;display:block;margin-top:2px}.item{background:var(--panel);width:100%;text-align:left;padding:16px 18px;min-height:64px;display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
 .done{color:var(--good);font-weight:600;white-space:nowrap}.hd{font-family:var(--display);font-size:20px;margin:6px 0 0}
+.pics{display:flex;flex-wrap:wrap;gap:10px;margin:0}.pics img{max-width:100%;max-height:340px;border-radius:12px;background:#fff;border:1px solid var(--line)}.pg{margin:0;font-size:.85rem;color:var(--muted)}
 .fig{margin:0;padding:12px 16px;border:2px dashed var(--line);border-radius:14px;color:var(--muted)}
 .errmsg{color:var(--accent);margin:0}
 .card>.eyebrow.pe{padding-right:9em}
@@ -89,7 +90,7 @@ lesson(){ const el = $(`<div class="stack"></div>`); el.append(backBar("Unit 2 H
     ps.forEach(p => { const b = $(`<button class="item"><span><b>${esc(p.label)}</b><span class="snip">${esc(p.text.length > 80 ? p.text.slice(0, 78) + "…" : p.text)}</span></span>${hw.done[p.id] ? '<span class="done">✓ done</span>' : ""}</button>`); b.onclick = () => go("prob", {id:p.id, hints:0, shown:false, steps:false, msg:""}); el.append(b); }); }); return el; },
 prob(){ const p = PACK.problems.find(x => x.id === S.id), el = $(`<div class="stack"></div>`), done = !!hw.done[p.id];
   el.append(backBar("Back", () => go("lesson")));
-  const card = $(`<section class="card"><p class="eyebrow pe">${esc(subTitle(p.sub))} · ${esc(p.label)}</p><p class="problem">${esc(p.text)}</p>${p.figure ? `<p class="fig">Look at the picture on your worksheet. ${esc(p.figure)}</p>` : ""}<div class="vis">${p.table && Array.isArray(p.table.x) ? tableHTML(p.table) : ""}</div><p class="say">Work it out on your worksheet first. Tap I'm stuck any time for a nudge.</p><ul class="nudges"></ul><div class="act"></div><span class="ref" aria-label="Reference number">#${p.ref || ""}</span></section>`);
+  const card = $(`<section class="card"><p class="eyebrow pe">${esc(subTitle(p.sub))} · ${esc(p.label)}</p><p class="problem">${esc(p.text)}</p>${p.img && p.img.length ? `<p class="pics">${p.img.map(i => `<img src="/api/img?f=${encodeURIComponent(i.f)}" alt="Picture from the worksheet, page ${i.pg}" loading="lazy">`).join("")}</p>` : p.figure ? `<p class="fig">Look at the picture on your worksheet. ${esc(p.figure)}</p>` : ""}<div class="vis">${p.table && Array.isArray(p.table.x) ? tableHTML(p.table) : ""}</div><p class="say">Work it out on your worksheet first. Tap I'm stuck any time for a nudge.</p><ul class="nudges"></ul><div class="act"></div><span class="ref" aria-label="Reference number">#${p.ref || ""}</span></section>`);
   const nud = card.querySelector(".nudges"), act = card.querySelector(".act");
   const draw = () => { nud.innerHTML = p.hints.slice(0, S.hints).map(h => `<li class="say">${esc(h)}</li>`).join(""); act.innerHTML = "";
     if (!S.shown) { const row = $(`<div class="row"></div>`); const fin = $(`<button class="btn primary big">I finished: check my work</button>`); fin.onclick = () => { S.shown = true; draw(); }; act.append(fin);
