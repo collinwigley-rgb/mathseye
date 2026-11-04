@@ -96,10 +96,29 @@ def ref_for(pid, vi, obj):
     return _index[(pid, h)]
 from fractions import Fraction as F
 BASE_SENSE = {"U2-08": ("1/2", "3/4", True), "U2-09": ("1/12", "5/6", True), "U2-10": ("2/3", "120", True), "U2-12": ("3/8", "6", True), "U2-13": ("5", "2/3", False)}
+# MathFacts tricks that help with each kind of step (ids from content/tricks/*.json), shown as "Useful math facts"
+FACTS_BY_CONCEPT = {
+ "div-fractions": ["flip-and-cancel", "how-many-fit"], "fraction-unit-rate": ["flip-and-cancel", "how-many-fit", "benchmark-fractions"],
+ "mul-fractions": ["flip-and-cancel"], "mixed-numbers": ["benchmark-fractions"],
+ "div-decimals": ["move-the-decimal", "divide-by-decimals"], "mul-decimals": ["move-the-decimal", "times-one-and-a-half", "break-it-apart"],
+ "unit-rate": ["divide-in-two-steps", "halve-halve", "divide-by-5-25-50"], "unit-conversion": ["minutes-to-hours"],
+ "integer-ops": ["integer-sign-rules"], "scale-factor": ["times-one-and-a-half", "break-it-apart"], "k-const": ["divide-in-two-steps"],
+}
+import json as _json
+TRICKS = {t["id"]: t for t in (_json.load(open(f)) for f in sorted((ROOT / "content" / "tricks").glob("*.json")))}
+def facts_for(p):
+    text = " ".join([p["text"]] + [v.get("text", "") for v in p.get("variants", [])]).lower()
+    ids = []
+    for c in BASE.get((p["sub"], p["type"]), []):
+        for t in FACTS_BY_CONCEPT.get(c, []):
+            if t == "minutes-to-hours" and "minute" not in text: continue
+            if t == "integer-sign-rules" and "-" not in text and "\u2212" not in text: continue
+            if t not in ids: ids.append(t)
+    return ids[:3]
 out = []
 for p in PROBS:
     q = {k: v for k, v in p.items()}
-    q["why_focus"] = FOCUS[p["sub"]]; q["deps"] = deps(p)
+    q["why_focus"] = FOCUS[p["sub"]]; q["deps"] = deps(p); q["facts"] = facts_for(p)
     if q["kind"] == "num": q["tol"] = 0.006 if nonterm(q["answer"]) else 1e-9
     if p["id"] in BASE_SENSE:
         q["sense"] = sense(*BASE_SENSE[p["id"]])
@@ -116,7 +135,14 @@ _all = [o['ref'] for o in out] + [v['ref'] for o in out for v in o['variants']]
 assert len(_all) == len(set(_all)), 'duplicate reference numbers'
 assert 1001 <= reg['next'] < 5000, 'public refs must stay below 5000 (private pack uses 5001+)'
 REG.write_text(json.dumps(reg, indent=1, ensure_ascii=False))
-DATA = dict(problems=out, lessons=LESSONS, concepts={k: dict(name=v[0], plain=v[1], origin=v[2]) for k, v in CONCEPTS.items()}, subs=SUBS)
+links = {}
+for _p in out:
+    for _t in _p.get("facts", []):
+        _e = dict(sub=_p["sub"], title=LESSONS[_p["sub"]]["title"])
+        if _e not in links.setdefault(_t, []): links[_t].append(_e)
+for _t in links: links[_t].sort(key=lambda e: e["sub"])
+(ROOT / "src" / "factlinks.json").write_text(_json.dumps(links, indent=1, ensure_ascii=False) + "\n")
+DATA = dict(tricks={k: dict(name=v['name'], rule=v['rule'], example=v['example']) for k, v in TRICKS.items()}, problems=out, lessons=LESSONS, concepts={k: dict(name=v[0], plain=v[1], origin=v[2]) for k, v in CONCEPTS.items()}, subs=SUBS)
 (ROOT / "content/units/unit-2").mkdir(parents=True, exist_ok=True)
 (ROOT / "content/units/unit-2/practice.json").write_text(json.dumps(DATA, indent=1, ensure_ascii=False))
 

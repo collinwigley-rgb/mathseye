@@ -7,6 +7,7 @@ import { newCard, review } from './scheduler';
 import { buildQueue, confidence, streak, trickMastery, tricksFor, type Focus, type Length, type SessionPlan } from './session';
 import { activeProfile, addProfile, needsWho, profiles, removeProfile, setActive, type Profile } from './profile';
 import Mark from './Mark';
+import factLinks from './factlinks.json';
 import { BRANDS, ICONS, MEMBERS, getBrand, setBrand, type BrandId } from './brand';
 import { fresh, load, save, today, type Db, type QueueItem } from './store';
 import type { Problem } from './types';
@@ -15,8 +16,9 @@ type Screen = 'who' | 'hub' | 'facts' | 'setup' | 'session' | 'summary' | 'grown
 
 export default function App() {
   const [db, setDb] = useState<Db>(load);
-  const [screen, setScreen] = useState<Screen>(needsWho() || /[?&]who=1/.test(location.search) ? 'who' : 'hub');
-  const [pre, setPre] = useState<string[]>([]);
+  const factParam = new URLSearchParams(location.search).get('fact');
+  const [screen, setScreen] = useState<Screen>(needsWho() || /[?&]who=1/.test(location.search) ? 'who' : factParam && TRICKS.some((t) => t.id === factParam) ? 'setup' : 'hub');
+  const [pre, setPre] = useState<string[]>(factParam && TRICKS.some((t) => t.id === factParam) ? [factParam] : []);
   const [, bump] = useState(0);
   const update = (fn: (d: Db) => Db) => setDb((d) => { const n = fn(d); save(n); return n; });
 
@@ -143,7 +145,7 @@ function Setup({ db, pre, onStart, onBack }: { db: Db; pre: string[]; onStart: (
           <div className="facts">
             {list.map((t) => (
               <button key={t.id} className="factrow" aria-pressed={chosen.includes(t.id)} onClick={() => toggle(t.id)}>
-                <span><b>{t.name}</b><small><Fx text={t.rule} /></small></span>
+                <span><b>{t.name}</b><small><Fx text={t.rule} /></small><HelpsWith id={t.id} /></span>
                 <span className="fstat">{chosen.includes(t.id) ? '✓' : ''}</span>
               </button>
             ))}
@@ -153,6 +155,18 @@ function Setup({ db, pre, onStart, onBack }: { db: Db; pre: string[]; onStart: (
       <button className="primary big" disabled={pick && chosen.length === 0} onClick={go}>{pick && chosen.length === 0 ? 'Pick at least one fact' : 'Start'}</button>
     </main>
   );
+}
+
+/** Study-guide lessons where a fact helps, e.g. "Unit rates (Lesson 2.1), y = kx (Lesson 2.4)". */
+const LINKS = factLinks as Record<string, { sub: string; title: string }[]>;
+function helpsWith(id: string, max = 3): string {
+  const l = LINKS[id] ?? [];
+  const shown = l.slice(0, max).map((e) => `${e.title} (Lesson ${e.sub})`).join(', ');
+  return l.length ? shown + (l.length > max ? `, and ${l.length - max} more` : '') : '';
+}
+function HelpsWith({ id }: { id: string }) {
+  const t = helpsWith(id);
+  return t ? <small className="helps">Helps with: {t}</small> : null;
 }
 
 type Brand = (typeof BRANDS)[number];
@@ -242,7 +256,7 @@ function FactsHome({ db, update, onStart, onSetup, onWho, onBack }: { db: Db; up
         <p className="muted">Everything is open. Tap one to practice just that fact.</p>
         {list.map((t) => (
           <button key={t.id} className="factrow" onClick={() => onSetup([t.id])}>
-            <span><b>{t.name}</b><small><Fx text={t.rule} /></small></span>
+            <span><b>{t.name}</b><small><Fx text={t.rule} /></small><HelpsWith id={t.id} /></span>
             <span className="fstat">{isLearned(t.id) ? `${Math.round(trickMastery(db, t.id) * 100)}%` : 'New'}</span>
           </button>
         ))}
@@ -342,6 +356,7 @@ function TrickCard({ trickId, onGo }: { trickId: string; onGo: () => void }) {
       <h2>{t.name}</h2>
       <p className="rule"><Fx text={t.rule} /></p>
       <p className="example"><Fx text={t.example} /></p>
+      {helpsWith(t.id) && <p className="muted">Helps with: {helpsWith(t.id)}. <a href="./study/unit-2.html">Open the study guide</a></p>}
       {why ? <p className="why">{t.why}</p> : <button className="ghost" onClick={() => setWhy(true)}>Show me why</button>}
       <button className="primary" onClick={onGo}>Let's try it</button>
     </section>

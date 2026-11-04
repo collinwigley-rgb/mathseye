@@ -1,4 +1,71 @@
 {
+ "tricks": {
+  "benchmark-fractions": {
+   "name": "Fraction and decimal pairs",
+   "rule": "Learn the friendly pairs: 1/2 = 0.5, 1/4 = 0.25, 1/5 = 0.2, 1/8 = 0.125, 1/10 = 0.1. Then count them up: 3/4 is three quarters.",
+   "example": "3/4 = 3 × 0.25 = 0.75     0.4 = 2/5"
+  },
+  "break-it-apart": {
+   "name": "Break it apart",
+   "rule": "Round one number to a friendly one, multiply, then fix the difference.",
+   "example": "7 × 48 = 7 × 50 − 7 × 2 = 336"
+  },
+  "divide-by-5-25-50": {
+   "name": "Dividing by 5, 25, and 50",
+   "rule": "÷5: double it, then ÷10. ÷25: times 4, then ÷100. ÷50: double it, then ÷100.",
+   "example": "240 ÷ 5 = 480 ÷ 10 = 48     300 ÷ 25 = 1200 ÷ 100 = 12"
+  },
+  "divide-by-decimals": {
+   "name": "Dividing by 0.5, 0.25, and 0.1",
+   "rule": "How many fit in 1? There are 2 halves, 4 quarters, 10 tenths in 1. So ÷0.5 is × 2, ÷0.25 is × 4, ÷0.1 is × 10.",
+   "example": "12 ÷ 0.25 = 12 × 4 = 48     7 ÷ 0.5 = 14"
+  },
+  "divide-in-two-steps": {
+   "name": "Divide in two easy steps",
+   "rule": "Split the divisor into two small numbers: ÷6 = ÷2 then ÷3. ÷12 = ÷3 then ÷4. ÷15 = ÷3 then ÷5.",
+   "example": "168 ÷ 12 = 168 ÷ 3 = 56, then 56 ÷ 4 = 14"
+  },
+  "divisibility-3-9": {
+   "name": "Divisibility by 3 and 9",
+   "rule": "Add the digits. If the sum is divisible by 3, so is the number. Same test for 9.",
+   "example": "156 → 1 + 5 + 6 = 12, and 12 is divisible by 3, so 156 is too."
+  },
+  "flip-and-cancel": {
+   "name": "Flip and cancel",
+   "rule": "Fraction ÷ fraction: keep the first, change ÷ to ×, flip the second. Cancel matching numbers before you multiply.",
+   "example": "(3/4) ÷ (1/2) = 3/4 × 2/1 = 3/2     (2/3) ÷ (1/6) = 2/3 × 6 = 4"
+  },
+  "halve-halve": {
+   "name": "Halve, then halve again",
+   "rule": "÷4: cut it in half twice. ÷8: cut it in half three times.",
+   "example": "156 ÷ 4 = 78 ÷ 2 = 39     240 ÷ 8 = 120 → 60 → 30"
+  },
+  "how-many-fit": {
+   "name": "How many fit?",
+   "rule": "Dividing by a unit fraction asks 'how many pieces fit?' Dividing by 1/4 means times 4. Dividing by 1/8 means times 8.",
+   "example": "6 ÷ 1/4 = 6 × 4 = 24     (3/4) ÷ (1/8) = 3/4 × 8 = 6"
+  },
+  "integer-sign-rules": {
+   "name": "Integer sign rules",
+   "rule": "Multiply or divide the numbers, then pick the sign: same signs → positive, different signs → negative.",
+   "example": "(−6)(−4) = 24    (−6)(4) = −24"
+  },
+  "minutes-to-hours": {
+   "name": "Minutes as part of an hour",
+   "rule": "Put the minutes over 60 and simplify. 15 minutes = 15/60 = 1/4 hour.",
+   "example": "30 min = 1/2 h     20 min = 1/3 h     6 min = 1/10 h"
+  },
+  "move-the-decimal": {
+   "name": "Move the decimal",
+   "rule": "Times 10, 100, 1000: slide the decimal right one place per zero. Divide: slide it left.",
+   "example": "5.6 ÷ 10 = 0.56    0.3 × 100 = 30"
+  },
+  "times-one-and-a-half": {
+   "name": "Times 1.5, 2.5, and 0.5",
+   "rule": "× 0.5 is half. × 1.5 is the number plus half of it. × 2.5 is double plus half.",
+   "example": "14 × 1.5 = 14 + 7 = 21     18 × 2.5 = 36 + 9 = 45"
+  }
+ },
  "problems": [
   {
    "sub": "2.1",
@@ -27,6 +94,11 @@
     ],
     "earlier": []
    },
+   "facts": [
+    "divide-in-two-steps",
+    "halve-halve",
+    "divide-by-5-25-50"
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -264,6 +336,11 @@
     ],
     "earlier": []
    },
+   "facts": [
+    "divide-in-two-steps",
+    "halve-halve",
+    "divide-by-5-25-50"
+   ],
    "variants": [
     {
      "kind": "choice",
@@ -524,6 +601,11 @@
     ],
     "earlier": []
    },
+   "facts": [
+    "divide-in-two-steps",
+    "halve-halve",
+    "divide-by-5-25-50"
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -744,6 +826,7 @@
     ],
     "earlier": []
    },
+   "facts": [],
    "tol": 1e-09,
    "variants": [
     {
@@ -967,6 +1050,11 @@
     ],
     "earlier": []
    },
+   "facts": [
+    "divide-in-two-steps",
+    "halve-halve",
+    "divide-by-5-25-50"
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -1200,6 +1288,11 @@
     ],
     "earlier": []
    },
+   "facts": [
+    "divide-in-two-steps",
+    "halve-halve",
+    "divide-by-5-25-50"
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -1437,6 +1530,11 @@
     ],
     "earlier": []
    },
+   "facts": [
+    "divide-in-two-steps",
+    "halve-halve",
+    "divide-by-5-25-50"
+   ],
    "variants": [
     {
      "kind": "choice",
@@ -1705,6 +1803,11 @@
      }
     ]
    },
+   "facts": [
+    "flip-and-cancel",
+    "how-many-fit",
+    "benchmark-fractions"
+   ],
    "tol": 1e-09,
    "sense": {
     "q": "You divided by 1/2. Should the answer be bigger or smaller than 3/4?",
@@ -2140,6 +2243,11 @@
      }
     ]
    },
+   "facts": [
+    "flip-and-cancel",
+    "how-many-fit",
+    "benchmark-fractions"
+   ],
    "tol": 1e-09,
    "sense": {
     "q": "You divided by 1/12. Should the answer be bigger or smaller than 5/6?",
@@ -2539,6 +2647,11 @@
      }
     ]
    },
+   "facts": [
+    "flip-and-cancel",
+    "how-many-fit",
+    "benchmark-fractions"
+   ],
    "tol": 1e-09,
    "sense": {
     "q": "You divided by 2/3. Should the answer be bigger or smaller than 120?",
@@ -2881,6 +2994,11 @@
      }
     ]
    },
+   "facts": [
+    "flip-and-cancel",
+    "how-many-fit",
+    "benchmark-fractions"
+   ],
    "variants": [
     {
      "kind": "choice",
@@ -3148,6 +3266,11 @@
      }
     ]
    },
+   "facts": [
+    "flip-and-cancel",
+    "how-many-fit",
+    "benchmark-fractions"
+   ],
    "tol": 1e-09,
    "sense": {
     "q": "You divided by 3/8. Should the answer be bigger or smaller than 6?",
@@ -3478,6 +3601,11 @@
     ],
     "earlier": []
    },
+   "facts": [
+    "flip-and-cancel",
+    "how-many-fit",
+    "benchmark-fractions"
+   ],
    "tol": 0.006,
    "sense": {
     "q": "You divided by 5. Should the answer be bigger or smaller than 2/3?",
@@ -3831,6 +3959,11 @@
      }
     ]
    },
+   "facts": [
+    "divide-in-two-steps",
+    "halve-halve",
+    "divide-by-5-25-50"
+   ],
    "variants": [
     {
      "kind": "choice",
@@ -4234,6 +4367,11 @@
      }
     ]
    },
+   "facts": [
+    "divide-in-two-steps",
+    "halve-halve",
+    "divide-by-5-25-50"
+   ],
    "variants": [
     {
      "kind": "choice",
@@ -4632,6 +4770,11 @@
      }
     ]
    },
+   "facts": [
+    "divide-in-two-steps",
+    "halve-halve",
+    "divide-by-5-25-50"
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -4972,6 +5115,11 @@
      }
     ]
    },
+   "facts": [
+    "divide-in-two-steps",
+    "halve-halve",
+    "divide-by-5-25-50"
+   ],
    "variants": [
     {
      "kind": "choice",
@@ -5240,6 +5388,11 @@
      }
     ]
    },
+   "facts": [
+    "divide-in-two-steps",
+    "halve-halve",
+    "divide-by-5-25-50"
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -5581,6 +5734,11 @@
      }
     ]
    },
+   "facts": [
+    "divide-in-two-steps",
+    "halve-halve",
+    "divide-by-5-25-50"
+   ],
    "variants": [
     {
      "kind": "choice",
@@ -5814,6 +5972,11 @@
      }
     ]
    },
+   "facts": [
+    "divide-in-two-steps",
+    "halve-halve",
+    "divide-by-5-25-50"
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -6036,6 +6199,9 @@
     ],
     "earlier": []
    },
+   "facts": [
+    "divide-in-two-steps"
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -6259,6 +6425,9 @@
     ],
     "earlier": []
    },
+   "facts": [
+    "divide-in-two-steps"
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -6496,6 +6665,11 @@
      }
     ]
    },
+   "facts": [
+    "divide-in-two-steps",
+    "halve-halve",
+    "divide-by-5-25-50"
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -6724,6 +6898,11 @@
      }
     ]
    },
+   "facts": [
+    "divide-in-two-steps",
+    "halve-halve",
+    "divide-by-5-25-50"
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -6967,6 +7146,7 @@
      }
     ]
    },
+   "facts": [],
    "variants": [
     {
      "kind": "choice",
@@ -7253,6 +7433,11 @@
      }
     ]
    },
+   "facts": [
+    "divide-in-two-steps",
+    "halve-halve",
+    "divide-by-5-25-50"
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -7512,6 +7697,7 @@
      }
     ]
    },
+   "facts": [],
    "variants": [
     {
      "kind": "choice",
@@ -7771,6 +7957,9 @@
      }
     ]
    },
+   "facts": [
+    "divide-in-two-steps"
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -8068,6 +8257,7 @@
      }
     ]
    },
+   "facts": [],
    "variants": [
     {
      "kind": "choice",
@@ -8606,6 +8796,7 @@
      }
     ]
    },
+   "facts": [],
    "variants": [
     {
      "kind": "choice",
@@ -9157,6 +9348,9 @@
      }
     ]
    },
+   "facts": [
+    "divide-in-two-steps"
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -9437,6 +9631,9 @@
      }
     ]
    },
+   "facts": [
+    "divide-in-two-steps"
+   ],
    "variants": [
     {
      "kind": "choice",
@@ -9935,6 +10132,7 @@
      }
     ]
    },
+   "facts": [],
    "tol": 1e-09,
    "variants": [
     {
@@ -10172,6 +10370,7 @@
      }
     ]
    },
+   "facts": [],
    "tol": 1e-09,
    "variants": [
     {
@@ -10410,6 +10609,11 @@
      }
     ]
    },
+   "facts": [
+    "divide-in-two-steps",
+    "halve-halve",
+    "divide-by-5-25-50"
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -10641,6 +10845,7 @@
     ],
     "earlier": []
    },
+   "facts": [],
    "tol": 1e-09,
    "variants": [
     {
@@ -10873,6 +11078,11 @@
      }
     ]
    },
+   "facts": [
+    "divide-in-two-steps",
+    "halve-halve",
+    "divide-by-5-25-50"
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -11113,6 +11323,7 @@
      }
     ]
    },
+   "facts": [],
    "variants": [
     {
      "kind": "choice",
@@ -11369,6 +11580,11 @@
      }
     ]
    },
+   "facts": [
+    "times-one-and-a-half",
+    "break-it-apart",
+    "divide-in-two-steps"
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -11596,6 +11812,11 @@
      }
     ]
    },
+   "facts": [
+    "times-one-and-a-half",
+    "break-it-apart",
+    "divide-in-two-steps"
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -11818,6 +12039,11 @@
     ],
     "earlier": []
    },
+   "facts": [
+    "times-one-and-a-half",
+    "break-it-apart",
+    "move-the-decimal"
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -12045,6 +12271,11 @@
      }
     ]
    },
+   "facts": [
+    "times-one-and-a-half",
+    "break-it-apart",
+    "divide-in-two-steps"
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -12277,6 +12508,11 @@
      }
     ]
    },
+   "facts": [
+    "times-one-and-a-half",
+    "break-it-apart",
+    "divide-in-two-steps"
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -12504,6 +12740,11 @@
      }
     ]
    },
+   "facts": [
+    "times-one-and-a-half",
+    "break-it-apart",
+    "divide-in-two-steps"
+   ],
    "tol": 1e-09,
    "variants": [
     {

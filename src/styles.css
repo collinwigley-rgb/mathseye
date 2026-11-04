@@ -190,3 +190,4 @@ button:active{transform:scale(.98)}
 .ppop form { display: flex; gap: 8px; }
 .ppop input { flex: 1; min-width: 0; font-size: 16px; padding: 8px 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,.25); background: var(--panel); color: var(--text); }
 body { padding-top: 52px; }
+.helps { color: var(--amber, #ffd966); }
