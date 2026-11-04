@@ -97,7 +97,12 @@
    "facts": [
     "divide-in-two-steps"
    ],
-   "shortcut": "12 is 3 × 4. Divide $4.68 by 3, then divide that answer by 4.",
+   "shortcut": [
+    "Cost of ONE = $4.68 ÷ 12. Try it in your head:",
+    "12 is 3 × 4.",
+    "Divide $4.68 by 3.",
+    "Then cut that answer in half twice."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -120,7 +125,11 @@
      "graph": null,
      "ref": 1001,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Cost of ONE = $25.00 ÷ 20. Try it in your head:",
+      "Cut $25.00 in half.",
+      "Then slide the decimal point one place left."
+     ]
     },
     {
      "kind": "num",
@@ -144,7 +153,10 @@
      "facts": [
       "move-the-decimal"
      ],
-     "shortcut": "Slide the decimal point in $12.50 left 1 place."
+     "shortcut": [
+      "Cost of ONE = $12.50 ÷ 10. Try it in your head:",
+      "Slide the decimal point in $12.50 one place left."
+     ]
     },
     {
      "kind": "num",
@@ -168,7 +180,12 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": "6 is 2 × 3. Divide $1.50 by 2, then divide that answer by 3."
+     "shortcut": [
+      "Cost of ONE = $1.50 ÷ 6. Try it in your head:",
+      "6 is 2 × 3.",
+      "Divide $1.50 by 2.",
+      "Then divide that answer by 3."
+     ]
     },
     {
      "kind": "num",
@@ -192,7 +209,12 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": "12 is 3 × 4. Divide $6.60 by 3, then divide that answer by 4."
+     "shortcut": [
+      "Cost of ONE = $6.60 ÷ 12. Try it in your head:",
+      "12 is 3 × 4.",
+      "Divide $6.60 by 3.",
+      "Then cut that answer in half twice."
+     ]
     },
     {
      "kind": "num",
@@ -216,7 +238,12 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": "6 is 2 × 3. Divide $5.10 by 2, then divide that answer by 3."
+     "shortcut": [
+      "Cost of ONE = $5.10 ÷ 6. Try it in your head:",
+      "6 is 2 × 3.",
+      "Divide $5.10 by 2.",
+      "Then divide that answer by 3."
+     ]
     },
     {
      "kind": "num",
@@ -240,7 +267,12 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": "15 is 3 × 5. Divide $5.25 by 3, then divide that answer by 5."
+     "shortcut": [
+      "Cost of ONE = $5.25 ÷ 15. Try it in your head:",
+      "15 is 3 × 5.",
+      "Divide $5.25 by 3.",
+      "Then double that answer and slide the decimal point one place left."
+     ]
     },
     {
      "kind": "num",
@@ -264,7 +296,12 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": "15 is 3 × 5. Divide $3.75 by 3, then divide that answer by 5."
+     "shortcut": [
+      "Cost of ONE = $3.75 ÷ 15. Try it in your head:",
+      "15 is 3 × 5.",
+      "Divide $3.75 by 3.",
+      "Then double that answer and slide the decimal point one place left."
+     ]
     },
     {
      "kind": "num",
@@ -288,7 +325,12 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": "15 is 3 × 5. Divide $3.75 by 3, then divide that answer by 5."
+     "shortcut": [
+      "Cost of ONE = $3.75 ÷ 15. Try it in your head:",
+      "15 is 3 × 5.",
+      "Divide $3.75 by 3.",
+      "Then double that answer and slide the decimal point one place left."
+     ]
     },
     {
      "kind": "num",
@@ -312,7 +354,12 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": "15 is 3 × 5. Divide $11.25 by 3, then divide that answer by 5."
+     "shortcut": [
+      "Cost of ONE = $11.25 ÷ 15. Try it in your head:",
+      "15 is 3 × 5.",
+      "Divide $11.25 by 3.",
+      "Then double that answer and slide the decimal point one place left."
+     ]
     },
     {
      "kind": "num",
@@ -334,7 +381,11 @@
      "graph": null,
      "ref": 1010,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Cost of ONE = $13.00 ÷ 20. Try it in your head:",
+      "Cut $13.00 in half.",
+      "Then slide the decimal point one place left."
+     ]
     }
    ],
    "ref": 1011
@@ -372,7 +423,17 @@
     "earlier": []
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [
+    "Brand X: 18 oz for $5.04.",
+    "18 is 2 × 9.",
+    "Cut $5.04 in half.",
+    "Then divide that answer by 9.",
+    "Brand Y: 30 oz for $8.10.",
+    "30 is 3 × 10.",
+    "Divide $8.10 by 3.",
+    "Then slide the decimal point one place left.",
+    "The smaller price per ounce is the better deal."
+   ],
    "variants": [
     {
      "kind": "choice",
@@ -397,7 +458,15 @@
      "graph": null,
      "ref": 1012,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Store brand: 16 oz for $3.84.",
+      "Cut $3.84 in half four times in a row.",
+      "Name brand: 12 oz for $2.76.",
+      "12 is 3 × 4.",
+      "Divide $2.76 by 3.",
+      "Then cut that answer in half twice.",
+      "The smaller price per ounce is the better deal."
+     ]
     },
     {
      "kind": "choice",
@@ -422,7 +491,14 @@
      "graph": null,
      "ref": 1013,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Pack A: 16 oz for $4.32.",
+      "Cut $4.32 in half four times in a row.",
+      "Pack B: 20 oz for $5.00.",
+      "Cut $5.00 in half.",
+      "Then slide the decimal point one place left.",
+      "The smaller price per ounce is the better deal."
+     ]
     },
     {
      "kind": "choice",
@@ -447,7 +523,17 @@
      "graph": null,
      "ref": 1014,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Store brand: 36 oz for $7.56.",
+      "36 is 4 × 9.",
+      "Cut $7.56 in half twice.",
+      "Then divide that answer by 9.",
+      "Name brand: 12 oz for $2.64.",
+      "12 is 3 × 4.",
+      "Divide $2.64 by 3.",
+      "Then cut that answer in half twice.",
+      "The smaller price per ounce is the better deal."
+     ]
     },
     {
      "kind": "choice",
@@ -472,7 +558,15 @@
      "graph": null,
      "ref": 1015,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Pack A: 16 oz for $3.36.",
+      "Cut $3.36 in half four times in a row.",
+      "Pack B: 24 oz for $5.52.",
+      "24 is 4 × 6.",
+      "Cut $5.52 in half twice.",
+      "Then divide that answer by 6.",
+      "The smaller price per ounce is the better deal."
+     ]
     },
     {
      "kind": "choice",
@@ -497,7 +591,17 @@
      "graph": null,
      "ref": 1016,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Brand X: 12 oz for $2.52.",
+      "12 is 3 × 4.",
+      "Divide $2.52 by 3.",
+      "Then cut that answer in half twice.",
+      "Brand Y: 18 oz for $3.96.",
+      "18 is 2 × 9.",
+      "Cut $3.96 in half.",
+      "Then divide that answer by 9.",
+      "The smaller price per ounce is the better deal."
+     ]
     },
     {
      "kind": "choice",
@@ -522,7 +626,16 @@
      "graph": null,
      "ref": 1017,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Brand X: 36 oz for $10.80.",
+      "36 is 4 × 9.",
+      "Cut $10.80 in half twice.",
+      "Then divide that answer by 9.",
+      "Brand Y: 20 oz for $6.40.",
+      "Cut $6.40 in half.",
+      "Then slide the decimal point one place left.",
+      "The smaller price per ounce is the better deal."
+     ]
     },
     {
      "kind": "choice",
@@ -547,7 +660,17 @@
      "graph": null,
      "ref": 1018,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Pack A: 36 oz for $10.80.",
+      "36 is 4 × 9.",
+      "Cut $10.80 in half twice.",
+      "Then divide that answer by 9.",
+      "Pack B: 30 oz for $9.60.",
+      "30 is 3 × 10.",
+      "Divide $9.60 by 3.",
+      "Then slide the decimal point one place left.",
+      "The smaller price per ounce is the better deal."
+     ]
     },
     {
      "kind": "choice",
@@ -572,7 +695,15 @@
      "graph": null,
      "ref": 1019,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Store brand: 16 oz for $4.32.",
+      "Cut $4.32 in half four times in a row.",
+      "Name brand: 36 oz for $9.36.",
+      "36 is 4 × 9.",
+      "Cut $9.36 in half twice.",
+      "Then divide that answer by 9.",
+      "The smaller price per ounce is the better deal."
+     ]
     },
     {
      "kind": "choice",
@@ -597,7 +728,17 @@
      "graph": null,
      "ref": 1020,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Store brand: 12 oz for $3.24.",
+      "12 is 3 × 4.",
+      "Divide $3.24 by 3.",
+      "Then cut that answer in half twice.",
+      "Name brand: 36 oz for $10.44.",
+      "36 is 4 × 9.",
+      "Cut $10.44 in half twice.",
+      "Then divide that answer by 9.",
+      "The smaller price per ounce is the better deal."
+     ]
     },
     {
      "kind": "choice",
@@ -622,7 +763,17 @@
      "graph": null,
      "ref": 1021,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Pack A: 12 oz for $3.96.",
+      "12 is 3 × 4.",
+      "Divide $3.96 by 3.",
+      "Then cut that answer in half twice.",
+      "Pack B: 18 oz for $6.12.",
+      "18 is 2 × 9.",
+      "Cut $6.12 in half.",
+      "Then divide that answer by 9.",
+      "The smaller price per ounce is the better deal."
+     ]
     }
    ],
    "ref": 1022
@@ -657,7 +808,15 @@
     "divide-in-two-steps",
     "divide-by-5-25-50"
    ],
-   "shortcut": "6 is 2 × 3. Divide 84 by 2, then divide that answer by 3.",
+   "shortcut": [
+    "First find the amount in ONE minute.",
+    "6 is 2 × 3.",
+    "Divide 84 by 2.",
+    "Then divide that answer by 3.",
+    "Now find 25 minutes.",
+    "Slide the decimal point in that answer two places right. That multiplies by 100.",
+    "Then cut that in half twice."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -681,7 +840,13 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": "Cut 100 in half, then cut that in half again."
+     "shortcut": [
+      "First find the amount in ONE minute.",
+      "Cut 100 in half.",
+      "Cut that in half again.",
+      "Now find 40 minutes.",
+      "Multiply that answer by 40."
+     ]
     },
     {
      "kind": "num",
@@ -702,7 +867,12 @@
      "graph": null,
      "ref": 1024,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "First find the amount in ONE minute.",
+      "Divide 45 by 3.",
+      "Now find 30 minutes.",
+      "Multiply that answer by 30."
+     ]
     },
     {
      "kind": "num",
@@ -725,7 +895,12 @@
      "facts": [
       "move-the-decimal"
      ],
-     "shortcut": "Slide the decimal point in 150 left 1 place."
+     "shortcut": [
+      "First find the amount in ONE minute.",
+      "Slide the decimal point in 150 one place left.",
+      "Now find 40 minutes.",
+      "Multiply that answer by 40."
+     ]
     },
     {
      "kind": "num",
@@ -746,7 +921,13 @@
      "graph": null,
      "ref": 1026,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "First find the amount in ONE minute.",
+      "Divide 45 by 3.",
+      "Now find 20 minutes.",
+      "Double that answer.",
+      "Then slide the decimal point one place right."
+     ]
     },
     {
      "kind": "num",
@@ -770,7 +951,13 @@
       "divide-by-5-25-50",
       "divide-in-two-steps"
      ],
-     "shortcut": "Double 75, then divide by 10."
+     "shortcut": [
+      "First find the amount in ONE minute.",
+      "Double 75.",
+      "Then slide the decimal point one place left. That divides by 10.",
+      "Now find 15 minutes.",
+      "Multiply that answer by 15."
+     ]
     },
     {
      "kind": "num",
@@ -793,7 +980,14 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": "Cut 128 in half, then in half again, then in half once more."
+     "shortcut": [
+      "First find the amount in ONE minute.",
+      "Cut 128 in half.",
+      "Cut that in half again.",
+      "Cut it in half one more time.",
+      "Now find 40 minutes.",
+      "Multiply that answer by 40."
+     ]
     },
     {
      "kind": "num",
@@ -816,7 +1010,13 @@
      "facts": [
       "divide-by-5-25-50"
      ],
-     "shortcut": "Double 80, then divide by 10."
+     "shortcut": [
+      "First find the amount in ONE minute.",
+      "Double 80.",
+      "Then slide the decimal point one place left. That divides by 10.",
+      "Now find 40 minutes.",
+      "Multiply that answer by 40."
+     ]
     },
     {
      "kind": "num",
@@ -839,7 +1039,14 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": "Cut 144 in half, then in half again, then in half once more."
+     "shortcut": [
+      "First find the amount in ONE minute.",
+      "Cut 144 in half.",
+      "Cut that in half again.",
+      "Cut it in half one more time.",
+      "Now find 30 minutes.",
+      "Multiply that answer by 30."
+     ]
     },
     {
      "kind": "num",
@@ -862,7 +1069,14 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": "Cut 120 in half, then in half again, then in half once more."
+     "shortcut": [
+      "First find the amount in ONE minute.",
+      "Cut 120 in half.",
+      "Cut that in half again.",
+      "Cut it in half one more time.",
+      "Now find 30 minutes.",
+      "Multiply that answer by 30."
+     ]
     },
     {
      "kind": "num",
@@ -885,7 +1099,14 @@
      "facts": [
       "divide-by-5-25-50"
      ],
-     "shortcut": "Double 90, then divide by 10."
+     "shortcut": [
+      "First find the amount in ONE minute.",
+      "Double 90.",
+      "Then slide the decimal point one place left. That divides by 10.",
+      "Now find 25 minutes.",
+      "Slide the decimal point in that answer two places right. That multiplies by 100.",
+      "Then cut that in half twice."
+     ]
     }
    ],
    "ref": 1033
@@ -916,7 +1137,11 @@
     "earlier": []
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [
+    "Count the groups: how many 5s fit in 35?",
+    "Each group has 4 boys.",
+    "So multiply the number of groups by 4."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -938,7 +1163,11 @@
      "graph": null,
      "ref": 1034,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the groups: how many 5s fit in 30?",
+      "Each group has 3 red beads.",
+      "So multiply the number of groups by 3."
+     ]
     },
     {
      "kind": "num",
@@ -959,7 +1188,11 @@
      "graph": null,
      "ref": 1035,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the groups: how many 5s fit in 40?",
+      "Each group has 2 guitars.",
+      "So multiply the number of groups by 2."
+     ]
     },
     {
      "kind": "num",
@@ -980,7 +1213,11 @@
      "graph": null,
      "ref": 1036,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the groups: how many 4s fit in 32?",
+      "Each group has 3 cats.",
+      "So multiply the number of groups by 3."
+     ]
     },
     {
      "kind": "num",
@@ -1001,7 +1238,11 @@
      "graph": null,
      "ref": 1037,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the groups: how many 5s fit in 20?",
+      "Each group has 4 boys.",
+      "So multiply the number of groups by 4."
+     ]
     },
     {
      "kind": "num",
@@ -1022,7 +1263,11 @@
      "graph": null,
      "ref": 1038,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the groups: how many 5s fit in 20?",
+      "Each group has 4 guitars.",
+      "So multiply the number of groups by 4."
+     ]
     },
     {
      "kind": "num",
@@ -1043,7 +1288,11 @@
      "graph": null,
      "ref": 1039,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the groups: how many 4s fit in 36?",
+      "Each group has 3 guitars.",
+      "So multiply the number of groups by 3."
+     ]
     },
     {
      "kind": "num",
@@ -1064,7 +1313,11 @@
      "graph": null,
      "ref": 1040,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the groups: how many 5s fit in 25?",
+      "Each group has 4 red beads.",
+      "So multiply the number of groups by 4."
+     ]
     },
     {
      "kind": "num",
@@ -1085,7 +1338,11 @@
      "graph": null,
      "ref": 1041,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the groups: how many 4s fit in 20?",
+      "Each group has 3 boys.",
+      "So multiply the number of groups by 3."
+     ]
     },
     {
      "kind": "num",
@@ -1106,7 +1363,11 @@
      "graph": null,
      "ref": 1042,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the groups: how many 6s fit in 18?",
+      "Each group has 5 red beads.",
+      "So multiply the number of groups by 5."
+     ]
     },
     {
      "kind": "num",
@@ -1127,7 +1388,11 @@
      "graph": null,
      "ref": 1043,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the groups: how many 6s fit in 42?",
+      "Each group has 5 cats.",
+      "So multiply the number of groups by 5."
+     ]
     }
    ],
    "ref": 1044
@@ -1161,7 +1426,11 @@
     "earlier": []
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [
+    "Count the batches: how many 12s fit in 60?",
+    "Each batch uses 3 cups of flour. Multiply to get all the cups.",
+    "Each cup costs $0.40. Multiply the cups by that."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -1184,7 +1453,11 @@
      "graph": null,
      "ref": 1045,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the batches: how many 24s fit in 72?",
+      "Each batch uses 4 cups of flour. Multiply to get all the cups.",
+      "Each cup costs $0.50. Multiply the cups by that."
+     ]
     },
     {
      "kind": "num",
@@ -1206,7 +1479,11 @@
      "graph": null,
      "ref": 1046,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the batches: how many 12s fit in 48?",
+      "Each batch uses 3 cups of flour. Multiply to get all the cups.",
+      "Each cup costs $0.40. Multiply the cups by that."
+     ]
     },
     {
      "kind": "num",
@@ -1228,7 +1505,11 @@
      "graph": null,
      "ref": 1047,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the batches: how many 24s fit in 120?",
+      "Each batch uses 4 cups of flour. Multiply to get all the cups.",
+      "Each cup costs $0.25. Multiply the cups by that."
+     ]
     },
     {
      "kind": "num",
@@ -1250,7 +1531,11 @@
      "graph": null,
      "ref": 1048,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the batches: how many 12s fit in 36?",
+      "Each batch uses 2 cups of flour. Multiply to get all the cups.",
+      "Each cup costs $0.80. Multiply the cups by that."
+     ]
     },
     {
      "kind": "num",
@@ -1272,7 +1557,11 @@
      "graph": null,
      "ref": 1049,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the batches: how many 12s fit in 48?",
+      "Each batch uses 3 cups of flour. Multiply to get all the cups.",
+      "Each cup costs $0.25. Multiply the cups by that."
+     ]
     },
     {
      "kind": "num",
@@ -1294,7 +1583,11 @@
      "graph": null,
      "ref": 1050,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the batches: how many 12s fit in 24?",
+      "Each batch uses 2 cups of flour. Multiply to get all the cups.",
+      "Each cup costs $0.80. Multiply the cups by that."
+     ]
     },
     {
      "kind": "num",
@@ -1316,7 +1609,11 @@
      "graph": null,
      "ref": 1051,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the batches: how many 24s fit in 120?",
+      "Each batch uses 4 cups of flour. Multiply to get all the cups.",
+      "Each cup costs $0.60. Multiply the cups by that."
+     ]
     },
     {
      "kind": "num",
@@ -1338,7 +1635,11 @@
      "graph": null,
      "ref": 1052,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the batches: how many 24s fit in 72?",
+      "Each batch uses 3 cups of flour. Multiply to get all the cups.",
+      "Each cup costs $0.40. Multiply the cups by that."
+     ]
     },
     {
      "kind": "num",
@@ -1360,7 +1661,11 @@
      "graph": null,
      "ref": 1053,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the batches: how many 24s fit in 48?",
+      "Each batch uses 3 cups of flour. Multiply to get all the cups.",
+      "Each cup costs $0.80. Multiply the cups by that."
+     ]
     },
     {
      "kind": "num",
@@ -1382,7 +1687,11 @@
      "graph": null,
      "ref": 1054,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the batches: how many 12s fit in 48?",
+      "Each batch uses 2 cups of flour. Multiply to get all the cups.",
+      "Each cup costs $0.25. Multiply the cups by that."
+     ]
     }
    ],
    "ref": 1055
@@ -1416,7 +1725,13 @@
     "earlier": []
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [
+    "3 dozen is 3 × 12 = 36.",
+    "Now find the cost of ONE.",
+    "36 is 4 × 9.",
+    "Cut $54 in half twice.",
+    "Then divide that answer by 9."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -1439,7 +1754,13 @@
      "graph": null,
      "ref": 1056,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "3 dozen is 3 × 12 = 36.",
+      "Now find the cost of ONE.",
+      "36 is 4 × 9.",
+      "Cut $27.00 in half twice.",
+      "Then divide that answer by 9."
+     ]
     },
     {
      "kind": "num",
@@ -1461,7 +1782,11 @@
      "graph": null,
      "ref": 1057,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "4 dozen is 4 × 12 = 48.",
+      "Now find the cost of ONE.",
+      "Divide $60.00 by 48."
+     ]
     },
     {
      "kind": "num",
@@ -1483,7 +1808,13 @@
      "graph": null,
      "ref": 1058,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "2 dozen is 2 × 12 = 24.",
+      "Now find the cost of ONE.",
+      "24 is 4 × 6.",
+      "Cut $30.00 in half twice.",
+      "Then divide that answer by 6."
+     ]
     },
     {
      "kind": "num",
@@ -1505,7 +1836,11 @@
      "graph": null,
      "ref": 1059,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "4 dozen is 4 × 12 = 48.",
+      "Now find the cost of ONE.",
+      "Divide $96.00 by 48."
+     ]
     },
     {
      "kind": "num",
@@ -1527,7 +1862,11 @@
      "graph": null,
      "ref": 1060,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "4 dozen is 4 × 12 = 48.",
+      "Now find the cost of ONE.",
+      "Divide $120.00 by 48."
+     ]
     },
     {
      "kind": "num",
@@ -1549,7 +1888,13 @@
      "graph": null,
      "ref": 1061,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "3 dozen is 3 × 12 = 36.",
+      "Now find the cost of ONE.",
+      "36 is 4 × 9.",
+      "Cut $90.00 in half twice.",
+      "Then divide that answer by 9."
+     ]
     },
     {
      "kind": "num",
@@ -1571,7 +1916,11 @@
      "graph": null,
      "ref": 1062,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "4 dozen is 4 × 12 = 48.",
+      "Now find the cost of ONE.",
+      "Divide $120.00 by 48."
+     ]
     },
     {
      "kind": "num",
@@ -1593,7 +1942,13 @@
      "graph": null,
      "ref": 1063,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "3 dozen is 3 × 12 = 36.",
+      "Now find the cost of ONE.",
+      "36 is 4 × 9.",
+      "Cut $54.00 in half twice.",
+      "Then divide that answer by 9."
+     ]
     },
     {
      "kind": "num",
@@ -1615,7 +1970,13 @@
      "graph": null,
      "ref": 1064,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "3 dozen is 3 × 12 = 36.",
+      "Now find the cost of ONE.",
+      "36 is 4 × 9.",
+      "Cut $27.00 in half twice.",
+      "Then divide that answer by 9."
+     ]
     },
     {
      "kind": "num",
@@ -1637,7 +1998,13 @@
      "graph": null,
      "ref": 1065,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "2 dozen is 2 × 12 = 24.",
+      "Now find the cost of ONE.",
+      "24 is 4 × 6.",
+      "Cut $12.00 in half twice.",
+      "Then divide that answer by 6."
+     ]
     }
    ],
    "ref": 1066
@@ -1677,7 +2044,14 @@
    "facts": [
     "divide-by-5-25-50"
    ],
-   "shortcut": "For Ava: Double 195, then divide by 10.",
+   "shortcut": [
+    "Ava: 195 words in 5 minutes. Find words in ONE minute.",
+    "Double 195.",
+    "Then slide the decimal point one place left. That divides by 10.",
+    "Ben: 224 words in 7 minutes. Find words in ONE minute.",
+    "Divide 224 by 7.",
+    "The bigger number is faster."
+   ],
    "variants": [
     {
      "kind": "choice",
@@ -1705,7 +2079,17 @@
       "divide-in-two-steps",
       "halve-halve"
      ],
-     "shortcut": "For Ben: 6 is 2 × 3. Divide 156 by 2, then divide that answer by 3. For Leo: Cut 288 in half, then in half again, then in half once more."
+     "shortcut": [
+      "Ben: 156 words in 6 minutes. Find words in ONE minute.",
+      "6 is 2 × 3.",
+      "Divide 156 by 2.",
+      "Then divide that answer by 3.",
+      "Leo: 288 words in 8 minutes. Find words in ONE minute.",
+      "Cut 288 in half.",
+      "Cut that in half again.",
+      "Cut it in half one more time.",
+      "The bigger number is faster."
+     ]
     },
     {
      "kind": "choice",
@@ -1733,7 +2117,15 @@
       "divide-in-two-steps",
       "move-the-decimal"
      ],
-     "shortcut": "For Ava: 6 is 2 × 3. Divide 288 by 2, then divide that answer by 3. For Maya: Slide the decimal point in 350 left 1 place."
+     "shortcut": [
+      "Ava: 288 words in 6 minutes. Find words in ONE minute.",
+      "6 is 2 × 3.",
+      "Divide 288 by 2.",
+      "Then divide that answer by 3.",
+      "Maya: 350 words in 10 minutes. Find words in ONE minute.",
+      "Slide the decimal point in 350 one place left.",
+      "The bigger number is faster."
+     ]
     },
     {
      "kind": "choice",
@@ -1761,7 +2153,15 @@
       "move-the-decimal",
       "halve-halve"
      ],
-     "shortcut": "For Ben: Slide the decimal point in 330 left 1 place. For Zoe: Cut 376 in half, then in half again, then in half once more."
+     "shortcut": [
+      "Ben: 330 words in 10 minutes. Find words in ONE minute.",
+      "Slide the decimal point in 330 one place left.",
+      "Zoe: 376 words in 8 minutes. Find words in ONE minute.",
+      "Cut 376 in half.",
+      "Cut that in half again.",
+      "Cut it in half one more time.",
+      "The bigger number is faster."
+     ]
     },
     {
      "kind": "choice",
@@ -1789,7 +2189,16 @@
       "divide-by-5-25-50",
       "divide-in-two-steps"
      ],
-     "shortcut": "For Zoe: Double 195, then divide by 10. For Leo: 6 is 2 × 3. Divide 162 by 2, then divide that answer by 3."
+     "shortcut": [
+      "Zoe: 195 words in 5 minutes. Find words in ONE minute.",
+      "Double 195.",
+      "Then slide the decimal point one place left. That divides by 10.",
+      "Leo: 162 words in 6 minutes. Find words in ONE minute.",
+      "6 is 2 × 3.",
+      "Divide 162 by 2.",
+      "Then divide that answer by 3.",
+      "The bigger number is faster."
+     ]
     },
     {
      "kind": "choice",
@@ -1816,7 +2225,16 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": "For Sam: Cut 112 in half, then cut that in half again. For Ava: Cut 304 in half, then in half again, then in half once more."
+     "shortcut": [
+      "Sam: 112 words in 4 minutes. Find words in ONE minute.",
+      "Cut 112 in half.",
+      "Cut that in half again.",
+      "Ava: 304 words in 8 minutes. Find words in ONE minute.",
+      "Cut 304 in half.",
+      "Cut that in half again.",
+      "Cut it in half one more time.",
+      "The bigger number is faster."
+     ]
     },
     {
      "kind": "choice",
@@ -1844,7 +2262,15 @@
       "halve-halve",
       "divide-by-5-25-50"
      ],
-     "shortcut": "For Maya: Cut 132 in half, then cut that in half again. For Ben: Double 180, then divide by 10."
+     "shortcut": [
+      "Maya: 132 words in 4 minutes. Find words in ONE minute.",
+      "Cut 132 in half.",
+      "Cut that in half again.",
+      "Ben: 180 words in 5 minutes. Find words in ONE minute.",
+      "Double 180.",
+      "Then slide the decimal point one place left. That divides by 10.",
+      "The bigger number is faster."
+     ]
     },
     {
      "kind": "choice",
@@ -1872,7 +2298,16 @@
       "halve-halve",
       "divide-in-two-steps"
      ],
-     "shortcut": "For Ben: Cut 144 in half, then cut that in half again. For Zoe: 6 is 2 × 3. Divide 276 by 2, then divide that answer by 3."
+     "shortcut": [
+      "Ben: 144 words in 4 minutes. Find words in ONE minute.",
+      "Cut 144 in half.",
+      "Cut that in half again.",
+      "Zoe: 276 words in 6 minutes. Find words in ONE minute.",
+      "6 is 2 × 3.",
+      "Divide 276 by 2.",
+      "Then divide that answer by 3.",
+      "The bigger number is faster."
+     ]
     },
     {
      "kind": "choice",
@@ -1900,7 +2335,16 @@
       "halve-halve",
       "divide-by-5-25-50"
      ],
-     "shortcut": "For Zoe: Cut 280 in half, then in half again, then in half once more. For Ben: Double 180, then divide by 10."
+     "shortcut": [
+      "Zoe: 280 words in 8 minutes. Find words in ONE minute.",
+      "Cut 280 in half.",
+      "Cut that in half again.",
+      "Cut it in half one more time.",
+      "Ben: 180 words in 5 minutes. Find words in ONE minute.",
+      "Double 180.",
+      "Then slide the decimal point one place left. That divides by 10.",
+      "The bigger number is faster."
+     ]
     },
     {
      "kind": "choice",
@@ -1928,7 +2372,15 @@
       "halve-halve",
       "divide-by-5-25-50"
      ],
-     "shortcut": "For Leo: Cut 168 in half, then cut that in half again. For Ben: Double 145, then divide by 10."
+     "shortcut": [
+      "Leo: 168 words in 4 minutes. Find words in ONE minute.",
+      "Cut 168 in half.",
+      "Cut that in half again.",
+      "Ben: 145 words in 5 minutes. Find words in ONE minute.",
+      "Double 145.",
+      "Then slide the decimal point one place left. That divides by 10.",
+      "The bigger number is faster."
+     ]
     },
     {
      "kind": "choice",
@@ -1956,7 +2408,16 @@
       "divide-in-two-steps",
       "halve-halve"
      ],
-     "shortcut": "For Zoe: 6 is 2 × 3. Divide 282 by 2, then divide that answer by 3. For Ava: Cut 108 in half, then cut that in half again."
+     "shortcut": [
+      "Zoe: 282 words in 6 minutes. Find words in ONE minute.",
+      "6 is 2 × 3.",
+      "Divide 282 by 2.",
+      "Then divide that answer by 3.",
+      "Ava: 108 words in 4 minutes. Find words in ONE minute.",
+      "Cut 108 in half.",
+      "Cut that in half again.",
+      "The bigger number is faster."
+     ]
     }
    ],
    "ref": 1077
@@ -1999,7 +2460,11 @@
     "flip-and-cancel",
     "how-many-fit"
    ],
-   "shortcut": "",
+   "shortcut": [
+    "How many 1/2-minute pieces fit in 1 minute? 2 of them.",
+    "So dividing by 1/2 is the same as multiplying by 2.",
+    "Here that means multiply 3/4 by 2."
+   ],
    "tol": 1e-09,
    "sense": {
     "q": "You divided by 1/2. Should the answer be bigger or smaller than 3/4?",
@@ -2060,7 +2525,11 @@
       "flip-and-cancel",
       "how-many-fit"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "How many 1/6-minute pieces fit in 1 minute? 6 of them.",
+      "So dividing by 1/6 is the same as multiplying by 6.",
+      "Here that means multiply 1 by 6."
+     ]
     },
     {
      "kind": "num",
@@ -2102,7 +2571,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Flip the second fraction: 3/4 becomes 4/3.",
+      "Change the ÷ to ×.",
+      "Cancel what you can, then multiply across."
+     ]
     },
     {
      "kind": "num",
@@ -2145,7 +2618,11 @@
       "flip-and-cancel",
       "how-many-fit"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "How many 1/4-minute pieces fit in 1 minute? 4 of them.",
+      "So dividing by 1/4 is the same as multiplying by 4.",
+      "Here that means multiply 3/4 by 4."
+     ]
     },
     {
      "kind": "num",
@@ -2188,7 +2665,11 @@
       "flip-and-cancel",
       "how-many-fit"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "How many 1/4-minute pieces fit in 1 minute? 4 of them.",
+      "So dividing by 1/4 is the same as multiplying by 4.",
+      "Here that means multiply 3/8 by 4."
+     ]
     },
     {
      "kind": "num",
@@ -2231,7 +2712,11 @@
       "flip-and-cancel",
       "how-many-fit"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "How many 1/4-minute pieces fit in 1 minute? 4 of them.",
+      "So dividing by 1/4 is the same as multiplying by 4.",
+      "Here that means multiply 1/2 by 4."
+     ]
     },
     {
      "kind": "num",
@@ -2273,7 +2758,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Flip the second fraction: 3/4 becomes 4/3.",
+      "Change the ÷ to ×.",
+      "Cancel what you can, then multiply across."
+     ]
     },
     {
      "kind": "num",
@@ -2316,7 +2805,11 @@
       "flip-and-cancel",
       "how-many-fit"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "How many 1/3-minute pieces fit in 1 minute? 3 of them.",
+      "So dividing by 1/3 is the same as multiplying by 3.",
+      "Here that means multiply 1/2 by 3."
+     ]
     },
     {
      "kind": "num",
@@ -2359,7 +2852,11 @@
       "flip-and-cancel",
       "how-many-fit"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "How many 1/4-minute pieces fit in 1 minute? 4 of them.",
+      "So dividing by 1/4 is the same as multiplying by 4.",
+      "Here that means multiply 1 by 4."
+     ]
     },
     {
      "kind": "num",
@@ -2402,7 +2899,11 @@
       "flip-and-cancel",
       "how-many-fit"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "How many 1/4-minute pieces fit in 1 minute? 4 of them.",
+      "So dividing by 1/4 is the same as multiplying by 4.",
+      "Here that means multiply 1/8 by 4."
+     ]
     },
     {
      "kind": "num",
@@ -2445,7 +2946,11 @@
       "flip-and-cancel",
       "how-many-fit"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "How many 1/4-minute pieces fit in 1 minute? 4 of them.",
+      "So dividing by 1/4 is the same as multiplying by 4.",
+      "Here that means multiply 1/8 by 4."
+     ]
     }
    ],
    "ref": 1088
@@ -2487,7 +2992,11 @@
     "flip-and-cancel",
     "how-many-fit"
    ],
-   "shortcut": "",
+   "shortcut": [
+    "How many 1/12-hour pieces fit in 1 hour? 12 of them.",
+    "So dividing by 1/12 is the same as multiplying by 12.",
+    "Here that means multiply 5/6 by 12."
+   ],
    "tol": 1e-09,
    "sense": {
     "q": "You divided by 1/12. Should the answer be bigger or smaller than 5/6?",
@@ -2533,7 +3042,11 @@
       "flip-and-cancel",
       "how-many-fit"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "How many 1/10-hour pieces fit in 1 hour? 10 of them.",
+      "So dividing by 1/10 is the same as multiplying by 10.",
+      "Here that means multiply 2 4/5 by 10."
+     ]
     },
     {
      "kind": "num",
@@ -2576,7 +3089,11 @@
       "flip-and-cancel",
       "how-many-fit"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "How many 1/6-hour pieces fit in 1 hour? 6 of them.",
+      "So dividing by 1/6 is the same as multiplying by 6.",
+      "Here that means multiply 2 1/3 by 6."
+     ]
     },
     {
      "kind": "num",
@@ -2619,7 +3136,11 @@
       "flip-and-cancel",
       "how-many-fit"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "How many 1/10-hour pieces fit in 1 hour? 10 of them.",
+      "So dividing by 1/10 is the same as multiplying by 10.",
+      "Here that means multiply 1 1/10 by 10."
+     ]
     },
     {
      "kind": "num",
@@ -2655,7 +3176,11 @@
       "flip-and-cancel",
       "how-many-fit"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "How many 1/10-hour pieces fit in 1 hour? 10 of them.",
+      "So dividing by 1/10 is the same as multiplying by 10.",
+      "Here that means multiply 2 1/2 by 10."
+     ]
     },
     {
      "kind": "num",
@@ -2691,7 +3216,11 @@
       "flip-and-cancel",
       "how-many-fit"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "How many 1/12-hour pieces fit in 1 hour? 12 of them.",
+      "So dividing by 1/12 is the same as multiplying by 12.",
+      "Here that means multiply 2 5/12 by 12."
+     ]
     },
     {
      "kind": "num",
@@ -2734,7 +3263,11 @@
       "flip-and-cancel",
       "how-many-fit"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "How many 1/12-hour pieces fit in 1 hour? 12 of them.",
+      "So dividing by 1/12 is the same as multiplying by 12.",
+      "Here that means multiply 1 1/3 by 12."
+     ]
     },
     {
      "kind": "num",
@@ -2770,7 +3303,11 @@
       "flip-and-cancel",
       "how-many-fit"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "How many 1/10-hour pieces fit in 1 hour? 10 of them.",
+      "So dividing by 1/10 is the same as multiplying by 10.",
+      "Here that means multiply 3 by 10."
+     ]
     },
     {
      "kind": "num",
@@ -2813,7 +3350,11 @@
       "flip-and-cancel",
       "how-many-fit"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "How many 1/10-hour pieces fit in 1 hour? 10 of them.",
+      "So dividing by 1/10 is the same as multiplying by 10.",
+      "Here that means multiply 1 1/2 by 10."
+     ]
     },
     {
      "kind": "num",
@@ -2856,7 +3397,11 @@
       "flip-and-cancel",
       "how-many-fit"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "How many 1/6-hour pieces fit in 1 hour? 6 of them.",
+      "So dividing by 1/6 is the same as multiplying by 6.",
+      "Here that means multiply 4 by 6."
+     ]
     },
     {
      "kind": "num",
@@ -2899,7 +3444,11 @@
       "flip-and-cancel",
       "how-many-fit"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "How many 1/12-hour pieces fit in 1 hour? 12 of them.",
+      "So dividing by 1/12 is the same as multiplying by 12.",
+      "Here that means multiply 1 1/4 by 12."
+     ]
     }
    ],
    "ref": 1099
@@ -2940,7 +3489,12 @@
    "facts": [
     "flip-and-cancel"
    ],
-   "shortcut": "2/3 cup is 2 pieces of 1/3 cup. Split 120 Calories into 2 equal pieces: that is one 1/3-cup piece. A whole cup is 3 of those pieces.",
+   "shortcut": [
+    "2/3 cup is 2 pieces of 1/3 cup.",
+    "Split 120 Calories into 2 equal pieces. That is one 1/3-cup piece.",
+    "A whole cup is 3 of those pieces.",
+    "Then multiply by 2 cups."
+   ],
    "tol": 1e-09,
    "sense": {
     "q": "You divided by 2/3. Should the answer be bigger or smaller than 120?",
@@ -2983,7 +3537,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": "30 Calories is ONE 1/3-cup piece. A whole cup is 3 of those pieces."
+     "shortcut": [
+      "30 Calories is ONE 1/3-cup piece.",
+      "A whole cup is 3 of those pieces.",
+      "Then multiply by 3 cups."
+     ]
     },
     {
      "kind": "num",
@@ -3016,7 +3574,12 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": "2/3 cup is 2 pieces of 1/3 cup. Split 66 Calories into 2 equal pieces: that is one 1/3-cup piece. A whole cup is 3 of those pieces."
+     "shortcut": [
+      "2/3 cup is 2 pieces of 1/3 cup.",
+      "Split 66 Calories into 2 equal pieces. That is one 1/3-cup piece.",
+      "A whole cup is 3 of those pieces.",
+      "Then multiply by 4 cups."
+     ]
     },
     {
      "kind": "num",
@@ -3049,7 +3612,12 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": "3/4 cup is 3 pieces of 1/4 cup. Split 45 Calories into 3 equal pieces: that is one 1/4-cup piece. A whole cup is 4 of those pieces."
+     "shortcut": [
+      "3/4 cup is 3 pieces of 1/4 cup.",
+      "Split 45 Calories into 3 equal pieces. That is one 1/4-cup piece.",
+      "A whole cup is 4 of those pieces.",
+      "Then multiply by 3 cups."
+     ]
     },
     {
      "kind": "num",
@@ -3082,7 +3650,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": "17 Calories is ONE 1/4-cup piece. A whole cup is 4 of those pieces."
+     "shortcut": [
+      "17 Calories is ONE 1/4-cup piece.",
+      "A whole cup is 4 of those pieces.",
+      "Then multiply by 4 cups."
+     ]
     },
     {
      "kind": "num",
@@ -3115,7 +3687,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": "48 Calories is ONE 1/2-cup piece. A whole cup is 2 of those pieces."
+     "shortcut": [
+      "48 Calories is ONE 1/2-cup piece.",
+      "A whole cup is 2 of those pieces.",
+      "Then multiply by 2 cups."
+     ]
     },
     {
      "kind": "num",
@@ -3148,7 +3724,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": "41 Calories is ONE 1/2-cup piece. A whole cup is 2 of those pieces."
+     "shortcut": [
+      "41 Calories is ONE 1/2-cup piece.",
+      "A whole cup is 2 of those pieces.",
+      "Then multiply by 4 cups."
+     ]
     },
     {
      "kind": "num",
@@ -3181,7 +3761,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": "46 Calories is ONE 1/4-cup piece. A whole cup is 4 of those pieces."
+     "shortcut": [
+      "46 Calories is ONE 1/4-cup piece.",
+      "A whole cup is 4 of those pieces.",
+      "Then multiply by 3 cups."
+     ]
     },
     {
      "kind": "num",
@@ -3214,7 +3798,12 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": "3/4 cup is 3 pieces of 1/4 cup. Split 99 Calories into 3 equal pieces: that is one 1/4-cup piece. A whole cup is 4 of those pieces."
+     "shortcut": [
+      "3/4 cup is 3 pieces of 1/4 cup.",
+      "Split 99 Calories into 3 equal pieces. That is one 1/4-cup piece.",
+      "A whole cup is 4 of those pieces.",
+      "Then multiply by 2 cups."
+     ]
     },
     {
      "kind": "num",
@@ -3247,7 +3836,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": "30 Calories is ONE 1/4-cup piece. A whole cup is 4 of those pieces."
+     "shortcut": [
+      "30 Calories is ONE 1/4-cup piece.",
+      "A whole cup is 4 of those pieces.",
+      "Then multiply by 2 cups."
+     ]
     },
     {
      "kind": "num",
@@ -3280,7 +3873,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": "34 Calories is ONE 1/3-cup piece. A whole cup is 3 of those pieces."
+     "shortcut": [
+      "34 Calories is ONE 1/3-cup piece.",
+      "A whole cup is 3 of those pieces.",
+      "Then multiply by 3 cups."
+     ]
     }
    ],
    "ref": 1110
@@ -3326,7 +3923,11 @@
    "facts": [
     "flip-and-cancel"
    ],
-   "shortcut": "",
+   "shortcut": [
+    "Turn any mixed number into a fraction first (1 1/2 = 3/2).",
+    "Speed = miles ÷ hours. Flip the hours fraction and multiply.",
+    "Do that for each runner, then compare the two speeds."
+   ],
    "variants": [
     {
      "kind": "choice",
@@ -3353,7 +3954,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Turn any mixed number into a fraction first (1 1/2 = 3/2).",
+      "Speed = miles ÷ hours. Flip the hours fraction and multiply.",
+      "Do that for each runner, then compare the two speeds."
+     ]
     },
     {
      "kind": "choice",
@@ -3380,7 +3985,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Turn any mixed number into a fraction first (1 1/2 = 3/2).",
+      "Speed = miles ÷ hours. Flip the hours fraction and multiply.",
+      "Do that for each runner, then compare the two speeds."
+     ]
     },
     {
      "kind": "choice",
@@ -3407,7 +4016,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Turn any mixed number into a fraction first (1 1/2 = 3/2).",
+      "Speed = miles ÷ hours. Flip the hours fraction and multiply.",
+      "Do that for each runner, then compare the two speeds."
+     ]
     },
     {
      "kind": "choice",
@@ -3434,7 +4047,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Turn any mixed number into a fraction first (1 1/2 = 3/2).",
+      "Speed = miles ÷ hours. Flip the hours fraction and multiply.",
+      "Do that for each runner, then compare the two speeds."
+     ]
     },
     {
      "kind": "choice",
@@ -3461,7 +4078,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Turn any mixed number into a fraction first (1 1/2 = 3/2).",
+      "Speed = miles ÷ hours. Flip the hours fraction and multiply.",
+      "Do that for each runner, then compare the two speeds."
+     ]
     },
     {
      "kind": "choice",
@@ -3488,7 +4109,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Turn any mixed number into a fraction first (1 1/2 = 3/2).",
+      "Speed = miles ÷ hours. Flip the hours fraction and multiply.",
+      "Do that for each runner, then compare the two speeds."
+     ]
     },
     {
      "kind": "choice",
@@ -3515,7 +4140,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Turn any mixed number into a fraction first (1 1/2 = 3/2).",
+      "Speed = miles ÷ hours. Flip the hours fraction and multiply.",
+      "Do that for each runner, then compare the two speeds."
+     ]
     },
     {
      "kind": "choice",
@@ -3542,7 +4171,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Turn any mixed number into a fraction first (1 1/2 = 3/2).",
+      "Speed = miles ÷ hours. Flip the hours fraction and multiply.",
+      "Do that for each runner, then compare the two speeds."
+     ]
     },
     {
      "kind": "choice",
@@ -3569,7 +4202,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Turn any mixed number into a fraction first (1 1/2 = 3/2).",
+      "Speed = miles ÷ hours. Flip the hours fraction and multiply.",
+      "Do that for each runner, then compare the two speeds."
+     ]
     },
     {
      "kind": "choice",
@@ -3596,7 +4233,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Turn any mixed number into a fraction first (1 1/2 = 3/2).",
+      "Speed = miles ÷ hours. Flip the hours fraction and multiply.",
+      "Do that for each runner, then compare the two speeds."
+     ]
     }
    ],
    "ref": 1121
@@ -3637,7 +4278,13 @@
    "facts": [
     "flip-and-cancel"
    ],
-   "shortcut": "Think in 1/8-inch pieces. First find the miles for ONE 1/8-inch piece (split 6 miles into 3 equal pieces). Then count how many 1/8-inch pieces fit in the distance on the map.",
+   "shortcut": [
+    "Think in 1/8-inch pieces.",
+    "3/8 inch = 6 miles, so split 6 miles into 3 equal pieces.",
+    "That is the miles for ONE 1/8-inch piece.",
+    "Count how many 1/8-inch pieces are in 2 1/4 inches.",
+    "Multiply that count by the miles for ONE piece."
+   ],
    "tol": 1e-09,
    "sense": {
     "q": "You divided by 3/8. Should the answer be bigger or smaller than 6?",
@@ -3680,7 +4327,13 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": "Think in 1/4-inch pieces. First find the miles for ONE 1/4-inch piece (split 6 miles into 3 equal pieces). Then count how many 1/4-inch pieces fit in the distance on the map."
+     "shortcut": [
+      "Think in 1/4-inch pieces.",
+      "3/4 inch = 6 miles, so split 6 miles into 3 equal pieces.",
+      "That is the miles for ONE 1/4-inch piece.",
+      "Count how many 1/4-inch pieces are in 2 3/4 inches.",
+      "Multiply that count by the miles for ONE piece."
+     ]
     },
     {
      "kind": "num",
@@ -3713,7 +4366,12 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": "Think in 1/4-inch pieces. First find the miles for ONE 1/4-inch piece (split 5 miles into 1 equal pieces). Then count how many 1/4-inch pieces fit in the distance on the map."
+     "shortcut": [
+      "Think in 1/4-inch pieces.",
+      "ONE 1/4-inch piece is 5 miles.",
+      "Count how many 1/4-inch pieces are in 2 1/2 inches.",
+      "Multiply that count by the miles for ONE piece."
+     ]
     },
     {
      "kind": "num",
@@ -3746,7 +4404,12 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": "Think in 1/2-inch pieces. First find the miles for ONE 1/2-inch piece (split 8 miles into 1 equal pieces). Then count how many 1/2-inch pieces fit in the distance on the map."
+     "shortcut": [
+      "Think in 1/2-inch pieces.",
+      "ONE 1/2-inch piece is 8 miles.",
+      "Count how many 1/2-inch pieces are in 1 3/4 inches.",
+      "Multiply that count by the miles for ONE piece."
+     ]
     },
     {
      "kind": "num",
@@ -3779,7 +4442,13 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": "Think in 1/4-inch pieces. First find the miles for ONE 1/4-inch piece (split 15 miles into 3 equal pieces). Then count how many 1/4-inch pieces fit in the distance on the map."
+     "shortcut": [
+      "Think in 1/4-inch pieces.",
+      "3/4 inch = 15 miles, so split 15 miles into 3 equal pieces.",
+      "That is the miles for ONE 1/4-inch piece.",
+      "Count how many 1/4-inch pieces are in 2 1/2 inches.",
+      "Multiply that count by the miles for ONE piece."
+     ]
     },
     {
      "kind": "num",
@@ -3812,7 +4481,12 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": "Think in 1/4-inch pieces. First find the miles for ONE 1/4-inch piece (split 4 miles into 1 equal pieces). Then count how many 1/4-inch pieces fit in the distance on the map."
+     "shortcut": [
+      "Think in 1/4-inch pieces.",
+      "ONE 1/4-inch piece is 4 miles.",
+      "Count how many 1/4-inch pieces are in 1 1/2 inches.",
+      "Multiply that count by the miles for ONE piece."
+     ]
     },
     {
      "kind": "num",
@@ -3845,7 +4519,12 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": "Think in 1/4-inch pieces. First find the miles for ONE 1/4-inch piece (split 5 miles into 1 equal pieces). Then count how many 1/4-inch pieces fit in the distance on the map."
+     "shortcut": [
+      "Think in 1/4-inch pieces.",
+      "ONE 1/4-inch piece is 5 miles.",
+      "Count how many 1/4-inch pieces are in 1 3/4 inches.",
+      "Multiply that count by the miles for ONE piece."
+     ]
     },
     {
      "kind": "num",
@@ -3878,7 +4557,12 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": "Think in 1/2-inch pieces. First find the miles for ONE 1/2-inch piece (split 4 miles into 1 equal pieces). Then count how many 1/2-inch pieces fit in the distance on the map."
+     "shortcut": [
+      "Think in 1/2-inch pieces.",
+      "ONE 1/2-inch piece is 4 miles.",
+      "Count how many 1/2-inch pieces are in 2 3/4 inches.",
+      "Multiply that count by the miles for ONE piece."
+     ]
     },
     {
      "kind": "num",
@@ -3911,7 +4595,13 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": "Think in 1/4-inch pieces. First find the miles for ONE 1/4-inch piece (split 12 miles into 3 equal pieces). Then count how many 1/4-inch pieces fit in the distance on the map."
+     "shortcut": [
+      "Think in 1/4-inch pieces.",
+      "3/4 inch = 12 miles, so split 12 miles into 3 equal pieces.",
+      "That is the miles for ONE 1/4-inch piece.",
+      "Count how many 1/4-inch pieces are in 1 1/2 inches.",
+      "Multiply that count by the miles for ONE piece."
+     ]
     },
     {
      "kind": "num",
@@ -3944,7 +4634,12 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": "Think in 1/4-inch pieces. First find the miles for ONE 1/4-inch piece (split 3 miles into 1 equal pieces). Then count how many 1/4-inch pieces fit in the distance on the map."
+     "shortcut": [
+      "Think in 1/4-inch pieces.",
+      "ONE 1/4-inch piece is 3 miles.",
+      "Count how many 1/4-inch pieces are in 2 1/2 inches.",
+      "Multiply that count by the miles for ONE piece."
+     ]
     },
     {
      "kind": "num",
@@ -3977,7 +4672,12 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": "Think in 1/4-inch pieces. First find the miles for ONE 1/4-inch piece (split 3 miles into 1 equal pieces). Then count how many 1/4-inch pieces fit in the distance on the map."
+     "shortcut": [
+      "Think in 1/4-inch pieces.",
+      "ONE 1/4-inch piece is 3 miles.",
+      "Count how many 1/4-inch pieces are in 2 3/4 inches.",
+      "Multiply that count by the miles for ONE piece."
+     ]
     }
    ],
    "ref": 1132
@@ -4011,7 +4711,11 @@
    "facts": [
     "flip-and-cancel"
    ],
-   "shortcut": "",
+   "shortcut": [
+    "Time for ONE = the total time ÷ 5.",
+    "Dividing by 5 is the same as multiplying by 1/5.",
+    "Multiply 2/3 × 1/5: tops together, bottoms together."
+   ],
    "tol": 0.006,
    "sense": {
     "q": "You divided by 5. Should the answer be bigger or smaller than 2/3?",
@@ -4054,7 +4758,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Time for ONE = the total time ÷ 6.",
+      "Dividing by 6 is the same as multiplying by 1/6.",
+      "Multiply 1/2 × 1/6: tops together, bottoms together."
+     ]
     },
     {
      "kind": "num",
@@ -4087,7 +4795,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Time for ONE = the total time ÷ 4.",
+      "Dividing by 4 is the same as multiplying by 1/4.",
+      "Multiply 3/5 × 1/4: tops together, bottoms together."
+     ]
     },
     {
      "kind": "num",
@@ -4120,7 +4832,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Time for ONE = the total time ÷ 3.",
+      "Dividing by 3 is the same as multiplying by 1/3.",
+      "Multiply 3/5 × 1/3: tops together, bottoms together."
+     ]
     },
     {
      "kind": "num",
@@ -4153,7 +4869,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Time for ONE = the total time ÷ 4.",
+      "Dividing by 4 is the same as multiplying by 1/4.",
+      "Multiply 5/6 × 1/4: tops together, bottoms together."
+     ]
     },
     {
      "kind": "num",
@@ -4186,7 +4906,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Time for ONE = the total time ÷ 6.",
+      "Dividing by 6 is the same as multiplying by 1/6.",
+      "Multiply 3/4 × 1/6: tops together, bottoms together."
+     ]
     },
     {
      "kind": "num",
@@ -4219,7 +4943,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Time for ONE = the total time ÷ 5.",
+      "Dividing by 5 is the same as multiplying by 1/5.",
+      "Multiply 5/6 × 1/5: tops together, bottoms together."
+     ]
     },
     {
      "kind": "num",
@@ -4252,7 +4980,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Time for ONE = the total time ÷ 3.",
+      "Dividing by 3 is the same as multiplying by 1/3.",
+      "Multiply 5/6 × 1/3: tops together, bottoms together."
+     ]
     },
     {
      "kind": "num",
@@ -4285,7 +5017,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Time for ONE = the total time ÷ 6.",
+      "Dividing by 6 is the same as multiplying by 1/6.",
+      "Multiply 5/6 × 1/6: tops together, bottoms together."
+     ]
     },
     {
      "kind": "num",
@@ -4318,7 +5054,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Time for ONE = the total time ÷ 4.",
+      "Dividing by 4 is the same as multiplying by 1/4.",
+      "Multiply 2/3 × 1/4: tops together, bottoms together."
+     ]
     },
     {
      "kind": "num",
@@ -4351,7 +5091,11 @@
      "facts": [
       "flip-and-cancel"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Time for ONE = the total time ÷ 6.",
+      "Dividing by 6 is the same as multiplying by 1/6.",
+      "Multiply 2/3 × 1/6: tops together, bottoms together."
+     ]
     }
    ],
    "ref": 1143
@@ -4406,7 +5150,7 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [],
    "variants": [
     {
      "kind": "choice",
@@ -4443,7 +5187,7 @@
      "graph": null,
      "ref": 1144,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -4480,7 +5224,7 @@
      "graph": null,
      "ref": 1145,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -4517,7 +5261,7 @@
      "graph": null,
      "ref": 1146,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -4554,7 +5298,7 @@
      "graph": null,
      "ref": 1147,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -4591,7 +5335,7 @@
      "graph": null,
      "ref": 1148,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -4628,7 +5372,7 @@
      "graph": null,
      "ref": 1149,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -4665,7 +5409,7 @@
      "graph": null,
      "ref": 1150,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -4702,7 +5446,7 @@
      "graph": null,
      "ref": 1151,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -4739,7 +5483,7 @@
      "graph": null,
      "ref": 1152,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -4776,7 +5520,7 @@
      "graph": null,
      "ref": 1153,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     }
    ],
    "ref": 1154
@@ -4831,7 +5575,7 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [],
    "variants": [
     {
      "kind": "choice",
@@ -4868,7 +5612,7 @@
      "graph": null,
      "ref": 1155,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -4905,7 +5649,7 @@
      "graph": null,
      "ref": 1156,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -4942,7 +5686,7 @@
      "graph": null,
      "ref": 1157,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -4979,7 +5723,7 @@
      "graph": null,
      "ref": 1158,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -5016,7 +5760,7 @@
      "graph": null,
      "ref": 1159,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -5053,7 +5797,7 @@
      "graph": null,
      "ref": 1160,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -5090,7 +5834,7 @@
      "graph": null,
      "ref": 1161,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -5127,7 +5871,7 @@
      "graph": null,
      "ref": 1162,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -5164,7 +5908,7 @@
      "graph": null,
      "ref": 1163,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -5201,7 +5945,7 @@
      "graph": null,
      "ref": 1164,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     }
    ],
    "ref": 1165
@@ -5251,7 +5995,7 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [],
    "tol": 1e-09,
    "variants": [
     {
@@ -5284,7 +6028,7 @@
      "graph": null,
      "ref": 1166,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -5316,7 +6060,7 @@
      "graph": null,
      "ref": 1167,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -5348,7 +6092,7 @@
      "graph": null,
      "ref": 1168,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -5380,7 +6124,7 @@
      "graph": null,
      "ref": 1169,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -5412,7 +6156,7 @@
      "graph": null,
      "ref": 1170,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -5444,7 +6188,7 @@
      "graph": null,
      "ref": 1171,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -5476,7 +6220,7 @@
      "graph": null,
      "ref": 1172,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -5508,7 +6252,7 @@
      "graph": null,
      "ref": 1173,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -5540,7 +6284,7 @@
      "graph": null,
      "ref": 1174,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -5572,7 +6316,7 @@
      "graph": null,
      "ref": 1175,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     }
    ],
    "ref": 1176
@@ -5613,7 +6357,7 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [],
    "variants": [
     {
      "kind": "choice",
@@ -5637,7 +6381,7 @@
      "graph": null,
      "ref": 1177,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -5661,7 +6405,7 @@
      "graph": null,
      "ref": 1178,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -5685,7 +6429,7 @@
      "graph": null,
      "ref": 1179,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -5709,7 +6453,7 @@
      "graph": null,
      "ref": 1180,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -5733,7 +6477,7 @@
      "graph": null,
      "ref": 1181,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -5757,7 +6501,7 @@
      "graph": null,
      "ref": 1182,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -5781,7 +6525,7 @@
      "graph": null,
      "ref": 1183,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -5805,7 +6549,7 @@
      "graph": null,
      "ref": 1184,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -5829,7 +6573,7 @@
      "graph": null,
      "ref": 1185,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -5853,7 +6597,7 @@
      "graph": null,
      "ref": 1186,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     }
    ],
    "ref": 1187
@@ -5903,7 +6647,7 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [],
    "tol": 1e-09,
    "variants": [
     {
@@ -5936,7 +6680,7 @@
      "graph": null,
      "ref": 1188,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -5968,7 +6712,7 @@
      "graph": null,
      "ref": 1189,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -6000,7 +6744,7 @@
      "graph": null,
      "ref": 1190,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -6032,7 +6776,7 @@
      "graph": null,
      "ref": 1191,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -6064,7 +6808,7 @@
      "graph": null,
      "ref": 1192,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -6096,7 +6840,7 @@
      "graph": null,
      "ref": 1193,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -6128,7 +6872,7 @@
      "graph": null,
      "ref": 1194,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -6160,7 +6904,7 @@
      "graph": null,
      "ref": 1195,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -6192,7 +6936,7 @@
      "graph": null,
      "ref": 1196,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -6224,7 +6968,7 @@
      "graph": null,
      "ref": 1197,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     }
    ],
    "ref": 1198
@@ -6266,7 +7010,7 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [],
    "variants": [
     {
      "kind": "choice",
@@ -6290,7 +7034,7 @@
      "graph": null,
      "ref": 1199,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -6314,7 +7058,7 @@
      "graph": null,
      "ref": 1200,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -6338,7 +7082,7 @@
      "graph": null,
      "ref": 1201,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -6362,7 +7106,7 @@
      "graph": null,
      "ref": 1202,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -6386,7 +7130,7 @@
      "graph": null,
      "ref": 1203,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -6410,7 +7154,7 @@
      "graph": null,
      "ref": 1204,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -6434,7 +7178,7 @@
      "graph": null,
      "ref": 1205,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -6458,7 +7202,7 @@
      "graph": null,
      "ref": 1206,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -6482,7 +7226,7 @@
      "graph": null,
      "ref": 1207,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     }
    ],
    "ref": 1208
@@ -6521,7 +7265,11 @@
    "facts": [
     "halve-halve"
    ],
-   "shortcut": "Cut 14 in half, then cut that in half again.",
+   "shortcut": [
+    "k = 14 ÷ 4. Try it in your head:",
+    "Cut 14 in half.",
+    "Cut that in half again."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -6545,7 +7293,12 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": "Cut 32 in half, then in half again, then in half once more."
+     "shortcut": [
+      "k = 32 ÷ 8. Try it in your head:",
+      "Cut 32 in half.",
+      "Cut that in half again.",
+      "Cut it in half one more time."
+     ]
     },
     {
      "kind": "num",
@@ -6568,7 +7321,12 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": "Cut 100 in half, then in half again, then in half once more."
+     "shortcut": [
+      "k = 100 ÷ 8. Try it in your head:",
+      "Cut 100 in half.",
+      "Cut that in half again.",
+      "Cut it in half one more time."
+     ]
     },
     {
      "kind": "num",
@@ -6591,7 +7349,12 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": "Cut 32 in half, then in half again, then in half once more."
+     "shortcut": [
+      "k = 32 ÷ 8. Try it in your head:",
+      "Cut 32 in half.",
+      "Cut that in half again.",
+      "Cut it in half one more time."
+     ]
     },
     {
      "kind": "num",
@@ -6612,7 +7375,10 @@
      "graph": null,
      "ref": 1212,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "k = 8 ÷ 2. Try it in your head:",
+      "Cut 8 in half."
+     ]
     },
     {
      "kind": "num",
@@ -6635,7 +7401,12 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": "6 is 2 × 3. Divide 15 by 2, then divide that answer by 3."
+     "shortcut": [
+      "k = 15 ÷ 6. Try it in your head:",
+      "6 is 2 × 3.",
+      "Divide 15 by 2.",
+      "Then divide that answer by 3."
+     ]
     },
     {
      "kind": "num",
@@ -6656,7 +7427,10 @@
      "graph": null,
      "ref": 1214,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "k = 7 ÷ 2. Try it in your head:",
+      "Cut 7 in half."
+     ]
     },
     {
      "kind": "num",
@@ -6679,7 +7453,12 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": "6 is 2 × 3. Divide 75 by 2, then divide that answer by 3."
+     "shortcut": [
+      "k = 75 ÷ 6. Try it in your head:",
+      "6 is 2 × 3.",
+      "Divide 75 by 2.",
+      "Then divide that answer by 3."
+     ]
     },
     {
      "kind": "num",
@@ -6702,7 +7481,12 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": "6 is 2 × 3. Divide 9 by 2, then divide that answer by 3."
+     "shortcut": [
+      "k = 9 ÷ 6. Try it in your head:",
+      "6 is 2 × 3.",
+      "Divide 9 by 2.",
+      "Then divide that answer by 3."
+     ]
     },
     {
      "kind": "num",
@@ -6725,7 +7509,12 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": "Cut 28 in half, then in half again, then in half once more."
+     "shortcut": [
+      "k = 28 ÷ 8. Try it in your head:",
+      "Cut 28 in half.",
+      "Cut that in half again.",
+      "Cut it in half one more time."
+     ]
     },
     {
      "kind": "num",
@@ -6748,7 +7537,11 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": "Cut 32 in half, then cut that in half again."
+     "shortcut": [
+      "k = 32 ÷ 4. Try it in your head:",
+      "Cut 32 in half.",
+      "Cut that in half again."
+     ]
     }
    ],
    "ref": 1219
@@ -6783,7 +7576,12 @@
    "facts": [
     "break-it-apart"
    ],
-   "shortcut": "",
+   "shortcut": [
+    "6.5 is 6 and a half.",
+    "Do 6 × 14.",
+    "Then add half of 14.",
+    "Add the two parts together."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -6807,7 +7605,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "3.5 is 3 and a half.",
+      "Do 3 × 15.",
+      "Then add half of 15.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -6830,7 +7633,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "6.5 is 6 and a half.",
+      "Do 6 × 18.",
+      "Then add half of 18.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -6853,7 +7661,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "7.5 is 7 and a half.",
+      "Do 7 × 12.",
+      "Then add half of 12.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -6876,7 +7689,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "7.5 is 7 and a half.",
+      "Do 7 × 14.",
+      "Then add half of 14.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -6899,7 +7717,12 @@
      "facts": [
       "times-one-and-a-half"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "2.5 is 2 and a half.",
+      "Do 2 × 16.",
+      "Then add half of 16.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -6922,7 +7745,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "4.5 is 4 and a half.",
+      "Do 4 × 15.",
+      "Then add half of 15.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -6945,7 +7773,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "8.5 is 8 and a half.",
+      "Do 8 × 14.",
+      "Then add half of 14.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -6968,7 +7801,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "8.5 is 8 and a half.",
+      "Do 8 × 15.",
+      "Then add half of 15.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -6991,7 +7829,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "7.5 is 7 and a half.",
+      "Do 7 × 15.",
+      "Then add half of 15.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -7014,7 +7857,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "3.5 is 3 and a half.",
+      "Do 3 × 16.",
+      "Then add half of 16.",
+      "Add the two parts together."
+     ]
     }
    ],
    "ref": 1230
@@ -7048,7 +7896,11 @@
     "earlier": []
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [
+    "x = 18 ÷ 0.4.",
+    "0.4 is 2/5.",
+    "Dividing by 2/5 means multiply by 5, then divide by 2."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -7071,7 +7923,11 @@
      "graph": null,
      "ref": 1231,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "x = 12 ÷ 0.4.",
+      "0.4 is 2/5.",
+      "Dividing by 2/5 means multiply by 5, then divide by 2."
+     ]
     },
     {
      "kind": "num",
@@ -7093,7 +7949,11 @@
      "graph": null,
      "ref": 1232,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "x = 10 ÷ 0.25.",
+      "0.25 is 1/4.",
+      "Dividing by 1/4 is the same as multiplying by 4."
+     ]
     },
     {
      "kind": "num",
@@ -7115,7 +7975,11 @@
      "graph": null,
      "ref": 1233,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "x = 15 ÷ 0.5.",
+      "0.5 is 1/2.",
+      "Dividing by 1/2 is the same as multiplying by 2."
+     ]
     },
     {
      "kind": "num",
@@ -7137,7 +8001,11 @@
      "graph": null,
      "ref": 1234,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "x = 4 ÷ 0.2.",
+      "0.2 is 1/5.",
+      "Dividing by 1/5 is the same as multiplying by 5."
+     ]
     },
     {
      "kind": "num",
@@ -7159,7 +8027,11 @@
      "graph": null,
      "ref": 1235,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "x = 25 ÷ 0.5.",
+      "0.5 is 1/2.",
+      "Dividing by 1/2 is the same as multiplying by 2."
+     ]
     },
     {
      "kind": "num",
@@ -7181,7 +8053,11 @@
      "graph": null,
      "ref": 1236,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "x = 24 ÷ 0.4.",
+      "0.4 is 2/5.",
+      "Dividing by 2/5 means multiply by 5, then divide by 2."
+     ]
     },
     {
      "kind": "num",
@@ -7203,7 +8079,11 @@
      "graph": null,
      "ref": 1237,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "x = 90 ÷ 1.5.",
+      "1.5 is 3/2.",
+      "Dividing by 3/2 means multiply by 2, then divide by 3."
+     ]
     },
     {
      "kind": "num",
@@ -7225,7 +8105,11 @@
      "graph": null,
      "ref": 1238,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "x = 67.5 ÷ 1.5.",
+      "1.5 is 3/2.",
+      "Dividing by 3/2 means multiply by 2, then divide by 3."
+     ]
     },
     {
      "kind": "num",
@@ -7247,7 +8131,11 @@
      "graph": null,
      "ref": 1239,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "x = 10 ÷ 0.2.",
+      "0.2 is 1/5.",
+      "Dividing by 1/5 is the same as multiplying by 5."
+     ]
     },
     {
      "kind": "num",
@@ -7269,7 +8157,11 @@
      "graph": null,
      "ref": 1240,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "x = 36 ÷ 1.5.",
+      "1.5 is 3/2.",
+      "Dividing by 3/2 means multiply by 2, then divide by 3."
+     ]
     }
    ],
    "ref": 1241
@@ -7309,7 +8201,11 @@
    "facts": [
     "divide-by-5-25-50"
    ],
-   "shortcut": "Double $32.50, then divide by 10.",
+   "shortcut": [
+    "Cost of ONE = $32.50 ÷ 5. Try it in your head:",
+    "Double $32.50.",
+    "Then slide the decimal point one place left. That divides by 10."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -7333,7 +8229,10 @@
      "facts": [
       "move-the-decimal"
      ],
-     "shortcut": "Slide the decimal point in $65.00 left 1 place."
+     "shortcut": [
+      "Cost of ONE = $65.00 ÷ 10. Try it in your head:",
+      "Slide the decimal point in $65.00 one place left."
+     ]
     },
     {
      "kind": "num",
@@ -7356,7 +8255,10 @@
      "facts": [
       "move-the-decimal"
      ],
-     "shortcut": "Slide the decimal point in $25.00 left 1 place."
+     "shortcut": [
+      "Cost of ONE = $25.00 ÷ 10. Try it in your head:",
+      "Slide the decimal point in $25.00 one place left."
+     ]
     },
     {
      "kind": "num",
@@ -7379,7 +8281,12 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": "6 is 2 × 3. Divide $48.00 by 2, then divide that answer by 3."
+     "shortcut": [
+      "Cost of ONE = $48.00 ÷ 6. Try it in your head:",
+      "6 is 2 × 3.",
+      "Divide $48.00 by 2.",
+      "Then divide that answer by 3."
+     ]
     },
     {
      "kind": "num",
@@ -7402,7 +8309,10 @@
      "facts": [
       "move-the-decimal"
      ],
-     "shortcut": "Slide the decimal point in $45.00 left 1 place."
+     "shortcut": [
+      "Cost of ONE = $45.00 ÷ 10. Try it in your head:",
+      "Slide the decimal point in $45.00 one place left."
+     ]
     },
     {
      "kind": "num",
@@ -7425,7 +8335,12 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": "Cut $20.00 in half, then in half again, then in half once more."
+     "shortcut": [
+      "Cost of ONE = $20.00 ÷ 8. Try it in your head:",
+      "Cut $20.00 in half.",
+      "Cut that in half again.",
+      "Cut it in half one more time."
+     ]
     },
     {
      "kind": "num",
@@ -7448,7 +8363,11 @@
      "facts": [
       "divide-by-5-25-50"
      ],
-     "shortcut": "Double $12.50, then divide by 10."
+     "shortcut": [
+      "Cost of ONE = $12.50 ÷ 5. Try it in your head:",
+      "Double $12.50.",
+      "Then slide the decimal point one place left. That divides by 10."
+     ]
     },
     {
      "kind": "num",
@@ -7471,7 +8390,12 @@
      "facts": [
       "divide-in-two-steps"
      ],
-     "shortcut": "6 is 2 × 3. Divide $43.50 by 2, then divide that answer by 3."
+     "shortcut": [
+      "Cost of ONE = $43.50 ÷ 6. Try it in your head:",
+      "6 is 2 × 3.",
+      "Divide $43.50 by 2.",
+      "Then divide that answer by 3."
+     ]
     },
     {
      "kind": "num",
@@ -7494,7 +8418,11 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": "Cut $10.00 in half, then cut that in half again."
+     "shortcut": [
+      "Cost of ONE = $10.00 ÷ 4. Try it in your head:",
+      "Cut $10.00 in half.",
+      "Cut that in half again."
+     ]
     },
     {
      "kind": "num",
@@ -7517,7 +8445,11 @@
      "facts": [
       "divide-by-5-25-50"
      ],
-     "shortcut": "Double $32.50, then divide by 10."
+     "shortcut": [
+      "Cost of ONE = $32.50 ÷ 5. Try it in your head:",
+      "Double $32.50.",
+      "Then slide the decimal point one place left. That divides by 10."
+     ]
     },
     {
      "kind": "num",
@@ -7540,7 +8472,12 @@
      "facts": [
       "halve-halve"
      ],
-     "shortcut": "Cut $20.00 in half, then in half again, then in half once more."
+     "shortcut": [
+      "Cost of ONE = $20.00 ÷ 8. Try it in your head:",
+      "Cut $20.00 in half.",
+      "Cut that in half again.",
+      "Cut it in half one more time."
+     ]
     }
    ],
    "ref": 1252
@@ -7581,7 +8518,12 @@
    "facts": [
     "break-it-apart"
    ],
-   "shortcut": "",
+   "shortcut": [
+    "6.5 is 6 and a half.",
+    "Do 6 × 12.",
+    "Then add half of 12.",
+    "Add the two parts together."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -7606,7 +8548,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "6.5 is 6 and a half.",
+      "Do 6 × 8.",
+      "Then add half of 8.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -7630,7 +8577,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "6.5 is 6 and a half.",
+      "Do 6 × 12.",
+      "Then add half of 12.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -7654,7 +8606,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "7.5 is 7 and a half.",
+      "Do 7 × 8.",
+      "Then add half of 8.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -7678,7 +8635,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "7.5 is 7 and a half.",
+      "Do 7 × 6.",
+      "Then add half of 6.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -7702,7 +8664,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "4.5 is 4 and a half.",
+      "Do 4 × 12.",
+      "Then add half of 12.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -7726,7 +8693,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "5.5 is 5 and a half.",
+      "Do 5 × 8.",
+      "Then add half of 8.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -7750,7 +8722,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "7.5 is 7 and a half.",
+      "Do 7 × 6.",
+      "Then add half of 6.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -7772,7 +8749,7 @@
      "graph": null,
      "ref": 1260,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -7796,7 +8773,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "4.5 is 4 and a half.",
+      "Do 4 × 8.",
+      "Then add half of 8.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -7820,7 +8802,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "4.5 is 4 and a half.",
+      "Do 4 × 6.",
+      "Then add half of 6.",
+      "Add the two parts together."
+     ]
     }
    ],
    "ref": 1263
@@ -7864,7 +8851,7 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [],
    "variants": [
     {
      "kind": "choice",
@@ -7891,7 +8878,7 @@
      "graph": null,
      "ref": 1264,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -7918,7 +8905,7 @@
      "graph": null,
      "ref": 1265,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -7945,7 +8932,7 @@
      "graph": null,
      "ref": 1266,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -7972,7 +8959,7 @@
      "graph": null,
      "ref": 1267,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -7999,7 +8986,7 @@
      "graph": null,
      "ref": 1268,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -8026,7 +9013,7 @@
      "graph": null,
      "ref": 1269,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -8053,7 +9040,7 @@
      "graph": null,
      "ref": 1270,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -8080,7 +9067,7 @@
      "graph": null,
      "ref": 1271,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -8107,7 +9094,7 @@
      "graph": null,
      "ref": 1272,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -8134,7 +9121,7 @@
      "graph": null,
      "ref": 1273,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     }
    ],
    "ref": 1274
@@ -8172,7 +9159,12 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [
+    "Get rid of the decimal: double both numbers.",
+    "45 gallons and 1.5 minutes become 90 and 3.",
+    "Divide the gallons by the minutes to get gallons in ONE minute.",
+    "Then multiply by 8 minutes."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -8194,7 +9186,12 @@
      "graph": null,
      "ref": 1275,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Get rid of the decimal: double both numbers.",
+      "18 gallons and 1.5 minutes become 36 and 3.",
+      "Divide the gallons by the minutes to get gallons in ONE minute.",
+      "Then multiply by 8 minutes."
+     ]
     },
     {
      "kind": "num",
@@ -8215,7 +9212,12 @@
      "graph": null,
      "ref": 1276,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Get rid of the decimal: double both numbers.",
+      "22.5 gallons and 1.5 minutes become 45 and 3.",
+      "Divide the gallons by the minutes to get gallons in ONE minute.",
+      "Then multiply by 8 minutes."
+     ]
     },
     {
      "kind": "num",
@@ -8236,7 +9238,12 @@
      "graph": null,
      "ref": 1277,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Get rid of the decimal: double both numbers.",
+      "18 gallons and 1.5 minutes become 36 and 3.",
+      "Divide the gallons by the minutes to get gallons in ONE minute.",
+      "Then multiply by 6 minutes."
+     ]
     },
     {
      "kind": "num",
@@ -8257,7 +9264,12 @@
      "graph": null,
      "ref": 1278,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Get rid of the decimal: double both numbers.",
+      "108 gallons and 4.5 minutes become 216 and 9.",
+      "Divide the gallons by the minutes to get gallons in ONE minute.",
+      "Then multiply by 12 minutes."
+     ]
     },
     {
      "kind": "num",
@@ -8278,7 +9290,12 @@
      "graph": null,
      "ref": 1279,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Get rid of the decimal: double both numbers.",
+      "75 gallons and 2.5 minutes become 150 and 5.",
+      "Divide the gallons by the minutes to get gallons in ONE minute.",
+      "Then multiply by 6 minutes."
+     ]
     },
     {
      "kind": "num",
@@ -8299,7 +9316,12 @@
      "graph": null,
      "ref": 1280,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Get rid of the decimal: double both numbers.",
+      "60 gallons and 2.5 minutes become 120 and 5.",
+      "Divide the gallons by the minutes to get gallons in ONE minute.",
+      "Then multiply by 12 minutes."
+     ]
     },
     {
      "kind": "num",
@@ -8320,7 +9342,12 @@
      "graph": null,
      "ref": 1281,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Get rid of the decimal: double both numbers.",
+      "75 gallons and 2.5 minutes become 150 and 5.",
+      "Divide the gallons by the minutes to get gallons in ONE minute.",
+      "Then multiply by 6 minutes."
+     ]
     },
     {
      "kind": "num",
@@ -8341,7 +9368,12 @@
      "graph": null,
      "ref": 1282,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Get rid of the decimal: double both numbers.",
+      "70 gallons and 3.5 minutes become 140 and 7.",
+      "Divide the gallons by the minutes to get gallons in ONE minute.",
+      "Then multiply by 10 minutes."
+     ]
     },
     {
      "kind": "num",
@@ -8362,7 +9394,12 @@
      "graph": null,
      "ref": 1283,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Get rid of the decimal: double both numbers.",
+      "30 gallons and 1.5 minutes become 60 and 3.",
+      "Divide the gallons by the minutes to get gallons in ONE minute.",
+      "Then multiply by 10 minutes."
+     ]
     },
     {
      "kind": "num",
@@ -8383,7 +9420,12 @@
      "graph": null,
      "ref": 1284,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Get rid of the decimal: double both numbers.",
+      "52.5 gallons and 3.5 minutes become 105 and 7.",
+      "Divide the gallons by the minutes to get gallons in ONE minute.",
+      "Then multiply by 6 minutes."
+     ]
     }
    ],
    "ref": 1285
@@ -8453,7 +9495,7 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [],
    "variants": [
     {
      "kind": "choice",
@@ -8504,7 +9546,7 @@
      },
      "ref": 1286,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -8555,7 +9597,7 @@
      },
      "ref": 1288,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -8606,7 +9648,7 @@
      },
      "ref": 1289,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -8657,7 +9699,7 @@
      },
      "ref": 1290,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     }
    ],
    "ref": 1287
@@ -8722,7 +9764,7 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [],
    "tol": 1e-09,
    "variants": [
     {
@@ -8770,7 +9812,7 @@
      },
      "ref": 1291,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -8817,7 +9859,7 @@
      },
      "ref": 1292,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -8864,7 +9906,7 @@
      },
      "ref": 1293,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -8911,7 +9953,7 @@
      },
      "ref": 1294,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -8958,7 +10000,7 @@
      },
      "ref": 1295,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     }
    ],
    "ref": 1296
@@ -9031,7 +10073,7 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [],
    "variants": [
     {
      "kind": "choice",
@@ -9085,7 +10127,7 @@
      },
      "ref": 1298,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -9139,7 +10181,7 @@
      },
      "ref": 1299,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -9193,7 +10235,7 @@
      },
      "ref": 1300,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -9247,7 +10289,7 @@
      },
      "ref": 1301,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -9301,7 +10343,7 @@
      },
      "ref": 1302,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -9355,7 +10397,7 @@
      },
      "ref": 1303,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -9409,7 +10451,7 @@
      },
      "ref": 1304,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -9463,7 +10505,7 @@
      },
      "ref": 1305,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     }
    ],
    "ref": 1297
@@ -9587,7 +10629,7 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [],
    "variants": [
     {
      "kind": "choice",
@@ -9692,7 +10734,7 @@
      },
      "ref": 1306,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -9797,7 +10839,7 @@
      },
      "ref": 1307,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -9902,7 +10944,7 @@
      },
      "ref": 1309,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -10007,7 +11049,7 @@
      },
      "ref": 1310,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -10112,7 +11154,7 @@
      },
      "ref": 1311,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     }
    ],
    "ref": 1308
@@ -10150,7 +11192,12 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [
+    "x = 1 is x = 5 divided by 5. So divide y = 35 by 5 too.",
+    "Try it in your head:",
+    "Double 35.",
+    "Then slide the decimal point one place left. That divides by 10."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -10172,7 +11219,13 @@
      "graph": null,
      "ref": 1312,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "x = 1 is x = 8 divided by 8. So divide y = 32 by 8 too.",
+      "Try it in your head:",
+      "Cut 32 in half.",
+      "Cut that in half again.",
+      "Cut it in half one more time."
+     ]
     },
     {
      "kind": "num",
@@ -10193,7 +11246,13 @@
      "graph": null,
      "ref": 1313,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "x = 1 is x = 6 divided by 6. So divide y = 18 by 6 too.",
+      "Try it in your head:",
+      "6 is 2 × 3.",
+      "Divide 18 by 2.",
+      "Then divide that answer by 3."
+     ]
     },
     {
      "kind": "num",
@@ -10214,7 +11273,12 @@
      "graph": null,
      "ref": 1314,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "x = 1 is x = 5 divided by 5. So divide y = 20 by 5 too.",
+      "Try it in your head:",
+      "Double 20.",
+      "Then slide the decimal point one place left. That divides by 10."
+     ]
     },
     {
      "kind": "num",
@@ -10235,7 +11299,12 @@
      "graph": null,
      "ref": 1315,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "x = 1 is x = 4 divided by 4. So divide y = 36 by 4 too.",
+      "Try it in your head:",
+      "Cut 36 in half.",
+      "Cut that in half again."
+     ]
     },
     {
      "kind": "num",
@@ -10256,7 +11325,13 @@
      "graph": null,
      "ref": 1316,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "x = 1 is x = 6 divided by 6. So divide y = 24 by 6 too.",
+      "Try it in your head:",
+      "6 is 2 × 3.",
+      "Divide 24 by 2.",
+      "Then divide that answer by 3."
+     ]
     },
     {
      "kind": "num",
@@ -10277,7 +11352,12 @@
      "graph": null,
      "ref": 1317,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "x = 1 is x = 5 divided by 5. So divide y = 45 by 5 too.",
+      "Try it in your head:",
+      "Double 45.",
+      "Then slide the decimal point one place left. That divides by 10."
+     ]
     },
     {
      "kind": "num",
@@ -10298,7 +11378,13 @@
      "graph": null,
      "ref": 1318,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "x = 1 is x = 6 divided by 6. So divide y = 54 by 6 too.",
+      "Try it in your head:",
+      "6 is 2 × 3.",
+      "Divide 54 by 2.",
+      "Then divide that answer by 3."
+     ]
     },
     {
      "kind": "num",
@@ -10319,7 +11405,13 @@
      "graph": null,
      "ref": 1319,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "x = 1 is x = 8 divided by 8. So divide y = 56 by 8 too.",
+      "Try it in your head:",
+      "Cut 56 in half.",
+      "Cut that in half again.",
+      "Cut it in half one more time."
+     ]
     },
     {
      "kind": "num",
@@ -10340,7 +11432,12 @@
      "graph": null,
      "ref": 1320,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "x = 1 is x = 4 divided by 4. So divide y = 16 by 4 too.",
+      "Try it in your head:",
+      "Cut 16 in half.",
+      "Cut that in half again."
+     ]
     },
     {
      "kind": "num",
@@ -10361,7 +11458,13 @@
      "graph": null,
      "ref": 1321,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "x = 1 is x = 8 divided by 8. So divide y = 48 by 8 too.",
+      "Try it in your head:",
+      "Cut 48 in half.",
+      "Cut that in half again.",
+      "Cut it in half one more time."
+     ]
     }
    ],
    "ref": 1322
@@ -10452,7 +11555,7 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [],
    "variants": [
     {
      "kind": "choice",
@@ -10520,7 +11623,7 @@
      },
      "ref": 1323,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -10588,7 +11691,7 @@
      },
      "ref": 1324,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -10656,7 +11759,7 @@
      },
      "ref": 1325,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -10724,7 +11827,7 @@
      },
      "ref": 1326,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -10792,7 +11895,7 @@
      },
      "ref": 1327,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -10860,7 +11963,7 @@
      },
      "ref": 1328,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -10928,7 +12031,7 @@
      },
      "ref": 1329,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     }
    ],
    "ref": 1330
@@ -10966,7 +12069,10 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [
+    "They are always the same number of years apart. Find the gap: 10 − 4.",
+    "Add the gap to the new age."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -10989,7 +12095,10 @@
      "graph": null,
      "ref": 1331,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "They are always the same number of years apart. Find the gap: 11 − 6.",
+      "Add the gap to the new age."
+     ]
     },
     {
      "kind": "num",
@@ -11011,7 +12120,10 @@
      "graph": null,
      "ref": 1332,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "They are always the same number of years apart. Find the gap: 9 − 4.",
+      "Add the gap to the new age."
+     ]
     },
     {
      "kind": "num",
@@ -11033,7 +12145,10 @@
      "graph": null,
      "ref": 1333,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "They are always the same number of years apart. Find the gap: 9 − 3.",
+      "Add the gap to the new age."
+     ]
     },
     {
      "kind": "num",
@@ -11055,7 +12170,10 @@
      "graph": null,
      "ref": 1334,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "They are always the same number of years apart. Find the gap: 14 − 6.",
+      "Add the gap to the new age."
+     ]
     },
     {
      "kind": "num",
@@ -11077,7 +12195,10 @@
      "graph": null,
      "ref": 1335,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "They are always the same number of years apart. Find the gap: 13 − 8.",
+      "Add the gap to the new age."
+     ]
     },
     {
      "kind": "num",
@@ -11099,7 +12220,10 @@
      "graph": null,
      "ref": 1336,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "They are always the same number of years apart. Find the gap: 16 − 8.",
+      "Add the gap to the new age."
+     ]
     },
     {
      "kind": "num",
@@ -11121,7 +12245,10 @@
      "graph": null,
      "ref": 1337,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "They are always the same number of years apart. Find the gap: 8 − 3.",
+      "Add the gap to the new age."
+     ]
     },
     {
      "kind": "num",
@@ -11143,7 +12270,10 @@
      "graph": null,
      "ref": 1338,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "They are always the same number of years apart. Find the gap: 13 − 8.",
+      "Add the gap to the new age."
+     ]
     },
     {
      "kind": "num",
@@ -11165,7 +12295,10 @@
      "graph": null,
      "ref": 1339,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "They are always the same number of years apart. Find the gap: 8 − 3.",
+      "Add the gap to the new age."
+     ]
     },
     {
      "kind": "num",
@@ -11187,7 +12320,10 @@
      "graph": null,
      "ref": 1340,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "They are always the same number of years apart. Find the gap: 15 − 7.",
+      "Add the gap to the new age."
+     ]
     }
    ],
    "ref": 1341
@@ -11225,7 +12361,10 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [
+    "8 people is 2 times as many as 4.",
+    "More people means less time, so divide the 6 hours by 2."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -11248,7 +12387,10 @@
      "graph": null,
      "ref": 1342,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "12 people is 3 times as many as 4.",
+      "More people means less time, so divide the 9 hours by 3."
+     ]
     },
     {
      "kind": "num",
@@ -11270,7 +12412,10 @@
      "graph": null,
      "ref": 1343,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "4 people is 2 times as many as 2.",
+      "More people means less time, so divide the 8 hours by 2."
+     ]
     },
     {
      "kind": "num",
@@ -11292,7 +12437,10 @@
      "graph": null,
      "ref": 1344,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "15 people is 3 times as many as 5.",
+      "More people means less time, so divide the 12 hours by 3."
+     ]
     },
     {
      "kind": "num",
@@ -11314,7 +12462,10 @@
      "graph": null,
      "ref": 1345,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "9 people is 3 times as many as 3.",
+      "More people means less time, so divide the 6 hours by 3."
+     ]
     },
     {
      "kind": "num",
@@ -11336,7 +12487,10 @@
      "graph": null,
      "ref": 1346,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "8 people is 2 times as many as 4.",
+      "More people means less time, so divide the 6 hours by 2."
+     ]
     },
     {
      "kind": "num",
@@ -11358,7 +12512,10 @@
      "graph": null,
      "ref": 1347,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "12 people is 2 times as many as 6.",
+      "More people means less time, so divide the 6 hours by 2."
+     ]
     },
     {
      "kind": "num",
@@ -11380,7 +12537,10 @@
      "graph": null,
      "ref": 1348,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "10 people is 2 times as many as 5.",
+      "More people means less time, so divide the 8 hours by 2."
+     ]
     },
     {
      "kind": "num",
@@ -11402,7 +12562,10 @@
      "graph": null,
      "ref": 1349,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "6 people is 3 times as many as 2.",
+      "More people means less time, so divide the 6 hours by 3."
+     ]
     },
     {
      "kind": "num",
@@ -11424,7 +12587,10 @@
      "graph": null,
      "ref": 1350,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "6 people is 2 times as many as 3.",
+      "More people means less time, so divide the 6 hours by 2."
+     ]
     },
     {
      "kind": "num",
@@ -11446,7 +12612,10 @@
      "graph": null,
      "ref": 1351,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "12 people is 2 times as many as 6.",
+      "More people means less time, so divide the 4 hours by 2."
+     ]
     }
    ],
    "ref": 1352
@@ -11485,7 +12654,10 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [
+    "Count the groups: how many 3s fit in 15?",
+    "Each group has 2 of the other ingredient. Multiply the number of groups by 2."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -11508,7 +12680,10 @@
      "graph": null,
      "ref": 1353,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the groups: how many 5s fit in 25?",
+      "Each group has 3 of the other ingredient. Multiply the number of groups by 3."
+     ]
     },
     {
      "kind": "num",
@@ -11530,7 +12705,10 @@
      "graph": null,
      "ref": 1354,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the groups: how many 4s fit in 32?",
+      "Each group has 3 of the other ingredient. Multiply the number of groups by 3."
+     ]
     },
     {
      "kind": "num",
@@ -11552,7 +12730,10 @@
      "graph": null,
      "ref": 1355,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the groups: how many 5s fit in 40?",
+      "Each group has 3 of the other ingredient. Multiply the number of groups by 3."
+     ]
     },
     {
      "kind": "num",
@@ -11574,7 +12755,10 @@
      "graph": null,
      "ref": 1356,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the groups: how many 5s fit in 35?",
+      "Each group has 4 of the other ingredient. Multiply the number of groups by 4."
+     ]
     },
     {
      "kind": "num",
@@ -11596,7 +12780,10 @@
      "graph": null,
      "ref": 1357,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the groups: how many 5s fit in 15?",
+      "Each group has 3 of the other ingredient. Multiply the number of groups by 3."
+     ]
     },
     {
      "kind": "num",
@@ -11618,7 +12805,10 @@
      "graph": null,
      "ref": 1358,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the groups: how many 4s fit in 16?",
+      "Each group has 3 of the other ingredient. Multiply the number of groups by 3."
+     ]
     },
     {
      "kind": "num",
@@ -11640,7 +12830,10 @@
      "graph": null,
      "ref": 1359,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the groups: how many 4s fit in 32?",
+      "Each group has 3 of the other ingredient. Multiply the number of groups by 3."
+     ]
     },
     {
      "kind": "num",
@@ -11662,7 +12855,10 @@
      "graph": null,
      "ref": 1360,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the groups: how many 5s fit in 25?",
+      "Each group has 3 of the other ingredient. Multiply the number of groups by 3."
+     ]
     },
     {
      "kind": "num",
@@ -11684,7 +12880,10 @@
      "graph": null,
      "ref": 1361,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the groups: how many 5s fit in 30?",
+      "Each group has 2 of the other ingredient. Multiply the number of groups by 2."
+     ]
     },
     {
      "kind": "num",
@@ -11706,7 +12905,10 @@
      "graph": null,
      "ref": 1362,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Count the groups: how many 4s fit in 20?",
+      "Each group has 3 of the other ingredient. Multiply the number of groups by 3."
+     ]
     }
    ],
    "ref": 1363
@@ -11738,7 +12940,11 @@
     "earlier": []
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [
+    "Use the raisins to count groups: how many 7s fit in 28?",
+    "Each group needs 4 cups of nuts. Multiply to find the nuts the bag SHOULD have.",
+    "The bag has 12 cups of nuts. Subtract to see how many more it needs."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -11760,7 +12966,11 @@
      "graph": null,
      "ref": 1364,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Use the raisins to count groups: how many 7s fit in 42?",
+      "Each group needs 4 cups of nuts. Multiply to find the nuts the bag SHOULD have.",
+      "The bag has 21 cups of nuts. Subtract to see how many more it needs."
+     ]
     },
     {
      "kind": "num",
@@ -11781,7 +12991,11 @@
      "graph": null,
      "ref": 1365,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Use the raisins to count groups: how many 5s fit in 30?",
+      "Each group needs 2 cups of nuts. Multiply to find the nuts the bag SHOULD have.",
+      "The bag has 8 cups of nuts. Subtract to see how many more it needs."
+     ]
     },
     {
      "kind": "num",
@@ -11802,7 +13016,11 @@
      "graph": null,
      "ref": 1366,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Use the raisins to count groups: how many 7s fit in 28?",
+      "Each group needs 4 cups of nuts. Multiply to find the nuts the bag SHOULD have.",
+      "The bag has 15 cups of nuts. Subtract to see how many more it needs."
+     ]
     },
     {
      "kind": "num",
@@ -11823,7 +13041,11 @@
      "graph": null,
      "ref": 1367,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Use the raisins to count groups: how many 4s fit in 24?",
+      "Each group needs 3 cups of nuts. Multiply to find the nuts the bag SHOULD have.",
+      "The bag has 16 cups of nuts. Subtract to see how many more it needs."
+     ]
     },
     {
      "kind": "num",
@@ -11844,7 +13066,11 @@
      "graph": null,
      "ref": 1368,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Use the raisins to count groups: how many 8s fit in 48?",
+      "Each group needs 5 cups of nuts. Multiply to find the nuts the bag SHOULD have.",
+      "The bag has 27 cups of nuts. Subtract to see how many more it needs."
+     ]
     },
     {
      "kind": "num",
@@ -11865,7 +13091,11 @@
      "graph": null,
      "ref": 1369,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Use the raisins to count groups: how many 5s fit in 15?",
+      "Each group needs 2 cups of nuts. Multiply to find the nuts the bag SHOULD have.",
+      "The bag has 4 cups of nuts. Subtract to see how many more it needs."
+     ]
     },
     {
      "kind": "num",
@@ -11886,7 +13116,11 @@
      "graph": null,
      "ref": 1370,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Use the raisins to count groups: how many 7s fit in 21?",
+      "Each group needs 4 cups of nuts. Multiply to find the nuts the bag SHOULD have.",
+      "The bag has 8 cups of nuts. Subtract to see how many more it needs."
+     ]
     },
     {
      "kind": "num",
@@ -11907,7 +13141,11 @@
      "graph": null,
      "ref": 1371,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Use the raisins to count groups: how many 8s fit in 40?",
+      "Each group needs 5 cups of nuts. Multiply to find the nuts the bag SHOULD have.",
+      "The bag has 22 cups of nuts. Subtract to see how many more it needs."
+     ]
     },
     {
      "kind": "num",
@@ -11928,7 +13166,11 @@
      "graph": null,
      "ref": 1372,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Use the raisins to count groups: how many 5s fit in 20?",
+      "Each group needs 2 cups of nuts. Multiply to find the nuts the bag SHOULD have.",
+      "The bag has 6 cups of nuts. Subtract to see how many more it needs."
+     ]
     },
     {
      "kind": "num",
@@ -11949,7 +13191,11 @@
      "graph": null,
      "ref": 1373,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Use the raisins to count groups: how many 4s fit in 20?",
+      "Each group needs 3 cups of nuts. Multiply to find the nuts the bag SHOULD have.",
+      "The bag has 11 cups of nuts. Subtract to see how many more it needs."
+     ]
     }
    ],
    "ref": 1374
@@ -11992,7 +13238,14 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [
+    "Make the units match first. 1 yard = 36 inches, so change 3 yards to inches: 3 × 36.",
+    "Now find the cost of ONE inch: $4.50 ÷ 30.",
+    "30 is 3 × 10.",
+    "Divide $4.50 by 3.",
+    "Then slide the decimal point one place left.",
+    "Then multiply by the number of inches you need."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -12015,7 +13268,14 @@
      "graph": null,
      "ref": 1375,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Make the units match first. 1 yard = 36 inches, so change 2 yards to inches: 2 × 36.",
+      "Now find the cost of ONE inch: $6.75 ÷ 45.",
+      "45 is 5 × 9.",
+      "Double $6.75, then slide the decimal point one place left.",
+      "Then divide that answer by 9.",
+      "Then multiply by the number of inches you need."
+     ]
     },
     {
      "kind": "num",
@@ -12037,7 +13297,14 @@
      "graph": null,
      "ref": 1376,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Make the units match first. 1 yard = 36 inches, so change 2 yards to inches: 2 × 36.",
+      "Now find the cost of ONE inch: $6.00 ÷ 24.",
+      "24 is 4 × 6.",
+      "Cut $6.00 in half twice.",
+      "Then divide that answer by 6.",
+      "Then multiply by the number of inches you need."
+     ]
     },
     {
      "kind": "num",
@@ -12059,7 +13326,13 @@
      "graph": null,
      "ref": 1377,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Make the units match first. 1 yard = 36 inches, so change 3 yards to inches: 3 × 36.",
+      "Now find the cost of ONE inch: $3.00 ÷ 20.",
+      "Cut $3.00 in half.",
+      "Then slide the decimal point one place left.",
+      "Then multiply by the number of inches you need."
+     ]
     },
     {
      "kind": "num",
@@ -12081,7 +13354,14 @@
      "graph": null,
      "ref": 1378,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Make the units match first. 1 yard = 36 inches, so change 4 yards to inches: 4 × 36.",
+      "Now find the cost of ONE inch: $6.75 ÷ 45.",
+      "45 is 5 × 9.",
+      "Double $6.75, then slide the decimal point one place left.",
+      "Then divide that answer by 9.",
+      "Then multiply by the number of inches you need."
+     ]
     },
     {
      "kind": "num",
@@ -12103,7 +13383,14 @@
      "graph": null,
      "ref": 1379,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Make the units match first. 1 yard = 36 inches, so change 4 yards to inches: 4 × 36.",
+      "Now find the cost of ONE inch: $3.00 ÷ 30.",
+      "30 is 3 × 10.",
+      "Divide $3.00 by 3.",
+      "Then slide the decimal point one place left.",
+      "Then multiply by the number of inches you need."
+     ]
     },
     {
      "kind": "num",
@@ -12125,7 +13412,13 @@
      "graph": null,
      "ref": 1380,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Make the units match first. 1 yard = 36 inches, so change 4 yards to inches: 4 × 36.",
+      "Now find the cost of ONE inch: $6.00 ÷ 20.",
+      "Cut $6.00 in half.",
+      "Then slide the decimal point one place left.",
+      "Then multiply by the number of inches you need."
+     ]
     },
     {
      "kind": "num",
@@ -12147,7 +13440,13 @@
      "graph": null,
      "ref": 1381,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Make the units match first. 1 yard = 36 inches, so change 4 yards to inches: 4 × 36.",
+      "Now find the cost of ONE inch: $6.00 ÷ 20.",
+      "Cut $6.00 in half.",
+      "Then slide the decimal point one place left.",
+      "Then multiply by the number of inches you need."
+     ]
     },
     {
      "kind": "num",
@@ -12169,7 +13468,13 @@
      "graph": null,
      "ref": 1382,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Make the units match first. 1 yard = 36 inches, so change 2 yards to inches: 2 × 36.",
+      "Now find the cost of ONE inch: $4.00 ÷ 20.",
+      "Cut $4.00 in half.",
+      "Then slide the decimal point one place left.",
+      "Then multiply by the number of inches you need."
+     ]
     },
     {
      "kind": "num",
@@ -12191,7 +13496,14 @@
      "graph": null,
      "ref": 1383,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Make the units match first. 1 yard = 36 inches, so change 3 yards to inches: 3 × 36.",
+      "Now find the cost of ONE inch: $6.00 ÷ 24.",
+      "24 is 4 × 6.",
+      "Cut $6.00 in half twice.",
+      "Then divide that answer by 6.",
+      "Then multiply by the number of inches you need."
+     ]
     },
     {
      "kind": "num",
@@ -12213,7 +13525,14 @@
      "graph": null,
      "ref": 1384,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Make the units match first. 1 yard = 36 inches, so change 2 yards to inches: 2 × 36.",
+      "Now find the cost of ONE inch: $4.50 ÷ 45.",
+      "45 is 5 × 9.",
+      "Double $4.50, then slide the decimal point one place left.",
+      "Then divide that answer by 9.",
+      "Then multiply by the number of inches you need."
+     ]
     }
    ],
    "ref": 1385
@@ -12254,7 +13573,7 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [],
    "variants": [
     {
      "kind": "choice",
@@ -12278,7 +13597,7 @@
      "graph": null,
      "ref": 1386,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -12302,7 +13621,7 @@
      "graph": null,
      "ref": 1387,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -12326,7 +13645,7 @@
      "graph": null,
      "ref": 1388,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -12350,7 +13669,7 @@
      "graph": null,
      "ref": 1389,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -12374,7 +13693,7 @@
      "graph": null,
      "ref": 1390,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -12398,7 +13717,7 @@
      "graph": null,
      "ref": 1391,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -12422,7 +13741,7 @@
      "graph": null,
      "ref": 1392,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -12446,7 +13765,7 @@
      "graph": null,
      "ref": 1393,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -12470,7 +13789,7 @@
      "graph": null,
      "ref": 1394,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "choice",
@@ -12494,7 +13813,7 @@
      "graph": null,
      "ref": 1395,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     }
    ],
    "ref": 1396
@@ -12532,7 +13851,11 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [
+    "Real length = drawing length × scale = 7.5 × 4. Try it in your head:",
+    "Double 7.5.",
+    "Then double that again."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -12554,7 +13877,12 @@
      "graph": null,
      "ref": 1397,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Real length = drawing length × scale = 8 × 8. Try it in your head:",
+      "Double 8.",
+      "Double that.",
+      "Then double it one more time."
+     ]
     },
     {
      "kind": "num",
@@ -12575,7 +13903,12 @@
      "graph": null,
      "ref": 1398,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Real length = drawing length × scale = 8 × 8. Try it in your head:",
+      "Double 8.",
+      "Double that.",
+      "Then double it one more time."
+     ]
     },
     {
      "kind": "num",
@@ -12596,7 +13929,11 @@
      "graph": null,
      "ref": 1399,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Real length = drawing length × scale = 9.5 × 4. Try it in your head:",
+      "Double 9.5.",
+      "Then double that again."
+     ]
     },
     {
      "kind": "num",
@@ -12617,7 +13954,11 @@
      "graph": null,
      "ref": 1400,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Real length = drawing length × scale = 4.5 × 3. Try it in your head:",
+      "Double 4.5.",
+      "Then add 4.5 one more time."
+     ]
     },
     {
      "kind": "num",
@@ -12638,7 +13979,11 @@
      "graph": null,
      "ref": 1401,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Real length = drawing length × scale = 12 × 4. Try it in your head:",
+      "Double 12.",
+      "Then double that again."
+     ]
     },
     {
      "kind": "num",
@@ -12659,7 +14004,10 @@
      "graph": null,
      "ref": 1402,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Real length = drawing length × scale = 8 × 2. Try it in your head:",
+      "Double 8."
+     ]
     },
     {
      "kind": "num",
@@ -12680,7 +14028,12 @@
      "graph": null,
      "ref": 1403,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Real length = drawing length × scale = 8 × 6. Try it in your head:",
+      "6 is 2 × 3.",
+      "Multiply 8 by 3: double it, then add 8 one more time.",
+      "Then double that answer."
+     ]
     },
     {
      "kind": "num",
@@ -12701,7 +14054,11 @@
      "graph": null,
      "ref": 1404,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Real length = drawing length × scale = 8 × 5. Try it in your head:",
+      "Slide the decimal point in 8 one place right. That multiplies by 10.",
+      "Then cut that in half."
+     ]
     },
     {
      "kind": "num",
@@ -12722,7 +14079,11 @@
      "graph": null,
      "ref": 1405,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Real length = drawing length × scale = 4.5 × 4. Try it in your head:",
+      "Double 4.5.",
+      "Then double that again."
+     ]
     },
     {
      "kind": "num",
@@ -12743,7 +14104,12 @@
      "graph": null,
      "ref": 1406,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Real length = drawing length × scale = 9.5 × 6. Try it in your head:",
+      "6 is 2 × 3.",
+      "Multiply 9.5 by 3: double it, then add 9.5 one more time.",
+      "Then double that answer."
+     ]
     }
    ],
    "ref": 1407
@@ -12781,7 +14147,11 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [
+    "Find the feet for ONE inch: 2 inches = 9 feet.",
+    "Cut 9 in half.",
+    "Then multiply by 5 inches."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -12803,7 +14173,11 @@
      "graph": null,
      "ref": 1408,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Find the feet for ONE inch: 2 inches = 9 feet.",
+      "Cut 9 in half.",
+      "Then multiply by 3 inches."
+     ]
     },
     {
      "kind": "num",
@@ -12824,7 +14198,11 @@
      "graph": null,
      "ref": 1409,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Find the feet for ONE inch: 2 inches = 5 feet.",
+      "Cut 5 in half.",
+      "Then multiply by 7 inches."
+     ]
     },
     {
      "kind": "num",
@@ -12845,7 +14223,11 @@
      "graph": null,
      "ref": 1410,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Find the feet for ONE inch: 3 inches = 12 feet.",
+      "Divide 12 by 3.",
+      "Then multiply by 7 inches."
+     ]
     },
     {
      "kind": "num",
@@ -12866,7 +14248,11 @@
      "graph": null,
      "ref": 1411,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Find the feet for ONE inch: 2 inches = 7 feet.",
+      "Cut 7 in half.",
+      "Then multiply by 7 inches."
+     ]
     },
     {
      "kind": "num",
@@ -12887,7 +14273,11 @@
      "graph": null,
      "ref": 1412,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Find the feet for ONE inch: 2 inches = 5 feet.",
+      "Cut 5 in half.",
+      "Then multiply by 7 inches."
+     ]
     },
     {
      "kind": "num",
@@ -12908,7 +14298,12 @@
      "graph": null,
      "ref": 1413,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Find the feet for ONE inch: 4 inches = 10 feet.",
+      "Cut 10 in half.",
+      "Cut that in half again.",
+      "Then multiply by 3 inches."
+     ]
     },
     {
      "kind": "num",
@@ -12929,7 +14324,11 @@
      "graph": null,
      "ref": 1414,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Find the feet for ONE inch: 2 inches = 5 feet.",
+      "Cut 5 in half.",
+      "Then multiply by 6 inches."
+     ]
     },
     {
      "kind": "num",
@@ -12950,7 +14349,11 @@
      "graph": null,
      "ref": 1415,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Find the feet for ONE inch: 2 inches = 9 feet.",
+      "Cut 9 in half.",
+      "Then multiply by 5 inches."
+     ]
     },
     {
      "kind": "num",
@@ -12971,7 +14374,11 @@
      "graph": null,
      "ref": 1416,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Find the feet for ONE inch: 2 inches = 9 feet.",
+      "Cut 9 in half.",
+      "Then multiply by 5 inches."
+     ]
     },
     {
      "kind": "num",
@@ -12992,7 +14399,11 @@
      "graph": null,
      "ref": 1417,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Find the feet for ONE inch: 2 inches = 7 feet.",
+      "Cut 7 in half.",
+      "Then multiply by 6 inches."
+     ]
     }
    ],
    "ref": 1418
@@ -13025,7 +14436,11 @@
     "earlier": []
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [
+    "Change each side to real feet first: 3 × 6 and 5 × 6.",
+    "Multiply the two real sides to get the area.",
+    "Don't multiply the drawing's area by 6. Area needs the real sides."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -13047,7 +14462,11 @@
      "graph": null,
      "ref": 1419,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Change each side to real feet first: 6 × 8 and 4 × 8.",
+      "Multiply the two real sides to get the area.",
+      "Don't multiply the drawing's area by 8. Area needs the real sides."
+     ]
     },
     {
      "kind": "num",
@@ -13068,7 +14487,11 @@
      "graph": null,
      "ref": 1420,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Change each side to real feet first: 4 × 8 and 2 × 8.",
+      "Multiply the two real sides to get the area.",
+      "Don't multiply the drawing's area by 8. Area needs the real sides."
+     ]
     },
     {
      "kind": "num",
@@ -13089,7 +14512,11 @@
      "graph": null,
      "ref": 1421,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Change each side to real feet first: 4 × 4 and 6 × 4.",
+      "Multiply the two real sides to get the area.",
+      "Don't multiply the drawing's area by 4. Area needs the real sides."
+     ]
     },
     {
      "kind": "num",
@@ -13110,7 +14537,11 @@
      "graph": null,
      "ref": 1422,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Change each side to real feet first: 3 × 4 and 4 × 4.",
+      "Multiply the two real sides to get the area.",
+      "Don't multiply the drawing's area by 4. Area needs the real sides."
+     ]
     },
     {
      "kind": "num",
@@ -13131,7 +14562,11 @@
      "graph": null,
      "ref": 1423,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Change each side to real feet first: 5 × 8 and 6 × 8.",
+      "Multiply the two real sides to get the area.",
+      "Don't multiply the drawing's area by 8. Area needs the real sides."
+     ]
     },
     {
      "kind": "num",
@@ -13152,7 +14587,11 @@
      "graph": null,
      "ref": 1424,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Change each side to real feet first: 5 × 6 and 3 × 6.",
+      "Multiply the two real sides to get the area.",
+      "Don't multiply the drawing's area by 6. Area needs the real sides."
+     ]
     },
     {
      "kind": "num",
@@ -13173,7 +14612,11 @@
      "graph": null,
      "ref": 1425,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Change each side to real feet first: 4 × 3 and 5 × 3.",
+      "Multiply the two real sides to get the area.",
+      "Don't multiply the drawing's area by 3. Area needs the real sides."
+     ]
     },
     {
      "kind": "num",
@@ -13194,7 +14637,11 @@
      "graph": null,
      "ref": 1426,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Change each side to real feet first: 3 × 4 and 6 × 4.",
+      "Multiply the two real sides to get the area.",
+      "Don't multiply the drawing's area by 4. Area needs the real sides."
+     ]
     },
     {
      "kind": "num",
@@ -13215,7 +14662,11 @@
      "graph": null,
      "ref": 1427,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Change each side to real feet first: 6 × 8 and 3 × 8.",
+      "Multiply the two real sides to get the area.",
+      "Don't multiply the drawing's area by 8. Area needs the real sides."
+     ]
     },
     {
      "kind": "num",
@@ -13236,7 +14687,11 @@
      "graph": null,
      "ref": 1428,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Change each side to real feet first: 5 × 3 and 6 × 3.",
+      "Multiply the two real sides to get the area.",
+      "Don't multiply the drawing's area by 3. Area needs the real sides."
+     ]
     }
    ],
    "ref": 1429
@@ -13274,7 +14729,12 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [
+    "Feet for ONE inch = 36 ÷ 8. Try it in your head:",
+    "Cut 36 in half.",
+    "Cut that in half again.",
+    "Cut it in half one more time."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -13296,7 +14756,12 @@
      "graph": null,
      "ref": 1430,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Feet for ONE inch = 54 ÷ 12. Try it in your head:",
+      "12 is 3 × 4.",
+      "Divide 54 by 3.",
+      "Then cut that answer in half twice."
+     ]
     },
     {
      "kind": "num",
@@ -13317,7 +14782,12 @@
      "graph": null,
      "ref": 1431,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Feet for ONE inch = 30 ÷ 12. Try it in your head:",
+      "12 is 3 × 4.",
+      "Divide 30 by 3.",
+      "Then cut that answer in half twice."
+     ]
     },
     {
      "kind": "num",
@@ -13338,7 +14808,12 @@
      "graph": null,
      "ref": 1432,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Feet for ONE inch = 30 ÷ 12. Try it in your head:",
+      "12 is 3 × 4.",
+      "Divide 30 by 3.",
+      "Then cut that answer in half twice."
+     ]
     },
     {
      "kind": "num",
@@ -13359,7 +14834,12 @@
      "graph": null,
      "ref": 1433,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Feet for ONE inch = 48 ÷ 8. Try it in your head:",
+      "Cut 48 in half.",
+      "Cut that in half again.",
+      "Cut it in half one more time."
+     ]
     },
     {
      "kind": "num",
@@ -13380,7 +14860,12 @@
      "graph": null,
      "ref": 1434,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Feet for ONE inch = 30 ÷ 12. Try it in your head:",
+      "12 is 3 × 4.",
+      "Divide 30 by 3.",
+      "Then cut that answer in half twice."
+     ]
     },
     {
      "kind": "num",
@@ -13401,7 +14886,12 @@
      "graph": null,
      "ref": 1435,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Feet for ONE inch = 36 ÷ 8. Try it in your head:",
+      "Cut 36 in half.",
+      "Cut that in half again.",
+      "Cut it in half one more time."
+     ]
     },
     {
      "kind": "num",
@@ -13422,7 +14912,12 @@
      "graph": null,
      "ref": 1436,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Feet for ONE inch = 42 ÷ 12. Try it in your head:",
+      "12 is 3 × 4.",
+      "Divide 42 by 3.",
+      "Then cut that answer in half twice."
+     ]
     },
     {
      "kind": "num",
@@ -13443,7 +14938,12 @@
      "graph": null,
      "ref": 1437,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Feet for ONE inch = 21 ÷ 6. Try it in your head:",
+      "6 is 2 × 3.",
+      "Divide 21 by 2.",
+      "Then divide that answer by 3."
+     ]
     },
     {
      "kind": "num",
@@ -13464,7 +14964,10 @@
      "graph": null,
      "ref": 1438,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Feet for ONE inch = 45 ÷ 10. Try it in your head:",
+      "Slide the decimal point in 45 one place left."
+     ]
     },
     {
      "kind": "num",
@@ -13485,7 +14988,12 @@
      "graph": null,
      "ref": 1439,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Feet for ONE inch = 20 ÷ 8. Try it in your head:",
+      "Cut 20 in half.",
+      "Cut that in half again.",
+      "Cut it in half one more time."
+     ]
     }
    ],
    "ref": 1440
@@ -13528,7 +15036,12 @@
     ]
    },
    "facts": [],
-   "shortcut": "",
+   "shortcut": [
+    "Find the real length first: 6 × 5.",
+    "The new drawing is 10 inches long.",
+    "New scale = real length ÷ new inches.",
+    "Slide the decimal point in the real length one place left."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -13550,7 +15063,12 @@
      "graph": null,
      "ref": 1441,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Find the real length first: 4 × 4.",
+      "The new drawing is 10 inches long.",
+      "New scale = real length ÷ new inches.",
+      "Slide the decimal point in the real length one place left."
+     ]
     },
     {
      "kind": "num",
@@ -13571,7 +15089,12 @@
      "graph": null,
      "ref": 1442,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Find the real length first: 8 × 3.",
+      "The new drawing is 16 inches long.",
+      "New scale = real length ÷ new inches.",
+      "Cut the real length in half four times in a row."
+     ]
     },
     {
      "kind": "num",
@@ -13592,7 +15115,13 @@
      "graph": null,
      "ref": 1443,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Find the real length first: 6 × 5.",
+      "The new drawing is 20 inches long.",
+      "New scale = real length ÷ new inches.",
+      "Cut the real length in half.",
+      "Then slide the decimal point one place left."
+     ]
     },
     {
      "kind": "num",
@@ -13613,7 +15142,14 @@
      "graph": null,
      "ref": 1444,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Find the real length first: 5 × 3.",
+      "The new drawing is 12 inches long.",
+      "New scale = real length ÷ new inches.",
+      "12 is 3 × 4.",
+      "Divide the real length by 3.",
+      "Then cut that answer in half twice."
+     ]
     },
     {
      "kind": "num",
@@ -13634,7 +15170,14 @@
      "graph": null,
      "ref": 1445,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Find the real length first: 6 × 5.",
+      "The new drawing is 15 inches long.",
+      "New scale = real length ÷ new inches.",
+      "15 is 3 × 5.",
+      "Divide the real length by 3.",
+      "Then double that answer and slide the decimal point one place left."
+     ]
     },
     {
      "kind": "num",
@@ -13655,7 +15198,12 @@
      "graph": null,
      "ref": 1446,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Find the real length first: 8 × 4.",
+      "The new drawing is 16 inches long.",
+      "New scale = real length ÷ new inches.",
+      "Cut the real length in half four times in a row."
+     ]
     },
     {
      "kind": "num",
@@ -13676,7 +15224,12 @@
      "graph": null,
      "ref": 1447,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Find the real length first: 6 × 4.",
+      "The new drawing is 10 inches long.",
+      "New scale = real length ÷ new inches.",
+      "Slide the decimal point in the real length one place left."
+     ]
     },
     {
      "kind": "num",
@@ -13697,7 +15250,12 @@
      "graph": null,
      "ref": 1448,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Find the real length first: 8 × 4.",
+      "The new drawing is 10 inches long.",
+      "New scale = real length ÷ new inches.",
+      "Slide the decimal point in the real length one place left."
+     ]
     },
     {
      "kind": "num",
@@ -13718,7 +15276,13 @@
      "graph": null,
      "ref": 1449,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Find the real length first: 4 × 4.",
+      "The new drawing is 20 inches long.",
+      "New scale = real length ÷ new inches.",
+      "Cut the real length in half.",
+      "Then slide the decimal point one place left."
+     ]
     },
     {
      "kind": "num",
@@ -13739,7 +15303,14 @@
      "graph": null,
      "ref": 1450,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Find the real length first: 4 × 6.",
+      "The new drawing is 12 inches long.",
+      "New scale = real length ÷ new inches.",
+      "12 is 3 × 4.",
+      "Divide the real length by 3.",
+      "Then cut that answer in half twice."
+     ]
     }
    ],
    "ref": 1451
@@ -13779,7 +15350,12 @@
    "facts": [
     "break-it-apart"
    ],
-   "shortcut": "",
+   "shortcut": [
+    "Split 3 1/2 into 3 and 1/2.",
+    "Do 3 × 25.",
+    "Then find half of 25.",
+    "Add the two parts together."
+   ],
    "tol": 1e-09,
    "variants": [
     {
@@ -13802,7 +15378,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Split 5 1/2 into 5 and 1/2.",
+      "Do 5 × 40.",
+      "Then find half of 40.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -13822,7 +15403,7 @@
      "graph": null,
      "ref": 1453,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -13844,7 +15425,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Split 3 1/2 into 3 and 1/2.",
+      "Do 3 × 15.",
+      "Then find half of 15.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -13864,7 +15450,12 @@
      "graph": null,
      "ref": 1456,
      "facts": [],
-     "shortcut": ""
+     "shortcut": [
+      "Split 3 3/4 into 3 and 3/4.",
+      "Do 3 × 20.",
+      "Then find 3/4 of 20: find a quarter of 20 (cut it in half twice), then multiply by 3.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -13884,7 +15475,7 @@
      "graph": null,
      "ref": 1457,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -13906,7 +15497,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Split 6 1/2 into 6 and 1/2.",
+      "Do 6 × 10.",
+      "Then find half of 10.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -13928,7 +15524,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Split 2 1/2 into 2 and 1/2.",
+      "Do 2 × 20.",
+      "Then find half of 20.",
+      "Add the two parts together."
+     ]
     },
     {
      "kind": "num",
@@ -13948,7 +15549,7 @@
      "graph": null,
      "ref": 1460,
      "facts": [],
-     "shortcut": ""
+     "shortcut": []
     },
     {
      "kind": "num",
@@ -13970,7 +15571,12 @@
      "facts": [
       "break-it-apart"
      ],
-     "shortcut": ""
+     "shortcut": [
+      "Split 2 1/2 into 2 and 1/2.",
+      "Do 2 × 10.",
+      "Then find half of 10.",
+      "Add the two parts together."
+     ]
     }
    ],
    "ref": 1454

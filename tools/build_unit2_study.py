@@ -4,6 +4,7 @@ import json, pathlib, sys, re
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from unit2_problems import PROBS
 from unit2_variants import variants, sense, pieces_line, bars
+from unit2_shortcuts import shortcut
 from brand_themes import theme_css, brands_json, members_json, icons_json, SWATCH_CSS, FUN_CSS, BURST_JS
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SCR = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else pathlib.Path("/tmp")
@@ -122,48 +123,12 @@ def facts_text(pid, t):
     return []
 import json as _json
 TRICKS = {t["id"]: t for t in (_json.load(open(f)) for f in sorted((ROOT / "content" / "tricks").glob("*.json")))}
-def _way(n, d):
-    """How to divide d by n in your head, written with the numbers shown. Never the answer itself."""
-    n = int(n)
-    two = {6: (2, 3), 12: (3, 4), 15: (3, 5)}
-    if n in two: return f"{n} is {two[n][0]} \u00d7 {two[n][1]}. Divide {d} by {two[n][0]}, then divide that answer by {two[n][1]}."
-    if n == 4: return f"Cut {d} in half, then cut that in half again."
-    if n == 8: return f"Cut {d} in half, then in half again, then in half once more."
-    if n == 5: return f"Double {d}, then divide by 10."
-    if n == 25: return f"Multiply {d} by 4, then divide by 100."
-    if n == 50: return f"Double {d}, then divide by 100."
-    if n in (10, 100, 1000): return f"Slide the decimal point in {d} left {len(str(n)) - 1} place{'s' if n > 10 else ''}."
-    return ""
-def shortcut_text(pid, t):
-    """A mental-math way in, written from the numbers shown. It never computes the final answer."""
-    if pid == "U2-01":
-        m = _re.search(r"(\d+)-pack .*?costs \$([\d.]+)", t); return _way(m.group(1), "$" + m.group(2).rstrip(".")) if m else ""
-    if pid == "U2-03":
-        m = _re.search(r"(\d+) [a-z ]+? in (\d+) minutes", t); return _way(m.group(2), m.group(1)) if m else ""
-    if pid == "U2-07":
-        return " ".join(f"For {n}: " + w for n, d, k in _re.findall(r"(\w+) types (\d+) words in (\d+) minutes", t) if (w := _way(k, d)))
-    if pid == "U2-20":
-        m = _re.search(r"(\d+) [a-z]+ in (\d+) (?:hours|minutes)", t); return _way(m.group(2), m.group(1)) if m else ""
-    if pid == "U2-23":
-        m = _re.search(r"[Ff]or every (\d+) .*?goes up \$([\d.]+)", t); return _way(m.group(1), "$" + m.group(2).rstrip(".")) if m else ""
-    if pid == "U2-10":
-        m = _re.search(r"(\d+) Calories in (\d+)/(\d+) cup", t)
-        if not m: return ""
-        x, a, b = m.groups()
-        if a == "1": return f"{x} Calories is ONE 1/{b}-cup piece. A whole cup is {b} of those pieces."
-        return f"{a}/{b} cup is {a} pieces of 1/{b} cup. Split {x} Calories into {a} equal pieces: that is one 1/{b}-cup piece. A whole cup is {b} of those pieces."
-    if pid == "U2-12":
-        m = _re.search(r"(\d+)/(\d+) inch = (\d+) miles", t)
-        if not m: return ""
-        a, b, mi = m.groups()
-        return f"Think in 1/{b}-inch pieces. First find the miles for ONE 1/{b}-inch piece (split {mi} miles into {a} equal pieces). Then count how many 1/{b}-inch pieces fit in the distance on the map."
-    return ""
 def facts_for(p):
     return facts_text(p["id"], p["text"])
 out = []
 for p in PROBS:
     q = {k: v for k, v in p.items()}
-    q["why_focus"] = FOCUS[p["sub"]]; q["deps"] = deps(p); q["facts"] = facts_for(p); q["shortcut"] = shortcut_text(p["id"], p["text"])
+    q["why_focus"] = FOCUS[p["sub"]]; q["deps"] = deps(p); q["facts"] = facts_for(p); q["shortcut"] = shortcut(p["id"], p["text"], p.get("answer"), p.get("show"))
     if q["kind"] == "num": q["tol"] = 0.006 if nonterm(q["answer"]) else 1e-9
     if p["id"] in BASE_SENSE:
         q["sense"] = sense(*BASE_SENSE[p["id"]])
@@ -174,7 +139,7 @@ for p in PROBS:
     assert vs and all(v["kind"] == p["kind"] for v in vs), p["id"]
     for i, v in enumerate(vs): v["ref"] = ref_for(p["id"], i, v)
     q["variants"] = vs
-    for _v in vs: _v["facts"] = facts_text(p["id"], _v.get("text", "")); _v["shortcut"] = shortcut_text(p["id"], _v.get("text", ""))
+    for _v in vs: _v["facts"] = facts_text(p["id"], _v.get("text", "")); _v["shortcut"] = shortcut(p["id"], _v.get("text", ""), _v.get("answer"), _v.get("show"))
     q["ref"] = ref_for(p["id"], -1, q)
     out.append(q)
 _all = [o['ref'] for o in out] + [v['ref'] for o in out for v in o['variants']]

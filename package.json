@@ -8,7 +8,7 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host",
     "test": "vitest run",
-    "check:all": "tsc --noEmit && vitest run && python3 tools/check_themes.py && python3 tools/test_unit2_variants.py"
+    "check:all": "tsc --noEmit && vitest run && python3 tools/check_themes.py && python3 tools/test_unit2_variants.py && python3 tools/test_unit2_shortcuts.py"
   },
   "dependencies": {
     "react": "18.3.1",

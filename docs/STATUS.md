@@ -35,6 +35,8 @@
 - [x] Netlify: build skipped for docs-only pushes (credits); batch pushes
 - [x] Notes server: Worker + KV stores "Flag a problem" notes (first piece of the cloud; progress sync still to do)
 - [x] Cloud sync of progress by name (Worker + KV): see CLAUDE.md. Open: removing a player in Grown-ups only removes it from this device (the server copy stays); no way yet to delete a name from the server list.
+- [x] Mental shortcuts for 30 of the 44 problems (336 of 461 with their new-numbers versions), each verified against the answer at build time
+- [ ] Unit 3 (waiting on the PDFs)
 - [ ] Optional more variety: spot-the-trick and estimate card types
 - [ ] Assign the six seasonal palettes to members (owner to say which is whose)
 - [ ] Unit 3: upload weekly PDFs, build sheets as they come

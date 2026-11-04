@@ -213,3 +213,6 @@ body { padding-top: 52px; }
 
 .practice .fbbtn { top: auto; bottom: 14px; left: 14px; right: auto; }
 .mrow.note { align-items: flex-start; }
+
+/* keep long eyebrow text clear of the Flag button */
+.practice .eyebrow { padding-right: 0; }
