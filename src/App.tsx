@@ -88,7 +88,7 @@ function PlayerMenu({ onChoose }: { onChoose: (id: string) => void }) {
   const [adding, setAdding] = useState(false);
   const [name, setName] = useState('');
   const me = activeProfile();
-  const others = useServerNames(profiles());
+  const { others } = useServerNames(profiles());
   if (!me) return null;
   const add = () => { if (!name.trim()) return; const p = addProfile(name); setName(''); setAdding(false); setOpen(false); onChoose(p.id); };
   return (
@@ -122,27 +122,32 @@ function PlayerMenu({ onChoose }: { onChoose: (id: string) => void }) {
 /** Names saved on the server that are not on this device yet. Tapping one adds it here and brings its progress. */
 function useServerNames(local: Profile[]) {
   const [remote, setRemote] = useState<string[]>([]);
-  useEffect(() => { void window.mathseyeSync?.players().then((l) => setRemote(l.map((p) => p.name))); }, []);
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => { void (window.mathseyeSync ? window.mathseyeSync.players() : Promise.resolve([])).then((l) => { setRemote(l.map((p) => p.name)); setLoaded(true); }); }, []);
   const have = new Set(local.map((p) => (window.mathseyeSync?.norm(p.name) ?? p.name.toLowerCase())));
-  return remote.filter((n) => !have.has(window.mathseyeSync?.norm(n) ?? n.toLowerCase()));
+  return { others: remote.filter((n) => !have.has(window.mathseyeSync?.norm(n) ?? n.toLowerCase())), loaded };
 }
 
 function Who({ onChoose }: { onChoose: (id: string) => void }) {
   const [list, setList] = useState<Profile[]>(profiles());
-  const others = useServerNames(list);
-  const [adding, setAdding] = useState(list.length === 0);
+  const { others, loaded } = useServerNames(list);
+  // Names first: she only types when her name is not in the list (or there are no names anywhere yet).
+  const [asked, setAsked] = useState(false);
+  const adding = asked || (loaded && list.length === 0 && others.length === 0);
+  const setAdding = (v: boolean) => setAsked(v);
   const [name, setName] = useState('');
   const add = () => { if (!name.trim()) return; const p = addProfile(name); setList(profiles()); onChoose(p.id); };
   return (
     <main className="home who">
       <div className="logo"><Mark size={72} /><h1 className="brand">MATHSEYE</h1></div>
       <h1 className="h1">Who's using Mathseye?</h1>
-      <p className="muted">Everyone gets their own progress, saved on this device.</p>
+      <p className="muted">Tap your name. Only type one if it isn't here.</p>
       <div className="whogrid">
         {list.map((p) => <button key={p.id} className="whotile" onClick={() => onChoose(p.id)}><i>{p.name.charAt(0).toUpperCase()}</i><span>{p.name}</span></button>)}
         {others.map((n) => <button key={n} className="whotile" onClick={() => onChoose(addProfile(n).id)}><i>{n.charAt(0).toUpperCase()}</i><span>{n}</span></button>)}
-        {!adding && <button className="whotile add" onClick={() => setAdding(true)}><i>+</i><span>Add someone</span></button>}
+        {!adding && loaded && <button className="whotile add" onClick={() => setAdding(true)}><i>+</i><span>New name</span></button>}
       </div>
+      {!loaded && list.length === 0 && <p className="muted">Looking for names…</p>}
       {adding && (
         <form className="whoadd" onSubmit={(e) => { e.preventDefault(); add(); }}>
           <label htmlFor="who-name" className="eyebrow">Your name</label>
