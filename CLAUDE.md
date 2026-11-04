@@ -39,7 +39,7 @@ then `python3 /home/user/mathseye-content/tools/audit.py leak .` (no worksheet t
   and has 4 clue strings with `{var}` placeholders filled from the generator's `vars`.
 - Leitner scheduler: `src/scheduler.ts`. Session flow: `src/session.ts`. UI: `src/App.tsx`.
 - Unit reference sheets: `content/units/` (see its README). Build help, practice, and study guides from these, never the PDFs.
-- `npm test` runs Vitest; `npm run build` typechecks and builds. Push to `main` auto-deploys on Netlify (`netlify.toml`). There is no GitHub Pages workflow: the free plan cannot use Pages for this repo.
+- `npm test` runs Vitest; `npm run build` typechecks and builds. Push to `main` auto-deploys on Cloudflare Workers static assets (build `npm run build`, deploy `npx wrangler deploy` using `wrangler.jsonc`, serves `dist`); `netlify.toml` is kept for the old Netlify site. There is no GitHub Pages workflow: the free plan cannot use Pages for this repo.
 
 ## Tone rules (from the brief)
 Calm bedtime design: dark warm theme, no red X's, no lost lives, no scores that go down,

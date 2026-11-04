@@ -1,0 +1,6 @@
+{
+  // Cloudflare: publish the built site (dist) as static assets. Build command: npm run build
+  "name": "mathseye",
+  "compatibility_date": "2026-11-01",
+  "assets": { "directory": "./dist" }
+}
