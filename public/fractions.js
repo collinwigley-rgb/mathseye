@@ -3,7 +3,7 @@
   var css = '.frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;line-height:1.05;margin:0 .12em;font-size:.92em}' +
     '.frac>span{padding:0 .15em}.frac>span:first-child{border-bottom:.09em solid currentColor}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
-  var RE = /(?<![\d./])(\d+)\/(\d+)(?![\d/.])/g;
+  var RE = /(?<![\w./])(\d+|[xyk])\/(\d+|[xyk])(?![\w/.])/g;
   var SKIP = /^(SCRIPT|STYLE|TEXTAREA|INPUT|SVG|TEXT|TITLE|CODE)$/i;
   function skip(n) {
     for (var p = n.parentNode; p && p.nodeType === 1; p = p.parentNode) {
