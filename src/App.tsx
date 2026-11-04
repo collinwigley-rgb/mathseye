@@ -37,7 +37,10 @@ export default function App() {
     });
     setScreen('session');
   };
-  const choose = (id: string) => { setActive(id); setDb(load()); setScreen('hub'); };
+  const choose = (id: string) => { setActive(id); setDb(load()); setScreen('hub'); void pull(); };
+  // Bring this player's progress up to date from the server (and send ours), then refresh what is on screen.
+  const pull = () => window.mathseyeSync?.sync().then((r) => { if (r?.changed) setDb(load()); });
+  useEffect(() => { if (activeProfile()) void pull(); }, []);
 
   if (screen === 'who') return <Who onChoose={choose} />;
   let view: JSX.Element;
@@ -73,11 +76,19 @@ function buildLabel(): string {
   return `${__BUILD__} · ${day} ${time}`;
 }
 
+function syncLabel(): string {
+  const st = window.mathseyeSync?.status();
+  if (!st || !st.at) return st?.ok === false ? 'Not saved to the server yet' : 'Saving to the server…';
+  const t = new Date(st.at).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false });
+  return st.ok === false ? `Offline. Last saved ${t}` : `Saved to the server ${t}`;
+}
+
 function PlayerMenu({ onChoose }: { onChoose: (id: string) => void }) {
   const [open, setOpen] = useState(false);
   const [adding, setAdding] = useState(false);
   const [name, setName] = useState('');
   const me = activeProfile();
+  const others = useServerNames(profiles());
   if (!me) return null;
   const add = () => { if (!name.trim()) return; const p = addProfile(name); setName(''); setAdding(false); setOpen(false); onChoose(p.id); };
   return (
@@ -91,6 +102,9 @@ function PlayerMenu({ onChoose }: { onChoose: (id: string) => void }) {
               <i>{p.name.charAt(0).toUpperCase()}</i><span>{p.name}</span>{p.id === me.id && <b>✓</b>}
             </button>
           ))}
+          {others.map((n) => (
+            <button key={n} role="menuitem" className="pitem" onClick={() => { setOpen(false); onChoose(addProfile(n).id); }}><i>{n.charAt(0).toUpperCase()}</i><span>{n}</span></button>
+          ))}
           {adding ? (
             <form onSubmit={(e) => { e.preventDefault(); add(); }}>
               <input value={name} maxLength={20} autoFocus autoComplete="off" placeholder="Name" aria-label="New player's name" onChange={(e) => setName(e.target.value)} />
@@ -98,14 +112,24 @@ function PlayerMenu({ onChoose }: { onChoose: (id: string) => void }) {
             </form>
           ) : <button className="pitem" onClick={() => setAdding(true)}><i>+</i><span>Add someone</span></button>}
           <p className="build" aria-label="Build number">Build {buildLabel()}</p>
+          <p className="build">{syncLabel()}</p>
         </div>
       )}
     </div>
   );
 }
 
+/** Names saved on the server that are not on this device yet. Tapping one adds it here and brings its progress. */
+function useServerNames(local: Profile[]) {
+  const [remote, setRemote] = useState<string[]>([]);
+  useEffect(() => { void window.mathseyeSync?.players().then((l) => setRemote(l.map((p) => p.name))); }, []);
+  const have = new Set(local.map((p) => (window.mathseyeSync?.norm(p.name) ?? p.name.toLowerCase())));
+  return remote.filter((n) => !have.has(window.mathseyeSync?.norm(n) ?? n.toLowerCase()));
+}
+
 function Who({ onChoose }: { onChoose: (id: string) => void }) {
   const [list, setList] = useState<Profile[]>(profiles());
+  const others = useServerNames(list);
   const [adding, setAdding] = useState(list.length === 0);
   const [name, setName] = useState('');
   const add = () => { if (!name.trim()) return; const p = addProfile(name); setList(profiles()); onChoose(p.id); };
@@ -116,6 +140,7 @@ function Who({ onChoose }: { onChoose: (id: string) => void }) {
       <p className="muted">Everyone gets their own progress, saved on this device.</p>
       <div className="whogrid">
         {list.map((p) => <button key={p.id} className="whotile" onClick={() => onChoose(p.id)}><i>{p.name.charAt(0).toUpperCase()}</i><span>{p.name}</span></button>)}
+        {others.map((n) => <button key={n} className="whotile" onClick={() => onChoose(addProfile(n).id)}><i>{n.charAt(0).toUpperCase()}</i><span>{n}</span></button>)}
         {!adding && <button className="whotile add" onClick={() => setAdding(true)}><i>+</i><span>Add someone</span></button>}
       </div>
       {adding && (
@@ -601,7 +626,7 @@ function Grownups({ db, update, onBack, onRemoved }: { db: Db; update: (fn: (d: 
       ) : (
         <div className="resetbox">
           <p>Erase all tricks learned, streaks, and history for the player who is playing now? This can't be undone.</p>
-          <button className="primary" onClick={() => { update(() => fresh()); setConfirmReset(false); onBack(); }}>Yes, reset everything</button>
+          <button className="primary" onClick={() => { update(() => fresh()); void window.mathseyeSync?.reset('facts'); setConfirmReset(false); onBack(); }}>Yes, reset everything</button>
           <button className="ghost" onClick={() => setConfirmReset(false)}>Keep my progress</button>
         </div>
       )}

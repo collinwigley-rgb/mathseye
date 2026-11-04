@@ -34,7 +34,7 @@
 - [x] MathFacts setup: Keep going or timed (5-30 min), Surprise me or I'll pick; smarter selection favors new/weak facts
 - [x] Netlify: build skipped for docs-only pushes (credits); batch pushes
 - [x] Notes server: Worker + KV stores "Flag a problem" notes (first piece of the cloud; progress sync still to do)
-- [ ] Cloud sync (decided, not built; needs the Cloudflare project first): progress is saved on a small Cloudflare Worker keyed by the lowercased name she types, no PIN, no encryption (owner decision: low stakes). The player dropdown lists every name stored on the server. Store only the typed name and progress, nothing from the private worksheets. Device keeps the last player, works offline, merges by newest result per item.
+- [x] Cloud sync of progress by name (Worker + KV): see CLAUDE.md. Open: removing a player in Grown-ups only removes it from this device (the server copy stays); no way yet to delete a name from the server list.
 - [ ] Optional more variety: spot-the-trick and estimate card types
 - [ ] Assign the six seasonal palettes to members (owner to say which is whose)
 - [ ] Unit 3: upload weekly PDFs, build sheets as they come

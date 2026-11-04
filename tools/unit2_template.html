@@ -77,6 +77,7 @@ a.logo{text-decoration:none}.logo{display:flex;align-items:center;gap:12px;color
 <script src="../profile.js"></script>
 <script src="../build.js"></script>
 <script src="../feedback.js"></script>
+<script src="../sync.js"></script>
 <script src="../fractions.js"></script>
 <script src="../keypad.js"></script>
 <script>
@@ -92,7 +93,7 @@ applyBrand(getBrand());
 const KEY = "mathseye.unit2.study.v2" + (window.mathseyeNs || "");
 let save = {solved:{}, clean:{}, mission:null, day:{d:"", n:0}};
 try { Object.assign(save, JSON.parse(localStorage.getItem(KEY) || "{}")); } catch(e) {}
-const persist = () => { try { localStorage.setItem(KEY, JSON.stringify(save)); } catch(e) {} };
+const persist = () => { try { localStorage.setItem(KEY, JSON.stringify(save)); } catch(e) {} window.mathseyeSync && mathseyeSync.touch(); };
 const today = () => new Date().toISOString().slice(0,10);
 const bump = () => { if (save.day.d !== today()) save.day = {d:today(), n:0}; save.day.n++; };
 const $ = (h) => { const t = document.createElement("template"); t.innerHTML = h.trim(); return t.content.firstChild; };
@@ -248,7 +249,7 @@ home(){ const total = probs.length, done = probs.filter(p => save.solved[p.id]).
     const chip = (b) => { const s = $(`<button class="sw" aria-pressed="${cur===b.id}"><i style="background:${b.accent};--chip:${b.accent}"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[b.icon] || ICONS.sparkle}</svg></i><span>${esc(label(b))}</span></button>`); s.onclick = () => { try { localStorage.setItem("mathseye.brand", b.id); } catch(e) {} applyBrand(b.id); drawSw(); }; return s; };
     const mem = $(`<div class="swatches six"></div>`); MEMBERS.forEach(m => BRANDS.filter(b => b.member === m).forEach(b => mem.append(chip(b)))); box.append(mem);
     const other = BRANDS.filter(b => !b.member); if (other.length) { const d = $(`<details class="more"${other.some(b => b.id === cur) ? " open" : ""}><summary>More palettes</summary><div class="swatches"></div></details>`); other.forEach(b => d.querySelector(".swatches").append(chip(b))); box.append(d); } }; drawSw();
-  const rs = el.querySelector("#rs"), askReset = () => { rs.innerHTML = ""; const b = $(`<button class="btn quiet">Reset my progress</button>`); b.onclick = () => { rs.innerHTML = ""; const box = $(`<div class="card"><p class="lead" style="margin:0">Erase all your progress in this study guide? This can't be undone.</p><div class="row"><button class="btn primary" id="yes">Yes, reset</button><button class="btn" id="no">Keep my progress</button></div></div>`); box.querySelector("#yes").onclick = () => { save = {solved:{}, clean:{}, mission:null, day:{d:"", n:0}}; persist(); S.cur = null; S.test = null; go("home"); }; box.querySelector("#no").onclick = askReset; rs.append(box); box.querySelector("#no").focus(); }; rs.append(b); }; askReset();
+  const rs = el.querySelector("#rs"), askReset = () => { rs.innerHTML = ""; const b = $(`<button class="btn quiet">Reset my progress</button>`); b.onclick = () => { rs.innerHTML = ""; const box = $(`<div class="card"><p class="lead" style="margin:0">Erase all your progress in this study guide? This can't be undone.</p><div class="row"><button class="btn primary" id="yes">Yes, reset</button><button class="btn" id="no">Keep my progress</button></div></div>`); box.querySelector("#yes").onclick = () => { save = {solved:{}, clean:{}, mission:null, day:{d:"", n:0}}; persist(); window.mathseyeSync && mathseyeSync.reset("study"); S.cur = null; S.test = null; go("home"); }; box.querySelector("#no").onclick = askReset; rs.append(box); box.querySelector("#no").focus(); }; rs.append(b); }; askReset();
     el.querySelector("#pick").onclick = () => go("picker"); el.querySelector("#cheat").onclick = () => go("cheat", {open:null}); el.querySelector("#test").onclick = () => go("testIntro"); return el; },
 picker(){ const el = $(`<div class="stack"></div>`); el.append(backBar("Home", () => go("home")), $(`<header><h1>Pick a lesson</h1><p class="sub">Practice just one lesson.</p></header>`));
   const t = $(`<div class="tiles"></div>`); DATA.subs.forEach(s => { const L = DATA.lessons[s], d = subDone(s), n = subAll(s), b = $(`<button class="tile"><small>Lesson ${s}</small><b>${esc(L.title)}</b><span class="bar" aria-hidden="true"><i style="width:${d/n*100}%"></i></span><small>${d} of ${n} solved</small><em class="badge ${lessonStatus(s).key}">${lessonStatus(s).label}</em><small>${esc(lessonStatus(s).why)}</small></button>`); b.onclick = () => buildMission(s); t.append(b); }); el.append(t); return el; },

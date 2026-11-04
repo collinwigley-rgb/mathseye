@@ -12,6 +12,7 @@
 <script src="../profile.js"></script>
 <script src="../build.js"></script>
 <script src="../feedback.js"></script>
+<script src="../sync.js"></script>
 <script src="../fractions.js"></script>
 <script src="../keypad.js"></script>
 <script>
@@ -31,7 +32,7 @@ const MARK = `__MARK__`;
 const PKEY = "mathseye.pack.unit2", HKEY = "mathseye.hw.unit2.v1" + (window.mathseyeNs || "");
 let PACK = null; try { PACK = JSON.parse(localStorage.getItem(PKEY) || "null"); } catch(e) {}
 let hw = {done:{}}; try { Object.assign(hw, JSON.parse(localStorage.getItem(HKEY) || "{}")); } catch(e) {}
-const persist = () => { try { localStorage.setItem(HKEY, JSON.stringify(hw)); } catch(e) {} };
+const persist = () => { try { localStorage.setItem(HKEY, JSON.stringify(hw)); } catch(e) {} window.mathseyeSync && mathseyeSync.touch(); };
 const S = {view:"home", sub:null, id:null, hints:0, shown:false, steps:false, msg:"", alt:null, err:""};
 const ORDER = ["2.1","2.2","2.3","2.4","2.5","2.6","2.8","review","extra"];
 const SHEETS = [["lesson","From the lesson pages"],["practice","Extra practice"],["review","Topic review"],["extra","Recovery packet"]];

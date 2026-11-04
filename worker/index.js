@@ -1,4 +1,5 @@
-// Mathseye server: stores "Flag a problem" notes in Workers KV for the grown-ups. Everything else is the static site.
+// Mathseye server: players' progress (synced by name) and "Flag a problem" notes in Workers KV. Everything else is the static site.
+// Older note: stores "Flag a problem" notes in Workers KV for the grown-ups. Everything else is the static site.
 // POST /api/feedback        a player's note (open to everyone)
 // GET  /api/feedback        list notes, newest first (needs X-Admin-Key if the ADMIN_KEY secret is set)
 // DELETE /api/feedback?k=…  remove one note (same key rule)
@@ -9,6 +10,7 @@ const isAdmin = (req, env) => !env.ADMIN_KEY || req.headers.get('X-Admin-Key') =
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
+    if (url.pathname === '/api/players' || url.pathname === '/api/player') return players(req, env, url);
     if (url.pathname !== '/api/feedback') return env.ASSETS.fetch(req);
     if (!env.NOTES) return json({ ok: false, error: 'storage not set up' }, 503);
 
@@ -44,3 +46,33 @@ export default {
     return json({ ok: false, error: 'method not allowed' }, 405);
   },
 };
+
+// ---- players: progress saved by name (no password, by the owner's decision). Key = the name, lowercased. ----
+const normName = (n) => String(n ?? '').toLowerCase().replace(/[^a-z0-9' -]/g, '').replace(/\s+/g, ' ').trim().slice(0, 20);
+
+async function players(req, env, url) {
+  if (!env.NOTES) return json({ ok: false, error: 'storage not set up' }, 503);
+  if (url.pathname === '/api/players') {
+    // every name saved on the server (the "who's playing" list)
+    const list = await env.NOTES.list({ prefix: 'p:', limit: 1000 });
+    return json({ ok: true, players: list.keys.map((k) => ({ key: k.name.slice(2), name: k.metadata?.name || k.name.slice(2), updatedAt: k.metadata?.updatedAt || 0 })) });
+  }
+  if (req.method === 'GET') {
+    const key = normName(url.searchParams.get('name'));
+    if (!key) return json({ ok: false, error: 'name needed' }, 400);
+    const v = await env.NOTES.get('p:' + key);
+    return json({ ok: true, player: v ? JSON.parse(v) : null });
+  }
+  if (req.method === 'PUT') {
+    let b;
+    try { b = await req.json(); } catch { return json({ ok: false, error: 'bad json' }, 400); }
+    const key = normName(b.name);
+    if (!key || !b.data || typeof b.data !== 'object') return json({ ok: false, error: 'bad request' }, 400);
+    const doc = { name: String(b.name).trim().slice(0, 20), updatedAt: Number(b.updatedAt) || Date.now(), rs: b.rs && typeof b.rs === 'object' ? b.rs : {}, data: b.data };
+    const body = JSON.stringify(doc);
+    if (body.length > 2_000_000) return json({ ok: false, error: 'too big' }, 413);
+    await env.NOTES.put('p:' + key, body, { metadata: { name: doc.name, updatedAt: doc.updatedAt } });
+    return json({ ok: true });
+  }
+  return json({ ok: false, error: 'method not allowed' }, 405);
+}

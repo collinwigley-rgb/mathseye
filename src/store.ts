@@ -49,6 +49,7 @@ export function load(): Db {
 export function save(db: Db) {
   try {
     localStorage.setItem(key(), JSON.stringify(db));
+    window.mathseyeSync?.touch();
   } catch {
     /* storage unavailable: progress lives in memory this session */
   }

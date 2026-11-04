@@ -113,6 +113,7 @@ describe('every trick in content/tricks is well-formed', () => {
 
 // ---------------------------------------------------------------- hub: MathFacts modes + color schemes
 import { buildQueue, tricksFor, unlockedTricks } from './session';
+import syncSource from '../public/sync.js?raw';
 import { fresh } from './store';
 import { BRANDS, ICONS } from './brand';
 
@@ -204,6 +205,43 @@ describe('self-paced sessions', () => {
       const db = learnedDb(3); let fresh = 0;
       for (let i = 0; i < 60; i++) if (buildQueue(db, Date.now(), { kind: 'random' }).some((x) => x.kind === 'trick')) fresh++;
       expect(fresh).toBeGreaterThan(45);
+    });
+  });
+
+  describe('cloud sync merge', () => {
+    const m = { exports: {} as any };
+    new Function('module', syncSource)(m);
+    const S = m.exports;
+    const card = (id: string, box: number, lastSeen: number, attempts = 1) => ({ templateId: id, box, nextDue: 0, lastSeen, attempts, box1Returns: 0 });
+    const facts = (over: any) => ({ settings: { introducedTricks: [], manuallyUnlocked: [], currentUnit: 2 }, cards: {}, attempts: [], sessions: [], ...over });
+
+    it('normalizes names so Kay, kay and " KAY " are one player', () => {
+      expect(S.norm(' Kay ')).toBe('kay'); expect(S.norm('KAY')).toBe('kay'); expect(S.norm('Kay   O')).toBe('kay o');
+    });
+    it('MathFacts: unions learned facts, keeps the most recently seen card, unions answers and sessions', () => {
+      const a = facts({ settings: { introducedTricks: ['a'], manuallyUnlocked: [] }, cards: { c1: card('c1', 3, 100), c2: card('c2', 2, 50) }, attempts: [{ timestamp: 1, templateId: 'c1' }], sessions: [{ id: 's1', startedAt: 1 }], inProgress: { mine: 1 } });
+      const b = facts({ settings: { introducedTricks: ['b'], manuallyUnlocked: [] }, cards: { c1: card('c1', 4, 200), c3: card('c3', 1, 10) }, attempts: [{ timestamp: 1, templateId: 'c1' }, { timestamp: 2, templateId: 'c3' }], sessions: [{ id: 's1', startedAt: 1, endedAt: 5 }, { id: 's2', startedAt: 9 }] });
+      const o = S.mergeFacts(a, b, true);
+      expect(o.settings.introducedTricks.sort()).toEqual(['a', 'b']);
+      expect(o.cards.c1.box).toBe(4);                       // seen later on the other device
+      expect(Object.keys(o.cards).sort()).toEqual(['c1', 'c2', 'c3']);
+      expect(o.attempts.length).toBe(2);                    // the shared answer is not doubled
+      expect(o.sessions.find((x: any) => x.id === 's1').endedAt).toBe(5);
+      expect(o.inProgress).toEqual({ mine: 1 });            // a half-finished set stays on its device
+    });
+    it('study guide: solved, clean and seen only grow; the newer side decides the come-back list', () => {
+      const a = { solved: { x: true }, clean: {}, seen: { x: true }, work: { x: { n: 1, t: 5, c: 1 } }, mission: { here: 1 } };
+      const b = { solved: { y: true }, clean: { y: true }, seen: { y: true }, work: {}, mission: { there: 1 } };
+      const newerLocal = S.mergeStudy(a, b, true), newerRemote = S.mergeStudy(a, b, false);
+      expect(Object.keys(newerLocal.solved).sort()).toEqual(['x', 'y']);
+      expect(Object.keys(newerLocal.seen).sort()).toEqual(['x', 'y']);
+      expect(newerLocal.work.x).toBeTruthy(); expect(Object.keys(newerRemote.work)).toEqual([]);
+      expect(newerRemote.mission).toEqual({ here: 1 });
+    });
+    it('homework done-marks union and a missing side is just the other side', () => {
+      expect(Object.keys(S.mergeHw({ done: { a: 1 } }, { done: { b: 1 } }).done).sort()).toEqual(['a', 'b']);
+      expect(S.mergeHw(null, { done: { b: 1 } })).toEqual({ done: { b: 1 } });
+      expect(S.mergeFacts(null, facts({}))).toBeTruthy();
     });
   });
 });
