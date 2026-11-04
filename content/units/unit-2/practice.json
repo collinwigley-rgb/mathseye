@@ -97,6 +97,7 @@
    "facts": [
     "divide-in-two-steps"
    ],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -118,7 +119,8 @@
      "table": null,
      "graph": null,
      "ref": 1001,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -141,7 +143,8 @@
      "ref": 1002,
      "facts": [
       "move-the-decimal"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -164,7 +167,8 @@
      "ref": 1003,
      "facts": [
       "divide-in-two-steps"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -187,7 +191,8 @@
      "ref": 1004,
      "facts": [
       "divide-in-two-steps"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -210,7 +215,8 @@
      "ref": 1005,
      "facts": [
       "divide-in-two-steps"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -233,7 +239,8 @@
      "ref": 1006,
      "facts": [
       "divide-in-two-steps"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -256,7 +263,8 @@
      "ref": 1007,
      "facts": [
       "divide-in-two-steps"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -279,7 +287,8 @@
      "ref": 1008,
      "facts": [
       "divide-in-two-steps"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -302,7 +311,8 @@
      "ref": 1009,
      "facts": [
       "divide-in-two-steps"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -323,7 +333,8 @@
      "table": null,
      "graph": null,
      "ref": 1010,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1011
@@ -361,6 +372,7 @@
     "earlier": []
    },
    "facts": [],
+   "shortcut": "",
    "variants": [
     {
      "kind": "choice",
@@ -384,7 +396,8 @@
      "table": null,
      "graph": null,
      "ref": 1012,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -408,7 +421,8 @@
      "table": null,
      "graph": null,
      "ref": 1013,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -432,7 +446,8 @@
      "table": null,
      "graph": null,
      "ref": 1014,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -456,7 +471,8 @@
      "table": null,
      "graph": null,
      "ref": 1015,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -480,7 +496,8 @@
      "table": null,
      "graph": null,
      "ref": 1016,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -504,7 +521,8 @@
      "table": null,
      "graph": null,
      "ref": 1017,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -528,7 +546,8 @@
      "table": null,
      "graph": null,
      "ref": 1018,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -552,7 +571,8 @@
      "table": null,
      "graph": null,
      "ref": 1019,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -576,7 +596,8 @@
      "table": null,
      "graph": null,
      "ref": 1020,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -600,7 +621,8 @@
      "table": null,
      "graph": null,
      "ref": 1021,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1022
@@ -635,6 +657,7 @@
     "divide-in-two-steps",
     "divide-by-5-25-50"
    ],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -657,7 +680,8 @@
      "ref": 1023,
      "facts": [
       "halve-halve"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -677,7 +701,8 @@
      "table": null,
      "graph": null,
      "ref": 1024,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -699,7 +724,8 @@
      "ref": 1025,
      "facts": [
       "move-the-decimal"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -719,7 +745,8 @@
      "table": null,
      "graph": null,
      "ref": 1026,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -742,7 +769,8 @@
      "facts": [
       "divide-by-5-25-50",
       "divide-in-two-steps"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -764,7 +792,8 @@
      "ref": 1028,
      "facts": [
       "halve-halve"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -786,7 +815,8 @@
      "ref": 1029,
      "facts": [
       "divide-by-5-25-50"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -808,7 +838,8 @@
      "ref": 1030,
      "facts": [
       "halve-halve"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -830,7 +861,8 @@
      "ref": 1031,
      "facts": [
       "halve-halve"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -852,7 +884,8 @@
      "ref": 1032,
      "facts": [
       "divide-by-5-25-50"
-     ]
+     ],
+     "shortcut": ""
     }
    ],
    "ref": 1033
@@ -883,6 +916,7 @@
     "earlier": []
    },
    "facts": [],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -903,7 +937,8 @@
      "table": null,
      "graph": null,
      "ref": 1034,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -923,7 +958,8 @@
      "table": null,
      "graph": null,
      "ref": 1035,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -943,7 +979,8 @@
      "table": null,
      "graph": null,
      "ref": 1036,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -963,7 +1000,8 @@
      "table": null,
      "graph": null,
      "ref": 1037,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -983,7 +1021,8 @@
      "table": null,
      "graph": null,
      "ref": 1038,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1003,7 +1042,8 @@
      "table": null,
      "graph": null,
      "ref": 1039,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1023,7 +1063,8 @@
      "table": null,
      "graph": null,
      "ref": 1040,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1043,7 +1084,8 @@
      "table": null,
      "graph": null,
      "ref": 1041,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1063,7 +1105,8 @@
      "table": null,
      "graph": null,
      "ref": 1042,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1083,7 +1126,8 @@
      "table": null,
      "graph": null,
      "ref": 1043,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1044
@@ -1117,6 +1161,7 @@
     "earlier": []
    },
    "facts": [],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -1138,7 +1183,8 @@
      "table": null,
      "graph": null,
      "ref": 1045,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1159,7 +1205,8 @@
      "table": null,
      "graph": null,
      "ref": 1046,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1180,7 +1227,8 @@
      "table": null,
      "graph": null,
      "ref": 1047,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1201,7 +1249,8 @@
      "table": null,
      "graph": null,
      "ref": 1048,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1222,7 +1271,8 @@
      "table": null,
      "graph": null,
      "ref": 1049,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1243,7 +1293,8 @@
      "table": null,
      "graph": null,
      "ref": 1050,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1264,7 +1315,8 @@
      "table": null,
      "graph": null,
      "ref": 1051,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1285,7 +1337,8 @@
      "table": null,
      "graph": null,
      "ref": 1052,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1306,7 +1359,8 @@
      "table": null,
      "graph": null,
      "ref": 1053,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1327,7 +1381,8 @@
      "table": null,
      "graph": null,
      "ref": 1054,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1055
@@ -1361,6 +1416,7 @@
     "earlier": []
    },
    "facts": [],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -1382,7 +1438,8 @@
      "table": null,
      "graph": null,
      "ref": 1056,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1403,7 +1460,8 @@
      "table": null,
      "graph": null,
      "ref": 1057,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1424,7 +1482,8 @@
      "table": null,
      "graph": null,
      "ref": 1058,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1445,7 +1504,8 @@
      "table": null,
      "graph": null,
      "ref": 1059,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1466,7 +1526,8 @@
      "table": null,
      "graph": null,
      "ref": 1060,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1487,7 +1548,8 @@
      "table": null,
      "graph": null,
      "ref": 1061,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1508,7 +1570,8 @@
      "table": null,
      "graph": null,
      "ref": 1062,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1529,7 +1592,8 @@
      "table": null,
      "graph": null,
      "ref": 1063,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1550,7 +1614,8 @@
      "table": null,
      "graph": null,
      "ref": 1064,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -1571,7 +1636,8 @@
      "table": null,
      "graph": null,
      "ref": 1065,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1066
@@ -1611,6 +1677,7 @@
    "facts": [
     "divide-by-5-25-50"
    ],
+   "shortcut": "",
    "variants": [
     {
      "kind": "choice",
@@ -1637,7 +1704,8 @@
      "facts": [
       "divide-in-two-steps",
       "halve-halve"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -1664,7 +1732,8 @@
      "facts": [
       "divide-in-two-steps",
       "move-the-decimal"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -1691,7 +1760,8 @@
      "facts": [
       "move-the-decimal",
       "halve-halve"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -1718,7 +1788,8 @@
      "facts": [
       "divide-by-5-25-50",
       "divide-in-two-steps"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -1744,7 +1815,8 @@
      "ref": 1071,
      "facts": [
       "halve-halve"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -1771,7 +1843,8 @@
      "facts": [
       "halve-halve",
       "divide-by-5-25-50"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -1798,7 +1871,8 @@
      "facts": [
       "halve-halve",
       "divide-in-two-steps"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -1825,7 +1899,8 @@
      "facts": [
       "halve-halve",
       "divide-by-5-25-50"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -1852,7 +1927,8 @@
      "facts": [
       "halve-halve",
       "divide-by-5-25-50"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -1879,7 +1955,8 @@
      "facts": [
       "divide-in-two-steps",
       "halve-halve"
-     ]
+     ],
+     "shortcut": ""
     }
    ],
    "ref": 1077
@@ -1922,6 +1999,7 @@
     "flip-and-cancel",
     "how-many-fit"
    ],
+   "shortcut": "",
    "tol": 1e-09,
    "sense": {
     "q": "You divided by 1/2. Should the answer be bigger or smaller than 3/4?",
@@ -1981,7 +2059,8 @@
      "facts": [
       "flip-and-cancel",
       "how-many-fit"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -2022,7 +2101,8 @@
      "ref": 1079,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -2064,7 +2144,8 @@
      "facts": [
       "flip-and-cancel",
       "how-many-fit"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -2106,7 +2187,8 @@
      "facts": [
       "flip-and-cancel",
       "how-many-fit"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -2148,7 +2230,8 @@
      "facts": [
       "flip-and-cancel",
       "how-many-fit"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -2189,7 +2272,8 @@
      "ref": 1083,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -2231,7 +2315,8 @@
      "facts": [
       "flip-and-cancel",
       "how-many-fit"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -2273,7 +2358,8 @@
      "facts": [
       "flip-and-cancel",
       "how-many-fit"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -2315,7 +2401,8 @@
      "facts": [
       "flip-and-cancel",
       "how-many-fit"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -2357,7 +2444,8 @@
      "facts": [
       "flip-and-cancel",
       "how-many-fit"
-     ]
+     ],
+     "shortcut": ""
     }
    ],
    "ref": 1088
@@ -2399,6 +2487,7 @@
     "flip-and-cancel",
     "how-many-fit"
    ],
+   "shortcut": "",
    "tol": 1e-09,
    "sense": {
     "q": "You divided by 1/12. Should the answer be bigger or smaller than 5/6?",
@@ -2443,7 +2532,8 @@
      "facts": [
       "flip-and-cancel",
       "how-many-fit"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -2485,7 +2575,8 @@
      "facts": [
       "flip-and-cancel",
       "how-many-fit"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -2527,7 +2618,8 @@
      "facts": [
       "flip-and-cancel",
       "how-many-fit"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -2562,7 +2654,8 @@
      "facts": [
       "flip-and-cancel",
       "how-many-fit"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -2597,7 +2690,8 @@
      "facts": [
       "flip-and-cancel",
       "how-many-fit"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -2639,7 +2733,8 @@
      "facts": [
       "flip-and-cancel",
       "how-many-fit"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -2674,7 +2769,8 @@
      "facts": [
       "flip-and-cancel",
       "how-many-fit"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -2716,7 +2812,8 @@
      "facts": [
       "flip-and-cancel",
       "how-many-fit"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -2758,7 +2855,8 @@
      "facts": [
       "flip-and-cancel",
       "how-many-fit"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -2800,7 +2898,8 @@
      "facts": [
       "flip-and-cancel",
       "how-many-fit"
-     ]
+     ],
+     "shortcut": ""
     }
    ],
    "ref": 1099
@@ -2841,6 +2940,7 @@
    "facts": [
     "flip-and-cancel"
    ],
+   "shortcut": "2/3 cup is 2 pieces of 1/3 cup. Split 120 Calories into 2 equal pieces: that is one 1/3-cup piece. A whole cup is 3 of those pieces.",
    "tol": 1e-09,
    "sense": {
     "q": "You divided by 2/3. Should the answer be bigger or smaller than 120?",
@@ -2882,7 +2982,8 @@
      "ref": 1100,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": "30 Calories is ONE 1/3-cup piece. A whole cup is 3 of those pieces."
     },
     {
      "kind": "num",
@@ -2914,7 +3015,8 @@
      "ref": 1101,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": "2/3 cup is 2 pieces of 1/3 cup. Split 66 Calories into 2 equal pieces: that is one 1/3-cup piece. A whole cup is 3 of those pieces."
     },
     {
      "kind": "num",
@@ -2946,7 +3048,8 @@
      "ref": 1102,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": "3/4 cup is 3 pieces of 1/4 cup. Split 45 Calories into 3 equal pieces: that is one 1/4-cup piece. A whole cup is 4 of those pieces."
     },
     {
      "kind": "num",
@@ -2978,7 +3081,8 @@
      "ref": 1103,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": "17 Calories is ONE 1/4-cup piece. A whole cup is 4 of those pieces."
     },
     {
      "kind": "num",
@@ -3010,7 +3114,8 @@
      "ref": 1104,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": "48 Calories is ONE 1/2-cup piece. A whole cup is 2 of those pieces."
     },
     {
      "kind": "num",
@@ -3042,7 +3147,8 @@
      "ref": 1105,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": "41 Calories is ONE 1/2-cup piece. A whole cup is 2 of those pieces."
     },
     {
      "kind": "num",
@@ -3074,7 +3180,8 @@
      "ref": 1106,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": "46 Calories is ONE 1/4-cup piece. A whole cup is 4 of those pieces."
     },
     {
      "kind": "num",
@@ -3106,7 +3213,8 @@
      "ref": 1107,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": "3/4 cup is 3 pieces of 1/4 cup. Split 99 Calories into 3 equal pieces: that is one 1/4-cup piece. A whole cup is 4 of those pieces."
     },
     {
      "kind": "num",
@@ -3138,7 +3246,8 @@
      "ref": 1108,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": "30 Calories is ONE 1/4-cup piece. A whole cup is 4 of those pieces."
     },
     {
      "kind": "num",
@@ -3170,7 +3279,8 @@
      "ref": 1109,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": "34 Calories is ONE 1/3-cup piece. A whole cup is 3 of those pieces."
     }
    ],
    "ref": 1110
@@ -3216,6 +3326,7 @@
    "facts": [
     "flip-and-cancel"
    ],
+   "shortcut": "",
    "variants": [
     {
      "kind": "choice",
@@ -3241,7 +3352,8 @@
      "ref": 1111,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -3267,7 +3379,8 @@
      "ref": 1112,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -3293,7 +3406,8 @@
      "ref": 1113,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -3319,7 +3433,8 @@
      "ref": 1114,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -3345,7 +3460,8 @@
      "ref": 1115,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -3371,7 +3487,8 @@
      "ref": 1116,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -3397,7 +3514,8 @@
      "ref": 1117,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -3423,7 +3541,8 @@
      "ref": 1118,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -3449,7 +3568,8 @@
      "ref": 1119,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -3475,7 +3595,8 @@
      "ref": 1120,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     }
    ],
    "ref": 1121
@@ -3516,6 +3637,7 @@
    "facts": [
     "flip-and-cancel"
    ],
+   "shortcut": "Think in 1/8-inch pieces. First find the miles for ONE 1/8-inch piece (split 6 miles into 3 equal pieces). Then count how many 1/8-inch pieces fit in the distance on the map.",
    "tol": 1e-09,
    "sense": {
     "q": "You divided by 3/8. Should the answer be bigger or smaller than 6?",
@@ -3557,7 +3679,8 @@
      "ref": 1122,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": "Think in 1/4-inch pieces. First find the miles for ONE 1/4-inch piece (split 6 miles into 3 equal pieces). Then count how many 1/4-inch pieces fit in the distance on the map."
     },
     {
      "kind": "num",
@@ -3589,7 +3712,8 @@
      "ref": 1123,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": "Think in 1/4-inch pieces. First find the miles for ONE 1/4-inch piece (split 5 miles into 1 equal pieces). Then count how many 1/4-inch pieces fit in the distance on the map."
     },
     {
      "kind": "num",
@@ -3621,7 +3745,8 @@
      "ref": 1124,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": "Think in 1/2-inch pieces. First find the miles for ONE 1/2-inch piece (split 8 miles into 1 equal pieces). Then count how many 1/2-inch pieces fit in the distance on the map."
     },
     {
      "kind": "num",
@@ -3653,7 +3778,8 @@
      "ref": 1125,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": "Think in 1/4-inch pieces. First find the miles for ONE 1/4-inch piece (split 15 miles into 3 equal pieces). Then count how many 1/4-inch pieces fit in the distance on the map."
     },
     {
      "kind": "num",
@@ -3685,7 +3811,8 @@
      "ref": 1126,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": "Think in 1/4-inch pieces. First find the miles for ONE 1/4-inch piece (split 4 miles into 1 equal pieces). Then count how many 1/4-inch pieces fit in the distance on the map."
     },
     {
      "kind": "num",
@@ -3717,7 +3844,8 @@
      "ref": 1127,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": "Think in 1/4-inch pieces. First find the miles for ONE 1/4-inch piece (split 5 miles into 1 equal pieces). Then count how many 1/4-inch pieces fit in the distance on the map."
     },
     {
      "kind": "num",
@@ -3749,7 +3877,8 @@
      "ref": 1128,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": "Think in 1/2-inch pieces. First find the miles for ONE 1/2-inch piece (split 4 miles into 1 equal pieces). Then count how many 1/2-inch pieces fit in the distance on the map."
     },
     {
      "kind": "num",
@@ -3781,7 +3910,8 @@
      "ref": 1129,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": "Think in 1/4-inch pieces. First find the miles for ONE 1/4-inch piece (split 12 miles into 3 equal pieces). Then count how many 1/4-inch pieces fit in the distance on the map."
     },
     {
      "kind": "num",
@@ -3813,7 +3943,8 @@
      "ref": 1130,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": "Think in 1/4-inch pieces. First find the miles for ONE 1/4-inch piece (split 3 miles into 1 equal pieces). Then count how many 1/4-inch pieces fit in the distance on the map."
     },
     {
      "kind": "num",
@@ -3845,7 +3976,8 @@
      "ref": 1131,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": "Think in 1/4-inch pieces. First find the miles for ONE 1/4-inch piece (split 3 miles into 1 equal pieces). Then count how many 1/4-inch pieces fit in the distance on the map."
     }
    ],
    "ref": 1132
@@ -3879,6 +4011,7 @@
    "facts": [
     "flip-and-cancel"
    ],
+   "shortcut": "",
    "tol": 0.006,
    "sense": {
     "q": "You divided by 5. Should the answer be bigger or smaller than 2/3?",
@@ -3920,7 +4053,8 @@
      "ref": 1133,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -3952,7 +4086,8 @@
      "ref": 1134,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -3984,7 +4119,8 @@
      "ref": 1135,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -4016,7 +4152,8 @@
      "ref": 1136,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -4048,7 +4185,8 @@
      "ref": 1137,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -4080,7 +4218,8 @@
      "ref": 1138,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -4112,7 +4251,8 @@
      "ref": 1139,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -4144,7 +4284,8 @@
      "ref": 1140,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -4176,7 +4317,8 @@
      "ref": 1141,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -4208,7 +4350,8 @@
      "ref": 1142,
      "facts": [
       "flip-and-cancel"
-     ]
+     ],
+     "shortcut": ""
     }
    ],
    "ref": 1143
@@ -4263,6 +4406,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "variants": [
     {
      "kind": "choice",
@@ -4298,7 +4442,8 @@
      },
      "graph": null,
      "ref": 1144,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -4334,7 +4479,8 @@
      },
      "graph": null,
      "ref": 1145,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -4370,7 +4516,8 @@
      },
      "graph": null,
      "ref": 1146,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -4406,7 +4553,8 @@
      },
      "graph": null,
      "ref": 1147,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -4442,7 +4590,8 @@
      },
      "graph": null,
      "ref": 1148,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -4478,7 +4627,8 @@
      },
      "graph": null,
      "ref": 1149,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -4514,7 +4664,8 @@
      },
      "graph": null,
      "ref": 1150,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -4550,7 +4701,8 @@
      },
      "graph": null,
      "ref": 1151,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -4586,7 +4738,8 @@
      },
      "graph": null,
      "ref": 1152,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -4622,7 +4775,8 @@
      },
      "graph": null,
      "ref": 1153,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1154
@@ -4677,6 +4831,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "variants": [
     {
      "kind": "choice",
@@ -4712,7 +4867,8 @@
      },
      "graph": null,
      "ref": 1155,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -4748,7 +4904,8 @@
      },
      "graph": null,
      "ref": 1156,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -4784,7 +4941,8 @@
      },
      "graph": null,
      "ref": 1157,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -4820,7 +4978,8 @@
      },
      "graph": null,
      "ref": 1158,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -4856,7 +5015,8 @@
      },
      "graph": null,
      "ref": 1159,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -4892,7 +5052,8 @@
      },
      "graph": null,
      "ref": 1160,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -4928,7 +5089,8 @@
      },
      "graph": null,
      "ref": 1161,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -4964,7 +5126,8 @@
      },
      "graph": null,
      "ref": 1162,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -5000,7 +5163,8 @@
      },
      "graph": null,
      "ref": 1163,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -5036,7 +5200,8 @@
      },
      "graph": null,
      "ref": 1164,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1165
@@ -5086,6 +5251,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -5117,7 +5283,8 @@
      },
      "graph": null,
      "ref": 1166,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -5148,7 +5315,8 @@
      },
      "graph": null,
      "ref": 1167,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -5179,7 +5347,8 @@
      },
      "graph": null,
      "ref": 1168,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -5210,7 +5379,8 @@
      },
      "graph": null,
      "ref": 1169,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -5241,7 +5411,8 @@
      },
      "graph": null,
      "ref": 1170,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -5272,7 +5443,8 @@
      },
      "graph": null,
      "ref": 1171,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -5303,7 +5475,8 @@
      },
      "graph": null,
      "ref": 1172,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -5334,7 +5507,8 @@
      },
      "graph": null,
      "ref": 1173,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -5365,7 +5539,8 @@
      },
      "graph": null,
      "ref": 1174,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -5396,7 +5571,8 @@
      },
      "graph": null,
      "ref": 1175,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1176
@@ -5437,6 +5613,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "variants": [
     {
      "kind": "choice",
@@ -5459,7 +5636,8 @@
      "table": null,
      "graph": null,
      "ref": 1177,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -5482,7 +5660,8 @@
      "table": null,
      "graph": null,
      "ref": 1178,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -5505,7 +5684,8 @@
      "table": null,
      "graph": null,
      "ref": 1179,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -5528,7 +5708,8 @@
      "table": null,
      "graph": null,
      "ref": 1180,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -5551,7 +5732,8 @@
      "table": null,
      "graph": null,
      "ref": 1181,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -5574,7 +5756,8 @@
      "table": null,
      "graph": null,
      "ref": 1182,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -5597,7 +5780,8 @@
      "table": null,
      "graph": null,
      "ref": 1183,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -5620,7 +5804,8 @@
      "table": null,
      "graph": null,
      "ref": 1184,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -5643,7 +5828,8 @@
      "table": null,
      "graph": null,
      "ref": 1185,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -5666,7 +5852,8 @@
      "table": null,
      "graph": null,
      "ref": 1186,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1187
@@ -5716,6 +5903,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -5747,7 +5935,8 @@
      },
      "graph": null,
      "ref": 1188,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -5778,7 +5967,8 @@
      },
      "graph": null,
      "ref": 1189,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -5809,7 +5999,8 @@
      },
      "graph": null,
      "ref": 1190,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -5840,7 +6031,8 @@
      },
      "graph": null,
      "ref": 1191,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -5871,7 +6063,8 @@
      },
      "graph": null,
      "ref": 1192,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -5902,7 +6095,8 @@
      },
      "graph": null,
      "ref": 1193,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -5933,7 +6127,8 @@
      },
      "graph": null,
      "ref": 1194,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -5964,7 +6159,8 @@
      },
      "graph": null,
      "ref": 1195,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -5995,7 +6191,8 @@
      },
      "graph": null,
      "ref": 1196,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6026,7 +6223,8 @@
      },
      "graph": null,
      "ref": 1197,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1198
@@ -6068,6 +6266,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "variants": [
     {
      "kind": "choice",
@@ -6090,7 +6289,8 @@
      "table": null,
      "graph": null,
      "ref": 1199,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -6113,7 +6313,8 @@
      "table": null,
      "graph": null,
      "ref": 1200,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -6136,7 +6337,8 @@
      "table": null,
      "graph": null,
      "ref": 1201,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -6159,7 +6361,8 @@
      "table": null,
      "graph": null,
      "ref": 1202,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -6182,7 +6385,8 @@
      "table": null,
      "graph": null,
      "ref": 1203,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -6205,7 +6409,8 @@
      "table": null,
      "graph": null,
      "ref": 1204,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -6228,7 +6433,8 @@
      "table": null,
      "graph": null,
      "ref": 1205,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -6251,7 +6457,8 @@
      "table": null,
      "graph": null,
      "ref": 1206,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -6274,7 +6481,8 @@
      "table": null,
      "graph": null,
      "ref": 1207,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1208
@@ -6313,6 +6521,7 @@
    "facts": [
     "halve-halve"
    ],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -6335,7 +6544,8 @@
      "ref": 1209,
      "facts": [
       "halve-halve"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6357,7 +6567,8 @@
      "ref": 1210,
      "facts": [
       "halve-halve"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6379,7 +6590,8 @@
      "ref": 1211,
      "facts": [
       "halve-halve"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6399,7 +6611,8 @@
      "table": null,
      "graph": null,
      "ref": 1212,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6421,7 +6634,8 @@
      "ref": 1213,
      "facts": [
       "divide-in-two-steps"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6441,7 +6655,8 @@
      "table": null,
      "graph": null,
      "ref": 1214,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6463,7 +6678,8 @@
      "ref": 1215,
      "facts": [
       "divide-in-two-steps"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6485,7 +6701,8 @@
      "ref": 1216,
      "facts": [
       "divide-in-two-steps"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6507,7 +6724,8 @@
      "ref": 1217,
      "facts": [
       "halve-halve"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6529,7 +6747,8 @@
      "ref": 1218,
      "facts": [
       "halve-halve"
-     ]
+     ],
+     "shortcut": ""
     }
    ],
    "ref": 1219
@@ -6564,6 +6783,7 @@
    "facts": [
     "break-it-apart"
    ],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -6586,7 +6806,8 @@
      "ref": 1220,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6608,7 +6829,8 @@
      "ref": 1221,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6630,7 +6852,8 @@
      "ref": 1222,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6652,7 +6875,8 @@
      "ref": 1223,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6674,7 +6898,8 @@
      "ref": 1224,
      "facts": [
       "times-one-and-a-half"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6696,7 +6921,8 @@
      "ref": 1225,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6718,7 +6944,8 @@
      "ref": 1226,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6740,7 +6967,8 @@
      "ref": 1227,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6762,7 +6990,8 @@
      "ref": 1228,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6784,7 +7013,8 @@
      "ref": 1229,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     }
    ],
    "ref": 1230
@@ -6818,6 +7048,7 @@
     "earlier": []
    },
    "facts": [],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -6839,7 +7070,8 @@
      "table": null,
      "graph": null,
      "ref": 1231,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6860,7 +7092,8 @@
      "table": null,
      "graph": null,
      "ref": 1232,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6881,7 +7114,8 @@
      "table": null,
      "graph": null,
      "ref": 1233,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6902,7 +7136,8 @@
      "table": null,
      "graph": null,
      "ref": 1234,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6923,7 +7158,8 @@
      "table": null,
      "graph": null,
      "ref": 1235,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6944,7 +7180,8 @@
      "table": null,
      "graph": null,
      "ref": 1236,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6965,7 +7202,8 @@
      "table": null,
      "graph": null,
      "ref": 1237,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -6986,7 +7224,8 @@
      "table": null,
      "graph": null,
      "ref": 1238,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7007,7 +7246,8 @@
      "table": null,
      "graph": null,
      "ref": 1239,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7028,7 +7268,8 @@
      "table": null,
      "graph": null,
      "ref": 1240,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1241
@@ -7068,6 +7309,7 @@
    "facts": [
     "divide-by-5-25-50"
    ],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -7090,7 +7332,8 @@
      "ref": 1242,
      "facts": [
       "move-the-decimal"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7112,7 +7355,8 @@
      "ref": 1243,
      "facts": [
       "move-the-decimal"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7134,7 +7378,8 @@
      "ref": 1244,
      "facts": [
       "divide-in-two-steps"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7156,7 +7401,8 @@
      "ref": 1245,
      "facts": [
       "move-the-decimal"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7178,7 +7424,8 @@
      "ref": 1246,
      "facts": [
       "halve-halve"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7200,7 +7447,8 @@
      "ref": 1247,
      "facts": [
       "divide-by-5-25-50"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7222,7 +7470,8 @@
      "ref": 1248,
      "facts": [
       "divide-in-two-steps"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7244,7 +7493,8 @@
      "ref": 1249,
      "facts": [
       "halve-halve"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7266,7 +7516,8 @@
      "ref": 1250,
      "facts": [
       "divide-by-5-25-50"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7288,7 +7539,8 @@
      "ref": 1251,
      "facts": [
       "halve-halve"
-     ]
+     ],
+     "shortcut": ""
     }
    ],
    "ref": 1252
@@ -7329,6 +7581,7 @@
    "facts": [
     "break-it-apart"
    ],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -7352,7 +7605,8 @@
      "ref": 1253,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7375,7 +7629,8 @@
      "ref": 1254,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7398,7 +7653,8 @@
      "ref": 1255,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7421,7 +7677,8 @@
      "ref": 1256,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7444,7 +7701,8 @@
      "ref": 1257,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7467,7 +7725,8 @@
      "ref": 1258,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7490,7 +7749,8 @@
      "ref": 1259,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7511,7 +7771,8 @@
      "table": null,
      "graph": null,
      "ref": 1260,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7534,7 +7795,8 @@
      "ref": 1261,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7557,7 +7819,8 @@
      "ref": 1262,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     }
    ],
    "ref": 1263
@@ -7601,6 +7864,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "variants": [
     {
      "kind": "choice",
@@ -7626,7 +7890,8 @@
      "table": null,
      "graph": null,
      "ref": 1264,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -7652,7 +7917,8 @@
      "table": null,
      "graph": null,
      "ref": 1265,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -7678,7 +7944,8 @@
      "table": null,
      "graph": null,
      "ref": 1266,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -7704,7 +7971,8 @@
      "table": null,
      "graph": null,
      "ref": 1267,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -7730,7 +7998,8 @@
      "table": null,
      "graph": null,
      "ref": 1268,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -7756,7 +8025,8 @@
      "table": null,
      "graph": null,
      "ref": 1269,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -7782,7 +8052,8 @@
      "table": null,
      "graph": null,
      "ref": 1270,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -7808,7 +8079,8 @@
      "table": null,
      "graph": null,
      "ref": 1271,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -7834,7 +8106,8 @@
      "table": null,
      "graph": null,
      "ref": 1272,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -7860,7 +8133,8 @@
      "table": null,
      "graph": null,
      "ref": 1273,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1274
@@ -7898,6 +8172,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -7918,7 +8193,8 @@
      "table": null,
      "graph": null,
      "ref": 1275,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7938,7 +8214,8 @@
      "table": null,
      "graph": null,
      "ref": 1276,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7958,7 +8235,8 @@
      "table": null,
      "graph": null,
      "ref": 1277,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7978,7 +8256,8 @@
      "table": null,
      "graph": null,
      "ref": 1278,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -7998,7 +8277,8 @@
      "table": null,
      "graph": null,
      "ref": 1279,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -8018,7 +8298,8 @@
      "table": null,
      "graph": null,
      "ref": 1280,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -8038,7 +8319,8 @@
      "table": null,
      "graph": null,
      "ref": 1281,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -8058,7 +8340,8 @@
      "table": null,
      "graph": null,
      "ref": 1282,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -8078,7 +8361,8 @@
      "table": null,
      "graph": null,
      "ref": 1283,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -8098,7 +8382,8 @@
      "table": null,
      "graph": null,
      "ref": 1284,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1285
@@ -8168,6 +8453,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "variants": [
     {
      "kind": "choice",
@@ -8217,7 +8503,8 @@
       ]
      },
      "ref": 1286,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -8267,7 +8554,8 @@
       ]
      },
      "ref": 1288,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -8317,7 +8605,8 @@
       ]
      },
      "ref": 1289,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -8367,7 +8656,8 @@
       ]
      },
      "ref": 1290,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1287
@@ -8432,6 +8722,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -8478,7 +8769,8 @@
       ]
      },
      "ref": 1291,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -8524,7 +8816,8 @@
       ]
      },
      "ref": 1292,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -8570,7 +8863,8 @@
       ]
      },
      "ref": 1293,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -8616,7 +8910,8 @@
       ]
      },
      "ref": 1294,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -8662,7 +8957,8 @@
       ]
      },
      "ref": 1295,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1296
@@ -8735,6 +9031,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "variants": [
     {
      "kind": "choice",
@@ -8787,7 +9084,8 @@
       ]
      },
      "ref": 1298,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -8840,7 +9138,8 @@
       ]
      },
      "ref": 1299,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -8893,7 +9192,8 @@
       ]
      },
      "ref": 1300,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -8946,7 +9246,8 @@
       ]
      },
      "ref": 1301,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -8999,7 +9300,8 @@
       ]
      },
      "ref": 1302,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -9052,7 +9354,8 @@
       ]
      },
      "ref": 1303,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -9105,7 +9408,8 @@
       ]
      },
      "ref": 1304,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -9158,7 +9462,8 @@
       ]
      },
      "ref": 1305,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1297
@@ -9282,6 +9587,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "variants": [
     {
      "kind": "choice",
@@ -9385,7 +9691,8 @@
       "dots": []
      },
      "ref": 1306,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -9489,7 +9796,8 @@
       "dots": []
      },
      "ref": 1307,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -9593,7 +9901,8 @@
       "dots": []
      },
      "ref": 1309,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -9697,7 +10006,8 @@
       "dots": []
      },
      "ref": 1310,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -9801,7 +10111,8 @@
       "dots": []
      },
      "ref": 1311,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1308
@@ -9839,6 +10150,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -9859,7 +10171,8 @@
      "table": null,
      "graph": null,
      "ref": 1312,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -9879,7 +10192,8 @@
      "table": null,
      "graph": null,
      "ref": 1313,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -9899,7 +10213,8 @@
      "table": null,
      "graph": null,
      "ref": 1314,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -9919,7 +10234,8 @@
      "table": null,
      "graph": null,
      "ref": 1315,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -9939,7 +10255,8 @@
      "table": null,
      "graph": null,
      "ref": 1316,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -9959,7 +10276,8 @@
      "table": null,
      "graph": null,
      "ref": 1317,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -9979,7 +10297,8 @@
      "table": null,
      "graph": null,
      "ref": 1318,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -9999,7 +10318,8 @@
      "table": null,
      "graph": null,
      "ref": 1319,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -10019,7 +10339,8 @@
      "table": null,
      "graph": null,
      "ref": 1320,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -10039,7 +10360,8 @@
      "table": null,
      "graph": null,
      "ref": 1321,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1322
@@ -10130,6 +10452,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "variants": [
     {
      "kind": "choice",
@@ -10196,7 +10519,8 @@
       ]
      },
      "ref": 1323,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -10263,7 +10587,8 @@
       ]
      },
      "ref": 1324,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -10330,7 +10655,8 @@
       ]
      },
      "ref": 1325,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -10397,7 +10723,8 @@
       ]
      },
      "ref": 1326,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -10464,7 +10791,8 @@
       ]
      },
      "ref": 1327,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -10531,7 +10859,8 @@
       ]
      },
      "ref": 1328,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -10598,7 +10927,8 @@
       ]
      },
      "ref": 1329,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1330
@@ -10636,6 +10966,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -10657,7 +10988,8 @@
      "table": null,
      "graph": null,
      "ref": 1331,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -10678,7 +11010,8 @@
      "table": null,
      "graph": null,
      "ref": 1332,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -10699,7 +11032,8 @@
      "table": null,
      "graph": null,
      "ref": 1333,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -10720,7 +11054,8 @@
      "table": null,
      "graph": null,
      "ref": 1334,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -10741,7 +11076,8 @@
      "table": null,
      "graph": null,
      "ref": 1335,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -10762,7 +11098,8 @@
      "table": null,
      "graph": null,
      "ref": 1336,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -10783,7 +11120,8 @@
      "table": null,
      "graph": null,
      "ref": 1337,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -10804,7 +11142,8 @@
      "table": null,
      "graph": null,
      "ref": 1338,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -10825,7 +11164,8 @@
      "table": null,
      "graph": null,
      "ref": 1339,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -10846,7 +11186,8 @@
      "table": null,
      "graph": null,
      "ref": 1340,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1341
@@ -10884,6 +11225,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -10905,7 +11247,8 @@
      "table": null,
      "graph": null,
      "ref": 1342,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -10926,7 +11269,8 @@
      "table": null,
      "graph": null,
      "ref": 1343,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -10947,7 +11291,8 @@
      "table": null,
      "graph": null,
      "ref": 1344,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -10968,7 +11313,8 @@
      "table": null,
      "graph": null,
      "ref": 1345,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -10989,7 +11335,8 @@
      "table": null,
      "graph": null,
      "ref": 1346,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11010,7 +11357,8 @@
      "table": null,
      "graph": null,
      "ref": 1347,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11031,7 +11379,8 @@
      "table": null,
      "graph": null,
      "ref": 1348,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11052,7 +11401,8 @@
      "table": null,
      "graph": null,
      "ref": 1349,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11073,7 +11423,8 @@
      "table": null,
      "graph": null,
      "ref": 1350,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11094,7 +11445,8 @@
      "table": null,
      "graph": null,
      "ref": 1351,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1352
@@ -11133,6 +11485,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -11154,7 +11507,8 @@
      "table": null,
      "graph": null,
      "ref": 1353,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11175,7 +11529,8 @@
      "table": null,
      "graph": null,
      "ref": 1354,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11196,7 +11551,8 @@
      "table": null,
      "graph": null,
      "ref": 1355,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11217,7 +11573,8 @@
      "table": null,
      "graph": null,
      "ref": 1356,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11238,7 +11595,8 @@
      "table": null,
      "graph": null,
      "ref": 1357,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11259,7 +11617,8 @@
      "table": null,
      "graph": null,
      "ref": 1358,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11280,7 +11639,8 @@
      "table": null,
      "graph": null,
      "ref": 1359,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11301,7 +11661,8 @@
      "table": null,
      "graph": null,
      "ref": 1360,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11322,7 +11683,8 @@
      "table": null,
      "graph": null,
      "ref": 1361,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11343,7 +11705,8 @@
      "table": null,
      "graph": null,
      "ref": 1362,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1363
@@ -11375,6 +11738,7 @@
     "earlier": []
    },
    "facts": [],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -11395,7 +11759,8 @@
      "table": null,
      "graph": null,
      "ref": 1364,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11415,7 +11780,8 @@
      "table": null,
      "graph": null,
      "ref": 1365,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11435,7 +11801,8 @@
      "table": null,
      "graph": null,
      "ref": 1366,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11455,7 +11822,8 @@
      "table": null,
      "graph": null,
      "ref": 1367,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11475,7 +11843,8 @@
      "table": null,
      "graph": null,
      "ref": 1368,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11495,7 +11864,8 @@
      "table": null,
      "graph": null,
      "ref": 1369,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11515,7 +11885,8 @@
      "table": null,
      "graph": null,
      "ref": 1370,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11535,7 +11906,8 @@
      "table": null,
      "graph": null,
      "ref": 1371,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11555,7 +11927,8 @@
      "table": null,
      "graph": null,
      "ref": 1372,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11575,7 +11948,8 @@
      "table": null,
      "graph": null,
      "ref": 1373,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1374
@@ -11618,6 +11992,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -11639,7 +12014,8 @@
      "table": null,
      "graph": null,
      "ref": 1375,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11660,7 +12036,8 @@
      "table": null,
      "graph": null,
      "ref": 1376,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11681,7 +12058,8 @@
      "table": null,
      "graph": null,
      "ref": 1377,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11702,7 +12080,8 @@
      "table": null,
      "graph": null,
      "ref": 1378,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11723,7 +12102,8 @@
      "table": null,
      "graph": null,
      "ref": 1379,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11744,7 +12124,8 @@
      "table": null,
      "graph": null,
      "ref": 1380,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11765,7 +12146,8 @@
      "table": null,
      "graph": null,
      "ref": 1381,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11786,7 +12168,8 @@
      "table": null,
      "graph": null,
      "ref": 1382,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11807,7 +12190,8 @@
      "table": null,
      "graph": null,
      "ref": 1383,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -11828,7 +12212,8 @@
      "table": null,
      "graph": null,
      "ref": 1384,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1385
@@ -11869,6 +12254,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "variants": [
     {
      "kind": "choice",
@@ -11891,7 +12277,8 @@
      "table": null,
      "graph": null,
      "ref": 1386,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -11914,7 +12301,8 @@
      "table": null,
      "graph": null,
      "ref": 1387,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -11937,7 +12325,8 @@
      "table": null,
      "graph": null,
      "ref": 1388,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -11960,7 +12349,8 @@
      "table": null,
      "graph": null,
      "ref": 1389,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -11983,7 +12373,8 @@
      "table": null,
      "graph": null,
      "ref": 1390,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -12006,7 +12397,8 @@
      "table": null,
      "graph": null,
      "ref": 1391,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -12029,7 +12421,8 @@
      "table": null,
      "graph": null,
      "ref": 1392,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -12052,7 +12445,8 @@
      "table": null,
      "graph": null,
      "ref": 1393,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -12075,7 +12469,8 @@
      "table": null,
      "graph": null,
      "ref": 1394,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "choice",
@@ -12098,7 +12493,8 @@
      "table": null,
      "graph": null,
      "ref": 1395,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1396
@@ -12136,6 +12532,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -12156,7 +12553,8 @@
      "table": null,
      "graph": null,
      "ref": 1397,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12176,7 +12574,8 @@
      "table": null,
      "graph": null,
      "ref": 1398,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12196,7 +12595,8 @@
      "table": null,
      "graph": null,
      "ref": 1399,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12216,7 +12616,8 @@
      "table": null,
      "graph": null,
      "ref": 1400,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12236,7 +12637,8 @@
      "table": null,
      "graph": null,
      "ref": 1401,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12256,7 +12658,8 @@
      "table": null,
      "graph": null,
      "ref": 1402,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12276,7 +12679,8 @@
      "table": null,
      "graph": null,
      "ref": 1403,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12296,7 +12700,8 @@
      "table": null,
      "graph": null,
      "ref": 1404,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12316,7 +12721,8 @@
      "table": null,
      "graph": null,
      "ref": 1405,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12336,7 +12742,8 @@
      "table": null,
      "graph": null,
      "ref": 1406,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1407
@@ -12374,6 +12781,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -12394,7 +12802,8 @@
      "table": null,
      "graph": null,
      "ref": 1408,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12414,7 +12823,8 @@
      "table": null,
      "graph": null,
      "ref": 1409,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12434,7 +12844,8 @@
      "table": null,
      "graph": null,
      "ref": 1410,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12454,7 +12865,8 @@
      "table": null,
      "graph": null,
      "ref": 1411,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12474,7 +12886,8 @@
      "table": null,
      "graph": null,
      "ref": 1412,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12494,7 +12907,8 @@
      "table": null,
      "graph": null,
      "ref": 1413,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12514,7 +12928,8 @@
      "table": null,
      "graph": null,
      "ref": 1414,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12534,7 +12949,8 @@
      "table": null,
      "graph": null,
      "ref": 1415,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12554,7 +12970,8 @@
      "table": null,
      "graph": null,
      "ref": 1416,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12574,7 +12991,8 @@
      "table": null,
      "graph": null,
      "ref": 1417,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1418
@@ -12607,6 +13025,7 @@
     "earlier": []
    },
    "facts": [],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -12627,7 +13046,8 @@
      "table": null,
      "graph": null,
      "ref": 1419,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12647,7 +13067,8 @@
      "table": null,
      "graph": null,
      "ref": 1420,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12667,7 +13088,8 @@
      "table": null,
      "graph": null,
      "ref": 1421,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12687,7 +13109,8 @@
      "table": null,
      "graph": null,
      "ref": 1422,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12707,7 +13130,8 @@
      "table": null,
      "graph": null,
      "ref": 1423,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12727,7 +13151,8 @@
      "table": null,
      "graph": null,
      "ref": 1424,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12747,7 +13172,8 @@
      "table": null,
      "graph": null,
      "ref": 1425,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12767,7 +13193,8 @@
      "table": null,
      "graph": null,
      "ref": 1426,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12787,7 +13214,8 @@
      "table": null,
      "graph": null,
      "ref": 1427,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12807,7 +13235,8 @@
      "table": null,
      "graph": null,
      "ref": 1428,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1429
@@ -12845,6 +13274,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -12865,7 +13295,8 @@
      "table": null,
      "graph": null,
      "ref": 1430,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12885,7 +13316,8 @@
      "table": null,
      "graph": null,
      "ref": 1431,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12905,7 +13337,8 @@
      "table": null,
      "graph": null,
      "ref": 1432,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12925,7 +13358,8 @@
      "table": null,
      "graph": null,
      "ref": 1433,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12945,7 +13379,8 @@
      "table": null,
      "graph": null,
      "ref": 1434,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12965,7 +13400,8 @@
      "table": null,
      "graph": null,
      "ref": 1435,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -12985,7 +13421,8 @@
      "table": null,
      "graph": null,
      "ref": 1436,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -13005,7 +13442,8 @@
      "table": null,
      "graph": null,
      "ref": 1437,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -13025,7 +13463,8 @@
      "table": null,
      "graph": null,
      "ref": 1438,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -13045,7 +13484,8 @@
      "table": null,
      "graph": null,
      "ref": 1439,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1440
@@ -13088,6 +13528,7 @@
     ]
    },
    "facts": [],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -13108,7 +13549,8 @@
      "table": null,
      "graph": null,
      "ref": 1441,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -13128,7 +13570,8 @@
      "table": null,
      "graph": null,
      "ref": 1442,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -13148,7 +13591,8 @@
      "table": null,
      "graph": null,
      "ref": 1443,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -13168,7 +13612,8 @@
      "table": null,
      "graph": null,
      "ref": 1444,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -13188,7 +13633,8 @@
      "table": null,
      "graph": null,
      "ref": 1445,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -13208,7 +13654,8 @@
      "table": null,
      "graph": null,
      "ref": 1446,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -13228,7 +13675,8 @@
      "table": null,
      "graph": null,
      "ref": 1447,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -13248,7 +13696,8 @@
      "table": null,
      "graph": null,
      "ref": 1448,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -13268,7 +13717,8 @@
      "table": null,
      "graph": null,
      "ref": 1449,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -13288,7 +13738,8 @@
      "table": null,
      "graph": null,
      "ref": 1450,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     }
    ],
    "ref": 1451
@@ -13328,6 +13779,7 @@
    "facts": [
     "break-it-apart"
    ],
+   "shortcut": "",
    "tol": 1e-09,
    "variants": [
     {
@@ -13349,7 +13801,8 @@
      "ref": 1452,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -13368,7 +13821,8 @@
      "table": null,
      "graph": null,
      "ref": 1453,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -13389,7 +13843,8 @@
      "ref": 1455,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -13408,7 +13863,8 @@
      "table": null,
      "graph": null,
      "ref": 1456,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -13427,7 +13883,8 @@
      "table": null,
      "graph": null,
      "ref": 1457,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -13448,7 +13905,8 @@
      "ref": 1458,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -13469,7 +13927,8 @@
      "ref": 1459,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -13488,7 +13947,8 @@
      "table": null,
      "graph": null,
      "ref": 1460,
-     "facts": []
+     "facts": [],
+     "shortcut": ""
     },
     {
      "kind": "num",
@@ -13509,7 +13969,8 @@
      "ref": 1461,
      "facts": [
       "break-it-apart"
-     ]
+     ],
+     "shortcut": ""
     }
    ],
    "ref": 1454

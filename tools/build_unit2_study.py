@@ -122,12 +122,26 @@ def facts_text(pid, t):
     return []
 import json as _json
 TRICKS = {t["id"]: t for t in (_json.load(open(f)) for f in sorted((ROOT / "content" / "tricks").glob("*.json")))}
+def shortcut_text(pid, t):
+    """A mental-math way in, written from the numbers shown. It never computes the final answer."""
+    if pid == "U2-10":
+        m = _re.search(r"(\d+) Calories in (\d+)/(\d+) cup", t)
+        if not m: return ""
+        x, a, b = m.groups()
+        if a == "1": return f"{x} Calories is ONE 1/{b}-cup piece. A whole cup is {b} of those pieces."
+        return f"{a}/{b} cup is {a} pieces of 1/{b} cup. Split {x} Calories into {a} equal pieces: that is one 1/{b}-cup piece. A whole cup is {b} of those pieces."
+    if pid == "U2-12":
+        m = _re.search(r"(\d+)/(\d+) inch = (\d+) miles", t)
+        if not m: return ""
+        a, b, mi = m.groups()
+        return f"Think in 1/{b}-inch pieces. First find the miles for ONE 1/{b}-inch piece (split {mi} miles into {a} equal pieces). Then count how many 1/{b}-inch pieces fit in the distance on the map."
+    return ""
 def facts_for(p):
     return facts_text(p["id"], p["text"])
 out = []
 for p in PROBS:
     q = {k: v for k, v in p.items()}
-    q["why_focus"] = FOCUS[p["sub"]]; q["deps"] = deps(p); q["facts"] = facts_for(p)
+    q["why_focus"] = FOCUS[p["sub"]]; q["deps"] = deps(p); q["facts"] = facts_for(p); q["shortcut"] = shortcut_text(p["id"], p["text"])
     if q["kind"] == "num": q["tol"] = 0.006 if nonterm(q["answer"]) else 1e-9
     if p["id"] in BASE_SENSE:
         q["sense"] = sense(*BASE_SENSE[p["id"]])
@@ -138,7 +152,7 @@ for p in PROBS:
     assert vs and all(v["kind"] == p["kind"] for v in vs), p["id"]
     for i, v in enumerate(vs): v["ref"] = ref_for(p["id"], i, v)
     q["variants"] = vs
-    for _v in vs: _v["facts"] = facts_text(p["id"], _v.get("text", ""))
+    for _v in vs: _v["facts"] = facts_text(p["id"], _v.get("text", "")); _v["shortcut"] = shortcut_text(p["id"], _v.get("text", ""))
     q["ref"] = ref_for(p["id"], -1, q)
     out.append(q)
 _all = [o['ref'] for o in out] + [v['ref'] for o in out for v in o['variants']]
