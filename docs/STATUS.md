@@ -42,3 +42,7 @@
 - [ ] Unit 3: upload weekly PDFs, build sheets as they come
 - [ ] Phase 2: Beat the Calculator, Test Mode, spot-the-trick and estimate cards, PIN for grown-ups, more tricks
 - [ ] Move storage to IndexedDB and add JSON export for backup
+
+## Worksheet pictures (done)
+Crops live in the private repo (`images/unit-2`), linked to problems by `tools/link_figures.py` (geometry + text check, gated by `test_figure_links.py`). `publish_images.py N` uploads them to KV (`img:<file>`, served at `/api/img?f=`); `build_pack.py` attaches `img` per problem and `learn` (example/explore/concept pictures per lesson). Homework shows the pictures; the service worker keeps them for offline.
+Next: 2.8 "Learn it first" pilot (uses `pack.learn`); recrop feature; Additional Practice crops; Unit 3 import.
