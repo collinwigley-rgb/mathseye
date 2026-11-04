@@ -146,11 +146,12 @@ function closeSheet(){ S.sheet = null; drawSheet(); }
 function drawSheet(){ const root = document.getElementById("sheet"); root.innerHTML = ""; if (!S.sheet) return;
   const {kind, p, more} = S.sheet, w = DATA.lessons[p.sub].why; let body = "";
   if (kind === "why") body = `<h2>Why am I learning this?</h2><p class="lead">${esc(p.why_focus)}</p><dl><dt>Why you need it</dt><dd>${esc(w.why_you_need_it)}</dd><dt>Where you'll see it</dt><dd>${esc(w.real_life)}</dd>${more?`<dt>The goal</dt><dd>${esc(w.goal)}</dd><dt>How it helps later</dt><dd>${esc(w.supports_future)}</dd><dt>Building block</dt><dd>${esc(w.building_block)}</dd>`:""}</dl>${more?"":'<button class="btn quiet" id="more">Tell me more</button>'}`;
-  else if (kind === "facts") body = `<h2>Math facts that could help</h2><p class="lead">Try these in your head before reaching for a calculator.</p>${p.shortcut ? `<h3>Mental shortcut</h3><p class="lead">${esc(p.shortcut)}</p>` : ""}${(p.facts || []).length ? "<h3>Math facts</h3>" : ""}<ul class="cl">${(p.facts || []).map(id => { const t = DATA.tricks[id]; return `<li><span><b>${esc(t.name)}</b><small>${esc(t.rule)}</small></span>${location.pathname.indexOf("/study/") > -1 ? `<a class="btn quiet" href="../?fact=${id}">Practice it</a>` : ""}</li>`; }).join("")}</ul>`;
+  else if (kind === "facts") body = `<h2>Math facts that could help</h2><p class="lead">Try these in your head before reaching for a calculator.</p>${p.shortcut ? `<h3>Mental shortcut</h3><p class="lead">${esc(p.shortcut)}</p>` : ""}${(p.facts || []).length ? "<h3>Math facts</h3>" : ""}<ul class="cl">${(p.facts || []).map(id => { const t = DATA.tricks[id]; return `<li><span><b>${esc(t.name)}</b><small>${esc(t.rule)}</small></span>${location.pathname.indexOf("/study/") > -1 ? `<a class="btn quiet" href="../?fact=${id}&back=study">Practice it</a>` : ""}</li>`; }).join("")}</ul>`;
   else { const d = p.deps; body = `<h2>What does this use?</h2><div><span class="lvl">${LV[d.level]}</span></div><p class="lead">${LVTXT[d.level]}${d.earlier && d.earlier.length ? " Earlier " + (d.earlier.length > 1 ? "lessons" : "lesson") + ": " + d.earlier.map(e => "\u201c" + esc(e.title) + "\u201d (Lesson " + e.sub + ")").join(", ") + "." : ""}</p><ul class="cl">${d.concepts.map(c=>{const k=DATA.concepts[c];return `<li><span><b>${esc(k.name)}</b><small>${esc(k.plain)}</small></span><span class="tag">${esc(k.origin)}</span></li>`}).join("")}</ul>`; }
   const bg = $(`<div class="sheetbg"><div class="sheet pop" role="dialog" aria-modal="true" aria-label="Help">${body}<button class="btn primary" id="close">Back to the problem</button></div></div>`);
   bg.onclick = e => { if (e.target === bg) closeSheet(); }; bg.querySelector("#close").onclick = closeSheet;
   const m = bg.querySelector("#more"); if (m) m.onclick = () => { S.sheet.more = true; drawSheet(); };
+  bg.querySelectorAll("a[href*=\"?fact=\"]").forEach(a => a.addEventListener("click", () => { save.cur = S.cur; persist(); }));
   root.append(bg); bg.querySelector("#close").focus(); }
 document.addEventListener("keydown", e => { if (e.key === "Escape" && S.sheet) closeSheet(); });
 
@@ -249,5 +250,8 @@ testDone(){ const T = S.test, right = T.list.filter((p,i) => isRight(p, T.ans[i]
   el.querySelectorAll("[data-s]").forEach(b => b.onclick = () => buildMission(b.dataset.s)); el.querySelector("#again").onclick = () => go("testIntro"); el.querySelector("#home").onclick = () => go("home"); el.querySelector("#see").onclick = () => { T.all = !T.all; render(); };
   if (T.all) { const res = $(`<div class="res"></div>`); T.list.forEach((p,i) => { const ok = isRight(p, T.ans[i]), mine = p.kind==="choice" ? (T.ans[i]==null ? "(no answer)" : p.options[T.ans[i]]) : (T.ans[i] || "(no answer)"); res.append($(`<div class="it"><span>${esc(p.text)} <small class="muted">#${p.ref}</small></span><span>Your answer: ${esc(mine)}</span>${ok?'<span class="ok">Got it ✓</span>':`<span class="rv">Look at lesson ${p.sub}. Answer: ${esc(p.show)}</span>`}</div>`)); }); el.insertBefore(res, el.querySelector("#home")); } return el; }
 };
+/* Coming back from MathFacts ("Practice it"): return to the same problem, hints and typing included. */
+if (save.cur && save.mission && save.mission.ids[save.mission.i] === save.cur.id) { S.cur = save.cur; S.view = "mission"; }
+if (save.cur) { save.cur = null; persist(); }
 render();
 </script>

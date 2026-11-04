@@ -191,3 +191,5 @@ button:active{transform:scale(.98)}
 .ppop input { flex: 1; min-width: 0; font-size: 16px; padding: 8px 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,.25); background: var(--panel); color: var(--text); }
 body { padding-top: 52px; }
 .helps { color: var(--amber, #ffd966); }
+
+.backpill { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 60; padding: 12px 20px; border-radius: 999px; background: var(--amber, #ffd966); color: #1b1630; font-weight: 700; font-size: 16px; text-decoration: none; box-shadow: 0 8px 24px rgba(0,0,0,.4); }

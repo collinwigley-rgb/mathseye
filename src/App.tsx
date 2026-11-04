@@ -49,7 +49,19 @@ export default function App() {
   else if (screen === 'facts') view = <FactsHome db={db} update={update} onStart={startOrResume} onSetup={(ids) => { setPre(ids ?? []); setScreen('setup'); }} onWho={() => setScreen('who')} onBack={() => setScreen('hub')} />;
   else view = <Hub db={db} onFacts={() => setScreen('facts')} onGrownups={() => setScreen('grownups')} onWho={() => setScreen('who')} />;
 
-  return <>{view}<PlayerMenu onChoose={choose} /></>;
+  return <>{view}<PlayerMenu onChoose={choose} /><BackPill /></>;
+}
+
+/** Arrived from the study guide's "Practice it": offer a way back to the same problem. */
+function BackPill() {
+  const [back, setBack] = useState(() => {
+    try {
+      if (new URLSearchParams(location.search).get('back') === 'study') sessionStorage.setItem('mathseye.back', 'study');
+      return sessionStorage.getItem('mathseye.back') === 'study';
+    } catch { return false; }
+  });
+  if (!back) return null;
+  return <a className="backpill" href="./study/unit-2.html" onClick={() => { try { sessionStorage.removeItem('mathseye.back'); } catch { /* ignore */ } setBack(false); }}>← Back to my problem</a>;
 }
 
 function PlayerMenu({ onChoose }: { onChoose: (id: string) => void }) {
