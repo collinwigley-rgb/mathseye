@@ -440,6 +440,7 @@ function PracticeCard({ item, db, update, onNext }: {
   return (
     <section className="practice">
       <span className="ref" aria-label="Reference number">#{item.templateId}-{item.seed}</span>
+      <button className="fbbtn" onClick={() => window.mathseyeFeedback?.open({ ref: `#${item.templateId}-${item.seed}`, text: problem.prompt, where: `MathFacts · ${trick.name}`, extra: { input, tries, clueLevel, solved } })}>⚑ Flag a problem</button>
       <div className="problem-area">
         {showName && <p className="eyebrow">{trick.name}</p>}
         <div className={`problem ${shake ? 'shake' : ''} ${solved ? 'solved' : ''}`}><Fx text={problem.prompt} /></div>
@@ -515,6 +516,30 @@ function Summary({ db, onHome }: { db: Db; onHome: () => void }) {
   );
 }
 
+function FeedbackList() {
+  const [items, setItems] = useState(() => (window.mathseyeFeedback?.list() ?? []) as { id: string; at: string; ref: string; text: string; note: string; tags: string[]; player: string; where: string }[]);
+  const [msg, setMsg] = useState('');
+  if (!items.length) return <p className="muted">No notes yet. Players can tap "Flag a problem" on any problem.</p>;
+  const text = () => window.mathseyeFeedback?.text() ?? '';
+  const copy = async () => { try { await navigator.clipboard.writeText(text()); setMsg('Copied.'); } catch { setMsg('Could not copy. Use Share instead.'); } };
+  const share = async () => { try { await navigator.share({ title: 'Mathseye notes', text: text() }); } catch { /* cancelled */ } };
+  return (
+    <div>
+      {[...items].reverse().map((f) => (
+        <div key={f.id} className="mrow note">
+          <span><b>{f.ref || f.where}</b> <small className="muted">{f.player} · {f.at.slice(0, 16).replace('T', ' ')}</small><br />{f.tags.length > 0 && <small className="muted">{f.tags.join(' · ')}<br /></small>}{f.note || <i className="muted">(no note)</i>}</span>
+        </div>
+      ))}
+      <div className="row2">
+        <button className="ghost" onClick={copy}>Copy all</button>
+        {'share' in navigator && <button className="ghost" onClick={share}>Share</button>}
+        <button className="ghost" onClick={() => { window.mathseyeFeedback?.clear(); setItems([]); }}>Clear</button>
+      </div>
+      {msg && <p className="muted">{msg}</p>}
+    </div>
+  );
+}
+
 function Grownups({ db, update, onBack, onRemoved }: { db: Db; update: (fn: (d: Db) => Db) => void; onBack: () => void; onRemoved: () => void }) {
   const [confirmReset, setConfirmReset] = useState(false);
   const [removing, setRemoving] = useState<string | null>(null);
@@ -533,6 +558,8 @@ function Grownups({ db, update, onBack, onRemoved }: { db: Db; update: (fn: (d: 
       <h3>Stickiest cards</h3>
       {sticky.length ? sticky.map((c) => <p key={c.templateId}>{TEMPLATES[c.templateId].trick.name} ({c.templateId}): {c.box1Returns} returns</p>) : <p className="muted">None yet.</p>}
       <p className="muted">{db.sessions.filter((s) => s.endedAt).length} sessions completed.</p>
+      <h3>Notes from players</h3>
+      <FeedbackList />
       <h3>Players on this device</h3>
       {profiles().map((p) => (
         <div key={p.id} className="mrow">

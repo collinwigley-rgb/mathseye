@@ -210,3 +210,6 @@ body { padding-top: 52px; }
 .practice { padding-bottom: 44px; }
 
 .ppop .build { margin: 6px 4px 0; padding-top: 8px; border-top: 1px solid rgba(255,255,255,.15); font-size: 13px; color: var(--muted); text-align: center; user-select: text; -webkit-user-select: text; }
+
+.practice .fbbtn { top: auto; bottom: 14px; left: 14px; right: auto; }
+.mrow.note { align-items: flex-start; }

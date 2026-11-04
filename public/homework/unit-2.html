@@ -154,6 +154,7 @@ button:active{transform:scale(.98)}
 <div id="app"></div><div id="sheet"></div>
 <script src="../profile.js"></script>
 <script src="../build.js"></script>
+<script src="../feedback.js"></script>
 <script src="../fractions.js"></script>
 <script src="../keypad.js"></script>
 <script>
@@ -271,6 +272,7 @@ prob(){ const p = PACK.problems.find(x => x.id === S.id), el = $(`<div class="st
       else act.append($(`<p class="done" style="margin:0">✓ ${esc(S.msg || "Marked done.")}</p>`));
       const hb = $(`<div class="row"></div>`); const w = $(`<button class="btn ghost">Why am I learning this?</button>`); w.onclick = () => openSheet("why", p); const u = $(`<button class="btn ghost">What does this use?</button>`); u.onclick = () => openSheet("deps", p); hb.append(w, u); act.append(hb); }
     const ga = $(`<button class="btn ghost big">Generate alternate</button>`); ga.onclick = () => { newAlt(p); go("alt"); }; act.append(ga); };
+  if (window.mathseyeFeedback) card.append(mathseyeFeedback.button(() => ({ref: "#" + p.ref, text: p.text, where: "Homework · " + subTitle(p.sub) + " · " + p.label, extra: {nudges: S.hints, answerShown: !!S.shown, done: done}})));
   draw(); el.append(card); return el; },
 alt(){ const A = S.alt, p = A.p, orig = PACK.problems.find(x => x.id === S.id); const el = $(`<div class="stack"></div>`);
   el.append(backBar("Back to my homework problem", () => go("prob")));
@@ -290,6 +292,7 @@ alt(){ const A = S.alt, p = A.p, orig = PACK.problems.find(x => x.id === S.id); 
     } else { const row = $(`<div class="row"></div>`); const nx = $(`<button class="btn primary big">Another one</button>`); nx.onclick = () => { newAlt(orig); render(); window.scrollTo(0, 0); }; row.append(nx); const sb = $(`<button class="btn quiet">${A.steps ? "Hide the steps" : "See how it works"}</button>`); sb.onclick = () => { A.steps = !A.steps; draw(); }; row.append(sb); act.append(row); if (p.sense) act.append(senseCard(p.sense)); }
     if (A.steps) act.append($(`<div class="say"><b>How it works</b><ol class="steps">${p.steps.map(s => `<li>${esc(s)}</li>`).join("")}</ol><p style="margin:0"><b>Answer:</b> ${esc(p.show)}</p></div>`));
     const back = $(`<button class="btn quiet">Back to my homework problem</button>`); back.onclick = () => go("prob"); act.append(back); };
+  if (window.mathseyeFeedback) card.append(mathseyeFeedback.button(() => ({ref: "#" + p.ref, text: p.text, where: "Homework · practice like " + orig.label + " · new numbers", extra: {input: A.input || "", tries: A.tries, hints: A.hints, solved: !!A.solved}})));
   draw(); el.append(card); return el; }
 };
 render();

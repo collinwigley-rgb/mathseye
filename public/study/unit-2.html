@@ -149,6 +149,7 @@ button:active{transform:scale(.98)}
 <div id="app"></div><div id="sheet"></div>
 <script src="../profile.js"></script>
 <script src="../build.js"></script>
+<script src="../feedback.js"></script>
 <script src="../fractions.js"></script>
 <script src="../keypad.js"></script>
 <script>
@@ -340,6 +341,7 @@ mission(){ const m = save.mission;
   const freshOne = () => { const n = base.variants.length; if (st.vn < 0) st.vn = Math.floor(Math.random() * n); st.v = st.vn % n; st.vn++; st.vres = {hints:0, tries:0, done:false}; Object.assign(st, {input:"", pick:null, msg:"", win:false, steps:false, flagged:false, t0:Date.now()}); render(); };
   const top = $(`<div class="top"><button class="btn quiet" id="exit">✕ Stop for now</button>${m.endless ? `<span class="muted">${m.i} done</span><button class="btn quiet" id="fin">I'm done</button>` : `<div class="dots" aria-label="Problem ${m.i+1} of ${m.ids.length}">${m.ids.map((id,k)=>`<i class="${m.res[id]&&m.res[id].done?'on':k===m.i?'now':''}"></i>`).join("")}</div>`}</div>`); top.querySelector("#exit").onclick = () => go("home"); const fin = top.querySelector("#fin"); if (fin) fin.onclick = () => { m.ids = m.ids.slice(0, m.i + (res0done(m) ? 1 : 0)); m.endless = false; persist(); go("summary"); }; el.append(top);
   const card = $(`<section class="card ${st.shake?'shake':''}"><p class="eyebrow">Unit 2 · Lesson ${p.sub} · ${esc(DATA.lessons[p.sub].title)}${st.v >= 0 ? " · new numbers" : ""}${(m.work || []).includes(base.id) && save.work && save.work[base.id] ? ` · back for another try (${save.work[base.id].c || 0} of 3 clean)` : ""}</p><p class="problem">${esc(p.text)}</p><div class="fx"></div><div class="vis">${visual(p)}</div><div class="in"></div><div class="say" ${st.msg?"":"hidden"} aria-live="polite"></div><ul class="nudges"></ul><div class="pic"></div><div class="act"></div><span class="ref" aria-label="Reference number">#${p.ref}</span></section>`);
+  if (window.mathseyeFeedback) card.append(mathseyeFeedback.button(() => ({ref: "#" + p.ref, text: p.text, where: `Study guide · Unit 2 · Lesson ${p.sub}`, extra: {input: st.input || "", tries: res.tries, hints: res.hints, solved: !!res.done, newNumbers: st.v >= 0}})));
   st.shake = false; const inp = card.querySelector(".in"), say = card.querySelector(".say"), nud = card.querySelector(".nudges"), pic = card.querySelector(".pic"), act = card.querySelector(".act"), fx = card.querySelector(".fx");
   const draw = () => {
     fx.innerHTML = ""; if (!res.done && ((p.facts || []).length || p.shortcut)) { const b = $(`<button>Math facts that could help ›</button>`); b.onclick = () => openSheet("facts", p); fx.append(b); }
