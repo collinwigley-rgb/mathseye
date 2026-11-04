@@ -149,7 +149,7 @@ button:active{transform:scale(.98)}
 .snip{color:var(--muted);font-size:16px;display:block;margin-top:2px}.item{background:var(--panel);width:100%;text-align:left;padding:16px 18px;min-height:64px;display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
 .done{color:var(--good);font-weight:600;white-space:nowrap}.hd{font-family:var(--display);font-size:20px;margin:6px 0 0}
 .pics{display:flex;flex-wrap:wrap;gap:10px;margin:0}.pics img{max-width:100%;max-height:340px;border-radius:12px;background:#fff;border:1px solid var(--line)}.pg{margin:0;font-size:.85rem;color:var(--muted)}
-body.learning #app{max-width:1180px;margin:0 auto;height:100dvh;padding:8px 14px calc(8px + env(safe-area-inset-bottom));box-sizing:border-box;display:flex;flex-direction:column}
+body.learning #app{max-width:1180px;margin:0 auto;height:calc(100dvh - 34px);padding:8px 14px calc(8px + env(safe-area-inset-bottom));box-sizing:border-box;display:flex;flex-direction:column}
 .lscreen{flex:1;min-height:0;display:flex}.card.learn{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px;padding:12px 18px 10px;margin:0}
 .ltop{display:flex;align-items:center;gap:14px}.ltop .back{padding:6px 4px;min-height:0;white-space:nowrap}.dots{display:flex;gap:6px;flex:1}.dots i{flex:1;height:6px;border-radius:3px;background:var(--line)}.dots i.past{background:var(--muted)}.dots i.on{background:var(--accent,#e8b04a)}
 .lhead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}.lhead h2{margin:0;font-size:clamp(1.3rem,3.2vmin,1.9rem)}.lhead .eyebrow{margin:0}
@@ -160,6 +160,7 @@ body.learning #app{max-width:1180px;margin:0 auto;height:100dvh;padding:8px 14px
 .lfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:0}.lfoot .ref{position:static}
 @media (max-aspect-ratio:1/1){.lmain{grid-template-columns:1fr;grid-template-rows:minmax(0,.9fr) minmax(0,1fr)}.lmain.nopic{grid-template-rows:1fr}.lpics{flex-direction:row}}
 .pagebg{align-items:stretch}.pagesheet{width:min(96vw,900px);max-height:96dvh;height:96dvh;display:flex;flex-direction:column;padding:10px}.pghead{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.pgscroll{flex:1;min-height:0;overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y pinch-zoom}.pgscroll img{width:100%;display:block;border-radius:8px}.pagebtn{align-self:flex-start;margin:6px 0 0}.lfoot .pagebtn{margin:0;padding:6px 14px;min-height:0;font-size:.95rem}
+.zhost{position:relative}.zoomicon{position:absolute;top:8px;right:8px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.92);color:#2b2350;display:grid;place-items:center;cursor:pointer;padding:0;box-shadow:0 1px 4px rgba(0,0,0,.2)}.lhead.zhost .zoomicon,.pe.zhost .zoomicon{position:static;display:inline-grid;width:34px;height:34px;margin-left:auto}
 .learnbtn{display:block;width:100%;text-align:left;padding:16px 18px;border-radius:16px;border:2px solid var(--accent,#e8b04a);background:transparent;color:inherit;font:inherit;cursor:pointer;margin:0 0 6px}.learnbtn b{display:block;font-size:1.25rem}.learnbtn span{color:var(--muted)}.learnbtn.small{padding:10px 14px}.learnbtn.small b{font-size:1rem}
 .opt{display:block;width:100%;text-align:left;padding:14px 16px;margin:8px 0;border-radius:14px;border:2px solid var(--line);background:transparent;color:inherit;font:inherit;font-size:1.1rem;cursor:pointer}.opt.good{border-color:#7bc27b}.opt.try{border-color:var(--accent,#e8b04a)}.term.open{border-color:var(--accent,#e8b04a)}.term span{display:block;margin-top:6px;color:var(--muted)}.pts li{margin:10px 0;font-size:1.1rem}
 .fig{margin:0;padding:12px 16px;border:2px dashed var(--line);border-radius:14px;color:var(--muted)}
@@ -262,7 +263,8 @@ document.addEventListener("keydown", e => { if (e.key === "Escape") document.get
 function pageSheet(sub, pg){ const root = document.getElementById("sheet"); root.innerHTML = "";
   const bg = $(`<div class="sheetbg pagebg"><div class="sheet pop pagesheet" role="dialog" aria-modal="true" aria-label="Page ${pg}"><div class="pghead"><b>Page ${pg}</b><button class="btn primary" id="close">Close</button></div><div class="pgscroll"><img src="/api/img?f=${encodeURIComponent(sub + "_page" + pg + ".jpg")}" alt="Your book, page ${pg}"></div></div></div>`);
   const shut = () => { root.innerHTML = ""; }; bg.onclick = e => { if (e.target === bg) shut(); }; bg.querySelector("#close").onclick = shut; root.append(bg); bg.querySelector("#close").focus(); }
-const pageBtn = (sub, pg) => { const b = $(`<button class="btn ghost pagebtn">See the whole page (${pg})</button>`); b.onclick = () => pageSheet(sub, pg); return b; };
+const ZOOM = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l5.5 5.5M7.5 10h5"/></svg>`;
+const pageBtn = (sub, pg) => { const b = $(`<button class="zoomicon" aria-label="See the whole page (${pg})" title="See the whole page (${pg})">${ZOOM}</button>`); b.onclick = e => { e.stopPropagation(); pageSheet(sub, pg); }; return b; };
 /* ---------- navigation ---------- */
 function go(view, extra){ Object.assign(S, extra || {}, {view}); render(); window.scrollTo(0, 0); }
 function render(){ const app = document.getElementById("app"); app.innerHTML = ""; document.body.classList.toggle("learning", S.view === "learn"); app.append(VIEWS[S.view]()); const h = app.querySelector("h1,h2"); if (h) { h.tabIndex = -1; h.focus({preventScroll:true}); } }
@@ -308,8 +310,9 @@ learn(){ const L = PACK.lessons[S.sub], c = L.cards[S.card], n = L.cards.length,
     body.querySelectorAll(".opt").forEach(b => b.onclick = () => go("learn", {pick:+b.dataset.i})); nav(S.pick != null); }
   else if (c.k === "key") { body.innerHTML = `<ul class="pts">${c.points.map(t => `<li>${esc(t)}</li>`).join("")}</ul>`; nav(true); }
   else if (c.k === "words") { body.innerHTML = c.terms.map((t, i) => `<button class="opt term ${S.flip === i ? "open" : ""}" data-i="${i}"><b>${esc(t.t)}</b>${S.flip === i ? `<span>${esc(t.d)}</span>` : ""}</button>`).join(""); body.querySelectorAll(".term").forEach(b => b.onclick = () => go("learn", {flip:S.flip === +b.dataset.i ? null : +b.dataset.i})); nav(true); }
-  const foot = card.querySelector(".lfoot"); if (c.pg) foot.append(pageBtn(S.sub, c.pg)); foot.append($(`<span class="ref" aria-label="Reference number">#${c.ref || ""}</span>`));
+  const foot = card.querySelector(".lfoot"); foot.append($(`<span class="ref" aria-label="Reference number">#${c.ref || ""}</span>`));
   if (window.mathseyeFeedback) foot.prepend(mathseyeFeedback.button(() => ({ref: "#" + c.ref, text: [c.title, c.text || "", (c.img || []).join(", ")].filter(Boolean).join(" · "), where: "Homework · Learn it first · " + subTitle(S.sub) + " · " + c.tag, extra: {card: c.id}})));
+  if (c.pg) { const z = pageBtn(S.sub, c.pg); const host = card.querySelector(".lpics") || card.querySelector(".lhead"); host.classList.add("zhost"); host.append(z); }
   el.append(card); return el; },
 prob(){ const p = PACK.problems.find(x => x.id === S.id), el = $(`<div class="stack"></div>`), done = !!hw.done[p.id];
   el.append(backBar("Back", () => go("lesson")));
@@ -317,7 +320,7 @@ prob(){ const p = PACK.problems.find(x => x.id === S.id), el = $(`<div class="st
   if (lc) { const b = $(`<button class="learnbtn small"><b>Show me how this works</b><span>A quick look at the idea behind this one.</span></button>`); b.onclick = () => go("learn", {sub:p.sub, card:LL.cards.findIndex(c => c.id === lc), step:0, pick:null, flip:null, from:"prob", id:p.id, hints:S.hints, shown:S.shown}); el.append(b); }
   const card = $(`<section class="card"><p class="eyebrow pe">${esc(subTitle(p.sub))} · ${esc(p.label)}</p><p class="problem">${esc(p.text)}</p>${p.img && p.img.length ? `<p class="pics">${p.img.map(i => `<img src="/api/img?f=${encodeURIComponent(i.f)}" alt="Picture from the worksheet, page ${i.pg}" loading="lazy">`).join("")}</p>` : p.figure ? `<p class="fig">Look at the picture on your worksheet. ${esc(p.figure)}</p>` : ""}<div class="vis">${p.table && Array.isArray(p.table.x) ? tableHTML(p.table) : ""}</div><p class="say">Work it out on your worksheet first. Tap I'm stuck any time for a nudge.</p><ul class="nudges"></ul><div class="act"></div><span class="ref" aria-label="Reference number">#${p.ref || ""}</span></section>`);
   const nud = card.querySelector(".nudges"), act = card.querySelector(".act");
-  if (p.pg) card.insertBefore(pageBtn(p.sub, p.pg), card.querySelector(".ref"));
+  if (p.pg) { const host = card.querySelector(".pics") || card.querySelector(".pe"); host.classList.add("zhost"); host.append(pageBtn(p.sub, p.pg)); }
   const draw = () => { nud.innerHTML = p.hints.slice(0, S.hints).map(h => `<li class="say">${esc(h)}</li>`).join(""); act.innerHTML = "";
     if (!S.shown) { const row = $(`<div class="row"></div>`); const fin = $(`<button class="btn primary big">I finished: check my work</button>`); fin.onclick = () => { S.shown = true; draw(); }; act.append(fin);
       const st = $(`<button class="btn ghost">${S.hints >= p.hints.length ? "No more nudges" : "I'm stuck"}</button>`); st.disabled = S.hints >= p.hints.length; st.onclick = () => { S.hints++; draw(); }; row.append(st);
