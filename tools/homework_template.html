@@ -41,7 +41,14 @@ const subTitle = (s) => s === "review" ? "Topic review" : s === "extra" ? "Recov
 const whyFor = (sub) => (DATA.lessons[sub] && DATA.lessons[sub].why) || (PACK && PACK.why && PACK.why[sub]) || null;
 const packBy = (sub) => PACK.problems.filter(p => p.sub === sub);
 const isPack = (o) => o && o.format === "mathseye-homework-pack" && o.unit === 2 && Array.isArray(o.problems) && o.problems.length && o.problems.every(p => p.id && p.text && Array.isArray(p.hints) && p.sub);
-function importFile(file, cb){ const r = new FileReader(); r.onerror = () => cb("Couldn't read that file."); r.onload = () => { try { const o = JSON.parse(r.result); if (!isPack(o)) throw new Error("That file isn't a Unit 2 homework pack."); localStorage.setItem(PKEY, JSON.stringify(o)); PACK = o; cb(""); } catch(e) { cb(e.message || "Couldn't read that file."); } }; r.readAsText(file); }
+function importText(text, cb){ try { const o = JSON.parse(text); if (!isPack(o)) throw new Error("That isn't a Unit 2 homework pack."); localStorage.setItem(PKEY, JSON.stringify(o)); PACK = o; cb(""); } catch(e) { cb(e.message || "Couldn't read the pack."); } }
+/* The pack lives on the server (not in git). Fetch it when the page opens: show the saved copy right away, refresh quietly. */
+let LOADING = !PACK, LOADFAIL = false;
+function fetchPack(){ return fetch("/api/pack?unit=2", {cache: "no-store"}).then(r => r.ok ? r.text() : Promise.reject(r.status)).then(t => {
+    const had = PACK ? JSON.stringify(PACK) : ""; let o; try { o = JSON.parse(t); } catch(e) { throw 0; } if (!isPack(o)) throw 0;
+    if (JSON.stringify(o) !== had) { try { localStorage.setItem(PKEY, JSON.stringify(o)); } catch(e) {} const first = !PACK; PACK = o; if (first || S.view === "home") render(); }
+    LOADING = false; LOADFAIL = false; }).catch(() => { LOADING = false; if (!PACK) { LOADFAIL = true; render(); } }); }
+function importFile(file, cb){ const r = new FileReader(); r.onerror = () => cb("Couldn't read that file."); r.onload = () => importText(r.result, cb); r.readAsText(file); }
 
 /* ---------- help sheets ---------- */
 function openSheet(kind, p){ const root = document.getElementById("sheet"); root.innerHTML = ""; let more = false;
@@ -72,10 +79,11 @@ const VIEWS = {
 home(){ const el = $(`<div class="stack"><header>${logo()}<h1 style="margin-top:14px">Unit 2 Homework</h1><p class="sub">You work each problem on your worksheet. I give nudges, never just the answer.</p></header></div>`);
   const file = $(`<input type="file" accept=".json,application/json" id="f" hidden>`); el.append(file);
   const pick = () => file.click(); file.onchange = () => { if (file.files[0]) importFile(file.files[0], err => { S.err = err; render(); }); };
-  if (!PACK) { const c = $(`<section class="card"><p class="eyebrow">One-time setup</p><h2>Add the homework pack</h2><p class="lead muted">This unit's worksheet problems are stored on this device only. A grown-up adds the pack file once. Nothing is posted online.</p>${S.err ? `<p class="errmsg" role="alert">${esc(S.err)}</p>` : ""}<button class="btn primary big" id="pk">Choose the pack file</button></section>`); c.querySelector("#pk").onclick = pick; el.append(c); return el; }
+  if (!PACK) { const c = $(`<section class="card"><p class="eyebrow">Getting ready</p><h2>${LOADFAIL ? "Couldn't get the homework" : "Getting the homework…"}</h2><p class="lead muted">${LOADFAIL ? "Check the internet and try again." : "One moment."}</p>${S.err ? `<p class="errmsg" role="alert">${esc(S.err)}</p>` : ""}${LOADFAIL ? `<button class="btn primary big" id="again">Try again</button><button class="btn quiet" id="pk">Or choose a pack file</button>` : ""}</section>`);
+    if (LOADFAIL) { c.querySelector("#again").onclick = () => { LOADFAIL = false; LOADING = true; render(); fetchPack(); }; c.querySelector("#pk").onclick = pick; } el.append(c); return el; }
   const tiles = $(`<div class="tiles"></div>`);
   ORDER.filter(s => packBy(s).length).forEach(s => { const ps = packBy(s), d = ps.filter(p => hw.done[p.id]).length, b = $(`<button class="tile"><small>${/^\d/.test(s) ? "Lesson " + s : "Extra"}</small><b>${esc(subTitle(s))}</b><span class="bar" aria-hidden="true"><i style="width:${d / ps.length * 100}%"></i></span><small>${d} of ${ps.length} done</small></button>`); b.onclick = () => go("lesson", {sub:s}); tiles.append(b); });
-  el.append(tiles); const more = $(`<div class="row"><button class="btn quiet" id="rp">Replace the pack</button></div>`); more.querySelector("#rp").onclick = pick; el.append(more); if (S.err) el.append($(`<p class="errmsg" role="alert">${esc(S.err)}</p>`)); return el; },
+  el.append(tiles);  if (S.err) el.append($(`<p class="errmsg" role="alert">${esc(S.err)}</p>`)); return el; },
 lesson(){ const el = $(`<div class="stack"></div>`); el.append(backBar("Unit 2 Homework", () => go("home")), $(`<header><h1>${esc(subTitle(S.sub))}</h1><p class="sub">Pick the problem you're working on.</p></header>`));
   SHEETS.forEach(([sh, name]) => { const ps = packBy(S.sub).filter(p => p.sheet === sh); if (!ps.length) return; el.append($(`<h2 class="hd">${name}</h2>`));
     ps.forEach(p => { const b = $(`<button class="item"><span><b>${esc(p.label)}</b><span class="snip">${esc(p.text.length > 80 ? p.text.slice(0, 78) + "…" : p.text)}</span></span>${hw.done[p.id] ? '<span class="done">✓ done</span>' : ""}</button>`); b.onclick = () => go("prob", {id:p.id, hints:0, shown:false, steps:false, msg:""}); el.append(b); }); }); return el; },
@@ -116,5 +124,5 @@ alt(){ const A = S.alt, p = A.p, orig = PACK.problems.find(x => x.id === S.id); 
   if (window.mathseyeFeedback) card.append(mathseyeFeedback.button(() => ({ref: "#" + p.ref, text: p.text, where: "Homework · practice like " + orig.label + " · new numbers", extra: {input: A.input || "", tries: A.tries, hints: A.hints, solved: !!A.solved}})));
   draw(); el.append(card); return el; }
 };
-render();
+render(); fetchPack();
 </script>

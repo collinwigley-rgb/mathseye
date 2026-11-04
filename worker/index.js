@@ -10,6 +10,7 @@ const isAdmin = (req, env) => !env.ADMIN_KEY || req.headers.get('X-Admin-Key') =
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
+    if (url.pathname === '/api/pack') return pack(req, env, url);
     if (url.pathname === '/api/players' || url.pathname === '/api/player') return players(req, env, url);
     if (url.pathname !== '/api/feedback') return env.ASSETS.fetch(req);
     if (!env.NOTES) return json({ ok: false, error: 'storage not set up' }, 503);
@@ -75,4 +76,16 @@ async function players(req, env, url) {
     return json({ ok: true });
   }
   return json({ ok: false, error: 'method not allowed' }, 405);
+}
+
+// ---- homework pack: the real worksheet text. NEVER in the repo. Kept in KV (key `pack:unit-N`) and uploaded by hand
+// (mathseye-content/tools/publish_pack.py). The homework page fetches it by itself. Family-and-friends app: no key. ----
+async function pack(req, env, url) {
+  if (req.method !== 'GET') return json({ ok: false, error: 'method not allowed' }, 405);
+  if (!env.NOTES) return json({ ok: false, error: 'storage not set up' }, 503);
+  const unit = String(url.searchParams.get('unit') || '').replace(/[^0-9]/g, '');
+  if (!unit) return json({ ok: false, error: 'unit needed' }, 400);
+  const v = await env.NOTES.get(`pack:unit-${unit}`);
+  if (!v) return json({ ok: false, error: 'no pack for that unit yet' }, 404);
+  return new Response(v, { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } });
 }
