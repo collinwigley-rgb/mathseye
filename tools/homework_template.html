@@ -18,6 +18,10 @@ body.learning #app{max-width:1180px;margin:0 auto;height:calc(100dvh - 34px);pad
 @media (max-aspect-ratio:1/1){.lmain{grid-template-columns:1fr;grid-template-rows:minmax(0,.9fr) minmax(0,1fr)}.lmain.nopic{grid-template-rows:1fr}.lpics{flex-direction:row}}
 .pagebg{align-items:stretch}.pagesheet{width:min(96vw,900px);max-height:96dvh;height:96dvh;display:flex;flex-direction:column;padding:10px}.pghead{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.pgscroll{flex:1;min-height:0;overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y pinch-zoom}.pgscroll img{width:100%;display:block;border-radius:8px}.pagebtn{align-self:flex-start;margin:6px 0 0}.lfoot .pagebtn{margin:0;padding:6px 14px;min-height:0;font-size:.95rem}
 .zhost{position:relative}.zoomicon{position:absolute;top:8px;right:8px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.92);color:#2b2350;display:grid;place-items:center;cursor:pointer;padding:0;box-shadow:0 1px 4px rgba(0,0,0,.2)}.lhead.zhost .zoomicon,.pe.zhost .zoomicon{position:static;display:inline-grid;width:34px;height:34px;margin-left:auto}
+.ways{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}.wt{border:2px solid var(--line);background:transparent;color:inherit;border-radius:999px;padding:6px 14px;font:inherit;font-size:.95rem;cursor:pointer}.wt.on{border-color:var(--accent,#e8b04a);background:rgba(232,176,74,.18);font-weight:600}
+.wnote{margin:0 0 8px}.rt{display:grid;gap:6px;margin:6px 0 10px;overflow-x:auto}.rr{display:flex;gap:6px;align-items:center}.rr b{min-width:34px}.rr span{flex:1;min-width:44px;text-align:center;padding:8px 4px;border-radius:10px;border:2px solid var(--line);font-variant-numeric:tabular-nums}.rr span.hit{border-color:#7bc27b;font-weight:700}
+.blocks{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}.blk{flex:1 1 60px;padding:0 4px;min-height:56px;border-radius:12px;border:2px dashed var(--line);background:transparent;color:inherit;font:inherit;cursor:pointer}.blk.on{border:2px solid var(--accent,#e8b04a);background:rgba(232,176,74,.22);font-weight:600}
+.zl{display:block;margin:6px 0}.zl input{display:block;width:100%;height:36px;margin-top:6px}.bars{display:grid;gap:8px;margin:8px 0}.bar{position:relative;height:30px;border-radius:8px;background:var(--line);overflow:hidden}.bar i{position:absolute;left:0;top:0;bottom:0;border-radius:8px}.bar .bd{background:#4a7fc0}.bar .br{background:#e8704a}.bar small{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#fff;font-weight:600}
 .learnbtn{display:block;width:100%;text-align:left;padding:16px 18px;border-radius:16px;border:2px solid var(--accent,#e8b04a);background:transparent;color:inherit;font:inherit;cursor:pointer;margin:0 0 6px}.learnbtn b{display:block;font-size:1.25rem}.learnbtn span{color:var(--muted)}.learnbtn.small{padding:10px 14px}.learnbtn.small b{font-size:1rem}
 .opt{display:block;width:100%;text-align:left;padding:14px 16px;margin:8px 0;border-radius:14px;border:2px solid var(--line);background:transparent;color:inherit;font:inherit;font-size:1.1rem;cursor:pointer}.opt.good{border-color:#7bc27b}.opt.try{border-color:var(--accent,#e8b04a)}.term.open{border-color:var(--accent,#e8b04a)}.term span{display:block;margin-top:6px;color:var(--muted)}.pts li{margin:10px 0;font-size:1.1rem}
 .fig{margin:0;padding:12px 16px;border:2px dashed var(--line);border-radius:14px;color:var(--muted)}
@@ -84,6 +88,20 @@ function pageSheet(sub, pg){ const root = document.getElementById("sheet"); root
   const shut = () => { root.innerHTML = ""; }; bg.onclick = e => { if (e.target === bg) shut(); }; bg.querySelector("#close").onclick = shut; root.append(bg); bg.querySelector("#close").focus(); }
 const ZOOM = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l5.5 5.5M7.5 10h5"/></svg>`;
 const pageBtn = (sub, pg) => { const b = $(`<button class="zoomicon" aria-label="See the whole page (${pg})" title="See the whole page (${pg})">${ZOOM}</button>`); b.onclick = e => { e.stopPropagation(); pageSheet(sub, pg); }; return b; };
+function wayView(c, way, body){ const C = c.calc || {per:1, len:1, from:"in.", to:"ft"}, f = fmtN;
+  if (way === "table") { const n = Math.min(S.tbl || 1, C.len), cols = Array.from({length:n}, (_, i) => i + 1);
+    body.innerHTML = `<p class="wnote">Tap to build the table one inch at a time. Every inch adds ${f(C.per)} ${C.to}.</p><div class="rt"><div class="rr"><b>${C.from}</b>${cols.map(i => `<span>${i}</span>`).join("")}</div><div class="rr"><b>${C.to}</b>${cols.map(i => `<span class="${i === C.len ? "hit" : ""}">${f(i * C.per)}</span>`).join("")}</div></div>`;
+    if (n < C.len) { const b = $(`<button class="btn primary">Add 1 more inch</button>`); b.onclick = () => go("learn", {tbl:n + 1}); body.append(b); }
+    else body.append($(`<p class="say win">${C.len} ${C.from} lines up with ${f(C.len * C.per)} ${C.to}. That is the real length.</p>`)); }
+  else if (way === "groups") { const n = Math.min(S.grp || 0, C.len);
+    body.innerHTML = `<p class="wnote">Each block is 1 inch on the drawing. Tap a block to turn it into ${f(C.per)} ${C.to} of real life.</p><div class="blocks">${Array.from({length:C.len}, (_, i) => `<button class="blk ${i < n ? "on" : ""}" data-i="${i}" aria-label="Block ${i + 1}">${i < n ? f(C.per) + " " + C.to : "1 " + C.from}</button>`).join("")}</div><p class="say ${n === C.len ? "win" : ""}">${n ? `${n} block${n > 1 ? "s" : ""} × ${f(C.per)} ${C.to} = ${f(n * C.per)} ${C.to}` : "Tap the first block."}${n === C.len ? ` That is the real length: ${C.len} groups of ${f(C.per)}.` : ""}</p>`;
+    body.querySelectorAll(".blk").forEach(b => b.onclick = () => go("learn", {grp:Math.max(n, +b.dataset.i + 1)})); }
+  else if (way === "zoom") { const v = S.zoom == null ? 1 : S.zoom;
+    body.innerHTML = `<p class="wnote">Slide the drawing length and watch the real length grow by the same amount each time.</p><label class="zl">Drawing: <b class="zv">${f(v)}</b> ${C.from}<input type="range" min="0.5" max="${C.len}" step="0.5" value="${v}"></label><div class="bars"><div class="bar"><i class="bd" style="width:${v / (C.len * C.per) * 100}%"></i><small>drawing</small></div><div class="bar"><i class="br" style="width:${v * C.per / (C.len * C.per) * 100}%"></i><small>real</small></div></div><p class="say zt">${f(v)} ${C.from} on the drawing → <b>${f(v * C.per)} ${C.to}</b> in real life (${f(v)} × ${f(C.per)})</p>`;
+    const inp = body.querySelector("input"); inp.oninput = () => { const x = +inp.value; S.zoom = x; body.querySelector(".zv").textContent = f(x); body.querySelector(".bd").style.width = (x / (C.len * C.per) * 100) + "%"; body.querySelector(".br").style.width = (x / C.len * 100) + "%"; body.querySelector(".zt").innerHTML = `${f(x)} ${C.from} on the drawing → <b>${f(x * C.per)} ${C.to}</b> in real life (${f(x)} × ${f(C.per)})`; }; }
+  else if (way === "estimate") { const E = c.est;
+    body.innerHTML = `<p class="wnote">${esc(E.q)}</p>` + E.opts.map((o, i) => `<button class="opt ${S.est === i ? (o.ok ? "good" : "try") : ""}" data-i="${i}">${esc(o.t)}</button>`).join("") + (S.est != null ? `<p class="say ${E.opts[S.est].ok ? "win" : ""}" role="status">${esc(E.opts[S.est].say)}${E.opts[S.est].ok ? " " + esc(E.after) : ""}</p>` : "");
+    body.querySelectorAll(".opt").forEach(b => b.onclick = () => go("learn", {est:+b.dataset.i})); } }
 /* ---------- navigation ---------- */
 function go(view, extra){ Object.assign(S, extra || {}, {view}); render(); window.scrollTo(0, 0); }
 function render(){ const app = document.getElementById("app"); app.innerHTML = ""; document.body.classList.toggle("learning", S.view === "learn"); app.append(VIEWS[S.view]()); const h = app.querySelector("h1,h2"); if (h) { h.tabIndex = -1; h.focus({preventScroll:true}); } }
@@ -96,6 +114,8 @@ function newAlt(p){ const bySub = DATA.problems.filter(x => x.sub === p.sub), sa
   for (let i = 0; i < 6; i++) { pick = all[Math.floor(Math.random() * all.length)]; if (!S.alt || pick.text !== S.alt.p.text) break; }
   S.alt = {p:pick, input:"", pick:null, hints:0, tries:0, solved:false, steps:false, msg:"", win:false}; }
 
+const LRESET = {step:0, pick:null, flip:null, way:null, tbl:1, grp:0, zoom:null, est:null};
+const fmtN = x => String(+(+x).toFixed(2));
 const VIEWS = {
 home(){ const el = $(`<div class="stack"><header>${logo()}<h1 style="margin-top:14px">Unit 2 Homework</h1><p class="sub">You work each problem on your worksheet. I give nudges, never just the answer.</p></header></div>`);
   const file = $(`<input type="file" accept=".json,application/json" id="f" hidden>`); el.append(file);
@@ -107,7 +127,7 @@ home(){ const el = $(`<div class="stack"><header>${logo()}<h1 style="margin-top:
   el.append(tiles);  if (S.err) el.append($(`<p class="errmsg" role="alert">${esc(S.err)}</p>`)); return el; },
 lesson(){ const el = $(`<div class="stack"></div>`); el.append(backBar("Unit 2 Homework", () => go("home")), $(`<header><h1>${esc(subTitle(S.sub))}</h1><p class="sub">Pick the problem you're working on.</p></header>`));
   const L = PACK.lessons && PACK.lessons[S.sub];
-  if (L) { const b = $(`<button class="learnbtn"><b>Learn it first</b><span>${L.cards.length} quick cards with the pictures from your book. Just tap.</span></button>`); b.onclick = () => go("learn", {card:0, step:0, pick:null, flip:null, from:"lesson"}); el.append(b); }
+  if (L) { const b = $(`<button class="learnbtn"><b>Learn it first</b><span>${L.cards.length} quick cards with the pictures from your book. Just tap.</span></button>`); b.onclick = () => go("learn", {card:0, ...LRESET, from:"lesson"}); el.append(b); }
   SHEETS.forEach(([sh, name]) => { const ps = packBy(S.sub).filter(p => p.sheet === sh); if (!ps.length) return; el.append($(`<h2 class="hd">${name}</h2>`));
     ps.forEach(p => { const b = $(`<button class="item"><span><b>${esc(p.label)}</b><span class="snip">${esc(p.text.length > 80 ? p.text.slice(0, 78) + "…" : p.text)}</span></span>${hw.done[p.id] ? '<span class="done">✓ done</span>' : ""}</button>`); b.onclick = () => go("prob", {id:p.id, hints:0, shown:false, steps:false, msg:""}); el.append(b); }); }); return el; },
 learn(){ const L = PACK.lessons[S.sub], c = L.cards[S.card], n = L.cards.length, el = $(`<div class="lscreen"></div>`);
@@ -118,12 +138,15 @@ learn(){ const L = PACK.lessons[S.sub], c = L.cards[S.card], n = L.cards.length,
   card.querySelector(".back").onclick = leave;
   const body = card.querySelector(".body"), act = card.querySelector(".act");
   const nav = (ok) => { const row = $(`<div class="row"></div>`);
-    if (S.card > 0) { const b = $(`<button class="btn ghost">← Back</button>`); b.onclick = () => go("learn", {card:S.card - 1, step:0, pick:null, flip:null}); row.append(b); }
+    if (S.card > 0) { const b = $(`<button class="btn ghost">← Back</button>`); b.onclick = () => go("learn", {card:S.card - 1, ...LRESET}); row.append(b); }
     const last = S.card === n - 1, nx = $(`<button class="btn primary big">${last ? (S.from === "prob" ? "Back to the problem" : "I'm ready for the problems") : "Next →"}</button>`);
-    nx.disabled = !ok; nx.onclick = () => last ? leave() : go("learn", {card:S.card + 1, step:0, pick:null, flip:null}); row.append(nx); act.append(row); };
-  if (c.k === "steps") { body.innerHTML = `<ol class="steps">${c.steps.slice(0, S.step + 1).map(t => `<li>${esc(t)}</li>`).join("")}</ol>`;
+    nx.disabled = !ok; nx.onclick = () => last ? leave() : go("learn", {card:S.card + 1, ...LRESET}); row.append(nx); act.append(row); };
+  const way = c.ways ? (S.way || "steps") : null;
+  if (c.ways) { const tabs = $(`<div class="ways" role="tablist" aria-label="Another way to think about it">${c.ways.map(([id, nm]) => `<button role="tab" class="wt ${id === way ? "on" : ""}" aria-selected="${id === way}" data-w="${id}">${esc(nm)}</button>`).join("")}</div>`); tabs.querySelectorAll(".wt").forEach(b => b.onclick = () => go("learn", {way:b.dataset.w})); card.querySelector(".ltext").prepend(tabs); }
+  if (way && way !== "steps") { wayView(c, way, body); nav(true); }
+  else if (c.k === "steps") { body.innerHTML = `<ol class="steps">${c.steps.slice(0, S.step + 1).map(t => `<li>${esc(t)}</li>`).join("")}</ol>`;
     if (S.step < c.steps.length - 1) { const row = $(`<div class="row"></div>`);
-      if (S.card > 0) { const bk = $(`<button class="btn ghost">← Back</button>`); bk.onclick = () => go("learn", {card:S.card - 1, step:0, pick:null, flip:null}); row.append(bk); }
+      if (S.card > 0) { const bk = $(`<button class="btn ghost">← Back</button>`); bk.onclick = () => go("learn", {card:S.card - 1, ...LRESET}); row.append(bk); }
       const m = $(`<button class="btn primary big">Show the next step</button>`); m.onclick = () => go("learn", {step:S.step + 1}); row.append(m); act.append(row); } else nav(true); }
   else if (c.k === "choice") { body.innerHTML = c.options.map((o, i) => `<button class="opt ${S.pick === i ? (o.ok ? "good" : "try") : ""}" data-i="${i}">${esc(o.t)}</button>`).join("") + (S.pick != null ? `<p class="say ${c.options[S.pick].ok ? "win" : ""}" role="status">${esc(c.options[S.pick].say)}</p>` : "");
     body.querySelectorAll(".opt").forEach(b => b.onclick = () => go("learn", {pick:+b.dataset.i})); nav(S.pick != null); }
@@ -136,7 +159,7 @@ learn(){ const L = PACK.lessons[S.sub], c = L.cards[S.card], n = L.cards.length,
 prob(){ const p = PACK.problems.find(x => x.id === S.id), el = $(`<div class="stack"></div>`), done = !!hw.done[p.id];
   el.append(backBar("Back", () => go("lesson")));
   const LL = PACK.lessons && PACK.lessons[p.sub], lc = LL && LL.links[p.id];
-  if (lc) { const b = $(`<button class="learnbtn small"><b>Show me how this works</b><span>A quick look at the idea behind this one.</span></button>`); b.onclick = () => go("learn", {sub:p.sub, card:LL.cards.findIndex(c => c.id === lc), step:0, pick:null, flip:null, from:"prob", id:p.id, hints:S.hints, shown:S.shown}); el.append(b); }
+  if (lc) { const b = $(`<button class="learnbtn small"><b>Show me how this works</b><span>A quick look at the idea behind this one.</span></button>`); b.onclick = () => go("learn", {sub:p.sub, card:LL.cards.findIndex(c => c.id === lc), ...LRESET, from:"prob", id:p.id, hints:S.hints, shown:S.shown}); el.append(b); }
   const card = $(`<section class="card"><p class="eyebrow pe">${esc(subTitle(p.sub))} · ${esc(p.label)}</p><p class="problem">${esc(p.text)}</p>${p.img && p.img.length ? `<p class="pics">${p.img.map(i => `<img src="/api/img?f=${encodeURIComponent(i.f)}" alt="Picture from the worksheet, page ${i.pg}" loading="lazy">`).join("")}</p>` : p.figure ? `<p class="fig">Look at the picture on your worksheet. ${esc(p.figure)}</p>` : ""}<div class="vis">${p.table && Array.isArray(p.table.x) ? tableHTML(p.table) : ""}</div><p class="say">Work it out on your worksheet first. Tap I'm stuck any time for a nudge.</p><ul class="nudges"></ul><div class="act"></div><span class="ref" aria-label="Reference number">#${p.ref || ""}</span></section>`);
   const nud = card.querySelector(".nudges"), act = card.querySelector(".act");
   if (p.pg) { const host = card.querySelector(".pics") || card.querySelector(".pe"); host.classList.add("zhost"); host.append(pageBtn(p.sub, p.pg)); }
