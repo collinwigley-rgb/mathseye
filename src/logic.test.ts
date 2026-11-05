@@ -250,12 +250,20 @@ describe('self-paced sessions', () => {
       expect([14, 13, 12, 11, 10, 9, 8, 0].map(g)).toEqual(['A+', 'A', 'B', 'C+', 'C-', 'D', 'F', 'F']);
       expect(G.gradeOf(97, 100).letter).toBe('A+'); expect(G.gradeOf(90, 100).letter).toBe('A-'); expect(G.gradeOf(60, 100).letter).toBe('D-'); expect(G.gradeOf(59, 100).letter).toBe('F');
     });
-    it('song rewards: deterministic per test, null when the list is missing or the grade is empty', () => {
-      const sm = { exports: {} as any }; new Function('module', songsSource)(sm); const P = sm.exports.pickFrom;
-      const data = { grades: { A: ['x', 'y', 'z'], F: ['q'], B: [] } };
-      expect(P(data, 'A', 1234)).toBe(P(data, 'A', 1234)); expect(['x', 'y', 'z']).toContain(P(data, 'A', 99));
-      expect(P(data, 'F', 5)).toBe('q'); expect(P(data, 'B', 5)).toBeNull(); expect(P(data, 'C', 5)).toBeNull(); expect(P(null, 'A', 5)).toBeNull();
-      const seen = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((n) => P(data, 'A', n * 100003))); expect(seen.size).toBeGreaterThan(1);
+    it('song rewards: a ranking fills the grades best-first, deterministic per test', () => {
+      const sm = { exports: {} as any }; new Function('module', songsSource)(sm); const R = sm.exports;
+      const order = Array.from({ length: 27 }, (_, i) => 's' + (i + 1));          // s1 = her favorite
+      expect(R.sizes(27)).toEqual([1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4]);
+      const m = R.assign(order); expect(m['A+']).toEqual(['s1']); expect(m['A']).toEqual(['s2', 's3']); expect(m['F']).toEqual(['s24', 's25', 's26', 's27']);
+      expect(R.gradeOfRank(order, 's1')).toBe('A+'); expect(R.gradeOfRank(order, 's27')).toBe('F'); expect(R.gradeOfRank(order, 's10')).toBe('B-');
+      expect(R.songFor(order, 'A+', 12345)).toBe('s1'); expect(R.songFor(order, 'A', 12345)).toBe(R.songFor(order, 'A', 12345)); expect(['s2', 's3']).toContain(R.songFor(order, 'A', 7));
+      expect(R.songFor([], 'A', 1)).toBeNull(); expect(R.songFor(null, 'A', 1)).toBeNull();
+      expect(R.sizes(14).reduce((a: number, b: number) => a + b, 0)).toBe(14);
+    });
+    it('song ranking: moving, and keeping her ranking in step with the list', () => {
+      const sm = { exports: {} as any }; new Function('module', songsSource)(sm); const R = sm.exports;
+      expect(R.move(['a', 'b', 'c', 'd'], 3, 0)).toEqual(['d', 'a', 'b', 'c']); expect(R.move(['a', 'b', 'c'], 0, 99)).toEqual(['b', 'c', 'a']);
+      expect(R.reconcile(['c', 'a', 'x'], ['a', 'b', 'c'])).toEqual(['c', 'a', 'b']); expect(R.reconcile(null, ['a', 'b'])).toEqual(['a', 'b']);
     });
     it('Central Time follows daylight saving: CDT in summer, CST in winter', () => {
       const gm = { exports: {} as any }; new Function('module', gradeSource)(gm); const G = gm.exports;
