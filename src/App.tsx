@@ -172,6 +172,10 @@ function Setup({ db, pre, onStart, onBack }: { db: Db; pre: string[]; onStart: (
     length: timed ? { mode: 'timed', minutes } : { mode: 'continuous' },
     focus: pick ? { kind: 'picked', trickIds: chosen } : { kind: 'random' },
   });
+  useEffect(() => {
+    window.mathseyeDev?.set([{ label: 'Start a 5-minute mix', fn: () => onStart({ length: { mode: 'timed', minutes: 5 }, focus: { kind: 'random' } }) }]);
+    return () => window.mathseyeDev?.set([]);
+  }, []);
   return (
     <main className="home setup">
       <div className="top"><button className="link" onClick={onBack}>← Back</button></div>
@@ -402,6 +406,10 @@ const STAGE_LABEL = { warmup: 'Warm-up', new: 'New fact', drill: 'Practice', mix
 function TrickCard({ trickId, onGo }: { trickId: string; onGo: () => void }) {
   const t = TRICKS.find((x) => x.id === trickId)!;
   const [why, setWhy] = useState(false);
+  useEffect(() => {
+    window.mathseyeDev?.set([{ label: "Let's try it", fn: onGo }]);
+    return () => window.mathseyeDev?.set([]);
+  }, [trickId]);
   return (
     <section className="trickcard">
       <p className="eyebrow">New trick</p>
@@ -460,6 +468,18 @@ function PracticeCard({ item, db, update, onNext }: {
     if (ok) setSolved(true);
     else { setShake(true); setTimeout(() => setShake(false), 400); setInput(''); }
   };
+
+  // Developer shortcuts (owner only, see public/dev.js): answer through the real handlers.
+  const dev = useRef<() => { label: string; fn: () => void }[]>(() => []);
+  dev.current = () => solved ? [{ label: 'Next card', fn: next }] : [
+    { label: 'Answer RIGHT', fn: () => { setInput(problem.answer); submit(problem.answer); } },
+    { label: 'Answer WRONG', fn: () => { const w = template.answerFormat === 'yesno' ? (problem.answer === 'yes' ? 'no' : 'yes') : ['0', '7', '13', '999'].find((c) => !checkAnswer(c, problem.answer, template.answerFormat))!; submit(w); } },
+    { label: 'Skip card (not recorded)', fn: () => onNext() },
+  ];
+  useEffect(() => {
+    window.mathseyeDev?.set(dev.current());
+    return () => window.mathseyeDev?.set([]);
+  }, [item, solved]);
 
   const next = () => {
     // After "Show me", follow right away with a similar card she solves alone.
