@@ -55,3 +55,6 @@ Next is disabled until she answers (a quiet "Skip this one" and "← Previous" a
 
 ## Needs work (test)
 Misses and skips on the Practice Test go on `save.twork`, a list separate from the practice come-back list (`save.work`). The setup picker has "Needs work (practice)" and "Needs work (test)". Cleared by getting it right on a later test or 3 clean solves in total. The test results screen has "Practice the ones I missed" (starts a set from that list).
+
+## Practice test options
+Two switches on the practice test start screen (saved per player in `save.testOpts`, off by default, remembered by a test in progress): **Allow help** (I'm stuck hints, then the steps, plus a Help menu) and **Must get it right to move on** (each answer is checked, no skipping; only a first-try right counts toward the score). Each question records `tries` and `helped`; results show how the test was taken.
