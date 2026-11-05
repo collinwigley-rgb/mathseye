@@ -3,7 +3,7 @@
 Math apps for a 7th grade pre-algebra student. iPad-first PWAs, also work in any browser.
 The name is a play on a band she loves. Branding is *inspired by* that band's look, with the owner's approval (see `docs/BRANDING.md`).
 Never copy the band's logo, wordmark artwork, photos or faces, or lyrics, and don't put the band's name in the UI.
-Song titles: by the owner's decision (Nov 2026) titles may appear as **practice-test rewards** (a better grade gets a more popular song; titles only, no lyrics, no audio, no artwork). The list lives in the PRIVATE repo (`mathseye-content/rewards/songs.json`, uploaded by `tools/ship.py`, served at `/api/songs`, cached on the device by `public/songs.js`) and is never committed to this public repo. Member first names are used only as color-scheme labels (owner's request); no likenesses.
+Song titles are fine to use (owner's call; this is a private family app). Practice-test rewards use them: a better grade gets a more popular song. The list is `mathseye-content/rewards/songs.json`, uploaded by `tools/ship.py`, served at `/api/songs`, cached on the device by `public/songs.js`.
 
 ## Start of every session
 1. Read `docs/STATUS.md` (what's done, what's next).
