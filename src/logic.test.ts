@@ -114,6 +114,7 @@ describe('every trick in content/tricks is well-formed', () => {
 // ---------------------------------------------------------------- hub: MathFacts modes + color schemes
 import { buildQueue, tricksFor, unlockedTricks } from './session';
 import syncSource from '../public/sync.js?raw';
+import gradeSource from '../public/grade.js?raw';
 import { fresh } from './store';
 import { BRANDS, ICONS } from './brand';
 
@@ -242,6 +243,17 @@ describe('self-paced sessions', () => {
       expect(Object.keys(S.mergeHw({ done: { a: 1 } }, { done: { b: 1 } }).done).sort()).toEqual(['a', 'b']);
       expect(S.mergeHw(null, { done: { b: 1 } })).toEqual({ done: { b: 1 } });
       expect(S.mergeFacts(null, facts({}))).toBeTruthy();
+    });
+    it('grade: whole-number percent on the usual +/- scale', () => {
+      const gm = { exports: {} as any }; new Function('module', gradeSource)(gm); const G = gm.exports, g = (r: number) => G.gradeOf(r, 14).letter;
+      expect([14, 13, 12, 11, 10, 9, 8, 0].map(g)).toEqual(['A+', 'A', 'B', 'C+', 'C-', 'D', 'F', 'F']);
+      expect(G.gradeOf(97, 100).letter).toBe('A+'); expect(G.gradeOf(90, 100).letter).toBe('A-'); expect(G.gradeOf(60, 100).letter).toBe('D-'); expect(G.gradeOf(59, 100).letter).toBe('F');
+    });
+    it('Central Time follows daylight saving: CDT in summer, CST in winter', () => {
+      const gm = { exports: {} as any }; new Function('module', gradeSource)(gm); const G = gm.exports;
+      expect(G.centralTime(Date.UTC(2026, 6, 4, 18, 0))).toContain('CDT'); expect(G.centralTime(Date.UTC(2026, 10, 5, 18, 0))).toContain('CST');
+      expect(G.centralTime(Date.UTC(2026, 10, 5, 5, 14))).toBe('Nov 4, 11:14 PM CST');
+      expect(G.centralTime(Date.UTC(2026, 2, 8, 7, 59))).toContain('CST'); expect(G.centralTime(Date.UTC(2026, 2, 8, 8, 1))).toContain('CDT');   // the spring-forward hour
     });
     it('finished practice tests are kept from both devices, newest first, max 8', () => {
       const t = (n: number) => ({ t: n, right: 1, items: [] });
