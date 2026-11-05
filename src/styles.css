@@ -216,3 +216,6 @@ body { padding-top: 52px; }
 
 /* keep long eyebrow text clear of the Flag button */
 .practice .eyebrow { padding-right: 0; }
+
+.songcard { padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); align-items: stretch; text-align: left; gap: 8px; }
+.songcard .eyebrow { margin: 0; }

@@ -261,6 +261,16 @@ function ColorPicker({ cur, onPick }: { cur: BrandId; onPick: (id: BrandId) => v
   );
 }
 
+/* "My favorite songs": her own order, saved with her progress (per player, synced). */
+function SongRanker() {
+  const host = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const S = window.mathseyeSongs; if (!S || !host.current) return;
+    S.card(host.current, { get: () => S.stored(), set: (o) => S.store(o) });
+  }, []);
+  return <section ref={host} className="pick songcard" />;
+}
+
 function Hub({ db, onFacts, onGrownups, onWho }: { db: Db; onFacts: () => void; onGrownups: () => void; onWho: () => void }) {
   const unit = db.settings.currentUnit ?? 2;
   const [cur, setCur] = useState<BrandId>(getBrand());
@@ -276,6 +286,7 @@ function Hub({ db, onFacts, onGrownups, onWho }: { db: Db; onFacts: () => void; 
         <a className="tile3" href={`./homework/unit-${unit}.html`}><b>Unit Homework</b><span>Help with this unit's worksheets</span></a>
       </nav>
       <section className="pick"><p className="eyebrow">Pick your color</p><ColorPicker cur={cur} onPick={(id) => { setBrand(id); setCur(id); }} /></section>
+      <SongRanker />
       <button className="link" onClick={onGrownups}>Grown-ups</button>
     </main>
   );
