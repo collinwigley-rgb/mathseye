@@ -276,6 +276,10 @@ describe('self-paced sessions', () => {
         for (const m of [m1, m2]) { expect(m.work.a.c).toBe(2); expect(m.twork.x.c).toBe(1); expect(Object.keys(m.work).sort()).toEqual(['a', 'b', 'z']); }       // best entry per problem, nothing dropped
       }
     });
+    it('clean solves only go up: when two copies disagree the larger count wins', () => {
+      const a = { solved: {}, work: { p: { n: 2, t: 1, u: 900, c: 1 } } }, b = { solved: {}, work: { p: { n: 1, t: 1, u: 500, c: 2 } } };     // newer entry has 1, older has 2
+      expect(S.mergeStudy(a, b, true).work.p.c).toBe(2); expect(S.mergeStudy(b, a, false).work.p.c).toBe(2); expect(S.mergeStudy(a, b, true).work.p.n).toBe(2);
+    });
     it('a cleared problem stays cleared, and comes back only if it is flagged again later', () => {
       const a = { solved: {}, work: {}, workDone: { p: 1000 } }, b = { solved: {}, work: { p: { n: 1, t: 100, u: 900, c: 2 } } };         // cleared at 1000 on one device, old entry on the other
       expect(S.mergeStudy(a, b, false).work.p).toBeUndefined(); expect(S.mergeStudy(b, a, true).work.p).toBeUndefined();

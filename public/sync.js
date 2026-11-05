@@ -36,6 +36,7 @@
     a = a || {}; b = b || {}; var marks = mergeMarks(da, db), out = {}, ids = {}, id; for (id in a) ids[id] = 1; for (id in b) ids[id] = 1;
     for (id in ids) {
       var x = a[id], y = b[id], e = !x ? y : !y ? x : (stamp(y) > stamp(x) ? y : stamp(x) > stamp(y) ? x : ((y.c || 0) > (x.c || 0) ? y : x));
+      if (x && y) { var top = Math.max(x.c || 0, y.c || 0); if ((e.c || 0) < top) { e = JSON.parse(JSON.stringify(e)); e.c = top; } }   // clean solves only ever go up, so the larger count is the true one
       if (marks[id] && marks[id] >= stamp(e)) continue;      // cleared after its last change
       out[id] = e;
     }
@@ -47,7 +48,7 @@
     for (k in base) out[k] = base[k];
     out.solved = union(L.solved, R.solved); out.clean = union(L.clean, R.clean); out.seen = union(L.seen, R.seen);
     // The come-back lists are merged problem by problem (never "whole list from the newer side"): each entry carries u = when it last changed,
-    // and a problem that was cleared (3 clean in a row) leaves a marker, so a stale device can neither undo progress nor bring a cleared problem back.
+    // and a problem that was cleared (3 clean solves) leaves a marker, so a stale device can neither undo progress nor bring a cleared problem back.
     out.work = mergeList(L.work, R.work, L.workDone, R.workDone); out.workDone = mergeMarks(L.workDone, R.workDone);
     out.twork = mergeList(L.twork, R.twork, L.tworkDone, R.tworkDone); out.tworkDone = mergeMarks(L.tworkDone, R.tworkDone);
     out.mission = L.mission;                  // the set she is in the middle of belongs to this device
