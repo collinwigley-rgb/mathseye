@@ -276,17 +276,17 @@ describe('self-paced sessions', () => {
       for (let i = 0; i < 30; i++) { st = R.place(st, def[(i * 7) % 27], (i * 5) % 27); expect(full(st)).toBe(true); const idx = st.order.map((t: string) => R.GRADES.indexOf(st.grade[t])); expect(idx).toEqual([...idx].sort((m: number, n: number) => m - n)); }
       expect(full(R.stateOf({ grades: Object.fromEntries(def.map((t: string) => [t, 'B'])), rank: def }, def))).toBe(true);        // even an old or odd saved state is repaired
     });
-    it('songs: a stack of the same grade slides down in rank order to fill empty grades', () => {
+    it('songs: a stack spreads up and down by rank to fill empty grades', () => {
       const sm = { exports: {} as any }; new Function('module', songsSource)(sm); const R = sm.exports;
-      const order: string[] = [], grade: Record<string, string> = {}; const put = (g: string, ns: string[]) => ns.forEach((n) => { order.push(n); grade[n] = g; });
-      put('A+', ['a1']); put('A', ['a2', 'a3']); put('A-', ['a4', 'a5']); put('B+', ['b1', 'b2']); put('B', ['x1', 'x2', 'x3']);
-      put('C', ['c1', 'c2', 'c3', 'c4']); put('D+', ['d1', 'd2']); put('D', ['e1', 'e2']); put('D-', ['f1', 'f2']); put('F', ['g1', 'g2', 'g3']);      // B- and C+ are empty
-      const st = R.stateOf({ grades: grade, rank: order }, order);
-      expect([st.grade.x1, st.grade.x2, st.grade.x3]).toEqual(['B', 'B-', 'C+']);                    // her three B's become B, B-, C+ by rank
-      expect(st.grade.c1).toBe('C');                                                                // the C group is untouched
-      const o2: string[] = [], g2: Record<string, string> = {}; const p2 = (g: string, ns: string[]) => ns.forEach((n) => { o2.push(n); g2[n] = g; });
-      p2('B', ['s1', 's2', 's3']); p2('F', ['s4']); R.GRADES.filter((g: string) => g !== 'B' && g !== 'F').forEach((g: string) => p2(g, ['u' + g, 'v' + g]));
-      const top = R.stateOf({ grades: g2, rank: o2 }, o2); expect(R.GRADES.every((g: string) => top.order.some((t: string) => top.grade[t] === g))).toBe(true);
+      const mk = (spec: [string, string[]][]) => { const o: string[] = [], g: Record<string, string> = {}; spec.forEach(([gr, ns]) => ns.forEach((n) => { o.push(n); g[n] = gr; })); return R.stateOf({ grades: g, rank: o }, o); };
+      const rest = (skip: string[]): [string, string[]][] => R.GRADES.filter((g: string) => !skip.includes(g)).map((g: string) => [g, ['u' + g, 'v' + g]]);
+      const both = mk([['B', ['x1', 'x2', 'x3']], ...rest(['B', 'B+', 'B-'])]);                  // B+ and B- empty
+      expect([both.grade.x1, both.grade.x2, both.grade.x3]).toEqual(['B+', 'B', 'B-']);        // spreads up and down, by rank
+      const down = mk([['B', ['x1', 'x2', 'x3']], ...rest(['B', 'B-', 'C+', 'C', 'C-'])]);       // nothing below B for three grades
+      expect([down.grade.x1, down.grade.x2, down.grade.x3]).toEqual(['B', 'B-', 'C+']);        // the stack fills the gap downward
+      const up = mk([['B', ['x1', 'x2', 'x3']], ...rest(['B', 'B+', 'A-', 'A'])]);              // B+, A-, A empty above
+      const ix = [up.grade.x1, up.grade.x2, up.grade.x3].map((g: string) => R.GRADES.indexOf(g)); expect(ix).toEqual([...ix].sort((m: number, n: number) => m - n));   // always in rank order, better songs never below worse ones
+      expect(R.GRADES.every((g: string) => up.order.some((t: string) => up.grade[t] === g))).toBe(true);
     });
     it('songs: a test grade earns a song with that grade, else the nearest grade (tie goes lower), same test same song', () => {
       const sm = { exports: {} as any }; new Function('module', songsSource)(sm); const R = sm.exports;

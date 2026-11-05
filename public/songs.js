@@ -16,25 +16,30 @@
   function suggestedGrades(def) { var m = assign(def), g = {}; GRADES.forEach(function (l) { m[l].forEach(function (t) { g[t] = l; }); }); return g; }
   /* Always sorted by grade, A+ first; songs with the same grade keep their order. */
   function sortStable(order, grade) { return order.map(function (t, i) { return [t, i]; }).sort(function (a, b) { return (IDX[grade[a[0]]] - IDX[grade[b[0]]]) || (a[1] - b[1]); }).map(function (x) { return x[0]; }); }
-  /* Every grade keeps at least one song (duplicates are fine). A grade with no songs is filled by SLIDING a stack down: songs she gave the same grade
-     are ranked, the top one keeps the grade and the next ones slip into the empty grades just below, in rank order (three B's with nothing at B- or C+
-     become B, B-, C+). Only if nothing above can spare a song does a song get promoted from below. Needs at least 13 songs. */
+  /* Every grade keeps at least one song (duplicates are fine). A grade with no songs is filled from the NEAREST grade that has more than one, in
+     either direction, by rank: from a grade above the gap its lowest-ranked song slips down, from a grade below its top-ranked song moves up. So three
+     B's with B+ and B- empty become B+, B, B- by rank. At the same distance the bigger group gives (a tie goes to the one above). Needs 13+ songs. */
   function cover(st) {
     if (st.order.length < GRADES.length) return st;
     var gr = {}; for (var k in st.grade) gr[k] = st.grade[k];
+    var orig = null;                                                    // group sizes before any fixing: the biggest stacks give first
     for (var guard = 0; guard < 60; guard++) {
-      var by = GRADES.map(function () { return []; }); st.order.forEach(function (t) { by[IDX[gr[t]]].push(t); });
+      var by = GRADES.map(function () { return []; }); st.order.forEach(function (t) { by[IDX[gr[t]]].push(t); }); if (!orig) orig = by.map(function (l) { return l.length; });
       var empties = []; for (var i = 0; i < by.length; i++) if (!by[i].length) empties.push(i); if (!empties.length) break;
-      var done = false;
-      for (var q = empties.length - 1; q >= 0 && !done; q--) {          // lowest empty grade first, so the stack keeps its rank order
-        var e = empties[q];
-        for (var f = e - 1; f >= 0; f--) if (by[f].length > 1) { gr[by[f][by[f].length - 1]] = GRADES[e]; done = true; break; }
-      }
-      if (!done) {                                                      // nothing above can spare one: promote from below
-        var e0 = empties[0];
-        for (var g = e0 + 1; g < by.length; g++) if (by[g].length > 1) { gr[by[g][0]] = GRADES[e0]; done = true; break; }
-      }
-      if (!done) break;
+      // for each empty grade, which grade gives a song (nearest with more than one, either side; at the same distance the bigger group, then the one above)
+      var plan = empties.map(function (e) {
+        var from = -1;
+        for (var d = 1; d < by.length && from < 0; d++) {
+          var up = e - d >= 0 && by[e - d].length > 1 ? e - d : -1, dn = e + d < by.length && by[e + d].length > 1 ? e + d : -1;
+          if (up >= 0 && dn >= 0) from = orig[dn] > orig[up] ? dn : up; else from = up >= 0 ? up : dn;
+        }
+        return { e: e, from: from };
+      }).filter(function (x) { return x.from >= 0; });
+      if (!plan.length) break;
+      // keep a stack in rank order: songs sliding DOWN fill the lowest gap first (they take the lowest-ranked song), songs moving UP fill the highest gap first
+      var downs = plan.filter(function (x) { return x.from < x.e; }), ups = plan.filter(function (x) { return x.from > x.e; }), pick;
+      if (downs.length) pick = downs[downs.length - 1]; else pick = ups[0];
+      gr[pick.from < pick.e ? by[pick.from][by[pick.from].length - 1] : by[pick.from][0]] = GRADES[pick.e];
     }
     return { order: sortStable(st.order, gr), grade: gr };
   }
