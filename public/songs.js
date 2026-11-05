@@ -97,8 +97,8 @@
       if (!suggested().length) { host.appendChild(el('p', 'sgp', 'Getting the songs…')); load().then(function () { if (suggested().length) draw(); }); return; }
       var st = cur(), ord = st.order;
       if (!open) {
-        host.appendChild(el('p', 'sgp', ord.slice(0, 3).map(function (t) { return '<b>' + st.grade[t] + '</b> · ' + esc(t); }).join('<br>')));
-        var r = el('div', 'sgrow'), b = el('button', 'sgmain', 'Arrange my songs'); b.onclick = function () { open = true; draw(); }; r.appendChild(b); host.appendChild(r); return;
+        var sm = el('div', 'sgsum', ord.slice(0, 3).map(function (t) { return '<span class="chp"><b>' + st.grade[t] + '</b> ' + esc(t) + '</span>'; }).join(''));
+        var b = el('button', 'sgmain', 'Arrange'); b.onclick = function () { open = true; draw(); }; sm.appendChild(b); host.appendChild(sm); return;
       }
       host.appendChild(el('p', 'sgp', 'Give each song a grade, or drag it with the ☰ handle. The list stays in order, A at the top. Every grade keeps at least one song.'));
       var list = el('ol', 'rk');
