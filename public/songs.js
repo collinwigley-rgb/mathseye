@@ -84,7 +84,7 @@
 
   /* ---- "My favorite songs" card (browser). She only sees her own order, favorite at the top. host = a container element.
      o = {get(): saved order or undefined, set(order)}. Nothing here says what the order is used for. ---- */
-  var CSS = '.sgc .sgp{margin:0;color:var(--muted,#b4aac4)}.sgc .rk{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}.sgc .rki{display:flex;align-items:center;gap:10px;padding:8px 10px;border:2px solid var(--line,#40395a);border-radius:12px;background:var(--panel2,var(--panel,#2a2540));position:relative;text-align:left}.sgc .rki.drag{z-index:5;box-shadow:0 6px 18px rgba(0,0,0,.4);border-color:var(--accent,#f3eba0)}.sgc .rkn{width:26px;text-align:right;color:var(--muted,#b4aac4);font-variant-numeric:tabular-nums}.sgc .rkh{cursor:grab;font-size:22px;padding:6px 8px;user-select:none;-webkit-user-select:none;touch-action:none;min-width:44px;min-height:44px;display:grid;place-items:center;box-sizing:border-box}.sgc .rkt{flex:1;font-weight:600}.sgc .rkg{min-width:64px;height:44px;border-radius:10px;border:2px solid var(--accent,#f3eba0);background:var(--panel,#201836);color:var(--accent,#f3eba0);font:inherit;font-weight:800;font-size:16px;padding:0 6px;text-align:center}.sgc .rki.gstart{margin-top:10px}.sgc .rkb{display:inline-flex;gap:6px}.sgc .rkb button{width:44px;height:44px;border-radius:10px;border:2px solid var(--line,#40395a);background:transparent;color:inherit;font-size:16px;cursor:pointer}.sgc .rkb button:disabled{opacity:.3}.sgc .sgrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}.sgc .sgrow button{min-height:48px;padding:10px 16px;border-radius:12px;border:2px solid var(--line,#40395a);background:transparent;color:inherit;font:inherit;font-weight:600;cursor:pointer}.sgc .sgrow button.sgmain{background:var(--accent,#f3eba0);color:var(--accent-fg,#1a1626);border-color:transparent}';
+  var CSS = '.sgc .sgp{margin:0;color:var(--muted,#b4aac4)}.sgc .rk{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}.sgc .rki{display:flex;align-items:center;gap:10px;padding:8px 10px;border:2px solid var(--line,#40395a);border-radius:12px;background:var(--panel2,var(--panel,#2a2540));position:relative;text-align:left}.sgc .rki{will-change:transform}.sgc .rki.drag{z-index:5;box-shadow:0 6px 18px rgba(0,0,0,.4);border-color:var(--accent,#f3eba0)}.sgc .rkn{width:26px;text-align:right;color:var(--muted,#b4aac4);font-variant-numeric:tabular-nums}.sgc .rkh{cursor:grab;font-size:22px;padding:6px 8px;user-select:none;-webkit-user-select:none;touch-action:none;min-width:44px;min-height:44px;display:grid;place-items:center;box-sizing:border-box}.sgc .rkt{flex:1;font-weight:600}.sgc .rkg{min-width:64px;height:44px;border-radius:10px;border:2px solid var(--accent,#f3eba0);background:var(--panel,#201836);color:var(--accent,#f3eba0);font:inherit;font-weight:800;font-size:16px;padding:0 6px;text-align:center}.sgc .rki.gstart{margin-top:10px}.sgc .rkb{display:inline-flex;gap:6px}.sgc .rkb button{width:44px;height:44px;border-radius:10px;border:2px solid var(--line,#40395a);background:transparent;color:inherit;font-size:16px;cursor:pointer}.sgc .rkb button:disabled{opacity:.3}.sgc .sgrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}.sgc .sgrow button{min-height:48px;padding:10px 16px;border-radius:12px;border:2px solid var(--line,#40395a);background:transparent;color:inherit;font:inherit;font-weight:600;cursor:pointer}.sgc .sgrow button.sgmain{background:var(--accent,#f3eba0);color:var(--accent-fg,#1a1626);border-color:transparent}';
   function card(host, o) { // o: {get(): {grades, rank} (may be empty), set({grades, rank})}
     var d = root.document; if (!d.getElementById('sg-css')) { var st0 = d.createElement('style'); st0.id = 'sg-css'; st0.textContent = CSS; d.head.appendChild(st0); }
     host.classList.add('sgc'); var open = false;
@@ -110,12 +110,20 @@
         bs[0].onclick = function () { save(place(st, t, i - 1)); draw(); }; bs[1].onclick = function () { save(place(st, t, i + 1)); draw(); };
         li.querySelector('.rkg').onchange = function (e) { save(setGrade(st, t, e.target.value)); draw(); };
         var hd = li.querySelector('.rkh');
-        hd.onpointerdown = function (e) { e.preventDefault(); hd.setPointerCapture(e.pointerId); li.classList.add('drag'); var y0 = e.clientY;
-          hd.onpointermove = function (ev) { li.style.transform = 'translateY(' + (ev.clientY - y0) + 'px)'; };
-          hd.onpointerup = hd.onpointercancel = function (ev) { hd.onpointermove = hd.onpointerup = hd.onpointercancel = null; li.classList.remove('drag'); li.style.transform = '';
-            var items = [].slice.call(list.children), mids = items.map(function (x) { var rc = x.getBoundingClientRect(); return (rc.top + rc.bottom) / 2; }), to = 0;
-            for (var k = 0; k < mids.length; k++) if (ev.clientY > mids[k]) to = k; if (ev.clientY <= mids[0]) to = 0;
-            if (to !== i) save(place(st, t, to)); draw(); };
+        hd.onpointerdown = function (e) { e.preventDefault(); hd.setPointerCapture(e.pointerId);
+          var rows = [].slice.call(list.children), rects = rows.map(function (x) { return x.getBoundingClientRect(); }), y0 = e.clientY, h = rects[i].height + 6, to = i,
+              reduce = root.matchMedia && root.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          li.classList.add('drag'); li.style.transition = 'none';
+          rows.forEach(function (x) { if (x !== li) x.style.transition = reduce ? 'none' : 'transform .16s ease-out'; });
+          hd.onpointermove = function (ev) {                      // the row stays under the finger (same grab spot); the others open a gap
+            var dy = ev.clientY - y0; li.style.transform = 'translateY(' + dy + 'px) scale(1.02)';
+            var mid = rects[i].top + rects[i].height / 2 + dy; to = i;
+            for (var k = 0; k < rects.length; k++) { var m = (rects[k].top + rects[k].bottom) / 2; if (k < i && mid < m) { to = k; break; } if (k > i && mid > m) to = k; }
+            rows.forEach(function (x, k) { if (x === li) return; var sft = 0; if (to > i && k > i && k <= to) sft = -h; else if (to < i && k >= to && k < i) sft = h; x.style.transform = sft ? 'translateY(' + sft + 'px)' : ''; });
+          };
+          hd.onpointerup = hd.onpointercancel = function () { hd.onpointermove = hd.onpointerup = hd.onpointercancel = null;
+            li.style.transition = reduce ? 'none' : 'transform .18s cubic-bezier(.2,.9,.3,1)'; li.style.transform = 'translateY(' + (rects[to].top - rects[i].top) + 'px)';   // settle into the gap
+            setTimeout(function () { if (to !== i) save(place(st, t, to)); draw(); }, reduce ? 0 : 190); };
         };
         list.appendChild(li);
       });

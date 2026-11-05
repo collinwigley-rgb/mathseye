@@ -115,6 +115,8 @@ body{background-color:var(--bg);background-image:radial-gradient(900px 420px at 
 .bar i{background:linear-gradient(90deg,var(--accent,var(--amber)),var(--accent2,var(--amber2,var(--accent,var(--amber)))))}
 .dots i.on:nth-child(even){background:var(--accent2,var(--amber2))}
 button:active{transform:scale(.98)}
+.pressed{transform:scale(.96);filter:brightness(.88);transition:transform .08s ease-out,filter .08s}
+@media (prefers-reduced-motion:reduce){.pressed{transform:none}}
 .say{position:relative}.burst{position:absolute;left:28px;top:50%;width:0;height:0;pointer-events:none;z-index:2}
 .burst i{position:absolute;left:-7px;top:-7px;width:14px;height:14px;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
 @media (prefers-reduced-motion:no-preference){.burst i{animation:fly .85s ease-out forwards}@keyframes fly{from{transform:translate(0,0) scale(.3);opacity:1}to{transform:translate(var(--dx),var(--dy)) scale(1.1);opacity:0}}}

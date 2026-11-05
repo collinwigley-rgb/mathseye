@@ -25,6 +25,8 @@ Three sections plus a color picker. Unit label comes from `settings.currentUnit`
 
 - **Developer mode** (`public/dev.js`): when the selected player is named "collin" (the owner), a small DEV chip (bottom-left) offers one-tap "answer right / wrong" on study problems, "fill right/wrong" and "finish the test with 6 wrong" in the practice test, and mark right/wrong in homework. Gate is the name only (family-and-friends app, not security). Pages register actions with `mathseyeDev.set([...])` and clear them in `render()`.
 
+- **Touch and text details** (approved from a before/after review, Nov 2026): text sizes in the study and homework pages are `rem` (root 17px, or the iPad's text-size setting via `font: -apple-system-body`) so they scale; the keypad keys are 56px; `public/press.js` adds a `.pressed` look on touch-down (action still fires on release); on a wide landscape screen a study problem that has a picture gets `.split` (question left, picture right); the favorite-songs drag opens a gap and settles (skips animation under Reduce Motion). Increase-Contrast and Reduce-Motion theming was reviewed and skipped.
+
 ## Cloudflare access (autonomous checks)
 An account API token ("Edit Cloudflare Workers" template) is saved as a network secret on the owner's Default environment for host `api.cloudflare.com`; the proxy injects it, so call the API with plain `curl` and no header. Never ask for it in chat. Find the account id with `GET /client/v4/accounts`. Useful reads: `/accounts/<id>/workers/scripts/mathseye/deployments` (live version), `/accounts/<id>/workers/scripts/mathseye/settings` (bindings ASSETS + NOTES), `/accounts/<id>/storage/kv/namespaces` (`mathseye-notes`). Deploys happen by pushing to `main`. KV lists lag up to ~30 s after a write.
 

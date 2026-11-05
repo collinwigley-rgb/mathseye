@@ -3,8 +3,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Figtree:wght@400;500;600&display=swap">
 <style>
 /*STUDY_STYLE*/
-.snip{color:var(--muted);font-size:16px;display:block;margin-top:2px}.item{background:var(--panel);width:100%;text-align:left;padding:16px 18px;min-height:64px;display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
-.done{color:var(--good);font-weight:600;white-space:nowrap}.hd{font-family:var(--display);font-size:20px;margin:6px 0 0}
+.snip{color:var(--muted);font-size:0.9412rem;display:block;margin-top:2px}.item{background:var(--panel);width:100%;text-align:left;padding:16px 18px;min-height:64px;display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.done{color:var(--good);font-weight:600;white-space:nowrap}.hd{font-family:var(--display);font-size:1.1765rem;margin:6px 0 0}
 .pics{display:flex;flex-wrap:wrap;gap:10px;margin:0}.pics img{max-width:100%;max-height:340px;border-radius:12px;background:#fff;border:1px solid var(--line)}.pg{margin:0;font-size:.85rem;color:var(--muted)}
 body.learning{padding-block:0;margin:0}body.learning>p{display:none}body.learning #app{max-width:1180px;margin:0 auto;height:100dvh;padding:8px 14px calc(8px + env(safe-area-inset-bottom));box-sizing:border-box;display:flex;flex-direction:column}
 .lscreen{flex:1;min-height:0;display:flex}.card.learn{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px;padding:12px 18px 10px;margin:0}
@@ -26,7 +26,7 @@ body.learning{padding-block:0;margin:0}body.learning>p{display:none}body.learnin
 .stepper{display:flex;align-items:center;justify-content:center;gap:14px}.stepper b{font-size:1.6rem;min-width:90px;text-align:center}.stepper .btn{min-width:56px;font-size:1.6rem;padding:6px 14px}.stepper input{flex:1;height:40px}
 .rt.big{overflow:auto}.rt.big .rr span{font-size:1.4rem;padding:14px 4px}.rt.big .rr b{font-size:1.1rem}
 .gcols{display:grid;grid-template-columns:repeat(8,1fr);gap:8px}.gcol{display:flex;flex-direction:column;gap:6px;border:0;background:transparent;padding:0;font:inherit;cursor:pointer;color:inherit}.gcol span{display:grid;place-items:center;border-radius:10px;border:2px dashed var(--line);padding:18px 2px;font-size:1rem}.gcol span+span{color:var(--muted)}.gcol.on span:first-child{border:2px solid #4a7fc0;background:rgba(74,127,192,.16);font-weight:600}.gcol.on span+span{border:2px solid #e8704a;background:rgba(232,112,74,.18);color:inherit;font-weight:600}
-.dnl{width:100%;height:auto;max-height:100%}.dnl text{font-family:inherit;font-size:17px;fill:#2b2350}.dnl .ax{font-size:18px;font-weight:700;paint-order:stroke;stroke:#fff;stroke-width:6px;stroke-linejoin:round}.dnl .in{fill:#2f64a8;color:#2f64a8}.dnl .ft{fill:#c4502b}.dnl .val{font-weight:700;font-size:20px}.dnl .axl line,.dnl .axl2{stroke:#2b2350;stroke-width:2}.dnl .tk line{stroke:#2b2350;stroke-width:2}.dnl .fillin{stroke:#4a7fc0;stroke-width:8;stroke-linecap:round}.dnl .fillft{stroke:#e8704a;stroke-width:8;stroke-linecap:round}.dnl .mk{stroke:#2b2350;stroke-width:2;stroke-dasharray:5 4}.dnl .dot.in{fill:#4a7fc0}.dnl .dot.ft{fill:#e8704a}.dnl .band{fill:rgba(232,112,74,.25)}
+.dnl{width:100%;height:auto;max-height:100%}.dnl text{font-family:inherit;font-size:1rem;fill:#2b2350}.dnl .ax{font-size:1.0588rem;font-weight:700;paint-order:stroke;stroke:#fff;stroke-width:6px;stroke-linejoin:round}.dnl .in{fill:#2f64a8;color:#2f64a8}.dnl .ft{fill:#c4502b}.dnl .val{font-weight:700;font-size:1.1765rem}.dnl .axl line,.dnl .axl2{stroke:#2b2350;stroke-width:2}.dnl .tk line{stroke:#2b2350;stroke-width:2}.dnl .fillin{stroke:#4a7fc0;stroke-width:8;stroke-linecap:round}.dnl .fillft{stroke:#e8704a;stroke-width:8;stroke-linecap:round}.dnl .mk{stroke:#2b2350;stroke-width:2;stroke-dasharray:5 4}.dnl .dot.in{fill:#4a7fc0}.dnl .dot.ft{fill:#e8704a}.dnl .band{fill:rgba(232,112,74,.25)}
 .eqn{display:flex;align-items:center;justify-content:center;gap:18px;font-size:clamp(1.3rem,3.6vmin,2rem)}.fr{display:inline-flex;flex-direction:column;align-items:center}.fr .n{padding:6px 14px;border-bottom:3px solid #2b2350;font-weight:700}.fr .d{padding:6px 14px;font-weight:700}.fr .n.ft{color:#c4502b}.fr .d.in{color:#2f64a8}.eq{font-size:1.6em}.mult{text-align:center;margin:0;color:var(--muted)}
 .lviz{color:#2b2350;--line:#cfc8e6;--muted:#5b5575}.lviz .btn,.lviz .btn.ghost{background:#fff;color:#2b2350;border:2px solid #b9b0dc}.lviz .btn:disabled{opacity:.4}.lviz .stepper input{accent-color:#4a7fc0}.lviz .gcol span{color:#2b2350}.lviz .gcol span+span{color:#5b5575}.lviz .gcol.on span+span{color:#2b2350}.lviz .rr span{background:#fff;color:#2b2350}.lviz .rr b,.lviz .eqn,.lviz .mult{color:#2b2350}.lviz .mult{color:#5b5575}.lviz em{color:#5b5575}
 .dnl .rin{fill:rgba(74,127,192,.25);stroke:#4a7fc0;stroke-width:3}.dnl .rft{fill:rgba(232,112,74,.25);stroke:#e8704a;stroke-width:3}
@@ -46,6 +46,7 @@ body.learning{padding-block:0;margin:0}body.learning>p{display:none}body.learnin
 <div id="app"></div><div id="sheet"></div>
 <script src="../profile.js"></script>
 <script src="../dev.js"></script>
+<script src="../press.js"></script>
 <script src="../build.js"></script>
 <script src="../feedback.js"></script>
 <script src="../sync.js"></script>
