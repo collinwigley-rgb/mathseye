@@ -115,6 +115,7 @@ describe('every trick in content/tricks is well-formed', () => {
 import { buildQueue, tricksFor, unlockedTricks } from './session';
 import syncSource from '../public/sync.js?raw';
 import gradeSource from '../public/grade.js?raw';
+import songsSource from '../public/songs.js?raw';
 import { fresh } from './store';
 import { BRANDS, ICONS } from './brand';
 
@@ -248,6 +249,13 @@ describe('self-paced sessions', () => {
       const gm = { exports: {} as any }; new Function('module', gradeSource)(gm); const G = gm.exports, g = (r: number) => G.gradeOf(r, 14).letter;
       expect([14, 13, 12, 11, 10, 9, 8, 0].map(g)).toEqual(['A+', 'A', 'B', 'C+', 'C-', 'D', 'F', 'F']);
       expect(G.gradeOf(97, 100).letter).toBe('A+'); expect(G.gradeOf(90, 100).letter).toBe('A-'); expect(G.gradeOf(60, 100).letter).toBe('D-'); expect(G.gradeOf(59, 100).letter).toBe('F');
+    });
+    it('song rewards: deterministic per test, null when the list is missing or the grade is empty', () => {
+      const sm = { exports: {} as any }; new Function('module', songsSource)(sm); const P = sm.exports.pickFrom;
+      const data = { grades: { A: ['x', 'y', 'z'], F: ['q'], B: [] } };
+      expect(P(data, 'A', 1234)).toBe(P(data, 'A', 1234)); expect(['x', 'y', 'z']).toContain(P(data, 'A', 99));
+      expect(P(data, 'F', 5)).toBe('q'); expect(P(data, 'B', 5)).toBeNull(); expect(P(data, 'C', 5)).toBeNull(); expect(P(null, 'A', 5)).toBeNull();
+      const seen = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((n) => P(data, 'A', n * 100003))); expect(seen.size).toBeGreaterThan(1);
     });
     it('Central Time follows daylight saving: CDT in summer, CST in winter', () => {
       const gm = { exports: {} as any }; new Function('module', gradeSource)(gm); const G = gm.exports;

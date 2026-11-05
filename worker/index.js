@@ -12,6 +12,7 @@ export default {
     const url = new URL(req.url);
     if (url.pathname === '/api/pack') return pack(req, env, url);
     if (url.pathname === '/api/img') return img(req, env, url);
+    if (url.pathname === '/api/songs') return songs(req, env);
     if (url.pathname === '/api/players' || url.pathname === '/api/player') return players(req, env, url);
     if (url.pathname !== '/api/feedback') return env.ASSETS.fetch(req);
     if (!env.NOTES) return json({ ok: false, error: 'storage not set up' }, 503);
@@ -101,4 +102,14 @@ async function img(req, env, url) {
   const v = await env.NOTES.get(`img:${f}`, 'arrayBuffer');
   if (!v) return json({ ok: false, error: 'no such picture' }, 404);
   return new Response(v, { headers: { 'Content-Type': f.endsWith('.jpg') ? 'image/jpeg' : 'image/png', 'Cache-Control': 'public, max-age=3600' } });
+}
+
+// ---- song rewards for the practice test (titles only). Kept in KV (key `songs:rewards`), uploaded from the private repo
+// (mathseye-content/rewards/songs.json via tools/ship.py), so the titles are not in this public repo. ----
+async function songs(req, env) {
+  if (req.method !== 'GET') return json({ ok: false, error: 'method not allowed' }, 405);
+  if (!env.NOTES) return json({ ok: false, error: 'storage not set up' }, 503);
+  const v = await env.NOTES.get('songs:rewards');
+  if (!v) return json({ ok: false, error: 'no songs yet' }, 404);
+  return new Response(v, { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } });
 }
