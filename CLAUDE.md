@@ -28,6 +28,15 @@ Three sections plus a color picker. Unit label comes from `settings.currentUnit`
 ## Cloudflare access (autonomous checks)
 An account API token ("Edit Cloudflare Workers" template) is saved as a network secret on the owner's Default environment for host `api.cloudflare.com`; the proxy injects it, so call the API with plain `curl` and no header. Never ask for it in chat. Find the account id with `GET /client/v4/accounts`. Useful reads: `/accounts/<id>/workers/scripts/mathseye/deployments` (live version), `/accounts/<id>/workers/scripts/mathseye/settings` (bindings ASSETS + NOTES), `/accounts/<id>/storage/kv/namespaces` (`mathseye-notes`). Deploys happen by pushing to `main`. KV lists lag up to ~30 s after a write.
 
+## Keeping her progress safe (read before touching saved data or sync)
+Her progress lives on the iPad (localStorage) and, per player name, on the server. Rules so code changes never cost her work:
+- **Never rename or restructure saved keys** (`mathseye.unit2.study.v2`, `mathseye.mathfacts.v1`, `mathseye.hw.unit2.v1`, with the player suffix). Only add fields; old saves must load as they are (a unit test checks the key names).
+- **Merge per item, never "newer side wins" for whole lists.** The come-back lists (`work`, `twork`) merge problem by problem using each entry's `u` (last change); clearing a problem leaves a marker (`workDone`, `tworkDone`) so a stale device can neither undo nor resurrect it. `solved`/`clean`/`seen` only grow.
+- **Save only on a real change** (`persist` skips identical saves). Opening a page must not make a device look "newer" than another one.
+- **Local backups**: the study page keeps `<key>.bak` (previous copy, at most once a minute) and `<key>.day` (first copy of each day), restores from them if the main copy is missing or unreadable (the bad copy is kept as `.corrupt`), and asks the browser for persistent storage.
+- **Server snapshots**: before the first overwrite each hour the Worker keeps the previous copy (`ph:<name>:<UTC hour>`, 30 days). `python3 /home/user/mathseye-content/tools/recover_player.py <name>` lists them; `--restore <key>` puts one back.
+- Test your own changes as a different player (the owner's "collin"), never on hers.
+
 ## Reference numbers (bug reports)
 Every problem shows a tiny `#number` in its bottom-right corner. When the owner says "bug in #1899", look it up:
 `python3 /home/user/mathseye-content/tools/ref.py 1899` (works for all numbers below).

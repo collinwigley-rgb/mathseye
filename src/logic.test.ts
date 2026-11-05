@@ -115,6 +115,7 @@ describe('every trick in content/tricks is well-formed', () => {
 import { buildQueue, tricksFor, unlockedTricks } from './session';
 import syncSource from '../public/sync.js?raw';
 import gradeSource from '../public/grade.js?raw';
+import studyTemplate from '../tools/unit2_template.html?raw';
 import songsSource from '../public/songs.js?raw';
 import { fresh } from './store';
 import { BRANDS, ICONS } from './brand';
@@ -231,13 +232,13 @@ describe('self-paced sessions', () => {
       expect(o.sessions.find((x: any) => x.id === 's1').endedAt).toBe(5);
       expect(o.inProgress).toEqual({ mine: 1 });            // a half-finished set stays on its device
     });
-    it('study guide: solved, clean and seen only grow; the newer side decides the come-back list', () => {
+    it('study guide: solved, clean and seen only grow; come-back entries are kept unless they were cleared', () => {
       const a = { solved: { x: true }, clean: {}, seen: { x: true }, work: { x: { n: 1, t: 5, c: 1 } }, mission: { here: 1 } };
       const b = { solved: { y: true }, clean: { y: true }, seen: { y: true }, work: {}, mission: { there: 1 } };
       const newerLocal = S.mergeStudy(a, b, true), newerRemote = S.mergeStudy(a, b, false);
       expect(Object.keys(newerLocal.solved).sort()).toEqual(['x', 'y']);
       expect(Object.keys(newerLocal.seen).sort()).toEqual(['x', 'y']);
-      expect(newerLocal.work.x).toBeTruthy(); expect(Object.keys(newerRemote.work)).toEqual([]);
+      expect(newerLocal.work.x).toBeTruthy(); expect(Object.keys(newerRemote.work)).toEqual(['x']);   // a missing entry on the other device is not a clear
       expect(newerRemote.mission).toEqual({ here: 1 });
     });
     it('homework done-marks union and a missing side is just the other side', () => {
@@ -266,6 +267,24 @@ describe('self-paced sessions', () => {
       const c = R.place(st, 's20', 0); expect(c.order[0]).toBe('s20'); expect(c.grade.s20).toBe('A+');                                       // dropped at the very top
       const d = R.place(st, 's20', 4); expect(d.grade.s20).toBe(st.grade[st.order[3]]);                                                      // joins the group above it
       for (const x of [a, b, c, d]) { const idx = x.order.map((t: string) => R.GRADES.indexOf(x.grade[t])); expect(idx).toEqual([...idx].sort((m: number, n: number) => m - n)); expect(x.order.length).toBe(27); }
+    });
+    it('come-back lists merge problem by problem: a stale copy can not undo progress, even if it looks newer', () => {
+      const fresh = { solved: {}, work: { a: { n: 1, t: 100, u: 500, c: 2 }, b: { n: 1, t: 100, u: 100, c: 0 } }, twork: { x: { n: 1, t: 100, u: 600, c: 1 } } };
+      const stale = { solved: {}, work: { a: { n: 1, t: 100, u: 200, c: 0 }, z: { n: 1, t: 300, u: 300, c: 0 } }, twork: { x: { n: 1, t: 100, c: 0 } } };
+      for (const localNewer of [true, false]) {
+        const m1 = S.mergeStudy(stale, fresh, localNewer), m2 = S.mergeStudy(fresh, stale, localNewer);
+        for (const m of [m1, m2]) { expect(m.work.a.c).toBe(2); expect(m.twork.x.c).toBe(1); expect(Object.keys(m.work).sort()).toEqual(['a', 'b', 'z']); }       // best entry per problem, nothing dropped
+      }
+    });
+    it('a cleared problem stays cleared, and comes back only if it is flagged again later', () => {
+      const a = { solved: {}, work: {}, workDone: { p: 1000 } }, b = { solved: {}, work: { p: { n: 1, t: 100, u: 900, c: 2 } } };         // cleared at 1000 on one device, old entry on the other
+      expect(S.mergeStudy(a, b, false).work.p).toBeUndefined(); expect(S.mergeStudy(b, a, true).work.p).toBeUndefined();
+      const again = { solved: {}, work: { p: { n: 2, t: 1100, u: 1100, c: 0 } } };
+      expect(S.mergeStudy(a, again, false).work.p.n).toBe(2);
+      expect(S.mergeStudy(a, b, false).workDone.p).toBe(1000);
+    });
+    it('data safety: the saved-progress key names never change (a rename would orphan everyone\'s progress)', () => {
+      expect(studyTemplate).toContain('mathseye.unit2.study.v2'); expect(studyTemplate).toContain('.bak'); expect(studyTemplate).toContain('const persist = () => { const j = JSON.stringify(save); if (j === lastSaved) return;');
     });
     it('songs: duplicates are fine, but every grade always keeps at least one song', () => {
       const sm = { exports: {} as any }; new Function('module', songsSource)(sm); const R = sm.exports;

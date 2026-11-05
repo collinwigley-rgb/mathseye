@@ -74,6 +74,9 @@ async function players(req, env, url) {
     const doc = { name: String(b.name).trim().slice(0, 20), updatedAt: Number(b.updatedAt) || Date.now(), rs: b.rs && typeof b.rs === 'object' ? b.rs : {}, data: b.data };
     const body = JSON.stringify(doc);
     if (body.length > 2_000_000) return json({ ok: false, error: 'too big' }, 413);
+    // Safety net: before the first overwrite each hour, keep the previous copy (30 days). Lets us put a player's progress back if anything ever goes wrong.
+    const snap = 'ph:' + key + ':' + new Date().toISOString().slice(0, 13).replace(/[-T]/g, '');
+    if (!(await env.NOTES.get(snap))) { const prev = await env.NOTES.get('p:' + key); if (prev) await env.NOTES.put(snap, prev, { expirationTtl: 60 * 60 * 24 * 30 }); }
     await env.NOTES.put('p:' + key, body, { metadata: { name: doc.name, updatedAt: doc.updatedAt } });
     return json({ ok: true });
   }
