@@ -403,7 +403,16 @@ mission(){ const m = save.mission;
   function helpMenu(p){ const bg = $(`<div class="sheetbg"><div class="sheet pop" role="dialog" aria-modal="true" aria-label="Help"><h2>Need something else?</h2><button class="btn" id="w">Why am I learning this?</button><button class="btn" id="u">What does this use?</button>${(p.facts || []).length || (p.shortcut || []).length ? '<button class="btn" id="f">Math facts and shortcuts</button>' : ""}<button class="btn primary" id="c">Back to the problem</button></div></div>`);
     const root = document.getElementById("sheet"); root.innerHTML = ""; root.append(bg); const shut = () => { root.innerHTML = ""; }; bg.onclick = e => { if (e.target === bg) shut(); };
     bg.querySelector("#c").onclick = shut; bg.querySelector("#w").onclick = () => openSheet("why", p); bg.querySelector("#u").onclick = () => openSheet("deps", p); if (bg.querySelector("#f")) bg.querySelector("#f").onclick = () => openSheet("facts", p); bg.querySelector("#c").focus(); }
-  if (window.mathseyeDev && !solved) mathseyeDev.set([{label:"Answer RIGHT", fn:() => check(devRight(p))}, {label:"Answer WRONG", fn:() => check(devWrong(p))}]);
+  /* Developer shortcuts: answer, plus every help button, so each clean/not-clean path can be tried in a tap. They press the real buttons. */
+  const devBtn = re => () => { const b = [...card.querySelectorAll("button")].find(x => re.test(x.textContent.trim())); if (b) b.click(); };
+  if (window.mathseyeDev) mathseyeDev.set(!solved ? [
+    {label:"Answer RIGHT", fn:() => check(devRight(p))}, {label:"Answer WRONG", fn:() => check(devWrong(p))},
+    {label:"I'm stuck (next hint)", fn:devBtn(/^(I'm stuck|Show me how)$/)}, {label:"Open the Help menu", fn:devBtn(/^Help$/)},
+    {label:"Open Math facts", fn:devBtn(/^Math facts that could help/)}, {label:"Different numbers", fn:devBtn(/^Different numbers$/)}
+  ] : [
+    {label:"Next problem", fn:devBtn(/^(Next problem|Finish mission)$/)}, {label:"Try a new one like this", fn:devBtn(/^Try a new one like this$/)},
+    {label:"See how it works", fn:devBtn(/^(See how it works|Hide the steps)$/)}, {label:"Why am I learning this?", fn:devBtn(/^Why am I learning this\?$/)}
+  ]);
   function check(v){ if (v === null || v === "" || v === undefined) { st.msg = p.kind==="choice" ? "Pick an answer first." : "Type an answer first."; st.win = false; return draw(); }
     if (isSetup(p, v)) { st.win = false; st.msg = SETUP_MSG; st.input = ""; return draw(); }
     res.tries++; if (isRight(p, v)) { res.done = true; recordStat(p, res, st); const clean = res.tries === 1 && res.hints === 0; if (clean && !st.flagged) { const w = save.work && save.work[base.id]; if (w) { w.c = (w.c || 0) + 1; if (w.c >= 3) delete save.work[base.id]; } const tw = save.twork && save.twork[base.id]; if (tw) { tw.c = (tw.c || 0) + 1; if (tw.c >= 3) delete save.twork[base.id]; } persist(); } else flagWork(base.id, st); if (st.v < 0) { save.solved[p.id] = true; if (clean) save.clean[p.id] = true; } else if ((m.rev || []).includes(base.id)) baseRes.done = true; bump(); persist(); st.win = true; st.msg = exprNote(p, v, true) + (clean ? "You did that on your own. " + WIN[(m.i*2)%WIN.length] : WIN_HELPED[m.i % WIN_HELPED.length] + (((save.work && save.work[base.id]) || (save.twork && save.twork[base.id])) ? " To count toward your 3, tap \u201cTry a new one like this\u201d and solve it with no help." : "")); S.cur = st; render(); burst(document.querySelector(".say.win")); return; }
