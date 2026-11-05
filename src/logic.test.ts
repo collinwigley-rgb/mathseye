@@ -250,20 +250,43 @@ describe('self-paced sessions', () => {
       expect([14, 13, 12, 11, 10, 9, 8, 0].map(g)).toEqual(['A+', 'A', 'B', 'C+', 'C-', 'D', 'F', 'F']);
       expect(G.gradeOf(97, 100).letter).toBe('A+'); expect(G.gradeOf(90, 100).letter).toBe('A-'); expect(G.gradeOf(60, 100).letter).toBe('D-'); expect(G.gradeOf(59, 100).letter).toBe('F');
     });
-    it('song rewards: a ranking fills the grades best-first, deterministic per test', () => {
+    it('songs: default grades from the suggested order, always sorted A+ first', () => {
       const sm = { exports: {} as any }; new Function('module', songsSource)(sm); const R = sm.exports;
-      const order = Array.from({ length: 27 }, (_, i) => 's' + (i + 1));          // s1 = her favorite
+      const def = Array.from({ length: 27 }, (_, i) => 's' + (i + 1));
       expect(R.sizes(27)).toEqual([1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4]);
-      const m = R.assign(order); expect(m['A+']).toEqual(['s1']); expect(m['A']).toEqual(['s2', 's3']); expect(m['F']).toEqual(['s24', 's25', 's26', 's27']);
-      expect(R.gradeOfRank(order, 's1')).toBe('A+'); expect(R.gradeOfRank(order, 's27')).toBe('F'); expect(R.gradeOfRank(order, 's10')).toBe('B-');
-      expect(R.songFor(order, 'A+', 12345)).toBe('s1'); expect(R.songFor(order, 'A', 12345)).toBe(R.songFor(order, 'A', 12345)); expect(['s2', 's3']).toContain(R.songFor(order, 'A', 7));
-      expect(R.songFor([], 'A', 1)).toBeNull(); expect(R.songFor(null, 'A', 1)).toBeNull();
-      expect(R.sizes(14).reduce((a: number, b: number) => a + b, 0)).toBe(14);
+      const st = R.stateOf(undefined, def); expect(st.order).toEqual(def); expect(st.grade.s1).toBe('A+'); expect(st.grade.s2).toBe('A'); expect(st.grade.s24).toBe('F'); expect(st.grade.s27).toBe('F');
+      expect(R.stateOf({ rank: ['s27', 's1'] }, def).grade.s27).toBe('A+');        // an older saved order still works: the first song is the A+ song
+      expect(R.stateOf({ grades: { s5: 'F', zzz: 'A' }, rank: [] }, def).grade.s5).toBe('F'); expect(R.stateOf({ grades: { s5: 'F' }, rank: [] }, def).order.slice(-5)).toContain('s5');
     });
-    it('song ranking: moving, and keeping her ranking in step with the list', () => {
+    it('songs: picking a grade moves the song to that group, dragging gives it the group grade', () => {
       const sm = { exports: {} as any }; new Function('module', songsSource)(sm); const R = sm.exports;
-      expect(R.move(['a', 'b', 'c', 'd'], 3, 0)).toEqual(['d', 'a', 'b', 'c']); expect(R.move(['a', 'b', 'c'], 0, 99)).toEqual(['b', 'c', 'a']);
-      expect(R.reconcile(['c', 'a', 'x'], ['a', 'b', 'c'])).toEqual(['c', 'a', 'b']); expect(R.reconcile(null, ['a', 'b'])).toEqual(['a', 'b']);
+      const def = Array.from({ length: 27 }, (_, i) => 's' + (i + 1)); const st = R.stateOf(undefined, def);
+      const a = R.setGrade(st, 's27', 'A'); expect(a.grade.s27).toBe('A'); expect(a.order.slice(0, 4)).toEqual(['s1', 's27', 's2', 's3']);     // top of the A group
+      const b = R.setGrade(st, 's1', 'F'); expect(b.order[b.order.length - 5]).toBe('s1'); expect(b.order[0]).toBe('s2');
+      const c = R.place(st, 's20', 0); expect(c.order[0]).toBe('s20'); expect(c.grade.s20).toBe('A+');                                       // dropped at the very top
+      const d = R.place(st, 's20', 4); expect(d.grade.s20).toBe(st.grade[st.order[3]]);                                                      // joins the group above it
+      for (const x of [a, b, c, d]) { const idx = x.order.map((t: string) => R.GRADES.indexOf(x.grade[t])); expect(idx).toEqual([...idx].sort((m: number, n: number) => m - n)); expect(x.order.length).toBe(27); }
+    });
+    it('songs: duplicates are fine, but every grade always keeps at least one song', () => {
+      const sm = { exports: {} as any }; new Function('module', songsSource)(sm); const R = sm.exports;
+      const def = Array.from({ length: 27 }, (_, i) => 's' + (i + 1)); let st = R.stateOf(undefined, def);
+      const full = (x: any) => R.GRADES.every((g: string) => x.order.some((t: string) => x.grade[t] === g));
+      for (const t of def) { st = R.setGrade(st, t, 'A'); expect(full(st)).toBe(true); expect(st.order.length).toBe(27); }          // try to make everything an A
+      expect(st.order.filter((t: string) => st.grade[t] === 'A').length).toBeGreaterThan(10);                                      // lots of A's are allowed
+      for (let i = 0; i < 30; i++) { st = R.place(st, def[(i * 7) % 27], (i * 5) % 27); expect(full(st)).toBe(true); const idx = st.order.map((t: string) => R.GRADES.indexOf(st.grade[t])); expect(idx).toEqual([...idx].sort((m: number, n: number) => m - n)); }
+      expect(full(R.stateOf({ grades: Object.fromEntries(def.map((t: string) => [t, 'B'])), rank: def }, def))).toBe(true);        // even an old or odd saved state is repaired
+    });
+    it('songs: a test grade earns a song with that grade, else the nearest grade (tie goes lower), same test same song', () => {
+      const sm = { exports: {} as any }; new Function('module', songsSource)(sm); const R = sm.exports;
+      const def = Array.from({ length: 27 }, (_, i) => 's' + (i + 1)); let st = R.stateOf(undefined, def);
+      expect(R.songFor(st, 'A+', 99)).toBe('s1'); expect(['s2', 's3']).toContain(R.songFor(st, 'A', 5)); expect(R.songFor(st, 'A', 5)).toBe(R.songFor(st, 'A', 5));
+      const only = { order: ['x', 'y'], grade: { x: 'B', y: 'D' } };
+      expect(R.songFor(only, 'B', 1)).toBe('x'); expect(R.songFor(only, 'A+', 1)).toBe('x'); expect(R.songFor(only, 'F', 1)).toBe('y'); expect(R.songFor(only, 'C', 1)).toBe('y');   // C is one from B and one from D: tie goes lower
+      expect(R.songFor({ order: [], grade: {} }, 'A', 1)).toBeNull(); expect(R.songFor(null, 'A', 1)).toBeNull();
+    });
+    it('song ranking helpers: move and reconcile', () => {
+      const sm = { exports: {} as any }; new Function('module', songsSource)(sm); const R = sm.exports;
+      expect(R.move(['a', 'b', 'c', 'd'], 3, 0)).toEqual(['d', 'a', 'b', 'c']); expect(R.reconcile(['c', 'a', 'x'], ['a', 'b', 'c'])).toEqual(['c', 'a', 'b']);
     });
     it('Central Time follows daylight saving: CDT in summer, CST in winter', () => {
       const gm = { exports: {} as any }; new Function('module', gradeSource)(gm); const G = gm.exports;

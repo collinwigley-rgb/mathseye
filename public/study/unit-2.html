@@ -226,9 +226,9 @@ const visual = (p) => p.graph ? graphSVG(p.graph) : p.table ? tableHTML(p.table)
 /* ---------- help sheet (Why / What does this use?) ---------- */
 const devRight = p => p.kind === "choice" ? p.correct : String(Math.round(p.answer * 1e6) / 1e6);
 const devWrong = p => p.kind === "choice" ? (p.options.findIndex((_, i) => i !== p.correct)) : String(Math.round((p.answer + 1) * 1e6) / 1e6);
-/* Song rewards: her ranking (favorite first) decides which song each grade earns. */
-const songOrder = () => mathseyeSongs.reconcile(save.songRank, mathseyeSongs.suggested());
-const ensureSong = (rv, letter) => { if (!rv.song) { const s = mathseyeSongs.songFor(songOrder(), letter, rv.t); if (s) { rv.song = s; persist(); } } return rv.song || null; };
+/* Song rewards: each song has a grade (she sets it, or drags the song and it takes the group's grade); a test grade earns a song with that grade. */
+const songState = () => mathseyeSongs.stateOf({grades: save.songGrades, rank: save.songRank}, mathseyeSongs.suggested());
+const ensureSong = (rv, letter) => { if (!rv.song) { const s = mathseyeSongs.songFor(songState(), letter, rv.t); if (s) { rv.song = s; persist(); } } return rv.song || null; };
 const fromSpec = x => { const p = byId[x.id]; return x.v >= 0 && p.variants && p.variants[x.v] ? Object.assign({}, p, p.variants[x.v]) : p; };
 function lessonSheet(sub){ S.sheet = {kind:"lesson", p:{sub}, more:false}; drawSheet(); }
 function openSheet(kind, p){ S.sheet = {kind, p, more:false}; drawSheet(); }
@@ -338,7 +338,7 @@ home(){ const total = probs.length, done = probs.filter(p => save.solved[p.id]).
       group("Which problems?", seg("Which problems", [{k:"mix", t:"A mix", on: pl.focus === "mix"}, {k:"new", t:`New ones (${nu})`, on: pl.focus === "new"}, {k:"work", t:`Needs work (practice) (${nw})`, on: pl.focus === "work"}, {k:"twork", t:`Needs work (test) (${nt})`, on: pl.focus === "twork"}]) + `<p class="lead muted">${pl.focus === "new" ? "Problems you haven't seen yet." : pl.focus === "twork" ? "Problems you missed or skipped on the Practice Test. Get one right on a later test, or 3 times in a row here with no help, and it's done." : pl.focus === "work" ? "Problems you missed or needed help on while practicing. Get each one right 3 times in a row, with no help, and it's done." : "New problems, problems to come back to, and a few to review."}</p>`, g => { g.querySelectorAll("button").forEach(b => b.onclick = () => setPlan({focus:b.dataset.k})); });
     }
   }
-  mathseyeSongs.card(el.querySelector("#songs"), {get: () => save.songRank, set: o => { save.songRank = o; persist(); }});
+  mathseyeSongs.card(el.querySelector("#songs"), {get: () => ({grades: save.songGrades, rank: save.songRank}), set: o => { save.songGrades = o.grades; save.songRank = o.rank; persist(); }});
   const drawSw = () => { const box = el.querySelector("#sw"); box.innerHTML = ""; const cur = getBrand();
     const label = (b) => b.member ? (BRANDS.filter(x => x.member === b.member).length > 1 ? b.member + " · " + b.label : b.member) : b.label;
     const chip = (b) => { const s = $(`<button class="sw" aria-pressed="${cur===b.id}"><i style="background:${b.accent};--chip:${b.accent}"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[b.icon] || ICONS.sparkle}</svg></i><span>${esc(label(b))}</span></button>`); s.onclick = () => { try { localStorage.setItem("mathseye.brand", b.id); } catch(e) {} applyBrand(b.id); drawSw(); }; return s; };
