@@ -240,54 +240,113 @@ function Burst() {
   );
 }
 
-function ColorPicker({ cur, onPick }: { cur: BrandId; onPick: (id: BrandId) => void }) {
-  const label = (b: Brand) => (b.member ? (BRANDS.filter((x) => x.member === b.member).length > 1 ? `${b.member} · ${b.label}` : b.member) : b.label);
-  const chip = (b: Brand) => (
-    <button key={b.id} className="sw" aria-pressed={cur === b.id} onClick={() => onPick(b.id)}>
-      <i style={{ background: b.accent, '--chip': b.accent } as CSSProperties}><Charm name={b.icon} /></i>
-      <span>{label(b)}</span>
-    </button>
-  );
-  const members = MEMBERS.flatMap((m) => BRANDS.filter((b) => b.member === m));
-  const other = BRANDS.filter((b) => !b.member);
+function ColorList({ cur, onPick }: { cur: BrandId; onPick: (id: BrandId) => void }) {
+  const label = (b: Brand) => (b.member ? (BRANDS.filter((x) => x.member === b.member).length > 1 ? `${b.member} \u00b7 ${b.label}` : b.member) : b.label);
   return (
-    <div className="picker" role="group" aria-label="Color scheme">
-      <div className="swatches six">{members.map(chip)}</div>
-      <details className="more" open={other.some((b) => b.id === cur)}>
-        <summary>More palettes</summary>
-        <div className="swatches">{other.map(chip)}</div>
-      </details>
+    <div className="swl" role="group" aria-label="Color">
+      {MEMBERS.flatMap((m) => BRANDS.filter((b) => b.member === m)).map((b) => (
+        <button key={b.id} type="button" className="swr" aria-pressed={cur === b.id} onClick={() => onPick(b.id)}>
+          <i style={{ background: b.accent }}><Charm name={b.icon} /></i><span>{label(b)}</span><em aria-hidden="true">{cur === b.id ? '\u2713' : ''}</em>
+        </button>
+      ))}
     </div>
   );
 }
 
 /* "My favorite songs": her own order, saved with her progress (per player, synced). */
-function SongRanker() {
+function SongRanker({ className = 'pick songcard' }: { className?: string }) {
   const host = useRef<HTMLElement>(null);
   useEffect(() => {
     const S = window.mathseyeSongs; if (!S || !host.current) return;
     S.card(host.current, { get: () => S.stored(), set: (o) => S.store(o) });
   }, []);
-  return <section ref={host} className="pick songcard" />;
+  return <section ref={host} className={className} />;
+}
+
+/* Section icons, drawn in the same round-cap line style as the eye mark. */
+const gl = { viewBox: '0 0 96 96', fill: 'none', stroke: 'currentColor', strokeWidth: 5, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true } as const;
+function GlyphFacts() {
+  return (
+    <svg {...gl}>
+      <rect x="12" y="22" width="68" height="54" rx="14" />
+      <path d="M36 40 L56 60 M56 40 L36 60" />
+      <path d="M72 6 Q73.5 15 82 16.5 Q73.5 18 72 27 Q70.5 18 62 16.5 Q70.5 15 72 6Z" fill="var(--amber2, currentColor)" stroke="none" />
+    </svg>
+  );
+}
+function GlyphStudy() {
+  return (
+    <svg {...gl}>
+      <circle cx="46" cy="52" r="33" />
+      <circle cx="46" cy="52" r="19" />
+      <path d="M46 44 V60 M38 52 H54" />
+      <path d="M74 8 Q75.5 17 84 18.5 Q75.5 20 74 29 Q72.5 20 64 18.5 Q72.5 17 74 8Z" fill="var(--amber2, currentColor)" stroke="none" />
+    </svg>
+  );
+}
+function GlyphHomework() {
+  return (
+    <svg {...gl}>
+      <rect x="14" y="14" width="52" height="70" rx="9" />
+      <path d="M26 34 H54 M26 48 H54 M26 62 H40" />
+      <path d="M60 80 L82 38 L90 42 L68 84 L58 86Z" fill="var(--amber2, currentColor)" />
+    </svg>
+  );
+}
+
+/** Slide-out panel: pick a color, arrange favorite songs. Opened from the palette icon beside the name chip. */
+function PaletteDrawer({ cur, onPick, onClose }: { cur: BrandId; onPick: (id: BrandId) => void; onClose: () => void }) {
+  const [on, setOn] = useState(false);
+  const closeBtn = useRef<HTMLButtonElement>(null);
+  const close = () => { setOn(false); window.setTimeout(onClose, 260); };
+  useEffect(() => {
+    const raf = requestAnimationFrame(() => { setOn(true); closeBtn.current?.focus(); });
+    const key = (e: KeyboardEvent) => { if (e.key === 'Escape') close(); };
+    document.addEventListener('keydown', key);
+    return () => { cancelAnimationFrame(raf); document.removeEventListener('keydown', key); };
+  }, []);
+  return (
+    <>
+      <div className={`scrim${on ? ' on' : ''}`} onClick={close} />
+      <aside className={`drawer${on ? ' on' : ''}`} role="dialog" aria-modal="true" aria-label="Colors and songs">
+        <div className="dh"><h2>Make it yours</h2><button ref={closeBtn} className="link" type="button" aria-label="Close" onClick={close}>{'\u2715'}</button></div>
+        <p className="eyebrow">Color</p>
+        <ColorList cur={cur} onPick={onPick} />
+        <SongRanker className="dsongs" />
+      </aside>
+    </>
+  );
 }
 
 function Hub({ db, onFacts, onGrownups, onWho }: { db: Db; onFacts: () => void; onGrownups: () => void; onWho: () => void }) {
   const unit = db.settings.currentUnit ?? 2;
   const [cur, setCur] = useState<BrandId>(getBrand());
-  const brand = BRANDS.find((b) => b.id === cur)!;
-  const mood = brand.member ? `${brand.label} · ${brand.member}'s color` : `${brand.label} palette`;
+  const [drawer, setDrawer] = useState(false);
+  const me = activeProfile();
+  const pal = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    const place = () => { const c = document.querySelector('.pchip') as HTMLElement | null; if (pal.current) pal.current.style.right = `${(c ? c.offsetWidth : 90) + 22}px`; };
+    place(); const t = window.setTimeout(place, 300); window.addEventListener('resize', place);
+    return () => { window.clearTimeout(t); window.removeEventListener('resize', place); };
+  }, []);
   return (
     <main className="home">
-      <div className="logo"><Mark size={84} /><h1 className="brand">MATHSEYE<small>Unit {unit}</small></h1></div>
-      <p className="mood"><span style={{ '--chip': brand.bg } as CSSProperties}><Charm name={brand.icon} /></span>{mood}</p>
+      <div className="logo"><Mark size={84} /><h1 className="brand">MATHSEYE</h1></div>
+      <button ref={pal} className="palbtn" type="button" aria-label="Colors and songs" aria-haspopup="dialog" onClick={() => setDrawer(true)}>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.4 0 2-.9 2-1.8 0-.5-.2-.9-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1 .8-1.8 1.8-1.8H17a4 4 0 0 0 4-4C21 6.6 17 3 12 3Z" /><circle cx="7.5" cy="11" r="1.1" /><circle cx="10" cy="7.3" r="1.1" /><circle cx="14.5" cy="7.3" r="1.1" /></svg>
+      </button>
+      <header className="hubhead">
+        <p className="eyebrow">Tonight's lineup <span aria-hidden="true">{'\u2726'}</span> Unit {unit}</p>
+        <h2>{me ? `Hi, ${me.name}` : 'Hi there'}</h2>
+        <p className="ask">What are we working on?</p>
+      </header>
       <nav className="tiles3" aria-label="Sections">
-        <button className="tile3" onClick={onFacts}><b>MathFacts</b><span>Quick mental-math practice</span></button>
-        <a className="tile3" href={`./study/unit-${unit}.html`}><b>Study Guide</b><span>Get ready for the test</span></a>
-        <a className="tile3" href={`./homework/unit-${unit}.html`}><b>Unit Homework</b><span>Help with this unit's worksheets</span></a>
+        <button className="tile3 t1" onClick={onFacts}><span className="gl"><GlyphFacts /></span><b>MathFacts</b><span className="sub">Quick mental-math practice</span><i className="go" aria-hidden="true">{'\u2192'}</i></button>
+        <a className="tile3 t2" href={`./study/unit-${unit}.html`}><span className="gl"><GlyphStudy /></span><b>Study Guide</b><span className="sub">Get ready for the test</span><i className="go" aria-hidden="true">{'\u2192'}</i></a>
+        <a className="tile3 t3" href={`./homework/unit-${unit}.html`}><span className="gl"><GlyphHomework /></span><b>Unit Homework</b><span className="sub">Help with this unit's worksheets</span><i className="go" aria-hidden="true">{'\u2192'}</i></a>
       </nav>
-      <section className="pick"><p className="eyebrow">Pick your color</p><ColorPicker cur={cur} onPick={(id) => { setBrand(id); setCur(id); }} /></section>
-      <SongRanker />
       <button className="link" onClick={onGrownups}>Grown-ups</button>
+      {drawer && <PaletteDrawer cur={cur} onPick={(id) => { setBrand(id); setCur(id); }} onClose={() => setDrawer(false)} />}
     </main>
   );
 }

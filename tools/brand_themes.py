@@ -90,6 +90,17 @@ button:active{transform:scale(.98)}
 .burst i{position:absolute;left:-7px;top:-7px;width:14px;height:14px;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
 @media (prefers-reduced-motion:no-preference){.burst i{animation:fly .85s ease-out forwards}@keyframes fly{from{transform:translate(0,0) scale(.3);opacity:1}to{transform:translate(var(--dx),var(--dy)) scale(1.1);opacity:0}}}
 @media (prefers-reduced-motion:reduce){.burst{display:none}}"""
+
+# Slide-out "Colors and songs" panel and its palette button (shared by the hub, the study guide and the homework page).
+DRAWER_CSS = """.palbtn{position:fixed;right:96px;top:max(5px,env(safe-area-inset-top,0px));z-index:49;width:44px;height:44px;border-radius:50%;background:var(--panel2);color:var(--text,var(--fg));display:grid;place-items:center;padding:0}.palbtn svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.palbtn circle{fill:currentColor;stroke:none}
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.5);opacity:0;transition:opacity .2s;z-index:80}.scrim.on{opacity:1}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,92vw);background:var(--panel);z-index:81;transform:translateX(100%);transition:transform .26s cubic-bezier(.2,.9,.3,1);overflow-y:auto;overscroll-behavior:contain;padding:max(16px,env(safe-area-inset-top,0px)) max(18px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) 18px;display:flex;flex-direction:column;gap:12px;box-shadow:-12px 0 32px rgba(0,0,0,.35)}.drawer.on{transform:none}
+.dh{display:flex;align-items:center;justify-content:space-between;gap:12px}.dh .btn{min-height:48px;min-width:48px;text-decoration:none;font-size:1.2rem}
+.swl{display:flex;flex-direction:column;gap:6px}.swr{display:flex;align-items:center;gap:14px;width:100%;min-height:54px;padding:5px 12px 5px 8px;border-radius:16px;background:var(--panel2);text-align:left;font-weight:600}.swr i{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:#1a1626;flex:none}.swr i svg{width:22px;height:22px}.swr span{flex:1}.swr em{font-style:normal;color:var(--accent,var(--amber));font-size:1.2rem}.swr[aria-pressed=true]{box-shadow:inset 0 0 0 3px var(--accent,var(--amber))}
+.dsongs{border-top:1px solid var(--line);padding-top:14px}.dsongs .sgp{margin:0 0 8px}
+@media (prefers-reduced-motion:reduce){.drawer,.scrim{transition:none}}
+"""
+FUN_CSS = FUN_CSS + "\n" + DRAWER_CSS
 BURST_JS = """function burst(host){ if (!host || matchMedia("(prefers-reduced-motion: reduce)").matches) return; const w = document.createElement("span"); w.className = "burst"; w.setAttribute("aria-hidden", "true");
   for (let i = 0; i < 12; i++) { const a = (i / 12) * Math.PI * 2 + Math.random() * .5, d = 50 + Math.random() * 60, s = document.createElement("i"); s.style.cssText = `--dx:${Math.cos(a) * d}px;--dy:${Math.sin(a) * d}px;background:${i % 2 ? "var(--accent)" : "var(--accent2, var(--accent))"}`; w.append(s); }
   host.append(w); setTimeout(() => w.remove(), 1000); }"""

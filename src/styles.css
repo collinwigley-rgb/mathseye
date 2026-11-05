@@ -121,6 +121,14 @@ button:active{transform:scale(.98)}
 .burst i{position:absolute;left:-7px;top:-7px;width:14px;height:14px;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
 @media (prefers-reduced-motion:no-preference){.burst i{animation:fly .85s ease-out forwards}@keyframes fly{from{transform:translate(0,0) scale(.3);opacity:1}to{transform:translate(var(--dx),var(--dy)) scale(1.1);opacity:0}}}
 @media (prefers-reduced-motion:reduce){.burst{display:none}}
+.palbtn{position:fixed;right:96px;top:max(5px,env(safe-area-inset-top,0px));z-index:49;width:44px;height:44px;border-radius:50%;background:var(--panel2);color:var(--text,var(--fg));display:grid;place-items:center;padding:0}.palbtn svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.palbtn circle{fill:currentColor;stroke:none}
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.5);opacity:0;transition:opacity .2s;z-index:80}.scrim.on{opacity:1}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,92vw);background:var(--panel);z-index:81;transform:translateX(100%);transition:transform .26s cubic-bezier(.2,.9,.3,1);overflow-y:auto;overscroll-behavior:contain;padding:max(16px,env(safe-area-inset-top,0px)) max(18px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) 18px;display:flex;flex-direction:column;gap:12px;box-shadow:-12px 0 32px rgba(0,0,0,.35)}.drawer.on{transform:none}
+.dh{display:flex;align-items:center;justify-content:space-between;gap:12px}.dh .btn{min-height:48px;min-width:48px;text-decoration:none;font-size:1.2rem}
+.swl{display:flex;flex-direction:column;gap:6px}.swr{display:flex;align-items:center;gap:14px;width:100%;min-height:54px;padding:5px 12px 5px 8px;border-radius:16px;background:var(--panel2);text-align:left;font-weight:600}.swr i{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:#1a1626;flex:none}.swr i svg{width:22px;height:22px}.swr span{flex:1}.swr em{font-style:normal;color:var(--accent,var(--amber));font-size:1.2rem}.swr[aria-pressed=true]{box-shadow:inset 0 0 0 3px var(--accent,var(--amber))}
+.dsongs{border-top:1px solid var(--line);padding-top:14px}.dsongs .sgp{margin:0 0 8px}
+@media (prefers-reduced-motion:reduce){.drawer,.scrim{transition:none}}
+
 /* BRAND-THEMES END */
 
 /* ---- Hub + MathFacts mode ---- */
@@ -221,3 +229,40 @@ body { padding-top: 52px; }
 
 .songcard { padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); align-items: stretch; text-align: left; gap: 8px; }
 .songcard .eyebrow { margin: 0; }
+
+/* ---- Main selector: lineup poster ---- */
+.drawer { text-align: left; }
+.dh .link { min-height: 48px; min-width: 48px; font-size: 1.2rem; padding: 0; }
+main.home { gap: 20px; padding-top: max(74px, calc(env(safe-area-inset-top) + 66px)); }
+.home .logo { position: fixed; top: max(8px, env(safe-area-inset-top)); left: 24px; flex-direction: row; margin: 0; gap: 12px; align-items: center; z-index: 5; }
+.home .logo svg { width: 46px; height: 37px; }
+.home .brand { font-size: 24px; margin: 0; }
+.hubhead { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.hubhead .eyebrow { margin: 0; letter-spacing: .22em; }
+.hubhead .eyebrow span { color: var(--amber2); margin: 0 .35em; }
+.hubhead h2 { font-size: clamp(40px, 8vw, 64px); font-weight: 800; letter-spacing: -.01em; margin: 0; line-height: 1.05; color: var(--amber); }
+.hubhead .ask { margin: 2px 0 0; color: var(--muted); font-size: 20px; }
+.home .tiles3 { width: 100%; max-width: 640px; gap: 16px; }
+.home .tile3 { position: relative; overflow: hidden; align-items: flex-start; padding: 22px 22px 22px 24px; min-height: 0; display: grid; grid-template-columns: 72px 1fr auto; grid-template-areas: "gl b go" "gl sub go"; column-gap: 20px; row-gap: 2px; align-content: center; background-image: radial-gradient(120% 140% at 0% 0%, var(--glow), transparent 62%), linear-gradient(var(--panel), var(--panel)), linear-gradient(135deg, var(--amber), var(--amber2)); background-clip: padding-box, padding-box, border-box; background-origin: border-box; }
+.home .tile3 .gl { grid-area: gl; width: 72px; height: 72px; border-radius: 50%; display: grid; place-items: center; color: var(--amber); background: radial-gradient(circle at 50% 35%, var(--glow), transparent 75%), var(--panel2); }
+.home .tile3 .gl svg { width: 46px; height: 46px; }
+.home .tile3 b { grid-area: b; align-self: end; font-size: 30px; line-height: 1.1; }
+.home .tile3 .sub { grid-area: sub; align-self: start; font-size: 18px; }
+.home .tile3 .go { grid-area: go; align-self: center; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-style: normal; font-size: 22px; color: var(--accent-fg, var(--bg)); background: linear-gradient(135deg, var(--amber), var(--amber2)); transition: transform .18s ease; }
+@media (prefers-reduced-motion: no-preference) {
+  .home .tile3:hover .go { transform: translateX(4px); }
+  .hubhead, .home .tile3 { animation: rise .5s cubic-bezier(.2,.9,.3,1) both; }
+  .home .t1 { animation-delay: .06s; } .home .t2 { animation-delay: .12s; } .home .t3 { animation-delay: .18s; }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } }
+}
+@media (min-width: 900px) and (min-aspect-ratio: 1/1) {
+  main.home { min-height: 100dvh; justify-content: center; gap: 26px; padding-top: 64px; padding-bottom: 20px; }
+  .hubhead { margin-top: -10px; }
+  .home .tiles3 { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 1040px; gap: 20px; }
+  .home .tile3 { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; min-height: min(340px, 44vh); padding: 26px 26px 24px; justify-content: flex-start; background-image: radial-gradient(90% 55% at 50% 0%, var(--glow), transparent 75%), linear-gradient(var(--panel), var(--panel)), linear-gradient(135deg, var(--amber), var(--amber2)); }
+  .home .tile3 .gl { width: 112px; height: 112px; margin-bottom: 18px; }
+  .home .tile3 .gl svg { width: 70px; height: 70px; }
+  .home .tile3 b { font-size: 34px; align-self: flex-start; }
+  .home .tile3 .sub { font-size: 19px; align-self: flex-start; max-width: 16em; }
+  .home .tile3 .go { position: absolute; right: 22px; bottom: 22px; }
+}

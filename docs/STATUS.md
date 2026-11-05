@@ -11,6 +11,7 @@
 - [x] Basic grown-ups screen: unlock tricks early, stickiest cards (no PIN yet)
 
 ## Next up
+- [x] Main selector redesigned (Nov 2026): greeting, three icon panels, colors and songs in the slide-out panel; still to check on a real iPad
 - [x] Wide-landscape layout for the 10.2" iPad (Nov 2026): thin header, two-column study and test questions, two-column hub, three-row study setup, colors and songs in a slide-out panel; still to check on a real iPad (drag in the panel, press feel)
 - [x] Unit 2 reference sheets (2.1–2.8) and study guide in content/units/unit-2/
 - [x] Unit 2 interactive study guide at public/study/unit-2.html (v2: missions, focus mode, help sheet; see docs/UX-AUDIT.md)
