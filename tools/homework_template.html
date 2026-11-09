@@ -1,4 +1,4 @@
-<title>Unit 2 Homework</title>
+<title>__UNIT_LABEL__ Homework</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Figtree:wght@400;500;600&display=swap">
 <style>
@@ -66,21 +66,21 @@ const LV = {foundation:"Base skill", builds:"Builds on one earlier lesson", mixe
 const LVTXT = {foundation:"This one mostly uses this lesson's skill plus things you learned in earlier grades.", builds:"This one uses this lesson's skill together with one earlier lesson from this unit.", mixed:"This one combines several lessons. If you get stuck, try the earlier lessons first."};
 /*HELPERS*/
 const MARK = `__MARK__`;
-const PKEY = "mathseye.pack.unit2", HKEY = "mathseye.hw.unit2.v1" + (window.mathseyeNs || "");
+const PKEY = "__PACK_KEY__", HKEY = "__HW_KEY__" + (window.mathseyeNs || "");
 let PACK = null; try { PACK = JSON.parse(localStorage.getItem(PKEY) || "null"); } catch(e) {}
 let hw = {done:{}, res:{}}; try { Object.assign(hw, JSON.parse(localStorage.getItem(HKEY) || "{}")); } catch(e) {}
 const persist = () => { try { localStorage.setItem(HKEY, JSON.stringify(hw)); } catch(e) {} window.mathseyeSync && mathseyeSync.touch(); };
 const S = {view:"home", sub:null, id:null, hints:0, shown:false, steps:false, msg:"", alt:null, err:""};
-const ORDER = ["2.1","2.2","2.3","2.4","2.5","2.6","2.8","review","extra"];
+const ORDER = __ORDER__;
 const SHEETS = [["lesson","From the lesson pages"],["practice","Extra practice"],["review","Topic review"],["extra","Recovery packet"]];
 const subTitle = (s) => s === "review" ? "Topic review" : s === "extra" ? "Recovery packet" : (DATA.lessons[s] ? DATA.lessons[s].title : s);
 const whyFor = (sub) => (DATA.lessons[sub] && DATA.lessons[sub].why) || (PACK && PACK.why && PACK.why[sub]) || null;
 const packBy = (sub) => PACK.problems.filter(p => p.sub === sub);
-const isPack = (o) => o && o.format === "mathseye-homework-pack" && o.unit === 2 && Array.isArray(o.problems) && o.problems.length && o.problems.every(p => p.id && p.text && Array.isArray(p.hints) && p.sub);
-function importText(text, cb){ try { const o = JSON.parse(text); if (!isPack(o)) throw new Error("That isn't a Unit 2 homework pack."); localStorage.setItem(PKEY, JSON.stringify(o)); PACK = o; cb(""); } catch(e) { cb(e.message || "Couldn't read the pack."); } }
+const isPack = (o) => o && o.format === "mathseye-homework-pack" && o.unit === __UNIT__ && Array.isArray(o.problems) && o.problems.length && o.problems.every(p => p.id && p.text && Array.isArray(p.hints) && p.sub);
+function importText(text, cb){ try { const o = JSON.parse(text); if (!isPack(o)) throw new Error("That isn't a __UNIT_LABEL__ homework pack."); localStorage.setItem(PKEY, JSON.stringify(o)); PACK = o; cb(""); } catch(e) { cb(e.message || "Couldn't read the pack."); } }
 /* The pack lives on the server (not in git). Fetch it when the page opens: show the saved copy right away, refresh quietly. */
 let LOADING = !PACK, LOADFAIL = false;
-function fetchPack(){ return fetch("/api/pack?unit=2", {cache: "no-store"}).then(r => r.ok ? r.text() : Promise.reject(r.status)).then(t => {
+function fetchPack(){ return fetch("/api/pack?unit=__UNIT__", {cache: "no-store"}).then(r => r.ok ? r.text() : Promise.reject(r.status)).then(t => {
     const had = PACK ? JSON.stringify(PACK) : ""; let o; try { o = JSON.parse(t); } catch(e) { throw 0; } if (!isPack(o)) throw 0;
     if (JSON.stringify(o) !== had) { try { localStorage.setItem(PKEY, JSON.stringify(o)); } catch(e) {} const first = !PACK; PACK = o; if (first || S.view === "home") render(); }
     LOADING = false; LOADFAIL = false; }).catch(() => { LOADING = false; if (!PACK) { LOADFAIL = true; render(); } }); }
@@ -196,7 +196,7 @@ const peekBtn = (p, label) => { if (!peekCards(p).length) return null; const b =
 const LRESET = {step:0, pick:null, flip:null, way:null, tbl:1, gsel:[], zoom:null, est:null, pn:null, ak:null};
 const fmtN = x => String(+(+x).toFixed(2));
 const VIEWS = {
-home(){ const el = $(`<div class="stack"><header>${logo()}<h1 style="margin-top:14px">Unit 2 Homework</h1><p class="sub">You work each problem on your worksheet. I give nudges, never just the answer.</p></header></div>`);
+home(){ const el = $(`<div class="stack"><header>${logo()}<h1 style="margin-top:14px">__UNIT_LABEL__ Homework</h1><p class="sub">You work each problem on your worksheet. I give nudges, never just the answer.</p></header></div>`);
   const file = $(`<input type="file" accept=".json,application/json" id="f" hidden>`); el.append(file);
   const pick = () => file.click(); file.onchange = () => { if (file.files[0]) importFile(file.files[0], err => { S.err = err; render(); }); };
   if (!PACK) { const c = $(`<section class="card"><p class="eyebrow">Getting ready</p><h2>${LOADFAIL ? "Couldn't get the homework" : "Getting the homework…"}</h2><p class="lead muted">${LOADFAIL ? "Check the internet and try again." : "One moment."}</p>${S.err ? `<p class="errmsg" role="alert">${esc(S.err)}</p>` : ""}${LOADFAIL ? `<button class="btn primary big" id="again">Try again</button><button class="btn quiet" id="pk">Or choose a pack file</button>` : ""}</section>`);
@@ -204,7 +204,7 @@ home(){ const el = $(`<div class="stack"><header>${logo()}<h1 style="margin-top:
   const tiles = $(`<div class="tiles"></div>`);
   ORDER.filter(s => packBy(s).length).forEach(s => { const ps = packBy(s), d = ps.filter(p => resOf(p.id) === "got").length, b = $(`<button class="tile"><small>${/^\d/.test(s) ? "Lesson " + s : "Extra"}</small><b>${esc(subTitle(s))}</b><span class="bar" aria-hidden="true"><i style="width:${d / ps.length * 100}%"></i></span><small>${d} of ${ps.length} done</small></button>`); b.onclick = () => go("lesson", {sub:s}); tiles.append(b); });
   el.append(tiles);  if (S.err) el.append($(`<p class="errmsg" role="alert">${esc(S.err)}</p>`)); return el; },
-lesson(){ const el = $(`<div class="stack"></div>`); el.append(backBar("Unit 2 Homework", () => go("home")), $(`<header><h1>${esc(subTitle(S.sub))}</h1><p class="sub">Pick the problem you're working on.</p></header>`));
+lesson(){ const el = $(`<div class="stack"></div>`); el.append(backBar("__UNIT_LABEL__ Homework", () => go("home")), $(`<header><h1>${esc(subTitle(S.sub))}</h1><p class="sub">Pick the problem you're working on.</p></header>`));
   const L = PACK.lessons && PACK.lessons[S.sub];
   if (L) { const b = $(`<button class="learnbtn"><b>Learn it first</b><span>${L.cards.length} quick cards with the pictures from your book. Just tap.</span></button>`); b.onclick = () => go("learn", {card:0, ...LRESET, from:"lesson"}); el.append(b); }
   { const ps0 = orderedIn(S.sub), g = ps0.filter(p => resOf(p.id) === "got").length, m = ps0.filter(p => resOf(p.id) === "miss").length;

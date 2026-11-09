@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Single source for the color schemes. Writes src/brand.ts and the theme CSS block in src/styles.css.
-Static pages (study guide, homework) import theme_css() / brands_json() from here via build_unit2_study.py.
+Static pages (study guide, homework) import theme_css() / brands_json() from here via build_unit.py.
 Palettes are inspired by seasonal color-analysis boards; swatch colors for Dark Spring and Light Autumn were
 sampled from the reference images, the others were matched by eye."""
 import json, pathlib

@@ -1,70 +1,72 @@
 {
- "divide-in-two-steps": [
-  {
-   "sub": "2.1",
-   "title": "Unit rates"
-  },
-  {
-   "sub": "2.4",
-   "title": "y = kx"
-  }
- ],
- "move-the-decimal": [
-  {
-   "sub": "2.1",
-   "title": "Unit rates"
-  },
-  {
-   "sub": "2.4",
-   "title": "y = kx"
-  }
- ],
- "divide-by-5-25-50": [
-  {
-   "sub": "2.1",
-   "title": "Unit rates"
-  },
-  {
-   "sub": "2.4",
-   "title": "y = kx"
-  }
- ],
- "halve-halve": [
-  {
-   "sub": "2.1",
-   "title": "Unit rates"
-  },
-  {
-   "sub": "2.4",
-   "title": "y = kx"
-  }
- ],
- "flip-and-cancel": [
-  {
-   "sub": "2.2",
-   "title": "Unit rates with fractions"
-  }
- ],
- "how-many-fit": [
-  {
-   "sub": "2.2",
-   "title": "Unit rates with fractions"
-  }
- ],
- "break-it-apart": [
-  {
-   "sub": "2.4",
-   "title": "y = kx"
-  },
-  {
-   "sub": "2.8",
-   "title": "Scale drawings"
-  }
- ],
- "times-one-and-a-half": [
-  {
-   "sub": "2.4",
-   "title": "y = kx"
-  }
- ]
+ "2": {
+  "divide-in-two-steps": [
+   {
+    "sub": "2.1",
+    "title": "Unit rates"
+   },
+   {
+    "sub": "2.4",
+    "title": "y = kx"
+   }
+  ],
+  "move-the-decimal": [
+   {
+    "sub": "2.1",
+    "title": "Unit rates"
+   },
+   {
+    "sub": "2.4",
+    "title": "y = kx"
+   }
+  ],
+  "divide-by-5-25-50": [
+   {
+    "sub": "2.1",
+    "title": "Unit rates"
+   },
+   {
+    "sub": "2.4",
+    "title": "y = kx"
+   }
+  ],
+  "halve-halve": [
+   {
+    "sub": "2.1",
+    "title": "Unit rates"
+   },
+   {
+    "sub": "2.4",
+    "title": "y = kx"
+   }
+  ],
+  "flip-and-cancel": [
+   {
+    "sub": "2.2",
+    "title": "Unit rates with fractions"
+   }
+  ],
+  "how-many-fit": [
+   {
+    "sub": "2.2",
+    "title": "Unit rates with fractions"
+   }
+  ],
+  "break-it-apart": [
+   {
+    "sub": "2.4",
+    "title": "y = kx"
+   },
+   {
+    "sub": "2.8",
+    "title": "Scale drawings"
+   }
+  ],
+  "times-one-and-a-half": [
+   {
+    "sub": "2.4",
+    "title": "y = kx"
+   }
+  ]
+ }
 }

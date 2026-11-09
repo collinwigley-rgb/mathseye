@@ -63,12 +63,14 @@ export default function App() {
 function BackPill() {
   const [back, setBack] = useState(() => {
     try {
-      if (new URLSearchParams(location.search).get('back') === 'study') sessionStorage.setItem('mathseye.back', 'study');
+      const q = new URLSearchParams(location.search);
+      if (q.get('back') === 'study') { sessionStorage.setItem('mathseye.back', 'study'); sessionStorage.setItem('mathseye.backunit', /^\d+$/.test(q.get('bu') ?? '') ? q.get('bu')! : '2'); }
       return sessionStorage.getItem('mathseye.back') === 'study';
     } catch { return false; }
   });
   if (!back) return null;
-  return <a className="backpill" href="./study/unit-2.html" onClick={() => { try { sessionStorage.removeItem('mathseye.back'); } catch { /* ignore */ } setBack(false); }}>← Back to my problem</a>;
+  let bu = '2'; try { bu = sessionStorage.getItem('mathseye.backunit') ?? '2'; } catch { /* ignore */ }
+  return <a className="backpill" href={`./study/unit-${bu}.html`} onClick={() => { try { sessionStorage.removeItem('mathseye.back'); } catch { /* ignore */ } setBack(false); }}>← Back to my problem</a>;
 }
 
 /** "#48 · 99193d0 · Nov 4 15:55": the build, with its time in 24h on this device's clock. */
@@ -217,16 +219,18 @@ function Setup({ db, pre, onStart, onBack }: { db: Db; pre: string[]; onStart: (
   );
 }
 
-/** Study-guide lessons where a fact helps, e.g. "Unit rates (Lesson 2.1), y = kx (Lesson 2.4)". */
-const LINKS = factLinks as Record<string, { sub: string; title: string }[]>;
-function helpsWith(id: string, max = 3): string {
-  const l = LINKS[id] ?? [];
+/** Study-guide lessons where a fact helps, e.g. "Unit rates (Lesson 2.1), y = kx (Lesson 2.4)". Links are kept per unit (src/factlinks.json). */
+const LINKS = factLinks as Record<string, Record<string, { sub: string; title: string }[]>>;
+/** The unit whose study guide a fact points to: the current unit if it has lessons for this fact, otherwise the newest unit that does. */
+function linkUnit(id: string, unit: number): number | null {
+  const have = Object.keys(LINKS).filter((u) => LINKS[u][id]?.length).map(Number);
+  return have.length ? (have.includes(unit) ? unit : Math.max(...have)) : null;
+}
+function helpsWith(id: string, unit: number, max = 3): string {
+  const u = linkUnit(id, unit);
+  const l = (u != null && LINKS[String(u)][id]) || [];
   const shown = l.slice(0, max).map((e) => `${e.title} (Lesson ${e.sub})`).join(', ');
   return l.length ? shown + (l.length > max ? `, and ${l.length - max} more` : '') : '';
-}
-function HelpsWith({ id }: { id: string }) {
-  const t = helpsWith(id);
-  return t ? <small className="helps">Helps with: {t}</small> : null;
 }
 
 type Brand = (typeof BRANDS)[number];
@@ -497,6 +501,7 @@ function SessionView({ db, update, onPause, onDone }: {
         <TrickCard
           key={s.index}
           trickId={item.trickId}
+          unit={db.settings.currentUnit ?? 2}
           onGo={() => {
             update((d) => ({ ...d, settings: { ...d.settings, introducedTricks: [...new Set([...d.settings.introducedTricks, item.trickId])] } }));
             advance();
@@ -511,7 +516,7 @@ function SessionView({ db, update, onPause, onDone }: {
 
 const STAGE_LABEL = { warmup: 'Warm-up', new: 'New fact', drill: 'Practice', mixed: 'Mixed practice', finish: 'Finish on a win' };
 
-function TrickCard({ trickId, onGo }: { trickId: string; onGo: () => void }) {
+function TrickCard({ trickId, unit, onGo }: { trickId: string; unit: number; onGo: () => void }) {
   const t = TRICKS.find((x) => x.id === trickId)!;
   const [why, setWhy] = useState(false);
   useEffect(() => {
@@ -524,7 +529,7 @@ function TrickCard({ trickId, onGo }: { trickId: string; onGo: () => void }) {
       <h2>{t.name}</h2>
       <p className="rule"><Fx text={t.rule} /></p>
       <p className="example"><Fx text={t.example} /></p>
-      {helpsWith(t.id) && <p className="muted">Helps with: {helpsWith(t.id)}. <a href="./study/unit-2.html">Open the study guide</a></p>}
+      {helpsWith(t.id, unit) && <p className="muted">Helps with: {helpsWith(t.id, unit)}. <a href={`./study/unit-${linkUnit(t.id, unit)}.html`}>Open the study guide</a></p>}
       {why ? <p className="why">{t.why}</p> : <button className="ghost" onClick={() => setWhy(true)}>Show me why</button>}
       <button className="primary" onClick={onGo}>Let's try it</button>
     </section>

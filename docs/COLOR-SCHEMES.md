@@ -6,7 +6,7 @@ Thirteen schemes, grouped by band member. The student picks one on the home scre
 
 ## How to tune a color
 1. Edit the row in `THEMES` in `tools/brand_themes.py` (hex values only).
-2. Run `python3 tools/brand_themes.py && python3 tools/build_unit2_study.py <scratch-dir>` to regenerate the app CSS, `src/brand.ts`, and the static pages.
+2. Run `python3 tools/brand_themes.py && python3 tools/build_unit.py 2 <scratch-dir>` to regenerate the app CSS, `src/brand.ts`, and the static pages.
 3. Run `python3 tools/check_themes.py --write`. It fails if any pair drops below the contrast limit or if generated files are out of date.
 4. Look at it on the iPad in dark and light mode.
 

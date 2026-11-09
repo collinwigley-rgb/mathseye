@@ -6,6 +6,9 @@
 (function (root) {
   var KEYS = { facts: 'mathseye.mathfacts.v1', study: 'mathseye.unit2.study.v2', hw: 'mathseye.hw.unit2.v1', cards: 'mathseye.cards.v1' };
   var SECTIONS = ['facts', 'study', 'hw', 'cards'];
+  /* Every later unit has its own study and homework sections, study<N> and hw<N> (Unit 2 keeps its original names, which are never renamed).
+     Add a unit's number here when it gets pages; tools/check_units.py checks this list against src/units.json. */
+  [3].forEach(function (n) { KEYS['study' + n] = 'mathseye.unit' + n + '.study.v2'; KEYS['hw' + n] = 'mathseye.hw.unit' + n + '.v1'; SECTIONS.push('study' + n, 'hw' + n); });
 
   /* ---------- pure merge helpers (also unit-tested) ---------- */
   function norm(name) { return String(name || '').toLowerCase().replace(/[^a-z0-9' -]/g, '').replace(/\s+/g, ' ').trim().slice(0, 20); }
@@ -72,8 +75,9 @@
     out.cards = cards; return out;
   }
   var MERGE = { facts: mergeFacts, study: mergeStudy, hw: mergeHw, cards: mergeCards };
+  SECTIONS.forEach(function (k) { if (/^study\d/.test(k)) MERGE[k] = mergeStudy; else if (/^hw\d/.test(k)) MERGE[k] = mergeHw; });
 
-  var api = { norm: norm, mergeFacts: mergeFacts, mergeStudy: mergeStudy, mergeHw: mergeHw, mergeCards: mergeCards };
+  var api = { norm: norm, mergeFacts: mergeFacts, mergeStudy: mergeStudy, mergeHw: mergeHw, mergeCards: mergeCards, sections: SECTIONS, keys: KEYS, merges: MERGE };
   if (typeof module !== 'undefined' && module.exports) { module.exports = api; return; }
 
   /* ---------- engine (browser only) ---------- */
@@ -85,7 +89,8 @@
   function writeLocal(ns, d, only) { SECTIONS.forEach(function (s) { if (d[s] && (!only || only.indexOf(s) >= 0)) set(KEYS[s] + ns, JSON.stringify(d[s])); }); }
   function localT(ns) { return Number(get('mathseye.sync.t' + ns) || 0); }
   function localRs(ns) { try { return JSON.parse(get('mathseye.sync.rs' + ns) || '{}'); } catch (e) { return {}; } }
-  function strip(d) { var c = JSON.parse(JSON.stringify(d)); if (c.facts) delete c.facts.inProgress; if (c.study) c.study.mission = null; return c; }
+  function strip(d) { var c = JSON.parse(JSON.stringify(d)); if (c.facts) delete c.facts.inProgress; SECTIONS.forEach(function (k) { if (/^study/.test(k) && c[k]) c[k].mission = null; }); return c; }
+  function blank() { var o = {}; SECTIONS.forEach(function (k) { o[k] = null; }); return o; }
 
   var state = { at: 0, ok: null, busy: false };
   function status() { var at = state.at || Number(get('mathseye.sync.last') || 0); return { at: at, ok: state.ok }; }
@@ -119,7 +124,7 @@
         });
         if (changed) writeLocal(m.ns, merged);
         set('mathseye.sync.rs' + m.ns, JSON.stringify(lrs));
-        var out = strip(merged), same = rem && JSON.stringify(out) === JSON.stringify(strip(Object.assign({ facts: null, study: null, hw: null, cards: null }, R)));
+        var out = strip(merged), same = rem && JSON.stringify(out) === JSON.stringify(strip(Object.assign(blank(), R)));
         var t = Math.max(lt, rt) || Date.now();
         if (changed) set('mathseye.sync.t' + m.ns, String(t));
         if (same && JSON.stringify(rrs) === JSON.stringify(lrs)) return { ok: true, changed: changed };

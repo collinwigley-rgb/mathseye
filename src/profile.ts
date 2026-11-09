@@ -1,5 +1,7 @@
 // Who is using the app. Each player's progress is stored under its own key, so nobody overlaps.
 // Everything stays on this device. The first player created adopts any progress saved before profiles existed.
+import unitList from './units.json';
+
 export interface Profile { id: string; name: string; ns: string }
 
 const LIST = 'mathseye.profiles', ACTIVE = 'mathseye.profile';
@@ -25,7 +27,9 @@ export function addProfile(name: string): Profile {
   return p;
 }
 
-const BASE_KEYS = ['mathseye.mathfacts.v1', 'mathseye.unit2.study.v2', 'mathseye.hw.unit2.v1', 'mathseye.cards.v1'];
+/** Every saved key a player has (a later unit's study and homework keys follow one pattern; Unit 2 keeps its original names). */
+const BASE_KEYS = ['mathseye.mathfacts.v1', 'mathseye.unit2.study.v2', 'mathseye.hw.unit2.v1', 'mathseye.cards.v1',
+  ...unitList.units.filter((u) => u.id > 2).flatMap((u) => [`mathseye.unit${u.id}.study.v2`, `mathseye.hw.unit${u.id}.v1`])];
 export function removeProfile(id: string) {
   const p = profiles().find((x) => x.id === id);
   if (!p) return;

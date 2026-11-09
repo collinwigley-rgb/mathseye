@@ -115,7 +115,9 @@ describe('every trick in content/tricks is well-formed', () => {
 import { buildQueue, tricksFor, unlockedTricks } from './session';
 import syncSource from '../public/sync.js?raw';
 import gradeSource from '../public/grade.js?raw';
-import studyTemplate from '../tools/unit2_template.html?raw';
+import studyTemplate from '../tools/study_template.html?raw';
+import study2Page from '../public/study/unit-2.html?raw';
+import homework2Page from '../public/homework/unit-2.html?raw';
 import songsSource from '../public/songs.js?raw';
 import { fresh } from './store';
 import { BRANDS, ICONS } from './brand';
@@ -288,7 +290,8 @@ describe('self-paced sessions', () => {
       expect(S.mergeStudy(a, b, false).workDone.p).toBe(1000);
     });
     it('data safety: the saved-progress key names never change (a rename would orphan everyone\'s progress)', () => {
-      expect(studyTemplate).toContain('mathseye.unit2.study.v2'); expect(studyTemplate).toContain('.bak'); expect(studyTemplate).toContain('const persist = () => { const j = JSON.stringify(save); if (j === lastSaved) return;');
+      expect(study2Page).toContain('const KEY = "mathseye.unit2.study.v2" + '); expect(homework2Page).toContain('HKEY = "mathseye.hw.unit2.v1"'); expect(homework2Page).toContain('PKEY = "mathseye.pack.unit2"'); expect(study2Page).toContain('mathseyeSync.reset("study")');   // Unit 2 keeps its original names, in the pages her device actually runs
+      expect(studyTemplate).toContain('__STUDY_KEY__'); expect(studyTemplate).toContain('.bak'); expect(studyTemplate).toContain('const persist = () => { const j = JSON.stringify(save); if (j === lastSaved) return;');
     });
     it('songs: duplicates are fine, but every grade always keeps at least one song', () => {
       const sm = { exports: {} as any }; new Function('module', songsSource)(sm); const R = sm.exports;
@@ -403,3 +406,17 @@ describe('which unit she starts on', () => {
     expect(units.units.find((u) => u.id === 2)!.features).toEqual({ facts: true, cards: true, study: true, homework: true });   // Unit 2 stays whole
   });
 });
+
+describe('per-unit sync sections', () => {
+  it('Unit 2 keeps its original section names and keys; each later unit gets study<N> and hw<N> with the same merge rules', () => {
+    const m: any = { exports: {} }; new Function('module', syncSource)(m); const S = m.exports;
+    expect(S.keys.study).toBe('mathseye.unit2.study.v2'); expect(S.keys.hw).toBe('mathseye.hw.unit2.v1');
+    expect(S.keys.study3).toBe('mathseye.unit3.study.v2'); expect(S.keys.hw3).toBe('mathseye.hw.unit3.v1');
+    expect(S.sections).toEqual(['facts', 'study', 'hw', 'cards', 'study3', 'hw3']);
+    expect(S.merges.study3).toBe(S.mergeStudy); expect(S.merges.hw3).toBe(S.mergeHw);
+    // a section a device has never had merges to the other side's copy (nothing lost, nothing invented)
+    const R = { solved: { 'U3-01': 1 }, clean: {}, seen: {} };
+    expect(S.merges.study3(null, R, true)).toBe(R); expect(S.merges.study3(R, null, false)).toBe(R);
+  });
+});
+
