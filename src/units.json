@@ -1,15 +1,54 @@
 {
   "units": [
-    { "id": 2, "label": "Unit 2", "ready": true,
+    {
+      "id": 2,
+      "label": "Unit 2",
+      "ready": true,
       "lessons": [
-        { "id": "2.1", "title": "Unit rates" },
-        { "id": "2.2", "title": "Unit rates with fractions" },
-        { "id": "2.3", "title": "Is it proportional?" },
-        { "id": "2.4", "title": "y = kx" },
-        { "id": "2.5", "title": "Graphs" },
-        { "id": "2.6", "title": "Times or plus?" },
-        { "id": "2.8", "title": "Scale drawings" }
-      ] },
-    { "id": 3, "label": "Unit 3", "ready": false, "lessons": [] }
+        {
+          "id": "2.1",
+          "title": "Unit rates"
+        },
+        {
+          "id": "2.2",
+          "title": "Unit rates with fractions"
+        },
+        {
+          "id": "2.3",
+          "title": "Is it proportional?"
+        },
+        {
+          "id": "2.4",
+          "title": "y = kx"
+        },
+        {
+          "id": "2.5",
+          "title": "Graphs"
+        },
+        {
+          "id": "2.6",
+          "title": "Times or plus?"
+        },
+        {
+          "id": "2.8",
+          "title": "Scale drawings"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Unit 3",
+      "ready": false,
+      "lessons": [
+        {
+          "id": "3.1",
+          "title": "Percent of a number"
+        },
+        {
+          "id": "3.2",
+          "title": "Percent and proportion"
+        }
+      ]
+    }
   ]
 }
