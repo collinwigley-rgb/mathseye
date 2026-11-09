@@ -340,3 +340,47 @@ describe('self-paced sessions', () => {
     });
   });
 });
+
+describe('flash cards', () => {
+  const now = 1_700_000_000_000;
+  it('builds a deck from the reference sheets: term, flipped-around and big-idea cards, unique ids', async () => {
+    const C = await import('./cards');
+    const all = C.cardsFor(2);
+    expect(C.lessonsOf(2).map((l) => l.id)).toEqual(['2.1', '2.2', '2.3', '2.4', '2.5', '2.6', '2.8']);
+    expect(new Set(all.map((c) => c.id)).size).toBe(all.length);
+    expect(all.filter((c) => c.kind === 'idea').length).toBe(7);
+    expect(all.filter((c) => c.kind === 'term').length).toBe(all.filter((c) => c.kind === 'reverse').length);
+    expect(C.cardsFor(2, ['2.4']).every((c) => c.lesson === '2.4')).toBe(true);
+    expect(C.cardsFor(9)).toEqual([]);                         // a unit with no cards yet is just empty
+    const unitRate = all.find((c) => c.id === '2.1:unit-rate')!, flipped = all.find((c) => c.id === '2.1:unit-rate~r')!;
+    expect(flipped.front).toBe(unitRate.back); expect(flipped.back).toBe(unitRate.front);
+  });
+  it('grades like the MathFacts boxes: got it moves up and waits, not yet comes straight back', async () => {
+    const C = await import('./cards');
+    let db = C.freshCards();
+    db = C.gradeCard(db, 'a', true, now); expect(db.cards.a).toEqual({ box: 2, next: now + INTERVALS[2], seen: 1, u: now });
+    db = C.gradeCard(db, 'a', true, now + 1); expect(db.cards.a.box).toBe(3);
+    db = C.gradeCard(db, 'a', false, now + 2); expect(db.cards.a).toEqual({ box: 1, next: now + 2, seen: 3, u: now + 2 });
+    for (let i = 0; i < 9; i++) db = C.gradeCard(db, 'b', true, now); expect(db.cards.b.box).toBe(5);
+  });
+  it('picks due cards first (weakest first), then new ones, and keeps a card apart from its twin', async () => {
+    const C = await import('./cards');
+    const defs = C.cardsFor(2, ['2.1']);
+    const db = { cards: { [defs[0].id]: { box: 3, next: now - 5, seen: 2, u: 1 }, [defs[1].id]: { box: 1, next: now - 5, seen: 1, u: 1 }, [defs[2].id]: { box: 5, next: now + 10 * C.DAY, seen: 4, u: 1 } } };
+    const s = C.pickSession(defs, db, now, 3, () => 0.5);
+    expect(s.length).toBe(3); expect(s.map((c) => c.id)).toEqual(expect.arrayContaining([defs[0].id, defs[1].id]));   // both due cards are in
+    expect(s.some((c) => c.id === defs[2].id)).toBe(false);   // known and not due: only used to fill if there is room
+    const counts = C.counts(defs, db, now); expect(counts.due).toBe(2); expect(counts.fresh).toBe(defs.length - 3);
+    const all = C.pickSession(defs, db, now, 'all', () => 0.3); expect(all.length).toBe(defs.length);
+    for (let i = 1; i < all.length; i++) expect(all[i].id.replace('~r', '')).not.toBe(all[i - 1].id.replace('~r', ''));
+  });
+  it('keeps the key name and merges per card (newest answer wins, nothing is lost)', async () => {
+    const C = await import('./cards');
+    expect(C.CARDS_KEY).toBe('mathseye.cards.v1'); expect(syncSource).toContain("cards: 'mathseye.cards.v1'");
+    const m: any = { exports: {} }; new Function('module', syncSource)(m); const S = m.exports;
+    const L = { cards: { a: { box: 3, next: 5, seen: 3, u: 30 }, b: { box: 2, next: 1, seen: 1, u: 10 } } }, R = { cards: { a: { box: 1, next: 9, seen: 2, u: 20 }, c: { box: 4, next: 2, seen: 4, u: 5 } } };
+    const out = S.mergeCards(L, R); expect(out.cards.a.box).toBe(3); expect(Object.keys(out.cards).sort()).toEqual(['a', 'b', 'c']);
+    expect(S.mergeCards(R, L).cards.a.box).toBe(3);            // same answer from either side
+    expect(S.mergeCards(null, R)).toBe(R); expect(S.mergeCards(L, null)).toBe(L);
+  });
+});

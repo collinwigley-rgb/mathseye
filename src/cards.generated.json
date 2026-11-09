@@ -1,0 +1,322 @@
+{
+ "decks": {
+  "2": {
+   "lessons": [
+    {
+     "id": "2.1",
+     "title": "Unit rates",
+     "cards": [
+      {
+       "id": "2.1:ratio",
+       "kind": "term",
+       "term": "Ratio",
+       "meaning": "Compares two amounts",
+       "example": "3 boys : 6 girls"
+      },
+      {
+       "id": "2.1:rate",
+       "kind": "term",
+       "term": "Rate",
+       "meaning": "A ratio with two different units",
+       "example": "$81.25 for 5 hours"
+      },
+      {
+       "id": "2.1:unit-rate",
+       "kind": "term",
+       "term": "Unit rate",
+       "meaning": "A rate where the second amount is 1",
+       "example": "$16.25 per 1 hour"
+      },
+      {
+       "id": "2.1:unit-price",
+       "kind": "term",
+       "term": "Unit price",
+       "meaning": "A unit rate for cost",
+       "example": "$0.21 per card"
+      },
+      {
+       "id": "2.1:equivalent-ratios",
+       "kind": "term",
+       "term": "Equivalent ratios",
+       "meaning": "Same relationship, scaled up or down",
+       "example": "3:8 = 6:16 = 9:24"
+      },
+      {
+       "id": "2.1:table-of-equivalent-ratios",
+       "kind": "term",
+       "term": "Table of equivalent ratios",
+       "meaning": "Two-row (or two-column) table; do the same × or ÷ to both"
+      },
+      {
+       "id": "2.1:big",
+       "kind": "idea",
+       "text": "more does not mean better. Making 9 of 25 shots is worse than 8 of 20, because 9/25 = 36% and 8/20 = 40%. Compare rates, not totals."
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "title": "Unit rates with fractions",
+     "cards": [
+      {
+       "id": "2.2:complex-fraction",
+       "kind": "term",
+       "term": "Complex fraction",
+       "meaning": "A fraction with a fraction on top and/or bottom",
+       "example": "(2/3 mi) / (1/6 h)"
+      },
+      {
+       "id": "2.2:unit-rate-with-fractions",
+       "kind": "term",
+       "term": "Unit rate with fractions",
+       "meaning": "Amount for exactly 1 of the \"per\" unit",
+       "example": "4 miles per hour"
+      },
+      {
+       "id": "2.2:reciprocal",
+       "kind": "term",
+       "term": "Reciprocal",
+       "meaning": "The flipped fraction; multiplying by it makes 1",
+       "example": "1/6 → 6, 3/4 → 4/3"
+      },
+      {
+       "id": "2.2:unit-fraction",
+       "kind": "term",
+       "term": "Unit fraction",
+       "meaning": "A fraction with 1 on top",
+       "example": "1/4 hour = 15 minutes"
+      },
+      {
+       "id": "2.2:scale-maps-blueprints",
+       "kind": "term",
+       "term": "Scale (maps, blueprints)",
+       "meaning": "A map length matched to a real length",
+       "example": "3/4 in. : 3/5 mi"
+      },
+      {
+       "id": "2.2:big",
+       "kind": "idea",
+       "text": "to turn the bottom into 1, multiply top AND bottom by the bottom's reciprocal. That's the same as dividing top ÷ bottom."
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "title": "Is it proportional?",
+     "cards": [
+      {
+       "id": "2.3:proportional-relationship",
+       "kind": "term",
+       "term": "Proportional relationship",
+       "meaning": "All ratios y/x are equal",
+       "example": "2→5, 4→10, 6→15 (all 2.5)"
+      },
+      {
+       "id": "2.3:proportion",
+       "kind": "term",
+       "term": "Proportion",
+       "meaning": "An equation saying two ratios are equal",
+       "example": "3/8 = 9/24"
+      },
+      {
+       "id": "2.3:constant-factor",
+       "kind": "term",
+       "term": "Constant factor",
+       "meaning": "The number every x is multiplied by to get y",
+       "example": "×4: {1,3,5} → {4,12,20}"
+      },
+      {
+       "id": "2.3:not-proportional",
+       "kind": "term",
+       "term": "Not proportional",
+       "meaning": "Some y/x is different, or there's a starting amount",
+       "example": "Salami: 66, 96, 126 Calories (a base amount from the bread)"
+      },
+      {
+       "id": "2.3:enlargement-scale",
+       "kind": "term",
+       "term": "Enlargement / scale",
+       "meaning": "Every length multiplied by the same factor",
+       "example": "puzzle piece 4 → 7, so every length × 7/4"
+      },
+      {
+       "id": "2.3:big",
+       "kind": "idea",
+       "text": "proportional means \"y is always the same number times x.\" Squares are a trap: the area of a square is NOT proportional to its side (4, 9, 16 vs 2, 3, 4), but the perimeter is."
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "title": "y = kx",
+     "cards": [
+      {
+       "id": "2.4:constant-of-proportionality-k",
+       "kind": "term",
+       "term": "Constant of proportionality (k)",
+       "meaning": "The fixed multiplier from x to y; same as the unit rate",
+       "example": "8 L in 10 h → k = 0.8"
+      },
+      {
+       "id": "2.4:y-kx",
+       "kind": "term",
+       "term": "y = kx",
+       "meaning": "The equation form for proportional relationships",
+       "example": "y = 2.54x (inches to cm)"
+      },
+      {
+       "id": "2.4:not-y-kx",
+       "kind": "term",
+       "term": "Not y = kx",
+       "meaning": "Anything with + or − a number, or x², or x in a denominator",
+       "example": "y = 3x + 5, y = x + 1, y = 0.5x − 2"
+      },
+      {
+       "id": "2.4:big",
+       "kind": "idea",
+       "text": "k answers \"y per 1 x.\" Once you have k, any question becomes y = k × x (find y) or x = y ÷ k (find x)."
+      }
+     ]
+    },
+    {
+     "id": "2.5",
+     "title": "Graphs",
+     "cards": [
+      {
+       "id": "2.5:origin",
+       "kind": "term",
+       "term": "Origin",
+       "meaning": "The point (0, 0)",
+       "example": "0 tickets cost $0"
+      },
+      {
+       "id": "2.5:ordered-pair-x-y",
+       "kind": "term",
+       "term": "Ordered pair (x, y)",
+       "meaning": "A point on the graph: x across, y up",
+       "example": "(1, 55) = 55 miles in 1 hour"
+      },
+      {
+       "id": "2.5:1-k",
+       "kind": "term",
+       "term": "(1, k)",
+       "meaning": "The point where x = 1; its y is the unit rate",
+       "example": "(1, 17) → $17 per pound"
+      },
+      {
+       "id": "2.5:straight-line-through-0-0",
+       "kind": "term",
+       "term": "Straight line through (0, 0)",
+       "meaning": "The test for proportional on a graph",
+       "example": "y = 5x"
+      },
+      {
+       "id": "2.5:not-proportional",
+       "kind": "term",
+       "term": "Not proportional",
+       "meaning": "A line that misses (0, 0), OR a curve through (0, 0)",
+       "example": "a taxi with a starting fee"
+      },
+      {
+       "id": "2.5:big",
+       "kind": "idea",
+       "text": "two checks, both required: (1) is it a straight line? (2) does it pass through (0, 0)? Any point (x, y) except the origin gives k = y/x."
+      }
+     ]
+    },
+    {
+     "id": "2.6",
+     "title": "Times or plus?",
+     "cards": [
+      {
+       "id": "2.6:constant-multiple",
+       "kind": "term",
+       "term": "Constant multiple",
+       "meaning": "y is always the same number × x",
+       "example": "flour = 15/8 × milk"
+      },
+      {
+       "id": "2.6:constant-difference-not-proportional",
+       "kind": "term",
+       "term": "Constant difference (NOT proportional)",
+       "meaning": "y is always x + some number",
+       "example": "ages: Josh is always 4 years older"
+      },
+      {
+       "id": "2.6:inverse-situation-not-proportional",
+       "kind": "term",
+       "term": "Inverse situation (NOT proportional)",
+       "meaning": "more of one means less of the other",
+       "example": "more people → less time to weed"
+      },
+      {
+       "id": "2.6:fixing-a-mix",
+       "kind": "term",
+       "term": "Fixing a mix",
+       "meaning": "adjust amounts so they match the ratio",
+       "example": "3 cherries : 8 grapes"
+      },
+      {
+       "id": "2.6:scale-factor-for-area",
+       "kind": "term",
+       "term": "Scale factor for area",
+       "meaning": "lengths × k means area × k²",
+       "example": "2× wider and 2× taller → 4× the area"
+      },
+      {
+       "id": "2.6:big",
+       "kind": "idea",
+       "text": "the trap problems in this lesson LOOK like ratio problems but aren't: ages, a start amount plus some per guest, people working together, or a noisy real-world table."
+      }
+     ]
+    },
+    {
+     "id": "2.8",
+     "title": "Scale drawings",
+     "cards": [
+      {
+       "id": "2.8:scale-drawing",
+       "kind": "term",
+       "term": "Scale drawing",
+       "meaning": "A drawing that's proportional to the real object",
+       "example": "a kitchen blueprint"
+      },
+      {
+       "id": "2.8:scale",
+       "kind": "term",
+       "term": "Scale",
+       "meaning": "Drawing length = actual length",
+       "example": "1 in. = 1.5 ft"
+      },
+      {
+       "id": "2.8:scale-factor-k",
+       "kind": "term",
+       "term": "Scale factor (k)",
+       "meaning": "Actual units per 1 drawing unit",
+       "example": "k = 1.5 ft per inch"
+      },
+      {
+       "id": "2.8:non-unit-scale",
+       "kind": "term",
+       "term": "Non-unit scale",
+       "meaning": "A scale where the drawing side isn't 1",
+       "example": "2 in. = 5 ft → k = 2.5 ft per inch"
+      },
+      {
+       "id": "2.8:new-scale",
+       "kind": "term",
+       "term": "New scale",
+       "meaning": "Redrawing the same object at a new size",
+       "example": "the mascot: 1 in. = 4 ft → 1 in. = 0.5 ft"
+      },
+      {
+       "id": "2.8:big",
+       "kind": "idea",
+       "text": "get the scale to \"1 drawing unit = ? actual units.\" After that, every length is just ×k. Going backward (actual → drawing) is ÷k."
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

@@ -71,7 +71,9 @@ async function players(req, env, url) {
     try { b = await req.json(); } catch { return json({ ok: false, error: 'bad json' }, 400); }
     const key = normName(b.name);
     if (!key || !b.data || typeof b.data !== 'object') return json({ ok: false, error: 'bad request' }, 400);
-    const doc = { name: String(b.name).trim().slice(0, 20), updatedAt: Number(b.updatedAt) || Date.now(), rs: b.rs && typeof b.rs === 'object' ? b.rs : {}, data: b.data };
+    // An older copy of the app does not know every section (e.g. flash cards) and would send a body without it: keep what the server already has for any section the body leaves out.
+    let prevData = {}; try { const prev = await env.NOTES.get('p:' + key); if (prev) prevData = (JSON.parse(prev).data) || {}; } catch { /* no previous copy */ }
+    const doc = { name: String(b.name).trim().slice(0, 20), updatedAt: Number(b.updatedAt) || Date.now(), rs: b.rs && typeof b.rs === 'object' ? b.rs : {}, data: { ...prevData, ...b.data } };
     const body = JSON.stringify(doc);
     if (body.length > 2_000_000) return json({ ok: false, error: 'too big' }, 413);
     // Safety net: before the first overwrite each hour, keep the previous copy (30 days). Lets us put a player's progress back if anything ever goes wrong.

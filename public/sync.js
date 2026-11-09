@@ -4,8 +4,8 @@
    Merging: things that only grow (solved problems, answers, sessions) are unioned; settings and the "come back" list
    come from whichever side changed last; a reset on one device wins over older progress elsewhere. */
 (function (root) {
-  var KEYS = { facts: 'mathseye.mathfacts.v1', study: 'mathseye.unit2.study.v2', hw: 'mathseye.hw.unit2.v1' };
-  var SECTIONS = ['facts', 'study', 'hw'];
+  var KEYS = { facts: 'mathseye.mathfacts.v1', study: 'mathseye.unit2.study.v2', hw: 'mathseye.hw.unit2.v1', cards: 'mathseye.cards.v1' };
+  var SECTIONS = ['facts', 'study', 'hw', 'cards'];
 
   /* ---------- pure merge helpers (also unit-tested) ---------- */
   function norm(name) { return String(name || '').toLowerCase().replace(/[^a-z0-9' -]/g, '').replace(/\s+/g, ' ').trim().slice(0, 20); }
@@ -64,9 +64,16 @@
     Object.keys(a).concat(Object.keys(b)).forEach(function (k) { var x = a[k], y = b[k]; res[k] = !x ? y : !y ? x : ((y.t || 0) > (x.t || 0) ? y : x); });
     if (Object.keys(res).length) out.res = res; return out;
   }
-  var MERGE = { facts: mergeFacts, study: mergeStudy, hw: mergeHw };
+  /* Flash cards: one small record per card; the one changed last wins (u = when it was last answered). Cards only ever gain records. */
+  function mergeCards(L, R) {
+    if (!L) return R; if (!R) return L;
+    var out = Object.assign({}, R, L), cards = {}, a = L.cards || {}, b = R.cards || {};
+    Object.keys(a).concat(Object.keys(b)).forEach(function (id) { var x = a[id], y = b[id]; cards[id] = !x ? y : !y ? x : ((y.u || 0) > (x.u || 0) ? y : (y.u || 0) < (x.u || 0) ? x : ((y.seen || 0) > (x.seen || 0) ? y : x)); });
+    out.cards = cards; return out;
+  }
+  var MERGE = { facts: mergeFacts, study: mergeStudy, hw: mergeHw, cards: mergeCards };
 
-  var api = { norm: norm, mergeFacts: mergeFacts, mergeStudy: mergeStudy, mergeHw: mergeHw };
+  var api = { norm: norm, mergeFacts: mergeFacts, mergeStudy: mergeStudy, mergeHw: mergeHw, mergeCards: mergeCards };
   if (typeof module !== 'undefined' && module.exports) { module.exports = api; return; }
 
   /* ---------- engine (browser only) ---------- */
@@ -112,7 +119,7 @@
         });
         if (changed) writeLocal(m.ns, merged);
         set('mathseye.sync.rs' + m.ns, JSON.stringify(lrs));
-        var out = strip(merged), same = rem && JSON.stringify(out) === JSON.stringify(strip(Object.assign({ facts: null, study: null, hw: null }, R)));
+        var out = strip(merged), same = rem && JSON.stringify(out) === JSON.stringify(strip(Object.assign({ facts: null, study: null, hw: null, cards: null }, R)));
         var t = Math.max(lt, rt) || Date.now();
         if (changed) set('mathseye.sync.t' + m.ns, String(t));
         if (same && JSON.stringify(rrs) === JSON.stringify(lrs)) return { ok: true, changed: changed };

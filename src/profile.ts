@@ -25,7 +25,7 @@ export function addProfile(name: string): Profile {
   return p;
 }
 
-const BASE_KEYS = ['mathseye.mathfacts.v1', 'mathseye.unit2.study.v2', 'mathseye.hw.unit2.v1'];
+const BASE_KEYS = ['mathseye.mathfacts.v1', 'mathseye.unit2.study.v2', 'mathseye.hw.unit2.v1', 'mathseye.cards.v1'];
 export function removeProfile(id: string) {
   const p = profiles().find((x) => x.id === id);
   if (!p) return;
