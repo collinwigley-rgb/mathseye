@@ -21,8 +21,7 @@
         "study": true,
         "homework": true
       },
-      "term": 2,
-      "semester": 1
+      "term": 2
     },
     {
       "id": 2,
@@ -64,10 +63,7 @@
         "study": true,
         "homework": true
       },
-      "term": 1,
-      "semester": 1
+      "term": 1
     }
-  ],
-  "semester": 1,
-  "term": 2
+  ]
 }

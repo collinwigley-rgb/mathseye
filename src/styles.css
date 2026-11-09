@@ -330,3 +330,5 @@ main.home { gap: 20px; padding-top: max(74px, calc(env(safe-area-inset-top) + 66
 /* A panel whose section is not ready for this unit yet */
 .home .tile3.off { opacity: .55; cursor: default; filter: saturate(.7); }
 .home .tile3.off .go { display: none; }
+
+.hubhead .midnote { margin: 2px 0 0; color: var(--amber2, var(--muted)); font-size: 15px; letter-spacing: .02em; }

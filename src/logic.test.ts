@@ -391,14 +391,14 @@ describe('flash cards', () => {
 describe('which unit she starts on', () => {
   const mem = (init: Record<string, string>) => { const m = { ...init }; (globalThis as any).localStorage = { getItem: (k: string) => (k in m ? m[k] : null), setItem: (k: string, v: string) => { m[k] = v; }, removeItem: (k: string) => { delete m[k]; } }; return m; };
   it('starts everyone on the newest ready unit until a unit is picked on purpose, and then keeps their choice', async () => {
-    const S = await import('./store'); const units = (await import('./units.json')).default;
-    expect(S.DEFAULT_UNIT).toBe(units.current);
+    const S = await import('./store');
+    expect(S.defaultUnit()).toBe((await import('./terms')).unitForDate());
     const base = (over: object) => JSON.stringify({ settings: { startedOn: 1, introducedTricks: [], manuallyUnlocked: [], factsMode: 'unit', ...over }, cards: {}, attempts: [], sessions: [] });
     mem({ 'mathseye.mathfacts.v1': base({ currentUnit: 2 }) });                     // saved before units were pickable: 2 was only the old default
-    expect(S.load().settings.currentUnit).toBe(S.DEFAULT_UNIT);
+    expect(S.load().settings.currentUnit).toBe(S.defaultUnit());
     mem({ 'mathseye.mathfacts.v1': base({ currentUnit: 2, unitPicked: true }) });   // she picked Unit 2 herself
     expect(S.load().settings.currentUnit).toBe(2);
-    mem({}); expect(S.load().settings.currentUnit).toBe(S.DEFAULT_UNIT);           // a brand-new player
+    mem({}); expect(S.load().settings.currentUnit).toBe(S.defaultUnit());           // a brand-new player
   });
   it('lists every unit with its sections, and only offers a section that exists', async () => {
     const units = (await import('./units.json')).default;
@@ -417,6 +417,26 @@ describe('per-unit sync sections', () => {
     // a section a device has never had merges to the other side's copy (nothing lost, nothing invented)
     const R = { solved: { 'U3-01': 1 }, clean: {}, seen: {} };
     expect(S.merges.study3(null, R, true)).toBe(R); expect(S.merges.study3(R, null, false)).toBe(R);
+  });
+});
+
+describe('the school calendar picks the unit', () => {
+  it('follows the 2026-27 terms: Term 1 is Unit 2, Term 2 is Unit 3, breaks keep the last unit, later terms keep the newest ready unit', async () => {
+    const T = await import('./terms');
+    expect(T.termOn('2026-09-08')!.id).toBe(1); expect(T.termOn('2026-11-05')!.id).toBe(1); expect(T.termOn('2026-11-09')!.id).toBe(2); expect(T.termOn('2027-01-22')!.id).toBe(2);
+    expect(T.termOn('2027-01-27')!.id).toBe(3); expect(T.termOn('2027-04-06')!.id).toBe(4); expect(T.termOn('2027-06-11')!.id).toBe(4);
+    expect(T.unitForDate('2026-09-20')).toBe(2); expect(T.unitForDate('2026-11-05')).toBe(2);
+    expect(T.unitForDate('2026-11-07')).toBe(2);          // the weekend break between Term 1 and Term 2: still Unit 2
+    expect(T.unitForDate('2026-11-09')).toBe(3); expect(T.unitForDate('2026-12-20')).toBe(3); expect(T.unitForDate('2027-01-24')).toBe(3);   // winter break keeps Unit 3
+    expect(T.unitForDate('2027-02-10')).toBe(3);           // Term 3 has no unit yet: the newest ready unit stays
+    expect(T.unitForDate('2026-08-01')).toBe(2);           // before the year starts
+    expect(T.midtermOn('2026-11-20')).toEqual({ label: 'Midterm 2', end: '2026-12-11' }); expect(T.midtermOn('2026-12-14')).toBeNull(); expect(T.midtermOn('2026-09-10')!.label).toBe('Midterm 1');
+  });
+  it('the calendar is in order, every term has its midterm inside it, and every unit belongs to a real term', async () => {
+    const terms = (await import('./terms.json')).default.terms, units = (await import('./units.json')).default.units;
+    terms.forEach((t, i) => { expect(t.start < t.end).toBe(true); expect(t.midterm.start >= t.start && t.midterm.end <= t.end).toBe(true); if (i) expect(terms[i - 1].end < t.start).toBe(true); });
+    for (const u of units) expect(terms.some((t) => t.id === (u as any).term)).toBe(true);
+    expect(terms.filter((t) => t.semesterEnds).map((t) => t.semester)).toEqual([1, 2]);
   });
 });
 

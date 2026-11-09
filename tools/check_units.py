@@ -13,6 +13,13 @@ for u in d["units"]:
             bad.append(f"Unit {u['id']} offers {sec} but public/{sec}/unit-{u['id']}.html does not exist")
     tagged = [f.name for f in (ROOT / "content" / "tricks").glob("*.json") if u["id"] in (json.loads(f.read_text()).get("units") or [])]
     if u["features"].get("facts") and not tagged: bad.append(f"Unit {u['id']} offers MathFacts but no trick is tagged for it")
+terms = json.loads((ROOT / "src" / "terms.json").read_text())["terms"]
+for i, t in enumerate(terms):
+    if not t["start"] < t["end"]: bad.append(f"{t['label']}: starts after it ends")
+    if not (t["start"] <= t["midterm"]["start"] and t["midterm"]["end"] <= t["end"]): bad.append(f"{t['label']}: its midterm is not inside the term")
+    if i and not terms[i - 1]["end"] < t["start"]: bad.append(f"{t['label']} overlaps the term before it")
+for u in d["units"]:
+    if u.get("term") not in {t["id"] for t in terms}: bad.append(f"Unit {u['id']} belongs to term {u.get('term')!r}, which is not in src/terms.json")
 import re
 sync = (ROOT / "public" / "sync.js").read_text(); sw = (ROOT / "public" / "sw.js").read_text()
 m = re.search(r"\[([0-9, ]+)\]\.forEach\(function \(n\)", sync); synced = {int(x) for x in m.group(1).split(",")} if m else set()
