@@ -62,6 +62,8 @@ export interface Settings {
   introducedTricks: string[];
   manuallyUnlocked: string[];
   currentUnit?: number;
+  /** true once she (or a grown-up) picks a unit on the main page; until then the unit list's current unit is used */
+  unitPicked?: boolean;
   factsMode?: 'unit' | 'general';
   lastPlan?: import('./session').SessionPlan;
 }

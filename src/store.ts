@@ -3,7 +3,10 @@ import type { Attempt, CardState, Session, Settings } from './types';
 // v1 keeps everything on-device in localStorage (small data, no backend).
 // Phase 2 can move this to IndexedDB without changing callers.
 import { activeNs } from './profile';
+import unitList from './units.json';
 import type { SessionPlan } from './session';
+/** The unit everyone starts on (the newest one that is ready), until a unit is picked on purpose. */
+export const DEFAULT_UNIT = (unitList.units.find((u) => u.id === unitList.current && u.ready) ?? unitList.units.find((u) => u.ready))?.id ?? 2;
 const key = () => 'mathseye.mathfacts.v1' + activeNs();   // one saved db per player
 
 export interface SavedSession {
@@ -30,7 +33,7 @@ export interface Db {
 }
 
 export const fresh = (): Db => ({
-  settings: { startedOn: Date.now(), introducedTricks: [], manuallyUnlocked: [], currentUnit: 2, factsMode: 'unit' },
+  settings: { startedOn: Date.now(), introducedTricks: [], manuallyUnlocked: [], currentUnit: DEFAULT_UNIT, factsMode: 'unit' },
   cards: {},
   attempts: [],
   sessions: [],
@@ -39,7 +42,7 @@ export const fresh = (): Db => ({
 export function load(): Db {
   try {
     const raw = localStorage.getItem(key());
-    if (raw) { const saved = JSON.parse(raw); return { ...fresh(), ...saved, settings: { ...fresh().settings, ...saved.settings } }; }
+    if (raw) { const saved = JSON.parse(raw); const settings = { ...fresh().settings, ...saved.settings }; if (!settings.unitPicked) settings.currentUnit = DEFAULT_UNIT; return { ...fresh(), ...saved, settings }; }
   } catch {
     /* private mode or corrupted: start fresh */
   }

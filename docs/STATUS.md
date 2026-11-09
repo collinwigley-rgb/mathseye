@@ -11,6 +11,7 @@
 - [x] Basic grown-ups screen: unlock tricks early, stickiest cards (no PIN yet)
 
 ## Next up
+- [x] Unit 3 is the default unit (Nov 2026). Live for Unit 3: MathFacts (same facts), Flash Cards (33 cards from the 3.1 and 3.2 sheets). Coming soon: Study Guide and Unit Homework for Unit 3 (needs: builders parameterized by unit, private problems/unit-3 + pack for 3.1 and 3.2, study problems and variants). Owner to confirm: Unit 3 lesson titles, percent answer entry (75 and 75%).
 - [ ] Flash Cards module (branch `flash-cards`, waiting for the owner's OK): Unit 2 deck (41 cards, 75 with flipped ones), spaced review, per-player progress synced. Next: "make your own cards", Unit 3 cards arrive with each week's reference sheets.
 - [ ] Unit and lesson picker on the main selector (branch `unit-lesson-picker`, not yet on main: waiting for the owner's OK). Unit list in `src/units.json`; Unit 3 shows as "soon". Study guide takes `?lesson=2.3`, homework takes `?sub=2.3`. Next for Unit 3: parameterize builders, sync keys, service worker, then content week by week.
 - [x] Main selector redesigned (Nov 2026): greeting, three icon panels, colors and songs in the slide-out panel; still to check on a real iPad

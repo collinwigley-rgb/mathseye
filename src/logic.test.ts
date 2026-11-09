@@ -384,3 +384,22 @@ describe('flash cards', () => {
     expect(S.mergeCards(null, R)).toBe(R); expect(S.mergeCards(L, null)).toBe(L);
   });
 });
+
+describe('which unit she starts on', () => {
+  const mem = (init: Record<string, string>) => { const m = { ...init }; (globalThis as any).localStorage = { getItem: (k: string) => (k in m ? m[k] : null), setItem: (k: string, v: string) => { m[k] = v; }, removeItem: (k: string) => { delete m[k]; } }; return m; };
+  it('starts everyone on the newest ready unit until a unit is picked on purpose, and then keeps their choice', async () => {
+    const S = await import('./store'); const units = (await import('./units.json')).default;
+    expect(S.DEFAULT_UNIT).toBe(units.current);
+    const base = (over: object) => JSON.stringify({ settings: { startedOn: 1, introducedTricks: [], manuallyUnlocked: [], factsMode: 'unit', ...over }, cards: {}, attempts: [], sessions: [] });
+    mem({ 'mathseye.mathfacts.v1': base({ currentUnit: 2 }) });                     // saved before units were pickable: 2 was only the old default
+    expect(S.load().settings.currentUnit).toBe(S.DEFAULT_UNIT);
+    mem({ 'mathseye.mathfacts.v1': base({ currentUnit: 2, unitPicked: true }) });   // she picked Unit 2 herself
+    expect(S.load().settings.currentUnit).toBe(2);
+    mem({}); expect(S.load().settings.currentUnit).toBe(S.DEFAULT_UNIT);           // a brand-new player
+  });
+  it('lists every unit with its sections, and only offers a section that exists', async () => {
+    const units = (await import('./units.json')).default;
+    for (const u of units.units) { expect(Object.keys(u.features).sort()).toEqual(['cards', 'facts', 'homework', 'study']); }
+    expect(units.units.find((u) => u.id === 2)!.features).toEqual({ facts: true, cards: true, study: true, homework: true });   // Unit 2 stays whole
+  });
+});

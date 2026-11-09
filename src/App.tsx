@@ -360,7 +360,7 @@ function Hub({ db, update, onCards, onFacts, onGrownups, onWho }: { db: Db; upda
         <div className="upills" role="group" aria-label="Unit">
           {unitList.units.map((u) => (
             <button key={u.id} type="button" className="upill" aria-pressed={u.id === U.id} disabled={!u.ready}
-              onClick={() => { setLesson(null); update((d) => ({ ...d, settings: { ...d.settings, currentUnit: u.id } })); }}>
+              onClick={() => { setLesson(null); update((d) => ({ ...d, settings: { ...d.settings, currentUnit: u.id, unitPicked: true } })); }}>
               {u.label}{!u.ready && <small>soon</small>}
             </button>
           ))}
@@ -375,8 +375,12 @@ function Hub({ db, update, onCards, onFacts, onGrownups, onWho }: { db: Db; upda
       </header>
       <nav className="tiles3" aria-label="Sections">
         <button className="tile3 t1" onClick={onFacts}><span className="gl"><GlyphFacts /></span><b>MathFacts</b><span className="sub">Quick mental-math practice</span><i className="go" aria-hidden="true">{'\u2192'}</i></button>
-        <a className="tile3 t2" href={`./study/unit-${U.id}.html${lesson ? `?lesson=${lesson}` : ''}`}><span className="gl"><GlyphStudy /></span><b>Study Guide</b><span className="sub">{lessonInfo ? `Practice Lesson ${lessonInfo.id}` : 'Get ready for the test'}</span><i className="go" aria-hidden="true">{'\u2192'}</i></a>
-        <a className="tile3 t3" href={`./homework/unit-${U.id}.html${lesson ? `?sub=${lesson}` : ''}`}><span className="gl"><GlyphHomework /></span><b>Unit Homework</b><span className="sub">{lessonInfo ? `Lesson ${lessonInfo.id} worksheets` : "Help with this unit's worksheets"}</span><i className="go" aria-hidden="true">{'\u2192'}</i></a>
+        {U.features.study
+          ? <a className="tile3 t2" href={`./study/unit-${U.id}.html${lesson ? `?lesson=${lesson}` : ''}`}><span className="gl"><GlyphStudy /></span><b>Study Guide</b><span className="sub">{lessonInfo ? `Practice Lesson ${lessonInfo.id}` : 'Get ready for the test'}</span><i className="go" aria-hidden="true">{'\u2192'}</i></a>
+          : <div className="tile3 t2 off" aria-disabled="true"><span className="gl"><GlyphStudy /></span><b>Study Guide</b><span className="sub">Coming soon for {U.label}</span></div>}
+        {U.features.homework
+          ? <a className="tile3 t3" href={`./homework/unit-${U.id}.html${lesson ? `?sub=${lesson}` : ''}`}><span className="gl"><GlyphHomework /></span><b>Unit Homework</b><span className="sub">{lessonInfo ? `Lesson ${lessonInfo.id} worksheets` : "Help with this unit's worksheets"}</span><i className="go" aria-hidden="true">{'\u2192'}</i></a>
+          : <div className="tile3 t3 off" aria-disabled="true"><span className="gl"><GlyphHomework /></span><b>Unit Homework</b><span className="sub">Coming soon for {U.label}</span></div>}
         <button className="tile3 t4" onClick={() => onCards(lesson)}><span className="gl"><GlyphCards /></span><b>Flash Cards</b><span className="sub">{lessonInfo ? `Lesson ${lessonInfo.id} words and ideas` : 'Words and big ideas'}</span><i className="go" aria-hidden="true">{'\u2192'}</i></button>
       </nav>
       <button className="link" onClick={onGrownups}>Grown-ups</button>

@@ -326,3 +326,7 @@ main.home { gap: 20px; padding-top: max(74px, calc(env(safe-area-inset-top) + 66
 .cdone { display: flex; flex-direction: column; gap: 10px; align-items: center; width: 100%; max-width: 420px; }
 @media (prefers-reduced-motion: reduce) { .fcard .face { transition: none; } }
 @media (max-width: 640px) { .cardsmod .ctop { padding-right: 90px; } .fcard { min-height: 340px; } .fcard .face { padding: 24px 20px; } }
+
+/* A panel whose section is not ready for this unit yet */
+.home .tile3.off { opacity: .55; cursor: default; filter: saturate(.7); }
+.home .tile3.off .go { display: none; }

@@ -1,5 +1,27 @@
 {
+  "current": 3,
   "units": [
+    {
+      "id": 3,
+      "label": "Unit 3",
+      "ready": true,
+      "lessons": [
+        {
+          "id": "3.1",
+          "title": "Percent of a number"
+        },
+        {
+          "id": "3.2",
+          "title": "Percent and proportion"
+        }
+      ],
+      "features": {
+        "facts": true,
+        "cards": true,
+        "study": false,
+        "homework": false
+      }
+    },
     {
       "id": 2,
       "label": "Unit 2",
@@ -33,22 +55,13 @@
           "id": "2.8",
           "title": "Scale drawings"
         }
-      ]
-    },
-    {
-      "id": 3,
-      "label": "Unit 3",
-      "ready": false,
-      "lessons": [
-        {
-          "id": "3.1",
-          "title": "Percent of a number"
-        },
-        {
-          "id": "3.2",
-          "title": "Percent and proportion"
-        }
-      ]
+      ],
+      "features": {
+        "facts": true,
+        "cards": true,
+        "study": true,
+        "homework": true
+      }
     }
   ]
 }
