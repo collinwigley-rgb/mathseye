@@ -8,6 +8,7 @@ import { buildQueue, confidence, streak, trickMastery, tricksFor, type Focus, ty
 import { activeProfile, addProfile, needsWho, profiles, removeProfile, setActive, type Profile } from './profile';
 import Mark from './Mark';
 import factLinks from './factlinks.json';
+import unitList from './units.json';
 import { BRANDS, ICONS, MEMBERS, getBrand, setBrand, type BrandId } from './brand';
 import { fresh, load, save, today, type Db, type QueueItem } from './store';
 import type { Problem } from './types';
@@ -50,7 +51,7 @@ export default function App() {
   else if (screen === 'grownups') view = <Grownups db={db} update={update} onBack={() => setScreen('hub')} onRemoved={() => { bump((n) => n + 1); if (!activeProfile()) setScreen('who'); }} />;
   else if (screen === 'setup') view = <Setup db={db} pre={pre} onStart={startOrResume} onBack={() => setScreen('facts')} />;
   else if (screen === 'facts') view = <FactsHome db={db} update={update} onStart={startOrResume} onSetup={(ids) => { setPre(ids ?? []); setScreen('setup'); }} onWho={() => setScreen('who')} onBack={() => setScreen('hub')} />;
-  else view = <Hub db={db} onFacts={() => setScreen('facts')} onGrownups={() => setScreen('grownups')} onWho={() => setScreen('who')} />;
+  else view = <Hub db={db} update={update} onFacts={() => setScreen('facts')} onGrownups={() => setScreen('grownups')} onWho={() => setScreen('who')} />;
 
   return <>{view}<PlayerMenu onChoose={choose} /><BackPill /></>;
 }
@@ -318,8 +319,11 @@ function PaletteDrawer({ cur, onPick, onClose }: { cur: BrandId; onPick: (id: Br
   );
 }
 
-function Hub({ db, onFacts, onGrownups, onWho }: { db: Db; onFacts: () => void; onGrownups: () => void; onWho: () => void }) {
+function Hub({ db, update, onFacts, onGrownups, onWho }: { db: Db; update: (fn: (d: Db) => Db) => void; onFacts: () => void; onGrownups: () => void; onWho: () => void }) {
   const unit = db.settings.currentUnit ?? 2;
+  const U = unitList.units.find((u) => u.id === unit && u.ready) ?? unitList.units[0];
+  const [lesson, setLesson] = useState<string | null>(null);
+  const lessonInfo = U.lessons.find((l) => l.id === lesson) ?? null;
   const [cur, setCur] = useState<BrandId>(getBrand());
   const [drawer, setDrawer] = useState(false);
   const me = activeProfile();
@@ -336,14 +340,29 @@ function Hub({ db, onFacts, onGrownups, onWho }: { db: Db; onFacts: () => void; 
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.4 0 2-.9 2-1.8 0-.5-.2-.9-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1 .8-1.8 1.8-1.8H17a4 4 0 0 0 4-4C21 6.6 17 3 12 3Z" /><circle cx="7.5" cy="11" r="1.1" /><circle cx="10" cy="7.3" r="1.1" /><circle cx="14.5" cy="7.3" r="1.1" /></svg>
       </button>
       <header className="hubhead">
-        <p className="eyebrow">Tonight's lineup <span aria-hidden="true">{'\u2726'}</span> Unit {unit}</p>
+        <p className="eyebrow">Tonight's lineup</p>
         <h2>{me ? `Hi, ${me.name}` : 'Hi there'}</h2>
         <p className="ask">What are we working on?</p>
+        <div className="upills" role="group" aria-label="Unit">
+          {unitList.units.map((u) => (
+            <button key={u.id} type="button" className="upill" aria-pressed={u.id === U.id} disabled={!u.ready}
+              onClick={() => { setLesson(null); update((d) => ({ ...d, settings: { ...d.settings, currentUnit: u.id } })); }}>
+              {u.label}{!u.ready && <small>soon</small>}
+            </button>
+          ))}
+        </div>
+        {U.lessons.length > 0 && (
+          <div className="lpills" role="group" aria-label="Lesson (optional)">
+            <button type="button" aria-pressed={!lesson} onClick={() => setLesson(null)}>All lessons</button>
+            {U.lessons.map((l) => <button key={l.id} type="button" aria-pressed={lesson === l.id} aria-label={`Lesson ${l.id}, ${l.title}`} onClick={() => setLesson(lesson === l.id ? null : l.id)}>{l.id}</button>)}
+          </div>
+        )}
+        <p className="lname" aria-live="polite">{lessonInfo ? `Lesson ${lessonInfo.id} \u00b7 ${lessonInfo.title}` : '\u00a0'}</p>
       </header>
       <nav className="tiles3" aria-label="Sections">
         <button className="tile3 t1" onClick={onFacts}><span className="gl"><GlyphFacts /></span><b>MathFacts</b><span className="sub">Quick mental-math practice</span><i className="go" aria-hidden="true">{'\u2192'}</i></button>
-        <a className="tile3 t2" href={`./study/unit-${unit}.html`}><span className="gl"><GlyphStudy /></span><b>Study Guide</b><span className="sub">Get ready for the test</span><i className="go" aria-hidden="true">{'\u2192'}</i></a>
-        <a className="tile3 t3" href={`./homework/unit-${unit}.html`}><span className="gl"><GlyphHomework /></span><b>Unit Homework</b><span className="sub">Help with this unit's worksheets</span><i className="go" aria-hidden="true">{'\u2192'}</i></a>
+        <a className="tile3 t2" href={`./study/unit-${U.id}.html${lesson ? `?lesson=${lesson}` : ''}`}><span className="gl"><GlyphStudy /></span><b>Study Guide</b><span className="sub">{lessonInfo ? `Practice Lesson ${lessonInfo.id}` : 'Get ready for the test'}</span><i className="go" aria-hidden="true">{'\u2192'}</i></a>
+        <a className="tile3 t3" href={`./homework/unit-${U.id}.html${lesson ? `?sub=${lesson}` : ''}`}><span className="gl"><GlyphHomework /></span><b>Unit Homework</b><span className="sub">{lessonInfo ? `Lesson ${lessonInfo.id} worksheets` : "Help with this unit's worksheets"}</span><i className="go" aria-hidden="true">{'\u2192'}</i></a>
       </nav>
       <button className="link" onClick={onGrownups}>Grown-ups</button>
       {drawer && <PaletteDrawer cur={cur} onPick={(id) => { setBrand(id); setCur(id); }} onClose={() => setDrawer(false)} />}

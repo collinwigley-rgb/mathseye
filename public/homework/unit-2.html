@@ -363,7 +363,10 @@ function wayView(c, way, viz, body){ const C = c.calc || {per:1, len:1, from:"in
     draw(); } }
 /* ---------- navigation ---------- */
 function go(view, extra){ Object.assign(S, extra || {}, {view}); render(); window.scrollTo(0, 0); }
-function render(){ window.mathseyeDev && mathseyeDev.set([]); const app = document.getElementById("app"); app.innerHTML = ""; document.body.classList.toggle("learning", S.view === "learn"); app.append(VIEWS[S.view]()); const h = app.querySelector("h1,h2"); if (h) { h.tabIndex = -1; h.focus({preventScroll:true}); } }
+/* Opened from the main selector with a lesson chosen (?sub=2.3): land on that lesson's problem list once the pack is here. */
+let JUMP = null; { const q = new URLSearchParams(location.search).get("sub"); if (q) { JUMP = q; try { history.replaceState(null, "", location.pathname); } catch(e) {} } }
+function jumpNow(){ if (JUMP && PACK && PACK.problems.some(p => p.sub === JUMP)) { S.sub = JUMP; S.view = "lesson"; } JUMP = null; }
+function render(){ if (JUMP && PACK) jumpNow(); window.mathseyeDev && mathseyeDev.set([]); const app = document.getElementById("app"); app.innerHTML = ""; document.body.classList.toggle("learning", S.view === "learn"); app.append(VIEWS[S.view]()); const h = app.querySelector("h1,h2"); if (h) { h.tabIndex = -1; h.focus({preventScroll:true}); } }
 const backBar = (label, fn) => { const t = $(`<div class="top"><button class="btn quiet">← ${label}</button></div>`); t.querySelector("button").onclick = fn; return t; };
 const logo = () => `<a class="logo" href="../" aria-label="Mathseye, back to home">${MARK}<span class="wm">MATHSEYE</span></a>`;
 

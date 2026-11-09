@@ -544,6 +544,8 @@ testRes(rv){ rv = rv || S.rv; const items = rv.items, gr = mathseyeGrade.gradeOf
 if (save.cur && save.mission && save.mission.ids[save.mission.i] === save.cur.id) { S.cur = save.cur; S.view = "mission"; }
 if (save.cur) { save.cur = null; persist(); }
 if (window.mathseyeSongs) mathseyeSongs.load();
+/* Opened from the main selector with a lesson chosen (?lesson=2.3): preset the setup to that lesson. She still taps Start. */
+{ const q = new URLSearchParams(location.search).get("lesson"); if (q) { if (DATA.subs.includes(q)) { save.plan = Object.assign(plan(), {lessons: [q]}); persist(); } try { history.replaceState(null, "", location.pathname); } catch(e) {} } }
 render();
 </script>
 
