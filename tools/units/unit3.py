@@ -4,7 +4,7 @@ Every problem's answer is computed with Fractions; every variant is re-solved fr
 import random, re, pathlib, sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 from fractions import Fraction as F
-from units.common import D, fmt, money, mix, numv
+from units.common import D, fmt, money, mix, numv, chv
 
 UNIT = 3
 LABEL = "Unit 3"
@@ -24,6 +24,8 @@ CONCEPTS = {
 BASE = {
  ("3.1","A"):["percent-of"], ("3.1","B"):["over-100","percent-of"], ("3.1","C"):["tax-tip","percent-of"],
  ("3.2","A"):["percent-proportion","proportion"], ("3.2","B"):["percent-proportion","percent-of"], ("3.2","C"):["find-whole","percent-proportion","proportion"],
+ ("3.1","D"):["find-whole","percent-of"], ("3.1","E"):["percent-of"], ("3.1","F"):["over-100"], ("3.1","G"):["percent-of"],
+ ("3.2","D"):["percent-proportion"], ("3.2","E"):["percent-proportion"], ("3.2","F"):["find-whole","percent-proportion"], ("3.2","G"):["percent-proportion"],
 }
 FOCUS = {
  "3.1":"Practice turning a percent into a decimal and multiplying, and check the size of your answer.",
@@ -77,7 +79,7 @@ def g_percent(r):                                                    # 3.2 A: fi
     a = int(F(p, 100) * b); who = r.choice([("students in a class", "brought lunch"), ("games a team played", "won"), ("shots a player took", "made")])
     return numv(f"Out of {b} {who[0]}, {a} {who[1]}. What percent is that?", p,
       ["Which number is the part? Which is the whole?", f"Write part over whole = P over 100: {a}/{b} = P/100.", "Multiply both sides by 100."],
-      [f"{a}/{b} = P/100", f"P = {a} × 100 ÷ {b} = {p}", f"{p}% of the {who[0]} {who[1]}."], show=f"{p}%")
+      [f"{a}/{b} = P/100", f"P = {a} × 100 ÷ {b} = {p}", f"{p}% of the {who[0]} {who[1]}."], show=f"{p}%", pct=True)
 def g_part(r):                                                       # 3.2 B: find the part with the proportion
     W = r.choice([12.5, 20, 30, 40, 60, 75, 120, 250]); p = r.choice([10, 20, 30, 35, 40, 60, 70, 75, 80, 150, 175]); a = F(p, 100) * D(W)
     thing = r.choice([("A bike path is {W} miles long. Dana has gone {p}% of the way. How many miles has she gone?", "miles"),
@@ -91,10 +93,73 @@ def g_whole(r):                                                      # 3.2 C: fi
       [f"Which number is the part? What is the whole, the thing you don't know?", f"Write {fmt(a)}/w = {p}/100.", "Cross-multiply, then divide."],
       [f"{fmt(a)}/w = {p}/100", f"w = {fmt(a)} × 100 ÷ {p} = {Wk}", f"The number is {Wk}."])
 
+
+def g_whole_small(r):                                                # 3.1 D: find the whole from a small percent
+    p = r.choice([D("0.5"), D("0.8"), D("0.9"), D("1.5"), D("2.5")]); W = r.choice([200, 400, 500, 800, 1000, 2000, 4000]); N = p / 100 * W
+    if N.denominator != 1: return g_whole_small(r)
+    return numv(f"{fmt(N)} is {fmt(p)}% of what number?", W,
+      [f"Which number is the part? Which one is the whole you are looking for?", f"Write {fmt(N)}/w = {fmt(p)}/100.", f"What do you multiply {fmt(p)} by to get 100? Do the same to {fmt(N)}."],
+      [f"{fmt(N)}/w = {fmt(p)}/100", f"w = {fmt(N)} × 100 ÷ {fmt(p)} = {W}", f"Check: {fmt(p)}% of {W} = {fmt(N)}."])
+def g_pct_dec(r):                                                    # 3.1 E: percent to decimal
+    p = r.choice([D("0.4"), D("0.25"), D("0.8"), D("0.6"), D("7"), D("12.5"), D("35"), D("0.05"), D("2.5")]); v = p / 100
+    return numv(f"Write {fmt(p)}% as a decimal.", v,
+      ["Percent means out of 100. What do you do to the decimal point?", "Move the point two places to the left (put in zeros if you need them).", f"Start from {fmt(p)}."],
+      [f"{fmt(p)}% = {fmt(p)} ÷ 100", f"= {fmt(v)}"], show=fmt(v))
+def g_size(r):                                                       # 3.1 F: size sense
+    n = r.choice([5, 8, 12, 20, 44, 60]); p = r.choice([120, 150, 250, 300, 500, 700]); a, b = r.choice([(10, 100), (50, 150), (100, 200), (100, 500)])
+    v = F(p, 100) * n
+    if v < 1 or v in (a, b): return g_size(r)
+    ok = 0 if v < a else (1 if v <= b else 2)
+    opts = [f"Less than {a}", f"Between {a} and {b}", f"Greater than {b}"]
+    return chv(f"Is {p}% of {n} less than {a}, between {a} and {b}, or greater than {b}?", opts, ok,
+      [f"100% of {n} is {n}. Is {p}% more or less than that?", f"{p}% is {fmt(F(p,100))} times as much as {n}.", f"Work out {fmt(F(p,100))} × {n} and compare."],
+      [f"100% of {n} is {n}, so {p}% is {fmt(F(p,100))} times {n}.", f"{fmt(F(p,100))} × {n} = {fmt(v)}.", f"{fmt(v)} is {opts[ok].lower()}."])
+def g_two_step(r):                                                   # 3.1 G: percent of a percent
+    W = r.choice([200, 300, 400, 500, 600, 800, 1000]); p1 = r.choice([20, 25, 40, 50, 60, 70, 75]); p2 = r.choice([10, 20, 25, 30, 40, 50])
+    first = F(p1, 100) * W
+    if first.denominator != 1 or (F(p2, 100) * first).denominator != 1: return g_two_step(r)
+    ans = F(p2, 100) * first; grp = r.choice([("students", "are in 7th grade", "play a sport", "students in 7th grade play a sport"), ("members", "are adults", "volunteer", "adult members volunteer")])
+    return numv(f"A club has {W} {grp[0]}. {p1}% of them {grp[1]}. Of those, {p2}% {grp[2]}. How many {grp[3]}?", ans,
+      ["This takes two steps. What do you find first?", f"First find {p1}% of {W}.", f"Then find {p2}% of THAT number, not of {W}."],
+      [f"{p1}% of {W} = {fmt(first)}.", f"{p2}% of {fmt(first)} = {fmt(ans)}.", f"The answer is {fmt(ans)}."])
+def g_survey(r):                                                     # 3.2 D: add the groups first
+    p = r.choice([10, 15, 20, 25, 30, 35, 40, 45, 55, 60]); T = r.choice([200, 400, 500, 800, 1000, 2000]); A = F(p, 100) * T
+    if A.denominator != 1: return g_survey(r)
+    rest = int(T - A); B = (rest // 3) * 1 or 1; C = rest - B; who = r.choice([("lunch", "pizza", "burgers", "salad"), ("pets", "dogs", "cats", "fish")])
+    return numv(f"A survey asked people about their favorite {who[0]}: {int(A)} chose {who[1]}, {B} chose {who[2]}, and {C} chose {who[3]}. What percent chose {who[1]}?", p,
+      ["What is the whole? You have to add up all the groups.", f"Write {int(A)}/total = P/100.", "Solve for P."],
+      [f"Whole: {int(A)} + {B} + {C} = {T}.", f"{int(A)}/{T} = P/100.", f"P = {int(A)} × 100 ÷ {T} = {p}."], show=f"{p}%", pct=True)
+def g_compare(r):                                                    # 3.2 E: which is the greater percent
+    b = r.choice([20, 25, 40, 50]); d = r.choice([x for x in (20, 25, 40, 50, 80) if x != b]); a = r.choice([x for x in range(b // 2, b) if (F(x, b) * 100).denominator == 1]); c = r.choice([x for x in range(d // 2, d) if (F(x, d) * 100).denominator == 1])
+    pa, pc = F(a, b) * 100, F(c, d) * 100
+    if pa == pc: return g_compare(r)
+    t1, t2 = r.choice([("Team A", "Team B"), ("Ana", "Ben"), ("Room 4", "Room 5")])
+    return chv(f"{t1} won {a} of {b} games. {t2} won {c} of {d} games. Which has the greater percent of wins?", [t1, t2], 0 if pa > pc else 1,
+      ["Totals can fool you. Turn each into a percent of its own games.", f"Write {a}/{b} = P/100 and {c}/{d} = P/100.", "Compare the two percents."],
+      [f"{t1}: {a}/{b} = {fmt(pa)}%.", f"{t2}: {c}/{d} = {fmt(pc)}%.", f"{(t1 if pa > pc else t2)} has the greater percent."])
+def g_original(r):                                                   # 3.2 F: total is a percent of what the store paid
+    paid = r.choice([40, 50, 60, 80, 90, 100, 120, 150, 200]); p = r.choice([110, 120, 125, 140, 150, 160, 180]); total = F(p, 100) * paid
+    if total.denominator != 1: return g_original(r)
+    item = r.choice(["bike", "kayak", "coat", "tablet"])
+    return numv(f"A store sells a {item} for {money(total)}. That is {p}% of what the store paid for it. How much did the store pay?", paid,
+      ["The store paid the original amount, the whole (100%). Is the selling price more or less than that?", f"Write {fmt(total)}/w = {p}/100.", f"w = {fmt(total)} × 100 ÷ {p}."],
+      [f"{fmt(total)}/w = {p}/100", f"w = {fmt(total)} × 100 ÷ {p} = {paid}", f"The store paid {money(paid)}."], show=money(paid))
+def g_which(r):                                                      # 3.2 G: what are you looking for?
+    kind = r.choice(["whole", "percent", "part"]); n = r.choice([14, 18, 21, 24, 27]); p = r.choice([30, 40, 45, 56, 60, 75]); T = r.choice([25, 40, 50, 80]); thing = r.choice(["muffins", "sandwiches", "bracelets", "plants"])
+    text = {"whole": f"A stand sold {n} {thing} on Saturday. That was {p}% of everything it sold all weekend. Which one does the story leave out: the part, the whole, or the percent?",
+            "percent": f"A stand made {T + n} {thing} and sold {n} of them. What percent did it sell? Which one does the story leave out: the part, the whole, or the percent?",
+            "part": f"A stand has {T} {thing} and {p}% of them are on sale. How many are on sale? Which one does the story leave out: the part, the whole, or the percent?"}[kind]
+    ok = ["The percent", "The part", "The whole"].index({"whole": "The whole", "percent": "The percent", "part": "The part"}[kind])
+    return chv(text, ["The percent", "The part", "The whole"], ok,
+      ["Which numbers does the story give you? Which one does it NOT give you?", "Part: a piece. Whole: the full amount. Percent: out of 100.", "The one that is missing is what you are looking for."],
+      [{"whole": f"{n} {thing} is the part and {p}% is the percent, so the total for the weekend (the whole) is missing.", "percent": f"{n} is the part and {T + n} is the whole, so the percent is missing.", "part": f"{T} is the whole and {p}% is the percent, so the part is missing."}[kind], f"You are looking for {['the percent', 'the part', 'the whole'][ok]}."])
+
 def _problem(sub, typ, gen, seed):
     """The base problem is the generator run once with a fixed seed (so its text and answer are stable forever)."""
     v = gen(random.Random(seed)); _add(sub, typ, v)
-for _pid_i, (_sub, _typ, _gen, _seed) in enumerate([("3.1","A",g_balcony,11),("3.1","B",g_grow,12),("3.1","C",g_tax,13),("3.2","A",g_percent,21),("3.2","B",g_part,22),("3.2","C",g_whole,23)], 1):
+for _pid_i, (_sub, _typ, _gen, _seed) in enumerate([("3.1","A",g_balcony,11),("3.1","B",g_grow,12),("3.1","C",g_tax,13),("3.2","A",g_percent,21),("3.2","B",g_part,22),("3.2","C",g_whole,23),
+   ("3.1","D",g_whole_small,14),("3.1","E",g_pct_dec,15),("3.1","F",g_size,16),("3.1","G",g_two_step,17),
+   ("3.2","D",g_survey,24),("3.2","E",g_compare,25),("3.2","F",g_original,26),("3.2","G",g_which,27)], 1):
     PROBS_ID = f"U3-{_pid_i:02d}"; _problem(_sub, _typ, _gen, _seed); PROBS[-1]["id"] = PROBS_ID; GENS[PROBS_ID] = _gen
 
 def variants(pid, n=10):
@@ -120,3 +185,21 @@ SOLVE = {
  "U3-05": lambda t: (lambda m: _n(m[2]) / 100 * _n(m[1]))(re.search(r"(?:is|holds) ([\d.]+) (?:miles long|ounces)\. (?:\w+ has gone|It is) (\d+)%", t)),
  "U3-06": lambda t: (lambda m: _n(m[1]) / _n(m[2]) * 100)(re.search(r"^([\d.]+) is (\d+)% of a number", t)),
 }
+SOLVE.update({
+ "U3-07": lambda t: (lambda m: _n(m[1]) * 100 / _n(m[2]))(re.search(r"^([\d.]+) is ([\d.]+)% of what number", t)),
+ "U3-08": lambda t: _n(re.search(r"Write ([\d.]+)% as a decimal", t)[1]) / 100,
+ "U3-10": lambda t: (lambda m: _n(m[1]) * _n(m[2]) / 100 * _n(m[3]) / 100)(re.search(r"club has (\d+) \w+\. (\d+)% of them .*? Of those, (\d+)%", t)),
+ "U3-11": lambda t: (lambda m: _n(m[1]) * 100 / (_n(m[1]) + _n(m[2]) + _n(m[3])))(re.search(r"favorite \w+: (\d+) chose \w+, (\d+) chose \w+, and (\d+) chose", t)),
+ "U3-13": lambda t: (lambda m: _n(m[1]) * 100 / _n(m[2]))(re.search(r"for \$([\d.]+)\. That is (\d+)% of what", t)),
+})
+# multiple choice: the index of the right option, worked out from the text
+def _size(t):
+    m = re.search(r"Is (\d+)% of (\d+) less than (\d+), between \d+ and (\d+)", t); v = _n(m[1]) / 100 * _n(m[2]); a, b = _n(m[3]), _n(m[4])
+    return 0 if v < a else (1 if v <= b else 2)
+def _compare(t):
+    m = re.search(r"won (\d+) of (\d+) games\. .*? won (\d+) of (\d+) games", t); return 0 if _n(m[1]) / _n(m[2]) > _n(m[3]) / _n(m[4]) else 1
+def _which(t):
+    if "What percent" in t: return 0
+    if "How many" in t: return 1
+    return 2
+SOLVE_CHOICE = {"U3-09": _size, "U3-12": _compare, "U3-14": _which}

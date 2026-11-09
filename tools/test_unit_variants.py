@@ -10,9 +10,14 @@ U = importlib.import_module(f"units.unit{unit}")
 bad = []; checked = 0
 for p in U.PROBS:
     pid = p["id"]
-    if pid not in U.SOLVE: bad.append(f"{pid}: no independent re-solve registered"); continue
+    if pid not in U.SOLVE and pid not in getattr(U, "SOLVE_CHOICE", {}): bad.append(f"{pid}: no independent re-solve registered"); continue
     for v in [p] + U.variants(pid):
-        if v["kind"] != "num": continue
+        if v["kind"] == "choice":
+            solver = getattr(U, "SOLVE_CHOICE", {}).get(pid)
+            if solver is None: bad.append(f"{pid}: a multiple-choice problem with no independent solver"); continue
+            checked += 1
+            if solver(v["text"]) != v["correct"]: bad.append(f"{pid}: {v['text'][:70]!r} marks option {v['correct']} but the text works out to option {solver(v['text'])}")
+            continue
         try: got = U.SOLVE[pid](v["text"])
         except Exception as e: bad.append(f"{pid}: could not re-solve {v['text'][:60]!r} ({e})"); continue
         checked += 1

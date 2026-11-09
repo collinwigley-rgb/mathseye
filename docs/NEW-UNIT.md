@@ -13,4 +13,5 @@ Each unit is self-contained: its own lessons, practice problems, pages, saved-da
 7. **Switch on:** set the unit's `features.study` / `features.homework` to `true` only when the pages exist and have been previewed as "collin".
 
 ## Quarter switch (retiring a unit)
+`src/units.json` records where the school year is (`semester`, `term`) and which term each unit belongs to (Unit 2 = Term 1, Unit 3 = Term 2, both Semester 1). At a term change: update `semester`/`term`, set `current` to the new unit.
 Nothing is deleted. Change `current` in `src/units.json` to the new unit; the old unit stays on the Unit switch with every section working, and her progress for it stays on the device and the server (keys are never renamed or removed). To take a unit off the switch entirely, set its `ready` to `false` (its pages and data stay in place and reachable by address).

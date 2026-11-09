@@ -1,0 +1,3802 @@
+{
+ "tricks": {
+  "benchmark-fractions": {
+   "name": "Fraction and decimal pairs",
+   "rule": "Learn the friendly pairs: 1/2 = 0.5, 1/4 = 0.25, 1/5 = 0.2, 1/8 = 0.125, 1/10 = 0.1. Then count them up: 3/4 is three quarters.",
+   "example": "3/4 = 3 × 0.25 = 0.75     0.4 = 2/5"
+  },
+  "break-it-apart": {
+   "name": "Break it apart",
+   "rule": "Round one number to a friendly one, multiply, then fix the difference.",
+   "example": "7 × 48 = 7 × 50 − 7 × 2 = 336"
+  },
+  "divide-by-5-25-50": {
+   "name": "Dividing by 5, 25, and 50",
+   "rule": "÷5: double it, then ÷10. ÷25: times 4, then ÷100. ÷50: double it, then ÷100.",
+   "example": "240 ÷ 5 = 480 ÷ 10 = 48     300 ÷ 25 = 1200 ÷ 100 = 12"
+  },
+  "divide-by-decimals": {
+   "name": "Dividing by 0.5, 0.25, and 0.1",
+   "rule": "How many fit in 1? There are 2 halves, 4 quarters, 10 tenths in 1. So ÷0.5 is × 2, ÷0.25 is × 4, ÷0.1 is × 10.",
+   "example": "12 ÷ 0.25 = 12 × 4 = 48     7 ÷ 0.5 = 14"
+  },
+  "divide-in-two-steps": {
+   "name": "Divide in two easy steps",
+   "rule": "Split the divisor into two small numbers: ÷6 = ÷2 then ÷3. ÷12 = ÷3 then ÷4. ÷15 = ÷3 then ÷5.",
+   "example": "168 ÷ 12 = 168 ÷ 3 = 56, then 56 ÷ 4 = 14"
+  },
+  "divisibility-3-9": {
+   "name": "Divisibility by 3 and 9",
+   "rule": "Add the digits. If the sum is divisible by 3, so is the number. Same test for 9.",
+   "example": "156 → 1 + 5 + 6 = 12, and 12 is divisible by 3, so 156 is too."
+  },
+  "flip-and-cancel": {
+   "name": "Flip and cancel",
+   "rule": "Fraction ÷ fraction: keep the first, change ÷ to ×, flip the second. Cancel matching numbers before you multiply.",
+   "example": "(3/4) ÷ (1/2) = 3/4 × 2/1 = 3/2     (2/3) ÷ (1/6) = 2/3 × 6 = 4"
+  },
+  "halve-halve": {
+   "name": "Halve, then halve again",
+   "rule": "÷4: cut it in half twice. ÷8: cut it in half three times.",
+   "example": "156 ÷ 4 = 78 ÷ 2 = 39     240 ÷ 8 = 120 → 60 → 30"
+  },
+  "how-many-fit": {
+   "name": "How many fit?",
+   "rule": "Dividing by a unit fraction asks 'how many pieces fit?' Dividing by 1/4 means times 4. Dividing by 1/8 means times 8.",
+   "example": "6 ÷ 1/4 = 6 × 4 = 24     (3/4) ÷ (1/8) = 3/4 × 8 = 6"
+  },
+  "integer-sign-rules": {
+   "name": "Integer sign rules",
+   "rule": "Multiply or divide the numbers, then pick the sign: same signs → positive, different signs → negative.",
+   "example": "(−6)(−4) = 24    (−6)(4) = −24"
+  },
+  "minutes-to-hours": {
+   "name": "Minutes as part of an hour",
+   "rule": "Put the minutes over 60 and simplify. 15 minutes = 15/60 = 1/4 hour.",
+   "example": "30 min = 1/2 h     20 min = 1/3 h     6 min = 1/10 h"
+  },
+  "move-the-decimal": {
+   "name": "Move the decimal",
+   "rule": "Times 10, 100, 1000: slide the decimal right one place per zero. Divide: slide it left.",
+   "example": "5.6 ÷ 10 = 0.56    0.3 × 100 = 30"
+  },
+  "times-one-and-a-half": {
+   "name": "Times 1.5, 2.5, and 0.5",
+   "rule": "× 0.5 is half. × 1.5 is the number plus half of it. × 2.5 is double plus half.",
+   "example": "14 × 1.5 = 14 + 7 = 21     18 × 2.5 = 36 + 9 = 45"
+  }
+ },
+ "problems": [
+  {
+   "sub": "3.1",
+   "type": "A",
+   "kind": "num",
+   "text": "A school has 480 students and 60% ride the bus. How many students ride the bus?",
+   "answer": 288.0,
+   "show": "288 students",
+   "hints": [
+    "What is the whole? What is the percent?",
+    "Write 60% as a decimal: move the point two places left.",
+    "Multiply the whole by that decimal."
+   ],
+   "steps": [
+    "60% = 0.6",
+    "0.6 × 480 = 288",
+    "There are 288 students."
+   ],
+   "tol": 1e-09,
+   "table": null,
+   "graph": null,
+   "id": "U3-01",
+   "why_focus": "Practice turning a percent into a decimal and multiplying, and check the size of your answer.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "percent-of"
+    ],
+    "earlier": []
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "num",
+     "text": "A school has 480 students and 15% ride the bus. How many students ride the bus?",
+     "answer": 72.0,
+     "show": "72 students",
+     "hints": [
+      "What is the whole? What is the percent?",
+      "Write 15% as a decimal: move the point two places left.",
+      "Multiply the whole by that decimal."
+     ],
+     "steps": [
+      "15% = 0.15",
+      "0.15 × 480 = 72",
+      "There are 72 students."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10001,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A theater has 480 seats and 35% of them are in the balcony. How many seats are in the balcony?",
+     "answer": 168.0,
+     "show": "168 seats",
+     "hints": [
+      "What is the whole? What is the percent?",
+      "Write 35% as a decimal: move the point two places left.",
+      "Multiply the whole by that decimal."
+     ],
+     "steps": [
+      "35% = 0.35",
+      "0.35 × 480 = 168",
+      "There are 168 seats."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10002,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A school has 120 students and 30% ride the bus. How many students ride the bus?",
+     "answer": 36.0,
+     "show": "36 students",
+     "hints": [
+      "What is the whole? What is the percent?",
+      "Write 30% as a decimal: move the point two places left.",
+      "Multiply the whole by that decimal."
+     ],
+     "steps": [
+      "30% = 0.3",
+      "0.3 × 120 = 36",
+      "There are 36 students."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10003,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A farm has 500 animals and 60% of them are chickens. How many chickens are there?",
+     "answer": 300.0,
+     "show": "300 chickens",
+     "hints": [
+      "What is the whole? What is the percent?",
+      "Write 60% as a decimal: move the point two places left.",
+      "Multiply the whole by that decimal."
+     ],
+     "steps": [
+      "60% = 0.6",
+      "0.6 × 500 = 300",
+      "There are 300 chickens."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10004,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A farm has 800 animals and 20% of them are chickens. How many chickens are there?",
+     "answer": 160.0,
+     "show": "160 chickens",
+     "hints": [
+      "What is the whole? What is the percent?",
+      "Write 20% as a decimal: move the point two places left.",
+      "Multiply the whole by that decimal."
+     ],
+     "steps": [
+      "20% = 0.2",
+      "0.2 × 800 = 160",
+      "There are 160 chickens."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10005,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A school has 160 students and 35% ride the bus. How many students ride the bus?",
+     "answer": 56.0,
+     "show": "56 students",
+     "hints": [
+      "What is the whole? What is the percent?",
+      "Write 35% as a decimal: move the point two places left.",
+      "Multiply the whole by that decimal."
+     ],
+     "steps": [
+      "35% = 0.35",
+      "0.35 × 160 = 56",
+      "There are 56 students."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10006,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A theater has 500 seats and 80% of them are in the balcony. How many seats are in the balcony?",
+     "answer": 400.0,
+     "show": "400 seats",
+     "hints": [
+      "What is the whole? What is the percent?",
+      "Write 80% as a decimal: move the point two places left.",
+      "Multiply the whole by that decimal."
+     ],
+     "steps": [
+      "80% = 0.8",
+      "0.8 × 500 = 400",
+      "There are 400 seats."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10007,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A theater has 250 seats and 60% of them are in the balcony. How many seats are in the balcony?",
+     "answer": 150.0,
+     "show": "150 seats",
+     "hints": [
+      "What is the whole? What is the percent?",
+      "Write 60% as a decimal: move the point two places left.",
+      "Multiply the whole by that decimal."
+     ],
+     "steps": [
+      "60% = 0.6",
+      "0.6 × 250 = 150",
+      "There are 150 seats."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10008,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A farm has 300 animals and 60% of them are chickens. How many chickens are there?",
+     "answer": 180.0,
+     "show": "180 chickens",
+     "hints": [
+      "What is the whole? What is the percent?",
+      "Write 60% as a decimal: move the point two places left.",
+      "Multiply the whole by that decimal."
+     ],
+     "steps": [
+      "60% = 0.6",
+      "0.6 × 300 = 180",
+      "There are 180 chickens."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10009,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A farm has 120 animals and 60% of them are chickens. How many chickens are there?",
+     "answer": 72.0,
+     "show": "72 chickens",
+     "hints": [
+      "What is the whole? What is the percent?",
+      "Write 60% as a decimal: move the point two places left.",
+      "Multiply the whole by that decimal."
+     ],
+     "steps": [
+      "60% = 0.6",
+      "0.6 × 120 = 72",
+      "There are 72 chickens."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10010,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10011
+  },
+  {
+   "sub": "3.1",
+   "type": "B",
+   "kind": "num",
+   "text": "A sunflower is 24 inches tall in June. By August it is 150% as tall as it was in June. How tall is it in August (in inches)?",
+   "answer": 36.0,
+   "show": "36 inches",
+   "hints": [
+    "Is 150% more or less than 100%? So will the answer be taller or shorter than 24?",
+    "Write 150% as a decimal: 1.5.",
+    "Multiply 24 by 1.5."
+   ],
+   "steps": [
+    "150% = 1.5",
+    "1.5 × 24 = 36",
+    "The sunflower is 36 inches tall."
+   ],
+   "tol": 1e-09,
+   "table": null,
+   "graph": null,
+   "id": "U3-02",
+   "why_focus": "Practice turning a percent into a decimal and multiplying, and check the size of your answer.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "over-100",
+     "percent-of"
+    ],
+    "earlier": []
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "num",
+     "text": "A sunflower is 12 inches tall in June. By August it is 200% as tall as it was in June. How tall is it in August (in inches)?",
+     "answer": 24.0,
+     "show": "24 inches",
+     "hints": [
+      "Is 200% more or less than 100%? So will the answer be taller or shorter than 12?",
+      "Write 200% as a decimal: 2.",
+      "Multiply 12 by 2."
+     ],
+     "steps": [
+      "200% = 2",
+      "2 × 12 = 24",
+      "The sunflower is 24 inches tall."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10012,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A sunflower is 50 inches tall in June. By August it is 250% as tall as it was in June. How tall is it in August (in inches)?",
+     "answer": 125.0,
+     "show": "125 inches",
+     "hints": [
+      "Is 250% more or less than 100%? So will the answer be taller or shorter than 50?",
+      "Write 250% as a decimal: 2.5.",
+      "Multiply 50 by 2.5."
+     ],
+     "steps": [
+      "250% = 2.5",
+      "2.5 × 50 = 125",
+      "The sunflower is 125 inches tall."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10013,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A sunflower is 30 inches tall in June. By August it is 200% as tall as it was in June. How tall is it in August (in inches)?",
+     "answer": 60.0,
+     "show": "60 inches",
+     "hints": [
+      "Is 200% more or less than 100%? So will the answer be taller or shorter than 30?",
+      "Write 200% as a decimal: 2.",
+      "Multiply 30 by 2."
+     ],
+     "steps": [
+      "200% = 2",
+      "2 × 30 = 60",
+      "The sunflower is 60 inches tall."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10014,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A sunflower is 12 inches tall in June. By August it is 125% as tall as it was in June. How tall is it in August (in inches)?",
+     "answer": 15.0,
+     "show": "15 inches",
+     "hints": [
+      "Is 125% more or less than 100%? So will the answer be taller or shorter than 12?",
+      "Write 125% as a decimal: 1.25.",
+      "Multiply 12 by 1.25."
+     ],
+     "steps": [
+      "125% = 1.25",
+      "1.25 × 12 = 15",
+      "The sunflower is 15 inches tall."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10015,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A sunflower is 8 inches tall in June. By August it is 150% as tall as it was in June. How tall is it in August (in inches)?",
+     "answer": 12.0,
+     "show": "12 inches",
+     "hints": [
+      "Is 150% more or less than 100%? So will the answer be taller or shorter than 8?",
+      "Write 150% as a decimal: 1.5.",
+      "Multiply 8 by 1.5."
+     ],
+     "steps": [
+      "150% = 1.5",
+      "1.5 × 8 = 12",
+      "The sunflower is 12 inches tall."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10016,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A sunflower is 20 inches tall in June. By August it is 175% as tall as it was in June. How tall is it in August (in inches)?",
+     "answer": 35.0,
+     "show": "35 inches",
+     "hints": [
+      "Is 175% more or less than 100%? So will the answer be taller or shorter than 20?",
+      "Write 175% as a decimal: 1.75.",
+      "Multiply 20 by 1.75."
+     ],
+     "steps": [
+      "175% = 1.75",
+      "1.75 × 20 = 35",
+      "The sunflower is 35 inches tall."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10017,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A sunflower is 12 inches tall in June. By August it is 175% as tall as it was in June. How tall is it in August (in inches)?",
+     "answer": 21.0,
+     "show": "21 inches",
+     "hints": [
+      "Is 175% more or less than 100%? So will the answer be taller or shorter than 12?",
+      "Write 175% as a decimal: 1.75.",
+      "Multiply 12 by 1.75."
+     ],
+     "steps": [
+      "175% = 1.75",
+      "1.75 × 12 = 21",
+      "The sunflower is 21 inches tall."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10018,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A sunflower is 30 inches tall in June. By August it is 120% as tall as it was in June. How tall is it in August (in inches)?",
+     "answer": 36.0,
+     "show": "36 inches",
+     "hints": [
+      "Is 120% more or less than 100%? So will the answer be taller or shorter than 30?",
+      "Write 120% as a decimal: 1.2.",
+      "Multiply 30 by 1.2."
+     ],
+     "steps": [
+      "120% = 1.2",
+      "1.2 × 30 = 36",
+      "The sunflower is 36 inches tall."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10019,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A sunflower is 8 inches tall in June. By August it is 300% as tall as it was in June. How tall is it in August (in inches)?",
+     "answer": 24.0,
+     "show": "24 inches",
+     "hints": [
+      "Is 300% more or less than 100%? So will the answer be taller or shorter than 8?",
+      "Write 300% as a decimal: 3.",
+      "Multiply 8 by 3."
+     ],
+     "steps": [
+      "300% = 3",
+      "3 × 8 = 24",
+      "The sunflower is 24 inches tall."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10020,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A sunflower is 8 inches tall in June. By August it is 200% as tall as it was in June. How tall is it in August (in inches)?",
+     "answer": 16.0,
+     "show": "16 inches",
+     "hints": [
+      "Is 200% more or less than 100%? So will the answer be taller or shorter than 8?",
+      "Write 200% as a decimal: 2.",
+      "Multiply 8 by 2."
+     ],
+     "steps": [
+      "200% = 2",
+      "2 × 8 = 16",
+      "The sunflower is 16 inches tall."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10021,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10022
+  },
+  {
+   "sub": "3.1",
+   "type": "C",
+   "kind": "num",
+   "text": "A backpack costs $60.00. The sales tax is 6%. What is the total cost, with tax (in dollars)?",
+   "answer": 63.6,
+   "show": "$63.60",
+   "hints": [
+    "The question wants the TOTAL. What is the tax first?",
+    "Find 6% of 60.",
+    "Then add the tax to the price."
+   ],
+   "steps": [
+    "Tax: 0.06 × 60 = 3.6",
+    "Total: 60 + 3.6 = 63.6",
+    "The total cost is $63.60."
+   ],
+   "tol": 1e-09,
+   "table": null,
+   "graph": null,
+   "id": "U3-03",
+   "why_focus": "Practice turning a percent into a decimal and multiplying, and check the size of your answer.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "tax-tip",
+     "percent-of"
+    ],
+    "earlier": []
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "num",
+     "text": "A lamp costs $150.00. The sales tax is 5%. What is the total cost, with tax (in dollars)?",
+     "answer": 157.5,
+     "show": "$157.50",
+     "hints": [
+      "The question wants the TOTAL. What is the tax first?",
+      "Find 5% of 150.",
+      "Then add the tax to the price."
+     ],
+     "steps": [
+      "Tax: 0.05 × 150 = 7.5",
+      "Total: 150 + 7.5 = 157.5",
+      "The total cost is $157.50."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10023,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A backpack costs $40.00. The sales tax is 4%. What is the total cost, with tax (in dollars)?",
+     "answer": 41.6,
+     "show": "$41.60",
+     "hints": [
+      "The question wants the TOTAL. What is the tax first?",
+      "Find 4% of 40.",
+      "Then add the tax to the price."
+     ],
+     "steps": [
+      "Tax: 0.04 × 40 = 1.6",
+      "Total: 40 + 1.6 = 41.6",
+      "The total cost is $41.60."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10024,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A jacket costs $25.00. The sales tax is 8%. What is the total cost, with tax (in dollars)?",
+     "answer": 27.0,
+     "show": "$27.00",
+     "hints": [
+      "The question wants the TOTAL. What is the tax first?",
+      "Find 8% of 25.",
+      "Then add the tax to the price."
+     ],
+     "steps": [
+      "Tax: 0.08 × 25 = 2",
+      "Total: 25 + 2 = 27",
+      "The total cost is $27.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10025,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A pair of shoes costs $40.00. The sales tax is 5%. What is the total cost, with tax (in dollars)?",
+     "answer": 42.0,
+     "show": "$42.00",
+     "hints": [
+      "The question wants the TOTAL. What is the tax first?",
+      "Find 5% of 40.",
+      "Then add the tax to the price."
+     ],
+     "steps": [
+      "Tax: 0.05 × 40 = 2",
+      "Total: 40 + 2 = 42",
+      "The total cost is $42.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10026,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A backpack costs $80.00. The sales tax is 10%. What is the total cost, with tax (in dollars)?",
+     "answer": 88.0,
+     "show": "$88.00",
+     "hints": [
+      "The question wants the TOTAL. What is the tax first?",
+      "Find 10% of 80.",
+      "Then add the tax to the price."
+     ],
+     "steps": [
+      "Tax: 0.1 × 80 = 8",
+      "Total: 80 + 8 = 88",
+      "The total cost is $88.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10027,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A pair of shoes costs $25.00. The sales tax is 6%. What is the total cost, with tax (in dollars)?",
+     "answer": 26.5,
+     "show": "$26.50",
+     "hints": [
+      "The question wants the TOTAL. What is the tax first?",
+      "Find 6% of 25.",
+      "Then add the tax to the price."
+     ],
+     "steps": [
+      "Tax: 0.06 × 25 = 1.5",
+      "Total: 25 + 1.5 = 26.5",
+      "The total cost is $26.50."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10028,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A pair of shoes costs $120.00. The sales tax is 5%. What is the total cost, with tax (in dollars)?",
+     "answer": 126.0,
+     "show": "$126.00",
+     "hints": [
+      "The question wants the TOTAL. What is the tax first?",
+      "Find 5% of 120.",
+      "Then add the tax to the price."
+     ],
+     "steps": [
+      "Tax: 0.05 × 120 = 6",
+      "Total: 120 + 6 = 126",
+      "The total cost is $126.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10029,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A lamp costs $40.00. The sales tax is 10%. What is the total cost, with tax (in dollars)?",
+     "answer": 44.0,
+     "show": "$44.00",
+     "hints": [
+      "The question wants the TOTAL. What is the tax first?",
+      "Find 10% of 40.",
+      "Then add the tax to the price."
+     ],
+     "steps": [
+      "Tax: 0.1 × 40 = 4",
+      "Total: 40 + 4 = 44",
+      "The total cost is $44.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10030,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A pair of shoes costs $50.00. The sales tax is 10%. What is the total cost, with tax (in dollars)?",
+     "answer": 55.0,
+     "show": "$55.00",
+     "hints": [
+      "The question wants the TOTAL. What is the tax first?",
+      "Find 10% of 50.",
+      "Then add the tax to the price."
+     ],
+     "steps": [
+      "Tax: 0.1 × 50 = 5",
+      "Total: 50 + 5 = 55",
+      "The total cost is $55.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10031,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A pair of shoes costs $150.00. The sales tax is 4%. What is the total cost, with tax (in dollars)?",
+     "answer": 156.0,
+     "show": "$156.00",
+     "hints": [
+      "The question wants the TOTAL. What is the tax first?",
+      "Find 4% of 150.",
+      "Then add the tax to the price."
+     ],
+     "steps": [
+      "Tax: 0.04 × 150 = 6",
+      "Total: 150 + 6 = 156",
+      "The total cost is $156.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10032,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10033
+  },
+  {
+   "sub": "3.2",
+   "type": "A",
+   "kind": "num",
+   "text": "Out of 25 shots a player took, 15 made. What percent is that?",
+   "answer": 60.0,
+   "show": "60%",
+   "hints": [
+    "Which number is the part? Which is the whole?",
+    "Write part over whole = P over 100: 15/25 = P/100.",
+    "Multiply both sides by 100."
+   ],
+   "steps": [
+    "15/25 = P/100",
+    "P = 15 × 100 ÷ 25 = 60",
+    "60% of the shots a player took made."
+   ],
+   "tol": 1e-09,
+   "table": null,
+   "graph": null,
+   "pct": true,
+   "id": "U3-04",
+   "why_focus": "Practice the percent proportion: decide what is missing, write part over whole equals P over 100, and solve.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "percent-proportion",
+     "proportion"
+    ],
+    "earlier": []
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "num",
+     "text": "Out of 250 games a team played, 175 won. What percent is that?",
+     "answer": 70.0,
+     "show": "70%",
+     "hints": [
+      "Which number is the part? Which is the whole?",
+      "Write part over whole = P over 100: 175/250 = P/100.",
+      "Multiply both sides by 100."
+     ],
+     "steps": [
+      "175/250 = P/100",
+      "P = 175 × 100 ÷ 250 = 70",
+      "70% of the games a team played won."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10034,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Out of 40 games a team played, 16 won. What percent is that?",
+     "answer": 40.0,
+     "show": "40%",
+     "hints": [
+      "Which number is the part? Which is the whole?",
+      "Write part over whole = P over 100: 16/40 = P/100.",
+      "Multiply both sides by 100."
+     ],
+     "steps": [
+      "16/40 = P/100",
+      "P = 16 × 100 ÷ 40 = 40",
+      "40% of the games a team played won."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10035,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Out of 200 students in a class, 140 brought lunch. What percent is that?",
+     "answer": 70.0,
+     "show": "70%",
+     "hints": [
+      "Which number is the part? Which is the whole?",
+      "Write part over whole = P over 100: 140/200 = P/100.",
+      "Multiply both sides by 100."
+     ],
+     "steps": [
+      "140/200 = P/100",
+      "P = 140 × 100 ÷ 200 = 70",
+      "70% of the students in a class brought lunch."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10036,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Out of 25 students in a class, 3 brought lunch. What percent is that?",
+     "answer": 12.0,
+     "show": "12%",
+     "hints": [
+      "Which number is the part? Which is the whole?",
+      "Write part over whole = P over 100: 3/25 = P/100.",
+      "Multiply both sides by 100."
+     ],
+     "steps": [
+      "3/25 = P/100",
+      "P = 3 × 100 ÷ 25 = 12",
+      "12% of the students in a class brought lunch."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10037,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Out of 25 games a team played, 5 won. What percent is that?",
+     "answer": 20.0,
+     "show": "20%",
+     "hints": [
+      "Which number is the part? Which is the whole?",
+      "Write part over whole = P over 100: 5/25 = P/100.",
+      "Multiply both sides by 100."
+     ],
+     "steps": [
+      "5/25 = P/100",
+      "P = 5 × 100 ÷ 25 = 20",
+      "20% of the games a team played won."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10038,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Out of 250 students in a class, 75 brought lunch. What percent is that?",
+     "answer": 30.0,
+     "show": "30%",
+     "hints": [
+      "Which number is the part? Which is the whole?",
+      "Write part over whole = P over 100: 75/250 = P/100.",
+      "Multiply both sides by 100."
+     ],
+     "steps": [
+      "75/250 = P/100",
+      "P = 75 × 100 ÷ 250 = 30",
+      "30% of the students in a class brought lunch."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10039,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Out of 40 games a team played, 18 won. What percent is that?",
+     "answer": 45.0,
+     "show": "45%",
+     "hints": [
+      "Which number is the part? Which is the whole?",
+      "Write part over whole = P over 100: 18/40 = P/100.",
+      "Multiply both sides by 100."
+     ],
+     "steps": [
+      "18/40 = P/100",
+      "P = 18 × 100 ÷ 40 = 45",
+      "45% of the games a team played won."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10040,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Out of 40 shots a player took, 6 made. What percent is that?",
+     "answer": 15.0,
+     "show": "15%",
+     "hints": [
+      "Which number is the part? Which is the whole?",
+      "Write part over whole = P over 100: 6/40 = P/100.",
+      "Multiply both sides by 100."
+     ],
+     "steps": [
+      "6/40 = P/100",
+      "P = 6 × 100 ÷ 40 = 15",
+      "15% of the shots a player took made."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10041,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Out of 200 shots a player took, 70 made. What percent is that?",
+     "answer": 35.0,
+     "show": "35%",
+     "hints": [
+      "Which number is the part? Which is the whole?",
+      "Write part over whole = P over 100: 70/200 = P/100.",
+      "Multiply both sides by 100."
+     ],
+     "steps": [
+      "70/200 = P/100",
+      "P = 70 × 100 ÷ 200 = 35",
+      "35% of the shots a player took made."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10042,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Out of 20 students in a class, 12 brought lunch. What percent is that?",
+     "answer": 60.0,
+     "show": "60%",
+     "hints": [
+      "Which number is the part? Which is the whole?",
+      "Write part over whole = P over 100: 12/20 = P/100.",
+      "Multiply both sides by 100."
+     ],
+     "steps": [
+      "12/20 = P/100",
+      "P = 12 × 100 ÷ 20 = 60",
+      "60% of the students in a class brought lunch."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10043,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10044
+  },
+  {
+   "sub": "3.2",
+   "type": "B",
+   "kind": "num",
+   "text": "A bike path is 30 miles long. Dana has gone 35% of the way. How many miles has she gone?",
+   "answer": 10.5,
+   "show": "10.5 miles",
+   "hints": [
+    "Which number is the whole? What is the percent?",
+    "Write part/whole = P/100 with the part as n: n/30 = 35/100.",
+    "Multiply both sides by 30."
+   ],
+   "steps": [
+    "n/30 = 35/100",
+    "n = 35/100 × 30 = 10.5",
+    "The answer is 10.5 miles."
+   ],
+   "tol": 1e-09,
+   "table": null,
+   "graph": null,
+   "id": "U3-05",
+   "why_focus": "Practice the percent proportion: decide what is missing, write part over whole equals P over 100, and solve.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "percent-proportion",
+     "percent-of"
+    ],
+    "earlier": [
+     {
+      "sub": "3.1",
+      "title": "Percent of a number"
+     }
+    ]
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "num",
+     "text": "A bottle holds 60 ounces. It is 30% full. How many ounces are in it?",
+     "answer": 18.0,
+     "show": "18 ounces",
+     "hints": [
+      "Which number is the whole? What is the percent?",
+      "Write part/whole = P/100 with the part as n: n/60 = 30/100.",
+      "Multiply both sides by 60."
+     ],
+     "steps": [
+      "n/60 = 30/100",
+      "n = 30/100 × 60 = 18",
+      "The answer is 18 ounces."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10045,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A bike path is 120 miles long. Dana has gone 175% of the way. How many miles has she gone?",
+     "answer": 210.0,
+     "show": "210 miles",
+     "hints": [
+      "Which number is the whole? What is the percent?",
+      "Write part/whole = P/100 with the part as n: n/120 = 175/100.",
+      "Multiply both sides by 120."
+     ],
+     "steps": [
+      "n/120 = 175/100",
+      "n = 175/100 × 120 = 210",
+      "The answer is 210 miles."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10046,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A bottle holds 75 ounces. It is 35% full. How many ounces are in it?",
+     "answer": 26.25,
+     "show": "26.25 ounces",
+     "hints": [
+      "Which number is the whole? What is the percent?",
+      "Write part/whole = P/100 with the part as n: n/75 = 35/100.",
+      "Multiply both sides by 75."
+     ],
+     "steps": [
+      "n/75 = 35/100",
+      "n = 35/100 × 75 = 26.25",
+      "The answer is 26.25 ounces."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10047,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A bike path is 250 miles long. Dana has gone 20% of the way. How many miles has she gone?",
+     "answer": 50.0,
+     "show": "50 miles",
+     "hints": [
+      "Which number is the whole? What is the percent?",
+      "Write part/whole = P/100 with the part as n: n/250 = 20/100.",
+      "Multiply both sides by 250."
+     ],
+     "steps": [
+      "n/250 = 20/100",
+      "n = 20/100 × 250 = 50",
+      "The answer is 50 miles."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10048,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A bottle holds 30 ounces. It is 35% full. How many ounces are in it?",
+     "answer": 10.5,
+     "show": "10.5 ounces",
+     "hints": [
+      "Which number is the whole? What is the percent?",
+      "Write part/whole = P/100 with the part as n: n/30 = 35/100.",
+      "Multiply both sides by 30."
+     ],
+     "steps": [
+      "n/30 = 35/100",
+      "n = 35/100 × 30 = 10.5",
+      "The answer is 10.5 ounces."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10049,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A bottle holds 20 ounces. It is 175% full. How many ounces are in it?",
+     "answer": 35.0,
+     "show": "35 ounces",
+     "hints": [
+      "Which number is the whole? What is the percent?",
+      "Write part/whole = P/100 with the part as n: n/20 = 175/100.",
+      "Multiply both sides by 20."
+     ],
+     "steps": [
+      "n/20 = 175/100",
+      "n = 175/100 × 20 = 35",
+      "The answer is 35 ounces."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10050,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A bike path is 12.5 miles long. Dana has gone 35% of the way. How many miles has she gone?",
+     "answer": 4.375,
+     "show": "4.375 miles",
+     "hints": [
+      "Which number is the whole? What is the percent?",
+      "Write part/whole = P/100 with the part as n: n/12.5 = 35/100.",
+      "Multiply both sides by 12.5."
+     ],
+     "steps": [
+      "n/12.5 = 35/100",
+      "n = 35/100 × 12.5 = 4.375",
+      "The answer is 4.375 miles."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10051,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A bottle holds 20 ounces. It is 150% full. How many ounces are in it?",
+     "answer": 30.0,
+     "show": "30 ounces",
+     "hints": [
+      "Which number is the whole? What is the percent?",
+      "Write part/whole = P/100 with the part as n: n/20 = 150/100.",
+      "Multiply both sides by 20."
+     ],
+     "steps": [
+      "n/20 = 150/100",
+      "n = 150/100 × 20 = 30",
+      "The answer is 30 ounces."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10052,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A bottle holds 250 ounces. It is 75% full. How many ounces are in it?",
+     "answer": 187.5,
+     "show": "187.5 ounces",
+     "hints": [
+      "Which number is the whole? What is the percent?",
+      "Write part/whole = P/100 with the part as n: n/250 = 75/100.",
+      "Multiply both sides by 250."
+     ],
+     "steps": [
+      "n/250 = 75/100",
+      "n = 75/100 × 250 = 187.5",
+      "The answer is 187.5 ounces."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10053,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A bike path is 75 miles long. Dana has gone 175% of the way. How many miles has she gone?",
+     "answer": 131.25,
+     "show": "131.25 miles",
+     "hints": [
+      "Which number is the whole? What is the percent?",
+      "Write part/whole = P/100 with the part as n: n/75 = 175/100.",
+      "Multiply both sides by 75."
+     ],
+     "steps": [
+      "n/75 = 175/100",
+      "n = 175/100 × 75 = 131.25",
+      "The answer is 131.25 miles."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10054,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10055
+  },
+  {
+   "sub": "3.2",
+   "type": "C",
+   "kind": "num",
+   "text": "18 is 60% of a number. What is the number?",
+   "answer": 30.0,
+   "show": "30",
+   "hints": [
+    "Which number is the part? What is the whole, the thing you don't know?",
+    "Write 18/w = 60/100.",
+    "Cross-multiply, then divide."
+   ],
+   "steps": [
+    "18/w = 60/100",
+    "w = 18 × 100 ÷ 60 = 30",
+    "The number is 30."
+   ],
+   "tol": 1e-09,
+   "table": null,
+   "graph": null,
+   "id": "U3-06",
+   "why_focus": "Practice the percent proportion: decide what is missing, write part over whole equals P over 100, and solve.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "find-whole",
+     "percent-proportion",
+     "proportion"
+    ],
+    "earlier": []
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "num",
+     "text": "20 is 50% of a number. What is the number?",
+     "answer": 40.0,
+     "show": "40",
+     "hints": [
+      "Which number is the part? What is the whole, the thing you don't know?",
+      "Write 20/w = 50/100.",
+      "Cross-multiply, then divide."
+     ],
+     "steps": [
+      "20/w = 50/100",
+      "w = 20 × 100 ÷ 50 = 40",
+      "The number is 40."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10056,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "100 is 200% of a number. What is the number?",
+     "answer": 50.0,
+     "show": "50",
+     "hints": [
+      "Which number is the part? What is the whole, the thing you don't know?",
+      "Write 100/w = 200/100.",
+      "Cross-multiply, then divide."
+     ],
+     "steps": [
+      "100/w = 200/100",
+      "w = 100 × 100 ÷ 200 = 50",
+      "The number is 50."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10057,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "120 is 200% of a number. What is the number?",
+     "answer": 60.0,
+     "show": "60",
+     "hints": [
+      "Which number is the part? What is the whole, the thing you don't know?",
+      "Write 120/w = 200/100.",
+      "Cross-multiply, then divide."
+     ],
+     "steps": [
+      "120/w = 200/100",
+      "w = 120 × 100 ÷ 200 = 60",
+      "The number is 60."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10058,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "75 is 75% of a number. What is the number?",
+     "answer": 100.0,
+     "show": "100",
+     "hints": [
+      "Which number is the part? What is the whole, the thing you don't know?",
+      "Write 75/w = 75/100.",
+      "Cross-multiply, then divide."
+     ],
+     "steps": [
+      "75/w = 75/100",
+      "w = 75 × 100 ÷ 75 = 100",
+      "The number is 100."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10059,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "20 is 25% of a number. What is the number?",
+     "answer": 80.0,
+     "show": "80",
+     "hints": [
+      "Which number is the part? What is the whole, the thing you don't know?",
+      "Write 20/w = 25/100.",
+      "Cross-multiply, then divide."
+     ],
+     "steps": [
+      "20/w = 25/100",
+      "w = 20 × 100 ÷ 25 = 80",
+      "The number is 80."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10060,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "36 is 60% of a number. What is the number?",
+     "answer": 60.0,
+     "show": "60",
+     "hints": [
+      "Which number is the part? What is the whole, the thing you don't know?",
+      "Write 36/w = 60/100.",
+      "Cross-multiply, then divide."
+     ],
+     "steps": [
+      "36/w = 60/100",
+      "w = 36 × 100 ÷ 60 = 60",
+      "The number is 60."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10061,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "120 is 150% of a number. What is the number?",
+     "answer": 80.0,
+     "show": "80",
+     "hints": [
+      "Which number is the part? What is the whole, the thing you don't know?",
+      "Write 120/w = 150/100.",
+      "Cross-multiply, then divide."
+     ],
+     "steps": [
+      "120/w = 150/100",
+      "w = 120 × 100 ÷ 150 = 80",
+      "The number is 80."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10062,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "72 is 60% of a number. What is the number?",
+     "answer": 120.0,
+     "show": "120",
+     "hints": [
+      "Which number is the part? What is the whole, the thing you don't know?",
+      "Write 72/w = 60/100.",
+      "Cross-multiply, then divide."
+     ],
+     "steps": [
+      "72/w = 60/100",
+      "w = 72 × 100 ÷ 60 = 120",
+      "The number is 120."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10063,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "24 is 40% of a number. What is the number?",
+     "answer": 60.0,
+     "show": "60",
+     "hints": [
+      "Which number is the part? What is the whole, the thing you don't know?",
+      "Write 24/w = 40/100.",
+      "Cross-multiply, then divide."
+     ],
+     "steps": [
+      "24/w = 40/100",
+      "w = 24 × 100 ÷ 40 = 60",
+      "The number is 60."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10064,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "48 is 60% of a number. What is the number?",
+     "answer": 80.0,
+     "show": "80",
+     "hints": [
+      "Which number is the part? What is the whole, the thing you don't know?",
+      "Write 48/w = 60/100.",
+      "Cross-multiply, then divide."
+     ],
+     "steps": [
+      "48/w = 60/100",
+      "w = 48 × 100 ÷ 60 = 80",
+      "The number is 80."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10065,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10066
+  },
+  {
+   "sub": "3.1",
+   "type": "D",
+   "kind": "num",
+   "text": "5 is 0.5% of what number?",
+   "answer": 1000.0,
+   "show": "1000",
+   "hints": [
+    "Which number is the part? Which one is the whole you are looking for?",
+    "Write 5/w = 0.5/100.",
+    "What do you multiply 0.5 by to get 100? Do the same to 5."
+   ],
+   "steps": [
+    "5/w = 0.5/100",
+    "w = 5 × 100 ÷ 0.5 = 1000",
+    "Check: 0.5% of 1000 = 5."
+   ],
+   "tol": 1e-09,
+   "table": null,
+   "graph": null,
+   "id": "U3-07",
+   "why_focus": "Practice turning a percent into a decimal and multiplying, and check the size of your answer.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "find-whole",
+     "percent-of"
+    ],
+    "earlier": [
+     {
+      "sub": "3.2",
+      "title": "Percent and proportion"
+     }
+    ]
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "num",
+     "text": "10 is 0.5% of what number?",
+     "answer": 2000.0,
+     "show": "2000",
+     "hints": [
+      "Which number is the part? Which one is the whole you are looking for?",
+      "Write 10/w = 0.5/100.",
+      "What do you multiply 0.5 by to get 100? Do the same to 10."
+     ],
+     "steps": [
+      "10/w = 0.5/100",
+      "w = 10 × 100 ÷ 0.5 = 2000",
+      "Check: 0.5% of 2000 = 10."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10067,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "6 is 1.5% of what number?",
+     "answer": 400.0,
+     "show": "400",
+     "hints": [
+      "Which number is the part? Which one is the whole you are looking for?",
+      "Write 6/w = 1.5/100.",
+      "What do you multiply 1.5 by to get 100? Do the same to 6."
+     ],
+     "steps": [
+      "6/w = 1.5/100",
+      "w = 6 × 100 ÷ 1.5 = 400",
+      "Check: 1.5% of 400 = 6."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10068,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "60 is 1.5% of what number?",
+     "answer": 4000.0,
+     "show": "4000",
+     "hints": [
+      "Which number is the part? Which one is the whole you are looking for?",
+      "Write 60/w = 1.5/100.",
+      "What do you multiply 1.5 by to get 100? Do the same to 60."
+     ],
+     "steps": [
+      "60/w = 1.5/100",
+      "w = 60 × 100 ÷ 1.5 = 4000",
+      "Check: 1.5% of 4000 = 60."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10069,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "20 is 2.5% of what number?",
+     "answer": 800.0,
+     "show": "800",
+     "hints": [
+      "Which number is the part? Which one is the whole you are looking for?",
+      "Write 20/w = 2.5/100.",
+      "What do you multiply 2.5 by to get 100? Do the same to 20."
+     ],
+     "steps": [
+      "20/w = 2.5/100",
+      "w = 20 × 100 ÷ 2.5 = 800",
+      "Check: 2.5% of 800 = 20."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10070,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "8 is 0.8% of what number?",
+     "answer": 1000.0,
+     "show": "1000",
+     "hints": [
+      "Which number is the part? Which one is the whole you are looking for?",
+      "Write 8/w = 0.8/100.",
+      "What do you multiply 0.8 by to get 100? Do the same to 8."
+     ],
+     "steps": [
+      "8/w = 0.8/100",
+      "w = 8 × 100 ÷ 0.8 = 1000",
+      "Check: 0.8% of 1000 = 8."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10071,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "3 is 1.5% of what number?",
+     "answer": 200.0,
+     "show": "200",
+     "hints": [
+      "Which number is the part? Which one is the whole you are looking for?",
+      "Write 3/w = 1.5/100.",
+      "What do you multiply 1.5 by to get 100? Do the same to 3."
+     ],
+     "steps": [
+      "3/w = 1.5/100",
+      "w = 3 × 100 ÷ 1.5 = 200",
+      "Check: 1.5% of 200 = 3."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10072,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "9 is 0.9% of what number?",
+     "answer": 1000.0,
+     "show": "1000",
+     "hints": [
+      "Which number is the part? Which one is the whole you are looking for?",
+      "Write 9/w = 0.9/100.",
+      "What do you multiply 0.9 by to get 100? Do the same to 9."
+     ],
+     "steps": [
+      "9/w = 0.9/100",
+      "w = 9 × 100 ÷ 0.9 = 1000",
+      "Check: 0.9% of 1000 = 9."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10073,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "50 is 2.5% of what number?",
+     "answer": 2000.0,
+     "show": "2000",
+     "hints": [
+      "Which number is the part? Which one is the whole you are looking for?",
+      "Write 50/w = 2.5/100.",
+      "What do you multiply 2.5 by to get 100? Do the same to 50."
+     ],
+     "steps": [
+      "50/w = 2.5/100",
+      "w = 50 × 100 ÷ 2.5 = 2000",
+      "Check: 2.5% of 2000 = 50."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10074,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "20 is 0.5% of what number?",
+     "answer": 4000.0,
+     "show": "4000",
+     "hints": [
+      "Which number is the part? Which one is the whole you are looking for?",
+      "Write 20/w = 0.5/100.",
+      "What do you multiply 0.5 by to get 100? Do the same to 20."
+     ],
+     "steps": [
+      "20/w = 0.5/100",
+      "w = 20 × 100 ÷ 0.5 = 4000",
+      "Check: 0.5% of 4000 = 20."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10075,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "4 is 0.8% of what number?",
+     "answer": 500.0,
+     "show": "500",
+     "hints": [
+      "Which number is the part? Which one is the whole you are looking for?",
+      "Write 4/w = 0.8/100.",
+      "What do you multiply 0.8 by to get 100? Do the same to 4."
+     ],
+     "steps": [
+      "4/w = 0.8/100",
+      "w = 4 × 100 ÷ 0.8 = 500",
+      "Check: 0.8% of 500 = 4."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10076,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10077
+  },
+  {
+   "sub": "3.1",
+   "type": "E",
+   "kind": "num",
+   "text": "Write 0.6% as a decimal.",
+   "answer": 0.006,
+   "show": "0.006",
+   "hints": [
+    "Percent means out of 100. What do you do to the decimal point?",
+    "Move the point two places to the left (put in zeros if you need them).",
+    "Start from 0.6."
+   ],
+   "steps": [
+    "0.6% = 0.6 ÷ 100",
+    "= 0.006"
+   ],
+   "tol": 1e-09,
+   "table": null,
+   "graph": null,
+   "id": "U3-08",
+   "why_focus": "Practice turning a percent into a decimal and multiplying, and check the size of your answer.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "percent-of"
+    ],
+    "earlier": []
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "num",
+     "text": "Write 35% as a decimal.",
+     "answer": 0.35,
+     "show": "0.35",
+     "hints": [
+      "Percent means out of 100. What do you do to the decimal point?",
+      "Move the point two places to the left (put in zeros if you need them).",
+      "Start from 35."
+     ],
+     "steps": [
+      "35% = 35 ÷ 100",
+      "= 0.35"
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10078,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Write 2.5% as a decimal.",
+     "answer": 0.025,
+     "show": "0.025",
+     "hints": [
+      "Percent means out of 100. What do you do to the decimal point?",
+      "Move the point two places to the left (put in zeros if you need them).",
+      "Start from 2.5."
+     ],
+     "steps": [
+      "2.5% = 2.5 ÷ 100",
+      "= 0.025"
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10079,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Write 0.05% as a decimal.",
+     "answer": 0.0005,
+     "show": "0.0005",
+     "hints": [
+      "Percent means out of 100. What do you do to the decimal point?",
+      "Move the point two places to the left (put in zeros if you need them).",
+      "Start from 0.05."
+     ],
+     "steps": [
+      "0.05% = 0.05 ÷ 100",
+      "= 0.0005"
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10080,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Write 0.25% as a decimal.",
+     "answer": 0.0025,
+     "show": "0.0025",
+     "hints": [
+      "Percent means out of 100. What do you do to the decimal point?",
+      "Move the point two places to the left (put in zeros if you need them).",
+      "Start from 0.25."
+     ],
+     "steps": [
+      "0.25% = 0.25 ÷ 100",
+      "= 0.0025"
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10081,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Write 12.5% as a decimal.",
+     "answer": 0.125,
+     "show": "0.125",
+     "hints": [
+      "Percent means out of 100. What do you do to the decimal point?",
+      "Move the point two places to the left (put in zeros if you need them).",
+      "Start from 12.5."
+     ],
+     "steps": [
+      "12.5% = 12.5 ÷ 100",
+      "= 0.125"
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10082,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Write 0.4% as a decimal.",
+     "answer": 0.004,
+     "show": "0.004",
+     "hints": [
+      "Percent means out of 100. What do you do to the decimal point?",
+      "Move the point two places to the left (put in zeros if you need them).",
+      "Start from 0.4."
+     ],
+     "steps": [
+      "0.4% = 0.4 ÷ 100",
+      "= 0.004"
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10083,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Write 7% as a decimal.",
+     "answer": 0.07,
+     "show": "0.07",
+     "hints": [
+      "Percent means out of 100. What do you do to the decimal point?",
+      "Move the point two places to the left (put in zeros if you need them).",
+      "Start from 7."
+     ],
+     "steps": [
+      "7% = 7 ÷ 100",
+      "= 0.07"
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10084,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Write 0.8% as a decimal.",
+     "answer": 0.008,
+     "show": "0.008",
+     "hints": [
+      "Percent means out of 100. What do you do to the decimal point?",
+      "Move the point two places to the left (put in zeros if you need them).",
+      "Start from 0.8."
+     ],
+     "steps": [
+      "0.8% = 0.8 ÷ 100",
+      "= 0.008"
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10085,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10086
+  },
+  {
+   "sub": "3.1",
+   "type": "F",
+   "kind": "choice",
+   "text": "Is 300% of 12 less than 100, between 100 and 500, or greater than 500?",
+   "options": [
+    "Less than 100",
+    "Between 100 and 500",
+    "Greater than 500"
+   ],
+   "correct": 0,
+   "show": "Less than 100",
+   "hints": [
+    "100% of 12 is 12. Is 300% more or less than that?",
+    "300% is 3 times as much as 12.",
+    "Work out 3 × 12 and compare."
+   ],
+   "steps": [
+    "100% of 12 is 12, so 300% is 3 times 12.",
+    "3 × 12 = 36.",
+    "36 is less than 100."
+   ],
+   "table": null,
+   "graph": null,
+   "id": "U3-09",
+   "why_focus": "Practice turning a percent into a decimal and multiplying, and check the size of your answer.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "over-100"
+    ],
+    "earlier": []
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "choice",
+     "text": "Is 250% of 12 less than 10, between 10 and 100, or greater than 100?",
+     "options": [
+      "Less than 10",
+      "Between 10 and 100",
+      "Greater than 100"
+     ],
+     "correct": 1,
+     "show": "Between 10 and 100",
+     "hints": [
+      "100% of 12 is 12. Is 250% more or less than that?",
+      "250% is 2.5 times as much as 12.",
+      "Work out 2.5 × 12 and compare."
+     ],
+     "steps": [
+      "100% of 12 is 12, so 250% is 2.5 times 12.",
+      "2.5 × 12 = 30.",
+      "30 is between 10 and 100."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10087,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "Is 250% of 8 less than 100, between 100 and 200, or greater than 200?",
+     "options": [
+      "Less than 100",
+      "Between 100 and 200",
+      "Greater than 200"
+     ],
+     "correct": 0,
+     "show": "Less than 100",
+     "hints": [
+      "100% of 8 is 8. Is 250% more or less than that?",
+      "250% is 2.5 times as much as 8.",
+      "Work out 2.5 × 8 and compare."
+     ],
+     "steps": [
+      "100% of 8 is 8, so 250% is 2.5 times 8.",
+      "2.5 × 8 = 20.",
+      "20 is less than 100."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10088,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "Is 300% of 20 less than 100, between 100 and 500, or greater than 500?",
+     "options": [
+      "Less than 100",
+      "Between 100 and 500",
+      "Greater than 500"
+     ],
+     "correct": 0,
+     "show": "Less than 100",
+     "hints": [
+      "100% of 20 is 20. Is 300% more or less than that?",
+      "300% is 3 times as much as 20.",
+      "Work out 3 × 20 and compare."
+     ],
+     "steps": [
+      "100% of 20 is 20, so 300% is 3 times 20.",
+      "3 × 20 = 60.",
+      "60 is less than 100."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10089,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "Is 250% of 12 less than 100, between 100 and 200, or greater than 200?",
+     "options": [
+      "Less than 100",
+      "Between 100 and 200",
+      "Greater than 200"
+     ],
+     "correct": 0,
+     "show": "Less than 100",
+     "hints": [
+      "100% of 12 is 12. Is 250% more or less than that?",
+      "250% is 2.5 times as much as 12.",
+      "Work out 2.5 × 12 and compare."
+     ],
+     "steps": [
+      "100% of 12 is 12, so 250% is 2.5 times 12.",
+      "2.5 × 12 = 30.",
+      "30 is less than 100."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10090,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "Is 120% of 60 less than 100, between 100 and 200, or greater than 200?",
+     "options": [
+      "Less than 100",
+      "Between 100 and 200",
+      "Greater than 200"
+     ],
+     "correct": 0,
+     "show": "Less than 100",
+     "hints": [
+      "100% of 60 is 60. Is 120% more or less than that?",
+      "120% is 1.2 times as much as 60.",
+      "Work out 1.2 × 60 and compare."
+     ],
+     "steps": [
+      "100% of 60 is 60, so 120% is 1.2 times 60.",
+      "1.2 × 60 = 72.",
+      "72 is less than 100."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10091,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "Is 700% of 20 less than 100, between 100 and 200, or greater than 200?",
+     "options": [
+      "Less than 100",
+      "Between 100 and 200",
+      "Greater than 200"
+     ],
+     "correct": 1,
+     "show": "Between 100 and 200",
+     "hints": [
+      "100% of 20 is 20. Is 700% more or less than that?",
+      "700% is 7 times as much as 20.",
+      "Work out 7 × 20 and compare."
+     ],
+     "steps": [
+      "100% of 20 is 20, so 700% is 7 times 20.",
+      "7 × 20 = 140.",
+      "140 is between 100 and 200."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10092,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "Is 300% of 60 less than 50, between 50 and 150, or greater than 150?",
+     "options": [
+      "Less than 50",
+      "Between 50 and 150",
+      "Greater than 150"
+     ],
+     "correct": 2,
+     "show": "Greater than 150",
+     "hints": [
+      "100% of 60 is 60. Is 300% more or less than that?",
+      "300% is 3 times as much as 60.",
+      "Work out 3 × 60 and compare."
+     ],
+     "steps": [
+      "100% of 60 is 60, so 300% is 3 times 60.",
+      "3 × 60 = 180.",
+      "180 is greater than 150."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10093,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "Is 300% of 5 less than 100, between 100 and 500, or greater than 500?",
+     "options": [
+      "Less than 100",
+      "Between 100 and 500",
+      "Greater than 500"
+     ],
+     "correct": 0,
+     "show": "Less than 100",
+     "hints": [
+      "100% of 5 is 5. Is 300% more or less than that?",
+      "300% is 3 times as much as 5.",
+      "Work out 3 × 5 and compare."
+     ],
+     "steps": [
+      "100% of 5 is 5, so 300% is 3 times 5.",
+      "3 × 5 = 15.",
+      "15 is less than 100."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10094,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "Is 300% of 44 less than 50, between 50 and 150, or greater than 150?",
+     "options": [
+      "Less than 50",
+      "Between 50 and 150",
+      "Greater than 150"
+     ],
+     "correct": 1,
+     "show": "Between 50 and 150",
+     "hints": [
+      "100% of 44 is 44. Is 300% more or less than that?",
+      "300% is 3 times as much as 44.",
+      "Work out 3 × 44 and compare."
+     ],
+     "steps": [
+      "100% of 44 is 44, so 300% is 3 times 44.",
+      "3 × 44 = 132.",
+      "132 is between 50 and 150."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10095,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "Is 700% of 20 less than 100, between 100 and 500, or greater than 500?",
+     "options": [
+      "Less than 100",
+      "Between 100 and 500",
+      "Greater than 500"
+     ],
+     "correct": 1,
+     "show": "Between 100 and 500",
+     "hints": [
+      "100% of 20 is 20. Is 700% more or less than that?",
+      "700% is 7 times as much as 20.",
+      "Work out 7 × 20 and compare."
+     ],
+     "steps": [
+      "100% of 20 is 20, so 700% is 7 times 20.",
+      "7 × 20 = 140.",
+      "140 is between 100 and 500."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10096,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10097
+  },
+  {
+   "sub": "3.1",
+   "type": "G",
+   "kind": "num",
+   "text": "A club has 600 members. 50% of them are adults. Of those, 25% volunteer. How many adult members volunteer?",
+   "answer": 75.0,
+   "show": "75",
+   "hints": [
+    "This takes two steps. What do you find first?",
+    "First find 50% of 600.",
+    "Then find 25% of THAT number, not of 600."
+   ],
+   "steps": [
+    "50% of 600 = 300.",
+    "25% of 300 = 75.",
+    "The answer is 75."
+   ],
+   "tol": 1e-09,
+   "table": null,
+   "graph": null,
+   "id": "U3-10",
+   "why_focus": "Practice turning a percent into a decimal and multiplying, and check the size of your answer.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "percent-of"
+    ],
+    "earlier": []
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "num",
+     "text": "A club has 800 members. 50% of them are adults. Of those, 20% volunteer. How many adult members volunteer?",
+     "answer": 80.0,
+     "show": "80",
+     "hints": [
+      "This takes two steps. What do you find first?",
+      "First find 50% of 800.",
+      "Then find 20% of THAT number, not of 800."
+     ],
+     "steps": [
+      "50% of 800 = 400.",
+      "20% of 400 = 80.",
+      "The answer is 80."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10098,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A club has 1000 members. 25% of them are adults. Of those, 20% volunteer. How many adult members volunteer?",
+     "answer": 50.0,
+     "show": "50",
+     "hints": [
+      "This takes two steps. What do you find first?",
+      "First find 25% of 1000.",
+      "Then find 20% of THAT number, not of 1000."
+     ],
+     "steps": [
+      "25% of 1000 = 250.",
+      "20% of 250 = 50.",
+      "The answer is 50."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10099,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A club has 800 students. 40% of them are in 7th grade. Of those, 25% play a sport. How many students in 7th grade play a sport?",
+     "answer": 80.0,
+     "show": "80",
+     "hints": [
+      "This takes two steps. What do you find first?",
+      "First find 40% of 800.",
+      "Then find 25% of THAT number, not of 800."
+     ],
+     "steps": [
+      "40% of 800 = 320.",
+      "25% of 320 = 80.",
+      "The answer is 80."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10100,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A club has 500 members. 75% of them are adults. Of those, 40% volunteer. How many adult members volunteer?",
+     "answer": 150.0,
+     "show": "150",
+     "hints": [
+      "This takes two steps. What do you find first?",
+      "First find 75% of 500.",
+      "Then find 40% of THAT number, not of 500."
+     ],
+     "steps": [
+      "75% of 500 = 375.",
+      "40% of 375 = 150.",
+      "The answer is 150."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10101,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A club has 600 students. 75% of them are in 7th grade. Of those, 10% play a sport. How many students in 7th grade play a sport?",
+     "answer": 45.0,
+     "show": "45",
+     "hints": [
+      "This takes two steps. What do you find first?",
+      "First find 75% of 600.",
+      "Then find 10% of THAT number, not of 600."
+     ],
+     "steps": [
+      "75% of 600 = 450.",
+      "10% of 450 = 45.",
+      "The answer is 45."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10102,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A club has 800 students. 20% of them are in 7th grade. Of those, 40% play a sport. How many students in 7th grade play a sport?",
+     "answer": 64.0,
+     "show": "64",
+     "hints": [
+      "This takes two steps. What do you find first?",
+      "First find 20% of 800.",
+      "Then find 40% of THAT number, not of 800."
+     ],
+     "steps": [
+      "20% of 800 = 160.",
+      "40% of 160 = 64.",
+      "The answer is 64."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10103,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A club has 500 members. 70% of them are adults. Of those, 10% volunteer. How many adult members volunteer?",
+     "answer": 35.0,
+     "show": "35",
+     "hints": [
+      "This takes two steps. What do you find first?",
+      "First find 70% of 500.",
+      "Then find 10% of THAT number, not of 500."
+     ],
+     "steps": [
+      "70% of 500 = 350.",
+      "10% of 350 = 35.",
+      "The answer is 35."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10104,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A club has 800 members. 25% of them are adults. Of those, 40% volunteer. How many adult members volunteer?",
+     "answer": 80.0,
+     "show": "80",
+     "hints": [
+      "This takes two steps. What do you find first?",
+      "First find 25% of 800.",
+      "Then find 40% of THAT number, not of 800."
+     ],
+     "steps": [
+      "25% of 800 = 200.",
+      "40% of 200 = 80.",
+      "The answer is 80."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10105,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A club has 400 students. 40% of them are in 7th grade. Of those, 10% play a sport. How many students in 7th grade play a sport?",
+     "answer": 16.0,
+     "show": "16",
+     "hints": [
+      "This takes two steps. What do you find first?",
+      "First find 40% of 400.",
+      "Then find 10% of THAT number, not of 400."
+     ],
+     "steps": [
+      "40% of 400 = 160.",
+      "10% of 160 = 16.",
+      "The answer is 16."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10106,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A club has 600 students. 25% of them are in 7th grade. Of those, 10% play a sport. How many students in 7th grade play a sport?",
+     "answer": 15.0,
+     "show": "15",
+     "hints": [
+      "This takes two steps. What do you find first?",
+      "First find 25% of 600.",
+      "Then find 10% of THAT number, not of 600."
+     ],
+     "steps": [
+      "25% of 600 = 150.",
+      "10% of 150 = 15.",
+      "The answer is 15."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10107,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10108
+  },
+  {
+   "sub": "3.2",
+   "type": "D",
+   "kind": "num",
+   "text": "A survey asked people about their favorite lunch: 400 chose pizza, 200 chose burgers, and 400 chose salad. What percent chose pizza?",
+   "answer": 40.0,
+   "show": "40%",
+   "hints": [
+    "What is the whole? You have to add up all the groups.",
+    "Write 400/total = P/100.",
+    "Solve for P."
+   ],
+   "steps": [
+    "Whole: 400 + 200 + 400 = 1000.",
+    "400/1000 = P/100.",
+    "P = 400 × 100 ÷ 1000 = 40."
+   ],
+   "tol": 1e-09,
+   "table": null,
+   "graph": null,
+   "pct": true,
+   "id": "U3-11",
+   "why_focus": "Practice the percent proportion: decide what is missing, write part over whole equals P over 100, and solve.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "percent-proportion"
+    ],
+    "earlier": []
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "num",
+     "text": "A survey asked people about their favorite lunch: 80 chose pizza, 40 chose burgers, and 80 chose salad. What percent chose pizza?",
+     "answer": 40.0,
+     "show": "40%",
+     "hints": [
+      "What is the whole? You have to add up all the groups.",
+      "Write 80/total = P/100.",
+      "Solve for P."
+     ],
+     "steps": [
+      "Whole: 80 + 40 + 80 = 200.",
+      "80/200 = P/100.",
+      "P = 80 × 100 ÷ 200 = 40."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10109,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A survey asked people about their favorite pets: 400 chose dogs, 200 chose cats, and 400 chose fish. What percent chose dogs?",
+     "answer": 40.0,
+     "show": "40%",
+     "hints": [
+      "What is the whole? You have to add up all the groups.",
+      "Write 400/total = P/100.",
+      "Solve for P."
+     ],
+     "steps": [
+      "Whole: 400 + 200 + 400 = 1000.",
+      "400/1000 = P/100.",
+      "P = 400 × 100 ÷ 1000 = 40."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10110,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A survey asked people about their favorite pets: 300 chose dogs, 66 chose cats, and 134 chose fish. What percent chose dogs?",
+     "answer": 60.0,
+     "show": "60%",
+     "hints": [
+      "What is the whole? You have to add up all the groups.",
+      "Write 300/total = P/100.",
+      "Solve for P."
+     ],
+     "steps": [
+      "Whole: 300 + 66 + 134 = 500.",
+      "300/500 = P/100.",
+      "P = 300 × 100 ÷ 500 = 60."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10111,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A survey asked people about their favorite pets: 220 chose dogs, 60 chose cats, and 120 chose fish. What percent chose dogs?",
+     "answer": 55.0,
+     "show": "55%",
+     "hints": [
+      "What is the whole? You have to add up all the groups.",
+      "Write 220/total = P/100.",
+      "Solve for P."
+     ],
+     "steps": [
+      "Whole: 220 + 60 + 120 = 400.",
+      "220/400 = P/100.",
+      "P = 220 × 100 ÷ 400 = 55."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10112,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A survey asked people about their favorite pets: 500 chose dogs, 500 chose cats, and 1000 chose fish. What percent chose dogs?",
+     "answer": 25.0,
+     "show": "25%",
+     "hints": [
+      "What is the whole? You have to add up all the groups.",
+      "Write 500/total = P/100.",
+      "Solve for P."
+     ],
+     "steps": [
+      "Whole: 500 + 500 + 1000 = 2000.",
+      "500/2000 = P/100.",
+      "P = 500 × 100 ÷ 2000 = 25."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10113,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A survey asked people about their favorite lunch: 180 chose pizza, 73 chose burgers, and 147 chose salad. What percent chose pizza?",
+     "answer": 45.0,
+     "show": "45%",
+     "hints": [
+      "What is the whole? You have to add up all the groups.",
+      "Write 180/total = P/100.",
+      "Solve for P."
+     ],
+     "steps": [
+      "Whole: 180 + 73 + 147 = 400.",
+      "180/400 = P/100.",
+      "P = 180 × 100 ÷ 400 = 45."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10114,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A survey asked people about their favorite pets: 225 chose dogs, 91 chose cats, and 184 chose fish. What percent chose dogs?",
+     "answer": 45.0,
+     "show": "45%",
+     "hints": [
+      "What is the whole? You have to add up all the groups.",
+      "Write 225/total = P/100.",
+      "Solve for P."
+     ],
+     "steps": [
+      "Whole: 225 + 91 + 184 = 500.",
+      "225/500 = P/100.",
+      "P = 225 × 100 ÷ 500 = 45."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10115,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A survey asked people about their favorite lunch: 550 chose pizza, 150 chose burgers, and 300 chose salad. What percent chose pizza?",
+     "answer": 55.0,
+     "show": "55%",
+     "hints": [
+      "What is the whole? You have to add up all the groups.",
+      "Write 550/total = P/100.",
+      "Solve for P."
+     ],
+     "steps": [
+      "Whole: 550 + 150 + 300 = 1000.",
+      "550/1000 = P/100.",
+      "P = 550 × 100 ÷ 1000 = 55."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10116,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A survey asked people about their favorite pets: 80 chose dogs, 240 chose cats, and 480 chose fish. What percent chose dogs?",
+     "answer": 10.0,
+     "show": "10%",
+     "hints": [
+      "What is the whole? You have to add up all the groups.",
+      "Write 80/total = P/100.",
+      "Solve for P."
+     ],
+     "steps": [
+      "Whole: 80 + 240 + 480 = 800.",
+      "80/800 = P/100.",
+      "P = 80 × 100 ÷ 800 = 10."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10117,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A survey asked people about their favorite lunch: 250 chose pizza, 250 chose burgers, and 500 chose salad. What percent chose pizza?",
+     "answer": 25.0,
+     "show": "25%",
+     "hints": [
+      "What is the whole? You have to add up all the groups.",
+      "Write 250/total = P/100.",
+      "Solve for P."
+     ],
+     "steps": [
+      "Whole: 250 + 250 + 500 = 1000.",
+      "250/1000 = P/100.",
+      "P = 250 × 100 ÷ 1000 = 25."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10118,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10119
+  },
+  {
+   "sub": "3.2",
+   "type": "E",
+   "kind": "choice",
+   "text": "Room 4 won 31 of 50 games. Room 5 won 14 of 20 games. Which has the greater percent of wins?",
+   "options": [
+    "Room 4",
+    "Room 5"
+   ],
+   "correct": 1,
+   "show": "Room 5",
+   "hints": [
+    "Totals can fool you. Turn each into a percent of its own games.",
+    "Write 31/50 = P/100 and 14/20 = P/100.",
+    "Compare the two percents."
+   ],
+   "steps": [
+    "Room 4: 31/50 = 62%.",
+    "Room 5: 14/20 = 70%.",
+    "Room 5 has the greater percent."
+   ],
+   "table": null,
+   "graph": null,
+   "id": "U3-12",
+   "why_focus": "Practice the percent proportion: decide what is missing, write part over whole equals P over 100, and solve.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "percent-proportion"
+    ],
+    "earlier": []
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "choice",
+     "text": "Ana won 14 of 20 games. Ben won 48 of 80 games. Which has the greater percent of wins?",
+     "options": [
+      "Ana",
+      "Ben"
+     ],
+     "correct": 0,
+     "show": "Ana",
+     "hints": [
+      "Totals can fool you. Turn each into a percent of its own games.",
+      "Write 14/20 = P/100 and 48/80 = P/100.",
+      "Compare the two percents."
+     ],
+     "steps": [
+      "Ana: 14/20 = 70%.",
+      "Ben: 48/80 = 60%.",
+      "Ana has the greater percent."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10120,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "Team A won 17 of 20 games. Team B won 42 of 50 games. Which has the greater percent of wins?",
+     "options": [
+      "Team A",
+      "Team B"
+     ],
+     "correct": 0,
+     "show": "Team A",
+     "hints": [
+      "Totals can fool you. Turn each into a percent of its own games.",
+      "Write 17/20 = P/100 and 42/50 = P/100.",
+      "Compare the two percents."
+     ],
+     "steps": [
+      "Team A: 17/20 = 85%.",
+      "Team B: 42/50 = 84%.",
+      "Team A has the greater percent."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10121,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "Ana won 32 of 40 games. Ben won 38 of 50 games. Which has the greater percent of wins?",
+     "options": [
+      "Ana",
+      "Ben"
+     ],
+     "correct": 0,
+     "show": "Ana",
+     "hints": [
+      "Totals can fool you. Turn each into a percent of its own games.",
+      "Write 32/40 = P/100 and 38/50 = P/100.",
+      "Compare the two percents."
+     ],
+     "steps": [
+      "Ana: 32/40 = 80%.",
+      "Ben: 38/50 = 76%.",
+      "Ana has the greater percent."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10122,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "Ana won 20 of 40 games. Ben won 19 of 20 games. Which has the greater percent of wins?",
+     "options": [
+      "Ana",
+      "Ben"
+     ],
+     "correct": 1,
+     "show": "Ben",
+     "hints": [
+      "Totals can fool you. Turn each into a percent of its own games.",
+      "Write 20/40 = P/100 and 19/20 = P/100.",
+      "Compare the two percents."
+     ],
+     "steps": [
+      "Ana: 20/40 = 50%.",
+      "Ben: 19/20 = 95%.",
+      "Ben has the greater percent."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10123,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "Team A won 49 of 50 games. Team B won 17 of 25 games. Which has the greater percent of wins?",
+     "options": [
+      "Team A",
+      "Team B"
+     ],
+     "correct": 0,
+     "show": "Team A",
+     "hints": [
+      "Totals can fool you. Turn each into a percent of its own games.",
+      "Write 49/50 = P/100 and 17/25 = P/100.",
+      "Compare the two percents."
+     ],
+     "steps": [
+      "Team A: 49/50 = 98%.",
+      "Team B: 17/25 = 68%.",
+      "Team A has the greater percent."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10124,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "Room 4 won 21 of 25 games. Room 5 won 60 of 80 games. Which has the greater percent of wins?",
+     "options": [
+      "Room 4",
+      "Room 5"
+     ],
+     "correct": 0,
+     "show": "Room 4",
+     "hints": [
+      "Totals can fool you. Turn each into a percent of its own games.",
+      "Write 21/25 = P/100 and 60/80 = P/100.",
+      "Compare the two percents."
+     ],
+     "steps": [
+      "Room 4: 21/25 = 84%.",
+      "Room 5: 60/80 = 75%.",
+      "Room 4 has the greater percent."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10125,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "Ana won 20 of 40 games. Ben won 64 of 80 games. Which has the greater percent of wins?",
+     "options": [
+      "Ana",
+      "Ben"
+     ],
+     "correct": 1,
+     "show": "Ben",
+     "hints": [
+      "Totals can fool you. Turn each into a percent of its own games.",
+      "Write 20/40 = P/100 and 64/80 = P/100.",
+      "Compare the two percents."
+     ],
+     "steps": [
+      "Ana: 20/40 = 50%.",
+      "Ben: 64/80 = 80%.",
+      "Ben has the greater percent."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10126,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "Room 4 won 34 of 40 games. Room 5 won 38 of 50 games. Which has the greater percent of wins?",
+     "options": [
+      "Room 4",
+      "Room 5"
+     ],
+     "correct": 0,
+     "show": "Room 4",
+     "hints": [
+      "Totals can fool you. Turn each into a percent of its own games.",
+      "Write 34/40 = P/100 and 38/50 = P/100.",
+      "Compare the two percents."
+     ],
+     "steps": [
+      "Room 4: 34/40 = 85%.",
+      "Room 5: 38/50 = 76%.",
+      "Room 4 has the greater percent."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10127,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "Room 4 won 34 of 40 games. Room 5 won 22 of 25 games. Which has the greater percent of wins?",
+     "options": [
+      "Room 4",
+      "Room 5"
+     ],
+     "correct": 1,
+     "show": "Room 5",
+     "hints": [
+      "Totals can fool you. Turn each into a percent of its own games.",
+      "Write 34/40 = P/100 and 22/25 = P/100.",
+      "Compare the two percents."
+     ],
+     "steps": [
+      "Room 4: 34/40 = 85%.",
+      "Room 5: 22/25 = 88%.",
+      "Room 5 has the greater percent."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10128,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "Ana won 19 of 20 games. Ben won 42 of 50 games. Which has the greater percent of wins?",
+     "options": [
+      "Ana",
+      "Ben"
+     ],
+     "correct": 0,
+     "show": "Ana",
+     "hints": [
+      "Totals can fool you. Turn each into a percent of its own games.",
+      "Write 19/20 = P/100 and 42/50 = P/100.",
+      "Compare the two percents."
+     ],
+     "steps": [
+      "Ana: 19/20 = 95%.",
+      "Ben: 42/50 = 84%.",
+      "Ana has the greater percent."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10129,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10130
+  },
+  {
+   "sub": "3.2",
+   "type": "F",
+   "kind": "num",
+   "text": "A store sells a kayak for $128.00. That is 160% of what the store paid for it. How much did the store pay?",
+   "answer": 80.0,
+   "show": "$80.00",
+   "hints": [
+    "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
+    "Write 128/w = 160/100.",
+    "w = 128 × 100 ÷ 160."
+   ],
+   "steps": [
+    "128/w = 160/100",
+    "w = 128 × 100 ÷ 160 = 80",
+    "The store paid $80.00."
+   ],
+   "tol": 1e-09,
+   "table": null,
+   "graph": null,
+   "id": "U3-13",
+   "why_focus": "Practice the percent proportion: decide what is missing, write part over whole equals P over 100, and solve.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "find-whole",
+     "percent-proportion"
+    ],
+    "earlier": []
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "num",
+     "text": "A store sells a tablet for $162.00. That is 180% of what the store paid for it. How much did the store pay?",
+     "answer": 90.0,
+     "show": "$90.00",
+     "hints": [
+      "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
+      "Write 162/w = 180/100.",
+      "w = 162 × 100 ÷ 180."
+     ],
+     "steps": [
+      "162/w = 180/100",
+      "w = 162 × 100 ÷ 180 = 90",
+      "The store paid $90.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10131,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A store sells a kayak for $60.00. That is 150% of what the store paid for it. How much did the store pay?",
+     "answer": 40.0,
+     "show": "$40.00",
+     "hints": [
+      "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
+      "Write 60/w = 150/100.",
+      "w = 60 × 100 ÷ 150."
+     ],
+     "steps": [
+      "60/w = 150/100",
+      "w = 60 × 100 ÷ 150 = 40",
+      "The store paid $40.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10132,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A store sells a bike for $90.00. That is 150% of what the store paid for it. How much did the store pay?",
+     "answer": 60.0,
+     "show": "$60.00",
+     "hints": [
+      "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
+      "Write 90/w = 150/100.",
+      "w = 90 × 100 ÷ 150."
+     ],
+     "steps": [
+      "90/w = 150/100",
+      "w = 90 × 100 ÷ 150 = 60",
+      "The store paid $60.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10133,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A store sells a kayak for $112.00. That is 140% of what the store paid for it. How much did the store pay?",
+     "answer": 80.0,
+     "show": "$80.00",
+     "hints": [
+      "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
+      "Write 112/w = 140/100.",
+      "w = 112 × 100 ÷ 140."
+     ],
+     "steps": [
+      "112/w = 140/100",
+      "w = 112 × 100 ÷ 140 = 80",
+      "The store paid $80.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10134,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A store sells a kayak for $240.00. That is 160% of what the store paid for it. How much did the store pay?",
+     "answer": 150.0,
+     "show": "$150.00",
+     "hints": [
+      "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
+      "Write 240/w = 160/100.",
+      "w = 240 × 100 ÷ 160."
+     ],
+     "steps": [
+      "240/w = 160/100",
+      "w = 240 × 100 ÷ 160 = 150",
+      "The store paid $150.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10135,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A store sells a bike for $225.00. That is 150% of what the store paid for it. How much did the store pay?",
+     "answer": 150.0,
+     "show": "$150.00",
+     "hints": [
+      "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
+      "Write 225/w = 150/100.",
+      "w = 225 × 100 ÷ 150."
+     ],
+     "steps": [
+      "225/w = 150/100",
+      "w = 225 × 100 ÷ 150 = 150",
+      "The store paid $150.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10136,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A store sells a bike for $70.00. That is 140% of what the store paid for it. How much did the store pay?",
+     "answer": 50.0,
+     "show": "$50.00",
+     "hints": [
+      "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
+      "Write 70/w = 140/100.",
+      "w = 70 × 100 ÷ 140."
+     ],
+     "steps": [
+      "70/w = 140/100",
+      "w = 70 × 100 ÷ 140 = 50",
+      "The store paid $50.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10137,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A store sells a tablet for $140.00. That is 140% of what the store paid for it. How much did the store pay?",
+     "answer": 100.0,
+     "show": "$100.00",
+     "hints": [
+      "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
+      "Write 140/w = 140/100.",
+      "w = 140 × 100 ÷ 140."
+     ],
+     "steps": [
+      "140/w = 140/100",
+      "w = 140 × 100 ÷ 140 = 100",
+      "The store paid $100.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10138,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A store sells a bike for $128.00. That is 160% of what the store paid for it. How much did the store pay?",
+     "answer": 80.0,
+     "show": "$80.00",
+     "hints": [
+      "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
+      "Write 128/w = 160/100.",
+      "w = 128 × 100 ÷ 160."
+     ],
+     "steps": [
+      "128/w = 160/100",
+      "w = 128 × 100 ÷ 160 = 80",
+      "The store paid $80.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10139,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A store sells a bike for $108.00. That is 180% of what the store paid for it. How much did the store pay?",
+     "answer": 60.0,
+     "show": "$60.00",
+     "hints": [
+      "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
+      "Write 108/w = 180/100.",
+      "w = 108 × 100 ÷ 180."
+     ],
+     "steps": [
+      "108/w = 180/100",
+      "w = 108 × 100 ÷ 180 = 60",
+      "The store paid $60.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10140,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10141
+  },
+  {
+   "sub": "3.2",
+   "type": "G",
+   "kind": "choice",
+   "text": "A stand has 50 bracelets and 75% of them are on sale. How many are on sale? Which one does the story leave out: the part, the whole, or the percent?",
+   "options": [
+    "The percent",
+    "The part",
+    "The whole"
+   ],
+   "correct": 1,
+   "show": "The part",
+   "hints": [
+    "Which numbers does the story give you? Which one does it NOT give you?",
+    "Part: a piece. Whole: the full amount. Percent: out of 100.",
+    "The one that is missing is what you are looking for."
+   ],
+   "steps": [
+    "50 is the whole and 75% is the percent, so the part is missing.",
+    "You are looking for the part."
+   ],
+   "table": null,
+   "graph": null,
+   "id": "U3-14",
+   "why_focus": "Practice the percent proportion: decide what is missing, write part over whole equals P over 100, and solve.",
+   "deps": {
+    "level": "foundation",
+    "concepts": [
+     "percent-proportion"
+    ],
+    "earlier": []
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "choice",
+     "text": "A stand made 68 muffins and sold 18 of them. What percent did it sell? Which one does the story leave out: the part, the whole, or the percent?",
+     "options": [
+      "The percent",
+      "The part",
+      "The whole"
+     ],
+     "correct": 0,
+     "show": "The percent",
+     "hints": [
+      "Which numbers does the story give you? Which one does it NOT give you?",
+      "Part: a piece. Whole: the full amount. Percent: out of 100.",
+      "The one that is missing is what you are looking for."
+     ],
+     "steps": [
+      "18 is the part and 68 is the whole, so the percent is missing.",
+      "You are looking for the percent."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10164,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "A stand has 40 sandwiches and 75% of them are on sale. How many are on sale? Which one does the story leave out: the part, the whole, or the percent?",
+     "options": [
+      "The percent",
+      "The part",
+      "The whole"
+     ],
+     "correct": 1,
+     "show": "The part",
+     "hints": [
+      "Which numbers does the story give you? Which one does it NOT give you?",
+      "Part: a piece. Whole: the full amount. Percent: out of 100.",
+      "The one that is missing is what you are looking for."
+     ],
+     "steps": [
+      "40 is the whole and 75% is the percent, so the part is missing.",
+      "You are looking for the part."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10165,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "A stand has 80 muffins and 60% of them are on sale. How many are on sale? Which one does the story leave out: the part, the whole, or the percent?",
+     "options": [
+      "The percent",
+      "The part",
+      "The whole"
+     ],
+     "correct": 1,
+     "show": "The part",
+     "hints": [
+      "Which numbers does the story give you? Which one does it NOT give you?",
+      "Part: a piece. Whole: the full amount. Percent: out of 100.",
+      "The one that is missing is what you are looking for."
+     ],
+     "steps": [
+      "80 is the whole and 60% is the percent, so the part is missing.",
+      "You are looking for the part."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10166,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "A stand sold 18 sandwiches on Saturday. That was 45% of everything it sold all weekend. Which one does the story leave out: the part, the whole, or the percent?",
+     "options": [
+      "The percent",
+      "The part",
+      "The whole"
+     ],
+     "correct": 2,
+     "show": "The whole",
+     "hints": [
+      "Which numbers does the story give you? Which one does it NOT give you?",
+      "Part: a piece. Whole: the full amount. Percent: out of 100.",
+      "The one that is missing is what you are looking for."
+     ],
+     "steps": [
+      "18 sandwiches is the part and 45% is the percent, so the total for the weekend (the whole) is missing.",
+      "You are looking for the whole."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10167,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "A stand has 50 bracelets and 45% of them are on sale. How many are on sale? Which one does the story leave out: the part, the whole, or the percent?",
+     "options": [
+      "The percent",
+      "The part",
+      "The whole"
+     ],
+     "correct": 1,
+     "show": "The part",
+     "hints": [
+      "Which numbers does the story give you? Which one does it NOT give you?",
+      "Part: a piece. Whole: the full amount. Percent: out of 100.",
+      "The one that is missing is what you are looking for."
+     ],
+     "steps": [
+      "50 is the whole and 45% is the percent, so the part is missing.",
+      "You are looking for the part."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10168,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "A stand made 52 muffins and sold 27 of them. What percent did it sell? Which one does the story leave out: the part, the whole, or the percent?",
+     "options": [
+      "The percent",
+      "The part",
+      "The whole"
+     ],
+     "correct": 0,
+     "show": "The percent",
+     "hints": [
+      "Which numbers does the story give you? Which one does it NOT give you?",
+      "Part: a piece. Whole: the full amount. Percent: out of 100.",
+      "The one that is missing is what you are looking for."
+     ],
+     "steps": [
+      "27 is the part and 52 is the whole, so the percent is missing.",
+      "You are looking for the percent."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10169,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "A stand sold 24 bracelets on Saturday. That was 40% of everything it sold all weekend. Which one does the story leave out: the part, the whole, or the percent?",
+     "options": [
+      "The percent",
+      "The part",
+      "The whole"
+     ],
+     "correct": 2,
+     "show": "The whole",
+     "hints": [
+      "Which numbers does the story give you? Which one does it NOT give you?",
+      "Part: a piece. Whole: the full amount. Percent: out of 100.",
+      "The one that is missing is what you are looking for."
+     ],
+     "steps": [
+      "24 bracelets is the part and 40% is the percent, so the total for the weekend (the whole) is missing.",
+      "You are looking for the whole."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10170,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "A stand made 64 bracelets and sold 24 of them. What percent did it sell? Which one does the story leave out: the part, the whole, or the percent?",
+     "options": [
+      "The percent",
+      "The part",
+      "The whole"
+     ],
+     "correct": 0,
+     "show": "The percent",
+     "hints": [
+      "Which numbers does the story give you? Which one does it NOT give you?",
+      "Part: a piece. Whole: the full amount. Percent: out of 100.",
+      "The one that is missing is what you are looking for."
+     ],
+     "steps": [
+      "24 is the part and 64 is the whole, so the percent is missing.",
+      "You are looking for the percent."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10171,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "A stand has 40 muffins and 45% of them are on sale. How many are on sale? Which one does the story leave out: the part, the whole, or the percent?",
+     "options": [
+      "The percent",
+      "The part",
+      "The whole"
+     ],
+     "correct": 1,
+     "show": "The part",
+     "hints": [
+      "Which numbers does the story give you? Which one does it NOT give you?",
+      "Part: a piece. Whole: the full amount. Percent: out of 100.",
+      "The one that is missing is what you are looking for."
+     ],
+     "steps": [
+      "40 is the whole and 45% is the percent, so the part is missing.",
+      "You are looking for the part."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10172,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "choice",
+     "text": "A stand sold 24 bracelets on Saturday. That was 56% of everything it sold all weekend. Which one does the story leave out: the part, the whole, or the percent?",
+     "options": [
+      "The percent",
+      "The part",
+      "The whole"
+     ],
+     "correct": 2,
+     "show": "The whole",
+     "hints": [
+      "Which numbers does the story give you? Which one does it NOT give you?",
+      "Part: a piece. Whole: the full amount. Percent: out of 100.",
+      "The one that is missing is what you are looking for."
+     ],
+     "steps": [
+      "24 bracelets is the part and 56% is the percent, so the total for the weekend (the whole) is missing.",
+      "You are looking for the whole."
+     ],
+     "table": null,
+     "graph": null,
+     "ref": 10173,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10174
+  }
+ ],
+ "lessons": {
+  "3.1": {
+   "title": "Percent of a number",
+   "move": "Percent means 'per 100'. Write the percent as a decimal, then multiply by the whole.",
+   "hook": "Slide the point two places left.",
+   "trap": "Stopping at the tax or tip when the question asks for the total, or moving the decimal point only one place.",
+   "why": {
+    "goal": "Find any percent of a number, including percents over 100, and use it for money situations.",
+    "supports_future": "Discounts, tax, interest and percent change all build on finding a percent of an amount.",
+    "why_you_need_it": "Percents are everywhere in real life: sale prices, tips, tax. Doing them in your head saves you from guessing.",
+    "real_life": "A 15% tip, 8% sales tax, 20% off, or a score as a percent of the points possible.",
+    "building_block": "Next lesson connects this to proportions so you can also find the percent or the whole."
+   }
+  },
+  "3.2": {
+   "title": "Percent and proportion",
+   "move": "Part over whole equals P over 100. Find what is missing, then solve.",
+   "hook": "Part over whole equals P over 100.",
+   "trap": "Putting the numbers in the wrong spots, or forgetting that the percent always sits over 100.",
+   "why": {
+    "goal": "Solve every kind of percent problem with one proportion: find the part, the percent or the whole.",
+    "supports_future": "Percent change, similar figures and probability all reuse part-to-whole proportions.",
+    "why_you_need_it": "Some questions give you the answer and ask for the percent or the starting amount. The proportion handles all three.",
+    "real_life": "What percent of the games did the team win? A $30 item is 60% of the original price: what was the original?",
+    "building_block": "This is the same proportion idea as Unit 2, with 100 on the bottom of one ratio."
+   }
+  }
+ },
+ "concepts": {
+  "percent-of": {
+   "name": "Percent of a number",
+   "plain": "Write the percent as a decimal, then multiply.",
+   "origin": "Lesson 3.1"
+  },
+  "over-100": {
+   "name": "More than 100%",
+   "plain": "100% is the whole, so 150% of a number is more than the number.",
+   "origin": "Lesson 3.1"
+  },
+  "tax-tip": {
+   "name": "Tax, tip and commission",
+   "plain": "A percent of the price. Decide if you need the extra amount or the total.",
+   "origin": "Lesson 3.1"
+  },
+  "percent-proportion": {
+   "name": "The percent proportion",
+   "plain": "Part over whole equals P over 100.",
+   "origin": "Lesson 3.2"
+  },
+  "find-whole": {
+   "name": "Finding the whole",
+   "plain": "When you know the part and the percent, solve part/whole = P/100 for the whole.",
+   "origin": "Lesson 3.2"
+  },
+  "proportion": {
+   "name": "Proportions",
+   "plain": "Two equal ratios. Multiply both sides to solve.",
+   "origin": "Lesson 2.3"
+  }
+ },
+ "subs": [
+  "3.1",
+  "3.2"
+ ]
+}

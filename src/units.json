@@ -18,9 +18,11 @@
       "features": {
         "facts": true,
         "cards": true,
-        "study": false,
-        "homework": false
-      }
+        "study": true,
+        "homework": true
+      },
+      "term": 2,
+      "semester": 1
     },
     {
       "id": 2,
@@ -61,7 +63,11 @@
         "cards": true,
         "study": true,
         "homework": true
-      }
+      },
+      "term": 1,
+      "semester": 1
     }
-  ]
+  ],
+  "semester": 1,
+  "term": 2
 }
