@@ -100,7 +100,10 @@ helpers = HTML[HTML.index("function parseNum(s){") : HTML.index("const visual = 
 helpers += HTML[HTML.index("const visual = ") : HTML.index("\n", HTML.index("const visual = "))]
 mark = re.search(r"const MARK = `(.*?)`;", HTML, re.S).group(1)
 HW = fill((pathlib.Path(__file__).parent / "homework_template.html").read_text())
-HW = HW.replace("/*STUDY_STYLE*/", st).replace("/*BRAND-THEMES*/", theme_css() + "\n" + SWATCH_CSS + "\n" + FUN_CSS).replace("__BURST__", BURST_JS).replace("/*HELPERS*/", helpers).replace("__MARK__", mark).replace("__BRANDS__", brands_json()).replace("__DATA__", json.dumps(DATA, ensure_ascii=False))
+def _no_solutions(q):      # the Homework page never shows a worked solution or the answer text, so it does not even carry them (it keeps `answer` only to tell her whether a typed try is right)
+    return {k: v for k, v in q.items() if k not in ("steps", "show")}
+HW_DATA = dict(DATA, problems=[dict(_no_solutions(p), variants=[_no_solutions(v) for v in p["variants"]]) for p in DATA["problems"]])
+HW = HW.replace("/*STUDY_STYLE*/", st).replace("/*BRAND-THEMES*/", theme_css() + "\n" + SWATCH_CSS + "\n" + FUN_CSS).replace("__BURST__", BURST_JS).replace("/*HELPERS*/", helpers).replace("__MARK__", mark).replace("__BRANDS__", brands_json()).replace("__DATA__", json.dumps(HW_DATA, ensure_ascii=False))
 (ROOT / "public/homework").mkdir(parents=True, exist_ok=True)
 (ROOT / f"public/homework/unit-{unit}.html").write_text('<!doctype html>\n<html lang="en"><head><meta charset="utf-8"></head><body>\n' + HW + '\n</body></html>\n')
 print("homework page bytes:", len(HW))

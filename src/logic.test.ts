@@ -118,6 +118,8 @@ import gradeSource from '../public/grade.js?raw';
 import studyTemplate from '../tools/study_template.html?raw';
 import study2Page from '../public/study/unit-2.html?raw';
 import homework2Page from '../public/homework/unit-2.html?raw';
+import homework3Page from '../public/homework/unit-3.html?raw';
+import homeworkTemplate from '../tools/homework_template.html?raw';
 import songsSource from '../public/songs.js?raw';
 import { fresh } from './store';
 import { BRANDS, ICONS } from './brand';
@@ -477,6 +479,18 @@ describe('unit 3 generators (percents) compute the right answers', () => {
     const ids = tricksFor(db).map((t) => t.id);
     for (const id of ['percent-benchmarks', 'percent-build', 'percent-decimal', 'over-100', 'benchmark-fractions', 'move-the-decimal']) expect(ids).toContain(id);
     expect(ids).not.toContain('flip-and-cancel'); db.settings.factsMode = 'general'; expect(tricksFor(db).map((t) => t.id)).toContain('flip-and-cancel');
+  });
+});
+
+describe('the Homework section never shows an answer', () => {
+  it('the template has no code path that prints an answer, a worked solution or the steps that end in one', () => {
+    for (const bad of [/\bp\.answer\b/, /\bp\.steps\b/, /\bp\.show\b/, /\bp\.note\b/, /Answer:/, /How it works/, /shortWhy/, /Show the answer/, /gridView\(p, [^)]*!!S\.shown\)/]) expect(homeworkTemplate, String(bad)).not.toMatch(bad);
+  });
+  it('the generated pages do not even carry worked steps or shown answers for the practice problems', () => {
+    for (const page of [homework2Page, homework3Page]) {
+      const D = JSON.parse(page.slice(page.indexOf('const DATA = ') + 13, page.indexOf('\n', page.indexOf('const DATA = '))).replace(/;\s*$/, ''));
+      for (const p of D.problems) for (const q of [p, ...p.variants]) { expect('steps' in q, p.id).toBe(false); expect('show' in q, p.id).toBe(false); }
+    }
   });
 });
 
