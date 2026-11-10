@@ -494,3 +494,29 @@ describe('the Homework section never shows an answer', () => {
   });
 });
 
+describe('Homework "Check my work": the server confirms a typed answer and never reveals one', () => {
+  const N = (v: number, o: object = {}) => ({ t: 'num', v: [v], ...o });
+  it('numbers: 72, 72%, $72, fractions and mixed numbers all count; near misses and blanks do not', async () => {
+    // @ts-expect-error the Worker is plain JavaScript
+    const { checkOne } = await import('../worker/index.js');
+    for (const typed of ['72', '72%', '$72.00', ' 72 ']) expect(checkOne(N(72), typed), typed).toBe(true);
+    expect(checkOne(N(0.75), '3/4')).toBe(true); expect(checkOne(N(1.5), '1 1/2')).toBe(true); expect(checkOne(N(1234), '1,234')).toBe(true);
+    expect(checkOne(N(72), '71')).toBe(false); expect(checkOne(N(72), '')).toBe(false); expect(checkOne(N(72), 'seventy-two')).toBe(false); expect(checkOne(N(14976), '14975')).toBe(false);
+    expect(checkOne(N(3 / 50000), '3/50000')).toBe(true); expect(checkOne(N(3 / 50000), '0')).toBe(false); expect(checkOne(N(0.0025), '0.25')).toBe(false);
+    expect(checkOne(N(2, { tol: 0.15 }), '2.1')).toBe(true); expect(checkOne(N(2, { tol: 0.15 }), '2.5')).toBe(false);
+  });
+  it('words and letters match whole words; equations accept any letter and either side first; explain problems have no automatic check', async () => {
+    // @ts-expect-error the Worker is plain JavaScript
+    const { checkOne } = await import('../worker/index.js');
+    const mc = { t: 'text', v: ['c'], any: [['c', '178200']] };
+    expect(checkOne(mc, 'C')).toBe(true); expect(checkOne(mc, '178,200')).toBe(true); expect(checkOne(mc, 'cat')).toBe(false); expect(checkOne(mc, 'b')).toBe(false);
+    expect(checkOne({ t: 'text', v: [], any: [['4.8'], ['5.6']] }, 'between 4.8 and 5.6')).toBe(true); expect(checkOne({ t: 'text', v: [], any: [['4.8'], ['5.6']] }, '4.8')).toBe(false);
+    const eq = { t: 'eq', v: ['17/w=68/100'] }; expect(checkOne(eq, '17/x = 68/100')).toBe(true); expect(checkOne(eq, '68/100=17/n')).toBe(true); expect(checkOne(eq, '17/w=0.68')).toBe(false);
+    expect(checkOne({ t: 'none' }, 'anything')).toBe(null);
+  });
+  it('the Homework page asks through the checker and has no multiple-choice buttons', () => {
+    expect(homeworkTemplate).toContain('/api/check'); expect(homeworkTemplate).toContain('typedOnly');
+    for (const page of [homework2Page, homework3Page]) { expect(page).not.toMatch(/class="opts"/); expect(page).not.toMatch(/aria-pressed="\$\{A\.pick/); }
+  });
+});
+

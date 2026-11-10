@@ -11,6 +11,7 @@ export default {
   async fetch(req, env) {
     const url = new URL(req.url);
     if (url.pathname === '/api/pack') return pack(req, env, url);
+    if (url.pathname === '/api/check') return check(req, env);
     if (url.pathname === '/api/img') return img(req, env, url);
     if (url.pathname === '/api/songs') return songs(req, env);
     if (url.pathname === '/api/players' || url.pathname === '/api/player') return players(req, env, url);
@@ -117,4 +118,50 @@ async function songs(req, env) {
   const v = await env.NOTES.get('songs:rewards');
   if (!v) return json({ ok: false, error: 'no songs yet' }, 404);
   return new Response(v, { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } });
+}
+
+// ---- Homework "Check my work": her typed answer goes in, only "matches" or "not quite yet" comes out. ----
+// The real answers live in KV (`check:unit-N`, uploaded by mathseye-content/tools/ship.py) and are NEVER sent to a device (owner rule: the Homework section never gives an answer).
+const checkCache = new Map();
+async function loadChecks(env, unit) {
+  const c = checkCache.get(unit); if (c && Date.now() - c.at < 60_000) return c.v;
+  const raw = await env.NOTES.get(`check:unit-${unit}`); const v = raw ? JSON.parse(raw) : null;
+  checkCache.set(unit, { at: Date.now(), v }); return v;
+}
+/** 72, 72%, $72, 1,234, 3/4, 1 1/2, .5, -3 (also the typographic minus) -> a number, or null. */
+export function parseTyped(raw) {
+  const s = String(raw).trim().replace(/[−–]/g, '-').replace(/[$,%]/g, '').replace(/\s+/g, ' ');
+  let m = s.match(/^(-?)(\d+) (\d+)\/(\d+)$/); if (m) return (m[1] ? -1 : 1) * (Number(m[2]) + Number(m[3]) / Number(m[4]));
+  m = s.match(/^(-?\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/); if (m) return Number(m[2]) === 0 ? null : Number(m[1]) / Number(m[2]);
+  return /^-?(\d+\.?\d*|\.\d+)$/.test(s) ? Number(s) : null;
+}
+const norm = (t) => String(t).toLowerCase().replace(/[$,%]/g, '').replace(/[^a-z0-9./= ]+/g, ' ').replace(/\s+/g, ' ').trim();
+const hasWord = (t, kw) => new RegExp('(^|[^a-z0-9.])' + norm(kw).replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '($|[^a-z0-9.])').test(t);
+const eqNorm = (t) => String(t).toLowerCase().replace(/\s+/g, '').replace(/×/g, '*').replace(/[a-z?]/g, 'w');
+export function checkOne(spec, typed) {
+  if (!spec || spec.t === 'none') return null;
+  if (typed == null || String(typed).trim() === '') return false;
+  if (spec.t === 'num') {
+    const g = parseTyped(typed); if (g === null) return false;
+    return spec.v.some((e) => Math.abs(g - e) <= (spec.tol ?? (Math.abs(e) >= 1 ? 0.005 : Math.abs(e) * 0.001)));
+  }
+  if (spec.t === 'eq') {
+    const g = eqNorm(typed), swap = (x) => x.split('=').reverse().join('=');
+    return spec.v.some((e) => { const w = eqNorm(e); return g === w || g === swap(w); });
+  }
+  const t = norm(typed);
+  if (spec.v.some((a) => norm(a) === t)) return true;
+  return !!(spec.any && spec.any.length && spec.any.every((group) => group.some((kw) => hasWord(t, kw))));
+}
+async function check(req, env) {
+  if (req.method !== 'POST') return json({ ok: false, error: 'method not allowed' }, 405);
+  let b; try { b = await req.json(); } catch { return json({ ok: false, error: 'bad json' }, 400); }
+  const unit = Number(b.unit), id = String(b.id || ''), parts = Array.isArray(b.parts) ? b.parts.slice(0, 8).map((x) => String(x).slice(0, 80)) : [];
+  if (!Number.isInteger(unit) || unit < 1 || unit > 99 || !id || id.length > 20) return json({ ok: false, error: 'bad request' }, 400);
+  const all = await loadChecks(env, unit); const spec = all && all[id];
+  if (!spec) return json({ ok: true, auto: false });
+  const specs = spec.p || [spec];
+  const res = specs.map((sp, i) => checkOne(sp, parts[i]));
+  if (res.every((r) => r === null)) return json({ ok: true, auto: false });
+  return json({ ok: true, auto: true, parts: res, result: res.every((r) => r === null || r === true) });
 }
