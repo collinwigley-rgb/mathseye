@@ -8,6 +8,7 @@ Song titles are fine to use (owner's call; this is a private family app). Practi
 ## Start of every session
 1. Read `docs/STATUS.md` (what's done, what's next).
 2. Check open GitHub Issues labeled `change-request`. That's the work queue.
+   Also read the players' "Flag a problem" notes (they land in KV; same list as Grown-ups): `curl -s https://mathseye.collin-wigley.workers.dev/api/feedback` (each has the problem's `#ref`, where it was, the player, and what she had tried; look the ref up with `tools/ref.py`). Fix what a note points at, and leave the note for the owner to mark Done.
 3. When you finish something, update `docs/STATUS.md`, commit, push, and close or comment on the issue.
    Keep commits small so work survives running out of tokens.
 
