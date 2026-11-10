@@ -171,7 +171,7 @@ def variants(pid, n=10):
         seen.add(key); out.append(v)
     return out
 
-def shortcut(pid, text, answer, show): return []         # mental shortcuts for percent families come later (tools/units/unit3_shortcuts.py)
+from units.unit3_shortcuts import shortcut   # "Try this in your head" lines (tools/units/unit3_shortcuts.py)
 def facts_text(pid, text): return []                     # MathFacts tricks that fit a problem's own numbers: added with Unit 3's own tricks
 def facts_for(p): return facts_text(p["id"], p["text"])
 

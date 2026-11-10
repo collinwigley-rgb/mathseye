@@ -60,6 +60,26 @@
    "rule": "Times 10, 100, 1000: slide the decimal right one place per zero. Divide: slide it left.",
    "example": "5.6 ÷ 10 = 0.56    0.3 × 100 = 30"
   },
+  "over-100": {
+   "name": "More than 100%",
+   "rule": "100% is the whole. 200% is double, 300% is triple. For something like 150%, take the whole and add the extra: 100% + 50%.",
+   "example": "150% of 40: 100% is 40, 50% is 20, so 60"
+  },
+  "percent-benchmarks": {
+   "name": "10%, 1%, 50% and 25%",
+   "rule": "Four easy percents: 10% is a tenth (divide by 10), 1% is a hundredth (divide by 100), 50% is half, and 25% is a quarter (halve, then halve again).",
+   "example": "10% of 340 = 34     50% of 86 = 43     25% of 80 = 20"
+  },
+  "percent-build": {
+   "name": "Build any percent",
+   "rule": "Make a harder percent from the easy ones. 5% is half of 10%. 15% = 10% + 5%. 20% is two 10%s. 35% = 25% + 10%. 75% is three quarters.",
+   "example": "15% of 80: 10% is 8, 5% is 4, so 12"
+  },
+  "percent-decimal": {
+   "name": "Percent to decimal",
+   "rule": "Percent means per 100, so slide the decimal point two places left: 35% = 0.35, 4% = 0.04, 0.8% = 0.008. To go back, slide it two places right.",
+   "example": "35% = 0.35     0.07 = 7%"
+  },
   "times-one-and-a-half": {
    "name": "Times 1.5, 2.5, and 0.5",
    "rule": "× 0.5 is half. × 1.5 is the number plus half of it. × 2.5 is double plus half.",
@@ -97,7 +117,10 @@
     "earlier": []
    },
    "facts": [],
-   "shortcut": [],
+   "shortcut": [
+    "Find 10% of 480: slide the decimal point one place left.",
+    "60% is six tens: multiply by 6."
+   ],
    "variants": [
     {
      "kind": "num",
@@ -119,7 +142,11 @@
      "graph": null,
      "ref": 10001,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 10% of 480: slide the decimal point one place left.",
+      "5% is half of that.",
+      "15% = 10% + 5%, so add them."
+     ]
     },
     {
      "kind": "num",
@@ -141,7 +168,11 @@
      "graph": null,
      "ref": 10002,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 25% of 480: halve it, then halve again.",
+      "Find 10% of 480: slide the decimal point one place left.",
+      "35% = 25% + 10%, so add them."
+     ]
     },
     {
      "kind": "num",
@@ -163,7 +194,10 @@
      "graph": null,
      "ref": 10003,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 10% of 120: slide the decimal point one place left.",
+      "30% is three tens: multiply by 3."
+     ]
     },
     {
      "kind": "num",
@@ -185,7 +219,10 @@
      "graph": null,
      "ref": 10004,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 10% of 500: slide the decimal point one place left.",
+      "60% is six tens: multiply by 6."
+     ]
     },
     {
      "kind": "num",
@@ -207,7 +244,10 @@
      "graph": null,
      "ref": 10005,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 10% of 800: slide the decimal point one place left.",
+      "20% is two tens: double it."
+     ]
     },
     {
      "kind": "num",
@@ -229,7 +269,11 @@
      "graph": null,
      "ref": 10006,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 25% of 160: halve it, then halve again.",
+      "Find 10% of 160: slide the decimal point one place left.",
+      "35% = 25% + 10%, so add them."
+     ]
     },
     {
      "kind": "num",
@@ -251,7 +295,10 @@
      "graph": null,
      "ref": 10007,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 10% of 500: slide the decimal point one place left.",
+      "80% is eight tens: multiply by 8."
+     ]
     },
     {
      "kind": "num",
@@ -273,7 +320,10 @@
      "graph": null,
      "ref": 10008,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 10% of 250: slide the decimal point one place left.",
+      "60% is six tens: multiply by 6."
+     ]
     },
     {
      "kind": "num",
@@ -295,7 +345,10 @@
      "graph": null,
      "ref": 10009,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 10% of 300: slide the decimal point one place left.",
+      "60% is six tens: multiply by 6."
+     ]
     },
     {
      "kind": "num",
@@ -317,7 +370,10 @@
      "graph": null,
      "ref": 10010,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 10% of 120: slide the decimal point one place left.",
+      "60% is six tens: multiply by 6."
+     ]
     }
    ],
    "ref": 10011
@@ -353,7 +409,11 @@
     "earlier": []
    },
    "facts": [],
-   "shortcut": [],
+   "shortcut": [
+    "100% is 24 itself.",
+    "The extra 50% is half of 24.",
+    "Add the two."
+   ],
    "variants": [
     {
      "kind": "num",
@@ -375,7 +435,9 @@
      "graph": null,
      "ref": 10012,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "200% means two wholes: double 12."
+     ]
     },
     {
      "kind": "num",
@@ -397,7 +459,10 @@
      "graph": null,
      "ref": 10013,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "200% means two wholes: double 50.",
+      "The other 50% is half of 50. Add it."
+     ]
     },
     {
      "kind": "num",
@@ -419,7 +484,9 @@
      "graph": null,
      "ref": 10014,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "200% means two wholes: double 30."
+     ]
     },
     {
      "kind": "num",
@@ -441,7 +508,11 @@
      "graph": null,
      "ref": 10015,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "100% is 12 itself.",
+      "The extra 25% is a quarter: halve 12, then halve again.",
+      "Add that to 12."
+     ]
     },
     {
      "kind": "num",
@@ -463,7 +534,11 @@
      "graph": null,
      "ref": 10016,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "100% is 8 itself.",
+      "The extra 50% is half of 8.",
+      "Add the two."
+     ]
     },
     {
      "kind": "num",
@@ -485,7 +560,11 @@
      "graph": null,
      "ref": 10017,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "100% is 20 itself.",
+      "The extra 75% is three quarters of 20.",
+      "Add the two."
+     ]
     },
     {
      "kind": "num",
@@ -507,7 +586,11 @@
      "graph": null,
      "ref": 10018,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "100% is 12 itself.",
+      "The extra 75% is three quarters of 12.",
+      "Add the two."
+     ]
     },
     {
      "kind": "num",
@@ -529,7 +612,11 @@
      "graph": null,
      "ref": 10019,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "100% is 30 itself.",
+      "Find 10% of 30: slide the decimal point one place left.",
+      "The extra 20% is two tens. Add it to 30."
+     ]
     },
     {
      "kind": "num",
@@ -551,7 +638,9 @@
      "graph": null,
      "ref": 10020,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "300% means three wholes: multiply 8 by 3."
+     ]
     },
     {
      "kind": "num",
@@ -573,7 +662,9 @@
      "graph": null,
      "ref": 10021,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "200% means two wholes: double 8."
+     ]
     }
    ],
    "ref": 10022
@@ -609,7 +700,11 @@
     "earlier": []
    },
    "facts": [],
-   "shortcut": [],
+   "shortcut": [
+    "Find 1% of $60: slide the decimal point two places left.",
+    "The tax is 6 of those.",
+    "Add the tax to the price to get the total."
+   ],
    "variants": [
     {
      "kind": "num",
@@ -631,7 +726,11 @@
      "graph": null,
      "ref": 10023,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 1% of $150: slide the decimal point two places left.",
+      "The tax is 5 of those.",
+      "Add the tax to the price to get the total."
+     ]
     },
     {
      "kind": "num",
@@ -653,7 +752,11 @@
      "graph": null,
      "ref": 10024,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 1% of $40: slide the decimal point two places left.",
+      "The tax is 4 of those.",
+      "Add the tax to the price to get the total."
+     ]
     },
     {
      "kind": "num",
@@ -675,7 +778,11 @@
      "graph": null,
      "ref": 10025,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 1% of $25: slide the decimal point two places left.",
+      "The tax is 8 of those.",
+      "Add the tax to the price to get the total."
+     ]
     },
     {
      "kind": "num",
@@ -697,7 +804,11 @@
      "graph": null,
      "ref": 10026,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 1% of $40: slide the decimal point two places left.",
+      "The tax is 5 of those.",
+      "Add the tax to the price to get the total."
+     ]
     },
     {
      "kind": "num",
@@ -719,7 +830,11 @@
      "graph": null,
      "ref": 10027,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 10% of $80: slide the decimal point one place left.",
+      "That is the tax.",
+      "Add the tax to the price to get the total."
+     ]
     },
     {
      "kind": "num",
@@ -741,7 +856,11 @@
      "graph": null,
      "ref": 10028,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 1% of $25: slide the decimal point two places left.",
+      "The tax is 6 of those.",
+      "Add the tax to the price to get the total."
+     ]
     },
     {
      "kind": "num",
@@ -763,7 +882,11 @@
      "graph": null,
      "ref": 10029,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 1% of $120: slide the decimal point two places left.",
+      "The tax is 5 of those.",
+      "Add the tax to the price to get the total."
+     ]
     },
     {
      "kind": "num",
@@ -785,7 +908,11 @@
      "graph": null,
      "ref": 10030,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 10% of $40: slide the decimal point one place left.",
+      "That is the tax.",
+      "Add the tax to the price to get the total."
+     ]
     },
     {
      "kind": "num",
@@ -807,7 +934,11 @@
      "graph": null,
      "ref": 10031,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 10% of $50: slide the decimal point one place left.",
+      "That is the tax.",
+      "Add the tax to the price to get the total."
+     ]
     },
     {
      "kind": "num",
@@ -829,7 +960,11 @@
      "graph": null,
      "ref": 10032,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 1% of $150: slide the decimal point two places left.",
+      "The tax is 4 of those.",
+      "Add the tax to the price to get the total."
+     ]
     }
    ],
    "ref": 10033
@@ -866,7 +1001,10 @@
     "earlier": []
    },
    "facts": [],
-   "shortcut": [],
+   "shortcut": [
+    "Write the part over the whole: 15 ÷ 25.",
+    "Slide the decimal point two places right to make it a percent."
+   ],
    "variants": [
     {
      "kind": "num",
@@ -889,7 +1027,10 @@
      "pct": true,
      "ref": 10034,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Write the part over the whole: 175 ÷ 250.",
+      "Slide the decimal point two places right to make it a percent."
+     ]
     },
     {
      "kind": "num",
@@ -912,7 +1053,10 @@
      "pct": true,
      "ref": 10035,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Write the part over the whole: 16 ÷ 40.",
+      "Slide the decimal point two places right to make it a percent."
+     ]
     },
     {
      "kind": "num",
@@ -935,7 +1079,10 @@
      "pct": true,
      "ref": 10036,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Write the part over the whole: 140 ÷ 200.",
+      "Slide the decimal point two places right to make it a percent."
+     ]
     },
     {
      "kind": "num",
@@ -958,7 +1105,10 @@
      "pct": true,
      "ref": 10037,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Write the part over the whole: 3 ÷ 25.",
+      "Slide the decimal point two places right to make it a percent."
+     ]
     },
     {
      "kind": "num",
@@ -981,7 +1131,10 @@
      "pct": true,
      "ref": 10038,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Write the part over the whole: 5 ÷ 25.",
+      "Slide the decimal point two places right to make it a percent."
+     ]
     },
     {
      "kind": "num",
@@ -1004,7 +1157,10 @@
      "pct": true,
      "ref": 10039,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Write the part over the whole: 75 ÷ 250.",
+      "Slide the decimal point two places right to make it a percent."
+     ]
     },
     {
      "kind": "num",
@@ -1027,7 +1183,10 @@
      "pct": true,
      "ref": 10040,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Write the part over the whole: 18 ÷ 40.",
+      "Slide the decimal point two places right to make it a percent."
+     ]
     },
     {
      "kind": "num",
@@ -1050,7 +1209,10 @@
      "pct": true,
      "ref": 10041,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Write the part over the whole: 6 ÷ 40.",
+      "Slide the decimal point two places right to make it a percent."
+     ]
     },
     {
      "kind": "num",
@@ -1073,7 +1235,10 @@
      "pct": true,
      "ref": 10042,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Write the part over the whole: 70 ÷ 200.",
+      "Slide the decimal point two places right to make it a percent."
+     ]
     },
     {
      "kind": "num",
@@ -1096,7 +1261,10 @@
      "pct": true,
      "ref": 10043,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Write the part over the whole: 12 ÷ 20.",
+      "Slide the decimal point two places right to make it a percent."
+     ]
     }
    ],
    "ref": 10044
@@ -1137,7 +1305,11 @@
     ]
    },
    "facts": [],
-   "shortcut": [],
+   "shortcut": [
+    "Find 25% of 30: halve it, then halve again.",
+    "Find 10% of 30: slide the decimal point one place left.",
+    "35% = 25% + 10%, so add them."
+   ],
    "variants": [
     {
      "kind": "num",
@@ -1159,7 +1331,10 @@
      "graph": null,
      "ref": 10045,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 10% of 60: slide the decimal point one place left.",
+      "30% is three tens: multiply by 3."
+     ]
     },
     {
      "kind": "num",
@@ -1181,7 +1356,11 @@
      "graph": null,
      "ref": 10046,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "100% is 120 itself.",
+      "The extra 75% is three quarters of 120.",
+      "Add the two."
+     ]
     },
     {
      "kind": "num",
@@ -1203,7 +1382,11 @@
      "graph": null,
      "ref": 10047,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 25% of 75: halve it, then halve again.",
+      "Find 10% of 75: slide the decimal point one place left.",
+      "35% = 25% + 10%, so add them."
+     ]
     },
     {
      "kind": "num",
@@ -1225,7 +1408,10 @@
      "graph": null,
      "ref": 10048,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 10% of 250: slide the decimal point one place left.",
+      "20% is two tens: double it."
+     ]
     },
     {
      "kind": "num",
@@ -1247,7 +1433,11 @@
      "graph": null,
      "ref": 10049,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 25% of 30: halve it, then halve again.",
+      "Find 10% of 30: slide the decimal point one place left.",
+      "35% = 25% + 10%, so add them."
+     ]
     },
     {
      "kind": "num",
@@ -1269,7 +1459,11 @@
      "graph": null,
      "ref": 10050,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "100% is 20 itself.",
+      "The extra 75% is three quarters of 20.",
+      "Add the two."
+     ]
     },
     {
      "kind": "num",
@@ -1291,7 +1485,11 @@
      "graph": null,
      "ref": 10051,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 25% of 12.5: halve it, then halve again.",
+      "Find 10% of 12.5: slide the decimal point one place left.",
+      "35% = 25% + 10%, so add them."
+     ]
     },
     {
      "kind": "num",
@@ -1313,7 +1511,11 @@
      "graph": null,
      "ref": 10052,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "100% is 20 itself.",
+      "The extra 50% is half of 20.",
+      "Add the two."
+     ]
     },
     {
      "kind": "num",
@@ -1335,7 +1537,10 @@
      "graph": null,
      "ref": 10053,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Find 25% of 250: halve it, then halve again.",
+      "75% is three quarters: multiply by 3."
+     ]
     },
     {
      "kind": "num",
@@ -1357,7 +1562,11 @@
      "graph": null,
      "ref": 10054,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "100% is 75 itself.",
+      "The extra 75% is three quarters of 75.",
+      "Add the two."
+     ]
     }
    ],
    "ref": 10055
@@ -1394,7 +1603,10 @@
     "earlier": []
    },
    "facts": [],
-   "shortcut": [],
+   "shortcut": [
+    "60% is 18, so find 1%: divide 18 by 60.",
+    "100% is a hundred of those 1%s: multiply by 100."
+   ],
    "variants": [
     {
      "kind": "num",
@@ -1416,7 +1628,10 @@
      "graph": null,
      "ref": 10056,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "50% is 20, so find 1%: divide 20 by 50.",
+      "100% is a hundred of those 1%s: multiply by 100."
+     ]
     },
     {
      "kind": "num",
@@ -1438,7 +1653,10 @@
      "graph": null,
      "ref": 10057,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "200% is 100, so find 1%: divide 100 by 200.",
+      "100% is a hundred of those 1%s: multiply by 100."
+     ]
     },
     {
      "kind": "num",
@@ -1460,7 +1678,10 @@
      "graph": null,
      "ref": 10058,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "200% is 120, so find 1%: divide 120 by 200.",
+      "100% is a hundred of those 1%s: multiply by 100."
+     ]
     },
     {
      "kind": "num",
@@ -1504,7 +1725,10 @@
      "graph": null,
      "ref": 10060,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "25% is 20, so find 1%: divide 20 by 25.",
+      "100% is a hundred of those 1%s: multiply by 100."
+     ]
     },
     {
      "kind": "num",
@@ -1526,7 +1750,10 @@
      "graph": null,
      "ref": 10061,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "60% is 36, so find 1%: divide 36 by 60.",
+      "100% is a hundred of those 1%s: multiply by 100."
+     ]
     },
     {
      "kind": "num",
@@ -1548,7 +1775,10 @@
      "graph": null,
      "ref": 10062,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "150% is 120, so find 1%: divide 120 by 150.",
+      "100% is a hundred of those 1%s: multiply by 100."
+     ]
     },
     {
      "kind": "num",
@@ -1570,7 +1800,10 @@
      "graph": null,
      "ref": 10063,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "60% is 72, so find 1%: divide 72 by 60.",
+      "100% is a hundred of those 1%s: multiply by 100."
+     ]
     },
     {
      "kind": "num",
@@ -1592,7 +1825,10 @@
      "graph": null,
      "ref": 10064,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "40% is 24, so find 1%: divide 24 by 40.",
+      "100% is a hundred of those 1%s: multiply by 100."
+     ]
     },
     {
      "kind": "num",
@@ -1614,7 +1850,10 @@
      "graph": null,
      "ref": 10065,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "60% is 48, so find 1%: divide 48 by 60.",
+      "100% is a hundred of those 1%s: multiply by 100."
+     ]
     }
    ],
    "ref": 10066
@@ -1909,7 +2148,10 @@
     "earlier": []
    },
    "facts": [],
-   "shortcut": [],
+   "shortcut": [
+    "Percent means out of 100.",
+    "Slide the decimal point two places left. Add zeros if you need them."
+   ],
    "variants": [
     {
      "kind": "num",
@@ -1930,7 +2172,10 @@
      "graph": null,
      "ref": 10078,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Percent means out of 100.",
+      "Slide the decimal point two places left. Add zeros if you need them."
+     ]
     },
     {
      "kind": "num",
@@ -1951,7 +2196,10 @@
      "graph": null,
      "ref": 10079,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Percent means out of 100.",
+      "Slide the decimal point two places left. Add zeros if you need them."
+     ]
     },
     {
      "kind": "num",
@@ -1972,7 +2220,10 @@
      "graph": null,
      "ref": 10080,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Percent means out of 100.",
+      "Slide the decimal point two places left. Add zeros if you need them."
+     ]
     },
     {
      "kind": "num",
@@ -1993,7 +2244,10 @@
      "graph": null,
      "ref": 10081,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Percent means out of 100.",
+      "Slide the decimal point two places left. Add zeros if you need them."
+     ]
     },
     {
      "kind": "num",
@@ -2014,7 +2268,10 @@
      "graph": null,
      "ref": 10082,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Percent means out of 100.",
+      "Slide the decimal point two places left. Add zeros if you need them."
+     ]
     },
     {
      "kind": "num",
@@ -2035,7 +2292,10 @@
      "graph": null,
      "ref": 10083,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Percent means out of 100.",
+      "Slide the decimal point two places left. Add zeros if you need them."
+     ]
     },
     {
      "kind": "num",
@@ -2056,7 +2316,10 @@
      "graph": null,
      "ref": 10084,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Percent means out of 100.",
+      "Slide the decimal point two places left. Add zeros if you need them."
+     ]
     },
     {
      "kind": "num",
@@ -2077,7 +2340,10 @@
      "graph": null,
      "ref": 10085,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Percent means out of 100.",
+      "Slide the decimal point two places left. Add zeros if you need them."
+     ]
     }
    ],
    "ref": 10086
@@ -2411,7 +2677,10 @@
     "earlier": []
    },
    "facts": [],
-   "shortcut": [],
+   "shortcut": [
+    "Do two steps. First find 50% of 600.",
+    "Then find 25% of THAT number, not of 600."
+   ],
    "variants": [
     {
      "kind": "num",
@@ -2433,7 +2702,10 @@
      "graph": null,
      "ref": 10098,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Do two steps. First find 50% of 800.",
+      "Then find 20% of THAT number, not of 800."
+     ]
     },
     {
      "kind": "num",
@@ -2455,7 +2727,10 @@
      "graph": null,
      "ref": 10099,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Do two steps. First find 25% of 1000.",
+      "Then find 20% of THAT number, not of 1000."
+     ]
     },
     {
      "kind": "num",
@@ -2477,7 +2752,10 @@
      "graph": null,
      "ref": 10100,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Do two steps. First find 40% of 800.",
+      "Then find 25% of THAT number, not of 800."
+     ]
     },
     {
      "kind": "num",
@@ -2499,7 +2777,10 @@
      "graph": null,
      "ref": 10101,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Do two steps. First find 75% of 500.",
+      "Then find 40% of THAT number, not of 500."
+     ]
     },
     {
      "kind": "num",
@@ -2521,7 +2802,10 @@
      "graph": null,
      "ref": 10102,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Do two steps. First find 75% of 600.",
+      "Then find 10% of THAT number, not of 600."
+     ]
     },
     {
      "kind": "num",
@@ -2543,7 +2827,10 @@
      "graph": null,
      "ref": 10103,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Do two steps. First find 20% of 800.",
+      "Then find 40% of THAT number, not of 800."
+     ]
     },
     {
      "kind": "num",
@@ -2565,7 +2852,10 @@
      "graph": null,
      "ref": 10104,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Do two steps. First find 70% of 500.",
+      "Then find 10% of THAT number, not of 500."
+     ]
     },
     {
      "kind": "num",
@@ -2587,7 +2877,10 @@
      "graph": null,
      "ref": 10105,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Do two steps. First find 25% of 800.",
+      "Then find 40% of THAT number, not of 800."
+     ]
     },
     {
      "kind": "num",
@@ -2609,7 +2902,10 @@
      "graph": null,
      "ref": 10106,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Do two steps. First find 40% of 400.",
+      "Then find 10% of THAT number, not of 400."
+     ]
     },
     {
      "kind": "num",
@@ -2631,7 +2927,10 @@
      "graph": null,
      "ref": 10107,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Do two steps. First find 25% of 600.",
+      "Then find 10% of THAT number, not of 600."
+     ]
     }
    ],
    "ref": 10108
@@ -2667,7 +2966,10 @@
     "earlier": []
    },
    "facts": [],
-   "shortcut": [],
+   "shortcut": [
+    "Add all the groups to get the whole.",
+    "Then 400 ÷ the whole, and slide the decimal point two places right."
+   ],
    "variants": [
     {
      "kind": "num",
@@ -2690,7 +2992,10 @@
      "pct": true,
      "ref": 10109,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Add all the groups to get the whole.",
+      "Then 80 ÷ the whole, and slide the decimal point two places right."
+     ]
     },
     {
      "kind": "num",
@@ -2713,7 +3018,10 @@
      "pct": true,
      "ref": 10110,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Add all the groups to get the whole.",
+      "Then 400 ÷ the whole, and slide the decimal point two places right."
+     ]
     },
     {
      "kind": "num",
@@ -2736,7 +3044,10 @@
      "pct": true,
      "ref": 10111,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Add all the groups to get the whole.",
+      "Then 300 ÷ the whole, and slide the decimal point two places right."
+     ]
     },
     {
      "kind": "num",
@@ -2759,7 +3070,10 @@
      "pct": true,
      "ref": 10112,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Add all the groups to get the whole.",
+      "Then 220 ÷ the whole, and slide the decimal point two places right."
+     ]
     },
     {
      "kind": "num",
@@ -2782,7 +3096,10 @@
      "pct": true,
      "ref": 10113,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Add all the groups to get the whole.",
+      "Then 500 ÷ the whole, and slide the decimal point two places right."
+     ]
     },
     {
      "kind": "num",
@@ -2805,7 +3122,10 @@
      "pct": true,
      "ref": 10114,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Add all the groups to get the whole.",
+      "Then 180 ÷ the whole, and slide the decimal point two places right."
+     ]
     },
     {
      "kind": "num",
@@ -2828,7 +3148,10 @@
      "pct": true,
      "ref": 10115,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Add all the groups to get the whole.",
+      "Then 225 ÷ the whole, and slide the decimal point two places right."
+     ]
     },
     {
      "kind": "num",
@@ -2851,7 +3174,10 @@
      "pct": true,
      "ref": 10116,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Add all the groups to get the whole.",
+      "Then 550 ÷ the whole, and slide the decimal point two places right."
+     ]
     },
     {
      "kind": "num",
@@ -2874,7 +3200,10 @@
      "pct": true,
      "ref": 10117,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Add all the groups to get the whole.",
+      "Then 80 ÷ the whole, and slide the decimal point two places right."
+     ]
     },
     {
      "kind": "num",
@@ -2897,7 +3226,10 @@
      "pct": true,
      "ref": 10118,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "Add all the groups to get the whole.",
+      "Then 250 ÷ the whole, and slide the decimal point two places right."
+     ]
     }
    ],
    "ref": 10119
@@ -3221,7 +3553,10 @@
     "earlier": []
    },
    "facts": [],
-   "shortcut": [],
+   "shortcut": [
+    "160% is $128, so find 1%: divide 128 by 160.",
+    "100% is a hundred of those 1%s: multiply by 100."
+   ],
    "variants": [
     {
      "kind": "num",
@@ -3243,7 +3578,10 @@
      "graph": null,
      "ref": 10131,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "180% is $162, so find 1%: divide 162 by 180.",
+      "100% is a hundred of those 1%s: multiply by 100."
+     ]
     },
     {
      "kind": "num",
@@ -3265,7 +3603,10 @@
      "graph": null,
      "ref": 10132,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "150% is $60, so find 1%: divide 60 by 150.",
+      "100% is a hundred of those 1%s: multiply by 100."
+     ]
     },
     {
      "kind": "num",
@@ -3287,7 +3628,10 @@
      "graph": null,
      "ref": 10133,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "150% is $90, so find 1%: divide 90 by 150.",
+      "100% is a hundred of those 1%s: multiply by 100."
+     ]
     },
     {
      "kind": "num",
@@ -3309,7 +3653,10 @@
      "graph": null,
      "ref": 10134,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "140% is $112, so find 1%: divide 112 by 140.",
+      "100% is a hundred of those 1%s: multiply by 100."
+     ]
     },
     {
      "kind": "num",
@@ -3331,7 +3678,10 @@
      "graph": null,
      "ref": 10135,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "160% is $240, so find 1%: divide 240 by 160.",
+      "100% is a hundred of those 1%s: multiply by 100."
+     ]
     },
     {
      "kind": "num",
@@ -3353,7 +3703,10 @@
      "graph": null,
      "ref": 10136,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "150% is $225, so find 1%: divide 225 by 150.",
+      "100% is a hundred of those 1%s: multiply by 100."
+     ]
     },
     {
      "kind": "num",
@@ -3375,7 +3728,10 @@
      "graph": null,
      "ref": 10137,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "140% is $70, so find 1%: divide 70 by 140.",
+      "100% is a hundred of those 1%s: multiply by 100."
+     ]
     },
     {
      "kind": "num",
@@ -3419,7 +3775,10 @@
      "graph": null,
      "ref": 10139,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "160% is $128, so find 1%: divide 128 by 160.",
+      "100% is a hundred of those 1%s: multiply by 100."
+     ]
     },
     {
      "kind": "num",
@@ -3441,7 +3800,10 @@
      "graph": null,
      "ref": 10140,
      "facts": [],
-     "shortcut": []
+     "shortcut": [
+      "180% is $108, so find 1%: divide 108 by 180.",
+      "100% is a hundred of those 1%s: multiply by 100."
+     ]
     }
    ],
    "ref": 10141
