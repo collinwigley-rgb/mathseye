@@ -124,7 +124,7 @@ import { BRANDS, ICONS } from './brand';
 
 describe('MathFacts modes', () => {
   it('unit mode shows only this unit\'s tricks; general shows all', () => {
-    const db = fresh();
+    const db = fresh(); db.settings.currentUnit = 2;      // a new player starts on the calendar's unit; this test is about Unit 2's list
     expect(db.settings.factsMode).toBe('unit');
     const unit = tricksFor(db);
     expect(unit.length).toBeGreaterThan(0);
@@ -430,6 +430,7 @@ describe('the school calendar picks the unit', () => {
     expect(T.unitForDate('2026-11-09')).toBe(3); expect(T.unitForDate('2026-12-20')).toBe(3); expect(T.unitForDate('2027-01-24')).toBe(3);   // winter break keeps Unit 3
     expect(T.unitForDate('2027-02-10')).toBe(3);           // Term 3 has no unit yet: the newest ready unit stays
     expect(T.unitForDate('2026-08-01')).toBe(2);           // before the year starts
+    expect(T.weekOn('2026-09-08')).toBe(1); expect(T.weekOn('2026-11-09')).toBe(10); expect(T.weekOn('2026-11-13')).toBe(10); expect(T.weekOn('2026-11-15')).toBe(10); expect(T.weekOn('2026-11-16')).toBe(11);   // Week 10 = 11/9-11/13
     expect(T.midtermOn('2026-11-20')).toEqual({ label: 'Midterm 2', end: '2026-12-11' }); expect(T.midtermOn('2026-12-14')).toBeNull(); expect(T.midtermOn('2026-09-10')!.label).toBe('Midterm 1');
   });
   it('the calendar is in order, every term has its midterm inside it, and every unit belongs to a real term', async () => {
@@ -437,6 +438,45 @@ describe('the school calendar picks the unit', () => {
     terms.forEach((t, i) => { expect(t.start < t.end).toBe(true); expect(t.midterm.start >= t.start && t.midterm.end <= t.end).toBe(true); if (i) expect(terms[i - 1].end < t.start).toBe(true); });
     for (const u of units) expect(terms.some((t) => t.id === (u as any).term)).toBe(true);
     expect(terms.filter((t) => t.semesterEnds).map((t) => t.semester)).toEqual([1, 2]);
+  });
+});
+
+describe('unit 3 generators (percents) compute the right answers', () => {
+  const rng = seeded(11);
+  const num = (s: string) => parseNumber(s) as number;
+  it('pctOf: 10%, 1%, 50%, 25% of a friendly number', () => {
+    for (let i = 0; i < 300; i++) for (const p of [10, 1, 50, 25]) {
+      const m = GENERATORS.pctOf(rng, { p }), r = core(m.prompt).match(/^(\d+)% of (\d+)$/)!;
+      expect(Number(r[1])).toBe(p); expect(num(m.answer)).toBeCloseTo(Number(r[2]) * p / 100, 9);
+      if (p === 25) expect(Number(r[2]) % 4).toBe(0);
+    }
+  });
+  it('pctBuild: every piece of the build is a whole number and the pieces add up', () => {
+    for (let i = 0; i < 300; i++) {
+      const m = GENERATORS.pctBuild(rng, {}), r = core(m.prompt).match(/^(\d+)% of (\d+)$/)!, v = m.vars;
+      expect(num(m.answer)).toBeCloseTo(Number(r[2]) * Number(r[1]) / 100, 9); expect(Number.isInteger(num(m.answer))).toBe(true);
+      expect(v.ten).toBe(Number(r[2]) / 10); expect(v.five).toBe(Number(r[2]) / 20); expect(v.quarter).toBe(Number(r[2]) / 4);
+    }
+  });
+  it('pctToDec both ways, and a trailing % is accepted when typing a percent', () => {
+    for (let i = 0; i < 300; i++) {
+      const a = GENERATORS.pctToDec(rng, { dir: 'toDec' }), [, x] = core(a.prompt).match(/^([\d.]+)% as a decimal$/)!; expect(num(a.answer)).toBeCloseTo(Number(x) / 100, 9);
+      const b = GENERATORS.pctToDec(rng, { dir: 'toPct' }), [, d] = core(b.prompt).match(/^([\d.]+) as a percent/)!; expect(num(b.answer)).toBeCloseTo(Number(d) * 100, 9);
+      expect(checkAnswer(b.answer + '%', b.answer, 'number')).toBe(true);
+    }
+  });
+  it('pctOver: more than 100% is the whole plus the extra', () => {
+    for (let i = 0; i < 300; i++) {
+      const m = GENERATORS.pctOver(rng, {}), r = core(m.prompt).match(/^(\d+)% of (\d+)$/)!;
+      expect(Number(r[1])).toBeGreaterThan(100); expect(num(m.answer)).toBeCloseTo(Number(r[2]) * Number(r[1]) / 100, 9); expect(num(m.answer)).toBeGreaterThan(Number(r[2]));
+      expect(m.vars.extra as number + Number(r[2])).toBe(num(m.answer));
+    }
+  });
+  it('Unit 3 mode shows the percent facts plus the older facts that still apply, and "any facts" shows everything', () => {
+    const db = fresh(); db.settings.currentUnit = 3; db.settings.factsMode = 'unit';
+    const ids = tricksFor(db).map((t) => t.id);
+    for (const id of ['percent-benchmarks', 'percent-build', 'percent-decimal', 'over-100', 'benchmark-fractions', 'move-the-decimal']) expect(ids).toContain(id);
+    expect(ids).not.toContain('flip-and-cancel'); db.settings.factsMode = 'general'; expect(tricksFor(db).map((t) => t.id)).toContain('flip-and-cancel');
   });
 });
 

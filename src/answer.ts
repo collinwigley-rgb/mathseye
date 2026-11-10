@@ -2,7 +2,7 @@ import type { AnswerFormat } from './types';
 
 /** Parse "−3", "-3", ".5", "1/2", "-3/4" into a number, or null. */
 export function parseNumber(raw: string): number | null {
-  const s = raw.trim().replace(/[−–]/g, '-').replace(/,/g, '');
+  const s = raw.trim().replace(/[−–]/g, '-').replace(/,/g, '').replace(/\s*%$/, '');
   if (!s) return null;
   const frac = s.match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);
   if (frac) {

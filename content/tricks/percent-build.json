@@ -1,0 +1,26 @@
+{
+  "id": "percent-build",
+  "name": "Build any percent",
+  "rule": "Make a harder percent from the easy ones. 5% is half of 10%. 15% = 10% + 5%. 20% is two 10%s. 35% = 25% + 10%. 75% is three quarters.",
+  "example": "15% of 80: 10% is 8, 5% is 4, so 12",
+  "why": "Tips, tax and discounts are almost always 5%, 10%, 15%, 20% or 25%. If you can build them from 10% and a quarter, you never need a calculator.",
+  "workbookSection": "Unit 3: Lessons 3.1 and 3.2 (percents)",
+  "unlockOrder": 15,
+  "templates": [
+    {
+      "id": "pct-build",
+      "generator": "pctBuild",
+      "params": {},
+      "answerFormat": "number",
+      "clues": [
+        "Which easy percents add up to this one? Start with 10%.",
+        "{build}.",
+        "10% of {n} is {ten}. 5% of {n} is {five}. A quarter of {n} is {quarter}. Now add the pieces you need.",
+        "{p}% of {n} = {ans}"
+      ]
+    }
+  ],
+  "units": [
+    3
+  ]
+}

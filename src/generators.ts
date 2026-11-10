@@ -88,6 +88,37 @@ export const GENERATORS: Record<string, Gen> = {
       vars: { a, b, r, d, ar: a * r, ad: a * d, op: up ? '−' : '+', ans },
     };
   },
+  // ---------------------------------------------------------------- Unit 3 facts (percents)
+  /** An easy percent of a friendly number: 10% (divide by 10), 1% (divide by 100), 50% (half), 25% (a quarter). */
+  pctOf(rng, { p }) {
+    const P = Number(p);
+    const n = P === 10 ? int(rng, 12, 990) : P === 1 ? 5 * int(rng, 4, 198) : P === 50 ? int(rng, 6, 198) : 4 * int(rng, 3, 60);
+    const ans = fmtScaled(n * P, 2);
+    const how = P === 10 ? 'divide by 10' : P === 1 ? 'divide by 100' : P === 50 ? 'halve it' : 'halve it, then halve it again';
+    const part = P === 10 ? 'a tenth' : P === 1 ? 'a hundredth' : P === 50 ? 'half' : 'a quarter';
+    return { prompt: phrase(rng, `${P}% of ${n}`), answer: ans, vars: { n, p: P, how, part, half: fmtScaled(n * 50, 2), ans } };
+  },
+  /** Build another percent from the easy ones: 15% = 10% + 5%, 35% = 25% + 10%, ... (n is a multiple of 20 so every piece is a whole number). */
+  pctBuild(rng) {
+    const P = pick(rng, [5, 15, 20, 30, 35, 75]);
+    const n = 20 * int(rng, 2, 30), ten = n / 10, five = n / 20, quarter = n / 4, ans = (n * P) / 100;
+    const build = ({ 5: '5% is half of 10%', 15: '15% = 10% + 5%', 20: '20% = 10% + 10%', 30: '30% = 10% + 10% + 10%', 35: '35% = 25% + 10%', 75: '75% = 25% + 25% + 25%' } as Record<number, string>)[P];
+    return { prompt: phrase(rng, `${P}% of ${n}`), answer: String(ans), vars: { n, p: P, ten, five, quarter, build, ans } };
+  },
+  /** Percent to decimal (slide the point two places left) and back (two places right). */
+  pctToDec(rng, { dir }) {
+    const [m, places] = pick(rng, [[4, 0], [7, 0], [35, 0], [60, 0], [85, 0], [125, 0], [8, 1], [45, 1], [25, 1], [125, 1], [4, 1], [5, 2]] as [number, number][]);
+    const pct = fmtScaled(m, places), dec = fmtScaled(m, places + 2);
+    if (dir === 'toDec') return { prompt: `${pct}% as a decimal`, answer: dec, vars: { x: pct, ans: dec, dec, pct } };
+    return { prompt: `${dec} as a percent (just the number)`, answer: pct, vars: { x: dec, ans: pct, dec, pct } };
+  },
+  /** More than 100%: 100% is the whole, so the extra percent is added on. */
+  pctOver(rng) {
+    const P = pick(rng, [110, 120, 125, 150, 175, 200, 250, 300]);
+    const n = 20 * int(rng, 2, 20), extra = (n * (P - 100)) / 100, ans = n + extra;
+    return { prompt: phrase(rng, `${P}% of ${n}`), answer: String(ans), vars: { n, p: P, over: P - 100, extra, ans } };
+  },
+
   // ---------------------------------------------------------------- Unit 2 facts
   benchmark(rng, { dir }) {
     const [n, d] = pick(rng, BENCH);

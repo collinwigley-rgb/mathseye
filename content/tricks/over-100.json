@@ -1,0 +1,26 @@
+{
+  "id": "over-100",
+  "name": "More than 100%",
+  "rule": "100% is the whole. 200% is double, 300% is triple. For something like 150%, take the whole and add the extra: 100% + 50%.",
+  "example": "150% of 40: 100% is 40, 50% is 20, so 60",
+  "why": "Percents over 100 just mean more than the whole. The answer is always bigger than the number you started with.",
+  "workbookSection": "Unit 3: Lessons 3.1 and 3.2 (percents)",
+  "unlockOrder": 17,
+  "templates": [
+    {
+      "id": "pct-over",
+      "generator": "pctOver",
+      "params": {},
+      "answerFormat": "number",
+      "clues": [
+        "Is this percent more or less than 100%? So will the answer be bigger or smaller than {n}?",
+        "100% of {n} is {n}. Now find the extra {over}%.",
+        "The extra {over}% of {n} is {extra}. Add it to {n}.",
+        "{p}% of {n} = {n} + {extra} = {ans}"
+      ]
+    }
+  ],
+  "units": [
+    3
+  ]
+}

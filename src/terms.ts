@@ -25,4 +25,9 @@ export function unitForDate(date: string = dateStr()): number {
   const byTerm = term && unitList.units.find((u) => u.ready && (u as { term?: number }).term === term.id);
   return (byTerm ?? unitList.units.find((u) => u.id === unitList.current && u.ready) ?? unitList.units.find((u) => u.ready))?.id ?? 2;
 }
+/** The school week number for a date (Week 1 starts Monday 2026-09-07, so Week 10 is 2026-11-09 to 11-13). Weekends count as the week just ended. */
+export function weekOn(date: string = dateStr()): number {
+  const days = Math.floor((Date.parse(date + 'T12:00:00Z') - Date.parse(termData.weekOneStart + 'T12:00:00Z')) / 86_400_000);
+  return Math.max(1, Math.floor(days / 7) + 1);
+}
 export const shortDate = (iso: string) => new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' });

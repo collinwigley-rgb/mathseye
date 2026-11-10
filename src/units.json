@@ -8,11 +8,13 @@
       "lessons": [
         {
           "id": "3.1",
-          "title": "Percent of a number"
+          "title": "Percent of a number",
+          "week": 10
         },
         {
           "id": "3.2",
-          "title": "Percent and proportion"
+          "title": "Percent and proportion",
+          "week": 10
         }
       ],
       "features": {

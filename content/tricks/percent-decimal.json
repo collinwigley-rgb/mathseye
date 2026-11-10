@@ -1,0 +1,42 @@
+{
+  "id": "percent-decimal",
+  "name": "Percent to decimal",
+  "rule": "Percent means per 100, so slide the decimal point two places left: 35% = 0.35, 4% = 0.04, 0.8% = 0.008. To go back, slide it two places right.",
+  "example": "35% = 0.35     0.07 = 7%",
+  "why": "A percent is a fraction out of 100. Dividing by 100 moves every digit two places to the right of where it was, and the point ends up two places left.",
+  "workbookSection": "Unit 3: Lessons 3.1 and 3.2 (percents)",
+  "unlockOrder": 16,
+  "templates": [
+    {
+      "id": "pct-dec",
+      "generator": "pctToDec",
+      "params": {
+        "dir": "toDec"
+      },
+      "answerFormat": "number",
+      "clues": [
+        "Percent means out of 100. What do you do to the decimal point?",
+        "Slide the decimal point two places left (add zeros if you need them).",
+        "{x}% ÷ 100 = ?",
+        "{x}% = {ans}"
+      ]
+    },
+    {
+      "id": "pct-pct",
+      "generator": "pctToDec",
+      "params": {
+        "dir": "toPct"
+      },
+      "answerFormat": "number",
+      "clues": [
+        "Going the other way: multiply by 100. What happens to the decimal point?",
+        "Slide the decimal point two places right.",
+        "{x} × 100 = ?",
+        "{x} = {ans}%"
+      ]
+    }
+  ],
+  "units": [
+    3
+  ]
+}

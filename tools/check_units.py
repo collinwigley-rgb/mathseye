@@ -20,6 +20,14 @@ for i, t in enumerate(terms):
     if i and not terms[i - 1]["end"] < t["start"]: bad.append(f"{t['label']} overlaps the term before it")
 for u in d["units"]:
     if u.get("term") not in {t["id"] for t in terms}: bad.append(f"Unit {u['id']} belongs to term {u.get('term')!r}, which is not in src/terms.json")
+import datetime
+wk1 = datetime.date.fromisoformat(json.loads((ROOT / "src" / "terms.json").read_text())["weekOneStart"])
+tm = {t["id"]: t for t in terms}
+for u in d["units"]:
+    for l in u["lessons"]:
+        if "week" in l:                      # the school week a lesson is taught (from the weekly sheets): it must fall inside the unit's term
+            mon = wk1 + datetime.timedelta(weeks=l["week"] - 1); t = tm.get(u.get("term"))
+            if t and not (datetime.date.fromisoformat(t["start"]) <= mon + datetime.timedelta(days=4) and mon <= datetime.date.fromisoformat(t["end"])): bad.append(f"Lesson {l['id']} is marked Week {l['week']}, which is outside {t['label']}")
 import re
 sync = (ROOT / "public" / "sync.js").read_text(); sw = (ROOT / "public" / "sw.js").read_text()
 m = re.search(r"\[([0-9, ]+)\]\.forEach\(function \(n\)", sync); synced = {int(x) for x in m.group(1).split(",")} if m else set()

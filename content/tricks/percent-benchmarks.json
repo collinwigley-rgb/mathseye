@@ -1,0 +1,70 @@
+{
+  "id": "percent-benchmarks",
+  "name": "10%, 1%, 50% and 25%",
+  "rule": "Four easy percents: 10% is a tenth (divide by 10), 1% is a hundredth (divide by 100), 50% is half, and 25% is a quarter (halve, then halve again).",
+  "example": "10% of 340 = 34     50% of 86 = 43     25% of 80 = 20",
+  "why": "Percent means out of 100, so these are friendly pieces of any number. Knowing them lets you check a percent answer in your head, and build the harder ones.",
+  "workbookSection": "Unit 3: Lessons 3.1 and 3.2 (percents)",
+  "unlockOrder": 14,
+  "templates": [
+    {
+      "id": "pct-ten",
+      "generator": "pctOf",
+      "params": {
+        "p": 10
+      },
+      "answerFormat": "number",
+      "clues": [
+        "10% is {part} of the number. What do you do to find a tenth?",
+        "10%: {how}. Slide the decimal one place left.",
+        "{n} ÷ 10 = ?",
+        "10% of {n} = {ans}"
+      ]
+    },
+    {
+      "id": "pct-one",
+      "generator": "pctOf",
+      "params": {
+        "p": 1
+      },
+      "answerFormat": "number",
+      "clues": [
+        "1% is {part} of the number. What do you do to find a hundredth?",
+        "1%: {how}. Slide the decimal two places left.",
+        "{n} ÷ 100 = ?",
+        "1% of {n} = {ans}"
+      ]
+    },
+    {
+      "id": "pct-half",
+      "generator": "pctOf",
+      "params": {
+        "p": 50
+      },
+      "answerFormat": "number",
+      "clues": [
+        "50% is {part} of the number. How do you find half?",
+        "50%: {how}.",
+        "{n} ÷ 2 = ?",
+        "50% of {n} = {ans}"
+      ]
+    },
+    {
+      "id": "pct-quarter",
+      "generator": "pctOf",
+      "params": {
+        "p": 25
+      },
+      "answerFormat": "number",
+      "clues": [
+        "25% is {part} of the number. A quarter is half of a half.",
+        "25%: {how}.",
+        "Half of {n} is {half}. Half of that is the answer.",
+        "25% of {n} = {ans}"
+      ]
+    }
+  ],
+  "units": [
+    3
+  ]
+}

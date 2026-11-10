@@ -1,9 +1,58 @@
 {
   "year": "2026-27",
+  "weekOneStart": "2026-09-07",
   "terms": [
-    { "id": 1, "label": "Term 1", "semester": 1, "semesterEnds": false, "start": "2026-09-08", "end": "2026-11-05", "midterm": { "label": "Midterm 1", "start": "2026-09-08", "end": "2026-10-02" } },
-    { "id": 2, "label": "Term 2", "semester": 1, "semesterEnds": true,  "start": "2026-11-09", "end": "2027-01-22", "midterm": { "label": "Midterm 2", "start": "2026-11-09", "end": "2026-12-11" } },
-    { "id": 3, "label": "Term 3", "semester": 2, "semesterEnds": false, "start": "2027-01-27", "end": "2027-03-26", "midterm": { "label": "Midterm 3", "start": "2027-01-27", "end": "2027-02-26" } },
-    { "id": 4, "label": "Term 4", "semester": 2, "semesterEnds": true,  "start": "2027-04-06", "end": "2027-06-11", "midterm": { "label": "Midterm 4", "start": "2027-04-06", "end": "2027-05-07" } }
+    {
+      "id": 1,
+      "label": "Term 1",
+      "semester": 1,
+      "semesterEnds": false,
+      "start": "2026-09-08",
+      "end": "2026-11-05",
+      "midterm": {
+        "label": "Midterm 1",
+        "start": "2026-09-08",
+        "end": "2026-10-02"
+      }
+    },
+    {
+      "id": 2,
+      "label": "Term 2",
+      "semester": 1,
+      "semesterEnds": true,
+      "start": "2026-11-09",
+      "end": "2027-01-22",
+      "midterm": {
+        "label": "Midterm 2",
+        "start": "2026-11-09",
+        "end": "2026-12-11"
+      }
+    },
+    {
+      "id": 3,
+      "label": "Term 3",
+      "semester": 2,
+      "semesterEnds": false,
+      "start": "2027-01-27",
+      "end": "2027-03-26",
+      "midterm": {
+        "label": "Midterm 3",
+        "start": "2027-01-27",
+        "end": "2027-02-26"
+      }
+    },
+    {
+      "id": 4,
+      "label": "Term 4",
+      "semester": 2,
+      "semesterEnds": true,
+      "start": "2027-04-06",
+      "end": "2027-06-11",
+      "midterm": {
+        "label": "Midterm 4",
+        "start": "2027-04-06",
+        "end": "2027-05-07"
+      }
+    }
   ]
 }
