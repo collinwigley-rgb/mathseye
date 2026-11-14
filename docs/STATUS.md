@@ -72,3 +72,6 @@ Misses and skips on the Practice Test go on `save.twork`, a list separate from t
 
 ## Practice test options
 Two switches on the practice test start screen (saved per player in `save.testOpts`, off by default, remembered by a test in progress): **Allow help** (I'm stuck hints, then the steps, plus a Help menu) and **Must get it right to move on** (each answer is checked, no skipping; only a first-try right counts toward the score). Each question records `tries` and `helped`; results show how the test was taken.
+
+## 2026-11-14: Lesson 3.3 homework (pages 145-146)
+Problems 7-20 posted to Unit 3 Homework (typed checks, "why" notes, bar-diagram picture for #9, page images). Lesson 3.3 added to `src/units.json` (title is my guess; owner to confirm). No Study Guide problems, Learn-it-first cards or reference sheet for 3.3 yet (only the two student pages were provided).
