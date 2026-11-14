@@ -11,7 +11,7 @@ LABEL = "Unit 3"
 REF_START = 10001            # study-guide reference numbers for Unit 3: 10001..14999 (Unit 2 uses 1001..4999, real worksheet problems use 5001+)
 REF_LIMIT = 15000
 DEFAULT_CONCEPTS = ["percent-of"]
-SUBS = ["3.1", "3.2"]
+SUBS = ["3.1", "3.2", "3.3"]
 
 CONCEPTS = {
  "percent-of":        ("Percent of a number", "Write the percent as a decimal, then multiply.", "Lesson 3.1"),
@@ -30,6 +30,7 @@ BASE = {
 FOCUS = {
  "3.1":"Practice turning a percent into a decimal and multiplying, and check the size of your answer.",
  "3.2":"Practice the percent proportion: decide what is missing, write part over whole equals P over 100, and solve.",
+ "3.3":"Practice percent problems in real settings: decide whether you need the part, the percent or the whole, and which amount the percent is of.",
 }
 LESSONS = {
  "3.1": dict(title="Percent of a number", move="Percent means 'per 100'. Write the percent as a decimal, then multiply by the whole.",
@@ -46,6 +47,13 @@ LESSONS = {
      why_you_need_it="Some questions give you the answer and ask for the percent or the starting amount. The proportion handles all three.",
      real_life="What percent of the games did the team win? A $30 item is 60% of the original price: what was the original?",
      building_block="This is the same proportion idea as Unit 2, with 100 on the bottom of one ratio.")),
+ "3.3": dict(title="Percent problems: tax, tips and commission", move="Decide what you know (part, whole or percent), then multiply by the decimal or use part over whole equals P over 100.",
+   hook="Ask: a percent of WHAT?", trap="Taking the percent of the wrong amount, like the original price instead of the new amount, or stopping before the last step.",
+   why=dict(goal="Use percents on real money and data questions: find a percent, a part or a whole, and keep track of which amount the percent is of.",
+     supports_future="Percent change, markups and discounts, simple interest and probability all start from part, whole and percent.",
+     why_you_need_it="Tax, tips, commissions, sales and survey results all come as percents. You need to know what to do with them.",
+     real_life="What does a $39.98 shirt really cost with tax? What is a 20% tip?",
+     building_block="Lessons 3.1 and 3.2 gave you the two tools. Here you choose between them and use them in steps.")),
 }
 
 # ---------------------------------------------------------------- starter problems (appended in order; ids U3-01...)
