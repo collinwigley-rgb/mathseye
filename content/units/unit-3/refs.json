@@ -1,5 +1,5 @@
 {
- "next": 10250,
+ "next": 10261,
  "items": {
   "10001": {
    "id": "U3-01",
@@ -1494,6 +1494,72 @@
    "v": -1,
    "h": "be180f574f",
    "text": "A cafe adds an automatic 20% charge to the bill for any group of 10 or more. A group of 10"
+  },
+  "10250": {
+   "id": "U3-22",
+   "v": 0,
+   "h": "958e434795",
+   "text": "The regular price is $40.00. It is 20% off. What is the sale price of the hoodie (in dolla"
+  },
+  "10251": {
+   "id": "U3-22",
+   "v": 1,
+   "h": "1461124d65",
+   "text": "The regular price is $120.00. It is 20% off. What is the sale price of the pair of headpho"
+  },
+  "10252": {
+   "id": "U3-22",
+   "v": 2,
+   "h": "bf0c07470b",
+   "text": "The regular price is $60.00. It is 20% off. What is the sale price of the pair of headphon"
+  },
+  "10253": {
+   "id": "U3-22",
+   "v": 3,
+   "h": "7171aa0798",
+   "text": "The regular price is $20.00. It is 15% off. What is the sale price of the hoodie (in dolla"
+  },
+  "10254": {
+   "id": "U3-22",
+   "v": 4,
+   "h": "a2855bc36b",
+   "text": "The regular price is $120.00. It is 25% off. What is the sale price of the keyboard (in do"
+  },
+  "10255": {
+   "id": "U3-22",
+   "v": 5,
+   "h": "a782afc381",
+   "text": "The regular price is $120.00. It is 30% off. What is the sale price of the skateboard (in "
+  },
+  "10256": {
+   "id": "U3-22",
+   "v": 6,
+   "h": "ff78c8fbb9",
+   "text": "The regular price is $200.00. It is 40% off. What is the sale price of the skateboard (in "
+  },
+  "10257": {
+   "id": "U3-22",
+   "v": 7,
+   "h": "77fdc9f53b",
+   "text": "The regular price is $50.00. It is 15% off. What is the sale price of the keyboard (in dol"
+  },
+  "10258": {
+   "id": "U3-22",
+   "v": 8,
+   "h": "70d4cdc7a0",
+   "text": "The regular price is $150.00. It is 20% off. What is the sale price of the pair of headpho"
+  },
+  "10259": {
+   "id": "U3-22",
+   "v": 9,
+   "h": "df09f3a4a5",
+   "text": "The regular price is $200.00. It is 50% off. What is the sale price of the hoodie (in doll"
+  },
+  "10260": {
+   "id": "U3-22",
+   "v": -1,
+   "h": "7c9f4a80be",
+   "text": "The regular price is $150.00. It is 20% off. What is the sale price of the keyboard (in do"
   }
  }
 }

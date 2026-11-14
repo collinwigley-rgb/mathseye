@@ -265,3 +265,5 @@ def _which(t):
     if "How many" in t: return 1
     return 2
 SOLVE_CHOICE = {"U3-09": _size, "U3-12": _compare, "U3-14": _which}
+
+import units.unit3_more   # noqa: E402,F401  new families (U3-22 onward) register themselves here, after everything above exists

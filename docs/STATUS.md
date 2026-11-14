@@ -76,3 +76,4 @@ Two switches on the practice test start screen (saved per player in `save.testOp
 ## 2026-11-14: Lesson 3.3 homework (pages 145-146)
 Problems 7-20 posted to Unit 3 Homework (typed checks, "why" notes, bar-diagram picture for #9, page images). Lesson 3.3 added to `src/units.json` (title is my guess; owner to confirm). No Study Guide problems, Learn-it-first cards or reference sheet for 3.3 yet (only the two student pages were provided).
 2026-11-14: Study Guide for Unit 3 now has its own original 3.3 problems (U3-15..21: sale-price percent, tip, whole from commission, percent of a percent, equal pay plans, leftover share, total with a charge). Review-sheet scopes still wait for the real test.
+2026-11-14: Study Guide framework (`docs/STUDY-FRAMEWORK.md`): `units/family.py` registry, `unit3_more.py` (families from U3-22), `new_family.py`, `check_families.py` (in check:all), `study_coverage.py`. First family through it: U3-22 (price after a percent off).

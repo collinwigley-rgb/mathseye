@@ -5889,6 +5889,278 @@
     }
    ],
    "ref": 10249
+  },
+  {
+   "sub": "3.3",
+   "type": "H",
+   "kind": "num",
+   "text": "The regular price is $150.00. It is 20% off. What is the sale price of the keyboard (in dollars)?",
+   "answer": 120.0,
+   "show": "$120.00",
+   "hints": [
+    "The question asks for the SALE price. How much comes off first?",
+    "Find 20% of 150.",
+    "Then take that amount away from the regular price."
+   ],
+   "steps": [
+    "Amount off: 0.2 × 150 = 30",
+    "Sale price: 150 − 30 = 120",
+    "The sale price is $120.00.",
+    "Check: you pay 80% of the regular price."
+   ],
+   "tol": 1e-09,
+   "table": null,
+   "graph": null,
+   "id": "U3-22",
+   "why_focus": "Practice percent problems in real settings: decide whether you need the part, the percent or the whole, and which amount the percent is of.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "percent-of",
+     "tax-tip"
+    ],
+    "earlier": [
+     {
+      "sub": "3.1",
+      "title": "Percent of a number"
+     }
+    ]
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "num",
+     "text": "The regular price is $40.00. It is 20% off. What is the sale price of the hoodie (in dollars)?",
+     "answer": 32.0,
+     "show": "$32.00",
+     "hints": [
+      "The question asks for the SALE price. How much comes off first?",
+      "Find 20% of 40.",
+      "Then take that amount away from the regular price."
+     ],
+     "steps": [
+      "Amount off: 0.2 × 40 = 8",
+      "Sale price: 40 − 8 = 32",
+      "The sale price is $32.00.",
+      "Check: you pay 80% of the regular price."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10250,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "The regular price is $120.00. It is 20% off. What is the sale price of the pair of headphones (in dollars)?",
+     "answer": 96.0,
+     "show": "$96.00",
+     "hints": [
+      "The question asks for the SALE price. How much comes off first?",
+      "Find 20% of 120.",
+      "Then take that amount away from the regular price."
+     ],
+     "steps": [
+      "Amount off: 0.2 × 120 = 24",
+      "Sale price: 120 − 24 = 96",
+      "The sale price is $96.00.",
+      "Check: you pay 80% of the regular price."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10251,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "The regular price is $60.00. It is 20% off. What is the sale price of the pair of headphones (in dollars)?",
+     "answer": 48.0,
+     "show": "$48.00",
+     "hints": [
+      "The question asks for the SALE price. How much comes off first?",
+      "Find 20% of 60.",
+      "Then take that amount away from the regular price."
+     ],
+     "steps": [
+      "Amount off: 0.2 × 60 = 12",
+      "Sale price: 60 − 12 = 48",
+      "The sale price is $48.00.",
+      "Check: you pay 80% of the regular price."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10252,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "The regular price is $20.00. It is 15% off. What is the sale price of the hoodie (in dollars)?",
+     "answer": 17.0,
+     "show": "$17.00",
+     "hints": [
+      "The question asks for the SALE price. How much comes off first?",
+      "Find 15% of 20.",
+      "Then take that amount away from the regular price."
+     ],
+     "steps": [
+      "Amount off: 0.15 × 20 = 3",
+      "Sale price: 20 − 3 = 17",
+      "The sale price is $17.00.",
+      "Check: you pay 85% of the regular price."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10253,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "The regular price is $120.00. It is 25% off. What is the sale price of the keyboard (in dollars)?",
+     "answer": 90.0,
+     "show": "$90.00",
+     "hints": [
+      "The question asks for the SALE price. How much comes off first?",
+      "Find 25% of 120.",
+      "Then take that amount away from the regular price."
+     ],
+     "steps": [
+      "Amount off: 0.25 × 120 = 30",
+      "Sale price: 120 − 30 = 90",
+      "The sale price is $90.00.",
+      "Check: you pay 75% of the regular price."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10254,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "The regular price is $120.00. It is 30% off. What is the sale price of the skateboard (in dollars)?",
+     "answer": 84.0,
+     "show": "$84.00",
+     "hints": [
+      "The question asks for the SALE price. How much comes off first?",
+      "Find 30% of 120.",
+      "Then take that amount away from the regular price."
+     ],
+     "steps": [
+      "Amount off: 0.3 × 120 = 36",
+      "Sale price: 120 − 36 = 84",
+      "The sale price is $84.00.",
+      "Check: you pay 70% of the regular price."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10255,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "The regular price is $200.00. It is 40% off. What is the sale price of the skateboard (in dollars)?",
+     "answer": 120.0,
+     "show": "$120.00",
+     "hints": [
+      "The question asks for the SALE price. How much comes off first?",
+      "Find 40% of 200.",
+      "Then take that amount away from the regular price."
+     ],
+     "steps": [
+      "Amount off: 0.4 × 200 = 80",
+      "Sale price: 200 − 80 = 120",
+      "The sale price is $120.00.",
+      "Check: you pay 60% of the regular price."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10256,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "The regular price is $50.00. It is 15% off. What is the sale price of the keyboard (in dollars)?",
+     "answer": 42.5,
+     "show": "$42.50",
+     "hints": [
+      "The question asks for the SALE price. How much comes off first?",
+      "Find 15% of 50.",
+      "Then take that amount away from the regular price."
+     ],
+     "steps": [
+      "Amount off: 0.15 × 50 = 7.5",
+      "Sale price: 50 − 7.5 = 42.5",
+      "The sale price is $42.50.",
+      "Check: you pay 85% of the regular price."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10257,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "The regular price is $150.00. It is 20% off. What is the sale price of the pair of headphones (in dollars)?",
+     "answer": 120.0,
+     "show": "$120.00",
+     "hints": [
+      "The question asks for the SALE price. How much comes off first?",
+      "Find 20% of 150.",
+      "Then take that amount away from the regular price."
+     ],
+     "steps": [
+      "Amount off: 0.2 × 150 = 30",
+      "Sale price: 150 − 30 = 120",
+      "The sale price is $120.00.",
+      "Check: you pay 80% of the regular price."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10258,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "The regular price is $200.00. It is 50% off. What is the sale price of the hoodie (in dollars)?",
+     "answer": 100.0,
+     "show": "$100.00",
+     "hints": [
+      "The question asks for the SALE price. How much comes off first?",
+      "Find 50% of 200.",
+      "Then take that amount away from the regular price."
+     ],
+     "steps": [
+      "Amount off: 0.5 × 200 = 100",
+      "Sale price: 200 − 100 = 100",
+      "The sale price is $100.00.",
+      "Check: you pay 50% of the regular price."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10259,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10260
   }
  ],
  "lessons": {
