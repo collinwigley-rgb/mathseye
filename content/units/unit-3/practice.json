@@ -4095,6 +4095,1800 @@
     }
    ],
    "ref": 10174
+  },
+  {
+   "sub": "3.3",
+   "type": "A",
+   "kind": "num",
+   "text": "A hoodie regularly costs $20.00. This week it is $15.00. The sale price is what percent of the regular price?",
+   "answer": 75.0,
+   "show": "75%",
+   "hints": [
+    "Which price is the whole: the regular price or the sale price?",
+    "Write 15/20 = P/100 (part over whole equals P over 100).",
+    "Divide the part by the whole, then move the point two places right."
+   ],
+   "steps": [
+    "15/20 = P/100",
+    "15 ÷ 20 = 0.75, which is 75%",
+    "The sale price is 75% of the regular price."
+   ],
+   "tol": 1e-09,
+   "table": null,
+   "graph": null,
+   "pct": true,
+   "id": "U3-15",
+   "why_focus": "Practice percent problems in real settings: decide whether you need the part, the percent or the whole, and which amount the percent is of.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "percent-of-what",
+     "percent-proportion"
+    ],
+    "earlier": [
+     {
+      "sub": "3.2",
+      "title": "Percent and proportion"
+     }
+    ]
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "num",
+     "text": "A hoodie regularly costs $40.00. This week it is $34.00. The sale price is what percent of the regular price?",
+     "answer": 85.0,
+     "show": "85%",
+     "hints": [
+      "Which price is the whole: the regular price or the sale price?",
+      "Write 34/40 = P/100 (part over whole equals P over 100).",
+      "Divide the part by the whole, then move the point two places right."
+     ],
+     "steps": [
+      "34/40 = P/100",
+      "34 ÷ 40 = 0.85, which is 85%",
+      "The sale price is 85% of the regular price."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10175,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A lamp regularly costs $20.00. This week it is $17.00. The sale price is what percent of the regular price?",
+     "answer": 85.0,
+     "show": "85%",
+     "hints": [
+      "Which price is the whole: the regular price or the sale price?",
+      "Write 17/20 = P/100 (part over whole equals P over 100).",
+      "Divide the part by the whole, then move the point two places right."
+     ],
+     "steps": [
+      "17/20 = P/100",
+      "17 ÷ 20 = 0.85, which is 85%",
+      "The sale price is 85% of the regular price."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10176,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A backpack regularly costs $40.00. This week it is $24.00. The sale price is what percent of the regular price?",
+     "answer": 60.0,
+     "show": "60%",
+     "hints": [
+      "Which price is the whole: the regular price or the sale price?",
+      "Write 24/40 = P/100 (part over whole equals P over 100).",
+      "Divide the part by the whole, then move the point two places right."
+     ],
+     "steps": [
+      "24/40 = P/100",
+      "24 ÷ 40 = 0.6, which is 60%",
+      "The sale price is 60% of the regular price."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10177,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A hoodie regularly costs $50.00. This week it is $42.50. The sale price is what percent of the regular price?",
+     "answer": 85.0,
+     "show": "85%",
+     "hints": [
+      "Which price is the whole: the regular price or the sale price?",
+      "Write 42.5/50 = P/100 (part over whole equals P over 100).",
+      "Divide the part by the whole, then move the point two places right."
+     ],
+     "steps": [
+      "42.5/50 = P/100",
+      "42.5 ÷ 50 = 0.85, which is 85%",
+      "The sale price is 85% of the regular price."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10178,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A lamp regularly costs $50.00. This week it is $35.00. The sale price is what percent of the regular price?",
+     "answer": 70.0,
+     "show": "70%",
+     "hints": [
+      "Which price is the whole: the regular price or the sale price?",
+      "Write 35/50 = P/100 (part over whole equals P over 100).",
+      "Divide the part by the whole, then move the point two places right."
+     ],
+     "steps": [
+      "35/50 = P/100",
+      "35 ÷ 50 = 0.7, which is 70%",
+      "The sale price is 70% of the regular price."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10179,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A scooter regularly costs $120.00. This week it is $90.00. The sale price is what percent of the regular price?",
+     "answer": 75.0,
+     "show": "75%",
+     "hints": [
+      "Which price is the whole: the regular price or the sale price?",
+      "Write 90/120 = P/100 (part over whole equals P over 100).",
+      "Divide the part by the whole, then move the point two places right."
+     ],
+     "steps": [
+      "90/120 = P/100",
+      "90 ÷ 120 = 0.75, which is 75%",
+      "The sale price is 75% of the regular price."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10180,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A lamp regularly costs $20.00. This week it is $12.00. The sale price is what percent of the regular price?",
+     "answer": 60.0,
+     "show": "60%",
+     "hints": [
+      "Which price is the whole: the regular price or the sale price?",
+      "Write 12/20 = P/100 (part over whole equals P over 100).",
+      "Divide the part by the whole, then move the point two places right."
+     ],
+     "steps": [
+      "12/20 = P/100",
+      "12 ÷ 20 = 0.6, which is 60%",
+      "The sale price is 60% of the regular price."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10181,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A lamp regularly costs $40.00. This week it is $36.00. The sale price is what percent of the regular price?",
+     "answer": 90.0,
+     "show": "90%",
+     "hints": [
+      "Which price is the whole: the regular price or the sale price?",
+      "Write 36/40 = P/100 (part over whole equals P over 100).",
+      "Divide the part by the whole, then move the point two places right."
+     ],
+     "steps": [
+      "36/40 = P/100",
+      "36 ÷ 40 = 0.9, which is 90%",
+      "The sale price is 90% of the regular price."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10182,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A backpack regularly costs $120.00. This week it is $96.00. The sale price is what percent of the regular price?",
+     "answer": 80.0,
+     "show": "80%",
+     "hints": [
+      "Which price is the whole: the regular price or the sale price?",
+      "Write 96/120 = P/100 (part over whole equals P over 100).",
+      "Divide the part by the whole, then move the point two places right."
+     ],
+     "steps": [
+      "96/120 = P/100",
+      "96 ÷ 120 = 0.8, which is 80%",
+      "The sale price is 80% of the regular price."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10183,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A lamp regularly costs $120.00. This week it is $108.00. The sale price is what percent of the regular price?",
+     "answer": 90.0,
+     "show": "90%",
+     "hints": [
+      "Which price is the whole: the regular price or the sale price?",
+      "Write 108/120 = P/100 (part over whole equals P over 100).",
+      "Divide the part by the whole, then move the point two places right."
+     ],
+     "steps": [
+      "108/120 = P/100",
+      "108 ÷ 120 = 0.9, which is 90%",
+      "The sale price is 90% of the regular price."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "pct": true,
+     "ref": 10184,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10185
+  },
+  {
+   "sub": "3.3",
+   "type": "B",
+   "kind": "num",
+   "text": "Your family's dinner bill is $40.00. You leave a 15% tip on the bill. How much is the tip (in dollars)?",
+   "answer": 6.0,
+   "show": "$6.00",
+   "hints": [
+    "The tip is a percent of the bill. Which number is the whole?",
+    "Write 15% as a decimal.",
+    "Multiply the bill by the decimal."
+   ],
+   "steps": [
+    "15% = 0.15",
+    "0.15 × 40 = 6",
+    "The tip is $6.00."
+   ],
+   "tol": 1e-09,
+   "table": null,
+   "graph": null,
+   "id": "U3-16",
+   "why_focus": "Practice percent problems in real settings: decide whether you need the part, the percent or the whole, and which amount the percent is of.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "tax-tip",
+     "percent-of"
+    ],
+    "earlier": [
+     {
+      "sub": "3.1",
+      "title": "Percent of a number"
+     }
+    ]
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "num",
+     "text": "Your family's dinner bill is $120.00. You leave a 18% tip on the bill. How much is the tip (in dollars)?",
+     "answer": 21.6,
+     "show": "$21.60",
+     "hints": [
+      "The tip is a percent of the bill. Which number is the whole?",
+      "Write 18% as a decimal.",
+      "Multiply the bill by the decimal."
+     ],
+     "steps": [
+      "18% = 0.18",
+      "0.18 × 120 = 21.6",
+      "The tip is $21.60."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10186,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Your family's dinner bill is $200.00. You leave a 15% tip on the bill. How much is the tip (in dollars)?",
+     "answer": 30.0,
+     "show": "$30.00",
+     "hints": [
+      "The tip is a percent of the bill. Which number is the whole?",
+      "Write 15% as a decimal.",
+      "Multiply the bill by the decimal."
+     ],
+     "steps": [
+      "15% = 0.15",
+      "0.15 × 200 = 30",
+      "The tip is $30.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10187,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Your family's dinner bill is $200.00. You leave a 25% tip on the bill. How much is the tip (in dollars)?",
+     "answer": 50.0,
+     "show": "$50.00",
+     "hints": [
+      "The tip is a percent of the bill. Which number is the whole?",
+      "Write 25% as a decimal.",
+      "Multiply the bill by the decimal."
+     ],
+     "steps": [
+      "25% = 0.25",
+      "0.25 × 200 = 50",
+      "The tip is $50.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10188,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Your family's dinner bill is $40.00. You leave a 25% tip on the bill. How much is the tip (in dollars)?",
+     "answer": 10.0,
+     "show": "$10.00",
+     "hints": [
+      "The tip is a percent of the bill. Which number is the whole?",
+      "Write 25% as a decimal.",
+      "Multiply the bill by the decimal."
+     ],
+     "steps": [
+      "25% = 0.25",
+      "0.25 × 40 = 10",
+      "The tip is $10.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10189,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Your family's dinner bill is $60.00. You leave a 15% tip on the bill. How much is the tip (in dollars)?",
+     "answer": 9.0,
+     "show": "$9.00",
+     "hints": [
+      "The tip is a percent of the bill. Which number is the whole?",
+      "Write 15% as a decimal.",
+      "Multiply the bill by the decimal."
+     ],
+     "steps": [
+      "15% = 0.15",
+      "0.15 × 60 = 9",
+      "The tip is $9.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10190,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Your family's dinner bill is $60.00. You leave a 18% tip on the bill. How much is the tip (in dollars)?",
+     "answer": 10.8,
+     "show": "$10.80",
+     "hints": [
+      "The tip is a percent of the bill. Which number is the whole?",
+      "Write 18% as a decimal.",
+      "Multiply the bill by the decimal."
+     ],
+     "steps": [
+      "18% = 0.18",
+      "0.18 × 60 = 10.8",
+      "The tip is $10.80."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10191,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Your family's dinner bill is $80.00. You leave a 25% tip on the bill. How much is the tip (in dollars)?",
+     "answer": 20.0,
+     "show": "$20.00",
+     "hints": [
+      "The tip is a percent of the bill. Which number is the whole?",
+      "Write 25% as a decimal.",
+      "Multiply the bill by the decimal."
+     ],
+     "steps": [
+      "25% = 0.25",
+      "0.25 × 80 = 20",
+      "The tip is $20.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10192,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Your family's dinner bill is $80.00. You leave a 10% tip on the bill. How much is the tip (in dollars)?",
+     "answer": 8.0,
+     "show": "$8.00",
+     "hints": [
+      "The tip is a percent of the bill. Which number is the whole?",
+      "Write 10% as a decimal.",
+      "Multiply the bill by the decimal."
+     ],
+     "steps": [
+      "10% = 0.1",
+      "0.1 × 80 = 8",
+      "The tip is $8.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10193,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "Your family's dinner bill is $80.00. You leave a 18% tip on the bill. How much is the tip (in dollars)?",
+     "answer": 14.4,
+     "show": "$14.40",
+     "hints": [
+      "The tip is a percent of the bill. Which number is the whole?",
+      "Write 18% as a decimal.",
+      "Multiply the bill by the decimal."
+     ],
+     "steps": [
+      "18% = 0.18",
+      "0.18 × 80 = 14.4",
+      "The tip is $14.40."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10194,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10195
+  },
+  {
+   "sub": "3.3",
+   "type": "C",
+   "kind": "num",
+   "text": "A seller earns 4% commission on every sale. On one sale the commission was $480.00. What was the price of the sale (in dollars)?",
+   "answer": 12000.0,
+   "show": "$12000.00",
+   "hints": [
+    "Is the commission the part, the whole or the percent? What are you looking for?",
+    "Write 480/w = 4/100.",
+    "w = 480 × 100 ÷ 4."
+   ],
+   "steps": [
+    "480/w = 4/100",
+    "w = 480 × 100 ÷ 4 = 12000",
+    "The sale was $12000.00."
+   ],
+   "tol": 1e-09,
+   "table": null,
+   "graph": null,
+   "id": "U3-17",
+   "why_focus": "Practice percent problems in real settings: decide whether you need the part, the percent or the whole, and which amount the percent is of.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "find-whole",
+     "percent-of-what"
+    ],
+    "earlier": [
+     {
+      "sub": "3.2",
+      "title": "Percent and proportion"
+     }
+    ]
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "num",
+     "text": "A seller earns 8% commission on every sale. On one sale the commission was $1600.00. What was the price of the sale (in dollars)?",
+     "answer": 20000.0,
+     "show": "$20000.00",
+     "hints": [
+      "Is the commission the part, the whole or the percent? What are you looking for?",
+      "Write 1600/w = 8/100.",
+      "w = 1600 × 100 ÷ 8."
+     ],
+     "steps": [
+      "1600/w = 8/100",
+      "w = 1600 × 100 ÷ 8 = 20000",
+      "The sale was $20000.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10196,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A seller earns 5% commission on every sale. On one sale the commission was $100.00. What was the price of the sale (in dollars)?",
+     "answer": 2000.0,
+     "show": "$2000.00",
+     "hints": [
+      "Is the commission the part, the whole or the percent? What are you looking for?",
+      "Write 100/w = 5/100.",
+      "w = 100 × 100 ÷ 5."
+     ],
+     "steps": [
+      "100/w = 5/100",
+      "w = 100 × 100 ÷ 5 = 2000",
+      "The sale was $2000.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10197,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A seller earns 4% commission on every sale. On one sale the commission was $160.00. What was the price of the sale (in dollars)?",
+     "answer": 4000.0,
+     "show": "$4000.00",
+     "hints": [
+      "Is the commission the part, the whole or the percent? What are you looking for?",
+      "Write 160/w = 4/100.",
+      "w = 160 × 100 ÷ 4."
+     ],
+     "steps": [
+      "160/w = 4/100",
+      "w = 160 × 100 ÷ 4 = 4000",
+      "The sale was $4000.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10198,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A seller earns 10% commission on every sale. On one sale the commission was $1200.00. What was the price of the sale (in dollars)?",
+     "answer": 12000.0,
+     "show": "$12000.00",
+     "hints": [
+      "Is the commission the part, the whole or the percent? What are you looking for?",
+      "Write 1200/w = 10/100.",
+      "w = 1200 × 100 ÷ 10."
+     ],
+     "steps": [
+      "1200/w = 10/100",
+      "w = 1200 × 100 ÷ 10 = 12000",
+      "The sale was $12000.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10199,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A seller earns 10% commission on every sale. On one sale the commission was $500.00. What was the price of the sale (in dollars)?",
+     "answer": 5000.0,
+     "show": "$5000.00",
+     "hints": [
+      "Is the commission the part, the whole or the percent? What are you looking for?",
+      "Write 500/w = 10/100.",
+      "w = 500 × 100 ÷ 10."
+     ],
+     "steps": [
+      "500/w = 10/100",
+      "w = 500 × 100 ÷ 10 = 5000",
+      "The sale was $5000.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10200,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A seller earns 10% commission on every sale. On one sale the commission was $800.00. What was the price of the sale (in dollars)?",
+     "answer": 8000.0,
+     "show": "$8000.00",
+     "hints": [
+      "Is the commission the part, the whole or the percent? What are you looking for?",
+      "Write 800/w = 10/100.",
+      "w = 800 × 100 ÷ 10."
+     ],
+     "steps": [
+      "800/w = 10/100",
+      "w = 800 × 100 ÷ 10 = 8000",
+      "The sale was $8000.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10201,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A seller earns 8% commission on every sale. On one sale the commission was $320.00. What was the price of the sale (in dollars)?",
+     "answer": 4000.0,
+     "show": "$4000.00",
+     "hints": [
+      "Is the commission the part, the whole or the percent? What are you looking for?",
+      "Write 320/w = 8/100.",
+      "w = 320 × 100 ÷ 8."
+     ],
+     "steps": [
+      "320/w = 8/100",
+      "w = 320 × 100 ÷ 8 = 4000",
+      "The sale was $4000.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10202,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A seller earns 2% commission on every sale. On one sale the commission was $80.00. What was the price of the sale (in dollars)?",
+     "answer": 4000.0,
+     "show": "$4000.00",
+     "hints": [
+      "Is the commission the part, the whole or the percent? What are you looking for?",
+      "Write 80/w = 2/100.",
+      "w = 80 × 100 ÷ 2."
+     ],
+     "steps": [
+      "80/w = 2/100",
+      "w = 80 × 100 ÷ 2 = 4000",
+      "The sale was $4000.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10203,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A seller earns 8% commission on every sale. On one sale the commission was $400.00. What was the price of the sale (in dollars)?",
+     "answer": 5000.0,
+     "show": "$5000.00",
+     "hints": [
+      "Is the commission the part, the whole or the percent? What are you looking for?",
+      "Write 400/w = 8/100.",
+      "w = 400 × 100 ÷ 8."
+     ],
+     "steps": [
+      "400/w = 8/100",
+      "w = 400 × 100 ÷ 8 = 5000",
+      "The sale was $5000.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10204,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10205
+  },
+  {
+   "sub": "3.3",
+   "type": "D",
+   "kind": "num",
+   "text": "A broker's company charges 5% of the $400000.00 price when a boat is sold. The broker keeps 20% of what the company charges. How much does the broker keep (in dollars)?",
+   "answer": 4000.0,
+   "show": "$4000.00",
+   "hints": [
+    "There are two percent steps. What is the first percent of?",
+    "Find the company's charge first: 5% of 400000.",
+    "The broker's 20% is of the company's charge, not of the price."
+   ],
+   "steps": [
+    "Company charge: 0.05 × 400000 = 20000",
+    "Broker keeps: 0.2 × 20000 = 4000",
+    "The broker keeps $4000.00."
+   ],
+   "tol": 1e-09,
+   "table": null,
+   "graph": null,
+   "id": "U3-18",
+   "why_focus": "Practice percent problems in real settings: decide whether you need the part, the percent or the whole, and which amount the percent is of.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "percent-of-what",
+     "percent-of"
+    ],
+    "earlier": [
+     {
+      "sub": "3.1",
+      "title": "Percent of a number"
+     }
+    ]
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "num",
+     "text": "A broker's company charges 6% of the $400000.00 price when a boat is sold. The broker keeps 50% of what the company charges. How much does the broker keep (in dollars)?",
+     "answer": 12000.0,
+     "show": "$12000.00",
+     "hints": [
+      "There are two percent steps. What is the first percent of?",
+      "Find the company's charge first: 6% of 400000.",
+      "The broker's 50% is of the company's charge, not of the price."
+     ],
+     "steps": [
+      "Company charge: 0.06 × 400000 = 24000",
+      "Broker keeps: 0.5 × 24000 = 12000",
+      "The broker keeps $12000.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10206,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A broker's company charges 6% of the $100000.00 price when a boat is sold. The broker keeps 20% of what the company charges. How much does the broker keep (in dollars)?",
+     "answer": 1200.0,
+     "show": "$1200.00",
+     "hints": [
+      "There are two percent steps. What is the first percent of?",
+      "Find the company's charge first: 6% of 100000.",
+      "The broker's 20% is of the company's charge, not of the price."
+     ],
+     "steps": [
+      "Company charge: 0.06 × 100000 = 6000",
+      "Broker keeps: 0.2 × 6000 = 1200",
+      "The broker keeps $1200.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10207,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A broker's company charges 5% of the $250000.00 price when a boat is sold. The broker keeps 50% of what the company charges. How much does the broker keep (in dollars)?",
+     "answer": 6250.0,
+     "show": "$6250.00",
+     "hints": [
+      "There are two percent steps. What is the first percent of?",
+      "Find the company's charge first: 5% of 250000.",
+      "The broker's 50% is of the company's charge, not of the price."
+     ],
+     "steps": [
+      "Company charge: 0.05 × 250000 = 12500",
+      "Broker keeps: 0.5 × 12500 = 6250",
+      "The broker keeps $6250.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10208,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A broker's company charges 5% of the $300000.00 price when a boat is sold. The broker keeps 50% of what the company charges. How much does the broker keep (in dollars)?",
+     "answer": 7500.0,
+     "show": "$7500.00",
+     "hints": [
+      "There are two percent steps. What is the first percent of?",
+      "Find the company's charge first: 5% of 300000.",
+      "The broker's 50% is of the company's charge, not of the price."
+     ],
+     "steps": [
+      "Company charge: 0.05 × 300000 = 15000",
+      "Broker keeps: 0.5 × 15000 = 7500",
+      "The broker keeps $7500.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10209,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A broker's company charges 6% of the $250000.00 price when a boat is sold. The broker keeps 25% of what the company charges. How much does the broker keep (in dollars)?",
+     "answer": 3750.0,
+     "show": "$3750.00",
+     "hints": [
+      "There are two percent steps. What is the first percent of?",
+      "Find the company's charge first: 6% of 250000.",
+      "The broker's 25% is of the company's charge, not of the price."
+     ],
+     "steps": [
+      "Company charge: 0.06 × 250000 = 15000",
+      "Broker keeps: 0.25 × 15000 = 3750",
+      "The broker keeps $3750.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10210,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A broker's company charges 5% of the $500000.00 price when a boat is sold. The broker keeps 50% of what the company charges. How much does the broker keep (in dollars)?",
+     "answer": 12500.0,
+     "show": "$12500.00",
+     "hints": [
+      "There are two percent steps. What is the first percent of?",
+      "Find the company's charge first: 5% of 500000.",
+      "The broker's 50% is of the company's charge, not of the price."
+     ],
+     "steps": [
+      "Company charge: 0.05 × 500000 = 25000",
+      "Broker keeps: 0.5 × 25000 = 12500",
+      "The broker keeps $12500.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10211,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A broker's company charges 5% of the $200000.00 price when a boat is sold. The broker keeps 50% of what the company charges. How much does the broker keep (in dollars)?",
+     "answer": 5000.0,
+     "show": "$5000.00",
+     "hints": [
+      "There are two percent steps. What is the first percent of?",
+      "Find the company's charge first: 5% of 200000.",
+      "The broker's 50% is of the company's charge, not of the price."
+     ],
+     "steps": [
+      "Company charge: 0.05 × 200000 = 10000",
+      "Broker keeps: 0.5 × 10000 = 5000",
+      "The broker keeps $5000.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10212,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A broker's company charges 6% of the $300000.00 price when a boat is sold. The broker keeps 25% of what the company charges. How much does the broker keep (in dollars)?",
+     "answer": 4500.0,
+     "show": "$4500.00",
+     "hints": [
+      "There are two percent steps. What is the first percent of?",
+      "Find the company's charge first: 6% of 300000.",
+      "The broker's 25% is of the company's charge, not of the price."
+     ],
+     "steps": [
+      "Company charge: 0.06 × 300000 = 18000",
+      "Broker keeps: 0.25 × 18000 = 4500",
+      "The broker keeps $4500.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10213,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A broker's company charges 6% of the $500000.00 price when a boat is sold. The broker keeps 20% of what the company charges. How much does the broker keep (in dollars)?",
+     "answer": 6000.0,
+     "show": "$6000.00",
+     "hints": [
+      "There are two percent steps. What is the first percent of?",
+      "Find the company's charge first: 6% of 500000.",
+      "The broker's 20% is of the company's charge, not of the price."
+     ],
+     "steps": [
+      "Company charge: 0.06 × 500000 = 30000",
+      "Broker keeps: 0.2 × 30000 = 6000",
+      "The broker keeps $6000.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10214,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A broker's company charges 4% of the $300000.00 price when a boat is sold. The broker keeps 25% of what the company charges. How much does the broker keep (in dollars)?",
+     "answer": 3000.0,
+     "show": "$3000.00",
+     "hints": [
+      "There are two percent steps. What is the first percent of?",
+      "Find the company's charge first: 4% of 300000.",
+      "The broker's 25% is of the company's charge, not of the price."
+     ],
+     "steps": [
+      "Company charge: 0.04 × 300000 = 12000",
+      "Broker keeps: 0.25 × 12000 = 3000",
+      "The broker keeps $3000.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10215,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10216
+  },
+  {
+   "sub": "3.3",
+   "type": "E",
+   "kind": "num",
+   "text": "A worker can choose how to be paid for 30 hours of work. Plan 1 pays $25.00 per hour. Plan 2 pays 5% of the sales the worker makes. How much must the worker sell for the two plans to pay the same (in dollars)?",
+   "answer": 15000.0,
+   "show": "$15000.00",
+   "hints": [
+    "First find what Plan 1 pays for 30 hours.",
+    "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
+    "That is a find-the-whole problem: the Plan 1 pay is the part and 5% is the percent."
+   ],
+   "steps": [
+    "Plan 1: 30 × 25 = 750",
+    "750/s = 5/100, so s = 750 × 100 ÷ 5 = 15000",
+    "The sales must be $15000.00."
+   ],
+   "tol": 1e-09,
+   "table": null,
+   "graph": null,
+   "id": "U3-19",
+   "why_focus": "Practice percent problems in real settings: decide whether you need the part, the percent or the whole, and which amount the percent is of.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "find-whole",
+     "percent-of-what"
+    ],
+    "earlier": [
+     {
+      "sub": "3.2",
+      "title": "Percent and proportion"
+     }
+    ]
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "num",
+     "text": "A worker can choose how to be paid for 20 hours of work. Plan 1 pays $18.00 per hour. Plan 2 pays 4% of the sales the worker makes. How much must the worker sell for the two plans to pay the same (in dollars)?",
+     "answer": 9000.0,
+     "show": "$9000.00",
+     "hints": [
+      "First find what Plan 1 pays for 20 hours.",
+      "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
+      "That is a find-the-whole problem: the Plan 1 pay is the part and 4% is the percent."
+     ],
+     "steps": [
+      "Plan 1: 20 × 18 = 360",
+      "360/s = 4/100, so s = 360 × 100 ÷ 4 = 9000",
+      "The sales must be $9000.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10217,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A worker can choose how to be paid for 30 hours of work. Plan 1 pays $15.00 per hour. Plan 2 pays 8% of the sales the worker makes. How much must the worker sell for the two plans to pay the same (in dollars)?",
+     "answer": 5625.0,
+     "show": "$5625.00",
+     "hints": [
+      "First find what Plan 1 pays for 30 hours.",
+      "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
+      "That is a find-the-whole problem: the Plan 1 pay is the part and 8% is the percent."
+     ],
+     "steps": [
+      "Plan 1: 30 × 15 = 450",
+      "450/s = 8/100, so s = 450 × 100 ÷ 8 = 5625",
+      "The sales must be $5625.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10218,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A worker can choose how to be paid for 30 hours of work. Plan 1 pays $20.00 per hour. Plan 2 pays 4% of the sales the worker makes. How much must the worker sell for the two plans to pay the same (in dollars)?",
+     "answer": 15000.0,
+     "show": "$15000.00",
+     "hints": [
+      "First find what Plan 1 pays for 30 hours.",
+      "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
+      "That is a find-the-whole problem: the Plan 1 pay is the part and 4% is the percent."
+     ],
+     "steps": [
+      "Plan 1: 30 × 20 = 600",
+      "600/s = 4/100, so s = 600 × 100 ÷ 4 = 15000",
+      "The sales must be $15000.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10219,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A worker can choose how to be paid for 30 hours of work. Plan 1 pays $25.00 per hour. Plan 2 pays 4% of the sales the worker makes. How much must the worker sell for the two plans to pay the same (in dollars)?",
+     "answer": 18750.0,
+     "show": "$18750.00",
+     "hints": [
+      "First find what Plan 1 pays for 30 hours.",
+      "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
+      "That is a find-the-whole problem: the Plan 1 pay is the part and 4% is the percent."
+     ],
+     "steps": [
+      "Plan 1: 30 × 25 = 750",
+      "750/s = 4/100, so s = 750 × 100 ÷ 4 = 18750",
+      "The sales must be $18750.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10220,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A worker can choose how to be paid for 40 hours of work. Plan 1 pays $20.00 per hour. Plan 2 pays 5% of the sales the worker makes. How much must the worker sell for the two plans to pay the same (in dollars)?",
+     "answer": 16000.0,
+     "show": "$16000.00",
+     "hints": [
+      "First find what Plan 1 pays for 40 hours.",
+      "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
+      "That is a find-the-whole problem: the Plan 1 pay is the part and 5% is the percent."
+     ],
+     "steps": [
+      "Plan 1: 40 × 20 = 800",
+      "800/s = 5/100, so s = 800 × 100 ÷ 5 = 16000",
+      "The sales must be $16000.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10221,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A worker can choose how to be paid for 30 hours of work. Plan 1 pays $25.00 per hour. Plan 2 pays 8% of the sales the worker makes. How much must the worker sell for the two plans to pay the same (in dollars)?",
+     "answer": 9375.0,
+     "show": "$9375.00",
+     "hints": [
+      "First find what Plan 1 pays for 30 hours.",
+      "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
+      "That is a find-the-whole problem: the Plan 1 pay is the part and 8% is the percent."
+     ],
+     "steps": [
+      "Plan 1: 30 × 25 = 750",
+      "750/s = 8/100, so s = 750 × 100 ÷ 8 = 9375",
+      "The sales must be $9375.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10222,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A worker can choose how to be paid for 40 hours of work. Plan 1 pays $20.00 per hour. Plan 2 pays 8% of the sales the worker makes. How much must the worker sell for the two plans to pay the same (in dollars)?",
+     "answer": 10000.0,
+     "show": "$10000.00",
+     "hints": [
+      "First find what Plan 1 pays for 40 hours.",
+      "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
+      "That is a find-the-whole problem: the Plan 1 pay is the part and 8% is the percent."
+     ],
+     "steps": [
+      "Plan 1: 40 × 20 = 800",
+      "800/s = 8/100, so s = 800 × 100 ÷ 8 = 10000",
+      "The sales must be $10000.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10223,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A worker can choose how to be paid for 20 hours of work. Plan 1 pays $25.00 per hour. Plan 2 pays 4% of the sales the worker makes. How much must the worker sell for the two plans to pay the same (in dollars)?",
+     "answer": 12500.0,
+     "show": "$12500.00",
+     "hints": [
+      "First find what Plan 1 pays for 20 hours.",
+      "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
+      "That is a find-the-whole problem: the Plan 1 pay is the part and 4% is the percent."
+     ],
+     "steps": [
+      "Plan 1: 20 × 25 = 500",
+      "500/s = 4/100, so s = 500 × 100 ÷ 4 = 12500",
+      "The sales must be $12500.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10224,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A worker can choose how to be paid for 30 hours of work. Plan 1 pays $15.00 per hour. Plan 2 pays 10% of the sales the worker makes. How much must the worker sell for the two plans to pay the same (in dollars)?",
+     "answer": 4500.0,
+     "show": "$4500.00",
+     "hints": [
+      "First find what Plan 1 pays for 30 hours.",
+      "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
+      "That is a find-the-whole problem: the Plan 1 pay is the part and 10% is the percent."
+     ],
+     "steps": [
+      "Plan 1: 30 × 15 = 450",
+      "450/s = 10/100, so s = 450 × 100 ÷ 10 = 4500",
+      "The sales must be $4500.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10225,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A worker can choose how to be paid for 30 hours of work. Plan 1 pays $12.00 per hour. Plan 2 pays 10% of the sales the worker makes. How much must the worker sell for the two plans to pay the same (in dollars)?",
+     "answer": 3600.0,
+     "show": "$3600.00",
+     "hints": [
+      "First find what Plan 1 pays for 30 hours.",
+      "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
+      "That is a find-the-whole problem: the Plan 1 pay is the part and 10% is the percent."
+     ],
+     "steps": [
+      "Plan 1: 30 × 12 = 360",
+      "360/s = 10/100, so s = 360 × 100 ÷ 10 = 3600",
+      "The sales must be $3600.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10226,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10227
+  },
+  {
+   "sub": "3.3",
+   "type": "F",
+   "kind": "num",
+   "text": "A school's field has 20% set aside for the garden. The remaining 320 square feet is for the track. What is the total area, in square feet?",
+   "answer": 400.0,
+   "show": "400 square feet",
+   "hints": [
+    "If 20% is one share, what percent is the other share?",
+    "The 320 goes with that other percent. What are you looking for: the part, the whole or the percent?",
+    "Write part/whole = P/100 with the other percent, and solve for the whole."
+   ],
+   "steps": [
+    "The other share is 100% − 20% = 80%.",
+    "320/w = 80/100, so w = 320 × 100 ÷ 80 = 400",
+    "The total is 400 square feet."
+   ],
+   "tol": 1e-09,
+   "table": null,
+   "graph": null,
+   "id": "U3-20",
+   "why_focus": "Practice percent problems in real settings: decide whether you need the part, the percent or the whole, and which amount the percent is of.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "find-whole",
+     "percent-of-what"
+    ],
+    "earlier": [
+     {
+      "sub": "3.2",
+      "title": "Percent and proportion"
+     }
+    ]
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "num",
+     "text": "A farm has 60% set aside for corn. The remaining 120 acres is for beans. What is the total area, in acres?",
+     "answer": 300.0,
+     "show": "300 acres",
+     "hints": [
+      "If 60% is one share, what percent is the other share?",
+      "The 120 goes with that other percent. What are you looking for: the part, the whole or the percent?",
+      "Write part/whole = P/100 with the other percent, and solve for the whole."
+     ],
+     "steps": [
+      "The other share is 100% − 60% = 40%.",
+      "120/w = 40/100, so w = 120 × 100 ÷ 40 = 300",
+      "The total is 300 acres."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10228,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A farm has 75% set aside for corn. The remaining 125 acres is for beans. What is the total area, in acres?",
+     "answer": 500.0,
+     "show": "500 acres",
+     "hints": [
+      "If 75% is one share, what percent is the other share?",
+      "The 125 goes with that other percent. What are you looking for: the part, the whole or the percent?",
+      "Write part/whole = P/100 with the other percent, and solve for the whole."
+     ],
+     "steps": [
+      "The other share is 100% − 75% = 25%.",
+      "125/w = 25/100, so w = 125 × 100 ÷ 25 = 500",
+      "The total is 500 acres."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10229,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A farm has 70% set aside for corn. The remaining 150 acres is for beans. What is the total area, in acres?",
+     "answer": 500.0,
+     "show": "500 acres",
+     "hints": [
+      "If 70% is one share, what percent is the other share?",
+      "The 150 goes with that other percent. What are you looking for: the part, the whole or the percent?",
+      "Write part/whole = P/100 with the other percent, and solve for the whole."
+     ],
+     "steps": [
+      "The other share is 100% − 70% = 30%.",
+      "150/w = 30/100, so w = 150 × 100 ÷ 30 = 500",
+      "The total is 500 acres."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10230,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A farm has 75% set aside for corn. The remaining 200 acres is for beans. What is the total area, in acres?",
+     "answer": 800.0,
+     "show": "800 acres",
+     "hints": [
+      "If 75% is one share, what percent is the other share?",
+      "The 200 goes with that other percent. What are you looking for: the part, the whole or the percent?",
+      "Write part/whole = P/100 with the other percent, and solve for the whole."
+     ],
+     "steps": [
+      "The other share is 100% − 75% = 25%.",
+      "200/w = 25/100, so w = 200 × 100 ÷ 25 = 800",
+      "The total is 800 acres."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10231,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A school's field has 20% set aside for the garden. The remaining 960 square feet is for the track. What is the total area, in square feet?",
+     "answer": 1200.0,
+     "show": "1200 square feet",
+     "hints": [
+      "If 20% is one share, what percent is the other share?",
+      "The 960 goes with that other percent. What are you looking for: the part, the whole or the percent?",
+      "Write part/whole = P/100 with the other percent, and solve for the whole."
+     ],
+     "steps": [
+      "The other share is 100% − 20% = 80%.",
+      "960/w = 80/100, so w = 960 × 100 ÷ 80 = 1200",
+      "The total is 1200 square feet."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10232,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A farm has 25% set aside for corn. The remaining 300 acres is for beans. What is the total area, in acres?",
+     "answer": 400.0,
+     "show": "400 acres",
+     "hints": [
+      "If 25% is one share, what percent is the other share?",
+      "The 300 goes with that other percent. What are you looking for: the part, the whole or the percent?",
+      "Write part/whole = P/100 with the other percent, and solve for the whole."
+     ],
+     "steps": [
+      "The other share is 100% − 25% = 75%.",
+      "300/w = 75/100, so w = 300 × 100 ÷ 75 = 400",
+      "The total is 400 acres."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10233,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A farm has 30% set aside for corn. The remaining 140 acres is for beans. What is the total area, in acres?",
+     "answer": 200.0,
+     "show": "200 acres",
+     "hints": [
+      "If 30% is one share, what percent is the other share?",
+      "The 140 goes with that other percent. What are you looking for: the part, the whole or the percent?",
+      "Write part/whole = P/100 with the other percent, and solve for the whole."
+     ],
+     "steps": [
+      "The other share is 100% − 30% = 70%.",
+      "140/w = 70/100, so w = 140 × 100 ÷ 70 = 200",
+      "The total is 200 acres."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10234,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A school's field has 75% set aside for the garden. The remaining 100 square feet is for the track. What is the total area, in square feet?",
+     "answer": 400.0,
+     "show": "400 square feet",
+     "hints": [
+      "If 75% is one share, what percent is the other share?",
+      "The 100 goes with that other percent. What are you looking for: the part, the whole or the percent?",
+      "Write part/whole = P/100 with the other percent, and solve for the whole."
+     ],
+     "steps": [
+      "The other share is 100% − 75% = 25%.",
+      "100/w = 25/100, so w = 100 × 100 ÷ 25 = 400",
+      "The total is 400 square feet."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10235,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A school's field has 40% set aside for the garden. The remaining 300 square feet is for the track. What is the total area, in square feet?",
+     "answer": 500.0,
+     "show": "500 square feet",
+     "hints": [
+      "If 40% is one share, what percent is the other share?",
+      "The 300 goes with that other percent. What are you looking for: the part, the whole or the percent?",
+      "Write part/whole = P/100 with the other percent, and solve for the whole."
+     ],
+     "steps": [
+      "The other share is 100% − 40% = 60%.",
+      "300/w = 60/100, so w = 300 × 100 ÷ 60 = 500",
+      "The total is 500 square feet."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10236,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A school's field has 75% set aside for the garden. The remaining 75 square feet is for the track. What is the total area, in square feet?",
+     "answer": 300.0,
+     "show": "300 square feet",
+     "hints": [
+      "If 75% is one share, what percent is the other share?",
+      "The 75 goes with that other percent. What are you looking for: the part, the whole or the percent?",
+      "Write part/whole = P/100 with the other percent, and solve for the whole."
+     ],
+     "steps": [
+      "The other share is 100% − 75% = 25%.",
+      "75/w = 25/100, so w = 75 × 100 ÷ 25 = 300",
+      "The total is 300 square feet."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10237,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10238
+  },
+  {
+   "sub": "3.3",
+   "type": "G",
+   "kind": "num",
+   "text": "A cafe adds an automatic 20% charge to the bill for any group of 10 or more. A group of 10 has a $80.00 bill. What is the total they pay with the charge added (in dollars)?",
+   "answer": 96.0,
+   "show": "$96.00",
+   "hints": [
+    "The question asks for the TOTAL. What is the charge by itself first?",
+    "Find 20% of 80.",
+    "Then add it to the bill."
+   ],
+   "steps": [
+    "Charge: 0.2 × 80 = 16",
+    "Total: 80 + 16 = 96",
+    "They pay $96.00."
+   ],
+   "tol": 1e-09,
+   "table": null,
+   "graph": null,
+   "id": "U3-21",
+   "why_focus": "Practice percent problems in real settings: decide whether you need the part, the percent or the whole, and which amount the percent is of.",
+   "deps": {
+    "level": "builds",
+    "concepts": [
+     "tax-tip",
+     "percent-of"
+    ],
+    "earlier": [
+     {
+      "sub": "3.1",
+      "title": "Percent of a number"
+     }
+    ]
+   },
+   "facts": [],
+   "shortcut": [],
+   "variants": [
+    {
+     "kind": "num",
+     "text": "A cafe adds an automatic 20% charge to the bill for any group of 8 or more. A group of 8 has a $80.00 bill. What is the total they pay with the charge added (in dollars)?",
+     "answer": 96.0,
+     "show": "$96.00",
+     "hints": [
+      "The question asks for the TOTAL. What is the charge by itself first?",
+      "Find 20% of 80.",
+      "Then add it to the bill."
+     ],
+     "steps": [
+      "Charge: 0.2 × 80 = 16",
+      "Total: 80 + 16 = 96",
+      "They pay $96.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10239,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A cafe adds an automatic 18% charge to the bill for any group of 8 or more. A group of 8 has a $80.00 bill. What is the total they pay with the charge added (in dollars)?",
+     "answer": 94.4,
+     "show": "$94.40",
+     "hints": [
+      "The question asks for the TOTAL. What is the charge by itself first?",
+      "Find 18% of 80.",
+      "Then add it to the bill."
+     ],
+     "steps": [
+      "Charge: 0.18 × 80 = 14.4",
+      "Total: 80 + 14.4 = 94.4",
+      "They pay $94.40."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10240,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A cafe adds an automatic 15% charge to the bill for any group of 8 or more. A group of 8 has a $200.00 bill. What is the total they pay with the charge added (in dollars)?",
+     "answer": 230.0,
+     "show": "$230.00",
+     "hints": [
+      "The question asks for the TOTAL. What is the charge by itself first?",
+      "Find 15% of 200.",
+      "Then add it to the bill."
+     ],
+     "steps": [
+      "Charge: 0.15 × 200 = 30",
+      "Total: 200 + 30 = 230",
+      "They pay $230.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10241,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A cafe adds an automatic 15% charge to the bill for any group of 10 or more. A group of 10 has a $240.00 bill. What is the total they pay with the charge added (in dollars)?",
+     "answer": 276.0,
+     "show": "$276.00",
+     "hints": [
+      "The question asks for the TOTAL. What is the charge by itself first?",
+      "Find 15% of 240.",
+      "Then add it to the bill."
+     ],
+     "steps": [
+      "Charge: 0.15 × 240 = 36",
+      "Total: 240 + 36 = 276",
+      "They pay $276.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10242,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A cafe adds an automatic 18% charge to the bill for any group of 10 or more. A group of 10 has a $200.00 bill. What is the total they pay with the charge added (in dollars)?",
+     "answer": 236.0,
+     "show": "$236.00",
+     "hints": [
+      "The question asks for the TOTAL. What is the charge by itself first?",
+      "Find 18% of 200.",
+      "Then add it to the bill."
+     ],
+     "steps": [
+      "Charge: 0.18 × 200 = 36",
+      "Total: 200 + 36 = 236",
+      "They pay $236.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10243,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A cafe adds an automatic 18% charge to the bill for any group of 8 or more. A group of 8 has a $120.00 bill. What is the total they pay with the charge added (in dollars)?",
+     "answer": 141.6,
+     "show": "$141.60",
+     "hints": [
+      "The question asks for the TOTAL. What is the charge by itself first?",
+      "Find 18% of 120.",
+      "Then add it to the bill."
+     ],
+     "steps": [
+      "Charge: 0.18 × 120 = 21.6",
+      "Total: 120 + 21.6 = 141.6",
+      "They pay $141.60."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10244,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A cafe adds an automatic 20% charge to the bill for any group of 6 or more. A group of 6 has a $120.00 bill. What is the total they pay with the charge added (in dollars)?",
+     "answer": 144.0,
+     "show": "$144.00",
+     "hints": [
+      "The question asks for the TOTAL. What is the charge by itself first?",
+      "Find 20% of 120.",
+      "Then add it to the bill."
+     ],
+     "steps": [
+      "Charge: 0.2 × 120 = 24",
+      "Total: 120 + 24 = 144",
+      "They pay $144.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10245,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A cafe adds an automatic 20% charge to the bill for any group of 6 or more. A group of 6 has a $200.00 bill. What is the total they pay with the charge added (in dollars)?",
+     "answer": 240.0,
+     "show": "$240.00",
+     "hints": [
+      "The question asks for the TOTAL. What is the charge by itself first?",
+      "Find 20% of 200.",
+      "Then add it to the bill."
+     ],
+     "steps": [
+      "Charge: 0.2 × 200 = 40",
+      "Total: 200 + 40 = 240",
+      "They pay $240.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10246,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A cafe adds an automatic 15% charge to the bill for any group of 10 or more. A group of 10 has a $200.00 bill. What is the total they pay with the charge added (in dollars)?",
+     "answer": 230.0,
+     "show": "$230.00",
+     "hints": [
+      "The question asks for the TOTAL. What is the charge by itself first?",
+      "Find 15% of 200.",
+      "Then add it to the bill."
+     ],
+     "steps": [
+      "Charge: 0.15 × 200 = 30",
+      "Total: 200 + 30 = 230",
+      "They pay $230.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10247,
+     "facts": [],
+     "shortcut": []
+    },
+    {
+     "kind": "num",
+     "text": "A cafe adds an automatic 18% charge to the bill for any group of 8 or more. A group of 8 has a $100.00 bill. What is the total they pay with the charge added (in dollars)?",
+     "answer": 118.0,
+     "show": "$118.00",
+     "hints": [
+      "The question asks for the TOTAL. What is the charge by itself first?",
+      "Find 18% of 100.",
+      "Then add it to the bill."
+     ],
+     "steps": [
+      "Charge: 0.18 × 100 = 18",
+      "Total: 100 + 18 = 118",
+      "They pay $118.00."
+     ],
+     "tol": 1e-09,
+     "table": null,
+     "graph": null,
+     "ref": 10248,
+     "facts": [],
+     "shortcut": []
+    }
+   ],
+   "ref": 10249
   }
  ],
  "lessons": {
@@ -4163,6 +5957,11 @@
    "name": "Finding the whole",
    "plain": "When you know the part and the percent, solve part/whole = P/100 for the whole.",
    "origin": "Lesson 3.2"
+  },
+  "percent-of-what": {
+   "name": "A percent of WHAT?",
+   "plain": "Before you calculate, decide which amount the percent is of, and whether it is a part, a whole or a percent you are finding.",
+   "origin": "Lesson 3.3"
   },
   "proportion": {
    "name": "Proportions",

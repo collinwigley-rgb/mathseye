@@ -19,6 +19,7 @@ CONCEPTS = {
  "tax-tip":           ("Tax, tip and commission", "A percent of the price. Decide if you need the extra amount or the total.", "Lesson 3.1"),
  "percent-proportion":("The percent proportion", "Part over whole equals P over 100.", "Lesson 3.2"),
  "find-whole":        ("Finding the whole", "When you know the part and the percent, solve part/whole = P/100 for the whole.", "Lesson 3.2"),
+ "percent-of-what":   ("A percent of WHAT?", "Before you calculate, decide which amount the percent is of, and whether it is a part, a whole or a percent you are finding.", "Lesson 3.3"),
  "proportion":        ("Proportions", "Two equal ratios. Multiply both sides to solve.", "Lesson 2.3"),
 }
 BASE = {
@@ -26,6 +27,8 @@ BASE = {
  ("3.2","A"):["percent-proportion","proportion"], ("3.2","B"):["percent-proportion","percent-of"], ("3.2","C"):["find-whole","percent-proportion","proportion"],
  ("3.1","D"):["find-whole","percent-of"], ("3.1","E"):["percent-of"], ("3.1","F"):["over-100"], ("3.1","G"):["percent-of"],
  ("3.2","D"):["percent-proportion"], ("3.2","E"):["percent-proportion"], ("3.2","F"):["find-whole","percent-proportion"], ("3.2","G"):["percent-proportion"],
+ ("3.3","A"):["percent-of-what","percent-proportion"], ("3.3","B"):["tax-tip","percent-of"], ("3.3","C"):["find-whole","percent-of-what"], ("3.3","D"):["percent-of-what","percent-of"],
+ ("3.3","E"):["find-whole","percent-of-what"], ("3.3","F"):["find-whole","percent-of-what"], ("3.3","G"):["tax-tip","percent-of"],
 }
 FOCUS = {
  "3.1":"Practice turning a percent into a decimal and multiplying, and check the size of your answer.",
@@ -162,12 +165,56 @@ def g_which(r):                                                      # 3.2 G: wh
       ["Which numbers does the story give you? Which one does it NOT give you?", "Part: a piece. Whole: the full amount. Percent: out of 100.", "The one that is missing is what you are looking for."],
       [{"whole": f"{n} {thing} is the part and {p}% is the percent, so the total for the weekend (the whole) is missing.", "percent": f"{n} is the part and {T + n} is the whole, so the percent is missing.", "part": f"{T} is the whole and {p}% is the percent, so the part is missing."}[kind], f"You are looking for {['the percent', 'the part', 'the whole'][ok]}."])
 
+# ---- Lesson 3.3: percents in real settings (sale price, tips, commission, steps in a row). Original problems, same skills as the lesson.
+def g_sale_pct(r):                                                   # 3.3 A: the sale price is what percent of the regular price?
+    R = r.choice([20, 40, 50, 80, 120, 200]); p = r.choice([60, 65, 70, 75, 80, 85, 90]); S = F(p, 100) * R; item = r.choice(["hoodie", "lamp", "scooter", "backpack", "board game"])
+    return numv(f"A {item} regularly costs {money(R)}. This week it is {money(S)}. The sale price is what percent of the regular price?", p,
+      ["Which price is the whole: the regular price or the sale price?", f"Write {fmt(S)}/{R} = P/100 (part over whole equals P over 100).", "Divide the part by the whole, then move the point two places right."],
+      [f"{fmt(S)}/{R} = P/100", f"{fmt(S)} ÷ {R} = {fmt(S / R)}, which is {p}%", f"The sale price is {p}% of the regular price."], show=f"{p}%", pct=True)
+def g_tip(r):                                                        # 3.3 B: a tip on a bill
+    B = r.choice([40, 60, 80, 120, 150, 200]); p = r.choice([10, 15, 18, 20, 25]); a = F(p, 100) * B
+    return numv(f"Your family's dinner bill is {money(B)}. You leave a {p}% tip on the bill. How much is the tip (in dollars)?", a,
+      ["The tip is a percent of the bill. Which number is the whole?", f"Write {p}% as a decimal.", "Multiply the bill by the decimal."],
+      [f"{p}% = {fmt(F(p,100))}", f"{fmt(F(p,100))} × {B} = {fmt(a)}", f"The tip is {money(a)}."], unit="dollars", show=money(a))
+def g_comm_whole(r):                                                 # 3.3 C: find the sale from the commission
+    W = r.choice([2000, 4000, 5000, 8000, 12000, 20000]); p = r.choice([2, 4, 5, 6, 8, 10]); c = F(p, 100) * W
+    return numv(f"A seller earns {p}% commission on every sale. On one sale the commission was {money(c)}. What was the price of the sale (in dollars)?", W,
+      ["Is the commission the part, the whole or the percent? What are you looking for?", f"Write {fmt(c)}/w = {p}/100.", f"w = {fmt(c)} × 100 ÷ {p}."],
+      [f"{fmt(c)}/w = {p}/100", f"w = {fmt(c)} × 100 ÷ {p} = {W}", f"The sale was {money(W)}."], show=money(W))
+def g_two_stage(r):                                                  # 3.3 D: a percent of a percent of an amount
+    for _ in range(50):
+        P = r.choice([100000, 200000, 250000, 300000, 400000, 500000]); a = r.choice([4, 5, 6]); b = r.choice([20, 25, 40, 50])
+        fee = F(a, 100) * P; keep = F(b, 100) * fee
+        if keep.denominator == 1: break
+    return numv(f"A broker's company charges {a}% of the {money(P)} price when a boat is sold. The broker keeps {b}% of what the company charges. How much does the broker keep (in dollars)?", keep,
+      ["There are two percent steps. What is the first percent of?", f"Find the company's charge first: {a}% of {P}.", f"The broker's {b}% is of the company's charge, not of the price."],
+      [f"Company charge: {fmt(F(a,100))} × {P} = {fmt(fee)}", f"Broker keeps: {fmt(F(b,100))} × {fmt(fee)} = {fmt(keep)}", f"The broker keeps {money(keep)}."], show=money(keep))
+def g_pay_equal(r):                                                  # 3.3 E: two pay plans, find where they are equal
+    for _ in range(50):
+        w = r.choice([12, 15, 18, 20, 25]); h = r.choice([20, 30, 40]); p = r.choice([4, 5, 8, 10]); S = F(w * h * 100, p)
+        if S.denominator == 1: break
+    return numv(f"A worker can choose how to be paid for {h} hours of work. Plan 1 pays {money(w)} per hour. Plan 2 pays {p}% of the sales the worker makes. How much must the worker sell for the two plans to pay the same (in dollars)?", S,
+      [f"First find what Plan 1 pays for {h} hours.", "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.", f"That is a find-the-whole problem: the Plan 1 pay is the part and {p}% is the percent."],
+      [f"Plan 1: {h} × {w} = {h*w}", f"{h*w}/s = {p}/100, so s = {h*w} × 100 ÷ {p} = {fmt(S)}", f"The sales must be {money(S)}."], show=money(S))
+def g_leftover(r):                                                   # 3.3 F: the leftover is the other percent
+    T = r.choice([200, 300, 400, 500, 800, 1200]); p = r.choice([20, 25, 30, 40, 60, 70, 75]); rest = F(100 - p, 100) * T
+    where = r.choice([("A school's field", "for the garden", "for the track", "square feet"), ("A farm", "for corn", "for beans", "acres")])
+    return numv(f"{where[0]} has {p}% set aside {where[1]}. The remaining {fmt(rest)} {where[3]} is {where[2]}. What is the total area, in {where[3]}?", T,
+      [f"If {p}% is one share, what percent is the other share?", f"The {fmt(rest)} goes with that other percent. What are you looking for: the part, the whole or the percent?", "Write part/whole = P/100 with the other percent, and solve for the whole."],
+      [f"The other share is 100% − {p}% = {100-p}%.", f"{fmt(rest)}/w = {100-p}/100, so w = {fmt(rest)} × 100 ÷ {100-p} = {T}", f"The total is {T} {where[3]}."], unit=where[3])
+def g_gratuity(r):                                                   # 3.3 G: a bill plus a percent charge
+    n = r.choice([6, 8, 10]); p = r.choice([15, 18, 20]); B = r.choice([80, 100, 120, 150, 200, 240]); a = F(p, 100) * B
+    return numv(f"A cafe adds an automatic {p}% charge to the bill for any group of {n} or more. A group of {n} has a {money(B)} bill. What is the total they pay with the charge added (in dollars)?", B + a,
+      ["The question asks for the TOTAL. What is the charge by itself first?", f"Find {p}% of {B}.", "Then add it to the bill."],
+      [f"Charge: {fmt(F(p,100))} × {B} = {fmt(a)}", f"Total: {B} + {fmt(a)} = {fmt(B + a)}", f"They pay {money(B + a)}."], unit="dollars", show=money(B + a))
+
 def _problem(sub, typ, gen, seed):
     """The base problem is the generator run once with a fixed seed (so its text and answer are stable forever)."""
     v = gen(random.Random(seed)); _add(sub, typ, v)
 for _pid_i, (_sub, _typ, _gen, _seed) in enumerate([("3.1","A",g_balcony,11),("3.1","B",g_grow,12),("3.1","C",g_tax,13),("3.2","A",g_percent,21),("3.2","B",g_part,22),("3.2","C",g_whole,23),
    ("3.1","D",g_whole_small,14),("3.1","E",g_pct_dec,15),("3.1","F",g_size,16),("3.1","G",g_two_step,17),
-   ("3.2","D",g_survey,24),("3.2","E",g_compare,25),("3.2","F",g_original,26),("3.2","G",g_which,27)], 1):
+   ("3.2","D",g_survey,24),("3.2","E",g_compare,25),("3.2","F",g_original,26),("3.2","G",g_which,27),
+   ("3.3","A",g_sale_pct,31),("3.3","B",g_tip,32),("3.3","C",g_comm_whole,33),("3.3","D",g_two_stage,34),("3.3","E",g_pay_equal,35),("3.3","F",g_leftover,36),("3.3","G",g_gratuity,37)], 1):
     PROBS_ID = f"U3-{_pid_i:02d}"; _problem(_sub, _typ, _gen, _seed); PROBS[-1]["id"] = PROBS_ID; GENS[PROBS_ID] = _gen
 
 def variants(pid, n=10):
@@ -199,6 +246,13 @@ SOLVE.update({
  "U3-10": lambda t: (lambda m: _n(m[1]) * _n(m[2]) / 100 * _n(m[3]) / 100)(re.search(r"club has (\d+) \w+\. (\d+)% of them .*? Of those, (\d+)%", t)),
  "U3-11": lambda t: (lambda m: _n(m[1]) * 100 / (_n(m[1]) + _n(m[2]) + _n(m[3])))(re.search(r"favorite \w+: (\d+) chose \w+, (\d+) chose \w+, and (\d+) chose", t)),
  "U3-13": lambda t: (lambda m: _n(m[1]) * 100 / _n(m[2]))(re.search(r"for \$([\d.]+)\. That is (\d+)% of what", t)),
+ "U3-15": lambda t: (lambda m: _n(m[2]) / _n(m[1]) * 100)(re.search(r"regularly costs \$([\d.]+)\. This week it is \$([\d.]+)\.", t)),
+ "U3-16": lambda t: (lambda m: _n(m[2]) / 100 * _n(m[1]))(re.search(r"dinner bill is \$([\d.]+)\. You leave a (\d+)% tip", t)),
+ "U3-17": lambda t: (lambda m: _n(m[2]) * 100 / _n(m[1]))(re.search(r"earns (\d+)% commission on every sale\. On one sale the commission was \$([\d.]+)", t)),
+ "U3-18": lambda t: (lambda m: _n(m[2]) / 100 * _n(m[3]) / 100 * _n(m[1]))(re.search(r"charges (\d+)% of the \$([\d,.]+) price.*?keeps (\d+)% of", t)),
+ "U3-19": lambda t: (lambda m: _n(m[2]) * _n(m[1]) * 100 / _n(m[3]))(re.search(r"for (\d+) hours of work\. Plan 1 pays \$([\d.]+) per hour\. Plan 2 pays (\d+)%", t)),
+ "U3-20": lambda t: (lambda m: _n(m[2]) * 100 / (100 - _n(m[1])))(re.search(r"has (\d+)% set aside .*?The remaining ([\d,.]+) ", t)),
+ "U3-21": lambda t: (lambda m: _n(m[2]) * (1 + _n(m[1]) / 100))(re.search(r"automatic (\d+)% charge .*? has a \$([\d.]+) bill", t)),
 })
 # multiple choice: the index of the right option, worked out from the text
 def _size(t):

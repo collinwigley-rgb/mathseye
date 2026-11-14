@@ -1,5 +1,5 @@
 {
- "next": 10175,
+ "next": 10250,
  "items": {
   "10001": {
    "id": "U3-01",
@@ -1044,6 +1044,456 @@
    "v": -1,
    "h": "64ec491ba7",
    "text": "A stand has 50 bracelets and 75% of them are on sale. How many are on sale? Which one does"
+  },
+  "10175": {
+   "id": "U3-15",
+   "v": 0,
+   "h": "3acab37292",
+   "text": "A hoodie regularly costs $40.00. This week it is $34.00. The sale price is what percent of"
+  },
+  "10176": {
+   "id": "U3-15",
+   "v": 1,
+   "h": "79f8350165",
+   "text": "A lamp regularly costs $20.00. This week it is $17.00. The sale price is what percent of t"
+  },
+  "10177": {
+   "id": "U3-15",
+   "v": 2,
+   "h": "b8fb86ddbc",
+   "text": "A backpack regularly costs $40.00. This week it is $24.00. The sale price is what percent "
+  },
+  "10178": {
+   "id": "U3-15",
+   "v": 3,
+   "h": "abc98965af",
+   "text": "A hoodie regularly costs $50.00. This week it is $42.50. The sale price is what percent of"
+  },
+  "10179": {
+   "id": "U3-15",
+   "v": 4,
+   "h": "66c07f0a78",
+   "text": "A lamp regularly costs $50.00. This week it is $35.00. The sale price is what percent of t"
+  },
+  "10180": {
+   "id": "U3-15",
+   "v": 5,
+   "h": "bbdff1720b",
+   "text": "A scooter regularly costs $120.00. This week it is $90.00. The sale price is what percent "
+  },
+  "10181": {
+   "id": "U3-15",
+   "v": 6,
+   "h": "288f295cb5",
+   "text": "A lamp regularly costs $20.00. This week it is $12.00. The sale price is what percent of t"
+  },
+  "10182": {
+   "id": "U3-15",
+   "v": 7,
+   "h": "6eb66bc7b6",
+   "text": "A lamp regularly costs $40.00. This week it is $36.00. The sale price is what percent of t"
+  },
+  "10183": {
+   "id": "U3-15",
+   "v": 8,
+   "h": "ece96353b2",
+   "text": "A backpack regularly costs $120.00. This week it is $96.00. The sale price is what percent"
+  },
+  "10184": {
+   "id": "U3-15",
+   "v": 9,
+   "h": "44502d9e3d",
+   "text": "A lamp regularly costs $120.00. This week it is $108.00. The sale price is what percent of"
+  },
+  "10185": {
+   "id": "U3-15",
+   "v": -1,
+   "h": "a7071cdac4",
+   "text": "A hoodie regularly costs $20.00. This week it is $15.00. The sale price is what percent of"
+  },
+  "10186": {
+   "id": "U3-16",
+   "v": 0,
+   "h": "1f5047d1e4",
+   "text": "Your family's dinner bill is $120.00. You leave a 18% tip on the bill. How much is the tip"
+  },
+  "10187": {
+   "id": "U3-16",
+   "v": 1,
+   "h": "dbb648c4ee",
+   "text": "Your family's dinner bill is $200.00. You leave a 15% tip on the bill. How much is the tip"
+  },
+  "10188": {
+   "id": "U3-16",
+   "v": 2,
+   "h": "ce82d11933",
+   "text": "Your family's dinner bill is $200.00. You leave a 25% tip on the bill. How much is the tip"
+  },
+  "10189": {
+   "id": "U3-16",
+   "v": 3,
+   "h": "e0b64cc26d",
+   "text": "Your family's dinner bill is $40.00. You leave a 25% tip on the bill. How much is the tip "
+  },
+  "10190": {
+   "id": "U3-16",
+   "v": 4,
+   "h": "8b3009d839",
+   "text": "Your family's dinner bill is $60.00. You leave a 15% tip on the bill. How much is the tip "
+  },
+  "10191": {
+   "id": "U3-16",
+   "v": 5,
+   "h": "823289547e",
+   "text": "Your family's dinner bill is $60.00. You leave a 18% tip on the bill. How much is the tip "
+  },
+  "10192": {
+   "id": "U3-16",
+   "v": 6,
+   "h": "7ff7a9d1b0",
+   "text": "Your family's dinner bill is $80.00. You leave a 25% tip on the bill. How much is the tip "
+  },
+  "10193": {
+   "id": "U3-16",
+   "v": 7,
+   "h": "3dc88143ff",
+   "text": "Your family's dinner bill is $80.00. You leave a 10% tip on the bill. How much is the tip "
+  },
+  "10194": {
+   "id": "U3-16",
+   "v": 8,
+   "h": "f41e7611ef",
+   "text": "Your family's dinner bill is $80.00. You leave a 18% tip on the bill. How much is the tip "
+  },
+  "10195": {
+   "id": "U3-16",
+   "v": -1,
+   "h": "040f6a6395",
+   "text": "Your family's dinner bill is $40.00. You leave a 15% tip on the bill. How much is the tip "
+  },
+  "10196": {
+   "id": "U3-17",
+   "v": 0,
+   "h": "1d09684f8b",
+   "text": "A seller earns 8% commission on every sale. On one sale the commission was $1600.00. What "
+  },
+  "10197": {
+   "id": "U3-17",
+   "v": 1,
+   "h": "f56f99920c",
+   "text": "A seller earns 5% commission on every sale. On one sale the commission was $100.00. What w"
+  },
+  "10198": {
+   "id": "U3-17",
+   "v": 2,
+   "h": "be1325f5ac",
+   "text": "A seller earns 4% commission on every sale. On one sale the commission was $160.00. What w"
+  },
+  "10199": {
+   "id": "U3-17",
+   "v": 3,
+   "h": "0890c03213",
+   "text": "A seller earns 10% commission on every sale. On one sale the commission was $1200.00. What"
+  },
+  "10200": {
+   "id": "U3-17",
+   "v": 4,
+   "h": "56fcd68dc8",
+   "text": "A seller earns 10% commission on every sale. On one sale the commission was $500.00. What "
+  },
+  "10201": {
+   "id": "U3-17",
+   "v": 5,
+   "h": "6c55e3b738",
+   "text": "A seller earns 10% commission on every sale. On one sale the commission was $800.00. What "
+  },
+  "10202": {
+   "id": "U3-17",
+   "v": 6,
+   "h": "59ad72bec2",
+   "text": "A seller earns 8% commission on every sale. On one sale the commission was $320.00. What w"
+  },
+  "10203": {
+   "id": "U3-17",
+   "v": 7,
+   "h": "ae49615432",
+   "text": "A seller earns 2% commission on every sale. On one sale the commission was $80.00. What wa"
+  },
+  "10204": {
+   "id": "U3-17",
+   "v": 8,
+   "h": "fc32863600",
+   "text": "A seller earns 8% commission on every sale. On one sale the commission was $400.00. What w"
+  },
+  "10205": {
+   "id": "U3-17",
+   "v": -1,
+   "h": "c394d2cfac",
+   "text": "A seller earns 4% commission on every sale. On one sale the commission was $480.00. What w"
+  },
+  "10206": {
+   "id": "U3-18",
+   "v": 0,
+   "h": "57673c6f11",
+   "text": "A broker's company charges 6% of the $400000.00 price when a boat is sold. The broker keep"
+  },
+  "10207": {
+   "id": "U3-18",
+   "v": 1,
+   "h": "6e25c640ec",
+   "text": "A broker's company charges 6% of the $100000.00 price when a boat is sold. The broker keep"
+  },
+  "10208": {
+   "id": "U3-18",
+   "v": 2,
+   "h": "7713aeeaf5",
+   "text": "A broker's company charges 5% of the $250000.00 price when a boat is sold. The broker keep"
+  },
+  "10209": {
+   "id": "U3-18",
+   "v": 3,
+   "h": "fec559c9c1",
+   "text": "A broker's company charges 5% of the $300000.00 price when a boat is sold. The broker keep"
+  },
+  "10210": {
+   "id": "U3-18",
+   "v": 4,
+   "h": "59e6975669",
+   "text": "A broker's company charges 6% of the $250000.00 price when a boat is sold. The broker keep"
+  },
+  "10211": {
+   "id": "U3-18",
+   "v": 5,
+   "h": "b87d58dfb8",
+   "text": "A broker's company charges 5% of the $500000.00 price when a boat is sold. The broker keep"
+  },
+  "10212": {
+   "id": "U3-18",
+   "v": 6,
+   "h": "5a8afa691d",
+   "text": "A broker's company charges 5% of the $200000.00 price when a boat is sold. The broker keep"
+  },
+  "10213": {
+   "id": "U3-18",
+   "v": 7,
+   "h": "78584dd672",
+   "text": "A broker's company charges 6% of the $300000.00 price when a boat is sold. The broker keep"
+  },
+  "10214": {
+   "id": "U3-18",
+   "v": 8,
+   "h": "425f372adb",
+   "text": "A broker's company charges 6% of the $500000.00 price when a boat is sold. The broker keep"
+  },
+  "10215": {
+   "id": "U3-18",
+   "v": 9,
+   "h": "70252b207f",
+   "text": "A broker's company charges 4% of the $300000.00 price when a boat is sold. The broker keep"
+  },
+  "10216": {
+   "id": "U3-18",
+   "v": -1,
+   "h": "2d78757870",
+   "text": "A broker's company charges 5% of the $400000.00 price when a boat is sold. The broker keep"
+  },
+  "10217": {
+   "id": "U3-19",
+   "v": 0,
+   "h": "0b50ad03f0",
+   "text": "A worker can choose how to be paid for 20 hours of work. Plan 1 pays $18.00 per hour. Plan"
+  },
+  "10218": {
+   "id": "U3-19",
+   "v": 1,
+   "h": "1cdcc0b598",
+   "text": "A worker can choose how to be paid for 30 hours of work. Plan 1 pays $15.00 per hour. Plan"
+  },
+  "10219": {
+   "id": "U3-19",
+   "v": 2,
+   "h": "590cbdfcdf",
+   "text": "A worker can choose how to be paid for 30 hours of work. Plan 1 pays $20.00 per hour. Plan"
+  },
+  "10220": {
+   "id": "U3-19",
+   "v": 3,
+   "h": "82311cec03",
+   "text": "A worker can choose how to be paid for 30 hours of work. Plan 1 pays $25.00 per hour. Plan"
+  },
+  "10221": {
+   "id": "U3-19",
+   "v": 4,
+   "h": "a4d4076a96",
+   "text": "A worker can choose how to be paid for 40 hours of work. Plan 1 pays $20.00 per hour. Plan"
+  },
+  "10222": {
+   "id": "U3-19",
+   "v": 5,
+   "h": "196d8b3ea2",
+   "text": "A worker can choose how to be paid for 30 hours of work. Plan 1 pays $25.00 per hour. Plan"
+  },
+  "10223": {
+   "id": "U3-19",
+   "v": 6,
+   "h": "2a9e60b5dc",
+   "text": "A worker can choose how to be paid for 40 hours of work. Plan 1 pays $20.00 per hour. Plan"
+  },
+  "10224": {
+   "id": "U3-19",
+   "v": 7,
+   "h": "0c4f99dd73",
+   "text": "A worker can choose how to be paid for 20 hours of work. Plan 1 pays $25.00 per hour. Plan"
+  },
+  "10225": {
+   "id": "U3-19",
+   "v": 8,
+   "h": "e707596964",
+   "text": "A worker can choose how to be paid for 30 hours of work. Plan 1 pays $15.00 per hour. Plan"
+  },
+  "10226": {
+   "id": "U3-19",
+   "v": 9,
+   "h": "16d2981041",
+   "text": "A worker can choose how to be paid for 30 hours of work. Plan 1 pays $12.00 per hour. Plan"
+  },
+  "10227": {
+   "id": "U3-19",
+   "v": -1,
+   "h": "8ada0a3d46",
+   "text": "A worker can choose how to be paid for 30 hours of work. Plan 1 pays $25.00 per hour. Plan"
+  },
+  "10228": {
+   "id": "U3-20",
+   "v": 0,
+   "h": "2045e65859",
+   "text": "A farm has 60% set aside for corn. The remaining 120 acres is for beans. What is the total"
+  },
+  "10229": {
+   "id": "U3-20",
+   "v": 1,
+   "h": "336be60dd9",
+   "text": "A farm has 75% set aside for corn. The remaining 125 acres is for beans. What is the total"
+  },
+  "10230": {
+   "id": "U3-20",
+   "v": 2,
+   "h": "e297e34656",
+   "text": "A farm has 70% set aside for corn. The remaining 150 acres is for beans. What is the total"
+  },
+  "10231": {
+   "id": "U3-20",
+   "v": 3,
+   "h": "30ce515581",
+   "text": "A farm has 75% set aside for corn. The remaining 200 acres is for beans. What is the total"
+  },
+  "10232": {
+   "id": "U3-20",
+   "v": 4,
+   "h": "9f681a3f7f",
+   "text": "A school's field has 20% set aside for the garden. The remaining 960 square feet is for th"
+  },
+  "10233": {
+   "id": "U3-20",
+   "v": 5,
+   "h": "2ac44eca9c",
+   "text": "A farm has 25% set aside for corn. The remaining 300 acres is for beans. What is the total"
+  },
+  "10234": {
+   "id": "U3-20",
+   "v": 6,
+   "h": "1381af09fc",
+   "text": "A farm has 30% set aside for corn. The remaining 140 acres is for beans. What is the total"
+  },
+  "10235": {
+   "id": "U3-20",
+   "v": 7,
+   "h": "ee7760f1e0",
+   "text": "A school's field has 75% set aside for the garden. The remaining 100 square feet is for th"
+  },
+  "10236": {
+   "id": "U3-20",
+   "v": 8,
+   "h": "19b081072e",
+   "text": "A school's field has 40% set aside for the garden. The remaining 300 square feet is for th"
+  },
+  "10237": {
+   "id": "U3-20",
+   "v": 9,
+   "h": "a75eeebed5",
+   "text": "A school's field has 75% set aside for the garden. The remaining 75 square feet is for the"
+  },
+  "10238": {
+   "id": "U3-20",
+   "v": -1,
+   "h": "8790e80993",
+   "text": "A school's field has 20% set aside for the garden. The remaining 320 square feet is for th"
+  },
+  "10239": {
+   "id": "U3-21",
+   "v": 0,
+   "h": "2c77d124f3",
+   "text": "A cafe adds an automatic 20% charge to the bill for any group of 8 or more. A group of 8 h"
+  },
+  "10240": {
+   "id": "U3-21",
+   "v": 1,
+   "h": "bf9179e678",
+   "text": "A cafe adds an automatic 18% charge to the bill for any group of 8 or more. A group of 8 h"
+  },
+  "10241": {
+   "id": "U3-21",
+   "v": 2,
+   "h": "7668c9f34b",
+   "text": "A cafe adds an automatic 15% charge to the bill for any group of 8 or more. A group of 8 h"
+  },
+  "10242": {
+   "id": "U3-21",
+   "v": 3,
+   "h": "1f9d470fbf",
+   "text": "A cafe adds an automatic 15% charge to the bill for any group of 10 or more. A group of 10"
+  },
+  "10243": {
+   "id": "U3-21",
+   "v": 4,
+   "h": "50f0538440",
+   "text": "A cafe adds an automatic 18% charge to the bill for any group of 10 or more. A group of 10"
+  },
+  "10244": {
+   "id": "U3-21",
+   "v": 5,
+   "h": "49567730e0",
+   "text": "A cafe adds an automatic 18% charge to the bill for any group of 8 or more. A group of 8 h"
+  },
+  "10245": {
+   "id": "U3-21",
+   "v": 6,
+   "h": "5a1bcf4f30",
+   "text": "A cafe adds an automatic 20% charge to the bill for any group of 6 or more. A group of 6 h"
+  },
+  "10246": {
+   "id": "U3-21",
+   "v": 7,
+   "h": "609e4e9208",
+   "text": "A cafe adds an automatic 20% charge to the bill for any group of 6 or more. A group of 6 h"
+  },
+  "10247": {
+   "id": "U3-21",
+   "v": 8,
+   "h": "779622a5da",
+   "text": "A cafe adds an automatic 15% charge to the bill for any group of 10 or more. A group of 10"
+  },
+  "10248": {
+   "id": "U3-21",
+   "v": 9,
+   "h": "492afaf32b",
+   "text": "A cafe adds an automatic 18% charge to the bill for any group of 8 or more. A group of 8 h"
+  },
+  "10249": {
+   "id": "U3-21",
+   "v": -1,
+   "h": "be180f574f",
+   "text": "A cafe adds an automatic 20% charge to the bill for any group of 10 or more. A group of 10"
   }
  }
 }
