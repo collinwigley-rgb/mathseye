@@ -269,11 +269,11 @@ SOLVE_CHOICE = {"U3-09": _size, "U3-12": _compare, "U3-14": _which}
 import units.unit3_more   # noqa: E402,F401  new families (U3-22 onward) register themselves here, after everything above exists
 
 # ---- the first nudge of a percent problem starts with the formula (no numbers). Applied to every family's base problem and every variant.
-FORMULA = {"prop": "Formula: part ÷ whole = percent ÷ 100.", "dec": "Formula: part = percent (as a decimal) × whole."}
+FORMULA = {"prop": "[[F:a/w = p/100]]", "dec": "[[F:a = p × w]]"}
 NO_FORMULA = {"U3-08"}                       # percent -> decimal conversion: no formula applies
 def _with_formula(sub, typ, v, pid):
     cs = BASE.get((sub, typ), []); k = "prop" if ("percent-proportion" in cs or "find-whole" in cs) else ("dec" if any(c in cs for c in ("percent-of", "tax-tip", "over-100")) else None)
-    if k and v["kind"] == "num" and pid not in NO_FORMULA and not v["hints"][0].startswith("Formula"): v["hints"][0] = FORMULA[k] + " " + v["hints"][0]
+    if k and v["kind"] == "num" and pid not in NO_FORMULA and not v["hints"][0].startswith("[[F:"): v["hints"][0] = FORMULA[k] + " " + v["hints"][0]
 def _wrap(pid, sub, typ, g):
     def w(r): v = g(r); _with_formula(sub, typ, v, pid); return v
     return w

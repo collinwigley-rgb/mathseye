@@ -76,6 +76,10 @@ table.t{border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:1.2
 .pad .go{grid-column:span 4;min-height:60px;background:var(--accent);color:var(--accent-fg);font-weight:700;font-size:1.2941rem}
 .opts{display:flex;flex-direction:column;gap:12px}.opts button{background:var(--panel2);padding:18px 20px;text-align:left;font-size:1.2353rem;min-height:66px;border:3px solid transparent}
 .opts button[aria-pressed=true]{border-color:var(--accent)}
+.fml{display:flex;align-items:center;gap:14px;margin:2px 0 8px;font-family:var(--display);font-size:1.5rem;font-variant-numeric:tabular-nums}.fml b{font-weight:600}
+.ffr{display:inline-flex;flex-direction:column;align-items:center;gap:2px}.ffr .ffn{padding:0 10px 4px;border-bottom:3px solid currentColor}.ffr .ffd{padding:4px 10px 0}
+.fv{display:inline-block;min-width:1.7em;padding:2px 10px;border-radius:10px;text-align:center;font-style:italic}.fv.a{background:var(--accent);color:var(--accent-fg)}.fv.w{background:var(--panel);color:var(--fg);border:2px solid var(--accent)}.fv.p{background:var(--panel);color:var(--fg);border:2px dashed var(--accent)}
+.fkey{display:flex;flex-wrap:wrap;gap:4px 16px;margin:0 0 8px;font-size:.9412rem}.fkey .fv{font-size:.8235rem;min-width:0;padding:0 8px;margin-right:4px}
 .say{margin:0;padding:14px 18px;border-radius:18px;background:var(--panel2);border-left:5px solid var(--accent)}
 .say.win{background:var(--good-bg);border-left-color:var(--good);font-weight:600}
 .nudges{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
@@ -222,6 +226,11 @@ const today = () => new Date().toISOString().slice(0,10);
 const bump = () => { if (save.day.d !== today()) save.day = {d:today(), n:0}; save.day.n++; };
 const $ = (h) => { const t = document.createElement("template"); t.innerHTML = h.trim(); return t.content.firstChild; };
 const esc = (s) => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const hintHTML = h => { const s = String(h), m = /^\[\[F:(.+?)\]\]\s*/.exec(s), rest = esc(m ? s.slice(m[0].length) : s); if (!m) return rest; const f = m[1], v = c => `<i class="fv ${c}">${c}</i>`; let box;
+  if (f === "a/w = p/100") box = `<div class="fml" role="img" aria-label="a over w equals p over 100"><span class="ffr"><span class="ffn">${v("a")}</span><span class="ffd">${v("w")}</span></span><b>=</b><span class="ffr"><span class="ffn">${v("p")}</span><span class="ffd">100</span></span></div><div class="fkey"><span>${v("a")} the part</span><span>${v("w")} the whole</span><span>${v("p")} the percent</span></div>`;
+  else if (f === "a = p × w") box = `<div class="fml" role="img" aria-label="a equals p times w">${v("a")}<b>=</b>${v("p")}<b>×</b>${v("w")}</div><div class="fkey"><span>${v("a")} the part</span><span>${v("p")} the percent, as a decimal</span><span>${v("w")} the whole</span></div>`;
+  else box = `<div class="fml">${esc(f)}</div>`;
+  return box + rest; };
 const LV = {foundation:"Base skill", builds:"Builds on one earlier lesson", mixed:"Mixes several lessons"};
 const LVTXT = {foundation:"This one mostly uses this lesson's skill plus things you learned in earlier grades.", builds:"This one uses this lesson's skill together with one earlier lesson from this unit.", mixed:"This one combines several lessons. If you get stuck, try the earlier lessons first."};
 const WIN = ["Nailed it.","Clean take.","On beat.","That's the one.","Stage-ready."], WIN_HELPED = WIN.filter(w => w !== "Clean take.");   // "Clean take." only when it really was clean
@@ -438,7 +447,7 @@ mission(){ const m = save.mission;
     updChip();
     fx.innerHTML = ""; if (!res.done && ((p.facts || []).length || (p.shortcut || []).length)) { const b = $(`<button>Math facts that could help ›</button>`); b.onclick = () => openSheet("facts", p); fx.append(b); }
     inp.innerHTML = ""; say.hidden = !st.msg; say.innerHTML = esc(st.msg) + (st.win ? `<p class="ans">Answer: ${esc(p.show)}</p>${shortWhy(p) ? `<p class="ans why">Why: ${esc(shortWhy(p))}</p>` : ""}` : ""); say.className = "say" + (st.win ? " win pop" : "");
-    nud.innerHTML = p.hints.slice(0, res.hints).map(h => `<li class="say">${esc(h)}</li>`).join(""); pic.innerHTML = p.bars ? (st.steps || res.done ? barModel(p.bars, true) : res.hints >= 2 ? barModel(p.bars, false) : "") : ""; act.innerHTML = "";
+    nud.innerHTML = p.hints.slice(0, res.hints).map(h => `<li class="say">${hintHTML(h)}</li>`).join(""); pic.innerHTML = p.bars ? (st.steps || res.done ? barModel(p.bars, true) : res.hints >= 2 ? barModel(p.bars, false) : "") : ""; act.innerHTML = "";
     if (!solved) {
       if (p.kind === "choice") { const o = $(`<div class="opts">${p.options.map((t,i)=>`<button aria-pressed="${st.pick===i}" data-i="${i}">${esc(t)}</button>`).join("")}</div>`); o.onclick = e => { const b = e.target.closest("button"); if (b) { st.pick = +b.dataset.i; draw(); } }; inp.append(o); }
       else { inp.append($(`<div class="answer" aria-live="polite">${st.input ? esc(st.input) : '<span class="ph">Tap the numbers below</span>'}</div>`), $(`<p class="tip">${p.pct ? "Answer with a number, like 72 or 72%." : "Answer with a number like 3/4 or 1 1/2. Use ( ) to write the setup first."}</p>`));
@@ -509,7 +518,7 @@ testQ(){ const T = S.test, p = T.list[T.i]; const el = $(`<div class="stack"></d
     if (O.help) helpDraw(); };
   /* Help (only when the option is on): hints one at a time, then the steps; a small Help menu. */
   const helpDraw = () => { const nud = c.querySelector(".nudges"), stp = c.querySelector(".steps2"), row = c.querySelector(".hrow"), h = T.hints[T.i] || 0, shown = !!T.steps[T.i];
-    nud.innerHTML = p.hints.slice(0, h).map(x => `<li class="say">${esc(x)}</li>`).join(""); stp.innerHTML = shown ? `<div class="say"><b>How it works</b><ol class="steps">${p.steps.map(x => `<li>${esc(x)}</li>`).join("")}</ol></div>` : "";
+    nud.innerHTML = p.hints.slice(0, h).map(x => `<li class="say">${hintHTML(x)}</li>`).join(""); stp.innerHTML = shown ? `<div class="say"><b>How it works</b><ol class="steps">${p.steps.map(x => `<li>${esc(x)}</li>`).join("")}</ol></div>` : "";
     row.innerHTML = ""; if (!shown && !(O.must && T.solved[T.i])) { const b = $(`<button class="btn ghost">${h >= p.hints.length ? "Show me how" : "I'm stuck"}</button>`); b.onclick = () => { if (h >= p.hints.length) T.steps[T.i] = true; else T.hints[T.i] = h + 1; keep(); helpDraw(); }; row.append(b); }
     const hb = $(`<button class="btn ghost">Help</button>`); hb.onclick = () => testHelp(p); row.append(hb); };
   const testHelp = q => { const root = document.getElementById("sheet"); root.innerHTML = ""; const bg = $(`<div class="sheetbg"><div class="sheet pop" role="dialog" aria-modal="true" aria-label="Help"><h2>Need something else?</h2><button class="btn" id="w">Why am I learning this?</button><button class="btn" id="u">What does this use?</button>${(q.facts || []).length || (q.shortcut || []).length ? '<button class="btn" id="f">Math facts that could help</button>' : ""}<button class="btn primary" id="c">Back to the question</button></div></div>`);
