@@ -24,3 +24,5 @@ Build the review the same way: add families tagged to the lessons it covers, the
 
 ## Standard: four hints on every problem
 Every Study Guide family, and every homework problem in the private pack, has **exactly four nudges, in this order**: (1) what to look at, (2) the method, (3) the setup, (4) a last-resort different way in: an estimate or size check, a break-apart (130% = 100% + 30%), or what to compare. A hint never states the result. `check_families.py` (public) and `verify_unit3.py` (private, `tools/unit3_hint4.py`) fail a problem with fewer. The app shows however many a problem has; nothing in the templates assumes three.
+
+**Percent problems start hint 1 with the formula, no numbers:** `Formula: part ÷ whole = percent ÷ 100.` (proportion problems) or `Formula: part = percent (as a decimal) × whole.` (percent-of problems). It is added automatically from the problem's concept tags (`_with_formula` in `unit3.py`; homework: `FORMULA` in the private `author_unit3.py`). Skip a problem with `NO_FORMULA` when no formula fits (estimating, comparing, converting a percent to a decimal).

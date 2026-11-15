@@ -80,3 +80,4 @@ Problems 7-20 posted to Unit 3 Homework (typed checks, "why" notes, bar-diagram 
 2026-11-15: Homework home shows a separate 'Lesson N · Additional Practice' tile next to each lesson's tile (S.part in homework_template).
 2026-11-15: Homework landscape redo: problem screen is two columns (problem + nudges left, answer box/keypad/buttons right), typed answer box visible from the start, filler line and top banner removed, lesson list in two columns. Learn cards not yet reworked.
 2026-11-15: Standard set: every problem has four hints (Study families + private homework pack). Study/homework templates no longer assume three.
+2026-11-15: First hint of percent problems starts with the formula (no numbers): homework (private author script) and Study families (_with_formula).
