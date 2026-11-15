@@ -215,7 +215,7 @@ function newAlt(p){ const bySub = DATA.problems.filter(x => x.sub === p.sub && t
   for (let i = 0; i < 6; i++) { pick = all[Math.floor(Math.random() * all.length)]; if (!S.alt || pick.text !== S.alt.p.text) break; }
   S.alt = {p:pick, input:"", pick:null, hints:0, tries:0, solved:false, steps:false, msg:"", win:false}; }
 
-const blanks = t => esc(t).replace(/___+/g, '<span class="blank" role="img" aria-label="blank"></span>');
+const blanks = t => esc(t).replace(/___+/g, '<span class="blank" role="img" aria-label="blank"></span>').replace(/(?<=[.?!)%\w]) {1,3}(?=(?:[a-d]\.|PART [A-D]) ?(?:[A-Z$0-9(]))/g, '<span class="pbk"></span>');   // a. / b. / PART A / PART B each start a new line
 const hasAlt = p => DATA.problems.some(x => x.sub === p.sub && typedOnly(x));
 const orderedIn = sub => SHEETS.flatMap(([sh]) => packBy(sub).filter(p => p.sheet === sh));
 const prevOf = p => { const l = orderedIn(p.sub), i = l.findIndex(x => x.id === p.id); return i > 0 ? l[i - 1] : null; };
