@@ -13,5 +13,5 @@ def g_discount(r):                                                   # 3.3 H: pr
     R = r.choice([20, 40, 50, 60, 80, 120, 150, 200]); p = r.choice([10, 15, 20, 25, 30, 40, 50]); item = r.choice(["hoodie", "keyboard", "tent", "pair of headphones", "skateboard"])
     off = F(p, 100) * R; sale = R - off
     return numv(f"The regular price is {money(R)}. It is {p}% off. What is the sale price of the {item} (in dollars)?", sale,
-      ["The question asks for the SALE price. How much comes off first?", f"Find {p}% of {R}.", "Then take that amount away from the regular price."],
+      ["The question asks for the SALE price. How much comes off first?", f"Find {p}% of {R}.", "Then take that amount away from the regular price.", f"Take the amount off first, then subtract. Check: you pay {100-p}% of the regular price, so the sale price is less than {R}."],
       [f"Amount off: {fmt(F(p,100))} × {R} = {fmt(off)}", f"Sale price: {R} − {fmt(off)} = {fmt(sale)}", f"The sale price is {money(sale)}.", f"Check: you pay {100-p}% of the regular price."], unit="dollars", show=money(sale))

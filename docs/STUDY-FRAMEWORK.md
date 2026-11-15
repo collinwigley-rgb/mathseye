@@ -21,3 +21,6 @@ Unit 2's study guide was built by hand: a base problem per skill (`unit2_problem
 
 ## When the real test review arrives
 Build the review the same way: add families tagged to the lessons it covers, then use the review scopes in `docs/REVIEW-SCOPES.md` (every lesson taught so far, the midterm window, the semester).
+
+## Standard: four hints on every problem
+Every Study Guide family, and every homework problem in the private pack, has **exactly four nudges, in this order**: (1) what to look at, (2) the method, (3) the setup, (4) a last-resort different way in: an estimate or size check, a break-apart (130% = 100% + 30%), or what to compare. A hint never states the result. `check_families.py` (public) and `verify_unit3.py` (private, `tools/unit3_hint4.py`) fail a problem with fewer. The app shows however many a problem has; nothing in the templates assumes three.

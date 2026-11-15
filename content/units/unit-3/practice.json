@@ -97,7 +97,8 @@
    "hints": [
     "What is the whole? What is the percent?",
     "Write 60% as a decimal: move the point two places left.",
-    "Multiply the whole by that decimal."
+    "Multiply the whole by that decimal.",
+    "A friendly check: 10% of 480 is one tenth of it. Use that to see if your answer is about right."
    ],
    "steps": [
     "60% = 0.6",
@@ -130,7 +131,8 @@
      "hints": [
       "What is the whole? What is the percent?",
       "Write 15% as a decimal: move the point two places left.",
-      "Multiply the whole by that decimal."
+      "Multiply the whole by that decimal.",
+      "A friendly check: 10% of 480 is one tenth of it. Use that to see if your answer is about right."
      ],
      "steps": [
       "15% = 0.15",
@@ -156,7 +158,8 @@
      "hints": [
       "What is the whole? What is the percent?",
       "Write 35% as a decimal: move the point two places left.",
-      "Multiply the whole by that decimal."
+      "Multiply the whole by that decimal.",
+      "A friendly check: 10% of 480 is one tenth of it. Use that to see if your answer is about right."
      ],
      "steps": [
       "35% = 0.35",
@@ -182,7 +185,8 @@
      "hints": [
       "What is the whole? What is the percent?",
       "Write 30% as a decimal: move the point two places left.",
-      "Multiply the whole by that decimal."
+      "Multiply the whole by that decimal.",
+      "A friendly check: 10% of 120 is one tenth of it. Use that to see if your answer is about right."
      ],
      "steps": [
       "30% = 0.3",
@@ -207,7 +211,8 @@
      "hints": [
       "What is the whole? What is the percent?",
       "Write 60% as a decimal: move the point two places left.",
-      "Multiply the whole by that decimal."
+      "Multiply the whole by that decimal.",
+      "A friendly check: 10% of 500 is one tenth of it. Use that to see if your answer is about right."
      ],
      "steps": [
       "60% = 0.6",
@@ -232,7 +237,8 @@
      "hints": [
       "What is the whole? What is the percent?",
       "Write 20% as a decimal: move the point two places left.",
-      "Multiply the whole by that decimal."
+      "Multiply the whole by that decimal.",
+      "A friendly check: 10% of 800 is one tenth of it. Use that to see if your answer is about right."
      ],
      "steps": [
       "20% = 0.2",
@@ -257,7 +263,8 @@
      "hints": [
       "What is the whole? What is the percent?",
       "Write 35% as a decimal: move the point two places left.",
-      "Multiply the whole by that decimal."
+      "Multiply the whole by that decimal.",
+      "A friendly check: 10% of 160 is one tenth of it. Use that to see if your answer is about right."
      ],
      "steps": [
       "35% = 0.35",
@@ -283,7 +290,8 @@
      "hints": [
       "What is the whole? What is the percent?",
       "Write 80% as a decimal: move the point two places left.",
-      "Multiply the whole by that decimal."
+      "Multiply the whole by that decimal.",
+      "A friendly check: 10% of 500 is one tenth of it. Use that to see if your answer is about right."
      ],
      "steps": [
       "80% = 0.8",
@@ -308,7 +316,8 @@
      "hints": [
       "What is the whole? What is the percent?",
       "Write 60% as a decimal: move the point two places left.",
-      "Multiply the whole by that decimal."
+      "Multiply the whole by that decimal.",
+      "A friendly check: 10% of 250 is one tenth of it. Use that to see if your answer is about right."
      ],
      "steps": [
       "60% = 0.6",
@@ -333,7 +342,8 @@
      "hints": [
       "What is the whole? What is the percent?",
       "Write 60% as a decimal: move the point two places left.",
-      "Multiply the whole by that decimal."
+      "Multiply the whole by that decimal.",
+      "A friendly check: 10% of 300 is one tenth of it. Use that to see if your answer is about right."
      ],
      "steps": [
       "60% = 0.6",
@@ -358,7 +368,8 @@
      "hints": [
       "What is the whole? What is the percent?",
       "Write 60% as a decimal: move the point two places left.",
-      "Multiply the whole by that decimal."
+      "Multiply the whole by that decimal.",
+      "A friendly check: 10% of 120 is one tenth of it. Use that to see if your answer is about right."
      ],
      "steps": [
       "60% = 0.6",
@@ -388,7 +399,8 @@
    "hints": [
     "Is 150% more or less than 100%? So will the answer be taller or shorter than 24?",
     "Write 150% as a decimal: 1.5.",
-    "Multiply 24 by 1.5."
+    "Multiply 24 by 1.5.",
+    "Break 150% into 100% + 50%. 100% is 24. Find the extra 50% and add it on."
    ],
    "steps": [
     "150% = 1.5",
@@ -423,7 +435,8 @@
      "hints": [
       "Is 200% more or less than 100%? So will the answer be taller or shorter than 12?",
       "Write 200% as a decimal: 2.",
-      "Multiply 12 by 2."
+      "Multiply 12 by 2.",
+      "Break 200% into 100% + 100%. 100% is 12. Find the extra 100% and add it on."
      ],
      "steps": [
       "200% = 2",
@@ -447,7 +460,8 @@
      "hints": [
       "Is 250% more or less than 100%? So will the answer be taller or shorter than 50?",
       "Write 250% as a decimal: 2.5.",
-      "Multiply 50 by 2.5."
+      "Multiply 50 by 2.5.",
+      "Break 250% into 100% + 150%. 100% is 50. Find the extra 150% and add it on."
      ],
      "steps": [
       "250% = 2.5",
@@ -472,7 +486,8 @@
      "hints": [
       "Is 200% more or less than 100%? So will the answer be taller or shorter than 30?",
       "Write 200% as a decimal: 2.",
-      "Multiply 30 by 2."
+      "Multiply 30 by 2.",
+      "Break 200% into 100% + 100%. 100% is 30. Find the extra 100% and add it on."
      ],
      "steps": [
       "200% = 2",
@@ -496,7 +511,8 @@
      "hints": [
       "Is 125% more or less than 100%? So will the answer be taller or shorter than 12?",
       "Write 125% as a decimal: 1.25.",
-      "Multiply 12 by 1.25."
+      "Multiply 12 by 1.25.",
+      "Break 125% into 100% + 25%. 100% is 12. Find the extra 25% and add it on."
      ],
      "steps": [
       "125% = 1.25",
@@ -522,7 +538,8 @@
      "hints": [
       "Is 150% more or less than 100%? So will the answer be taller or shorter than 8?",
       "Write 150% as a decimal: 1.5.",
-      "Multiply 8 by 1.5."
+      "Multiply 8 by 1.5.",
+      "Break 150% into 100% + 50%. 100% is 8. Find the extra 50% and add it on."
      ],
      "steps": [
       "150% = 1.5",
@@ -548,7 +565,8 @@
      "hints": [
       "Is 175% more or less than 100%? So will the answer be taller or shorter than 20?",
       "Write 175% as a decimal: 1.75.",
-      "Multiply 20 by 1.75."
+      "Multiply 20 by 1.75.",
+      "Break 175% into 100% + 75%. 100% is 20. Find the extra 75% and add it on."
      ],
      "steps": [
       "175% = 1.75",
@@ -574,7 +592,8 @@
      "hints": [
       "Is 175% more or less than 100%? So will the answer be taller or shorter than 12?",
       "Write 175% as a decimal: 1.75.",
-      "Multiply 12 by 1.75."
+      "Multiply 12 by 1.75.",
+      "Break 175% into 100% + 75%. 100% is 12. Find the extra 75% and add it on."
      ],
      "steps": [
       "175% = 1.75",
@@ -600,7 +619,8 @@
      "hints": [
       "Is 120% more or less than 100%? So will the answer be taller or shorter than 30?",
       "Write 120% as a decimal: 1.2.",
-      "Multiply 30 by 1.2."
+      "Multiply 30 by 1.2.",
+      "Break 120% into 100% + 20%. 100% is 30. Find the extra 20% and add it on."
      ],
      "steps": [
       "120% = 1.2",
@@ -626,7 +646,8 @@
      "hints": [
       "Is 300% more or less than 100%? So will the answer be taller or shorter than 8?",
       "Write 300% as a decimal: 3.",
-      "Multiply 8 by 3."
+      "Multiply 8 by 3.",
+      "Break 300% into 100% + 200%. 100% is 8. Find the extra 200% and add it on."
      ],
      "steps": [
       "300% = 3",
@@ -650,7 +671,8 @@
      "hints": [
       "Is 200% more or less than 100%? So will the answer be taller or shorter than 8?",
       "Write 200% as a decimal: 2.",
-      "Multiply 8 by 2."
+      "Multiply 8 by 2.",
+      "Break 200% into 100% + 100%. 100% is 8. Find the extra 100% and add it on."
      ],
      "steps": [
       "200% = 2",
@@ -679,7 +701,8 @@
    "hints": [
     "The question wants the TOTAL. What is the tax first?",
     "Find 6% of 60.",
-    "Then add the tax to the price."
+    "Then add the tax to the price.",
+    "Check the size: the tax is a small piece of 60, so the total is a bit MORE than 60, never double."
    ],
    "steps": [
     "Tax: 0.06 × 60 = 3.6",
@@ -714,7 +737,8 @@
      "hints": [
       "The question wants the TOTAL. What is the tax first?",
       "Find 5% of 150.",
-      "Then add the tax to the price."
+      "Then add the tax to the price.",
+      "Check the size: the tax is a small piece of 150, so the total is a bit MORE than 150, never double."
      ],
      "steps": [
       "Tax: 0.05 × 150 = 7.5",
@@ -740,7 +764,8 @@
      "hints": [
       "The question wants the TOTAL. What is the tax first?",
       "Find 4% of 40.",
-      "Then add the tax to the price."
+      "Then add the tax to the price.",
+      "Check the size: the tax is a small piece of 40, so the total is a bit MORE than 40, never double."
      ],
      "steps": [
       "Tax: 0.04 × 40 = 1.6",
@@ -766,7 +791,8 @@
      "hints": [
       "The question wants the TOTAL. What is the tax first?",
       "Find 8% of 25.",
-      "Then add the tax to the price."
+      "Then add the tax to the price.",
+      "Check the size: the tax is a small piece of 25, so the total is a bit MORE than 25, never double."
      ],
      "steps": [
       "Tax: 0.08 × 25 = 2",
@@ -792,7 +818,8 @@
      "hints": [
       "The question wants the TOTAL. What is the tax first?",
       "Find 5% of 40.",
-      "Then add the tax to the price."
+      "Then add the tax to the price.",
+      "Check the size: the tax is a small piece of 40, so the total is a bit MORE than 40, never double."
      ],
      "steps": [
       "Tax: 0.05 × 40 = 2",
@@ -818,7 +845,8 @@
      "hints": [
       "The question wants the TOTAL. What is the tax first?",
       "Find 10% of 80.",
-      "Then add the tax to the price."
+      "Then add the tax to the price.",
+      "Check the size: the tax is a small piece of 80, so the total is a bit MORE than 80, never double."
      ],
      "steps": [
       "Tax: 0.1 × 80 = 8",
@@ -844,7 +872,8 @@
      "hints": [
       "The question wants the TOTAL. What is the tax first?",
       "Find 6% of 25.",
-      "Then add the tax to the price."
+      "Then add the tax to the price.",
+      "Check the size: the tax is a small piece of 25, so the total is a bit MORE than 25, never double."
      ],
      "steps": [
       "Tax: 0.06 × 25 = 1.5",
@@ -870,7 +899,8 @@
      "hints": [
       "The question wants the TOTAL. What is the tax first?",
       "Find 5% of 120.",
-      "Then add the tax to the price."
+      "Then add the tax to the price.",
+      "Check the size: the tax is a small piece of 120, so the total is a bit MORE than 120, never double."
      ],
      "steps": [
       "Tax: 0.05 × 120 = 6",
@@ -896,7 +926,8 @@
      "hints": [
       "The question wants the TOTAL. What is the tax first?",
       "Find 10% of 40.",
-      "Then add the tax to the price."
+      "Then add the tax to the price.",
+      "Check the size: the tax is a small piece of 40, so the total is a bit MORE than 40, never double."
      ],
      "steps": [
       "Tax: 0.1 × 40 = 4",
@@ -922,7 +953,8 @@
      "hints": [
       "The question wants the TOTAL. What is the tax first?",
       "Find 10% of 50.",
-      "Then add the tax to the price."
+      "Then add the tax to the price.",
+      "Check the size: the tax is a small piece of 50, so the total is a bit MORE than 50, never double."
      ],
      "steps": [
       "Tax: 0.1 × 50 = 5",
@@ -948,7 +980,8 @@
      "hints": [
       "The question wants the TOTAL. What is the tax first?",
       "Find 4% of 150.",
-      "Then add the tax to the price."
+      "Then add the tax to the price.",
+      "Check the size: the tax is a small piece of 150, so the total is a bit MORE than 150, never double."
      ],
      "steps": [
       "Tax: 0.04 × 150 = 6",
@@ -979,7 +1012,8 @@
    "hints": [
     "Which number is the part? Which is the whole?",
     "Write part over whole = P over 100: 15/25 = P/100.",
-    "Multiply both sides by 100."
+    "Multiply both sides by 100.",
+    "Divide 15 by 25 first, then move the decimal point two places right to make it a percent."
    ],
    "steps": [
     "15/25 = P/100",
@@ -1014,7 +1048,8 @@
      "hints": [
       "Which number is the part? Which is the whole?",
       "Write part over whole = P over 100: 175/250 = P/100.",
-      "Multiply both sides by 100."
+      "Multiply both sides by 100.",
+      "Divide 175 by 250 first, then move the decimal point two places right to make it a percent."
      ],
      "steps": [
       "175/250 = P/100",
@@ -1040,7 +1075,8 @@
      "hints": [
       "Which number is the part? Which is the whole?",
       "Write part over whole = P over 100: 16/40 = P/100.",
-      "Multiply both sides by 100."
+      "Multiply both sides by 100.",
+      "Divide 16 by 40 first, then move the decimal point two places right to make it a percent."
      ],
      "steps": [
       "16/40 = P/100",
@@ -1066,7 +1102,8 @@
      "hints": [
       "Which number is the part? Which is the whole?",
       "Write part over whole = P over 100: 140/200 = P/100.",
-      "Multiply both sides by 100."
+      "Multiply both sides by 100.",
+      "Divide 140 by 200 first, then move the decimal point two places right to make it a percent."
      ],
      "steps": [
       "140/200 = P/100",
@@ -1092,7 +1129,8 @@
      "hints": [
       "Which number is the part? Which is the whole?",
       "Write part over whole = P over 100: 3/25 = P/100.",
-      "Multiply both sides by 100."
+      "Multiply both sides by 100.",
+      "Divide 3 by 25 first, then move the decimal point two places right to make it a percent."
      ],
      "steps": [
       "3/25 = P/100",
@@ -1118,7 +1156,8 @@
      "hints": [
       "Which number is the part? Which is the whole?",
       "Write part over whole = P over 100: 5/25 = P/100.",
-      "Multiply both sides by 100."
+      "Multiply both sides by 100.",
+      "Divide 5 by 25 first, then move the decimal point two places right to make it a percent."
      ],
      "steps": [
       "5/25 = P/100",
@@ -1144,7 +1183,8 @@
      "hints": [
       "Which number is the part? Which is the whole?",
       "Write part over whole = P over 100: 75/250 = P/100.",
-      "Multiply both sides by 100."
+      "Multiply both sides by 100.",
+      "Divide 75 by 250 first, then move the decimal point two places right to make it a percent."
      ],
      "steps": [
       "75/250 = P/100",
@@ -1170,7 +1210,8 @@
      "hints": [
       "Which number is the part? Which is the whole?",
       "Write part over whole = P over 100: 18/40 = P/100.",
-      "Multiply both sides by 100."
+      "Multiply both sides by 100.",
+      "Divide 18 by 40 first, then move the decimal point two places right to make it a percent."
      ],
      "steps": [
       "18/40 = P/100",
@@ -1196,7 +1237,8 @@
      "hints": [
       "Which number is the part? Which is the whole?",
       "Write part over whole = P over 100: 6/40 = P/100.",
-      "Multiply both sides by 100."
+      "Multiply both sides by 100.",
+      "Divide 6 by 40 first, then move the decimal point two places right to make it a percent."
      ],
      "steps": [
       "6/40 = P/100",
@@ -1222,7 +1264,8 @@
      "hints": [
       "Which number is the part? Which is the whole?",
       "Write part over whole = P over 100: 70/200 = P/100.",
-      "Multiply both sides by 100."
+      "Multiply both sides by 100.",
+      "Divide 70 by 200 first, then move the decimal point two places right to make it a percent."
      ],
      "steps": [
       "70/200 = P/100",
@@ -1248,7 +1291,8 @@
      "hints": [
       "Which number is the part? Which is the whole?",
       "Write part over whole = P over 100: 12/20 = P/100.",
-      "Multiply both sides by 100."
+      "Multiply both sides by 100.",
+      "Divide 12 by 20 first, then move the decimal point two places right to make it a percent."
      ],
      "steps": [
       "12/20 = P/100",
@@ -1279,7 +1323,8 @@
    "hints": [
     "Which number is the whole? What is the percent?",
     "Write part/whole = P/100 with the part as n: n/30 = 35/100.",
-    "Multiply both sides by 30."
+    "Multiply both sides by 30.",
+    "Check the size: is 35% more or less than the whole? Your answer should be smaller than 30."
    ],
    "steps": [
     "n/30 = 35/100",
@@ -1319,7 +1364,8 @@
      "hints": [
       "Which number is the whole? What is the percent?",
       "Write part/whole = P/100 with the part as n: n/60 = 30/100.",
-      "Multiply both sides by 60."
+      "Multiply both sides by 60.",
+      "Check the size: is 30% more or less than the whole? Your answer should be smaller than 60."
      ],
      "steps": [
       "n/60 = 30/100",
@@ -1344,7 +1390,8 @@
      "hints": [
       "Which number is the whole? What is the percent?",
       "Write part/whole = P/100 with the part as n: n/120 = 175/100.",
-      "Multiply both sides by 120."
+      "Multiply both sides by 120.",
+      "Check the size: is 175% more or less than the whole? Your answer should be bigger than 120."
      ],
      "steps": [
       "n/120 = 175/100",
@@ -1370,7 +1417,8 @@
      "hints": [
       "Which number is the whole? What is the percent?",
       "Write part/whole = P/100 with the part as n: n/75 = 35/100.",
-      "Multiply both sides by 75."
+      "Multiply both sides by 75.",
+      "Check the size: is 35% more or less than the whole? Your answer should be smaller than 75."
      ],
      "steps": [
       "n/75 = 35/100",
@@ -1396,7 +1444,8 @@
      "hints": [
       "Which number is the whole? What is the percent?",
       "Write part/whole = P/100 with the part as n: n/250 = 20/100.",
-      "Multiply both sides by 250."
+      "Multiply both sides by 250.",
+      "Check the size: is 20% more or less than the whole? Your answer should be smaller than 250."
      ],
      "steps": [
       "n/250 = 20/100",
@@ -1421,7 +1470,8 @@
      "hints": [
       "Which number is the whole? What is the percent?",
       "Write part/whole = P/100 with the part as n: n/30 = 35/100.",
-      "Multiply both sides by 30."
+      "Multiply both sides by 30.",
+      "Check the size: is 35% more or less than the whole? Your answer should be smaller than 30."
      ],
      "steps": [
       "n/30 = 35/100",
@@ -1447,7 +1497,8 @@
      "hints": [
       "Which number is the whole? What is the percent?",
       "Write part/whole = P/100 with the part as n: n/20 = 175/100.",
-      "Multiply both sides by 20."
+      "Multiply both sides by 20.",
+      "Check the size: is 175% more or less than the whole? Your answer should be bigger than 20."
      ],
      "steps": [
       "n/20 = 175/100",
@@ -1473,7 +1524,8 @@
      "hints": [
       "Which number is the whole? What is the percent?",
       "Write part/whole = P/100 with the part as n: n/12.5 = 35/100.",
-      "Multiply both sides by 12.5."
+      "Multiply both sides by 12.5.",
+      "Check the size: is 35% more or less than the whole? Your answer should be smaller than 12.5."
      ],
      "steps": [
       "n/12.5 = 35/100",
@@ -1499,7 +1551,8 @@
      "hints": [
       "Which number is the whole? What is the percent?",
       "Write part/whole = P/100 with the part as n: n/20 = 150/100.",
-      "Multiply both sides by 20."
+      "Multiply both sides by 20.",
+      "Check the size: is 150% more or less than the whole? Your answer should be bigger than 20."
      ],
      "steps": [
       "n/20 = 150/100",
@@ -1525,7 +1578,8 @@
      "hints": [
       "Which number is the whole? What is the percent?",
       "Write part/whole = P/100 with the part as n: n/250 = 75/100.",
-      "Multiply both sides by 250."
+      "Multiply both sides by 250.",
+      "Check the size: is 75% more or less than the whole? Your answer should be smaller than 250."
      ],
      "steps": [
       "n/250 = 75/100",
@@ -1550,7 +1604,8 @@
      "hints": [
       "Which number is the whole? What is the percent?",
       "Write part/whole = P/100 with the part as n: n/75 = 175/100.",
-      "Multiply both sides by 75."
+      "Multiply both sides by 75.",
+      "Check the size: is 175% more or less than the whole? Your answer should be bigger than 75."
      ],
      "steps": [
       "n/75 = 175/100",
@@ -1581,7 +1636,8 @@
    "hints": [
     "Which number is the part? What is the whole, the thing you don't know?",
     "Write 18/w = 60/100.",
-    "Cross-multiply, then divide."
+    "Cross-multiply, then divide.",
+    "Cross-multiply: 60 × w = 18 × 100. Then divide both sides by 60."
    ],
    "steps": [
     "18/w = 60/100",
@@ -1616,7 +1672,8 @@
      "hints": [
       "Which number is the part? What is the whole, the thing you don't know?",
       "Write 20/w = 50/100.",
-      "Cross-multiply, then divide."
+      "Cross-multiply, then divide.",
+      "Cross-multiply: 50 × w = 20 × 100. Then divide both sides by 50."
      ],
      "steps": [
       "20/w = 50/100",
@@ -1641,7 +1698,8 @@
      "hints": [
       "Which number is the part? What is the whole, the thing you don't know?",
       "Write 100/w = 200/100.",
-      "Cross-multiply, then divide."
+      "Cross-multiply, then divide.",
+      "Cross-multiply: 200 × w = 100 × 100. Then divide both sides by 200."
      ],
      "steps": [
       "100/w = 200/100",
@@ -1666,7 +1724,8 @@
      "hints": [
       "Which number is the part? What is the whole, the thing you don't know?",
       "Write 120/w = 200/100.",
-      "Cross-multiply, then divide."
+      "Cross-multiply, then divide.",
+      "Cross-multiply: 200 × w = 120 × 100. Then divide both sides by 200."
      ],
      "steps": [
       "120/w = 200/100",
@@ -1691,7 +1750,8 @@
      "hints": [
       "Which number is the part? What is the whole, the thing you don't know?",
       "Write 75/w = 75/100.",
-      "Cross-multiply, then divide."
+      "Cross-multiply, then divide.",
+      "Cross-multiply: 75 × w = 75 × 100. Then divide both sides by 75."
      ],
      "steps": [
       "75/w = 75/100",
@@ -1713,7 +1773,8 @@
      "hints": [
       "Which number is the part? What is the whole, the thing you don't know?",
       "Write 20/w = 25/100.",
-      "Cross-multiply, then divide."
+      "Cross-multiply, then divide.",
+      "Cross-multiply: 25 × w = 20 × 100. Then divide both sides by 25."
      ],
      "steps": [
       "20/w = 25/100",
@@ -1738,7 +1799,8 @@
      "hints": [
       "Which number is the part? What is the whole, the thing you don't know?",
       "Write 36/w = 60/100.",
-      "Cross-multiply, then divide."
+      "Cross-multiply, then divide.",
+      "Cross-multiply: 60 × w = 36 × 100. Then divide both sides by 60."
      ],
      "steps": [
       "36/w = 60/100",
@@ -1763,7 +1825,8 @@
      "hints": [
       "Which number is the part? What is the whole, the thing you don't know?",
       "Write 120/w = 150/100.",
-      "Cross-multiply, then divide."
+      "Cross-multiply, then divide.",
+      "Cross-multiply: 150 × w = 120 × 100. Then divide both sides by 150."
      ],
      "steps": [
       "120/w = 150/100",
@@ -1788,7 +1851,8 @@
      "hints": [
       "Which number is the part? What is the whole, the thing you don't know?",
       "Write 72/w = 60/100.",
-      "Cross-multiply, then divide."
+      "Cross-multiply, then divide.",
+      "Cross-multiply: 60 × w = 72 × 100. Then divide both sides by 60."
      ],
      "steps": [
       "72/w = 60/100",
@@ -1813,7 +1877,8 @@
      "hints": [
       "Which number is the part? What is the whole, the thing you don't know?",
       "Write 24/w = 40/100.",
-      "Cross-multiply, then divide."
+      "Cross-multiply, then divide.",
+      "Cross-multiply: 40 × w = 24 × 100. Then divide both sides by 40."
      ],
      "steps": [
       "24/w = 40/100",
@@ -1838,7 +1903,8 @@
      "hints": [
       "Which number is the part? What is the whole, the thing you don't know?",
       "Write 48/w = 60/100.",
-      "Cross-multiply, then divide."
+      "Cross-multiply, then divide.",
+      "Cross-multiply: 60 × w = 48 × 100. Then divide both sides by 60."
      ],
      "steps": [
       "48/w = 60/100",
@@ -1868,7 +1934,8 @@
    "hints": [
     "Which number is the part? Which one is the whole you are looking for?",
     "Write 5/w = 0.5/100.",
-    "What do you multiply 0.5 by to get 100? Do the same to 5."
+    "What do you multiply 0.5 by to get 100? Do the same to 5.",
+    "Check the size: the whole should be bigger than 5, because 0.5% is only a slice of it."
    ],
    "steps": [
     "5/w = 0.5/100",
@@ -1904,7 +1971,8 @@
      "hints": [
       "Which number is the part? Which one is the whole you are looking for?",
       "Write 10/w = 0.5/100.",
-      "What do you multiply 0.5 by to get 100? Do the same to 10."
+      "What do you multiply 0.5 by to get 100? Do the same to 10.",
+      "Check the size: the whole should be bigger than 10, because 0.5% is only a slice of it."
      ],
      "steps": [
       "10/w = 0.5/100",
@@ -1926,7 +1994,8 @@
      "hints": [
       "Which number is the part? Which one is the whole you are looking for?",
       "Write 6/w = 1.5/100.",
-      "What do you multiply 1.5 by to get 100? Do the same to 6."
+      "What do you multiply 1.5 by to get 100? Do the same to 6.",
+      "Check the size: the whole should be bigger than 6, because 1.5% is only a slice of it."
      ],
      "steps": [
       "6/w = 1.5/100",
@@ -1948,7 +2017,8 @@
      "hints": [
       "Which number is the part? Which one is the whole you are looking for?",
       "Write 60/w = 1.5/100.",
-      "What do you multiply 1.5 by to get 100? Do the same to 60."
+      "What do you multiply 1.5 by to get 100? Do the same to 60.",
+      "Check the size: the whole should be bigger than 60, because 1.5% is only a slice of it."
      ],
      "steps": [
       "60/w = 1.5/100",
@@ -1970,7 +2040,8 @@
      "hints": [
       "Which number is the part? Which one is the whole you are looking for?",
       "Write 20/w = 2.5/100.",
-      "What do you multiply 2.5 by to get 100? Do the same to 20."
+      "What do you multiply 2.5 by to get 100? Do the same to 20.",
+      "Check the size: the whole should be bigger than 20, because 2.5% is only a slice of it."
      ],
      "steps": [
       "20/w = 2.5/100",
@@ -1992,7 +2063,8 @@
      "hints": [
       "Which number is the part? Which one is the whole you are looking for?",
       "Write 8/w = 0.8/100.",
-      "What do you multiply 0.8 by to get 100? Do the same to 8."
+      "What do you multiply 0.8 by to get 100? Do the same to 8.",
+      "Check the size: the whole should be bigger than 8, because 0.8% is only a slice of it."
      ],
      "steps": [
       "8/w = 0.8/100",
@@ -2014,7 +2086,8 @@
      "hints": [
       "Which number is the part? Which one is the whole you are looking for?",
       "Write 3/w = 1.5/100.",
-      "What do you multiply 1.5 by to get 100? Do the same to 3."
+      "What do you multiply 1.5 by to get 100? Do the same to 3.",
+      "Check the size: the whole should be bigger than 3, because 1.5% is only a slice of it."
      ],
      "steps": [
       "3/w = 1.5/100",
@@ -2036,7 +2109,8 @@
      "hints": [
       "Which number is the part? Which one is the whole you are looking for?",
       "Write 9/w = 0.9/100.",
-      "What do you multiply 0.9 by to get 100? Do the same to 9."
+      "What do you multiply 0.9 by to get 100? Do the same to 9.",
+      "Check the size: the whole should be bigger than 9, because 0.9% is only a slice of it."
      ],
      "steps": [
       "9/w = 0.9/100",
@@ -2058,7 +2132,8 @@
      "hints": [
       "Which number is the part? Which one is the whole you are looking for?",
       "Write 50/w = 2.5/100.",
-      "What do you multiply 2.5 by to get 100? Do the same to 50."
+      "What do you multiply 2.5 by to get 100? Do the same to 50.",
+      "Check the size: the whole should be bigger than 50, because 2.5% is only a slice of it."
      ],
      "steps": [
       "50/w = 2.5/100",
@@ -2080,7 +2155,8 @@
      "hints": [
       "Which number is the part? Which one is the whole you are looking for?",
       "Write 20/w = 0.5/100.",
-      "What do you multiply 0.5 by to get 100? Do the same to 20."
+      "What do you multiply 0.5 by to get 100? Do the same to 20.",
+      "Check the size: the whole should be bigger than 20, because 0.5% is only a slice of it."
      ],
      "steps": [
       "20/w = 0.5/100",
@@ -2102,7 +2178,8 @@
      "hints": [
       "Which number is the part? Which one is the whole you are looking for?",
       "Write 4/w = 0.8/100.",
-      "What do you multiply 0.8 by to get 100? Do the same to 4."
+      "What do you multiply 0.8 by to get 100? Do the same to 4.",
+      "Check the size: the whole should be bigger than 4, because 0.8% is only a slice of it."
      ],
      "steps": [
       "4/w = 0.8/100",
@@ -2129,7 +2206,8 @@
    "hints": [
     "Percent means out of 100. What do you do to the decimal point?",
     "Move the point two places to the left (put in zeros if you need them).",
-    "Start from 0.6."
+    "Start from 0.6.",
+    "Count the places: start at 0.6, slide the point two places left (add zeros if you need them), then read your answer as a decimal."
    ],
    "steps": [
     "0.6% = 0.6 ÷ 100",
@@ -2161,7 +2239,8 @@
      "hints": [
       "Percent means out of 100. What do you do to the decimal point?",
       "Move the point two places to the left (put in zeros if you need them).",
-      "Start from 35."
+      "Start from 35.",
+      "Count the places: start at 35, slide the point two places left (add zeros if you need them), then read your answer as a decimal."
      ],
      "steps": [
       "35% = 35 ÷ 100",
@@ -2185,7 +2264,8 @@
      "hints": [
       "Percent means out of 100. What do you do to the decimal point?",
       "Move the point two places to the left (put in zeros if you need them).",
-      "Start from 2.5."
+      "Start from 2.5.",
+      "Count the places: start at 2.5, slide the point two places left (add zeros if you need them), then read your answer as a decimal."
      ],
      "steps": [
       "2.5% = 2.5 ÷ 100",
@@ -2209,7 +2289,8 @@
      "hints": [
       "Percent means out of 100. What do you do to the decimal point?",
       "Move the point two places to the left (put in zeros if you need them).",
-      "Start from 0.05."
+      "Start from 0.05.",
+      "Count the places: start at 0.05, slide the point two places left (add zeros if you need them), then read your answer as a decimal."
      ],
      "steps": [
       "0.05% = 0.05 ÷ 100",
@@ -2233,7 +2314,8 @@
      "hints": [
       "Percent means out of 100. What do you do to the decimal point?",
       "Move the point two places to the left (put in zeros if you need them).",
-      "Start from 0.25."
+      "Start from 0.25.",
+      "Count the places: start at 0.25, slide the point two places left (add zeros if you need them), then read your answer as a decimal."
      ],
      "steps": [
       "0.25% = 0.25 ÷ 100",
@@ -2257,7 +2339,8 @@
      "hints": [
       "Percent means out of 100. What do you do to the decimal point?",
       "Move the point two places to the left (put in zeros if you need them).",
-      "Start from 12.5."
+      "Start from 12.5.",
+      "Count the places: start at 12.5, slide the point two places left (add zeros if you need them), then read your answer as a decimal."
      ],
      "steps": [
       "12.5% = 12.5 ÷ 100",
@@ -2281,7 +2364,8 @@
      "hints": [
       "Percent means out of 100. What do you do to the decimal point?",
       "Move the point two places to the left (put in zeros if you need them).",
-      "Start from 0.4."
+      "Start from 0.4.",
+      "Count the places: start at 0.4, slide the point two places left (add zeros if you need them), then read your answer as a decimal."
      ],
      "steps": [
       "0.4% = 0.4 ÷ 100",
@@ -2305,7 +2389,8 @@
      "hints": [
       "Percent means out of 100. What do you do to the decimal point?",
       "Move the point two places to the left (put in zeros if you need them).",
-      "Start from 7."
+      "Start from 7.",
+      "Count the places: start at 7, slide the point two places left (add zeros if you need them), then read your answer as a decimal."
      ],
      "steps": [
       "7% = 7 ÷ 100",
@@ -2329,7 +2414,8 @@
      "hints": [
       "Percent means out of 100. What do you do to the decimal point?",
       "Move the point two places to the left (put in zeros if you need them).",
-      "Start from 0.8."
+      "Start from 0.8.",
+      "Count the places: start at 0.8, slide the point two places left (add zeros if you need them), then read your answer as a decimal."
      ],
      "steps": [
       "0.8% = 0.8 ÷ 100",
@@ -2363,7 +2449,8 @@
    "hints": [
     "100% of 12 is 12. Is 300% more or less than that?",
     "300% is 3 times as much as 12.",
-    "Work out 3 × 12 and compare."
+    "Work out 3 × 12 and compare.",
+    "Mark 100 and 500 on a number line. Work out 3 × 12 and see where it lands."
    ],
    "steps": [
     "100% of 12 is 12, so 300% is 3 times 12.",
@@ -2397,7 +2484,8 @@
      "hints": [
       "100% of 12 is 12. Is 250% more or less than that?",
       "250% is 2.5 times as much as 12.",
-      "Work out 2.5 × 12 and compare."
+      "Work out 2.5 × 12 and compare.",
+      "Mark 10 and 100 on a number line. Work out 2.5 × 12 and see where it lands."
      ],
      "steps": [
       "100% of 12 is 12, so 250% is 2.5 times 12.",
@@ -2423,7 +2511,8 @@
      "hints": [
       "100% of 8 is 8. Is 250% more or less than that?",
       "250% is 2.5 times as much as 8.",
-      "Work out 2.5 × 8 and compare."
+      "Work out 2.5 × 8 and compare.",
+      "Mark 100 and 200 on a number line. Work out 2.5 × 8 and see where it lands."
      ],
      "steps": [
       "100% of 8 is 8, so 250% is 2.5 times 8.",
@@ -2449,7 +2538,8 @@
      "hints": [
       "100% of 20 is 20. Is 300% more or less than that?",
       "300% is 3 times as much as 20.",
-      "Work out 3 × 20 and compare."
+      "Work out 3 × 20 and compare.",
+      "Mark 100 and 500 on a number line. Work out 3 × 20 and see where it lands."
      ],
      "steps": [
       "100% of 20 is 20, so 300% is 3 times 20.",
@@ -2475,7 +2565,8 @@
      "hints": [
       "100% of 12 is 12. Is 250% more or less than that?",
       "250% is 2.5 times as much as 12.",
-      "Work out 2.5 × 12 and compare."
+      "Work out 2.5 × 12 and compare.",
+      "Mark 100 and 200 on a number line. Work out 2.5 × 12 and see where it lands."
      ],
      "steps": [
       "100% of 12 is 12, so 250% is 2.5 times 12.",
@@ -2501,7 +2592,8 @@
      "hints": [
       "100% of 60 is 60. Is 120% more or less than that?",
       "120% is 1.2 times as much as 60.",
-      "Work out 1.2 × 60 and compare."
+      "Work out 1.2 × 60 and compare.",
+      "Mark 100 and 200 on a number line. Work out 1.2 × 60 and see where it lands."
      ],
      "steps": [
       "100% of 60 is 60, so 120% is 1.2 times 60.",
@@ -2527,7 +2619,8 @@
      "hints": [
       "100% of 20 is 20. Is 700% more or less than that?",
       "700% is 7 times as much as 20.",
-      "Work out 7 × 20 and compare."
+      "Work out 7 × 20 and compare.",
+      "Mark 100 and 200 on a number line. Work out 7 × 20 and see where it lands."
      ],
      "steps": [
       "100% of 20 is 20, so 700% is 7 times 20.",
@@ -2553,7 +2646,8 @@
      "hints": [
       "100% of 60 is 60. Is 300% more or less than that?",
       "300% is 3 times as much as 60.",
-      "Work out 3 × 60 and compare."
+      "Work out 3 × 60 and compare.",
+      "Mark 50 and 150 on a number line. Work out 3 × 60 and see where it lands."
      ],
      "steps": [
       "100% of 60 is 60, so 300% is 3 times 60.",
@@ -2579,7 +2673,8 @@
      "hints": [
       "100% of 5 is 5. Is 300% more or less than that?",
       "300% is 3 times as much as 5.",
-      "Work out 3 × 5 and compare."
+      "Work out 3 × 5 and compare.",
+      "Mark 100 and 500 on a number line. Work out 3 × 5 and see where it lands."
      ],
      "steps": [
       "100% of 5 is 5, so 300% is 3 times 5.",
@@ -2605,7 +2700,8 @@
      "hints": [
       "100% of 44 is 44. Is 300% more or less than that?",
       "300% is 3 times as much as 44.",
-      "Work out 3 × 44 and compare."
+      "Work out 3 × 44 and compare.",
+      "Mark 50 and 150 on a number line. Work out 3 × 44 and see where it lands."
      ],
      "steps": [
       "100% of 44 is 44, so 300% is 3 times 44.",
@@ -2631,7 +2727,8 @@
      "hints": [
       "100% of 20 is 20. Is 700% more or less than that?",
       "700% is 7 times as much as 20.",
-      "Work out 7 × 20 and compare."
+      "Work out 7 × 20 and compare.",
+      "Mark 100 and 500 on a number line. Work out 7 × 20 and see where it lands."
      ],
      "steps": [
       "100% of 20 is 20, so 700% is 7 times 20.",
@@ -2657,7 +2754,8 @@
    "hints": [
     "This takes two steps. What do you find first?",
     "First find 50% of 600.",
-    "Then find 25% of THAT number, not of 600."
+    "Then find 25% of THAT number, not of 600.",
+    "Write two lines: line 1 = 50% of 600; line 2 = 25% of the line 1 answer. Put your line 1 result into line 2."
    ],
    "steps": [
     "50% of 600 = 300.",
@@ -2690,7 +2788,8 @@
      "hints": [
       "This takes two steps. What do you find first?",
       "First find 50% of 800.",
-      "Then find 20% of THAT number, not of 800."
+      "Then find 20% of THAT number, not of 800.",
+      "Write two lines: line 1 = 50% of 800; line 2 = 20% of the line 1 answer. Put your line 1 result into line 2."
      ],
      "steps": [
       "50% of 800 = 400.",
@@ -2715,7 +2814,8 @@
      "hints": [
       "This takes two steps. What do you find first?",
       "First find 25% of 1000.",
-      "Then find 20% of THAT number, not of 1000."
+      "Then find 20% of THAT number, not of 1000.",
+      "Write two lines: line 1 = 25% of 1000; line 2 = 20% of the line 1 answer. Put your line 1 result into line 2."
      ],
      "steps": [
       "25% of 1000 = 250.",
@@ -2740,7 +2840,8 @@
      "hints": [
       "This takes two steps. What do you find first?",
       "First find 40% of 800.",
-      "Then find 25% of THAT number, not of 800."
+      "Then find 25% of THAT number, not of 800.",
+      "Write two lines: line 1 = 40% of 800; line 2 = 25% of the line 1 answer. Put your line 1 result into line 2."
      ],
      "steps": [
       "40% of 800 = 320.",
@@ -2765,7 +2866,8 @@
      "hints": [
       "This takes two steps. What do you find first?",
       "First find 75% of 500.",
-      "Then find 40% of THAT number, not of 500."
+      "Then find 40% of THAT number, not of 500.",
+      "Write two lines: line 1 = 75% of 500; line 2 = 40% of the line 1 answer. Put your line 1 result into line 2."
      ],
      "steps": [
       "75% of 500 = 375.",
@@ -2790,7 +2892,8 @@
      "hints": [
       "This takes two steps. What do you find first?",
       "First find 75% of 600.",
-      "Then find 10% of THAT number, not of 600."
+      "Then find 10% of THAT number, not of 600.",
+      "Write two lines: line 1 = 75% of 600; line 2 = 10% of the line 1 answer. Put your line 1 result into line 2."
      ],
      "steps": [
       "75% of 600 = 450.",
@@ -2815,7 +2918,8 @@
      "hints": [
       "This takes two steps. What do you find first?",
       "First find 20% of 800.",
-      "Then find 40% of THAT number, not of 800."
+      "Then find 40% of THAT number, not of 800.",
+      "Write two lines: line 1 = 20% of 800; line 2 = 40% of the line 1 answer. Put your line 1 result into line 2."
      ],
      "steps": [
       "20% of 800 = 160.",
@@ -2840,7 +2944,8 @@
      "hints": [
       "This takes two steps. What do you find first?",
       "First find 70% of 500.",
-      "Then find 10% of THAT number, not of 500."
+      "Then find 10% of THAT number, not of 500.",
+      "Write two lines: line 1 = 70% of 500; line 2 = 10% of the line 1 answer. Put your line 1 result into line 2."
      ],
      "steps": [
       "70% of 500 = 350.",
@@ -2865,7 +2970,8 @@
      "hints": [
       "This takes two steps. What do you find first?",
       "First find 25% of 800.",
-      "Then find 40% of THAT number, not of 800."
+      "Then find 40% of THAT number, not of 800.",
+      "Write two lines: line 1 = 25% of 800; line 2 = 40% of the line 1 answer. Put your line 1 result into line 2."
      ],
      "steps": [
       "25% of 800 = 200.",
@@ -2890,7 +2996,8 @@
      "hints": [
       "This takes two steps. What do you find first?",
       "First find 40% of 400.",
-      "Then find 10% of THAT number, not of 400."
+      "Then find 10% of THAT number, not of 400.",
+      "Write two lines: line 1 = 40% of 400; line 2 = 10% of the line 1 answer. Put your line 1 result into line 2."
      ],
      "steps": [
       "40% of 400 = 160.",
@@ -2915,7 +3022,8 @@
      "hints": [
       "This takes two steps. What do you find first?",
       "First find 25% of 600.",
-      "Then find 10% of THAT number, not of 600."
+      "Then find 10% of THAT number, not of 600.",
+      "Write two lines: line 1 = 25% of 600; line 2 = 10% of the line 1 answer. Put your line 1 result into line 2."
      ],
      "steps": [
       "25% of 600 = 150.",
@@ -2945,7 +3053,8 @@
    "hints": [
     "What is the whole? You have to add up all the groups.",
     "Write 400/total = P/100.",
-    "Solve for P."
+    "Solve for P.",
+    "Add the groups to get the whole first. The part is 400. Then divide the part by the whole and move the point two places right."
    ],
    "steps": [
     "Whole: 400 + 200 + 400 = 1000.",
@@ -2979,7 +3088,8 @@
      "hints": [
       "What is the whole? You have to add up all the groups.",
       "Write 80/total = P/100.",
-      "Solve for P."
+      "Solve for P.",
+      "Add the groups to get the whole first. The part is 80. Then divide the part by the whole and move the point two places right."
      ],
      "steps": [
       "Whole: 80 + 40 + 80 = 200.",
@@ -3005,7 +3115,8 @@
      "hints": [
       "What is the whole? You have to add up all the groups.",
       "Write 400/total = P/100.",
-      "Solve for P."
+      "Solve for P.",
+      "Add the groups to get the whole first. The part is 400. Then divide the part by the whole and move the point two places right."
      ],
      "steps": [
       "Whole: 400 + 200 + 400 = 1000.",
@@ -3031,7 +3142,8 @@
      "hints": [
       "What is the whole? You have to add up all the groups.",
       "Write 300/total = P/100.",
-      "Solve for P."
+      "Solve for P.",
+      "Add the groups to get the whole first. The part is 300. Then divide the part by the whole and move the point two places right."
      ],
      "steps": [
       "Whole: 300 + 66 + 134 = 500.",
@@ -3057,7 +3169,8 @@
      "hints": [
       "What is the whole? You have to add up all the groups.",
       "Write 220/total = P/100.",
-      "Solve for P."
+      "Solve for P.",
+      "Add the groups to get the whole first. The part is 220. Then divide the part by the whole and move the point two places right."
      ],
      "steps": [
       "Whole: 220 + 60 + 120 = 400.",
@@ -3083,7 +3196,8 @@
      "hints": [
       "What is the whole? You have to add up all the groups.",
       "Write 500/total = P/100.",
-      "Solve for P."
+      "Solve for P.",
+      "Add the groups to get the whole first. The part is 500. Then divide the part by the whole and move the point two places right."
      ],
      "steps": [
       "Whole: 500 + 500 + 1000 = 2000.",
@@ -3109,7 +3223,8 @@
      "hints": [
       "What is the whole? You have to add up all the groups.",
       "Write 180/total = P/100.",
-      "Solve for P."
+      "Solve for P.",
+      "Add the groups to get the whole first. The part is 180. Then divide the part by the whole and move the point two places right."
      ],
      "steps": [
       "Whole: 180 + 73 + 147 = 400.",
@@ -3135,7 +3250,8 @@
      "hints": [
       "What is the whole? You have to add up all the groups.",
       "Write 225/total = P/100.",
-      "Solve for P."
+      "Solve for P.",
+      "Add the groups to get the whole first. The part is 225. Then divide the part by the whole and move the point two places right."
      ],
      "steps": [
       "Whole: 225 + 91 + 184 = 500.",
@@ -3161,7 +3277,8 @@
      "hints": [
       "What is the whole? You have to add up all the groups.",
       "Write 550/total = P/100.",
-      "Solve for P."
+      "Solve for P.",
+      "Add the groups to get the whole first. The part is 550. Then divide the part by the whole and move the point two places right."
      ],
      "steps": [
       "Whole: 550 + 150 + 300 = 1000.",
@@ -3187,7 +3304,8 @@
      "hints": [
       "What is the whole? You have to add up all the groups.",
       "Write 80/total = P/100.",
-      "Solve for P."
+      "Solve for P.",
+      "Add the groups to get the whole first. The part is 80. Then divide the part by the whole and move the point two places right."
      ],
      "steps": [
       "Whole: 80 + 240 + 480 = 800.",
@@ -3213,7 +3331,8 @@
      "hints": [
       "What is the whole? You have to add up all the groups.",
       "Write 250/total = P/100.",
-      "Solve for P."
+      "Solve for P.",
+      "Add the groups to get the whole first. The part is 250. Then divide the part by the whole and move the point two places right."
      ],
      "steps": [
       "Whole: 250 + 250 + 500 = 1000.",
@@ -3248,7 +3367,8 @@
    "hints": [
     "Totals can fool you. Turn each into a percent of its own games.",
     "Write 31/50 = P/100 and 14/20 = P/100.",
-    "Compare the two percents."
+    "Compare the two percents.",
+    "Divide each team's wins by its own games (31 ÷ 50 and 14 ÷ 20) and compare the two decimals."
    ],
    "steps": [
     "Room 4: 31/50 = 62%.",
@@ -3281,7 +3401,8 @@
      "hints": [
       "Totals can fool you. Turn each into a percent of its own games.",
       "Write 14/20 = P/100 and 48/80 = P/100.",
-      "Compare the two percents."
+      "Compare the two percents.",
+      "Divide each team's wins by its own games (14 ÷ 20 and 48 ÷ 80) and compare the two decimals."
      ],
      "steps": [
       "Ana: 14/20 = 70%.",
@@ -3306,7 +3427,8 @@
      "hints": [
       "Totals can fool you. Turn each into a percent of its own games.",
       "Write 17/20 = P/100 and 42/50 = P/100.",
-      "Compare the two percents."
+      "Compare the two percents.",
+      "Divide each team's wins by its own games (17 ÷ 20 and 42 ÷ 50) and compare the two decimals."
      ],
      "steps": [
       "Team A: 17/20 = 85%.",
@@ -3331,7 +3453,8 @@
      "hints": [
       "Totals can fool you. Turn each into a percent of its own games.",
       "Write 32/40 = P/100 and 38/50 = P/100.",
-      "Compare the two percents."
+      "Compare the two percents.",
+      "Divide each team's wins by its own games (32 ÷ 40 and 38 ÷ 50) and compare the two decimals."
      ],
      "steps": [
       "Ana: 32/40 = 80%.",
@@ -3356,7 +3479,8 @@
      "hints": [
       "Totals can fool you. Turn each into a percent of its own games.",
       "Write 20/40 = P/100 and 19/20 = P/100.",
-      "Compare the two percents."
+      "Compare the two percents.",
+      "Divide each team's wins by its own games (20 ÷ 40 and 19 ÷ 20) and compare the two decimals."
      ],
      "steps": [
       "Ana: 20/40 = 50%.",
@@ -3381,7 +3505,8 @@
      "hints": [
       "Totals can fool you. Turn each into a percent of its own games.",
       "Write 49/50 = P/100 and 17/25 = P/100.",
-      "Compare the two percents."
+      "Compare the two percents.",
+      "Divide each team's wins by its own games (49 ÷ 50 and 17 ÷ 25) and compare the two decimals."
      ],
      "steps": [
       "Team A: 49/50 = 98%.",
@@ -3406,7 +3531,8 @@
      "hints": [
       "Totals can fool you. Turn each into a percent of its own games.",
       "Write 21/25 = P/100 and 60/80 = P/100.",
-      "Compare the two percents."
+      "Compare the two percents.",
+      "Divide each team's wins by its own games (21 ÷ 25 and 60 ÷ 80) and compare the two decimals."
      ],
      "steps": [
       "Room 4: 21/25 = 84%.",
@@ -3431,7 +3557,8 @@
      "hints": [
       "Totals can fool you. Turn each into a percent of its own games.",
       "Write 20/40 = P/100 and 64/80 = P/100.",
-      "Compare the two percents."
+      "Compare the two percents.",
+      "Divide each team's wins by its own games (20 ÷ 40 and 64 ÷ 80) and compare the two decimals."
      ],
      "steps": [
       "Ana: 20/40 = 50%.",
@@ -3456,7 +3583,8 @@
      "hints": [
       "Totals can fool you. Turn each into a percent of its own games.",
       "Write 34/40 = P/100 and 38/50 = P/100.",
-      "Compare the two percents."
+      "Compare the two percents.",
+      "Divide each team's wins by its own games (34 ÷ 40 and 38 ÷ 50) and compare the two decimals."
      ],
      "steps": [
       "Room 4: 34/40 = 85%.",
@@ -3481,7 +3609,8 @@
      "hints": [
       "Totals can fool you. Turn each into a percent of its own games.",
       "Write 34/40 = P/100 and 22/25 = P/100.",
-      "Compare the two percents."
+      "Compare the two percents.",
+      "Divide each team's wins by its own games (34 ÷ 40 and 22 ÷ 25) and compare the two decimals."
      ],
      "steps": [
       "Room 4: 34/40 = 85%.",
@@ -3506,7 +3635,8 @@
      "hints": [
       "Totals can fool you. Turn each into a percent of its own games.",
       "Write 19/20 = P/100 and 42/50 = P/100.",
-      "Compare the two percents."
+      "Compare the two percents.",
+      "Divide each team's wins by its own games (19 ÷ 20 and 42 ÷ 50) and compare the two decimals."
      ],
      "steps": [
       "Ana: 19/20 = 95%.",
@@ -3532,7 +3662,8 @@
    "hints": [
     "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
     "Write 128/w = 160/100.",
-    "w = 128 × 100 ÷ 160."
+    "w = 128 × 100 ÷ 160.",
+    "Cross-multiply: 160 × w = 128 × 100, then divide both sides by 160."
    ],
    "steps": [
     "128/w = 160/100",
@@ -3566,7 +3697,8 @@
      "hints": [
       "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
       "Write 162/w = 180/100.",
-      "w = 162 × 100 ÷ 180."
+      "w = 162 × 100 ÷ 180.",
+      "Cross-multiply: 180 × w = 162 × 100, then divide both sides by 180."
      ],
      "steps": [
       "162/w = 180/100",
@@ -3591,7 +3723,8 @@
      "hints": [
       "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
       "Write 60/w = 150/100.",
-      "w = 60 × 100 ÷ 150."
+      "w = 60 × 100 ÷ 150.",
+      "Cross-multiply: 150 × w = 60 × 100, then divide both sides by 150."
      ],
      "steps": [
       "60/w = 150/100",
@@ -3616,7 +3749,8 @@
      "hints": [
       "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
       "Write 90/w = 150/100.",
-      "w = 90 × 100 ÷ 150."
+      "w = 90 × 100 ÷ 150.",
+      "Cross-multiply: 150 × w = 90 × 100, then divide both sides by 150."
      ],
      "steps": [
       "90/w = 150/100",
@@ -3641,7 +3775,8 @@
      "hints": [
       "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
       "Write 112/w = 140/100.",
-      "w = 112 × 100 ÷ 140."
+      "w = 112 × 100 ÷ 140.",
+      "Cross-multiply: 140 × w = 112 × 100, then divide both sides by 140."
      ],
      "steps": [
       "112/w = 140/100",
@@ -3666,7 +3801,8 @@
      "hints": [
       "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
       "Write 240/w = 160/100.",
-      "w = 240 × 100 ÷ 160."
+      "w = 240 × 100 ÷ 160.",
+      "Cross-multiply: 160 × w = 240 × 100, then divide both sides by 160."
      ],
      "steps": [
       "240/w = 160/100",
@@ -3691,7 +3827,8 @@
      "hints": [
       "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
       "Write 225/w = 150/100.",
-      "w = 225 × 100 ÷ 150."
+      "w = 225 × 100 ÷ 150.",
+      "Cross-multiply: 150 × w = 225 × 100, then divide both sides by 150."
      ],
      "steps": [
       "225/w = 150/100",
@@ -3716,7 +3853,8 @@
      "hints": [
       "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
       "Write 70/w = 140/100.",
-      "w = 70 × 100 ÷ 140."
+      "w = 70 × 100 ÷ 140.",
+      "Cross-multiply: 140 × w = 70 × 100, then divide both sides by 140."
      ],
      "steps": [
       "70/w = 140/100",
@@ -3741,7 +3879,8 @@
      "hints": [
       "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
       "Write 140/w = 140/100.",
-      "w = 140 × 100 ÷ 140."
+      "w = 140 × 100 ÷ 140.",
+      "Cross-multiply: 140 × w = 140 × 100, then divide both sides by 140."
      ],
      "steps": [
       "140/w = 140/100",
@@ -3763,7 +3902,8 @@
      "hints": [
       "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
       "Write 128/w = 160/100.",
-      "w = 128 × 100 ÷ 160."
+      "w = 128 × 100 ÷ 160.",
+      "Cross-multiply: 160 × w = 128 × 100, then divide both sides by 160."
      ],
      "steps": [
       "128/w = 160/100",
@@ -3788,7 +3928,8 @@
      "hints": [
       "The store paid the original amount, the whole (100%). Is the selling price more or less than that?",
       "Write 108/w = 180/100.",
-      "w = 108 × 100 ÷ 180."
+      "w = 108 × 100 ÷ 180.",
+      "Cross-multiply: 180 × w = 108 × 100, then divide both sides by 180."
      ],
      "steps": [
       "108/w = 180/100",
@@ -3823,7 +3964,8 @@
    "hints": [
     "Which numbers does the story give you? Which one does it NOT give you?",
     "Part: a piece. Whole: the full amount. Percent: out of 100.",
-    "The one that is missing is what you are looking for."
+    "The one that is missing is what you are looking for.",
+    "Make a list with three rows: part, whole, percent. Check off the ones the story tells you. The row without a check is what you are looking for."
    ],
    "steps": [
     "50 is the whole and 75% is the percent, so the part is missing.",
@@ -3856,7 +3998,8 @@
      "hints": [
       "Which numbers does the story give you? Which one does it NOT give you?",
       "Part: a piece. Whole: the full amount. Percent: out of 100.",
-      "The one that is missing is what you are looking for."
+      "The one that is missing is what you are looking for.",
+      "Make a list with three rows: part, whole, percent. Check off the ones the story tells you. The row without a check is what you are looking for."
      ],
      "steps": [
       "18 is the part and 68 is the whole, so the percent is missing.",
@@ -3881,7 +4024,8 @@
      "hints": [
       "Which numbers does the story give you? Which one does it NOT give you?",
       "Part: a piece. Whole: the full amount. Percent: out of 100.",
-      "The one that is missing is what you are looking for."
+      "The one that is missing is what you are looking for.",
+      "Make a list with three rows: part, whole, percent. Check off the ones the story tells you. The row without a check is what you are looking for."
      ],
      "steps": [
       "40 is the whole and 75% is the percent, so the part is missing.",
@@ -3906,7 +4050,8 @@
      "hints": [
       "Which numbers does the story give you? Which one does it NOT give you?",
       "Part: a piece. Whole: the full amount. Percent: out of 100.",
-      "The one that is missing is what you are looking for."
+      "The one that is missing is what you are looking for.",
+      "Make a list with three rows: part, whole, percent. Check off the ones the story tells you. The row without a check is what you are looking for."
      ],
      "steps": [
       "80 is the whole and 60% is the percent, so the part is missing.",
@@ -3931,7 +4076,8 @@
      "hints": [
       "Which numbers does the story give you? Which one does it NOT give you?",
       "Part: a piece. Whole: the full amount. Percent: out of 100.",
-      "The one that is missing is what you are looking for."
+      "The one that is missing is what you are looking for.",
+      "Make a list with three rows: part, whole, percent. Check off the ones the story tells you. The row without a check is what you are looking for."
      ],
      "steps": [
       "18 sandwiches is the part and 45% is the percent, so the total for the weekend (the whole) is missing.",
@@ -3956,7 +4102,8 @@
      "hints": [
       "Which numbers does the story give you? Which one does it NOT give you?",
       "Part: a piece. Whole: the full amount. Percent: out of 100.",
-      "The one that is missing is what you are looking for."
+      "The one that is missing is what you are looking for.",
+      "Make a list with three rows: part, whole, percent. Check off the ones the story tells you. The row without a check is what you are looking for."
      ],
      "steps": [
       "50 is the whole and 45% is the percent, so the part is missing.",
@@ -3981,7 +4128,8 @@
      "hints": [
       "Which numbers does the story give you? Which one does it NOT give you?",
       "Part: a piece. Whole: the full amount. Percent: out of 100.",
-      "The one that is missing is what you are looking for."
+      "The one that is missing is what you are looking for.",
+      "Make a list with three rows: part, whole, percent. Check off the ones the story tells you. The row without a check is what you are looking for."
      ],
      "steps": [
       "27 is the part and 52 is the whole, so the percent is missing.",
@@ -4006,7 +4154,8 @@
      "hints": [
       "Which numbers does the story give you? Which one does it NOT give you?",
       "Part: a piece. Whole: the full amount. Percent: out of 100.",
-      "The one that is missing is what you are looking for."
+      "The one that is missing is what you are looking for.",
+      "Make a list with three rows: part, whole, percent. Check off the ones the story tells you. The row without a check is what you are looking for."
      ],
      "steps": [
       "24 bracelets is the part and 40% is the percent, so the total for the weekend (the whole) is missing.",
@@ -4031,7 +4180,8 @@
      "hints": [
       "Which numbers does the story give you? Which one does it NOT give you?",
       "Part: a piece. Whole: the full amount. Percent: out of 100.",
-      "The one that is missing is what you are looking for."
+      "The one that is missing is what you are looking for.",
+      "Make a list with three rows: part, whole, percent. Check off the ones the story tells you. The row without a check is what you are looking for."
      ],
      "steps": [
       "24 is the part and 64 is the whole, so the percent is missing.",
@@ -4056,7 +4206,8 @@
      "hints": [
       "Which numbers does the story give you? Which one does it NOT give you?",
       "Part: a piece. Whole: the full amount. Percent: out of 100.",
-      "The one that is missing is what you are looking for."
+      "The one that is missing is what you are looking for.",
+      "Make a list with three rows: part, whole, percent. Check off the ones the story tells you. The row without a check is what you are looking for."
      ],
      "steps": [
       "40 is the whole and 45% is the percent, so the part is missing.",
@@ -4081,7 +4232,8 @@
      "hints": [
       "Which numbers does the story give you? Which one does it NOT give you?",
       "Part: a piece. Whole: the full amount. Percent: out of 100.",
-      "The one that is missing is what you are looking for."
+      "The one that is missing is what you are looking for.",
+      "Make a list with three rows: part, whole, percent. Check off the ones the story tells you. The row without a check is what you are looking for."
      ],
      "steps": [
       "24 bracelets is the part and 56% is the percent, so the total for the weekend (the whole) is missing.",
@@ -4106,7 +4258,8 @@
    "hints": [
     "Which price is the whole: the regular price or the sale price?",
     "Write 15/20 = P/100 (part over whole equals P over 100).",
-    "Divide the part by the whole, then move the point two places right."
+    "Divide the part by the whole, then move the point two places right.",
+    "Divide 15 by 20, then move the point two places right. The sale price is less than the regular price, so your percent should be under 100."
    ],
    "steps": [
     "15/20 = P/100",
@@ -4143,7 +4296,8 @@
      "hints": [
       "Which price is the whole: the regular price or the sale price?",
       "Write 34/40 = P/100 (part over whole equals P over 100).",
-      "Divide the part by the whole, then move the point two places right."
+      "Divide the part by the whole, then move the point two places right.",
+      "Divide 34 by 40, then move the point two places right. The sale price is less than the regular price, so your percent should be under 100."
      ],
      "steps": [
       "34/40 = P/100",
@@ -4166,7 +4320,8 @@
      "hints": [
       "Which price is the whole: the regular price or the sale price?",
       "Write 17/20 = P/100 (part over whole equals P over 100).",
-      "Divide the part by the whole, then move the point two places right."
+      "Divide the part by the whole, then move the point two places right.",
+      "Divide 17 by 20, then move the point two places right. The sale price is less than the regular price, so your percent should be under 100."
      ],
      "steps": [
       "17/20 = P/100",
@@ -4189,7 +4344,8 @@
      "hints": [
       "Which price is the whole: the regular price or the sale price?",
       "Write 24/40 = P/100 (part over whole equals P over 100).",
-      "Divide the part by the whole, then move the point two places right."
+      "Divide the part by the whole, then move the point two places right.",
+      "Divide 24 by 40, then move the point two places right. The sale price is less than the regular price, so your percent should be under 100."
      ],
      "steps": [
       "24/40 = P/100",
@@ -4212,7 +4368,8 @@
      "hints": [
       "Which price is the whole: the regular price or the sale price?",
       "Write 42.5/50 = P/100 (part over whole equals P over 100).",
-      "Divide the part by the whole, then move the point two places right."
+      "Divide the part by the whole, then move the point two places right.",
+      "Divide 42.5 by 50, then move the point two places right. The sale price is less than the regular price, so your percent should be under 100."
      ],
      "steps": [
       "42.5/50 = P/100",
@@ -4235,7 +4392,8 @@
      "hints": [
       "Which price is the whole: the regular price or the sale price?",
       "Write 35/50 = P/100 (part over whole equals P over 100).",
-      "Divide the part by the whole, then move the point two places right."
+      "Divide the part by the whole, then move the point two places right.",
+      "Divide 35 by 50, then move the point two places right. The sale price is less than the regular price, so your percent should be under 100."
      ],
      "steps": [
       "35/50 = P/100",
@@ -4258,7 +4416,8 @@
      "hints": [
       "Which price is the whole: the regular price or the sale price?",
       "Write 90/120 = P/100 (part over whole equals P over 100).",
-      "Divide the part by the whole, then move the point two places right."
+      "Divide the part by the whole, then move the point two places right.",
+      "Divide 90 by 120, then move the point two places right. The sale price is less than the regular price, so your percent should be under 100."
      ],
      "steps": [
       "90/120 = P/100",
@@ -4281,7 +4440,8 @@
      "hints": [
       "Which price is the whole: the regular price or the sale price?",
       "Write 12/20 = P/100 (part over whole equals P over 100).",
-      "Divide the part by the whole, then move the point two places right."
+      "Divide the part by the whole, then move the point two places right.",
+      "Divide 12 by 20, then move the point two places right. The sale price is less than the regular price, so your percent should be under 100."
      ],
      "steps": [
       "12/20 = P/100",
@@ -4304,7 +4464,8 @@
      "hints": [
       "Which price is the whole: the regular price or the sale price?",
       "Write 36/40 = P/100 (part over whole equals P over 100).",
-      "Divide the part by the whole, then move the point two places right."
+      "Divide the part by the whole, then move the point two places right.",
+      "Divide 36 by 40, then move the point two places right. The sale price is less than the regular price, so your percent should be under 100."
      ],
      "steps": [
       "36/40 = P/100",
@@ -4327,7 +4488,8 @@
      "hints": [
       "Which price is the whole: the regular price or the sale price?",
       "Write 96/120 = P/100 (part over whole equals P over 100).",
-      "Divide the part by the whole, then move the point two places right."
+      "Divide the part by the whole, then move the point two places right.",
+      "Divide 96 by 120, then move the point two places right. The sale price is less than the regular price, so your percent should be under 100."
      ],
      "steps": [
       "96/120 = P/100",
@@ -4350,7 +4512,8 @@
      "hints": [
       "Which price is the whole: the regular price or the sale price?",
       "Write 108/120 = P/100 (part over whole equals P over 100).",
-      "Divide the part by the whole, then move the point two places right."
+      "Divide the part by the whole, then move the point two places right.",
+      "Divide 108 by 120, then move the point two places right. The sale price is less than the regular price, so your percent should be under 100."
      ],
      "steps": [
       "108/120 = P/100",
@@ -4378,7 +4541,8 @@
    "hints": [
     "The tip is a percent of the bill. Which number is the whole?",
     "Write 15% as a decimal.",
-    "Multiply the bill by the decimal."
+    "Multiply the bill by the decimal.",
+    "Work 15% of 40 as 15 × 40 ÷ 100: multiply first, then move the point two places left."
    ],
    "steps": [
     "15% = 0.15",
@@ -4414,7 +4578,8 @@
      "hints": [
       "The tip is a percent of the bill. Which number is the whole?",
       "Write 18% as a decimal.",
-      "Multiply the bill by the decimal."
+      "Multiply the bill by the decimal.",
+      "Work 18% of 120 as 18 × 120 ÷ 100: multiply first, then move the point two places left."
      ],
      "steps": [
       "18% = 0.18",
@@ -4436,7 +4601,8 @@
      "hints": [
       "The tip is a percent of the bill. Which number is the whole?",
       "Write 15% as a decimal.",
-      "Multiply the bill by the decimal."
+      "Multiply the bill by the decimal.",
+      "Work 15% of 200 as 15 × 200 ÷ 100: multiply first, then move the point two places left."
      ],
      "steps": [
       "15% = 0.15",
@@ -4458,7 +4624,8 @@
      "hints": [
       "The tip is a percent of the bill. Which number is the whole?",
       "Write 25% as a decimal.",
-      "Multiply the bill by the decimal."
+      "Multiply the bill by the decimal.",
+      "Work 25% of 200 as 25 × 200 ÷ 100: multiply first, then move the point two places left."
      ],
      "steps": [
       "25% = 0.25",
@@ -4480,7 +4647,8 @@
      "hints": [
       "The tip is a percent of the bill. Which number is the whole?",
       "Write 25% as a decimal.",
-      "Multiply the bill by the decimal."
+      "Multiply the bill by the decimal.",
+      "Work 25% of 40 as 25 × 40 ÷ 100: multiply first, then move the point two places left."
      ],
      "steps": [
       "25% = 0.25",
@@ -4502,7 +4670,8 @@
      "hints": [
       "The tip is a percent of the bill. Which number is the whole?",
       "Write 15% as a decimal.",
-      "Multiply the bill by the decimal."
+      "Multiply the bill by the decimal.",
+      "Work 15% of 60 as 15 × 60 ÷ 100: multiply first, then move the point two places left."
      ],
      "steps": [
       "15% = 0.15",
@@ -4524,7 +4693,8 @@
      "hints": [
       "The tip is a percent of the bill. Which number is the whole?",
       "Write 18% as a decimal.",
-      "Multiply the bill by the decimal."
+      "Multiply the bill by the decimal.",
+      "Work 18% of 60 as 18 × 60 ÷ 100: multiply first, then move the point two places left."
      ],
      "steps": [
       "18% = 0.18",
@@ -4546,7 +4716,8 @@
      "hints": [
       "The tip is a percent of the bill. Which number is the whole?",
       "Write 25% as a decimal.",
-      "Multiply the bill by the decimal."
+      "Multiply the bill by the decimal.",
+      "Work 25% of 80 as 25 × 80 ÷ 100: multiply first, then move the point two places left."
      ],
      "steps": [
       "25% = 0.25",
@@ -4568,7 +4739,8 @@
      "hints": [
       "The tip is a percent of the bill. Which number is the whole?",
       "Write 10% as a decimal.",
-      "Multiply the bill by the decimal."
+      "Multiply the bill by the decimal.",
+      "Work 10% of 80 as 10 × 80 ÷ 100: multiply first, then move the point two places left."
      ],
      "steps": [
       "10% = 0.1",
@@ -4590,7 +4762,8 @@
      "hints": [
       "The tip is a percent of the bill. Which number is the whole?",
       "Write 18% as a decimal.",
-      "Multiply the bill by the decimal."
+      "Multiply the bill by the decimal.",
+      "Work 18% of 80 as 18 × 80 ÷ 100: multiply first, then move the point two places left."
      ],
      "steps": [
       "18% = 0.18",
@@ -4617,7 +4790,8 @@
    "hints": [
     "Is the commission the part, the whole or the percent? What are you looking for?",
     "Write 480/w = 4/100.",
-    "w = 480 × 100 ÷ 4."
+    "w = 480 × 100 ÷ 4.",
+    "Cross-multiply: 4 × w = 480 × 100, then divide both sides by 4. The sale price should be much bigger than the commission."
    ],
    "steps": [
     "480/w = 4/100",
@@ -4653,7 +4827,8 @@
      "hints": [
       "Is the commission the part, the whole or the percent? What are you looking for?",
       "Write 1600/w = 8/100.",
-      "w = 1600 × 100 ÷ 8."
+      "w = 1600 × 100 ÷ 8.",
+      "Cross-multiply: 8 × w = 1600 × 100, then divide both sides by 8. The sale price should be much bigger than the commission."
      ],
      "steps": [
       "1600/w = 8/100",
@@ -4675,7 +4850,8 @@
      "hints": [
       "Is the commission the part, the whole or the percent? What are you looking for?",
       "Write 100/w = 5/100.",
-      "w = 100 × 100 ÷ 5."
+      "w = 100 × 100 ÷ 5.",
+      "Cross-multiply: 5 × w = 100 × 100, then divide both sides by 5. The sale price should be much bigger than the commission."
      ],
      "steps": [
       "100/w = 5/100",
@@ -4697,7 +4873,8 @@
      "hints": [
       "Is the commission the part, the whole or the percent? What are you looking for?",
       "Write 160/w = 4/100.",
-      "w = 160 × 100 ÷ 4."
+      "w = 160 × 100 ÷ 4.",
+      "Cross-multiply: 4 × w = 160 × 100, then divide both sides by 4. The sale price should be much bigger than the commission."
      ],
      "steps": [
       "160/w = 4/100",
@@ -4719,7 +4896,8 @@
      "hints": [
       "Is the commission the part, the whole or the percent? What are you looking for?",
       "Write 1200/w = 10/100.",
-      "w = 1200 × 100 ÷ 10."
+      "w = 1200 × 100 ÷ 10.",
+      "Cross-multiply: 10 × w = 1200 × 100, then divide both sides by 10. The sale price should be much bigger than the commission."
      ],
      "steps": [
       "1200/w = 10/100",
@@ -4741,7 +4919,8 @@
      "hints": [
       "Is the commission the part, the whole or the percent? What are you looking for?",
       "Write 500/w = 10/100.",
-      "w = 500 × 100 ÷ 10."
+      "w = 500 × 100 ÷ 10.",
+      "Cross-multiply: 10 × w = 500 × 100, then divide both sides by 10. The sale price should be much bigger than the commission."
      ],
      "steps": [
       "500/w = 10/100",
@@ -4763,7 +4942,8 @@
      "hints": [
       "Is the commission the part, the whole or the percent? What are you looking for?",
       "Write 800/w = 10/100.",
-      "w = 800 × 100 ÷ 10."
+      "w = 800 × 100 ÷ 10.",
+      "Cross-multiply: 10 × w = 800 × 100, then divide both sides by 10. The sale price should be much bigger than the commission."
      ],
      "steps": [
       "800/w = 10/100",
@@ -4785,7 +4965,8 @@
      "hints": [
       "Is the commission the part, the whole or the percent? What are you looking for?",
       "Write 320/w = 8/100.",
-      "w = 320 × 100 ÷ 8."
+      "w = 320 × 100 ÷ 8.",
+      "Cross-multiply: 8 × w = 320 × 100, then divide both sides by 8. The sale price should be much bigger than the commission."
      ],
      "steps": [
       "320/w = 8/100",
@@ -4807,7 +4988,8 @@
      "hints": [
       "Is the commission the part, the whole or the percent? What are you looking for?",
       "Write 80/w = 2/100.",
-      "w = 80 × 100 ÷ 2."
+      "w = 80 × 100 ÷ 2.",
+      "Cross-multiply: 2 × w = 80 × 100, then divide both sides by 2. The sale price should be much bigger than the commission."
      ],
      "steps": [
       "80/w = 2/100",
@@ -4829,7 +5011,8 @@
      "hints": [
       "Is the commission the part, the whole or the percent? What are you looking for?",
       "Write 400/w = 8/100.",
-      "w = 400 × 100 ÷ 8."
+      "w = 400 × 100 ÷ 8.",
+      "Cross-multiply: 8 × w = 400 × 100, then divide both sides by 8. The sale price should be much bigger than the commission."
      ],
      "steps": [
       "400/w = 8/100",
@@ -4856,7 +5039,8 @@
    "hints": [
     "There are two percent steps. What is the first percent of?",
     "Find the company's charge first: 5% of 400000.",
-    "The broker's 20% is of the company's charge, not of the price."
+    "The broker's 20% is of the company's charge, not of the price.",
+    "Write two lines: line 1 = 5% of 400000; line 2 = 20% of the line 1 answer. Put your line 1 result into line 2."
    ],
    "steps": [
     "Company charge: 0.05 × 400000 = 20000",
@@ -4892,7 +5076,8 @@
      "hints": [
       "There are two percent steps. What is the first percent of?",
       "Find the company's charge first: 6% of 400000.",
-      "The broker's 50% is of the company's charge, not of the price."
+      "The broker's 50% is of the company's charge, not of the price.",
+      "Write two lines: line 1 = 6% of 400000; line 2 = 50% of the line 1 answer. Put your line 1 result into line 2."
      ],
      "steps": [
       "Company charge: 0.06 × 400000 = 24000",
@@ -4914,7 +5099,8 @@
      "hints": [
       "There are two percent steps. What is the first percent of?",
       "Find the company's charge first: 6% of 100000.",
-      "The broker's 20% is of the company's charge, not of the price."
+      "The broker's 20% is of the company's charge, not of the price.",
+      "Write two lines: line 1 = 6% of 100000; line 2 = 20% of the line 1 answer. Put your line 1 result into line 2."
      ],
      "steps": [
       "Company charge: 0.06 × 100000 = 6000",
@@ -4936,7 +5122,8 @@
      "hints": [
       "There are two percent steps. What is the first percent of?",
       "Find the company's charge first: 5% of 250000.",
-      "The broker's 50% is of the company's charge, not of the price."
+      "The broker's 50% is of the company's charge, not of the price.",
+      "Write two lines: line 1 = 5% of 250000; line 2 = 50% of the line 1 answer. Put your line 1 result into line 2."
      ],
      "steps": [
       "Company charge: 0.05 × 250000 = 12500",
@@ -4958,7 +5145,8 @@
      "hints": [
       "There are two percent steps. What is the first percent of?",
       "Find the company's charge first: 5% of 300000.",
-      "The broker's 50% is of the company's charge, not of the price."
+      "The broker's 50% is of the company's charge, not of the price.",
+      "Write two lines: line 1 = 5% of 300000; line 2 = 50% of the line 1 answer. Put your line 1 result into line 2."
      ],
      "steps": [
       "Company charge: 0.05 × 300000 = 15000",
@@ -4980,7 +5168,8 @@
      "hints": [
       "There are two percent steps. What is the first percent of?",
       "Find the company's charge first: 6% of 250000.",
-      "The broker's 25% is of the company's charge, not of the price."
+      "The broker's 25% is of the company's charge, not of the price.",
+      "Write two lines: line 1 = 6% of 250000; line 2 = 25% of the line 1 answer. Put your line 1 result into line 2."
      ],
      "steps": [
       "Company charge: 0.06 × 250000 = 15000",
@@ -5002,7 +5191,8 @@
      "hints": [
       "There are two percent steps. What is the first percent of?",
       "Find the company's charge first: 5% of 500000.",
-      "The broker's 50% is of the company's charge, not of the price."
+      "The broker's 50% is of the company's charge, not of the price.",
+      "Write two lines: line 1 = 5% of 500000; line 2 = 50% of the line 1 answer. Put your line 1 result into line 2."
      ],
      "steps": [
       "Company charge: 0.05 × 500000 = 25000",
@@ -5024,7 +5214,8 @@
      "hints": [
       "There are two percent steps. What is the first percent of?",
       "Find the company's charge first: 5% of 200000.",
-      "The broker's 50% is of the company's charge, not of the price."
+      "The broker's 50% is of the company's charge, not of the price.",
+      "Write two lines: line 1 = 5% of 200000; line 2 = 50% of the line 1 answer. Put your line 1 result into line 2."
      ],
      "steps": [
       "Company charge: 0.05 × 200000 = 10000",
@@ -5046,7 +5237,8 @@
      "hints": [
       "There are two percent steps. What is the first percent of?",
       "Find the company's charge first: 6% of 300000.",
-      "The broker's 25% is of the company's charge, not of the price."
+      "The broker's 25% is of the company's charge, not of the price.",
+      "Write two lines: line 1 = 6% of 300000; line 2 = 25% of the line 1 answer. Put your line 1 result into line 2."
      ],
      "steps": [
       "Company charge: 0.06 × 300000 = 18000",
@@ -5068,7 +5260,8 @@
      "hints": [
       "There are two percent steps. What is the first percent of?",
       "Find the company's charge first: 6% of 500000.",
-      "The broker's 20% is of the company's charge, not of the price."
+      "The broker's 20% is of the company's charge, not of the price.",
+      "Write two lines: line 1 = 6% of 500000; line 2 = 20% of the line 1 answer. Put your line 1 result into line 2."
      ],
      "steps": [
       "Company charge: 0.06 × 500000 = 30000",
@@ -5090,7 +5283,8 @@
      "hints": [
       "There are two percent steps. What is the first percent of?",
       "Find the company's charge first: 4% of 300000.",
-      "The broker's 25% is of the company's charge, not of the price."
+      "The broker's 25% is of the company's charge, not of the price.",
+      "Write two lines: line 1 = 4% of 300000; line 2 = 25% of the line 1 answer. Put your line 1 result into line 2."
      ],
      "steps": [
       "Company charge: 0.04 × 300000 = 12000",
@@ -5117,7 +5311,8 @@
    "hints": [
     "First find what Plan 1 pays for 30 hours.",
     "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
-    "That is a find-the-whole problem: the Plan 1 pay is the part and 5% is the percent."
+    "That is a find-the-whole problem: the Plan 1 pay is the part and 5% is the percent.",
+    "Write it as: Plan 1 pay = 5% of the sales. Then sales = Plan 1 pay × 100 ÷ 5."
    ],
    "steps": [
     "Plan 1: 30 × 25 = 750",
@@ -5153,7 +5348,8 @@
      "hints": [
       "First find what Plan 1 pays for 20 hours.",
       "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
-      "That is a find-the-whole problem: the Plan 1 pay is the part and 4% is the percent."
+      "That is a find-the-whole problem: the Plan 1 pay is the part and 4% is the percent.",
+      "Write it as: Plan 1 pay = 4% of the sales. Then sales = Plan 1 pay × 100 ÷ 4."
      ],
      "steps": [
       "Plan 1: 20 × 18 = 360",
@@ -5175,7 +5371,8 @@
      "hints": [
       "First find what Plan 1 pays for 30 hours.",
       "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
-      "That is a find-the-whole problem: the Plan 1 pay is the part and 8% is the percent."
+      "That is a find-the-whole problem: the Plan 1 pay is the part and 8% is the percent.",
+      "Write it as: Plan 1 pay = 8% of the sales. Then sales = Plan 1 pay × 100 ÷ 8."
      ],
      "steps": [
       "Plan 1: 30 × 15 = 450",
@@ -5197,7 +5394,8 @@
      "hints": [
       "First find what Plan 1 pays for 30 hours.",
       "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
-      "That is a find-the-whole problem: the Plan 1 pay is the part and 4% is the percent."
+      "That is a find-the-whole problem: the Plan 1 pay is the part and 4% is the percent.",
+      "Write it as: Plan 1 pay = 4% of the sales. Then sales = Plan 1 pay × 100 ÷ 4."
      ],
      "steps": [
       "Plan 1: 30 × 20 = 600",
@@ -5219,7 +5417,8 @@
      "hints": [
       "First find what Plan 1 pays for 30 hours.",
       "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
-      "That is a find-the-whole problem: the Plan 1 pay is the part and 4% is the percent."
+      "That is a find-the-whole problem: the Plan 1 pay is the part and 4% is the percent.",
+      "Write it as: Plan 1 pay = 4% of the sales. Then sales = Plan 1 pay × 100 ÷ 4."
      ],
      "steps": [
       "Plan 1: 30 × 25 = 750",
@@ -5241,7 +5440,8 @@
      "hints": [
       "First find what Plan 1 pays for 40 hours.",
       "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
-      "That is a find-the-whole problem: the Plan 1 pay is the part and 5% is the percent."
+      "That is a find-the-whole problem: the Plan 1 pay is the part and 5% is the percent.",
+      "Write it as: Plan 1 pay = 5% of the sales. Then sales = Plan 1 pay × 100 ÷ 5."
      ],
      "steps": [
       "Plan 1: 40 × 20 = 800",
@@ -5263,7 +5463,8 @@
      "hints": [
       "First find what Plan 1 pays for 30 hours.",
       "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
-      "That is a find-the-whole problem: the Plan 1 pay is the part and 8% is the percent."
+      "That is a find-the-whole problem: the Plan 1 pay is the part and 8% is the percent.",
+      "Write it as: Plan 1 pay = 8% of the sales. Then sales = Plan 1 pay × 100 ÷ 8."
      ],
      "steps": [
       "Plan 1: 30 × 25 = 750",
@@ -5285,7 +5486,8 @@
      "hints": [
       "First find what Plan 1 pays for 40 hours.",
       "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
-      "That is a find-the-whole problem: the Plan 1 pay is the part and 8% is the percent."
+      "That is a find-the-whole problem: the Plan 1 pay is the part and 8% is the percent.",
+      "Write it as: Plan 1 pay = 8% of the sales. Then sales = Plan 1 pay × 100 ÷ 8."
      ],
      "steps": [
       "Plan 1: 40 × 20 = 800",
@@ -5307,7 +5509,8 @@
      "hints": [
       "First find what Plan 1 pays for 20 hours.",
       "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
-      "That is a find-the-whole problem: the Plan 1 pay is the part and 4% is the percent."
+      "That is a find-the-whole problem: the Plan 1 pay is the part and 4% is the percent.",
+      "Write it as: Plan 1 pay = 4% of the sales. Then sales = Plan 1 pay × 100 ÷ 4."
      ],
      "steps": [
       "Plan 1: 20 × 25 = 500",
@@ -5329,7 +5532,8 @@
      "hints": [
       "First find what Plan 1 pays for 30 hours.",
       "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
-      "That is a find-the-whole problem: the Plan 1 pay is the part and 10% is the percent."
+      "That is a find-the-whole problem: the Plan 1 pay is the part and 10% is the percent.",
+      "Write it as: Plan 1 pay = 10% of the sales. Then sales = Plan 1 pay × 100 ÷ 10."
      ],
      "steps": [
       "Plan 1: 30 × 15 = 450",
@@ -5351,7 +5555,8 @@
      "hints": [
       "First find what Plan 1 pays for 30 hours.",
       "Plan 2 pays a percent of the sales. You want the sales that make that percent equal the Plan 1 pay.",
-      "That is a find-the-whole problem: the Plan 1 pay is the part and 10% is the percent."
+      "That is a find-the-whole problem: the Plan 1 pay is the part and 10% is the percent.",
+      "Write it as: Plan 1 pay = 10% of the sales. Then sales = Plan 1 pay × 100 ÷ 10."
      ],
      "steps": [
       "Plan 1: 30 × 12 = 360",
@@ -5378,7 +5583,8 @@
    "hints": [
     "If 20% is one share, what percent is the other share?",
     "The 320 goes with that other percent. What are you looking for: the part, the whole or the percent?",
-    "Write part/whole = P/100 with the other percent, and solve for the whole."
+    "Write part/whole = P/100 with the other percent, and solve for the whole.",
+    "Cross-multiply: 80 × w = 320 × 100, then divide both sides by 80. Test it: 20% of your total plus 320 should make the total."
    ],
    "steps": [
     "The other share is 100% − 20% = 80%.",
@@ -5414,7 +5620,8 @@
      "hints": [
       "If 60% is one share, what percent is the other share?",
       "The 120 goes with that other percent. What are you looking for: the part, the whole or the percent?",
-      "Write part/whole = P/100 with the other percent, and solve for the whole."
+      "Write part/whole = P/100 with the other percent, and solve for the whole.",
+      "Cross-multiply: 40 × w = 120 × 100, then divide both sides by 40. Test it: 60% of your total plus 120 should make the total."
      ],
      "steps": [
       "The other share is 100% − 60% = 40%.",
@@ -5436,7 +5643,8 @@
      "hints": [
       "If 75% is one share, what percent is the other share?",
       "The 125 goes with that other percent. What are you looking for: the part, the whole or the percent?",
-      "Write part/whole = P/100 with the other percent, and solve for the whole."
+      "Write part/whole = P/100 with the other percent, and solve for the whole.",
+      "Cross-multiply: 25 × w = 125 × 100, then divide both sides by 25. Test it: 75% of your total plus 125 should make the total."
      ],
      "steps": [
       "The other share is 100% − 75% = 25%.",
@@ -5458,7 +5666,8 @@
      "hints": [
       "If 70% is one share, what percent is the other share?",
       "The 150 goes with that other percent. What are you looking for: the part, the whole or the percent?",
-      "Write part/whole = P/100 with the other percent, and solve for the whole."
+      "Write part/whole = P/100 with the other percent, and solve for the whole.",
+      "Cross-multiply: 30 × w = 150 × 100, then divide both sides by 30. Test it: 70% of your total plus 150 should make the total."
      ],
      "steps": [
       "The other share is 100% − 70% = 30%.",
@@ -5480,7 +5689,8 @@
      "hints": [
       "If 75% is one share, what percent is the other share?",
       "The 200 goes with that other percent. What are you looking for: the part, the whole or the percent?",
-      "Write part/whole = P/100 with the other percent, and solve for the whole."
+      "Write part/whole = P/100 with the other percent, and solve for the whole.",
+      "Cross-multiply: 25 × w = 200 × 100, then divide both sides by 25. Test it: 75% of your total plus 200 should make the total."
      ],
      "steps": [
       "The other share is 100% − 75% = 25%.",
@@ -5502,7 +5712,8 @@
      "hints": [
       "If 20% is one share, what percent is the other share?",
       "The 960 goes with that other percent. What are you looking for: the part, the whole or the percent?",
-      "Write part/whole = P/100 with the other percent, and solve for the whole."
+      "Write part/whole = P/100 with the other percent, and solve for the whole.",
+      "Cross-multiply: 80 × w = 960 × 100, then divide both sides by 80. Test it: 20% of your total plus 960 should make the total."
      ],
      "steps": [
       "The other share is 100% − 20% = 80%.",
@@ -5524,7 +5735,8 @@
      "hints": [
       "If 25% is one share, what percent is the other share?",
       "The 300 goes with that other percent. What are you looking for: the part, the whole or the percent?",
-      "Write part/whole = P/100 with the other percent, and solve for the whole."
+      "Write part/whole = P/100 with the other percent, and solve for the whole.",
+      "Cross-multiply: 75 × w = 300 × 100, then divide both sides by 75. Test it: 25% of your total plus 300 should make the total."
      ],
      "steps": [
       "The other share is 100% − 25% = 75%.",
@@ -5546,7 +5758,8 @@
      "hints": [
       "If 30% is one share, what percent is the other share?",
       "The 140 goes with that other percent. What are you looking for: the part, the whole or the percent?",
-      "Write part/whole = P/100 with the other percent, and solve for the whole."
+      "Write part/whole = P/100 with the other percent, and solve for the whole.",
+      "Cross-multiply: 70 × w = 140 × 100, then divide both sides by 70. Test it: 30% of your total plus 140 should make the total."
      ],
      "steps": [
       "The other share is 100% − 30% = 70%.",
@@ -5568,7 +5781,8 @@
      "hints": [
       "If 75% is one share, what percent is the other share?",
       "The 100 goes with that other percent. What are you looking for: the part, the whole or the percent?",
-      "Write part/whole = P/100 with the other percent, and solve for the whole."
+      "Write part/whole = P/100 with the other percent, and solve for the whole.",
+      "Cross-multiply: 25 × w = 100 × 100, then divide both sides by 25. Test it: 75% of your total plus 100 should make the total."
      ],
      "steps": [
       "The other share is 100% − 75% = 25%.",
@@ -5590,7 +5804,8 @@
      "hints": [
       "If 40% is one share, what percent is the other share?",
       "The 300 goes with that other percent. What are you looking for: the part, the whole or the percent?",
-      "Write part/whole = P/100 with the other percent, and solve for the whole."
+      "Write part/whole = P/100 with the other percent, and solve for the whole.",
+      "Cross-multiply: 60 × w = 300 × 100, then divide both sides by 60. Test it: 40% of your total plus 300 should make the total."
      ],
      "steps": [
       "The other share is 100% − 40% = 60%.",
@@ -5612,7 +5827,8 @@
      "hints": [
       "If 75% is one share, what percent is the other share?",
       "The 75 goes with that other percent. What are you looking for: the part, the whole or the percent?",
-      "Write part/whole = P/100 with the other percent, and solve for the whole."
+      "Write part/whole = P/100 with the other percent, and solve for the whole.",
+      "Cross-multiply: 25 × w = 75 × 100, then divide both sides by 25. Test it: 75% of your total plus 75 should make the total."
      ],
      "steps": [
       "The other share is 100% − 75% = 25%.",
@@ -5639,7 +5855,8 @@
    "hints": [
     "The question asks for the TOTAL. What is the charge by itself first?",
     "Find 20% of 80.",
-    "Then add it to the bill."
+    "Then add it to the bill.",
+    "Two steps: find the charge, then add it to the bill. The total should be a bit more than 80."
    ],
    "steps": [
     "Charge: 0.2 × 80 = 16",
@@ -5675,7 +5892,8 @@
      "hints": [
       "The question asks for the TOTAL. What is the charge by itself first?",
       "Find 20% of 80.",
-      "Then add it to the bill."
+      "Then add it to the bill.",
+      "Two steps: find the charge, then add it to the bill. The total should be a bit more than 80."
      ],
      "steps": [
       "Charge: 0.2 × 80 = 16",
@@ -5697,7 +5915,8 @@
      "hints": [
       "The question asks for the TOTAL. What is the charge by itself first?",
       "Find 18% of 80.",
-      "Then add it to the bill."
+      "Then add it to the bill.",
+      "Two steps: find the charge, then add it to the bill. The total should be a bit more than 80."
      ],
      "steps": [
       "Charge: 0.18 × 80 = 14.4",
@@ -5719,7 +5938,8 @@
      "hints": [
       "The question asks for the TOTAL. What is the charge by itself first?",
       "Find 15% of 200.",
-      "Then add it to the bill."
+      "Then add it to the bill.",
+      "Two steps: find the charge, then add it to the bill. The total should be a bit more than 200."
      ],
      "steps": [
       "Charge: 0.15 × 200 = 30",
@@ -5741,7 +5961,8 @@
      "hints": [
       "The question asks for the TOTAL. What is the charge by itself first?",
       "Find 15% of 240.",
-      "Then add it to the bill."
+      "Then add it to the bill.",
+      "Two steps: find the charge, then add it to the bill. The total should be a bit more than 240."
      ],
      "steps": [
       "Charge: 0.15 × 240 = 36",
@@ -5763,7 +5984,8 @@
      "hints": [
       "The question asks for the TOTAL. What is the charge by itself first?",
       "Find 18% of 200.",
-      "Then add it to the bill."
+      "Then add it to the bill.",
+      "Two steps: find the charge, then add it to the bill. The total should be a bit more than 200."
      ],
      "steps": [
       "Charge: 0.18 × 200 = 36",
@@ -5785,7 +6007,8 @@
      "hints": [
       "The question asks for the TOTAL. What is the charge by itself first?",
       "Find 18% of 120.",
-      "Then add it to the bill."
+      "Then add it to the bill.",
+      "Two steps: find the charge, then add it to the bill. The total should be a bit more than 120."
      ],
      "steps": [
       "Charge: 0.18 × 120 = 21.6",
@@ -5807,7 +6030,8 @@
      "hints": [
       "The question asks for the TOTAL. What is the charge by itself first?",
       "Find 20% of 120.",
-      "Then add it to the bill."
+      "Then add it to the bill.",
+      "Two steps: find the charge, then add it to the bill. The total should be a bit more than 120."
      ],
      "steps": [
       "Charge: 0.2 × 120 = 24",
@@ -5829,7 +6053,8 @@
      "hints": [
       "The question asks for the TOTAL. What is the charge by itself first?",
       "Find 20% of 200.",
-      "Then add it to the bill."
+      "Then add it to the bill.",
+      "Two steps: find the charge, then add it to the bill. The total should be a bit more than 200."
      ],
      "steps": [
       "Charge: 0.2 × 200 = 40",
@@ -5851,7 +6076,8 @@
      "hints": [
       "The question asks for the TOTAL. What is the charge by itself first?",
       "Find 15% of 200.",
-      "Then add it to the bill."
+      "Then add it to the bill.",
+      "Two steps: find the charge, then add it to the bill. The total should be a bit more than 200."
      ],
      "steps": [
       "Charge: 0.15 × 200 = 30",
@@ -5873,7 +6099,8 @@
      "hints": [
       "The question asks for the TOTAL. What is the charge by itself first?",
       "Find 18% of 100.",
-      "Then add it to the bill."
+      "Then add it to the bill.",
+      "Two steps: find the charge, then add it to the bill. The total should be a bit more than 100."
      ],
      "steps": [
       "Charge: 0.18 × 100 = 18",
@@ -5900,7 +6127,8 @@
    "hints": [
     "The question asks for the SALE price. How much comes off first?",
     "Find 20% of 150.",
-    "Then take that amount away from the regular price."
+    "Then take that amount away from the regular price.",
+    "Take the amount off first, then subtract. Check: you pay 80% of the regular price, so the sale price is less than 150."
    ],
    "steps": [
     "Amount off: 0.2 × 150 = 30",
@@ -5937,7 +6165,8 @@
      "hints": [
       "The question asks for the SALE price. How much comes off first?",
       "Find 20% of 40.",
-      "Then take that amount away from the regular price."
+      "Then take that amount away from the regular price.",
+      "Take the amount off first, then subtract. Check: you pay 80% of the regular price, so the sale price is less than 40."
      ],
      "steps": [
       "Amount off: 0.2 × 40 = 8",
@@ -5960,7 +6189,8 @@
      "hints": [
       "The question asks for the SALE price. How much comes off first?",
       "Find 20% of 120.",
-      "Then take that amount away from the regular price."
+      "Then take that amount away from the regular price.",
+      "Take the amount off first, then subtract. Check: you pay 80% of the regular price, so the sale price is less than 120."
      ],
      "steps": [
       "Amount off: 0.2 × 120 = 24",
@@ -5983,7 +6213,8 @@
      "hints": [
       "The question asks for the SALE price. How much comes off first?",
       "Find 20% of 60.",
-      "Then take that amount away from the regular price."
+      "Then take that amount away from the regular price.",
+      "Take the amount off first, then subtract. Check: you pay 80% of the regular price, so the sale price is less than 60."
      ],
      "steps": [
       "Amount off: 0.2 × 60 = 12",
@@ -6006,7 +6237,8 @@
      "hints": [
       "The question asks for the SALE price. How much comes off first?",
       "Find 15% of 20.",
-      "Then take that amount away from the regular price."
+      "Then take that amount away from the regular price.",
+      "Take the amount off first, then subtract. Check: you pay 85% of the regular price, so the sale price is less than 20."
      ],
      "steps": [
       "Amount off: 0.15 × 20 = 3",
@@ -6029,7 +6261,8 @@
      "hints": [
       "The question asks for the SALE price. How much comes off first?",
       "Find 25% of 120.",
-      "Then take that amount away from the regular price."
+      "Then take that amount away from the regular price.",
+      "Take the amount off first, then subtract. Check: you pay 75% of the regular price, so the sale price is less than 120."
      ],
      "steps": [
       "Amount off: 0.25 × 120 = 30",
@@ -6052,7 +6285,8 @@
      "hints": [
       "The question asks for the SALE price. How much comes off first?",
       "Find 30% of 120.",
-      "Then take that amount away from the regular price."
+      "Then take that amount away from the regular price.",
+      "Take the amount off first, then subtract. Check: you pay 70% of the regular price, so the sale price is less than 120."
      ],
      "steps": [
       "Amount off: 0.3 × 120 = 36",
@@ -6075,7 +6309,8 @@
      "hints": [
       "The question asks for the SALE price. How much comes off first?",
       "Find 40% of 200.",
-      "Then take that amount away from the regular price."
+      "Then take that amount away from the regular price.",
+      "Take the amount off first, then subtract. Check: you pay 60% of the regular price, so the sale price is less than 200."
      ],
      "steps": [
       "Amount off: 0.4 × 200 = 80",
@@ -6098,7 +6333,8 @@
      "hints": [
       "The question asks for the SALE price. How much comes off first?",
       "Find 15% of 50.",
-      "Then take that amount away from the regular price."
+      "Then take that amount away from the regular price.",
+      "Take the amount off first, then subtract. Check: you pay 85% of the regular price, so the sale price is less than 50."
      ],
      "steps": [
       "Amount off: 0.15 × 50 = 7.5",
@@ -6121,7 +6357,8 @@
      "hints": [
       "The question asks for the SALE price. How much comes off first?",
       "Find 20% of 150.",
-      "Then take that amount away from the regular price."
+      "Then take that amount away from the regular price.",
+      "Take the amount off first, then subtract. Check: you pay 80% of the regular price, so the sale price is less than 150."
      ],
      "steps": [
       "Amount off: 0.2 × 150 = 30",
@@ -6144,7 +6381,8 @@
      "hints": [
       "The question asks for the SALE price. How much comes off first?",
       "Find 50% of 200.",
-      "Then take that amount away from the regular price."
+      "Then take that amount away from the regular price.",
+      "Take the amount off first, then subtract. Check: you pay 50% of the regular price, so the sale price is less than 200."
      ],
      "steps": [
       "Amount off: 0.5 × 200 = 100",

@@ -19,7 +19,7 @@ for p in U.PROBS:
         t = v["text"]
         if re.search(r"[{}]", t) or "  " in t or "None" in t: bad.append(f"{pid}: stray placeholder or spacing in {t[:60]!r}")
         if len(t) > 420: bad.append(f"{pid}: text over 420 characters (too long for a 12 year old on one screen)")
-        if len(v["hints"]) != 3: bad.append(f"{pid}: needs exactly 3 hints (nudge, method, setup), has {len(v['hints'])}")
+        if len(v["hints"]) != 4: bad.append(f"{pid}: needs exactly 4 hints (nudge, method, setup, last-resort check or break-apart), has {len(v['hints'])}")
         if len(v["steps"]) < 2: bad.append(f"{pid}: needs at least 2 solution steps")
         if v["kind"] == "num" and not (v["answer"] > 0): bad.append(f"{pid}: answer must be positive")
         if v["kind"] == "choice" and len(v["options"]) < 2: bad.append(f"{pid}: a choice problem needs options")
