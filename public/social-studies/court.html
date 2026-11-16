@@ -138,7 +138,7 @@ h2{font:800 1.45rem/1.2 var(--display)}
 <script>
 (function(){
 var C = window.courtDeck, KEY = C.KEY + (window.mathseyeNs || ''), app = document.getElementById('app');
-var data = load(), S = { scope: 'all', sel: [], last: '', queue: null, screen: 'home', mode: 'all', recent: [], retry: [], asked: 0, right: 0, missed: {}, cur: null, picked: null };
+var data = load(), S = { again: {}, scope: 'all', sel: [], last: '', queue: null, screen: 'home', mode: 'all', recent: [], retry: [], asked: 0, right: 0, missed: {}, cur: null, picked: null };
 
 /* ---- saved progress: { cards: { id: {seen, s, m, l, u} } } ---- */
 function load(){
@@ -191,6 +191,7 @@ function home(){
     + '<button class="link" id="know">See what I know and what I don’t</button></div>'
     + section('tf', 'True or False', 'The 28 true/false statements from the study guide. Most of them will be on the test as written.')
     + section('case', 'Court Cases', 'Read a case name like \u201cThe State v. Marcus Okafor\u201d and answer questions about it: civil or criminal, plaintiff or prosecutor, defendant, and more. New cases every time.')
+    + '<div class="card"><h3>The two cases on the study guide</h3><p class="muted">Go through the sample cases printed on the sheet, with the same questions.</p><div class="row"><button class="btn" data-sample="swade">The People v. Deanna Swade</button><button class="btn" data-sample="davison">U.S. Postal Service v. Dave Davison</button></div></div>'
     + '<div class="card"><h3>Pick specific ones</h3><p class="muted">Tap the numbers on the study guide you want to practice. Filled = solid, outlined = getting there, striped = still shaky, dashed = not started.</p>'
     + '<div class="pick" id="pick">' + C.TF.map(function(f){ var id = 'tf' + f.n; return '<button class="pk ' + C.statusOf(data.cards[id]) + '" data-id="' + id + '" aria-pressed="' + (S.sel.indexOf(id) >= 0) + '" aria-label="Statement ' + f.n + ', ' + C.statusOf(data.cards[id]) + '">' + f.n + '</button>'; }).join('') + '</div>'
     + '<div class="kinds" id="kinds">' + Object.keys(C.KINDS).map(function(id){ return '<button class="pk ' + C.statusOf(data.cards[id]) + '" data-id="' + id + '" aria-pressed="' + (S.sel.indexOf(id) >= 0) + '">' + esc(KIND_LABEL[id]) + '</button>'; }).join('') + '</div>'
@@ -199,6 +200,7 @@ function home(){
     + '<div class="card"><h3>True or False, by topic</h3>' + rows + '</div>'
     + '<button class="link quiet" id="reset">Reset my progress on this</button>';
   Array.prototype.forEach.call(document.querySelectorAll('[data-go]'), function(b){ b.onclick = function(){ start(b.getAttribute('data-mode'), b.getAttribute('data-go')); }; });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-sample]'), function(b){ b.onclick = function(){ start('pick', 'all', b.getAttribute('data-sample')); }; });
   document.getElementById('know').onclick = function(){ S.screen = 'know'; render(); };
   Array.prototype.forEach.call(document.querySelectorAll('.pk'), function(b){ b.onclick = function(){
     var id = b.getAttribute('data-id'), i = S.sel.indexOf(id);
@@ -213,14 +215,14 @@ function home(){
   };
 }
 
-function start(mode, scope){ S.scope = scope || 'all'; S.queue = mode === 'pick' ? S.sel.slice().sort(function(a, b){ return C.DECK.indexOf(a) - C.DECK.indexOf(b); }) : null; S.mode = mode; S.recent = []; S.retry = []; S.asked = 0; S.right = 0; S.missed = {}; S.screen = 'quiz'; S.cur = null; next(); }
+function start(mode, scope, sample){ S.scope = scope || 'all'; S.queue = sample ? C.SAMPLES[sample].qs.map(function(k){ return k + '@' + sample; }) : mode === 'pick' ? S.sel.slice().sort(function(a, b){ return C.DECK.indexOf(a) - C.DECK.indexOf(b); }) : null; S.mode = sample ? 'pick' : mode; S.recent = []; S.retry = []; S.again = {}; S.asked = 0; S.right = 0; S.missed = {}; S.screen = 'quiz'; S.cur = null; next(); }
 function next(){
   var id = null;
   for (var i = 0; i < S.retry.length; i++) if (S.retry[i].at <= S.asked) { id = S.retry[i].id; S.retry.splice(i, 1); break; }
   if (!id && S.queue) { id = S.queue.shift() || (S.retry.length ? S.retry.shift().id : null); }
   else if (!id) id = C.pickNext(scopeIds(S.scope), data.cards, { recent: S.recent, mode: S.mode });
   if (!id) { S.cur = null; S.screen = 'done'; return render(); }
-  S.cur = C.ask(id); S.picked = null; S.recent.push(id); if (S.recent.length > 12) S.recent.shift();
+  var at = id.indexOf('@'); S.cur = at > 0 ? C.ask(id.slice(0, at), null, id.slice(at + 1)) : C.ask(id); S.picked = null; S.recent.push(id.split('@')[0]); if (S.recent.length > 12) S.recent.shift();
   render();
 }
 function quiz(){
@@ -247,7 +249,7 @@ function quiz(){
 }
 function answer(o){
   if (S.picked != null) return;
-  var q = S.cur, ok = o === q.answer; S.picked = o; S.asked++; if (ok) S.right++; else { S.missed[q.id] = 1; S.retry.push({ id: q.id, at: S.asked + 3 }); }
+  var q = S.cur, ok = o === q.answer; S.picked = o; S.asked++; if (ok) S.right++; else { S.missed[q.id] = 1; if (!S.again[q.key]) { S.again[q.key] = 1; S.retry.push({ id: q.key, at: S.asked + 3 }); } }
   data.cards[q.id] = C.grade(data.cards[q.id], ok, Date.now()); persist(); render();
 }
 

@@ -52,8 +52,14 @@
   var GOV = ['The People', 'The State', 'The United States'];
   function pick(list, rnd) { return list[Math.floor(rnd() * list.length) % list.length]; }
   function person(rnd) { return pick(FIRST, rnd) + ' ' + pick(LAST, rnd); }
+  /* The two sample cases printed on the study guide. They are asked with exactly the questions the sheet lists, and also turn up now and then in normal rounds. */
+  var SAMPLES = {
+    swade: { civil: false, a: 'The People', b: 'Deanna Swade', text: 'The People v. Deanna Swade', qs: ['case-civil', 'case-party', 'case-def', 'case-end', 'case-plaintiff', 'case-crime'] },
+    davison: { civil: true, a: 'U.S. Postal Service', b: 'Dave Davison', text: 'U.S. Postal Service v. Dave Davison', qs: ['case-civil', 'case-party', 'case-def', 'case-proof', 'case-plaintiff', 'case-crime'] },
+  };
   /* A case is { civil, a, b, text } where a is the side that brings it and b is the defendant. */
   function makeCase(rnd, wantCivil) {
+    if (wantCivil == null && rnd() < 0.1) return SAMPLES[rnd() < 0.5 ? 'swade' : 'davison'];
     var civil = wantCivil == null ? rnd() < 0.5 : !!wantCivil, a, b;
     if (!civil) { a = pick(GOV, rnd); b = person(rnd); }
     else {
@@ -87,18 +93,18 @@
 
   /* The question for a card. Case cards take a seed so the same case can be shown again (and looked up from the #number). */
   function mulberry(seed) { var a = seed >>> 0; return function () { a += 0x6D2B79F5; var t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
-  function ask(id, seed) {
+  function ask(id, seed, fixed) {
     var m = /^tf(\d+)$/.exec(id);
     if (m) {
       var f = TF[Number(m[1]) - 1];
-      return { id: id, ref: '#' + id, kind: 'tf', topic: f.topic, head: 'True or false?', text: f.t, opts: ['True', 'False'], answer: f.a ? 'True' : 'False', why: f.why };
+      return { id: id, key: id, ref: '#' + id, kind: 'tf', topic: f.topic, head: 'True or false?', text: f.t, opts: ['True', 'False'], answer: f.a ? 'True' : 'False', why: f.why };
     }
     var k = KINDS[id]; if (!k) return null;
     seed = seed == null ? Math.floor(Math.random() * 99999) + 1 : seed;
-    var rnd = mulberry(seed), c = makeCase(rnd);
+    var rnd = mulberry(seed), c = fixed ? SAMPLES[fixed] : makeCase(rnd);
     var opts = k.opts ? k.opts.slice() : [c.a, c.b];
     if (!k.opts && rnd() < 0.5) opts.reverse();
-    return { id: id, ref: '#' + id + '-' + seed, kind: 'case', topic: 'cases', head: 'Court case', caseText: c.text, text: k.q, opts: opts, answer: k.ans(c), why: k.why(c) };
+    return { id: id, ref: '#' + id + '-' + (fixed || seed), key: fixed ? id + '@' + fixed : id, kind: 'case', topic: 'cases', head: 'Court case', caseText: c.text, text: k.q, opts: opts, answer: k.ans(c), why: k.why(c) };
   }
 
   var DECK = TF.map(function (f) { return 'tf' + f.n; }).concat(KIND_IDS);
@@ -136,6 +142,6 @@
   }
   function topicOf(id) { var m = /^tf(\d+)$/.exec(id); return m ? TF[Number(m[1]) - 1].topic : 'cases'; }
 
-  var api = { TOPICS: TOPICS, TF: TF, KINDS: KINDS, DECK: DECK, ask: ask, makeCase: makeCase, mulberry: mulberry, statusOf: statusOf, grade: grade, pickNext: pickNext, tally: tally, topicOf: topicOf, KEY: 'mathseye.ss.court.v1' };
+  var api = { SAMPLES: SAMPLES, TOPICS: TOPICS, TF: TF, KINDS: KINDS, DECK: DECK, ask: ask, makeCase: makeCase, mulberry: mulberry, statusOf: statusOf, grade: grade, pickNext: pickNext, tally: tally, topicOf: topicOf, KEY: 'mathseye.ss.court.v1' };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.courtDeck = api;
 })(typeof window !== 'undefined' ? window : globalThis);

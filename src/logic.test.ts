@@ -540,6 +540,14 @@ describe('Social Studies court study guide', () => {
       expect(C.ask('case-def', seed).answer).toBe(c.b);
     }
   });
+  it('has the two sample cases from the study guide, with the questions and answers on the sheet', () => {
+    const sw = C.SAMPLES.swade, dv = C.SAMPLES.davison;
+    expect(sw.text).toBe('The People v. Deanna Swade'); expect(dv.text).toBe('U.S. Postal Service v. Dave Davison');
+    const A = (k: string, f: string) => C.ask(k, 1, f).answer;
+    expect(sw.qs.map((k: string) => A(k, 'swade'))).toEqual(['Criminal', 'Prosecutor', 'Deanna Swade', 'Verdict', 'No', 'Yes']);
+    expect(dv.qs.map((k: string) => A(k, 'davison'))).toEqual(['Civil', 'Plaintiff', 'Dave Davison', 'Preponderance of evidence', 'Yes', "We don't know"]);
+    expect(C.ask('case-def', 1, 'swade').key).toBe('case-def@swade');
+  });
   it('knows a card in two right answers in a row; a miss makes it shaky again', () => {
     let r: any = null; expect(C.statusOf(r)).toBe('new');
     r = C.grade(r, false, 1); expect(C.statusOf(r)).toBe('shaky');
