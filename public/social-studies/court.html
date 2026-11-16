@@ -174,7 +174,10 @@ function legend(t){ return '<div class="legend"><span><i class="dot solid"></i>S
 function section(sc, title, desc){
   var ids = scopeIds(sc), t = C.tally(ids, data.cards), working = t.shaky + t.getting + t.new;
   return '<div class="card"><h2>' + title + '</h2><p class="muted">' + desc + '</p><div><span class="big">' + t.solid + '</span> <span class="muted">of ' + t.total + ' solid</span></div>' + meter(t)
-    + '<div class="row"><button class="btn primary" data-go="' + sc + '" data-mode="all">Practice ' + title + '</button><button class="btn" data-go="' + sc + '" data-mode="weak"' + (working ? '' : ' disabled') + '>Just what I’m still working on</button></div></div>';
+    + (sc === 'case'
+      ? '<div class="row"><button class="btn primary" data-sample="both">Practice the two from the guide</button><button class="btn primary" data-go="case" data-mode="all">Generate new cases</button></div>'
+        + '<div class="row"><button class="btn" data-go="case" data-mode="weak"' + (working ? '' : ' disabled') + '>Just the case skills I\u2019m still working on</button></div>'
+      : '<div class="row"><button class="btn primary" data-go="' + sc + '" data-mode="all">Practice ' + title + '</button><button class="btn" data-go="' + sc + '" data-mode="weak"' + (working ? '' : ' disabled') + '>Just what I’m still working on</button></div>') + '</div>';
 }
 function home(){
   var y = window.scrollY;
@@ -190,8 +193,7 @@ function home(){
     + '<div class="row"><button class="btn primary" data-go="all" data-mode="all">Mix of everything</button><button class="btn" data-go="all" data-mode="weak"' + (working ? '' : ' disabled') + '>Just what I’m still working on</button></div>'
     + '<button class="link" id="know">See what I know and what I don’t</button></div>'
     + section('tf', 'True or False', 'The 28 true/false statements from the study guide. Most of them will be on the test as written.')
-    + section('case', 'Court Cases', 'Read a case name like \u201cThe State v. Marcus Okafor\u201d and answer questions about it: civil or criminal, plaintiff or prosecutor, defendant, and more. New cases every time.')
-    + '<div class="card"><h3>The two cases on the study guide</h3><p class="muted">Go through the sample cases printed on the sheet, with the same questions.</p><div class="row"><button class="btn" data-sample="swade">The People v. Deanna Swade</button><button class="btn" data-sample="davison">U.S. Postal Service v. Dave Davison</button></div></div>'
+    + section('case', 'Court Cases', 'Practice the two sample cases printed on the study guide, or generate brand-new cases like \u201cThe State v. Marcus Okafor\u201d and answer questions about them.')
     + '<div class="card"><h3>Pick specific ones</h3><p class="muted">Tap the numbers on the study guide you want to practice. Filled = solid, outlined = getting there, striped = still shaky, dashed = not started.</p>'
     + '<div class="pick" id="pick">' + C.TF.map(function(f){ var id = 'tf' + f.n; return '<button class="pk ' + C.statusOf(data.cards[id]) + '" data-id="' + id + '" aria-pressed="' + (S.sel.indexOf(id) >= 0) + '" aria-label="Statement ' + f.n + ', ' + C.statusOf(data.cards[id]) + '">' + f.n + '</button>'; }).join('') + '</div>'
     + '<div class="kinds" id="kinds">' + Object.keys(C.KINDS).map(function(id){ return '<button class="pk ' + C.statusOf(data.cards[id]) + '" data-id="' + id + '" aria-pressed="' + (S.sel.indexOf(id) >= 0) + '">' + esc(KIND_LABEL[id]) + '</button>'; }).join('') + '</div>'
@@ -215,7 +217,7 @@ function home(){
   };
 }
 
-function start(mode, scope, sample){ S.scope = scope || 'all'; S.queue = sample ? C.SAMPLES[sample].qs.map(function(k){ return k + '@' + sample; }) : mode === 'pick' ? S.sel.slice().sort(function(a, b){ return C.DECK.indexOf(a) - C.DECK.indexOf(b); }) : null; S.mode = sample ? 'pick' : mode; S.recent = []; S.retry = []; S.again = {}; S.asked = 0; S.right = 0; S.missed = {}; S.screen = 'quiz'; S.cur = null; next(); }
+function start(mode, scope, sample){ S.scope = scope || 'all'; S.queue = sample ? (sample === 'both' ? ['swade', 'davison'] : [sample]).reduce(function(a, sm){ return a.concat(C.SAMPLES[sm].qs.map(function(k){ return k + '@' + sm; })); }, []) : mode === 'pick' ? S.sel.slice().sort(function(a, b){ return C.DECK.indexOf(a) - C.DECK.indexOf(b); }) : null; S.mode = sample ? 'pick' : mode; if (sample) S.scope = 'case'; S.recent = []; S.retry = []; S.again = {}; S.asked = 0; S.right = 0; S.missed = {}; S.screen = 'quiz'; S.cur = null; next(); }
 function next(){
   var id = null;
   for (var i = 0; i < S.retry.length; i++) if (S.retry[i].at <= S.asked) { id = S.retry[i].id; S.retry.splice(i, 1); break; }

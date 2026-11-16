@@ -52,14 +52,13 @@
   var GOV = ['The People', 'The State', 'The United States'];
   function pick(list, rnd) { return list[Math.floor(rnd() * list.length) % list.length]; }
   function person(rnd) { return pick(FIRST, rnd) + ' ' + pick(LAST, rnd); }
-  /* The two sample cases printed on the study guide. They are asked with exactly the questions the sheet lists, and also turn up now and then in normal rounds. */
+  /* The two sample cases printed on the study guide. They are asked with exactly the questions the sheet lists; generated cases never reuse them. */
   var SAMPLES = {
     swade: { civil: false, a: 'The People', b: 'Deanna Swade', text: 'The People v. Deanna Swade', qs: ['case-civil', 'case-party', 'case-def', 'case-end', 'case-plaintiff', 'case-crime'] },
     davison: { civil: true, a: 'U.S. Postal Service', b: 'Dave Davison', text: 'U.S. Postal Service v. Dave Davison', qs: ['case-civil', 'case-party', 'case-def', 'case-proof', 'case-plaintiff', 'case-crime'] },
   };
   /* A case is { civil, a, b, text } where a is the side that brings it and b is the defendant. */
   function makeCase(rnd, wantCivil) {
-    if (wantCivil == null && rnd() < 0.1) return SAMPLES[rnd() < 0.5 ? 'swade' : 'davison'];
     var civil = wantCivil == null ? rnd() < 0.5 : !!wantCivil, a, b;
     if (!civil) { a = pick(GOV, rnd); b = person(rnd); }
     else {
