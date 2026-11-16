@@ -204,11 +204,11 @@ function home(){
     var ids = C.DECK.filter(function(id){ return C.topicOf(id) === tp.id; }), tt = C.tally(ids, data.cards);
     return '<div class="topic"><b>' + tp.label + '</b><span class="n">' + tt.solid + '/' + tt.total + '</span><small>' + tp.sub + '</small>' + meter(tt) + '</div>';
   }).join('');
-  var msg = t.new === t.total ? 'Nothing started yet. A round takes a few minutes.' : working === 0 ? 'Everything is solid. Nice work!' : 'Cards you miss come back sooner. Cards you get right twice in a row count as solid.';
+  var msg = t.new === t.total ? 'Nothing started yet. A round is 20 true/false statements plus the two court cases, like the test.' : working === 0 ? 'Everything is solid. Nice work!' : 'Every round has both court cases. Cards you miss come back sooner, and a card counts as solid after two right answers in a row.';
   app.innerHTML = top()
     + '<div><p class="eyebrow">Social Studies 7 · Bar Exam Part II</p><h1>Civil &amp; Criminal Court</h1></div>'
     + '<div class="card"><div><span class="big">' + t.solid + '</span> <span class="muted">of ' + t.total + ' solid</span></div>' + meter(t) + legend(t) + '<p class="muted">' + msg + '</p>'
-    + '<div class="row"><button class="btn primary" data-go="all" data-mode="all">Mix of everything</button><button class="btn" data-go="all" data-mode="weak"' + (working ? '' : ' disabled') + '>Just what I’m still working on</button></div>'
+    + '<div class="row"><button class="btn primary" data-go="all" data-mode="all">Start a round</button><button class="btn" data-go="all" data-mode="weak"' + (working ? '' : ' disabled') + '>Just what I’m still working on</button></div>'
     + '<button class="link" id="know">See what I know and what I don’t</button></div>'
     + section('tf', 'True or False', 'The 28 true/false statements from the study guide. Most of them will be on the test as written.')
     + section('case', 'Court Cases', 'The test has two court cases. Practice the two printed on the study guide, or generate a new pair (one criminal, one civil). A case only counts when every answer in it is right.')
@@ -239,7 +239,17 @@ function start(mode, scope, sample){ S.scope = scope || 'all'; S.guide = sample 
     var types = C.COURT_IDS.filter(function(id){ return mode !== 'weak' || C.statusOf(data.cards[id]) !== 'solid'; }).map(function(id){ return C.COURT[id].civil; });
     if (Math.random() < 0.5) types.reverse(); S.caseSet = types;
   }
-  S.gtotal = S.guide ? S.guide.length : S.caseSet ? S.caseSet.length : 0; S.run = null; S.queue = (sample || S.caseSet) ? [] : mode === 'pick' ? S.sel.slice().sort(function(a, b){ return C.DECK.indexOf(a) - C.DECK.indexOf(b); }) : null; S.mode = sample ? 'pick' : mode; if (sample) S.scope = 'case'; S.recent = []; S.retry = []; S.again = {}; S.asked = 0; S.right = 0; S.missed = {}; S.screen = 'quiz'; S.cur = null; next(); }
+  S.gtotal = S.guide ? S.guide.length : S.caseSet ? S.caseSet.length : 0; S.run = null; S.queue = (sample || S.caseSet) ? [] : mode === 'pick' ? S.sel.slice().sort(function(a, b){ return C.DECK.indexOf(a) - C.DECK.indexOf(b); }) : null; S.mode = sample ? 'pick' : mode; if (sample) S.scope = 'case'; S.recent = []; S.retry = []; S.again = {}; S.asked = 0; S.right = 0; S.missed = {}; S.screen = 'quiz'; S.cur = null;
+  if (!sample && !S.caseSet && mode !== 'pick' && S.scope === 'all') S.queue = buildRound(mode);
+  next(); }
+/* A mixed round is like the test: up to ROUND_TF statements (the ones she needs most come first in line) plus the two court cases, a criminal one and a civil one, dropped in at random places. */
+var ROUND_TF = 20;
+function buildRound(mode){
+  var pool = scopeIds('tf').filter(function(id){ return mode !== 'weak' || C.statusOf(data.cards[id]) !== 'solid'; }), plan = [];
+  while (plan.length < ROUND_TF && pool.length) { var id = C.pickNext(pool, data.cards, {}); plan.push(id); pool.splice(pool.indexOf(id), 1); }
+  C.COURT_IDS.filter(function(id){ return mode !== 'weak' || C.statusOf(data.cards[id]) !== 'solid'; }).forEach(function(id){ plan.splice(Math.floor(Math.random() * (plan.length + 1)), 0, id); });
+  return plan;
+}
 function beginCase(fixed, civil){
   var seed = fixed ? null : Math.floor(Math.random() * 99999) + 1, ids;
   if (fixed) { ids = C.SAMPLES[fixed].qs.slice(); civil = C.SAMPLES[fixed].civil; }
