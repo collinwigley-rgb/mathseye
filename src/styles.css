@@ -332,3 +332,12 @@ main.home { gap: 20px; padding-top: max(74px, calc(env(safe-area-inset-top) + 66
 .home .tile3.off .go { display: none; }
 
 .hubhead .midnote { margin: 2px 0 0; color: var(--amber2, var(--muted)); font-size: 15px; letter-spacing: .02em; }
+
+/* Social Studies strip under the four panels on the main selector */
+.home .ssbar { display: flex; align-items: center; gap: 14px; width: 100%; max-width: 640px; min-height: 64px; padding: 12px 20px; border-radius: 18px; border: 2px solid var(--panel2); background: var(--panel); color: var(--text); text-decoration: none; }
+.home .ssbar b { font-family: var(--display); font-size: 22px; color: var(--amber); }
+.home .ssbar span { flex: 1; color: var(--muted); font-size: 17px; }
+.home .ssbar i { font-style: normal; font-size: 22px; color: var(--amber); }
+.home .ssbar:active, .home .ssbar:focus-visible { border-color: var(--amber); outline: none; }
+@media (min-width: 900px) and (min-aspect-ratio: 1/1) { .home .ssbar { max-width: 1040px; } }
+

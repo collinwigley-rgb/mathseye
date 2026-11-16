@@ -390,6 +390,7 @@ function Hub({ db, update, onCards, onFacts, onGrownups, onWho }: { db: Db; upda
           : <div className="tile3 t3 off" aria-disabled="true"><span className="gl"><GlyphHomework /></span><b>Unit Homework</b><span className="sub">Coming soon for {U.label}</span></div>}
         <button className="tile3 t4" onClick={() => onCards(lesson)}><span className="gl"><GlyphCards /></span><b>Flash Cards</b><span className="sub">{lessonInfo ? `Lesson ${lessonInfo.id} words and ideas` : 'Words and big ideas'}</span><i className="go" aria-hidden="true">{'\u2192'}</i></button>
       </nav>
+      <a className="ssbar" href="./social-studies/court.html"><b>Social Studies</b><span>Civil &amp; criminal court: test practice</span><i aria-hidden="true">{'\u2192'}</i></a>
       <button className="link" onClick={onGrownups}>Grown-ups</button>
       {drawer && <PaletteDrawer cur={cur} onPick={(id) => { setBrand(id); setCur(id); }} onClose={() => setDrawer(false)} />}
     </main>

@@ -4,8 +4,8 @@
    Merging: things that only grow (solved problems, answers, sessions) are unioned; settings and the "come back" list
    come from whichever side changed last; a reset on one device wins over older progress elsewhere. */
 (function (root) {
-  var KEYS = { facts: 'mathseye.mathfacts.v1', study: 'mathseye.unit2.study.v2', hw: 'mathseye.hw.unit2.v1', cards: 'mathseye.cards.v1' };
-  var SECTIONS = ['facts', 'study', 'hw', 'cards'];
+  var KEYS = { facts: 'mathseye.mathfacts.v1', study: 'mathseye.unit2.study.v2', hw: 'mathseye.hw.unit2.v1', cards: 'mathseye.cards.v1', court: 'mathseye.ss.court.v1' };
+  var SECTIONS = ['facts', 'study', 'hw', 'cards', 'court'];
   /* Every later unit has its own study and homework sections, study<N> and hw<N> (Unit 2 keeps its original names, which are never renamed).
      Add a unit's number here when it gets pages; tools/check_units.py checks this list against src/units.json. */
   [3].forEach(function (n) { KEYS['study' + n] = 'mathseye.unit' + n + '.study.v2'; KEYS['hw' + n] = 'mathseye.hw.unit' + n + '.v1'; SECTIONS.push('study' + n, 'hw' + n); });
@@ -74,7 +74,7 @@
     Object.keys(a).concat(Object.keys(b)).forEach(function (id) { var x = a[id], y = b[id]; cards[id] = !x ? y : !y ? x : ((y.u || 0) > (x.u || 0) ? y : (y.u || 0) < (x.u || 0) ? x : ((y.seen || 0) > (x.seen || 0) ? y : x)); });
     out.cards = cards; return out;
   }
-  var MERGE = { facts: mergeFacts, study: mergeStudy, hw: mergeHw, cards: mergeCards };
+  var MERGE = { facts: mergeFacts, study: mergeStudy, hw: mergeHw, cards: mergeCards, court: mergeCards };   // court = Social Studies court cards: same per-card record shape as flash cards
   SECTIONS.forEach(function (k) { if (/^study\d/.test(k)) MERGE[k] = mergeStudy; else if (/^hw\d/.test(k)) MERGE[k] = mergeHw; });
 
   var api = { norm: norm, mergeFacts: mergeFacts, mergeStudy: mergeStudy, mergeHw: mergeHw, mergeCards: mergeCards, sections: SECTIONS, keys: KEYS, merges: MERGE };

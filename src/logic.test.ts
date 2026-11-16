@@ -114,6 +114,7 @@ describe('every trick in content/tricks is well-formed', () => {
 // ---------------------------------------------------------------- hub: MathFacts modes + color schemes
 import { buildQueue, tricksFor, unlockedTricks } from './session';
 import syncSource from '../public/sync.js?raw';
+import courtSource from '../public/social-studies/court.js?raw';
 import gradeSource from '../public/grade.js?raw';
 import studyTemplate from '../tools/study_template.html?raw';
 import study2Page from '../public/study/unit-2.html?raw';
@@ -414,7 +415,7 @@ describe('per-unit sync sections', () => {
     const m: any = { exports: {} }; new Function('module', syncSource)(m); const S = m.exports;
     expect(S.keys.study).toBe('mathseye.unit2.study.v2'); expect(S.keys.hw).toBe('mathseye.hw.unit2.v1');
     expect(S.keys.study3).toBe('mathseye.unit3.study.v2'); expect(S.keys.hw3).toBe('mathseye.hw.unit3.v1');
-    expect(S.sections).toEqual(['facts', 'study', 'hw', 'cards', 'study3', 'hw3']);
+    expect(S.sections).toEqual(['facts', 'study', 'hw', 'cards', 'court', 'study3', 'hw3']);
     expect(S.merges.study3).toBe(S.mergeStudy); expect(S.merges.hw3).toBe(S.mergeHw);
     // a section a device has never had merges to the other side's copy (nothing lost, nothing invented)
     const R = { solved: { 'U3-01': 1 }, clean: {}, seen: {} };
@@ -517,6 +518,52 @@ describe('Homework "Check my work": the server confirms a typed answer and never
   it('the Homework page asks through the checker and has no multiple-choice buttons', () => {
     expect(homeworkTemplate).toContain('/api/check'); expect(homeworkTemplate).toContain('typedOnly');
     for (const page of [homework2Page, homework3Page]) { expect(page).not.toMatch(/class="opts"/); expect(page).not.toMatch(/aria-pressed="\$\{A\.pick/); }
+  });
+});
+
+describe('Social Studies court study guide', () => {
+  const m: any = { exports: {} }; new Function('module', courtSource)(m); const C = m.exports;
+  it('has the 28 statements plus 7 case-name skills, all with a why', () => {
+    expect(C.TF.length).toBe(28); expect(C.DECK.length).toBe(35);
+    for (const f of C.TF) { expect(f.why.length).toBeGreaterThan(10); expect(C.TOPICS.some((t: any) => t.id === f.topic)).toBe(true); }
+    expect(C.TF.filter((f: any) => f.a).length).toBe(19);
+  });
+  it('every question has its answer among the choices, for any seed', () => {
+    for (const id of C.DECK) for (let seed = 1; seed < 60; seed++) { const q = C.ask(id, seed); expect(q.opts).toContain(q.answer); expect(new Set(q.opts).size).toBe(q.opts.length); }
+  });
+  it('case rules: government v. person is criminal, everything else civil', () => {
+    for (let seed = 1; seed < 200; seed++) {
+      const c = C.makeCase(C.mulberry(seed));
+      expect(/^(The People|The State|The United States) v\./.test(c.text)).toBe(!c.civil);
+      const kinds = ['case-civil', 'case-party', 'case-end', 'case-plaintiff', 'case-proof', 'case-crime'];
+      for (const k of kinds) { const q = C.ask(k, seed); expect(q.caseText).toBe(c.text); }
+      expect(C.ask('case-def', seed).answer).toBe(c.b);
+    }
+  });
+  it('knows a card in two right answers in a row; a miss makes it shaky again', () => {
+    let r: any = null; expect(C.statusOf(r)).toBe('new');
+    r = C.grade(r, false, 1); expect(C.statusOf(r)).toBe('shaky');
+    r = C.grade(r, true, 2); expect(C.statusOf(r)).toBe('getting');
+    r = C.grade(r, true, 3); expect(C.statusOf(r)).toBe('solid');
+    r = C.grade(r, false, 4); expect(C.statusOf(r)).toBe('shaky'); expect(r.m).toBe(2);
+  });
+  it('favors shaky and new cards, skips recent ones, and "weak" mode never picks solid cards', () => {
+    const ids = C.DECK, recs: any = {}; ids.forEach((id: string) => { recs[id] = { seen: 3, s: 2, m: 0, l: 'r', u: 1 }; });
+    recs.tf5 = { seen: 2, s: 0, m: 1, l: 'w', u: 1 };
+    for (let i = 0; i < 30; i++) expect(C.pickNext(ids, recs, { mode: 'weak', rnd: Math.random })).toBe('tf5');
+    expect(C.pickNext(ids, recs, { mode: 'weak', recent: [], rnd: () => 0.5 })).toBe('tf5');
+    ids.forEach((id: string) => { recs[id] = { seen: 3, s: 2, m: 0, l: 'r', u: 1 }; });
+    expect(C.pickNext(ids, recs, { mode: 'weak' })).toBeNull();
+    let hits = 0; recs.tf9 = { seen: 1, s: 0, m: 1, l: 'w', u: 1 };
+    for (let i = 0; i < 400; i++) if (C.pickNext(ids, recs, { recent: ['tf1'] }) === 'tf9') hits++;
+    expect(hits).toBeGreaterThan(30);   // about 6 of 41.5 of the weight
+    for (let i = 0; i < 50; i++) expect(C.pickNext(ids, recs, { recent: ['tf9'] })).not.toBe('tf9');
+  });
+  it('syncs per card under its own key, and keeps the key name', () => {
+    expect(C.KEY).toBe('mathseye.ss.court.v1'); expect(syncSource).toContain("court: 'mathseye.ss.court.v1'");
+    const s: any = { exports: {} }; new Function('module', syncSource)(s);
+    const o = s.exports.merges.court({ cards: { tf1: { seen: 1, u: 5 } } }, { cards: { tf1: { seen: 2, u: 9 }, tf2: { seen: 1, u: 1 } } });
+    expect(o.cards.tf1.seen).toBe(2); expect(Object.keys(o.cards).sort()).toEqual(['tf1', 'tf2']);
   });
 });
 

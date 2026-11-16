@@ -6,3 +6,5 @@
   Cache-Control: no-cache
 /homework/*
   Cache-Control: no-cache
+/social-studies/*
+  Cache-Control: no-cache
