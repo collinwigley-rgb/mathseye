@@ -112,6 +112,7 @@ h1{font:800 2rem/1.15 var(--display);color:var(--fg)}
 .item{padding:10px 14px;border-radius:14px;background:var(--panel2);font-size:.98rem}
 .item small{display:block;color:var(--muted)}
 .hide{display:none}
+h2{font:800 1.45rem/1.2 var(--display)}
 .pick{display:grid;grid-template-columns:repeat(auto-fill,minmax(54px,1fr));gap:8px}
 .pk{min-height:54px;border-radius:14px;border:2px solid var(--muted);border-style:dashed;background:transparent;color:var(--fg);font:700 1.05rem var(--body);cursor:pointer;padding:0}
 .pk.solid{background:var(--accent);color:var(--accent-fg);border:2px solid transparent}
@@ -137,7 +138,7 @@ h1{font:800 2rem/1.15 var(--display);color:var(--fg)}
 <script>
 (function(){
 var C = window.courtDeck, KEY = C.KEY + (window.mathseyeNs || ''), app = document.getElementById('app');
-var data = load(), S = { sel: [], last: '', queue: null, screen: 'home', mode: 'all', recent: [], retry: [], asked: 0, right: 0, missed: {}, cur: null, picked: null };
+var data = load(), S = { scope: 'all', sel: [], last: '', queue: null, screen: 'home', mode: 'all', recent: [], retry: [], asked: 0, right: 0, missed: {}, cur: null, picked: null };
 
 /* ---- saved progress: { cards: { id: {seen, s, m, l, u} } } ---- */
 function load(){
@@ -147,6 +148,7 @@ function load(){
   return d && d.cards ? d : { cards: {} };
 }
 var KIND_LABEL = { 'case-civil': 'Case: civil or criminal', 'case-party': 'Case: plaintiff or prosecutor', 'case-def': 'Case: defendant', 'case-end': 'Case: verdict or judgment', 'case-plaintiff': 'Case: is there a plaintiff', 'case-proof': 'Case: proof needed', 'case-crime': 'Case: did a crime happen' };
+function scopeIds(sc){ return C.DECK.filter(function(id){ var tf = /^tf/.test(id); return sc === 'tf' ? tf : sc === 'case' ? !tf : true; }); }
 var lastBak = 0;
 function persist(){
   try {
@@ -169,10 +171,15 @@ function meter(t, cls){ var n = t.total || 1; return '<div class="meter ' + (cls
   + '<i class="solid" style="width:' + (100*t.solid/n) + '%"></i><i class="getting" style="width:' + (100*t.getting/n) + '%"></i><i class="shaky" style="width:' + (100*t.shaky/n) + '%"></i></div>'; }
 function legend(t){ return '<div class="legend"><span><i class="dot solid"></i>Solid ' + t.solid + '</span><span><i class="dot getting"></i>Getting there ' + t.getting + '</span><span><i class="dot shaky"></i>Still shaky ' + t.shaky + '</span><span><i class="dot new"></i>Not started ' + t.new + '</span></div>'; }
 
+function section(sc, title, desc){
+  var ids = scopeIds(sc), t = C.tally(ids, data.cards), working = t.shaky + t.getting + t.new;
+  return '<div class="card"><h2>' + title + '</h2><p class="muted">' + desc + '</p><div><span class="big">' + t.solid + '</span> <span class="muted">of ' + t.total + ' solid</span></div>' + meter(t)
+    + '<div class="row"><button class="btn primary" data-go="' + sc + '" data-mode="all">Practice ' + title + '</button><button class="btn" data-go="' + sc + '" data-mode="weak"' + (working ? '' : ' disabled') + '>Just what I’m still working on</button></div></div>';
+}
 function home(){
   var y = window.scrollY;
   var t = C.tally(C.DECK, data.cards), working = t.shaky + t.getting + t.new;
-  var rows = C.TOPICS.map(function(tp){
+  var rows = C.TOPICS.filter(function(tp){ return tp.id !== 'cases'; }).map(function(tp){
     var ids = C.DECK.filter(function(id){ return C.topicOf(id) === tp.id; }), tt = C.tally(ids, data.cards);
     return '<div class="topic"><b>' + tp.label + '</b><span class="n">' + tt.solid + '/' + tt.total + '</span><small>' + tp.sub + '</small>' + meter(tt) + '</div>';
   }).join('');
@@ -180,17 +187,18 @@ function home(){
   app.innerHTML = top()
     + '<div><p class="eyebrow">Social Studies 7 · Bar Exam Part II</p><h1>Civil &amp; Criminal Court</h1></div>'
     + '<div class="card"><div><span class="big">' + t.solid + '</span> <span class="muted">of ' + t.total + ' solid</span></div>' + meter(t) + legend(t) + '<p class="muted">' + msg + '</p>'
-    + '<div class="row"><button class="btn primary" id="go">Start practice</button><button class="btn" id="weak"' + (working ? '' : ' disabled') + '>Just what I’m still working on</button></div>'
+    + '<div class="row"><button class="btn primary" data-go="all" data-mode="all">Mix of everything</button><button class="btn" data-go="all" data-mode="weak"' + (working ? '' : ' disabled') + '>Just what I’m still working on</button></div>'
     + '<button class="link" id="know">See what I know and what I don’t</button></div>'
+    + section('tf', 'True or False', 'The 28 true/false statements from the study guide. Most of them will be on the test as written.')
+    + section('case', 'Court Cases', 'Read a case name like \u201cThe State v. Marcus Okafor\u201d and answer questions about it: civil or criminal, plaintiff or prosecutor, defendant, and more. New cases every time.')
     + '<div class="card"><h3>Pick specific ones</h3><p class="muted">Tap the numbers on the study guide you want to practice. Filled = solid, outlined = getting there, striped = still shaky, dashed = not started.</p>'
     + '<div class="pick" id="pick">' + C.TF.map(function(f){ var id = 'tf' + f.n; return '<button class="pk ' + C.statusOf(data.cards[id]) + '" data-id="' + id + '" aria-pressed="' + (S.sel.indexOf(id) >= 0) + '" aria-label="Statement ' + f.n + ', ' + C.statusOf(data.cards[id]) + '">' + f.n + '</button>'; }).join('') + '</div>'
     + '<div class="kinds" id="kinds">' + Object.keys(C.KINDS).map(function(id){ return '<button class="pk ' + C.statusOf(data.cards[id]) + '" data-id="' + id + '" aria-pressed="' + (S.sel.indexOf(id) >= 0) + '">' + esc(KIND_LABEL[id]) + '</button>'; }).join('') + '</div>'
     + '<p class="pv" id="pv" aria-live="polite">' + esc(S.last) + '</p>'
     + '<div class="row"><button class="btn primary" id="pgo"' + (S.sel.length ? '' : ' disabled') + '>Practice ' + (S.sel.length || '') + ' picked</button><button class="btn" id="pclr"' + (S.sel.length ? '' : ' disabled') + '>Clear</button></div></div>'
-    + '<div class="card"><h3>By topic</h3>' + rows + '</div>'
+    + '<div class="card"><h3>True or False, by topic</h3>' + rows + '</div>'
     + '<button class="link quiet" id="reset">Reset my progress on this</button>';
-  document.getElementById('go').onclick = function(){ start('all'); };
-  document.getElementById('weak').onclick = function(){ start('weak'); };
+  Array.prototype.forEach.call(document.querySelectorAll('[data-go]'), function(b){ b.onclick = function(){ start(b.getAttribute('data-mode'), b.getAttribute('data-go')); }; });
   document.getElementById('know').onclick = function(){ S.screen = 'know'; render(); };
   Array.prototype.forEach.call(document.querySelectorAll('.pk'), function(b){ b.onclick = function(){
     var id = b.getAttribute('data-id'), i = S.sel.indexOf(id);
@@ -205,12 +213,12 @@ function home(){
   };
 }
 
-function start(mode){ S.queue = mode === 'pick' ? S.sel.slice().sort(function(a, b){ return C.DECK.indexOf(a) - C.DECK.indexOf(b); }) : null; S.mode = mode; S.recent = []; S.retry = []; S.asked = 0; S.right = 0; S.missed = {}; S.screen = 'quiz'; S.cur = null; next(); }
+function start(mode, scope){ S.scope = scope || 'all'; S.queue = mode === 'pick' ? S.sel.slice().sort(function(a, b){ return C.DECK.indexOf(a) - C.DECK.indexOf(b); }) : null; S.mode = mode; S.recent = []; S.retry = []; S.asked = 0; S.right = 0; S.missed = {}; S.screen = 'quiz'; S.cur = null; next(); }
 function next(){
   var id = null;
   for (var i = 0; i < S.retry.length; i++) if (S.retry[i].at <= S.asked) { id = S.retry[i].id; S.retry.splice(i, 1); break; }
   if (!id && S.queue) { id = S.queue.shift() || (S.retry.length ? S.retry.shift().id : null); }
-  else if (!id) id = C.pickNext(C.DECK, data.cards, { recent: S.recent, mode: S.mode });
+  else if (!id) id = C.pickNext(scopeIds(S.scope), data.cards, { recent: S.recent, mode: S.mode });
   if (!id) { S.cur = null; S.screen = 'done'; return render(); }
   S.cur = C.ask(id); S.picked = null; S.recent.push(id); if (S.recent.length > 12) S.recent.shift();
   render();
@@ -252,7 +260,7 @@ function done(){
     + meter(t) + legend(t)
     + (missed.length ? '<div class="grp"><h3>Ones that tripped you up this round</h3>' + list + '</div>' : '<p>No misses this round.</p>')
     + '<div class="row"><button class="btn primary" id="again">' + (S.mode === 'pick' ? 'Mix it up' : 'Keep going') + '</button><button class="btn" id="back">Back to the start</button></div></div>';
-  document.getElementById('again').onclick = function(){ start('all'); };
+  document.getElementById('again').onclick = function(){ start('all', S.mode === 'pick' ? 'all' : S.scope); };
   document.getElementById('back').onclick = function(){ S.screen = 'home'; render(); };
 }
 
