@@ -88,11 +88,14 @@
     'case-crime': { q: 'Did a crime take place?', opts: ['Yes', 'No', "We don't know"], ans: function (c) { return c.civil ? "We don't know" : 'Yes'; },
       why: function (c) { return c.civil ? 'A civil case can be about a wrong that was not a crime, so from the name alone we do not know.' : 'A criminal case only starts when it is believed a crime happened, so yes.'; } },
   };
-  var KIND_IDS = Object.keys(KINDS);
+  var CASE_QS = Object.keys(KINDS);          // the question kinds a case is built from (never cards on their own)
+  /* A whole court case is one card, one per kind of case. It only counts when every answer in the case is right. */
+  var COURT = { 'court-criminal': { civil: false, label: 'A criminal court case', sub: 'all 6 answers right' }, 'court-civil': { civil: true, label: 'A civil court case', sub: 'all 6 answers right' } };
+  var COURT_IDS = Object.keys(COURT);
 
   /* The question for a card. Case cards take a seed so the same case can be shown again (and looked up from the #number). */
   function mulberry(seed) { var a = seed >>> 0; return function () { a += 0x6D2B79F5; var t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
-  function ask(id, seed, fixed) {
+  function ask(id, seed, fixed, civil) {
     var m = /^tf(\d+)$/.exec(id);
     if (m) {
       var f = TF[Number(m[1]) - 1];
@@ -100,13 +103,13 @@
     }
     var k = KINDS[id]; if (!k) return null;
     seed = seed == null ? Math.floor(Math.random() * 99999) + 1 : seed;
-    var rnd = mulberry(seed), c = fixed ? SAMPLES[fixed] : makeCase(rnd);
+    var rnd = mulberry(seed), c = fixed ? SAMPLES[fixed] : makeCase(rnd, civil);
     var opts = k.opts ? k.opts.slice() : [c.a, c.b];
     if (!k.opts && rnd() < 0.5) opts.reverse();
     return { id: id, ref: '#' + id + '-' + (fixed || seed), key: fixed ? id + '@' + fixed : id, kind: 'case', topic: 'cases', head: 'Court case', caseText: c.text, text: k.q, opts: opts, answer: k.ans(c), why: k.why(c) };
   }
 
-  var DECK = TF.map(function (f) { return 'tf' + f.n; }).concat(KIND_IDS);
+  var DECK = TF.map(function (f) { return 'tf' + f.n; }).concat(COURT_IDS);
 
   /* ---------- what she knows ---------- */
   function statusOf(rec) {
@@ -148,6 +151,6 @@
   }
   function topicOf(id) { var m = /^tf(\d+)$/.exec(id); return m ? TF[Number(m[1]) - 1].topic : 'cases'; }
 
-  var api = { STATUS: STATUS, SAMPLES: SAMPLES, TOPICS: TOPICS, TF: TF, KINDS: KINDS, DECK: DECK, ask: ask, makeCase: makeCase, mulberry: mulberry, statusOf: statusOf, grade: grade, pickNext: pickNext, tally: tally, topicOf: topicOf, KEY: 'mathseye.ss.court.v1' };
+  var api = { COURT: COURT, COURT_IDS: COURT_IDS, CASE_QS: CASE_QS, STATUS: STATUS, SAMPLES: SAMPLES, TOPICS: TOPICS, TF: TF, KINDS: KINDS, DECK: DECK, ask: ask, makeCase: makeCase, mulberry: mulberry, statusOf: statusOf, grade: grade, pickNext: pickNext, tally: tally, topicOf: topicOf, KEY: 'mathseye.ss.court.v1' };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.courtDeck = api;
 })(typeof window !== 'undefined' ? window : globalThis);

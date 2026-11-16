@@ -193,8 +193,8 @@ function section(sc, title, desc){
   var ids = scopeIds(sc), t = C.tally(ids, data.cards), working = t.shaky + t.getting + t.new;
   return '<div class="card"><h2>' + title + '</h2><p class="muted">' + desc + '</p><div><span class="big">' + t.solid + '</span> <span class="muted">of ' + t.total + ' solid</span></div>' + meter(t)
     + (sc === 'case'
-      ? '<div class="row"><button class="btn primary" data-sample="both">Practice the two from the guide</button><button class="btn primary" data-go="case" data-mode="all">Generate new cases</button></div>'
-        + '<div class="row"><button class="btn" data-go="case" data-mode="weak"' + (working ? '' : ' disabled') + '>Just the case skills I\u2019m still working on</button></div>'
+      ? '<div class="row"><button class="btn primary" data-sample="both">Practice the two from the guide</button><button class="btn primary" data-go="case" data-mode="all">Generate two new cases</button></div>'
+        + '<div class="row"><button class="btn" data-go="case" data-mode="weak"' + (working ? '' : ' disabled') + '>Just the case types I\u2019m still working on</button></div>'
       : '<div class="row"><button class="btn primary" data-go="' + sc + '" data-mode="all">Practice ' + title + '</button><button class="btn" data-go="' + sc + '" data-mode="weak"' + (working ? '' : ' disabled') + '>Just what I’m still working on</button></div>') + '</div>';
 }
 function home(){
@@ -211,7 +211,7 @@ function home(){
     + '<div class="row"><button class="btn primary" data-go="all" data-mode="all">Mix of everything</button><button class="btn" data-go="all" data-mode="weak"' + (working ? '' : ' disabled') + '>Just what I’m still working on</button></div>'
     + '<button class="link" id="know">See what I know and what I don’t</button></div>'
     + section('tf', 'True or False', 'The 28 true/false statements from the study guide. Most of them will be on the test as written.')
-    + section('case', 'Court Cases', 'Practice the two sample cases printed on the study guide, or generate brand-new cases like \u201cThe State v. Marcus Okafor\u201d and answer questions about them.')
+    + section('case', 'Court Cases', 'The test has two court cases. Practice the two printed on the study guide, or generate a new pair (one criminal, one civil). A case only counts when every answer in it is right.')
     + '<div class="card"><h3>Pick specific statements</h3><p class="muted">Tap the numbers on the study guide\u2019s true/false list. Filled = solid, outlined = getting there, striped = still shaky, dashed = not started.</p>'
     + '<div class="pick" id="pick">' + C.TF.map(function(f){ var id = 'tf' + f.n; return '<button class="pk ' + C.statusOf(data.cards[id]) + '" data-id="' + id + '" aria-pressed="' + (S.sel.indexOf(id) >= 0) + '" aria-label="Statement ' + f.n + ', ' + C.statusOf(data.cards[id]) + '">' + f.n + '</button>'; }).join('') + '</div>'
     + '<p class="pv" id="pv" aria-live="polite">' + esc(S.last) + '</p>'
@@ -234,23 +234,29 @@ function home(){
   };
 }
 
-function start(mode, scope, sample){ S.scope = scope || 'all'; S.guide = sample ? (sample === 'both' ? ['swade', 'davison'] : [sample]) : null; S.gno = 0; S.gtotal = S.guide ? S.guide.length : 0; S.run = null; S.queue = sample ? [] : mode === 'pick' ? S.sel.slice().sort(function(a, b){ return C.DECK.indexOf(a) - C.DECK.indexOf(b); }) : null; S.mode = sample ? 'pick' : mode; if (sample) S.scope = 'case'; S.recent = []; S.retry = []; S.again = {}; S.asked = 0; S.right = 0; S.missed = {}; S.screen = 'quiz'; S.cur = null; next(); }
-function beginCase(fixed){
+function start(mode, scope, sample){ S.scope = scope || 'all'; S.guide = sample ? (sample === 'both' ? ['swade', 'davison'] : [sample]) : null; S.gno = 0; S.caseSet = null;
+  if (!sample && scope === 'case') {   // a set of two cases like the test: one criminal and one civil, in either order
+    var types = C.COURT_IDS.filter(function(id){ return mode !== 'weak' || C.statusOf(data.cards[id]) !== 'solid'; }).map(function(id){ return C.COURT[id].civil; });
+    if (Math.random() < 0.5) types.reverse(); S.caseSet = types;
+  }
+  S.gtotal = S.guide ? S.guide.length : S.caseSet ? S.caseSet.length : 0; S.run = null; S.queue = (sample || S.caseSet) ? [] : mode === 'pick' ? S.sel.slice().sort(function(a, b){ return C.DECK.indexOf(a) - C.DECK.indexOf(b); }) : null; S.mode = sample ? 'pick' : mode; if (sample) S.scope = 'case'; S.recent = []; S.retry = []; S.again = {}; S.asked = 0; S.right = 0; S.missed = {}; S.screen = 'quiz'; S.cur = null; next(); }
+function beginCase(fixed, civil){
   var seed = fixed ? null : Math.floor(Math.random() * 99999) + 1, ids;
-  if (fixed) ids = C.SAMPLES[fixed].qs.slice();
-  else ids = ['case-civil', 'case-party', 'case-def', C.pickNext(['case-end', 'case-proof'], data.cards, {}), 'case-plaintiff', 'case-crime'];
-  if (fixed) S.gno++;
-  S.run = { fixed: fixed, seed: seed, ids: ids, i: 0, ans: [], q: C.ask(ids[0], seed, fixed), picked: null, phase: 'ask', no: fixed ? S.gno : 0 };
+  if (fixed) { ids = C.SAMPLES[fixed].qs.slice(); civil = C.SAMPLES[fixed].civil; }
+  else ids = ['case-civil', 'case-party', 'case-def', Math.random() < 0.5 ? 'case-end' : 'case-proof', 'case-plaintiff', 'case-crime'];
+  if (S.guide || S.caseSet) S.gno++;
+  S.run = { fixed: fixed, seed: seed, civil: !!civil, card: civil ? 'court-civil' : 'court-criminal', ids: ids, i: 0, ans: [], q: C.ask(ids[0], seed, fixed, civil), picked: null, phase: 'ask', no: (S.guide || S.caseSet) ? S.gno : 0 };
 }
 function next(){
   S.run = null;
   if (S.guide && S.guide.length) { beginCase(S.guide.shift()); S.cur = null; return render(); }
+  if (S.caseSet && S.caseSet.length) { beginCase(null, S.caseSet.shift()); S.cur = null; return render(); }
   var id = null;
   for (var i = 0; i < S.retry.length; i++) if (S.retry[i].at <= S.asked) { id = S.retry[i].id; S.retry.splice(i, 1); break; }
   if (!id && S.queue) { id = S.queue.shift() || (S.retry.length ? S.retry.shift().id : null); }
   else if (!id) id = C.pickNext(scopeIds(S.scope), data.cards, { recent: S.recent, mode: S.mode });
   if (!id) { S.cur = null; S.screen = 'done'; return render(); }
-  if (/^case-/.test(id)) { beginCase(null); S.cur = null; S.recent.push(id); if (S.recent.length > 12) S.recent.shift(); return render(); }
+  if (/^court-/.test(id)) { beginCase(null, C.COURT[id].civil); S.cur = null; S.recent.push(id); if (S.recent.length > 12) S.recent.shift(); return render(); }
   S.cur = C.ask(id); S.picked = null; S.recent.push(id); if (S.recent.length > 12) S.recent.shift();
   render();
 }
@@ -259,12 +265,12 @@ function runView(){
   var shown = r.ans.slice(0, answered ? r.ans.length - 1 : r.ans.length);
   function row(a, n){ return '<div class="dr' + (a.ok ? '' : ' miss') + '"><span class="n">' + n + '</span><span>' + esc(a.q.text) + (a.ok ? '' : '<small>You said ' + esc(a.picked) + ' \u00b7 it\u2019s ' + esc(a.q.answer) + '</small>') + '</span><span class="a' + (a.ok ? ' ok' : '') + '">' + esc(a.q.answer) + '</span></div>'; }
   var rows = shown.map(function(a, i){ return row(a, i + 1); }).join('');
-  var tag = r.fixed ? 'Court case ' + r.no + ' of ' + S.gtotal : 'Court case';
+  var tag = r.no ? 'Court case ' + r.no + ' of ' + S.gtotal : 'Court case';
   var head = '<div class="qhead"><div class="meter mini" aria-hidden="true"><i class="solid" style="width:' + (100*t.solid/t.total) + '%"></i></div><span class="muted">' + t.solid + ' of ' + t.total + ' solid</span><button class="link" id="stop">I\u2019m done</button></div>';
   if (ended) {
-    var right = r.ans.filter(function(a){ return a.ok; }).length, more = S.guide && S.guide.length;
-    var lbl = more ? 'Next case: ' + C.SAMPLES[S.guide[0]].text : S.guide ? 'Finish' : S.mode === 'weak' ? 'Next case' : 'Another case';
-    app.innerHTML = top() + head + '<div class="card sum"><p class="eyebrow">' + tag + ' \u00b7 case closed</p><div class="case">' + esc(q.caseText) + '</div><h2>' + right + ' of ' + r.ids.length + ' right</h2><div class="done">' + rows + '</div>'
+    var right = r.ans.filter(function(a){ return a.ok; }).length, passed = right === r.ids.length, gmore = S.guide && S.guide.length, smore = S.caseSet && S.caseSet.length, more = gmore || smore;
+    var lbl = gmore ? 'Next case: ' + C.SAMPLES[S.guide[0]].text : smore ? 'Next case' : (S.guide || S.caseSet) ? 'Finish' : 'Keep going';
+    app.innerHTML = top() + head + '<div class="card sum"><p class="eyebrow">' + tag + ' \u00b7 case closed</p><div class="case">' + esc(q.caseText) + '</div><h2>' + (passed ? 'Case solved \u2713' : right + ' of ' + r.ids.length + ' right') + '</h2><p class="muted">' + (passed ? 'Every answer was right, so this counts.' : 'A case counts only when every answer is right, so it goes back to Still shaky and will come back.') + '</p><div class="done">' + rows + '</div>'
       + '<div class="row"><button class="btn primary" id="cnext">' + esc(lbl) + '</button><button class="btn" id="cstop">Stop for now</button></div></div>';
     document.getElementById('cnext').onclick = next;
     document.getElementById('cstop').onclick = function(){ S.screen = 'done'; render(); };
@@ -274,8 +280,8 @@ function runView(){
   var ok = answered && r.picked === q.answer, cls = q.opts.length === 2 ? 'two' : q.opts.length === 3 ? 'three' : '';
   var opts = q.opts.map(function(o, i){ var c = 'opt'; if (answered) { if (o === q.answer) c += ' right'; else if (o === r.picked) c += ' mine'; } return '<button class="' + c + '" data-i="' + i + '"' + (answered ? ' disabled' : '') + '>' + esc(o) + '</button>'; }).join('');
   var last = r.i === r.ids.length - 1;
-  var fb = answered ? '<div class="fb" role="status"><b>' + (ok ? 'Got it \u2713' : 'Not quite \u2014 it\u2019s ' + esc(q.answer)) + '</b>' + esc(q.why) + (ok ? '' : '<br><span class="muted">We\u2019ll ask this one again in a later case.</span>') + '</div><button class="btn primary" id="cq">' + (last ? 'See how it went' : 'Next question') + '</button>' : '';
-  var st = C.statusOf(data.cards[q.id]), sd = C.STATUS[st], left = r.ids.length - 1 - r.i;
+  var fb = answered ? '<div class="fb" role="status"><b>' + (ok ? 'Got it \u2713' : 'Not quite \u2014 it\u2019s ' + esc(q.answer)) + '</b>' + esc(q.why) + (ok ? '' : '<br><span class="muted">Keep going. This case now counts as not yet, and it will come back.</span>') + '</div><button class="btn primary" id="cq">' + (last ? 'See how it went' : 'Next question') + '</button>' : '';
+  var st = C.statusOf(data.cards[r.card]), sd = C.STATUS[st], left = r.ids.length - 1 - r.i;
   var dots = r.ids.map(function(_, i){ return '<i class="' + (i < r.i || (i === r.i && answered) ? 'on' : i === r.i ? 'now' : '') + '"></i>'; }).join('');
   app.innerHTML = top() + head + '<div class="card" id="card"><div class="hdr"><p class="eyebrow">' + tag + '</p><button class="stat" id="stat" type="button" aria-label="Status: ' + sd.label + '. ' + esc(sd.def) + '"><i class="dot ' + st + '"></i>' + sd.label + '</button><div class="steps" aria-hidden="true">' + dots + '</div></div>'
     + '<div class="case">' + esc(q.caseText) + '</div>' + (rows ? '<div class="done">' + rows + '</div>' : '')
@@ -285,7 +291,7 @@ function runView(){
   Array.prototype.forEach.call(document.querySelectorAll('.opt'), function(b){ b.onclick = function(){ answer(q.opts[Number(b.getAttribute('data-i'))]); }; });
   holdTip(document.getElementById('stat'), document.getElementById('card'), sd);
   var cq = document.getElementById('cq');
-  if (cq) cq.onclick = function(){ if (last) r.phase = 'end'; else { r.i++; r.q = C.ask(r.ids[r.i], r.seed, r.fixed); r.picked = null; } render(); };
+  if (cq) cq.onclick = function(){ if (last) { r.phase = 'end'; var allOk = r.ans.every(function(a){ return a.ok; }); data.cards[r.card] = C.grade(data.cards[r.card], allOk, Date.now()); if (!allOk) S.missed[r.card] = 1; persist(); } else { r.i++; r.q = C.ask(r.ids[r.i], r.seed, r.fixed); r.picked = null; } render(); };
   document.getElementById('stop').onclick = function(){ S.screen = S.asked ? 'done' : 'home'; render(); };
 }
 function quiz(){
@@ -328,8 +334,8 @@ function holdTip(chip, card, sd){
 function answer(o){
   if (S.run) {
     var r = S.run; if (r.picked != null) return;
-    var rq = r.q, rok = o === rq.answer; r.picked = o; S.asked++; if (rok) S.right++; else S.missed[rq.id] = 1;
-    r.ans.push({ q: rq, picked: o, ok: rok }); data.cards[rq.id] = C.grade(data.cards[rq.id], rok, Date.now()); persist(); return render();
+    var rq = r.q, rok = o === rq.answer; r.picked = o; S.asked++; if (rok) S.right++;
+    r.ans.push({ q: rq, picked: o, ok: rok }); return render();
   }
   if (S.picked != null) return;
   var q = S.cur, ok = o === q.answer; S.picked = o; S.asked++; if (ok) S.right++; else { S.missed[q.id] = 1; if (!S.again[q.key]) { S.again[q.key] = 1; S.retry.push({ id: q.key, at: S.asked + 3 }); } }
@@ -338,7 +344,7 @@ function answer(o){
 
 function done(){
   var t = C.tally(C.DECK, data.cards), missed = Object.keys(S.missed);
-  var list = missed.map(function(id){ var q = C.ask(id); return '<div class="item">' + esc(q.caseText ? 'Case names: ' + q.text : q.text) + '</div>'; }).join('');
+  var list = missed.map(function(id){ var cc = C.COURT[id]; if (cc) return '<div class="item">' + cc.label + '<small>' + cc.sub + '</small></div>'; return '<div class="item">' + esc(C.ask(id).text) + '</div>'; }).join('');
   var all = S.mode === 'weak' && !S.cur ? 'You went through everything that wasn’t solid.' : '';
   app.innerHTML = top() + '<div class="card"><p class="eyebrow">Nice round</p>'
     + '<h1>' + S.right + ' right out of ' + S.asked + '</h1>' + (all ? '<p>' + all + '</p>' : '')
@@ -352,7 +358,7 @@ function done(){
 function know(){
   var groups = { shaky: [], getting: [], solid: [], new: [] };
   C.DECK.forEach(function(id){ groups[C.statusOf(data.cards[id])].push(id); });
-  function label(id){ var m = /^tf(\d+)$/.exec(id); return m ? C.TF[Number(m[1]) - 1].t : 'Case names: ' + C.KINDS[id].q; }
+  function label(id){ var m = /^tf(\d+)$/.exec(id); return m ? C.TF[Number(m[1]) - 1].t : C.COURT[id].label + ' (' + C.COURT[id].sub + ')'; }
   function sec(key, title, dot, hint){
     var ids = groups[key]; if (!ids.length) return '';
     return '<div class="grp"><h3><i class="dot ' + dot + '"></i>' + title + ' (' + ids.length + ')</h3>' + (hint ? '<p class="muted">' + hint + '</p>' : '')

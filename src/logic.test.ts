@@ -523,13 +523,13 @@ describe('Homework "Check my work": the server confirms a typed answer and never
 
 describe('Social Studies court study guide', () => {
   const m: any = { exports: {} }; new Function('module', courtSource)(m); const C = m.exports;
-  it('has the 28 statements plus 7 case-name skills, all with a why', () => {
-    expect(C.TF.length).toBe(28); expect(C.DECK.length).toBe(35);
+  it('has the 28 statements plus one card per kind of court case (criminal, civil), all with a why', () => {
+    expect(C.TF.length).toBe(28); expect(C.DECK.length).toBe(30); expect(C.COURT_IDS).toEqual(['court-criminal', 'court-civil']); expect(C.CASE_QS.length).toBe(7);
     for (const f of C.TF) { expect(f.why.length).toBeGreaterThan(10); expect(C.TOPICS.some((t: any) => t.id === f.topic)).toBe(true); }
     expect(C.TF.filter((f: any) => f.a).length).toBe(19);
   });
   it('every question has its answer among the choices, for any seed', () => {
-    for (const id of C.DECK) for (let seed = 1; seed < 60; seed++) { const q = C.ask(id, seed); expect(q.opts).toContain(q.answer); expect(new Set(q.opts).size).toBe(q.opts.length); }
+    for (const id of C.DECK.filter((d: string) => /^tf/.test(d)).concat(C.CASE_QS)) for (let seed = 1; seed < 60; seed++) { const q = C.ask(id, seed); expect(q.opts).toContain(q.answer); expect(new Set(q.opts).size).toBe(q.opts.length); }
   });
   it('case rules: government v. person is criminal, everything else civil', () => {
     for (let seed = 1; seed < 200; seed++) {
@@ -547,6 +547,9 @@ describe('Social Studies court study guide', () => {
     expect(sw.qs.map((k: string) => A(k, 'swade'))).toEqual(['Criminal', 'Prosecutor', 'Deanna Swade', 'Verdict', 'No', 'Yes']);
     expect(dv.qs.map((k: string) => A(k, 'davison'))).toEqual(['Civil', 'Plaintiff', 'Dave Davison', 'Preponderance of evidence', 'Yes', "We don't know"]);
     expect(C.ask('case-def', 1, 'swade').key).toBe('case-def@swade');
+  });
+  it('can make a criminal or a civil case on request', () => {
+    for (let seed = 1; seed < 80; seed++) { expect(C.ask('case-civil', seed, undefined, true).answer).toBe('Civil'); expect(C.ask('case-civil', seed, undefined, false).answer).toBe('Criminal'); }
   });
   it('has plain words for every status', () => {
     for (const k of ['new', 'shaky', 'getting', 'solid']) { expect(C.STATUS[k].label.length).toBeGreaterThan(2); expect(C.STATUS[k].def.length).toBeGreaterThan(20); }
