@@ -112,6 +112,14 @@ h1{font:800 2rem/1.15 var(--display);color:var(--fg)}
 .item{padding:10px 14px;border-radius:14px;background:var(--panel2);font-size:.98rem}
 .item small{display:block;color:var(--muted)}
 .hide{display:none}
+.pick{display:grid;grid-template-columns:repeat(auto-fill,minmax(54px,1fr));gap:8px}
+.pk{min-height:54px;border-radius:14px;border:2px solid var(--muted);border-style:dashed;background:transparent;color:var(--fg);font:700 1.05rem var(--body);cursor:pointer;padding:0}
+.pk.solid{background:var(--accent);color:var(--accent-fg);border:2px solid transparent}
+.pk.getting{background:var(--panel2);border:2px solid var(--accent)}
+.pk.shaky{background:repeating-linear-gradient(45deg,var(--panel2) 0 5px,transparent 5px 10px);border:2px solid var(--accent)}
+.pk[aria-pressed=true]{outline:4px solid var(--focus);outline-offset:2px}
+.kinds{display:flex;flex-wrap:wrap;gap:8px}.kinds .pk{padding:8px 14px;min-width:0;font-size:.95rem}
+.pv{min-height:3em;color:var(--muted);font-size:.95rem}
 @media (min-width:900px) and (min-aspect-ratio:1/1){#app{max-width:860px}.opts{flex-direction:row;flex-wrap:wrap}.opts .opt{flex:1 1 40%}.opts.three .opt{flex:1 1 28%}}
 @media (prefers-reduced-motion:no-preference){.opt,.btn{transition:transform .08s,background .15s}}
 </style></head>
@@ -129,7 +137,7 @@ h1{font:800 2rem/1.15 var(--display);color:var(--fg)}
 <script>
 (function(){
 var C = window.courtDeck, KEY = C.KEY + (window.mathseyeNs || ''), app = document.getElementById('app');
-var data = load(), S = { screen: 'home', mode: 'all', recent: [], retry: [], asked: 0, right: 0, missed: {}, cur: null, picked: null };
+var data = load(), S = { sel: [], last: '', queue: null, screen: 'home', mode: 'all', recent: [], retry: [], asked: 0, right: 0, missed: {}, cur: null, picked: null };
 
 /* ---- saved progress: { cards: { id: {seen, s, m, l, u} } } ---- */
 function load(){
@@ -138,6 +146,7 @@ function load(){
   if (!d) { try { d = JSON.parse(localStorage.getItem(KEY + '.bak') || 'null'); } catch(e) {} }
   return d && d.cards ? d : { cards: {} };
 }
+var KIND_LABEL = { 'case-civil': 'Case: civil or criminal', 'case-party': 'Case: plaintiff or prosecutor', 'case-def': 'Case: defendant', 'case-end': 'Case: verdict or judgment', 'case-plaintiff': 'Case: is there a plaintiff', 'case-proof': 'Case: proof needed', 'case-crime': 'Case: did a crime happen' };
 var lastBak = 0;
 function persist(){
   try {
@@ -161,6 +170,7 @@ function meter(t, cls){ var n = t.total || 1; return '<div class="meter ' + (cls
 function legend(t){ return '<div class="legend"><span><i class="dot solid"></i>Solid ' + t.solid + '</span><span><i class="dot getting"></i>Getting there ' + t.getting + '</span><span><i class="dot shaky"></i>Still shaky ' + t.shaky + '</span><span><i class="dot new"></i>Not started ' + t.new + '</span></div>'; }
 
 function home(){
+  var y = window.scrollY;
   var t = C.tally(C.DECK, data.cards), working = t.shaky + t.getting + t.new;
   var rows = C.TOPICS.map(function(tp){
     var ids = C.DECK.filter(function(id){ return C.topicOf(id) === tp.id; }), tt = C.tally(ids, data.cards);
@@ -172,22 +182,35 @@ function home(){
     + '<div class="card"><div><span class="big">' + t.solid + '</span> <span class="muted">of ' + t.total + ' solid</span></div>' + meter(t) + legend(t) + '<p class="muted">' + msg + '</p>'
     + '<div class="row"><button class="btn primary" id="go">Start practice</button><button class="btn" id="weak"' + (working ? '' : ' disabled') + '>Just what I’m still working on</button></div>'
     + '<button class="link" id="know">See what I know and what I don’t</button></div>'
+    + '<div class="card"><h3>Pick specific ones</h3><p class="muted">Tap the numbers on the study guide you want to practice. Filled = solid, outlined = getting there, striped = still shaky, dashed = not started.</p>'
+    + '<div class="pick" id="pick">' + C.TF.map(function(f){ var id = 'tf' + f.n; return '<button class="pk ' + C.statusOf(data.cards[id]) + '" data-id="' + id + '" aria-pressed="' + (S.sel.indexOf(id) >= 0) + '" aria-label="Statement ' + f.n + ', ' + C.statusOf(data.cards[id]) + '">' + f.n + '</button>'; }).join('') + '</div>'
+    + '<div class="kinds" id="kinds">' + Object.keys(C.KINDS).map(function(id){ return '<button class="pk ' + C.statusOf(data.cards[id]) + '" data-id="' + id + '" aria-pressed="' + (S.sel.indexOf(id) >= 0) + '">' + esc(KIND_LABEL[id]) + '</button>'; }).join('') + '</div>'
+    + '<p class="pv" id="pv" aria-live="polite">' + esc(S.last) + '</p>'
+    + '<div class="row"><button class="btn primary" id="pgo"' + (S.sel.length ? '' : ' disabled') + '>Practice ' + (S.sel.length || '') + ' picked</button><button class="btn" id="pclr"' + (S.sel.length ? '' : ' disabled') + '>Clear</button></div></div>'
     + '<div class="card"><h3>By topic</h3>' + rows + '</div>'
     + '<button class="link quiet" id="reset">Reset my progress on this</button>';
   document.getElementById('go').onclick = function(){ start('all'); };
   document.getElementById('weak').onclick = function(){ start('weak'); };
   document.getElementById('know').onclick = function(){ S.screen = 'know'; render(); };
+  Array.prototype.forEach.call(document.querySelectorAll('.pk'), function(b){ b.onclick = function(){
+    var id = b.getAttribute('data-id'), i = S.sel.indexOf(id);
+    if (i >= 0) S.sel.splice(i, 1); else S.sel.push(id);
+    var m = /^tf(\d+)$/.exec(id); S.last = m ? m[1] + '. ' + C.TF[Number(m[1]) - 1].t : 'Case names: ' + C.KINDS[id].q;
+    home(); window.scrollTo(0, y); }; });
+  document.getElementById('pgo').onclick = function(){ start('pick'); };
+  document.getElementById('pclr').onclick = function(){ S.sel = []; S.last = ''; home(); };
   document.getElementById('reset').onclick = function(){
     if (!confirm('Erase what the app knows about your progress on this study guide?')) return;
     data = { cards: {} }; persist(); if (window.mathseyeSync) mathseyeSync.reset('court'); render();
   };
 }
 
-function start(mode){ S.mode = mode; S.recent = []; S.retry = []; S.asked = 0; S.right = 0; S.missed = {}; S.screen = 'quiz'; S.cur = null; next(); }
+function start(mode){ S.queue = mode === 'pick' ? S.sel.slice().sort(function(a, b){ return C.DECK.indexOf(a) - C.DECK.indexOf(b); }) : null; S.mode = mode; S.recent = []; S.retry = []; S.asked = 0; S.right = 0; S.missed = {}; S.screen = 'quiz'; S.cur = null; next(); }
 function next(){
   var id = null;
   for (var i = 0; i < S.retry.length; i++) if (S.retry[i].at <= S.asked) { id = S.retry[i].id; S.retry.splice(i, 1); break; }
-  if (!id) id = C.pickNext(C.DECK, data.cards, { recent: S.recent, mode: S.mode });
+  if (!id && S.queue) { id = S.queue.shift() || (S.retry.length ? S.retry.shift().id : null); }
+  else if (!id) id = C.pickNext(C.DECK, data.cards, { recent: S.recent, mode: S.mode });
   if (!id) { S.cur = null; S.screen = 'done'; return render(); }
   S.cur = C.ask(id); S.picked = null; S.recent.push(id); if (S.recent.length > 12) S.recent.shift();
   render();
@@ -228,7 +251,7 @@ function done(){
     + '<h1>' + S.right + ' right out of ' + S.asked + '</h1>' + (all ? '<p>' + all + '</p>' : '')
     + meter(t) + legend(t)
     + (missed.length ? '<div class="grp"><h3>Ones that tripped you up this round</h3>' + list + '</div>' : '<p>No misses this round.</p>')
-    + '<div class="row"><button class="btn primary" id="again">Keep going</button><button class="btn" id="back">Back to the start</button></div></div>';
+    + '<div class="row"><button class="btn primary" id="again">' + (S.mode === 'pick' ? 'Mix it up' : 'Keep going') + '</button><button class="btn" id="back">Back to the start</button></div></div>';
   document.getElementById('again').onclick = function(){ start('all'); };
   document.getElementById('back').onclick = function(){ S.screen = 'home'; render(); };
 }
