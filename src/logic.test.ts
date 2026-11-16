@@ -548,6 +548,9 @@ describe('Social Studies court study guide', () => {
     expect(dv.qs.map((k: string) => A(k, 'davison'))).toEqual(['Civil', 'Plaintiff', 'Dave Davison', 'Preponderance of evidence', 'Yes', "We don't know"]);
     expect(C.ask('case-def', 1, 'swade').key).toBe('case-def@swade');
   });
+  it('has plain words for every status', () => {
+    for (const k of ['new', 'shaky', 'getting', 'solid']) { expect(C.STATUS[k].label.length).toBeGreaterThan(2); expect(C.STATUS[k].def.length).toBeGreaterThan(20); }
+  });
   it('knows a card in two right answers in a row; a miss makes it shaky again', () => {
     let r: any = null; expect(C.statusOf(r)).toBe('new');
     r = C.grade(r, false, 1); expect(C.statusOf(r)).toBe('shaky');

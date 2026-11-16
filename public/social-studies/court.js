@@ -118,6 +118,13 @@
     var r = rec || { seen: 0, s: 0, m: 0 };
     return { seen: (r.seen || 0) + 1, s: ok ? (r.s || 0) + 1 : 0, m: (r.m || 0) + (ok ? 0 : 1), l: ok ? 'r' : 'w', u: now };
   }
+  /* The plain words shown on a card's status chip and in its press-and-hold tip. */
+  var STATUS = {
+    new: { label: 'New', def: 'You have not seen this one yet.' },
+    shaky: { label: 'Still shaky', def: 'You missed it last time. It comes back sooner until you get it right.' },
+    getting: { label: 'Getting there', def: 'You got it right once since your last miss. One more right in a row makes it solid.' },
+    solid: { label: 'Solid', def: 'You got it right two times in a row. It comes up less often now.' },
+  };
   var WEIGHT = { shaky: 6, new: 3, getting: 2.5, solid: 0.5 };
   /* Pick the next card: favors missed and new cards, still revisits solid ones now and then, never repeats one of the last few.
      mode 'weak' = only what is not solid yet (returns null when everything is solid). */
@@ -141,6 +148,6 @@
   }
   function topicOf(id) { var m = /^tf(\d+)$/.exec(id); return m ? TF[Number(m[1]) - 1].topic : 'cases'; }
 
-  var api = { SAMPLES: SAMPLES, TOPICS: TOPICS, TF: TF, KINDS: KINDS, DECK: DECK, ask: ask, makeCase: makeCase, mulberry: mulberry, statusOf: statusOf, grade: grade, pickNext: pickNext, tally: tally, topicOf: topicOf, KEY: 'mathseye.ss.court.v1' };
+  var api = { STATUS: STATUS, SAMPLES: SAMPLES, TOPICS: TOPICS, TF: TF, KINDS: KINDS, DECK: DECK, ask: ask, makeCase: makeCase, mulberry: mulberry, statusOf: statusOf, grade: grade, pickNext: pickNext, tally: tally, topicOf: topicOf, KEY: 'mathseye.ss.court.v1' };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.courtDeck = api;
 })(typeof window !== 'undefined' ? window : globalThis);
