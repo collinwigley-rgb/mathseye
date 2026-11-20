@@ -82,6 +82,9 @@ table.t{border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:1.2
 .fkey{display:flex;flex-wrap:wrap;gap:4px 16px;margin:0 0 8px;font-size:.9412rem}.fkey .fv{font-size:.8235rem;min-width:0;padding:0 8px;margin-right:4px}
 .plabel{list-style:none;font-weight:700;font-size:.8235rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:2px 0 -4px}
 .pbk{display:block;height:.6em}
+.fwhy{margin:6px 0 10px}.fwhy summary{cursor:pointer;font-weight:700;color:var(--accent);padding:6px 0;list-style:none}.fwhy summary::before{content:"\25B8  "}.fwhy[open] summary::before{content:"\25BE  "}
+.wcards{display:flex;flex-direction:column;gap:10px}.wc{background:var(--panel);border-radius:14px;padding:10px 12px}.wc p{margin:6px 0 0;font-size:.9412rem}.wc .wex{font-style:italic;color:var(--muted)}
+.wbar{display:grid;grid-template-columns:repeat(8,1fr);gap:3px;margin:8px 0 2px}.wbar i{height:22px;border-radius:5px;background:var(--panel2);border:2px solid var(--line);font-style:normal;font-size:.8235rem;text-align:center;line-height:18px;color:var(--muted)}.wbar i.on{background:var(--accent);border-color:var(--accent)}.wbar i.unk{border-style:dashed}
 .say{margin:0;padding:14px 18px;border-radius:18px;background:var(--panel2);border-left:5px solid var(--accent)}
 .say.win{background:var(--good-bg);border-left-color:var(--good);font-weight:600}
 .nudges{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
@@ -228,11 +231,16 @@ const today = () => new Date().toISOString().slice(0,10);
 const bump = () => { if (save.day.d !== today()) save.day = {d:today(), n:0}; save.day.n++; };
 const $ = (h) => { const t = document.createElement("template"); t.innerHTML = h.trim(); return t.content.firstChild; };
 const esc = (s) => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const whyHTML = () => { const bar = (on, kind) => `<div class="wbar" aria-hidden="true">${"<i class='on'></i>".repeat(on)}${kind === "unk" ? "<i class='unk'>?</i><i class='unk'>?</i><i class='unk'>?</i><i class='unk'>?</i><i class='unk'>?</i><i class='unk'>?</i>" : "<i></i>".repeat(8 - on)}</div>`;
+  return `<details class="fwhy"><summary>Why multiply? Why divide?</summary><div class="wcards">
+<div class="wc"><b>Missing the PART: multiply</b>${bar(2)}<p>The percent says how much of the whole to take. Taking a share of something is multiplying: <b>whole × percent</b>.</p><p class="wex">25% of 8 is a quarter of 8: 0.25 × 8 = 2</p></div>
+<div class="wc"><b>Missing the WHOLE: divide</b>${bar(2, "unk")}<p>Whole × percent made the part. To get back to the whole, undo it: <b>part ÷ percent</b>. The part is only that share of the whole, so dividing by the share gives the whole.</p><p class="wex">2 is 25% of ?: 2 ÷ 0.25 = 8</p></div>
+<div class="wc"><b>Missing the PERCENT: divide</b>${bar(2)}<p>The percent is how much of the whole the part is: <b>part ÷ whole</b>. Then move the point two places right.</p><p class="wex">2 out of 8: 2 ÷ 8 = 0.25 = 25%</p></div></div></details>`; };
 const hintHTML = h => { const s = String(h), m = /^\[\[F:(.+?)\]\]\s*/.exec(s), rest = esc(m ? s.slice(m[0].length) : s); if (!m) return rest; const f = m[1], v = c => `<i class="fv ${c}">${c}</i>`; let box;
   if (f === "a/w = p/100") box = `<div class="fml" role="img" aria-label="a over w equals p over 100"><span class="ffr"><span class="ffn">${v("a")}</span><span class="ffd">${v("w")}</span></span><b>=</b><span class="ffr"><span class="ffn">${v("p")}</span><span class="ffd">100</span></span></div><div class="fkey"><span>${v("a")} the part</span><span>${v("w")} the whole</span><span>${v("p")} the percent</span></div>`;
   else if (f === "a = p × w") box = `<div class="fml" role="img" aria-label="a equals p times w">${v("a")}<b>=</b>${v("p")}<b>×</b>${v("w")}</div><div class="fkey"><span>${v("a")} the part</span><span>${v("p")} the percent, as a decimal</span><span>${v("w")} the whole</span></div>`;
   else box = `<div class="fml">${esc(f)}</div>`;
-  return box + rest; };
+  return box + whyHTML() + rest; };
 const LV = {foundation:"Base skill", builds:"Builds on one earlier lesson", mixed:"Mixes several lessons"};
 const LVTXT = {foundation:"This one mostly uses this lesson's skill plus things you learned in earlier grades.", builds:"This one uses this lesson's skill together with one earlier lesson from this unit.", mixed:"This one combines several lessons. If you get stuck, try the earlier lessons first."};
 const WIN = ["Nailed it.","Clean take.","On beat.","That's the one.","Stage-ready."], WIN_HELPED = WIN.filter(w => w !== "Clean take.");   // "Clean take." only when it really was clean

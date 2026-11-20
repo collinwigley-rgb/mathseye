@@ -104,11 +104,16 @@ const applyBrand = (id) => { document.documentElement.dataset.brand = id; };
 applyBrand(getBrand());
 const $ = (h) => { const t = document.createElement("template"); t.innerHTML = h.trim(); return t.content.firstChild; };
 const esc = (s) => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const whyHTML = () => { const bar = (on, kind) => `<div class="wbar" aria-hidden="true">${"<i class='on'></i>".repeat(on)}${kind === "unk" ? "<i class='unk'>?</i><i class='unk'>?</i><i class='unk'>?</i><i class='unk'>?</i><i class='unk'>?</i><i class='unk'>?</i>" : "<i></i>".repeat(8 - on)}</div>`;
+  return `<details class="fwhy"><summary>Why multiply? Why divide?</summary><div class="wcards">
+<div class="wc"><b>Missing the PART: multiply</b>${bar(2)}<p>The percent says how much of the whole to take. Taking a share of something is multiplying: <b>whole × percent</b>.</p><p class="wex">25% of 8 is a quarter of 8: 0.25 × 8 = 2</p></div>
+<div class="wc"><b>Missing the WHOLE: divide</b>${bar(2, "unk")}<p>Whole × percent made the part. To get back to the whole, undo it: <b>part ÷ percent</b>. The part is only that share of the whole, so dividing by the share gives the whole.</p><p class="wex">2 is 25% of ?: 2 ÷ 0.25 = 8</p></div>
+<div class="wc"><b>Missing the PERCENT: divide</b>${bar(2)}<p>The percent is how much of the whole the part is: <b>part ÷ whole</b>. Then move the point two places right.</p><p class="wex">2 out of 8: 2 ÷ 8 = 0.25 = 25%</p></div></div></details>`; };
 const hintHTML = h => { const s = String(h), m = /^\[\[F:(.+?)\]\]\s*/.exec(s), rest = esc(m ? s.slice(m[0].length) : s); if (!m) return rest; const f = m[1], v = c => `<i class="fv ${c}">${c}</i>`; let box;
   if (f === "a/w = p/100") box = `<div class="fml" role="img" aria-label="a over w equals p over 100"><span class="ffr"><span class="ffn">${v("a")}</span><span class="ffd">${v("w")}</span></span><b>=</b><span class="ffr"><span class="ffn">${v("p")}</span><span class="ffd">100</span></span></div><div class="fkey"><span>${v("a")} the part</span><span>${v("w")} the whole</span><span>${v("p")} the percent</span></div>`;
   else if (f === "a = p × w") box = `<div class="fml" role="img" aria-label="a equals p times w">${v("a")}<b>=</b>${v("p")}<b>×</b>${v("w")}</div><div class="fkey"><span>${v("a")} the part</span><span>${v("p")} the percent, as a decimal</span><span>${v("w")} the whole</span></div>`;
   else box = `<div class="fml">${esc(f)}</div>`;
-  return box + rest; };
+  return box + whyHTML() + rest; };
 const apart = p => (p.ph && S.ck && S.ck.id === p.id) ? S.ck.i : 0;                                   // which answer box she is on
 const hlist = p => p.ph ? p.ph[apart(p)] : p.hints;                                                  // nudges for that part (or the problem)
 const hcount = p => p.ph ? ((S.hp || {})[p.id + ":" + apart(p)] || 0) : S.hints;

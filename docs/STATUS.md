@@ -87,3 +87,4 @@ Problems 7-20 posted to Unit 3 Homework (typed checks, "why" notes, bar-diagram 
 2026-11-15: Multi-answer homework problems (20) have their own four nudges per part, shown for the answer box she is on (ph in pack, nudgeHTML in homework_template).
 2026-11-15: Homework problem text puts a. / b. / PART A / PART B on their own lines (blanks() in homework_template).
 2026-11-15/16: Lesson 3.3 Additional Practice (12 problems, from two photos) posted: typed checks, why notes, 4 hints (4 per part on a/b), formula picture where it applies. Photos filed in private sources/unit-3.
+2026-11-20: Formula hint has a 'Why multiply? Why divide?' panel (bar of 8 squares: missing part = multiply, missing whole = divide, missing percent = part ÷ whole).
